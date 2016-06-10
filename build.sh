@@ -23,5 +23,5 @@ if [ ! -e "${GIR}" ] ; then
 fi
 LINKFLAGS=`pkg-config --libs pangocairo pangoft2 $mod gobject-2.0 gio-unix-2.0 glib-2.0 | tr ' ' '\n' | sed 's/^/-Xlinker /' | tr '\n' ' '`
 CCFLAGS=`pkg-config --cflags pangocairo pangoft2 $mod gobject-2.0 gio-unix-2.0 glib-2.0 | tr ' ' '\n' | sed 's/^/-Xcc /' | tr '\n' ' ' `
-gir2swift -p ${GIR_DIR}/GObject-2.0.gir -p ${GIR_DIR}/GLib-2.0.gir "${GIR}" | sed -f ${module}.sed > Sources/${Module}.swift
+gir2swift -p ${GIR_DIR}/GObject-2.0.gir -p ${GIR_DIR}/GLib-2.0.gir "${GIR}" | sed -f ${Module}.sed > Sources/${Module}.swift
 exec swift build $CCFLAGS $LINKFLAGS "$@"
