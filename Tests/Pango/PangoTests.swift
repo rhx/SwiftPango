@@ -6,18 +6,22 @@ class PangoTests: XCTestCase {
 
     func testPangoColor() {
         var colour = PangoColor();
-        let red = Color(&colour);
-        XCTAssertTrue(red.parse(spec: "#ff0000"))
-        XCTAssertEqual(red.to_string(), "#ffff00000000")
+        withUnsafeMutablePointer(&colour) {
+            let red = ColorRef($0);
+            XCTAssertTrue(red.parse(spec: "#ff0000"))
+            XCTAssertEqual(red.to_string(), "#ffff00000000")
+        }
     }
 
     func testPangoColorCopy() {
         var colour = PangoColor();
-        let one = Color(&colour);
-        XCTAssertTrue(one.parse(spec: "#00ff00"))
-        let two = Color(one.copy());
-        XCTAssertEqual(two.to_string(), "#0000ffff0000")
-        two.free()
+        withUnsafeMutablePointer(&colour) {
+            let one = ColorRef($0);
+            XCTAssertTrue(one.parse(spec: "#00ff00"))
+            let two = Color(one.copy());
+            defer { two.free() }
+            XCTAssertEqual(two.to_string(), "#0000ffff0000")
+        }
     }
 
 }
