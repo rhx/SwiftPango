@@ -9,7 +9,7 @@ class PangoTests: XCTestCase {
         withUnsafeMutablePointer(&colour) {
             let red = ColorRef($0);
             XCTAssertTrue(red.parse(spec: "#ff0000"))
-            XCTAssertEqual(red.to_string(), "#ffff00000000")
+            XCTAssertEqual(red.toString(), "#ffff00000000")
         }
     }
 
@@ -20,7 +20,7 @@ class PangoTests: XCTestCase {
             XCTAssertTrue(one.parse(spec: "#00ff00"))
             let two = Color(one.copy());
             defer { two.free() }
-            XCTAssertEqual(two.to_string(), "#0000ffff0000")
+            XCTAssertEqual(two.toString(), "#0000ffff0000")
         }
     }
 
