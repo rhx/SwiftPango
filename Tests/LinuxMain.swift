@@ -1,5 +1,5 @@
 import XCTest
-@testable import PangoTestSuite
+@testable import PangoTests
 
 XCTMain([
 	 testCase(PangoTests.allTests),
