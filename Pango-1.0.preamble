@@ -1,6 +1,6 @@
 import CGLib
 import CPango
 import GLib
-import GObject
+import GLibObject
 
 
