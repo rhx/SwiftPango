@@ -10,7 +10,7 @@ mod=`echo "${Mod}" | tr '[:upper:]' '[:lower:]'`
 PROJECT_DIR=`pwd`
 BUILD_DIR="$PROJECT_DIR/.build"
 export PATH="${BUILD_DIR}/gir2swift/.build/release:${BUILD_DIR}/gir2swift/.build/debug:${PATH}"
-LINKFLAGS=`pkg-config --libs pangocairo pangoft2 $mod gobject-2.0 gio-unix-2.0 glib-2.0 | tr ' ' '\n' | sed 's/^/-Xlinker /' | tr '\n' ' '`
+LINKFLAGS=`pkg-config --libs pangocairo pangoft2 $mod gobject-2.0 gio-unix-2.0 glib-2.0 | tr ' ' '\n' | sed -e 's/^/-Xlinker /' -e 's/-Wl,//' | tr '\n' ' '`
 CCFLAGS=`pkg-config --cflags pangocairo pangoft2 $mod gobject-2.0 gio-unix-2.0 glib-2.0 | tr ' ' '\n' | sed 's/^/-Xcc /' | tr '\n' ' ' `
 TAC="tail -r"
 if which tac >/dev/null ; then
