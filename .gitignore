@@ -3,4 +3,6 @@
 /Packages
 /*.xcodeproj
 Package.pins
+Package.resolved
+Package.pins
 *-*.swift
