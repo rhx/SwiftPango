@@ -3,21 +3,60 @@ A Swift wrapper around pango-1.x that is largely auto-generated from gobject-int
 
 
 
+## Usage
+
+Normally, you don't build this package directly (but for testing you can - see 'Building' below), but you embed it into your own project.  To use SwiftPango, you need to use the [Swift Package Manager](https://swift.org/package-manager/).  After installing the prerequisites (see 'Prerequisites' below), add `SwiftPango` as a dependency to your `Package.swift` file, e.g.:
+
+```Swift
+import PackageDescription
+
+let package = Package(name: "MyPackage",
+    dependencies: [
+        .Package(url: "https://github.com/rhx/SwiftPango.git", majorVersion: 2)
+    ],
+    swiftLanguageVersions: [3, 4]
+)
+```
+
+At this stage, the Swift Package manager does not (yet) know how to run external programs such as `gir2swift`.  Therefore the easiest way to compile your project with SwiftPango is to use build scripts that do this for you and pass the necessary flags to the Swift Package manager (see the following section).
+
+### Build Scripts
+
+The demo applications come with build scripts that configure some environment variables and pass required arguments when calling `swift build`, `swift package`, etc.  The easiest way to get started is to clone one of the following projects, then copy all the `*.sh` shell scripts into your own project.  Also, if you want to be able to build a desktop app, create a `Resources` folder, and copy (at least) the `Info.plist` file as well:
+
+ * [SwiftHelloGtk](https://github.com/rhx/SwiftHelloGtk): this is a quick starting point for a simple gtk app that does not need any resources.
+ * [SwiftHelloGtkBuilder](https://github.com/rhx/SwiftHelloGtkBuilder): this is a good starting point for a more complex app that has user interface files (`*.ui`) for GtkBuilder in its `Resources` folder.
+ 
+To build your project, you then simply run
+```
+./build.sh
+```
+from within your project folder.  On macOS, you can also build the project using Xcode instead.  To do this, you need to create an Xcode project first, then open the project in the Xcode IDE:
+
+	./xcodegen.sh
+	open MyPackage.xcodeproj
+
+After that, use the (usual) Build and Test buttons to build/test this package.  Please note that, at this stage, the Swift Package manager is not able to create App targets for Xcode (so to build a macOs app rather than just a command line executable, you still need to use the `build.sh` script that calls `app-wrapper.sh` to create the standalone app bundle).
+
+
+
+
 ## Prerequisites
 
 ### Swift
 
-To build, you need Swift 3.1 (download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
+Building should work with both Swift 4 and Swift 3 (you need at least Swift 3.1). You can download Swift from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well (install them using `xcode-select --install`).  Test that your compiler works using `swift --version`, which should give you something like
 
 	$ swift --version
-	Apple Swift version 3.1 (swiftlang-802.0.51 clang-802.0.41)
+	Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)
 	Target: x86_64-apple-macosx10.9
 
 on macOS, or on Linux you should get something like:
 
 	$ swift --version
-	Swift version 3.1 (swift-3.1-RELEASE)
+	Swift version 4.0 (swift-4.0-RELEASE)
 	Target: x86_64-unknown-linux-gnu
+
 
 ### GLib 2.46 or higher
 
