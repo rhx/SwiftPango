@@ -1,10 +1,18 @@
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
     name: "Pango",
-    dependencies: [
-        .Package(url: "https://github.com/rhx/CPango.git", majorVersion: 1),
-        .Package(url: "https://github.com/rhx/SwiftGObject.git", majorVersion: 2)
+    products: [
+        .library(name: "Pango", targets: ["Pango"]),
     ],
-    swiftLanguageVersions: [3, 4]
+    dependencies: [
+        .package(url: "https://github.com/rhx/CPango.git", .branch("master")),
+        .package(url: "https://github.com/rhx/SwiftGObject.git", .branch("master"))
+    ],
+    targets: [
+        .target(name: "Pango", dependencies: ["GLibObject"]),
+        .testTarget(name: "PangoTests", dependencies: ["Pango"]),
+    ]
 )
