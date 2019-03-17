@@ -8,13 +8,15 @@ A Swift wrapper around pango-1.x that is largely auto-generated from gobject-int
 Normally, you don't build this package directly (but for testing you can - see 'Building' below), but you embed it into your own project.  To use SwiftPango, you need to use the [Swift Package Manager](https://swift.org/package-manager/).  After installing the prerequisites (see 'Prerequisites' below), add `SwiftPango` as a dependency to your `Package.swift` file, e.g.:
 
 ```Swift
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(name: "MyPackage",
     dependencies: [
-        .Package(url: "https://github.com/rhx/SwiftPango.git", majorVersion: 2)
+        .package(url: "https://github.com/rhx/SwiftPango.git", .branch("master")),
     ],
-    swiftLanguageVersions: [3, 4]
+    targets: [.target(name: "MyPackage", dependencies: ["Pango"])]
 )
 ```
 
@@ -45,7 +47,7 @@ After that, use the (usual) Build and Test buttons to build/test this package.  
 
 ### Swift
 
-To build, you need at least Swift 4 (Swift 4.2.x should work fine), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well (install them using `xcode-select --install`)).  Test that your compiler works using `swift --version`, which should give you something like
+To build, you need at least Swift 4 (Swift 5 should work fine), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well (install them using `xcode-select --install`)).  Test that your compiler works using `swift --version`, which should give you something like
 
 	$ swift --version
 	Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)
@@ -54,12 +56,12 @@ To build, you need at least Swift 4 (Swift 4.2.x should work fine), download fro
 on macOS, or on Linux you should get something like:
 
 	$ swift --version
-	Swift version 4.2.1 (swift-4.2.1-RELEASE)
+	Swift version 4.2.3 (swift-4.2.3-RELEASE)
 	Target: x86_64-unknown-linux-gnu
 
 ### GLib 2.46 or higher
 
-These Swift wrappers have been tested with glib-2.46, 2.48, 2.52, 2.56 and 2.58.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
+These Swift wrappers have been tested with glib-2.46, 2.48, 2.52, 2.56, 2.58, and 2.60.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
 
 #### Linux
 
