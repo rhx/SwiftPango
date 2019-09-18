@@ -59,8 +59,12 @@ struct _PangoCairoFontMap {};
 #include <pango/pangofc-font.h>
 #include <pango/pangofc-fontmap.h>
 #include <pango/pangoft2.h>
-#ifdef __APPLE__
-#include <pango/pangocoretext.h>
+#if PANGO_VERSION_MAJOR == 1 && PANGO_VERSION_MINOR < 44
+#  ifdef __APPLE__
+#    include <pango/pangocoretext.h>
+#  endif
+#else
+struct hb_font_t {};
 #endif
 
 typedef struct {
