@@ -200,7 +200,7 @@ public extension TabArrayProtocol {
     }
 
     /// If non-`nil`, `alignments` and `locations` are filled with allocated
-    /// arrays of length pango_tab_array_get_size(). You must free the
+    /// arrays of length `pango_tab_array_get_size()`. You must free the
     /// returned array.
     func getTabs(alignments: UnsafeMutablePointer<UnsafeMutablePointer<PangoTabAlign>>, locations: UnsafeMutablePointer<UnsafeMutablePointer<CInt>>) {
         pango_tab_array_get_tabs(cast(tab_array_ptr), cast(alignments), cast(locations))

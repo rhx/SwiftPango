@@ -126,27 +126,26 @@ open class FontFace: Object, FontFaceProtocol {
 
 public enum FontFaceSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -368,27 +367,26 @@ open class FontFamily: Object, FontFamilyProtocol {
 
 public enum FontFamilySignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -448,12 +446,12 @@ public extension FontFamilyProtocol {
     /// mean that the advance width of all characters are the same, but
     /// this categorization also includes Asian fonts which include
     /// double-width characters: characters that occupy two grid cells.
-    /// g_unichar_iswide() returns a result that indicates whether a
+    /// `g_unichar_iswide()` returns a result that indicates whether a
     /// character is typically double-width in a monospace font.
     /// 
     /// The best way to find out the grid-cell size is to call
-    /// pango_font_metrics_get_approximate_digit_width(), since the results
-    /// of pango_font_metrics_get_approximate_char_width() may be affected
+    /// `pango_font_metrics_get_approximate_digit_width()`, since the results
+    /// of `pango_font_metrics_get_approximate_char_width()` may be affected
     /// by double-width characters.
     var isMonospace: Bool {
         /// A monospace font is a font designed for text display where the the
@@ -461,12 +459,12 @@ public extension FontFamilyProtocol {
         /// mean that the advance width of all characters are the same, but
         /// this categorization also includes Asian fonts which include
         /// double-width characters: characters that occupy two grid cells.
-        /// g_unichar_iswide() returns a result that indicates whether a
+        /// `g_unichar_iswide()` returns a result that indicates whether a
         /// character is typically double-width in a monospace font.
         /// 
         /// The best way to find out the grid-cell size is to call
-        /// pango_font_metrics_get_approximate_digit_width(), since the results
-        /// of pango_font_metrics_get_approximate_char_width() may be affected
+        /// `pango_font_metrics_get_approximate_digit_width()`, since the results
+        /// of `pango_font_metrics_get_approximate_char_width()` may be affected
         /// by double-width characters.
         get {
             let rv = pango_font_family_is_monospace(cast(font_family_ptr))
@@ -515,7 +513,7 @@ public extension FontFamilyProtocol {
 /// specific code should allocate a larger structure that contains a nested
 /// `PangoFontMap`, fill in the <structfield>klass</structfield> member of the nested `PangoFontMap` with a
 /// pointer to a appropriate `PangoFontMapClass`, then call
-/// pango_font_map_init() on the structure.
+/// `pango_font_map_init()` on the structure.
 /// 
 /// The `PangoFontMap` structure contains one member which the implementation
 /// fills in.
@@ -538,7 +536,7 @@ public protocol FontMapProtocol: ObjectProtocol {
 /// specific code should allocate a larger structure that contains a nested
 /// `PangoFontMap`, fill in the <structfield>klass</structfield> member of the nested `PangoFontMap` with a
 /// pointer to a appropriate `PangoFontMapClass`, then call
-/// pango_font_map_init() on the structure.
+/// `pango_font_map_init()` on the structure.
 /// 
 /// The `PangoFontMap` structure contains one member which the implementation
 /// fills in.
@@ -601,7 +599,7 @@ public extension FontMapRef {
 /// specific code should allocate a larger structure that contains a nested
 /// `PangoFontMap`, fill in the <structfield>klass</structfield> member of the nested `PangoFontMap` with a
 /// pointer to a appropriate `PangoFontMapClass`, then call
-/// pango_font_map_init() on the structure.
+/// `pango_font_map_init()` on the structure.
 /// 
 /// The `PangoFontMap` structure contains one member which the implementation
 /// fills in.
@@ -651,27 +649,26 @@ open class FontMap: Object, FontMapProtocol {
 
 public enum FontMapSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -724,13 +721,13 @@ public extension FontMapProtocol {
     }
 
     /// Creates a `PangoContext` connected to `fontmap`.  This is equivalent
-    /// to pango_context_new() followed by pango_context_set_font_map().
+    /// to `pango_context_new()` followed by `pango_context_set_font_map()`.
     /// 
     /// If you are using Pango as part of a higher-level system,
     /// that system may have it's own way of create a `PangoContext`.
     /// For instance, the GTK+ toolkit has, among others,
-    /// gdk_pango_context_get_for_screen(), and
-    /// gtk_widget_get_pango_context().  Use those instead.
+    /// `gdk_pango_context_get_for_screen()`, and
+    /// `gtk_widget_get_pango_context()`.  Use those instead.
     func createContext() -> UnsafeMutablePointer<PangoContext>! {
         let rv = pango_font_map_create_context(cast(font_map_ptr))
         return cast(rv)
@@ -937,27 +934,26 @@ open class Fontset: Object, FontsetProtocol {
 
 public enum FontsetSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -1217,27 +1213,26 @@ open class Layout: Object, LayoutProtocol {
 
 public enum LayoutSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -1309,7 +1304,7 @@ public extension LayoutProtocol {
 
     /// Gets whether to calculate the bidirectional base direction
     /// for the layout according to the contents of the layout.
-    /// See pango_layout_set_auto_dir().
+    /// See `pango_layout_set_auto_dir()`.
     func getAutoDir() -> Bool {
         let rv = pango_layout_get_auto_dir(cast(layout_ptr))
         return Bool(rv != 0)
@@ -1348,7 +1343,7 @@ public extension LayoutProtocol {
     }
 
     /// Gets the type of ellipsization being performed for `layout`.
-    /// See pango_layout_set_ellipsize()
+    /// See `pango_layout_set_ellipsize()`
     func getEllipsize() -> PangoEllipsizeMode {
         let rv = pango_layout_get_ellipsize(cast(layout_ptr))
         return rv
@@ -1375,7 +1370,7 @@ public extension LayoutProtocol {
     }
 
     /// Gets the height of layout used for ellipsization.  See
-    /// pango_layout_set_height() for details.
+    /// `pango_layout_set_height()` for details.
     func getHeight() -> CInt {
         let rv = pango_layout_get_height(cast(layout_ptr))
         return rv
@@ -1403,7 +1398,7 @@ public extension LayoutProtocol {
 
     /// Retrieves a particular line from a `PangoLayout`.
     /// 
-    /// Use the faster pango_layout_get_line_readonly() if you do not plan
+    /// Use the faster `pango_layout_get_line_readonly()` if you do not plan
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
     func get(line: CInt) -> UnsafeMutablePointer<PangoLayoutLine>! {
         let rv = pango_layout_get_line(cast(layout_ptr), line)
@@ -1418,7 +1413,7 @@ public extension LayoutProtocol {
 
     /// Retrieves a particular line from a `PangoLayout`.
     /// 
-    /// This is a faster alternative to pango_layout_get_line(),
+    /// This is a faster alternative to `pango_layout_get_line()`,
     /// but the user is not expected
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
     func getLineReadonly(line: CInt) -> UnsafeMutablePointer<PangoLayoutLine>! {
@@ -1427,7 +1422,7 @@ public extension LayoutProtocol {
     }
 
     /// Gets the value that has been
-    /// set with pango_layout_set_line_spacing().
+    /// set with `pango_layout_set_line_spacing()`.
     func getLineSpacing() -> CFloat {
         let rv = pango_layout_get_line_spacing(cast(layout_ptr))
         return rv
@@ -1435,7 +1430,7 @@ public extension LayoutProtocol {
 
     /// Returns the lines of the `layout` as a list.
     /// 
-    /// Use the faster pango_layout_get_lines_readonly() if you do not plan
+    /// Use the faster `pango_layout_get_lines_readonly()` if you do not plan
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
     func getLines() -> UnsafeMutablePointer<GSList>! {
         let rv = pango_layout_get_lines(cast(layout_ptr))
@@ -1444,7 +1439,7 @@ public extension LayoutProtocol {
 
     /// Returns the lines of the `layout` as a list.
     /// 
-    /// This is a faster alternative to pango_layout_get_lines(),
+    /// This is a faster alternative to `pango_layout_get_lines()`,
     /// but the user is not expected
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
     func getLinesReadonly() -> UnsafeMutablePointer<GSList>! {
@@ -1462,7 +1457,7 @@ public extension LayoutProtocol {
     /// Retrieves an array of logical attributes for each character in
     /// the `layout`.
     /// 
-    /// This is a faster alternative to pango_layout_get_log_attrs().
+    /// This is a faster alternative to `pango_layout_get_log_attrs()`.
     /// The returned array is part of `layout` and must not be modified.
     /// Modifying the layout will invalidate the returned array.
     /// 
@@ -1476,20 +1471,20 @@ public extension LayoutProtocol {
     }
 
     /// Computes the logical and ink extents of `layout` in device units.
-    /// This function just calls pango_layout_get_extents() followed by
-    /// two pango_extents_to_pixels() calls, rounding `ink_rect` and `logical_rect`
+    /// This function just calls `pango_layout_get_extents()` followed by
+    /// two `pango_extents_to_pixels()` calls, rounding `ink_rect` and `logical_rect`
     /// such that the rounded rectangles fully contain the unrounded one (that is,
-    /// passes them as first argument to pango_extents_to_pixels()).
+    /// passes them as first argument to `pango_extents_to_pixels()`).
     func getPixelExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
         pango_layout_get_pixel_extents(cast(layout_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
     
     }
 
     /// Determines the logical width and height of a `PangoLayout`
-    /// in device units. (pango_layout_get_size() returns the width
+    /// in device units. (`pango_layout_get_size()` returns the width
     /// and height scaled by `PANGO_SCALE`.) This
     /// is simply a convenience function around
-    /// pango_layout_get_pixel_extents().
+    /// `pango_layout_get_pixel_extents()`.
     func getPixelSize(width: UnsafeMutablePointer<CInt>, height: UnsafeMutablePointer<CInt>) {
         pango_layout_get_pixel_size(cast(layout_ptr), cast(width), cast(height))
     
@@ -1504,13 +1499,13 @@ public extension LayoutProtocol {
     /// 
     /// This can be used to automatically detect changes to a `PangoLayout`, and
     /// is useful for example to decide whether a layout needs redrawing.
-    /// To force the serial to be increased, use pango_layout_context_changed().
+    /// To force the serial to be increased, use `pango_layout_context_changed()`.
     func getSerial() -> CUnsignedInt {
         let rv = pango_layout_get_serial(cast(layout_ptr))
         return CUnsignedInt(rv)
     }
 
-    /// Obtains the value set by pango_layout_set_single_paragraph_mode().
+    /// Obtains the value set by `pango_layout_set_single_paragraph_mode()`.
     func getSingleParagraphMode() -> Bool {
         let rv = pango_layout_get_single_paragraph_mode(cast(layout_ptr))
         return Bool(rv != 0)
@@ -1518,7 +1513,7 @@ public extension LayoutProtocol {
 
     /// Determines the logical width and height of a `PangoLayout`
     /// in Pango units (device units scaled by `PANGO_SCALE`). This
-    /// is simply a convenience function around pango_layout_get_extents().
+    /// is simply a convenience function around `pango_layout_get_extents()`.
     func getSize(width: UnsafeMutablePointer<CInt>, height: UnsafeMutablePointer<CInt>) {
         pango_layout_get_size(cast(layout_ptr), cast(width), cast(height))
     
@@ -1533,7 +1528,7 @@ public extension LayoutProtocol {
     /// Gets the current `PangoTabArray` used by this layout. If no
     /// `PangoTabArray` has been set, then the default tabs are in use
     /// and `nil` is returned. Default tabs are every 8 spaces.
-    /// The return value should be freed with pango_tab_array_free().
+    /// The return value should be freed with `pango_tab_array_free()`.
     func getTabs() -> UnsafeMutablePointer<PangoTabArray>! {
         let rv = pango_layout_get_tabs(cast(layout_ptr))
         return cast(rv)
@@ -1567,7 +1562,7 @@ public extension LayoutProtocol {
 
     /// Gets the wrap mode for the layout.
     /// 
-    /// Use pango_layout_is_wrapped() to query whether any paragraphs
+    /// Use `pango_layout_is_wrapped()` to query whether any paragraphs
     /// were actually wrapped.
     func getWrap() -> PangoWrapMode {
         let rv = pango_layout_get_wrap(cast(layout_ptr))
@@ -1605,7 +1600,7 @@ public extension LayoutProtocol {
     /// is moved off of the end of a run.
     /// 
     /// Motion here is in cursor positions, not in characters, so a
-    /// single call to pango_layout_move_cursor_visually() may move the
+    /// single call to `pango_layout_move_cursor_visually()` may move the
     /// cursor over multiple characters when multiple characters combine
     /// to form a single grapheme.
     func moveCursorVisually(strong: Bool, oldIndex old_index: CInt, oldTrailing old_trailing: CInt, direction: CInt, newIndex new_index: UnsafeMutablePointer<CInt>, newTrailing new_trailing: UnsafeMutablePointer<CInt>) {
@@ -1638,7 +1633,7 @@ public extension LayoutProtocol {
     /// 
     /// When `false`, the choice between left-to-right and
     /// right-to-left layout is done according to the base direction
-    /// of the layout's `PangoContext`. (See pango_context_set_base_dir()).
+    /// of the layout's `PangoContext`. (See `pango_context_set_base_dir()`).
     /// 
     /// When the auto-computed direction of a paragraph differs from the
     /// base direction of the context, the interpretation of
@@ -1652,13 +1647,13 @@ public extension LayoutProtocol {
     /// Depending on the ellipsization mode `ellipsize` text is
     /// removed from the start, middle, or end of text so they
     /// fit within the width and height of layout set with
-    /// pango_layout_set_width() and pango_layout_set_height().
+    /// `pango_layout_set_width()` and `pango_layout_set_height()`.
     /// 
     /// If the layout contains characters such as newlines that
     /// force it to be layed out in multiple paragraphs, then whether
     /// each paragraph is ellipsized separately or the entire layout
     /// is ellipsized as a whole depends on the set height of the layout.
-    /// See pango_layout_set_height() for details.
+    /// See `pango_layout_set_height()` for details.
     func set(ellipsize: EllipsizeMode) {
         pango_layout_set_ellipsize(cast(layout_ptr), ellipsize)
     
@@ -1736,9 +1731,9 @@ public extension LayoutProtocol {
     /// baseline2 = baseline1 + factor * height2
     /// 
     /// where height2 is the line height of the
-    /// second line (as determined by the font(s)).
+    /// second line (as determined by the `font(s)`).
     /// In this case, the spacing set with
-    /// pango_layout_set_spacing() is ignored.
+    /// `pango_layout_set_spacing()` is ignored.
     /// 
     /// If `factor` is zero, spacing is applied as
     /// before.
@@ -1747,7 +1742,7 @@ public extension LayoutProtocol {
     
     }
 
-    /// Same as pango_layout_set_markup_with_accel(), but
+    /// Same as `pango_layout_set_markup_with_accel()`, but
     /// the markup text isn't scanned for accelerators.
     func set(markup: UnsafePointer<CChar>, length: CInt) {
         pango_layout_set_markup(cast(layout_ptr), markup, length)
@@ -1789,7 +1784,7 @@ public extension LayoutProtocol {
     /// line height (as determined by the font) for placing
     /// lines. The `spacing` set with this function is only
     /// taken into account when the line-height factor is
-    /// set to zero with pango_layout_set_line_spacing().
+    /// set to zero with `pango_layout_set_line_spacing()`.
     func set(spacing: CInt) {
         pango_layout_set_spacing(cast(layout_ptr), spacing)
     
@@ -1809,9 +1804,9 @@ public extension LayoutProtocol {
     /// This function validates `text` and renders invalid UTF-8
     /// with a placeholder glyph.
     /// 
-    /// Note that if you have used pango_layout_set_markup() or
-    /// pango_layout_set_markup_with_accel() on `layout` before, you may
-    /// want to call pango_layout_set_attributes() to clear the attributes
+    /// Note that if you have used `pango_layout_set_markup()` or
+    /// `pango_layout_set_markup_with_accel()` on `layout` before, you may
+    /// want to call `pango_layout_set_attributes()` to clear the attributes
     /// set on the layout from the markup as this function does not clear
     /// attributes.
     func set(text: UnsafePointer<CChar>, length: CInt) {
@@ -1827,7 +1822,7 @@ public extension LayoutProtocol {
     }
 
     /// Sets the wrap mode; the wrap mode only has effect if a width
-    /// is set on the layout with pango_layout_set_width().
+    /// is set on the layout with `pango_layout_set_width()`.
     /// To turn off wrapping, set the width to -1.
     func set(wrap: WrapMode) {
         pango_layout_set_wrap(cast(layout_ptr), wrap)
@@ -1839,7 +1834,7 @@ public extension LayoutProtocol {
     /// Y position is not inside the layout, the closest position is chosen
     /// (the position will be clamped inside the layout). If the
     /// X position is not within the layout, then the start or the
-    /// end of the line is chosen as described for pango_layout_line_x_to_index().
+    /// end of the line is chosen as described for `pango_layout_line_x_to_index()`.
     /// If either the X or Y positions were not inside the layout, then the
     /// function returns `false`; on an exact hit, it returns `true`.
     func xyToIndex(x: CInt, y: CInt, index_: UnsafeMutablePointer<CInt>, trailing: UnsafeMutablePointer<CInt>) -> Bool {
@@ -1878,11 +1873,11 @@ public extension LayoutProtocol {
 
     /// Gets whether to calculate the bidirectional base direction
     /// for the layout according to the contents of the layout.
-    /// See pango_layout_set_auto_dir().
+    /// See `pango_layout_set_auto_dir()`.
     var autoDir: Bool {
         /// Gets whether to calculate the bidirectional base direction
         /// for the layout according to the contents of the layout.
-        /// See pango_layout_set_auto_dir().
+        /// See `pango_layout_set_auto_dir()`.
         get {
             let rv = pango_layout_get_auto_dir(cast(layout_ptr))
             return Bool(rv != 0)
@@ -1898,7 +1893,7 @@ public extension LayoutProtocol {
         /// 
         /// When `false`, the choice between left-to-right and
         /// right-to-left layout is done according to the base direction
-        /// of the layout's `PangoContext`. (See pango_context_set_base_dir()).
+        /// of the layout's `PangoContext`. (See `pango_context_set_base_dir()`).
         /// 
         /// When the auto-computed direction of a paragraph differs from the
         /// base direction of the context, the interpretation of
@@ -1938,10 +1933,10 @@ public extension LayoutProtocol {
     }
 
     /// Gets the type of ellipsization being performed for `layout`.
-    /// See pango_layout_set_ellipsize()
+    /// See `pango_layout_set_ellipsize()`
     var ellipsize: PangoEllipsizeMode {
         /// Gets the type of ellipsization being performed for `layout`.
-        /// See pango_layout_set_ellipsize()
+        /// See `pango_layout_set_ellipsize()`
         get {
             let rv = pango_layout_get_ellipsize(cast(layout_ptr))
             return rv
@@ -1950,13 +1945,13 @@ public extension LayoutProtocol {
         /// Depending on the ellipsization mode `ellipsize` text is
         /// removed from the start, middle, or end of text so they
         /// fit within the width and height of layout set with
-        /// pango_layout_set_width() and pango_layout_set_height().
+        /// `pango_layout_set_width()` and `pango_layout_set_height()`.
         /// 
         /// If the layout contains characters such as newlines that
         /// force it to be layed out in multiple paragraphs, then whether
         /// each paragraph is ellipsized separately or the entire layout
         /// is ellipsized as a whole depends on the set height of the layout.
-        /// See pango_layout_set_height() for details.
+        /// See `pango_layout_set_height()` for details.
         nonmutating set {
             pango_layout_set_ellipsize(cast(layout_ptr), newValue)
         }
@@ -1978,10 +1973,10 @@ public extension LayoutProtocol {
     }
 
     /// Gets the height of layout used for ellipsization.  See
-    /// pango_layout_set_height() for details.
+    /// `pango_layout_set_height()` for details.
     var height: CInt {
         /// Gets the height of layout used for ellipsization.  See
-        /// pango_layout_set_height() for details.
+        /// `pango_layout_set_height()` for details.
         get {
             let rv = pango_layout_get_height(cast(layout_ptr))
             return rv
@@ -2115,10 +2110,10 @@ public extension LayoutProtocol {
     }
 
     /// Gets the value that has been
-    /// set with pango_layout_set_line_spacing().
+    /// set with `pango_layout_set_line_spacing()`.
     var lineSpacing: CFloat {
         /// Gets the value that has been
-        /// set with pango_layout_set_line_spacing().
+        /// set with `pango_layout_set_line_spacing()`.
         get {
             let rv = pango_layout_get_line_spacing(cast(layout_ptr))
             return rv
@@ -2133,9 +2128,9 @@ public extension LayoutProtocol {
         /// baseline2 = baseline1 + factor * height2
         /// 
         /// where height2 is the line height of the
-        /// second line (as determined by the font(s)).
+        /// second line (as determined by the `font(s)`).
         /// In this case, the spacing set with
-        /// pango_layout_set_spacing() is ignored.
+        /// `pango_layout_set_spacing()` is ignored.
         /// 
         /// If `factor` is zero, spacing is applied as
         /// before.
@@ -2146,12 +2141,12 @@ public extension LayoutProtocol {
 
     /// Returns the lines of the `layout` as a list.
     /// 
-    /// Use the faster pango_layout_get_lines_readonly() if you do not plan
+    /// Use the faster `pango_layout_get_lines_readonly()` if you do not plan
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
     var lines: UnsafeMutablePointer<GSList>! {
         /// Returns the lines of the `layout` as a list.
         /// 
-        /// Use the faster pango_layout_get_lines_readonly() if you do not plan
+        /// Use the faster `pango_layout_get_lines_readonly()` if you do not plan
         /// to modify the contents of the lines (glyphs, glyph widths, etc.).
         get {
             let rv = pango_layout_get_lines(cast(layout_ptr))
@@ -2161,13 +2156,13 @@ public extension LayoutProtocol {
 
     /// Returns the lines of the `layout` as a list.
     /// 
-    /// This is a faster alternative to pango_layout_get_lines(),
+    /// This is a faster alternative to `pango_layout_get_lines()`,
     /// but the user is not expected
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
     var linesReadonly: UnsafeMutablePointer<GSList>! {
         /// Returns the lines of the `layout` as a list.
         /// 
-        /// This is a faster alternative to pango_layout_get_lines(),
+        /// This is a faster alternative to `pango_layout_get_lines()`,
         /// but the user is not expected
         /// to modify the contents of the lines (glyphs, glyph widths, etc.).
         get {
@@ -2185,7 +2180,7 @@ public extension LayoutProtocol {
     /// 
     /// This can be used to automatically detect changes to a `PangoLayout`, and
     /// is useful for example to decide whether a layout needs redrawing.
-    /// To force the serial to be increased, use pango_layout_context_changed().
+    /// To force the serial to be increased, use `pango_layout_context_changed()`.
     var serial: CUnsignedInt {
         /// Returns the current serial number of `layout`.  The serial number is
         /// initialized to an small number  larger than zero when a new layout
@@ -2196,16 +2191,16 @@ public extension LayoutProtocol {
         /// 
         /// This can be used to automatically detect changes to a `PangoLayout`, and
         /// is useful for example to decide whether a layout needs redrawing.
-        /// To force the serial to be increased, use pango_layout_context_changed().
+        /// To force the serial to be increased, use `pango_layout_context_changed()`.
         get {
             let rv = pango_layout_get_serial(cast(layout_ptr))
             return CUnsignedInt(rv)
         }
     }
 
-    /// Obtains the value set by pango_layout_set_single_paragraph_mode().
+    /// Obtains the value set by `pango_layout_set_single_paragraph_mode()`.
     var singleParagraphMode: Bool {
-        /// Obtains the value set by pango_layout_set_single_paragraph_mode().
+        /// Obtains the value set by `pango_layout_set_single_paragraph_mode()`.
         get {
             let rv = pango_layout_get_single_paragraph_mode(cast(layout_ptr))
             return Bool(rv != 0)
@@ -2236,7 +2231,7 @@ public extension LayoutProtocol {
         /// line height (as determined by the font) for placing
         /// lines. The `spacing` set with this function is only
         /// taken into account when the line-height factor is
-        /// set to zero with pango_layout_set_line_spacing().
+        /// set to zero with `pango_layout_set_line_spacing()`.
         nonmutating set {
             pango_layout_set_spacing(cast(layout_ptr), newValue)
         }
@@ -2245,12 +2240,12 @@ public extension LayoutProtocol {
     /// Gets the current `PangoTabArray` used by this layout. If no
     /// `PangoTabArray` has been set, then the default tabs are in use
     /// and `nil` is returned. Default tabs are every 8 spaces.
-    /// The return value should be freed with pango_tab_array_free().
+    /// The return value should be freed with `pango_tab_array_free()`.
     var tabs: UnsafeMutablePointer<PangoTabArray>! {
         /// Gets the current `PangoTabArray` used by this layout. If no
         /// `PangoTabArray` has been set, then the default tabs are in use
         /// and `nil` is returned. Default tabs are every 8 spaces.
-        /// The return value should be freed with pango_tab_array_free().
+        /// The return value should be freed with `pango_tab_array_free()`.
         get {
             let rv = pango_layout_get_tabs(cast(layout_ptr))
             return cast(rv)
@@ -2314,19 +2309,19 @@ public extension LayoutProtocol {
 
     /// Gets the wrap mode for the layout.
     /// 
-    /// Use pango_layout_is_wrapped() to query whether any paragraphs
+    /// Use `pango_layout_is_wrapped()` to query whether any paragraphs
     /// were actually wrapped.
     var wrap: PangoWrapMode {
         /// Gets the wrap mode for the layout.
         /// 
-        /// Use pango_layout_is_wrapped() to query whether any paragraphs
+        /// Use `pango_layout_is_wrapped()` to query whether any paragraphs
         /// were actually wrapped.
         get {
             let rv = pango_layout_get_wrap(cast(layout_ptr))
             return rv
         }
         /// Sets the wrap mode; the wrap mode only has effect if a width
-        /// is set on the layout with pango_layout_set_width().
+        /// is set on the layout with `pango_layout_set_width()`.
         /// To turn off wrapping, set the width to -1.
         nonmutating set {
             pango_layout_set_wrap(cast(layout_ptr), newValue)

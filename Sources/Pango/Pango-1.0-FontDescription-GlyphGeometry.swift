@@ -270,7 +270,7 @@ public extension FontDescriptionProtocol {
         return cast(rv)
     }
 
-    /// Like pango_font_description_copy(), but only a shallow copy is made
+    /// Like `pango_font_description_copy()`, but only a shallow copy is made
     /// of the family name and other allocated fields. The result can only
     /// be used until `desc` is modified or freed. This is meant to be used
     /// when the copy is only needed temporarily.
@@ -296,14 +296,14 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the family name field of a font description. See
-    /// pango_font_description_set_family().
+    /// `pango_font_description_set_family()`.
     func getFamily() -> String! {
         let rv = pango_font_description_get_family(cast(font_description_ptr))
         return rv.map { String(cString: UnsafePointer<CChar>($0)) }
     }
 
     /// Gets the gravity field of a font description. See
-    /// pango_font_description_set_gravity().
+    /// `pango_font_description_set_gravity()`.
     func getGravity() -> PangoGravity {
         let rv = pango_font_description_get_gravity(cast(font_description_ptr))
         return rv
@@ -316,56 +316,56 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the size field of a font description.
-    /// See pango_font_description_set_size().
+    /// See `pango_font_description_set_size()`.
     func getSize() -> CInt {
         let rv = pango_font_description_get_size(cast(font_description_ptr))
         return CInt(rv)
     }
 
     /// Determines whether the size of the font is in points (not absolute) or device units (absolute).
-    /// See pango_font_description_set_size() and pango_font_description_set_absolute_size().
+    /// See `pango_font_description_set_size()` and `pango_font_description_set_absolute_size()`.
     func getSizeIsAbsolute() -> Bool {
         let rv = pango_font_description_get_size_is_absolute(cast(font_description_ptr))
         return Bool(rv != 0)
     }
 
     /// Gets the stretch field of a font description.
-    /// See pango_font_description_set_stretch().
+    /// See `pango_font_description_set_stretch()`.
     func getStretch() -> PangoStretch {
         let rv = pango_font_description_get_stretch(cast(font_description_ptr))
         return rv
     }
 
     /// Gets the style field of a `PangoFontDescription`. See
-    /// pango_font_description_set_style().
+    /// `pango_font_description_set_style()`.
     func getStyle() -> PangoStyle {
         let rv = pango_font_description_get_style(cast(font_description_ptr))
         return rv
     }
 
     /// Gets the variant field of a `PangoFontDescription`. See
-    /// pango_font_description_set_variant().
+    /// `pango_font_description_set_variant()`.
     func getVariant() -> PangoVariant {
         let rv = pango_font_description_get_variant(cast(font_description_ptr))
         return rv
     }
 
     /// Gets the variations field of a font description. See
-    /// pango_font_description_set_variations().
+    /// `pango_font_description_set_variations()`.
     func getVariations() -> String! {
         let rv = pango_font_description_get_variations(cast(font_description_ptr))
         return rv.map { String(cString: UnsafePointer<CChar>($0)) }
     }
 
     /// Gets the weight field of a font description. See
-    /// pango_font_description_set_weight().
+    /// `pango_font_description_set_weight()`.
     func getWeight() -> PangoWeight {
         let rv = pango_font_description_get_weight(cast(font_description_ptr))
         return rv
     }
 
     /// Computes a hash of a `PangoFontDescription` structure suitable
-    /// to be used, for example, as an argument to g_hash_table_new().
+    /// to be used, for example, as an argument to `g_hash_table_new()`.
     /// The hash value is independent of `desc`->mask.
     func hash() -> CUnsignedInt {
         let rv = pango_font_description_hash(cast(font_description_ptr))
@@ -383,7 +383,7 @@ public extension FontDescriptionProtocol {
     
     }
 
-    /// Like pango_font_description_merge(), but only a shallow copy is made
+    /// Like `pango_font_description_merge()`, but only a shallow copy is made
     /// of the family name and other allocated fields. `desc` can only be
     /// used until `desc_to_merge` is modified or freed. This is meant
     /// to be used when the merged font description is only needed temporarily.
@@ -393,7 +393,7 @@ public extension FontDescriptionProtocol {
     }
 
     /// Sets the size field of a font description, in device units. This is mutually
-    /// exclusive with pango_font_description_set_size() which sets the font size
+    /// exclusive with `pango_font_description_set_size()` which sets the font size
     /// in points.
     func setAbsolute(size: gdouble) {
         pango_font_description_set_absolute_size(cast(font_description_ptr), size)
@@ -410,7 +410,7 @@ public extension FontDescriptionProtocol {
     
     }
 
-    /// Like pango_font_description_set_family(), except that no
+    /// Like `pango_font_description_set_family()`, except that no
     /// copy of `family` is made. The caller must make sure that the
     /// string passed in stays around until `desc` has been freed
     /// or the name is set again. This function can be used if
@@ -434,7 +434,7 @@ public extension FontDescriptionProtocol {
     }
 
     /// Sets the size field of a font description in fractional points. This is mutually
-    /// exclusive with pango_font_description_set_absolute_size().
+    /// exclusive with `pango_font_description_set_absolute_size()`.
     func set(size: CInt) {
         pango_font_description_set_size(cast(font_description_ptr), gint(size))
     
@@ -483,7 +483,7 @@ public extension FontDescriptionProtocol {
     
     }
 
-    /// Like pango_font_description_set_variations(), except that no
+    /// Like `pango_font_description_set_variations()`, except that no
     /// copy of `variations` is made. The caller must make sure that the
     /// string passed in stays around until `desc` has been freed
     /// or the name is set again. This function can be used if
@@ -505,7 +505,7 @@ public extension FontDescriptionProtocol {
 
     /// Creates a filename representation of a font description. The
     /// filename is identical to the result from calling
-    /// pango_font_description_to_string(), but with underscores instead of
+    /// `pango_font_description_to_string()`, but with underscores instead of
     /// characters that are untypical in filenames, and in lower case only.
     func toFilename() -> String! {
         let rv = pango_font_description_to_filename(cast(font_description_ptr))
@@ -513,7 +513,7 @@ public extension FontDescriptionProtocol {
     }
 
     /// Creates a string representation of a font description. See
-    /// pango_font_description_from_string() for a description of the
+    /// `pango_font_description_from_string()` for a description of the
     /// format of the string representation. The family list in the
     /// string description will only have a terminating comma if the
     /// last word of the list is a valid style option.
@@ -537,10 +537,10 @@ public extension FontDescriptionProtocol {
         return cast(rv)
     }
     /// Gets the family name field of a font description. See
-    /// pango_font_description_set_family().
+    /// `pango_font_description_set_family()`.
     var family: String! {
         /// Gets the family name field of a font description. See
-        /// pango_font_description_set_family().
+        /// `pango_font_description_set_family()`.
         get {
             let rv = pango_font_description_get_family(cast(font_description_ptr))
             return rv.map { String(cString: UnsafePointer<CChar>($0)) }
@@ -556,10 +556,10 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the gravity field of a font description. See
-    /// pango_font_description_set_gravity().
+    /// `pango_font_description_set_gravity()`.
     var gravity: PangoGravity {
         /// Gets the gravity field of a font description. See
-        /// pango_font_description_set_gravity().
+        /// `pango_font_description_set_gravity()`.
         get {
             let rv = pango_font_description_get_gravity(cast(font_description_ptr))
             return rv
@@ -586,26 +586,26 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the size field of a font description.
-    /// See pango_font_description_set_size().
+    /// See `pango_font_description_set_size()`.
     var size: CInt {
         /// Gets the size field of a font description.
-        /// See pango_font_description_set_size().
+        /// See `pango_font_description_set_size()`.
         get {
             let rv = pango_font_description_get_size(cast(font_description_ptr))
             return CInt(rv)
         }
         /// Sets the size field of a font description in fractional points. This is mutually
-        /// exclusive with pango_font_description_set_absolute_size().
+        /// exclusive with `pango_font_description_set_absolute_size()`.
         nonmutating set {
             pango_font_description_set_size(cast(font_description_ptr), gint(newValue))
         }
     }
 
     /// Determines whether the size of the font is in points (not absolute) or device units (absolute).
-    /// See pango_font_description_set_size() and pango_font_description_set_absolute_size().
+    /// See `pango_font_description_set_size()` and `pango_font_description_set_absolute_size()`.
     var sizeIsAbsolute: Bool {
         /// Determines whether the size of the font is in points (not absolute) or device units (absolute).
-        /// See pango_font_description_set_size() and pango_font_description_set_absolute_size().
+        /// See `pango_font_description_set_size()` and `pango_font_description_set_absolute_size()`.
         get {
             let rv = pango_font_description_get_size_is_absolute(cast(font_description_ptr))
             return Bool(rv != 0)
@@ -613,10 +613,10 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the stretch field of a font description.
-    /// See pango_font_description_set_stretch().
+    /// See `pango_font_description_set_stretch()`.
     var stretch: PangoStretch {
         /// Gets the stretch field of a font description.
-        /// See pango_font_description_set_stretch().
+        /// See `pango_font_description_set_stretch()`.
         get {
             let rv = pango_font_description_get_stretch(cast(font_description_ptr))
             return rv
@@ -629,10 +629,10 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the style field of a `PangoFontDescription`. See
-    /// pango_font_description_set_style().
+    /// `pango_font_description_set_style()`.
     var style: PangoStyle {
         /// Gets the style field of a `PangoFontDescription`. See
-        /// pango_font_description_set_style().
+        /// `pango_font_description_set_style()`.
         get {
             let rv = pango_font_description_get_style(cast(font_description_ptr))
             return rv
@@ -651,10 +651,10 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the variant field of a `PangoFontDescription`. See
-    /// pango_font_description_set_variant().
+    /// `pango_font_description_set_variant()`.
     var variant: PangoVariant {
         /// Gets the variant field of a `PangoFontDescription`. See
-        /// pango_font_description_set_variant().
+        /// `pango_font_description_set_variant()`.
         get {
             let rv = pango_font_description_get_variant(cast(font_description_ptr))
             return rv
@@ -667,10 +667,10 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the variations field of a font description. See
-    /// pango_font_description_set_variations().
+    /// `pango_font_description_set_variations()`.
     var variations: String! {
         /// Gets the variations field of a font description. See
-        /// pango_font_description_set_variations().
+        /// `pango_font_description_set_variations()`.
         get {
             let rv = pango_font_description_get_variations(cast(font_description_ptr))
             return rv.map { String(cString: UnsafePointer<CChar>($0)) }
@@ -692,10 +692,10 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the weight field of a font description. See
-    /// pango_font_description_set_weight().
+    /// `pango_font_description_set_weight()`.
     var weight: PangoWeight {
         /// Gets the weight field of a font description. See
-        /// pango_font_description_set_weight().
+        /// `pango_font_description_set_weight()`.
         get {
             let rv = pango_font_description_get_weight(cast(font_description_ptr))
             return rv
@@ -1289,7 +1289,7 @@ public extension FontMetricsProtocol {
     /// determining the initial size for a window. Actual digits in
     /// text can be wider or narrower than this, though this value
     /// is generally somewhat more accurate than the result of
-    /// pango_font_metrics_get_approximate_char_width() for digits.
+    /// `pango_font_metrics_get_approximate_char_width()` for digits.
     func getApproximateDigitWidth() -> CInt {
         let rv = pango_font_metrics_get_approximate_digit_width(cast(font_metrics_ptr))
         return rv
@@ -1388,14 +1388,14 @@ public extension FontMetricsProtocol {
     /// determining the initial size for a window. Actual digits in
     /// text can be wider or narrower than this, though this value
     /// is generally somewhat more accurate than the result of
-    /// pango_font_metrics_get_approximate_char_width() for digits.
+    /// `pango_font_metrics_get_approximate_char_width()` for digits.
     var approximateDigitWidth: CInt {
         /// Gets the approximate digit width for a font metrics structure.
         /// This is merely a representative value useful, for example, for
         /// determining the initial size for a window. Actual digits in
         /// text can be wider or narrower than this, though this value
         /// is generally somewhat more accurate than the result of
-        /// pango_font_metrics_get_approximate_char_width() for digits.
+        /// `pango_font_metrics_get_approximate_char_width()` for digits.
         get {
             let rv = pango_font_metrics_get_approximate_digit_width(cast(font_metrics_ptr))
             return rv

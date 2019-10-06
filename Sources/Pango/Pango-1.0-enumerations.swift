@@ -5,7 +5,7 @@ import GLibObject
 
 /// A `PangoAlignment` describes how to align the lines of a `PangoLayout` within the
 /// available space. If the `PangoLayout` is set to justify
-/// using pango_layout_set_justify(), this only has effect for partial lines.
+/// using `pango_layout_set_justify()`, this only has effect for partial lines.
 public typealias Alignment = PangoAlignment
 
 public extension Alignment {
@@ -20,7 +20,7 @@ public extension Alignment {
 /// The `PangoAttrType`
 /// distinguishes between different types of attributes. Along with the
 /// predefined values, it is possible to allocate additional values
-/// for custom attributes using pango_attr_type_register(). The predefined
+/// for custom attributes using `pango_attr_type_register()`. The predefined
 /// values are given below. The type of structure used to store the
 /// attribute is listed in parentheses after the description.
 public typealias AttrType = PangoAttrType
@@ -161,12 +161,12 @@ public extension CoverageLevel {
 /// The `PangoDirection` type represents a direction in the
 /// Unicode bidirectional algorithm; not every value in this
 /// enumeration makes sense for every usage of `PangoDirection`;
-/// for example, the return value of pango_unichar_direction()
-/// and pango_find_base_dir() cannot be `PANGO_DIRECTION_WEAK_LTR`
+/// for example, the return value of `pango_unichar_direction()`
+/// and `pango_find_base_dir()` cannot be `PANGO_DIRECTION_WEAK_LTR`
 /// or `PANGO_DIRECTION_WEAK_RTL`, since every character is either
 /// neutral or has a strong direction; on the other hand
 /// `PANGO_DIRECTION_NEUTRAL` doesn't make sense to pass
-/// to pango_itemize_with_base_dir().
+/// to `pango_itemize_with_base_dir()`.
 /// 
 /// The `PANGO_DIRECTION_TTB_LTR`, `PANGO_DIRECTION_TTB_RTL`
 /// values come from an earlier interpretation of this
@@ -222,8 +222,8 @@ public extension EllipsizeMode {
 /// and then glyph orientation is controlled using `PangoGravity`.
 /// Not every value in this enumeration makes sense for every usage of
 /// `PangoGravity`; for example, `PANGO_GRAVITY_AUTO` only can be passed to
-/// pango_context_set_base_gravity() and can only be returned by
-/// pango_context_get_base_gravity().
+/// `pango_context_set_base_gravity()` and can only be returned by
+/// `pango_context_get_base_gravity()`.
 /// 
 /// See also: `PangoGravityHint`
 public typealias Gravity = PangoGravity
@@ -281,7 +281,7 @@ public extension RenderPart {
 /// systems. The values correspond to the names as defined in the
 /// Unicode standard. See <ulink
 /// url="http://www.unicode.org/reports/tr24/">Unicode Standard Annex
-/// `24`: Script names</ulink>.
+/// `24:` Script names</ulink>.
 /// 
 /// Note that this enumeration is deprecated and will not be updated
 /// to include values in newer versions of the Unicode standard.
@@ -290,7 +290,7 @@ public extension RenderPart {
 public typealias Script = PangoScript
 
 public extension Script {
-    /// a value never returned from pango_script_for_unichar()
+    /// a value never returned from `pango_script_for_unichar()`
     static let invalid_code = PANGO_SCRIPT_INVALID_CODE /* -1 */
     /// a character used by multiple different scripts
     static let common = PANGO_SCRIPT_COMMON /* 0 */

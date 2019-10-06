@@ -27,7 +27,7 @@ public extension FontMask {
 }
 
 /// Flags influencing the shaping process.
-/// These can be passed to pango_shape_with_flags().
+/// These can be passed to `pango_shape_with_flags()`.
 public typealias ShapeFlags = PangoShapeFlags
 
 public extension ShapeFlags {

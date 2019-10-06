@@ -11,7 +11,7 @@ public typealias Glyph = PangoGlyph
 /// (A device unit might be a pixel for screen display, or
 /// a point on a printer.) `PANGO_SCALE` is currently 1024, and
 /// may change in the future (unlikely though), but you should not
-/// depend on its exact value. The PANGO_PIXELS() macro can be used
+/// depend on its exact value. The `PANGO_PIXELS()` macro can be used
 /// to convert from glyph units into device units with correct rounding.
 public typealias GlyphUnit = PangoGlyphUnit
 

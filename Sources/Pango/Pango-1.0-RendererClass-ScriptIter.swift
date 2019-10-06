@@ -396,7 +396,7 @@ public extension ScriptIterRef {
         /// Create a new `PangoScriptIter`, used to break a string of
     /// Unicode text into runs by Unicode script. No copy is made of
     /// `text`, so the caller needs to make sure it remains valid until
-    /// the iterator is freed with pango_script_iter_free().
+    /// the iterator is freed with `pango_script_iter_free()`.
     init( text: UnsafePointer<CChar>, length: CInt) {
         let rv = pango_script_iter_new(text, length)
         self.init(cast(rv))
@@ -459,7 +459,7 @@ open class ScriptIter: ScriptIterProtocol {
     /// Create a new `PangoScriptIter`, used to break a string of
     /// Unicode text into runs by Unicode script. No copy is made of
     /// `text`, so the caller needs to make sure it remains valid until
-    /// the iterator is freed with pango_script_iter_free().
+    /// the iterator is freed with `pango_script_iter_free()`.
     public convenience init( text: UnsafePointer<CChar>, length: CInt) {
         let rv = pango_script_iter_new(text, length)
         self.init(cast(rv))
@@ -477,7 +477,7 @@ public extension ScriptIterProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoScriptIter` instance.
     var script_iter_ptr: UnsafeMutablePointer<PangoScriptIter> { return ptr.assumingMemoryBound(to: PangoScriptIter.self) }
 
-    /// Frees a `PangoScriptIter` created with pango_script_iter_new().
+    /// Frees a `PangoScriptIter` created with `pango_script_iter_new()`.
     func free() {
         pango_script_iter_free(cast(script_iter_ptr))
     

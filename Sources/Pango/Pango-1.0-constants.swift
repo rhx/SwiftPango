@@ -36,7 +36,7 @@ public let ENGINE_TYPE_SHAPE = PANGO_ENGINE_TYPE_SHAPE /* utf8 5 */
 /// The `PANGO_GLYPH_EMPTY` macro represents a `PangoGlyph` value that has a
 ///  special meaning, which is a zero-width empty glyph.  This is useful for
 /// example in shaper modules, to use as the glyph for various zero-width
-/// Unicode characters (those passing pango_is_zero_width()).
+/// Unicode characters (those passing `pango_is_zero_width()`).
 public let GLYPH_EMPTY: Glyph = 268435455 /* PANGO_GLYPH_EMPTY */
 
 /// The `PANGO_GLYPH_INVALID_INPUT` macro represents a `PangoGlyph` value that has a

@@ -173,7 +173,7 @@ public func attrShapeNew(inkRect ink_rect: RectangleProtocol, logicalRect logica
 
 
 
-/// Like pango_attr_shape_new(), but a user data pointer is also
+/// Like `pango_attr_shape_new()`, but a user data pointer is also
 /// provided; this pointer can be accessed when later
 /// rendering the glyph.
 public func attrShapeNewWithData(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol, data: UnsafeMutableRawPointer, copyFunc copy_func: @escaping AttrDataCopyFunc, destroyFunc destroy_func: @escaping GLib.DestroyNotify) -> UnsafeMutablePointer<PangoAttribute>! {
@@ -251,9 +251,9 @@ public func attrStyleNew(style: Style) -> UnsafeMutablePointer<PangoAttribute>! 
 
 
 /// Fetches the attribute type name passed in when registering the type using
-/// pango_attr_type_register().
+/// `pango_attr_type_register()`.
 /// 
-/// The returned value is an interned string (see g_intern_string() for what
+/// The returned value is an interned string (see `g_intern_string()` for what
 /// that means) that should not be modified or freed.
 public func attrTypeGetName(type: AttrType) -> String! {
     let rv = pango_attr_type_get_name(type)
@@ -264,7 +264,7 @@ public func attrTypeGetName(type: AttrType) -> String! {
 
 
 /// Allocate a new attribute type ID.  The attribute type name can be accessed
-/// later by using pango_attr_type_get_name().
+/// later by using `pango_attr_type_get_name()`.
 public func attrTypeRegister(name: UnsafePointer<gchar>) -> PangoAttrType {
     let rv = pango_attr_type_register(name)
     return rv
@@ -315,7 +315,7 @@ public func attrWeightNew(weight: Weight) -> UnsafeMutablePointer<PangoAttribute
 /// character, as specified in the Unicode Character Database.
 /// 
 /// A simplified version of this function is available as
-/// pango_unichar_direction().
+/// `pango_unichar_direction()`.
 public func bidiTypeForUnichar(ch: gunichar) -> PangoBidiType {
     let rv = pango_bidi_type_for_unichar(ch)
     return rv
@@ -326,7 +326,7 @@ public func bidiTypeForUnichar(ch: gunichar) -> PangoBidiType {
 
 /// Determines possible line, word, and character breaks
 /// for a string of Unicode text with a single analysis.
-/// For most purposes you may want to use pango_get_log_attrs().
+/// For most purposes you may want to use `pango_get_log_attrs()`.
 ///
 /// **break is deprecated:**
 /// Use pango_default_break() and pango_tailor_break()
@@ -342,7 +342,7 @@ public func bidiTypeForUnichar(ch: gunichar) -> PangoBidiType {
 /// rules without language-specific tailoring, therefore
 /// the `analyis` argument is unused and can be `nil`.
 /// 
-/// See pango_tailor_break() for language-specific breaks.
+/// See `pango_tailor_break()` for language-specific breaks.
 public func defaultBreak(text: UnsafePointer<gchar>, length: CInt, analysis: AnalysisProtocol, attrs: LogAttrProtocol, attrsLen attrs_len: CInt) {
     pango_default_break(text, length, cast(analysis.ptr), cast(attrs.ptr), attrs_len)
 
@@ -483,7 +483,7 @@ public func getLogAttrs(text: UnsafePointer<CChar>, length: CInt, level: CInt, l
 /// character that typically has a glyph that is the mirror image of `ch`'s
 /// glyph, puts that character in the address pointed to by `mirrored_ch`.
 /// 
-/// Use g_unichar_get_mirror_char() instead; the docs for that function
+/// Use `g_unichar_get_mirror_char()` instead; the docs for that function
 /// provide full details.
 @available(*, deprecated) public func getMirrorChar(ch: gunichar, mirroredCh mirrored_ch: UnsafeMutablePointer<gunichar>) -> Bool {
     let rv = pango_get_mirror_char(ch, cast(mirrored_ch))
@@ -521,7 +521,7 @@ public func gravityGetFor(script: Script, baseGravity base_gravity: Gravity, hin
 /// returns actual gravity to use in laying out a single character
 /// or `PangoItem`.
 /// 
-/// This function is similar to pango_gravity_get_for_script() except
+/// This function is similar to `pango_gravity_get_for_script()` except
 /// that this function makes a distinction between narrow/half-width and
 /// wide/full-width characters also.  Wide/full-width characters always
 /// stand <emphasis>upright</emphasis>, that is, they always take the base gravity,
@@ -541,8 +541,8 @@ public func gravityGetForScriptAndWidth(script: Script, wide: Bool, baseGravity 
 /// Converts a `PangoGravity` value to its natural rotation in radians.
 /// `gravity` should not be `PANGO_GRAVITY_AUTO`.
 /// 
-/// Note that pango_matrix_rotate() takes angle in degrees, not radians.
-/// So, to call pango_matrix_rotate() with the output of this function
+/// Note that `pango_matrix_rotate()` takes angle in degrees, not radians.
+/// So, to call `pango_matrix_rotate()` with the output of this function
 /// you should multiply it by (180. / G_PI).
 public func gravityToRotation(gravity: Gravity) -> CDouble {
     let rv = pango_gravity_to_rotation(gravity)
@@ -555,7 +555,7 @@ public func gravityToRotation(gravity: Gravity) -> CDouble {
 /// Checks `ch` to see if it is a character that should not be
 /// normally rendered on the screen.  This includes all Unicode characters
 /// with "ZERO WIDTH" in their name, as well as <firstterm>bidi</firstterm> formatting characters, and
-/// a few other ones.  This is totally different from g_unichar_iszerowidth()
+/// a few other ones.  This is totally different from `g_unichar_iszerowidth()`
 /// and is at best misnamed.
 public func isZeroWidth(ch: gunichar) -> Bool {
     let rv = pango_is_zero_width(ch)
@@ -583,7 +583,7 @@ public func itemize(context: ContextProtocol, text: UnsafePointer<CChar>, startI
 
 
 
-/// Like pango_itemize(), but the base direction to use when
+/// Like `pango_itemize()`, but the base direction to use when
 /// computing bidirectional levels (see pango_context_set_base_dir ()),
 /// is specified explicitly rather than gotten from the `PangoContext`.
 public func itemizeWithBaseDir(context: ContextProtocol, baseDir base_dir: Direction, text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, attrs: AttrListProtocol, cachedIter cached_iter: AttrIteratorProtocol) -> UnsafeMutablePointer<GList>! {
@@ -603,7 +603,7 @@ public func itemizeWithBaseDir(context: ContextProtocol, baseDir base_dir: Direc
 /// lowercase, mapping '_' to '-', and stripping all characters other
 /// than letters and '-'.
 /// 
-/// Use pango_language_get_default() if you want to get the `PangoLanguage` for
+/// Use `pango_language_get_default()` if you want to get the `PangoLanguage` for
 /// the current locale of the process.
 public func languageFromString(language: UnsafePointer<CChar>) -> UnsafeMutablePointer<PangoLanguage>! {
     let rv = pango_language_from_string(language)
@@ -617,7 +617,7 @@ public func languageFromString(language: UnsafePointer<CChar>) -> UnsafeMutableP
 /// Note that this can change over the life of an application.
 /// 
 /// On Unix systems, this is the return value is derived from
-/// <literal>setlocale(LC_CTYPE, NULL)</literal>, and the user can
+/// `<literal>setlocale(LC_CTYPE, NULL)`</literal>, and the user can
 /// affect this through the environment variables LC_ALL, LC_CTYPE or
 /// LANG (checked in that order). The locale string typically is in
 /// the form lang_COUNTRY, where lang is an ISO-639 language code, and
@@ -627,17 +627,17 @@ public func languageFromString(language: UnsafePointer<CChar>) -> UnsafeMutableP
 /// 
 /// On Windows, the C library does not use any such environment
 /// variables, and setting them won't affect the behavior of functions
-/// like ctime(). The user sets the locale through the Regional Options
-/// in the Control Panel. The C library (in the setlocale() function)
+/// like `ctime()`. The user sets the locale through the Regional Options
+/// in the Control Panel. The C library (in the `setlocale()` function)
 /// does not use country and language codes, but country and language
 /// names spelled out in English.
 /// However, this function does check the above environment
 /// variables, and does return a Unix-style locale string based on
 /// either said environment variables or the thread's current locale.
 /// 
-/// Your application should call <literal>setlocale(LC_ALL, "");</literal>
+/// Your application should call `<literal>setlocale(LC_ALL, "")`;</literal>
 /// for the user settings to take effect.  Gtk+ does this in its initialization
-/// functions automatically (by calling gtk_set_locale()).
+/// functions automatically (by calling `gtk_set_locale()`).
 /// See <literal>man setlocale</literal> for more details.
 public func languageGetDefault() -> UnsafeMutablePointer<PangoLanguage>! {
     let rv = pango_language_get_default()
@@ -662,9 +662,9 @@ public func log2visGetEmbeddingLevels(text: UnsafePointer<gchar>, length: CInt, 
 
 
 
-/// After feeding a pango markup parser some data with g_markup_parse_context_parse(),
+/// After feeding a pango markup parser some data with `g_markup_parse_context_parse()`,
 /// use this function to get the list of pango attributes and text out of the
-/// markup. This function will not free `context`, use g_markup_parse_context_free()
+/// markup. This function will not free `context`, use `g_markup_parse_context_free()`
 /// to do so.
 public func markupParserFinish(context: MarkupParseContextProtocol, attrList attr_list: AttrListProtocol, text: UnsafeMutablePointer<UnsafeMutablePointer<CChar>>, accelChar accel_char: UnsafeMutablePointer<gunichar>) throws -> Bool {
     var error: Optional<UnsafeMutablePointer<GError>> = nil
@@ -687,17 +687,17 @@ public func markupParserFinish(context: MarkupParseContextProtocol, attrList att
 /// might be an ampersand or underscore. All characters marked
 /// as an accelerator will receive a `PANGO_UNDERLINE_LOW` attribute,
 /// and the first character so marked will be returned in `accel_char`,
-/// when calling finish(). Two `accel_marker` characters following each
+/// when calling `finish()`. Two `accel_marker` characters following each
 /// other produce a single literal `accel_marker` character.
 /// 
-/// To feed markup to the parser, use g_markup_parse_context_parse()
+/// To feed markup to the parser, use `g_markup_parse_context_parse()`
 /// on the returned `GMarkupParseContext`. When done with feeding markup
-/// to the parser, use pango_markup_parser_finish() to get the data out
-/// of it, and then use g_markup_parse_context_free() to free it.
+/// to the parser, use `pango_markup_parser_finish()` to get the data out
+/// of it, and then use `g_markup_parse_context_free()` to free it.
 /// 
 /// This function is designed for applications that read pango markup
 /// from streams. To simply parse a string containing pango markup,
-/// the simpler pango_parse_markup() API is recommended instead.
+/// the simpler `pango_parse_markup()` API is recommended instead.
 public func markupParserNew(accelMarker accel_marker: gunichar) -> UnsafeMutablePointer<GMarkupParseContext>! {
     let rv = pango_markup_parser_new(accel_marker)
     return cast(rv)
@@ -726,7 +726,7 @@ public func markupParserNew(accelMarker accel_marker: gunichar) -> UnsafeMutable
 /// string representing the list of possible values is stored in
 /// `possible_values`.  The list is slash-separated, eg.
 /// "none/start/middle/end".  If failed and `possible_values` is not `nil`,
-/// returned string should be freed using g_free().
+/// returned string should be freed using `g_free()`.
 ///
 /// **parse_enum is deprecated:**
 /// This method is deprecated.
@@ -750,7 +750,7 @@ public func markupParserNew(accelMarker accel_marker: gunichar) -> UnsafeMutable
 /// Two `accel_marker` characters following each other produce a single
 /// literal `accel_marker` character.
 /// 
-/// To parse a stream of pango markup incrementally, use pango_markup_parser_new().
+/// To parse a stream of pango markup incrementally, use `pango_markup_parser_new()`.
 /// 
 /// If any error happens, none of the output arguments are touched except
 /// for `error`.
@@ -906,7 +906,7 @@ public func reorderItems(logicalItems logical_items: ListProtocol) -> UnsafeMuta
 /// 
 /// Note that while the return type of this function is declared
 /// as PangoScript, as of Pango 1.18, this function simply returns
-/// the return value of g_unichar_get_script(). Callers must be
+/// the return value of `g_unichar_get_script()`. Callers must be
 /// prepared to handle unknown values.
 ///
 /// **script_for_unichar is deprecated:**
@@ -941,7 +941,7 @@ public func reorderItems(logicalItems logical_items: ListProtocol) -> UnsafeMuta
 /// separated by colons or other separators.  This function
 /// will return the first language in the parsed list that Pango
 /// believes may use `script` for writing.  This last predicate
-/// is tested using pango_language_includes_script().  This can
+/// is tested using `pango_language_includes_script()`.  This can
 /// be used to control Pango's font selection for non-primary
 /// languages.  For example, a PANGO_LANGUAGE enviroment variable
 /// set to "en:fa" makes Pango choose fonts suitable for Persian (fa)
@@ -958,11 +958,11 @@ public func scriptGetSampleLanguage(script: Script) -> UnsafeMutablePointer<Pang
 
 
 /// Given a segment of text and the corresponding
-/// `PangoAnalysis` structure returned from pango_itemize(),
+/// `PangoAnalysis` structure returned from `pango_itemize()`,
 /// convert the characters into glyphs. You may also pass
-/// in only a substring of the item from pango_itemize().
+/// in only a substring of the item from `pango_itemize()`.
 /// 
-/// It is recommended that you use pango_shape_full() instead, since
+/// It is recommended that you use `pango_shape_full()` instead, since
 /// that API allows for shaping interaction happening across text item
 /// boundaries.
 public func shape(text: UnsafePointer<CChar>, length: CInt, analysis: AnalysisProtocol, glyphs: GlyphStringProtocol) {
@@ -974,11 +974,11 @@ public func shape(text: UnsafePointer<CChar>, length: CInt, analysis: AnalysisPr
 
 
 /// Given a segment of text and the corresponding
-/// `PangoAnalysis` structure returned from pango_itemize(),
+/// `PangoAnalysis` structure returned from `pango_itemize()`,
 /// convert the characters into glyphs. You may also pass
-/// in only a substring of the item from pango_itemize().
+/// in only a substring of the item from `pango_itemize()`.
 /// 
-/// This is similar to pango_shape(), except it also can optionally take
+/// This is similar to `pango_shape()`, except it also can optionally take
 /// the full paragraph text as input, which will then be used to perform
 /// certain cross-item shaping interactions.  If you have access to the broader
 /// text of which `item_text` is part of, provide the broader text as
@@ -992,11 +992,11 @@ public func shapeFull(itemText item_text: UnsafePointer<CChar>, itemLength item_
 
 
 /// Given a segment of text and the corresponding
-/// `PangoAnalysis` structure returned from pango_itemize(),
+/// `PangoAnalysis` structure returned from `pango_itemize()`,
 /// convert the characters into glyphs. You may also pass
-/// in only a substring of the item from pango_itemize().
+/// in only a substring of the item from `pango_itemize()`.
 /// 
-/// This is similar to pango_shape_full(), except it also takes
+/// This is similar to `pango_shape_full()`, except it also takes
 /// flags that can influence the shaping process.
 public func shapeWithFlags(itemText item_text: UnsafePointer<CChar>, itemLength item_length: CInt, paragraphText paragraph_text: UnsafePointer<CChar>, paragraphLength paragraph_length: CInt, analysis: AnalysisProtocol, glyphs: GlyphStringProtocol, flags: ShapeFlags) {
     pango_shape_with_flags(item_text, item_length, paragraph_text, paragraph_length, cast(analysis.ptr), cast(glyphs.ptr), flags)
@@ -1033,7 +1033,7 @@ public func shapeWithFlags(itemText item_text: UnsafePointer<CChar>, itemLength 
 
 /// Apply language-specific tailoring to the breaks in
 /// `log_attrs`, which are assumed to have been produced
-/// by pango_default_break().
+/// by `pango_default_break()`.
 /// 
 /// If `offset` is not -1, it is used to apply attributes
 /// from `analysis` that are relevant to line breaking.
@@ -1064,7 +1064,7 @@ public func tailorBreak(text: UnsafePointer<CChar>, length: CInt, analysis: Anal
 /// This function is useful to categorize characters into left-to-right
 /// letters, right-to-left letters, and everything else.  If full
 /// Unicode bidirectional type of a character is needed,
-/// pango_bidi_type_for_unichar() can be used instead.
+/// `pango_bidi_type_for_unichar()` can be used instead.
 public func unicharDirection(ch: gunichar) -> PangoDirection {
     let rv = pango_unichar_direction(ch)
     return rv
@@ -1098,7 +1098,7 @@ public func unitsToDouble(i: CInt) -> CDouble {
 /// as opposed to the version available at compile-time.
 /// 
 /// A version number can be encoded into an integer using
-/// PANGO_VERSION_ENCODE().
+/// `PANGO_VERSION_ENCODE()`.
 public func version() -> CInt {
     let rv = pango_version()
     return rv
@@ -1116,12 +1116,12 @@ public func version() -> CInt {
 /// 
 /// Compatibility is defined by two things: first the version
 /// of the running library is newer than the version
-/// `required_major`.required_minor.`required_micro`. Second
+/// `required_major.required_minor`.`required_micro`. Second
 /// the running library must be binary compatible with the
-/// version `required_major`.required_minor.`required_micro`
+/// version `required_major.required_minor`.`required_micro`
 /// (same major version.)
 /// 
-/// For compile-time version checking use PANGO_VERSION_CHECK().
+/// For compile-time version checking use `PANGO_VERSION_CHECK()`.
 public func versionCheck(requiredMajor required_major: CInt, requiredMinor required_minor: CInt, requiredMicro required_micro: CInt) -> String! {
     let rv = pango_version_check(required_major, required_minor, required_micro)
     return rv.map { String(cString: UnsafePointer<CChar>($0)) }

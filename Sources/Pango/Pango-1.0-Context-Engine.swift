@@ -75,15 +75,15 @@ public extension ContextRef {
         /// Creates a new `PangoContext` initialized to default values.
     /// 
     /// This function is not particularly useful as it should always
-    /// be followed by a pango_context_set_font_map() call, and the
-    /// function pango_font_map_create_context() does these two steps
+    /// be followed by a `pango_context_set_font_map()` call, and the
+    /// function `pango_font_map_create_context()` does these two steps
     /// together and hence users are recommended to use that.
     /// 
     /// If you are using Pango as part of a higher-level system,
     /// that system may have it's own way of create a `PangoContext`.
     /// For instance, the GTK+ toolkit has, among others,
-    /// gdk_pango_context_get_for_screen(), and
-    /// gtk_widget_get_pango_context().  Use those instead.
+    /// `gdk_pango_context_get_for_screen()`, and
+    /// `gtk_widget_get_pango_context()`.  Use those instead.
     init() {
         let rv = pango_context_new()
         self.init(cast(rv))
@@ -137,15 +137,15 @@ open class Context: Object, ContextProtocol {
     /// Creates a new `PangoContext` initialized to default values.
     /// 
     /// This function is not particularly useful as it should always
-    /// be followed by a pango_context_set_font_map() call, and the
-    /// function pango_font_map_create_context() does these two steps
+    /// be followed by a `pango_context_set_font_map()` call, and the
+    /// function `pango_font_map_create_context()` does these two steps
     /// together and hence users are recommended to use that.
     /// 
     /// If you are using Pango as part of a higher-level system,
     /// that system may have it's own way of create a `PangoContext`.
     /// For instance, the GTK+ toolkit has, among others,
-    /// gdk_pango_context_get_for_screen(), and
-    /// gtk_widget_get_pango_context().  Use those instead.
+    /// `gdk_pango_context_get_for_screen()`, and
+    /// `gtk_widget_get_pango_context()`.  Use those instead.
     public convenience init() {
         let rv = pango_context_new()
         self.init(cast(rv))
@@ -158,27 +158,26 @@ open class Context: Object, ContextProtocol {
 
 public enum ContextSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -231,14 +230,14 @@ public extension ContextProtocol {
     }
 
     /// Retrieves the base direction for the context. See
-    /// pango_context_set_base_dir().
+    /// `pango_context_set_base_dir()`.
     func getBaseDir() -> PangoDirection {
         let rv = pango_context_get_base_dir(cast(context_ptr))
         return rv
     }
 
     /// Retrieves the base gravity for the context. See
-    /// pango_context_set_base_gravity().
+    /// `pango_context_set_base_gravity()`.
     func getBaseGravity() -> PangoGravity {
         let rv = pango_context_get_base_gravity(cast(context_ptr))
         return rv
@@ -257,8 +256,8 @@ public extension ContextProtocol {
     }
 
     /// Retrieves the gravity for the context. This is similar to
-    /// pango_context_get_base_gravity(), except for when the base gravity
-    /// is `PANGO_GRAVITY_AUTO` for which pango_gravity_get_for_matrix() is used
+    /// `pango_context_get_base_gravity()`, except for when the base gravity
+    /// is `PANGO_GRAVITY_AUTO` for which `pango_gravity_get_for_matrix()` is used
     /// to return the gravity from the current context matrix.
     func getGravity() -> PangoGravity {
         let rv = pango_context_get_gravity(cast(context_ptr))
@@ -266,7 +265,7 @@ public extension ContextProtocol {
     }
 
     /// Retrieves the gravity hint for the context. See
-    /// pango_context_set_gravity_hint() for details.
+    /// `pango_context_set_gravity_hint()` for details.
     func getGravityHint() -> PangoGravityHint {
         let rv = pango_context_get_gravity_hint(cast(context_ptr))
         return rv
@@ -279,7 +278,7 @@ public extension ContextProtocol {
     }
 
     /// Gets the transformation matrix that will be applied when
-    /// rendering with this context. See pango_context_set_matrix().
+    /// rendering with this context. See `pango_context_set_matrix()`.
     func getMatrix() -> UnsafePointer<PangoMatrix>! {
         let rv = pango_context_get_matrix(cast(context_ptr))
         return cast(rv)
@@ -288,11 +287,11 @@ public extension ContextProtocol {
     /// Get overall metric information for a particular font
     /// description.  Since the metrics may be substantially different for
     /// different scripts, a language tag can be provided to indicate that
-    /// the metrics should be retrieved that correspond to the script(s)
+    /// the metrics should be retrieved that correspond to the `script(s)`
     /// used by that language.
     /// 
     /// The `PangoFontDescription` is interpreted in the same way as
-    /// by pango_itemize(), and the family name may be a comma separated
+    /// by `pango_itemize()`, and the family name may be a comma separated
     /// list of figures. If characters from multiple of these families
     /// would be used to render the string, then the returned fonts would
     /// be a composite of the metrics for the fonts loaded for the
@@ -382,7 +381,7 @@ public extension ContextProtocol {
     /// Sets the gravity hint for the context.
     /// 
     /// The gravity hint is used in laying vertical text out, and is only relevant
-    /// if gravity of the context as returned by pango_context_get_gravity()
+    /// if gravity of the context as returned by `pango_context_get_gravity()`
     /// is set `PANGO_GRAVITY_EAST` or `PANGO_GRAVITY_WEST`.
     func setGravity(hint: GravityHint) {
         pango_context_set_gravity_hint(cast(context_ptr), hint)
@@ -391,7 +390,7 @@ public extension ContextProtocol {
 
     /// Sets the global language tag for the context.  The default language
     /// for the locale of the running process can be found using
-    /// pango_language_get_default().
+    /// `pango_language_get_default()`.
     func set(language: LanguageProtocol) {
         pango_context_set_language(cast(context_ptr), cast(language.ptr))
     
@@ -437,7 +436,7 @@ public extension ContextProtocol {
         return cast(rv)
     }
 
-    /// Like pango_itemize(), but the base direction to use when
+    /// Like `pango_itemize()`, but the base direction to use when
     /// computing bidirectional levels (see pango_context_set_base_dir ()),
     /// is specified explicitly rather than gotten from the `PangoContext`.
     func itemizeWith(baseDir base_dir: Direction, text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, attrs: AttrListProtocol, cachedIter cached_iter: AttrIteratorProtocol) -> UnsafeMutablePointer<GList>! {
@@ -445,10 +444,10 @@ public extension ContextProtocol {
         return cast(rv)
     }
     /// Retrieves the base direction for the context. See
-    /// pango_context_set_base_dir().
+    /// `pango_context_set_base_dir()`.
     var baseDir: PangoDirection {
         /// Retrieves the base direction for the context. See
-        /// pango_context_set_base_dir().
+        /// `pango_context_set_base_dir()`.
         get {
             let rv = pango_context_get_base_dir(cast(context_ptr))
             return rv
@@ -467,10 +466,10 @@ public extension ContextProtocol {
     }
 
     /// Retrieves the base gravity for the context. See
-    /// pango_context_set_base_gravity().
+    /// `pango_context_set_base_gravity()`.
     var baseGravity: PangoGravity {
         /// Retrieves the base gravity for the context. See
-        /// pango_context_set_base_gravity().
+        /// `pango_context_set_base_gravity()`.
         get {
             let rv = pango_context_get_base_gravity(cast(context_ptr))
             return rv
@@ -512,13 +511,13 @@ public extension ContextProtocol {
     }
 
     /// Retrieves the gravity for the context. This is similar to
-    /// pango_context_get_base_gravity(), except for when the base gravity
-    /// is `PANGO_GRAVITY_AUTO` for which pango_gravity_get_for_matrix() is used
+    /// `pango_context_get_base_gravity()`, except for when the base gravity
+    /// is `PANGO_GRAVITY_AUTO` for which `pango_gravity_get_for_matrix()` is used
     /// to return the gravity from the current context matrix.
     var gravity: PangoGravity {
         /// Retrieves the gravity for the context. This is similar to
-        /// pango_context_get_base_gravity(), except for when the base gravity
-        /// is `PANGO_GRAVITY_AUTO` for which pango_gravity_get_for_matrix() is used
+        /// `pango_context_get_base_gravity()`, except for when the base gravity
+        /// is `PANGO_GRAVITY_AUTO` for which `pango_gravity_get_for_matrix()` is used
         /// to return the gravity from the current context matrix.
         get {
             let rv = pango_context_get_gravity(cast(context_ptr))
@@ -527,10 +526,10 @@ public extension ContextProtocol {
     }
 
     /// Retrieves the gravity hint for the context. See
-    /// pango_context_set_gravity_hint() for details.
+    /// `pango_context_set_gravity_hint()` for details.
     var gravityHint: PangoGravityHint {
         /// Retrieves the gravity hint for the context. See
-        /// pango_context_set_gravity_hint() for details.
+        /// `pango_context_set_gravity_hint()` for details.
         get {
             let rv = pango_context_get_gravity_hint(cast(context_ptr))
             return rv
@@ -538,7 +537,7 @@ public extension ContextProtocol {
         /// Sets the gravity hint for the context.
         /// 
         /// The gravity hint is used in laying vertical text out, and is only relevant
-        /// if gravity of the context as returned by pango_context_get_gravity()
+        /// if gravity of the context as returned by `pango_context_get_gravity()`
         /// is set `PANGO_GRAVITY_EAST` or `PANGO_GRAVITY_WEST`.
         nonmutating set {
             pango_context_set_gravity_hint(cast(context_ptr), newValue)
@@ -554,17 +553,17 @@ public extension ContextProtocol {
         }
         /// Sets the global language tag for the context.  The default language
         /// for the locale of the running process can be found using
-        /// pango_language_get_default().
+        /// `pango_language_get_default()`.
         nonmutating set {
             pango_context_set_language(cast(context_ptr), cast(newValue))
         }
     }
 
     /// Gets the transformation matrix that will be applied when
-    /// rendering with this context. See pango_context_set_matrix().
+    /// rendering with this context. See `pango_context_set_matrix()`.
     var matrix: UnsafePointer<PangoMatrix>! {
         /// Gets the transformation matrix that will be applied when
-        /// rendering with this context. See pango_context_set_matrix().
+        /// rendering with this context. See `pango_context_set_matrix()`.
         get {
             let rv = pango_context_get_matrix(cast(context_ptr))
             return cast(rv)
@@ -707,7 +706,7 @@ public extension CoverageRef {
         let rv = pango_coverage_new()
         self.init(cast(rv))
     }
-    /// Convert data generated from pango_coverage_to_bytes() back
+    /// Convert data generated from `pango_coverage_to_bytes()` back
     /// to a `PangoCoverage`
     ///
     /// **from_bytes is deprecated:**
@@ -768,7 +767,7 @@ open class Coverage: Object, CoverageProtocol {
         self.init(cast(rv))
     }
 
-    /// Convert data generated from pango_coverage_to_bytes() back
+    /// Convert data generated from `pango_coverage_to_bytes()` back
     /// to a `PangoCoverage`
     ///
     /// **from_bytes is deprecated:**
@@ -784,27 +783,26 @@ open class Coverage: Object, CoverageProtocol {
 
 public enum CoverageSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -1022,27 +1020,26 @@ open class Engine: Object, EngineProtocol {
 
 public enum EngineSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.

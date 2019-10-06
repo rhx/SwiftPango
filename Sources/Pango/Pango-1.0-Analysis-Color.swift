@@ -142,7 +142,7 @@ public extension AnalysisProtocol {
 
     /// Determines possible line, word, and character breaks
     /// for a string of Unicode text with a single analysis.
-    /// For most purposes you may want to use pango_get_log_attrs().
+    /// For most purposes you may want to use `pango_get_log_attrs()`.
     ///
     /// **break is deprecated:**
     /// Use pango_default_break() and pango_tailor_break()
@@ -155,18 +155,18 @@ public extension AnalysisProtocol {
     /// rules without language-specific tailoring, therefore
     /// the `analyis` argument is unused and can be `nil`.
     /// 
-    /// See pango_tailor_break() for language-specific breaks.
+    /// See `pango_tailor_break()` for language-specific breaks.
     func defaultBreak(text: UnsafePointer<gchar>, length: CInt, attrs: LogAttrProtocol, attrsLen attrs_len: CInt) {
         pango_default_break(text, length, cast(_ptr), cast(attrs.ptr), attrs_len)
     
     }
 
     /// Given a segment of text and the corresponding
-    /// `PangoAnalysis` structure returned from pango_itemize(),
+    /// `PangoAnalysis` structure returned from `pango_itemize()`,
     /// convert the characters into glyphs. You may also pass
-    /// in only a substring of the item from pango_itemize().
+    /// in only a substring of the item from `pango_itemize()`.
     /// 
-    /// It is recommended that you use pango_shape_full() instead, since
+    /// It is recommended that you use `pango_shape_full()` instead, since
     /// that API allows for shaping interaction happening across text item
     /// boundaries.
     func shape(text: UnsafePointer<CChar>, length: CInt, glyphs: GlyphStringProtocol) {
@@ -175,11 +175,11 @@ public extension AnalysisProtocol {
     }
 
     /// Given a segment of text and the corresponding
-    /// `PangoAnalysis` structure returned from pango_itemize(),
+    /// `PangoAnalysis` structure returned from `pango_itemize()`,
     /// convert the characters into glyphs. You may also pass
-    /// in only a substring of the item from pango_itemize().
+    /// in only a substring of the item from `pango_itemize()`.
     /// 
-    /// This is similar to pango_shape(), except it also can optionally take
+    /// This is similar to `pango_shape()`, except it also can optionally take
     /// the full paragraph text as input, which will then be used to perform
     /// certain cross-item shaping interactions.  If you have access to the broader
     /// text of which `item_text` is part of, provide the broader text as
@@ -190,11 +190,11 @@ public extension AnalysisProtocol {
     }
 
     /// Given a segment of text and the corresponding
-    /// `PangoAnalysis` structure returned from pango_itemize(),
+    /// `PangoAnalysis` structure returned from `pango_itemize()`,
     /// convert the characters into glyphs. You may also pass
-    /// in only a substring of the item from pango_itemize().
+    /// in only a substring of the item from `pango_itemize()`.
     /// 
-    /// This is similar to pango_shape_full(), except it also takes
+    /// This is similar to `pango_shape_full()`, except it also takes
     /// flags that can influence the shaping process.
     func shapeWithFlags(itemText item_text: UnsafePointer<CChar>, itemLength item_length: CInt, paragraphText paragraph_text: UnsafePointer<CChar>, paragraphLength paragraph_length: CInt, glyphs: GlyphStringProtocol, flags: ShapeFlags) {
         pango_shape_with_flags(item_text, item_length, paragraph_text, paragraph_length, cast(_ptr), cast(glyphs.ptr), flags)
@@ -203,7 +203,7 @@ public extension AnalysisProtocol {
 
     /// Apply language-specific tailoring to the breaks in
     /// `log_attrs`, which are assumed to have been produced
-    /// by pango_default_break().
+    /// by `pango_default_break()`.
     /// 
     /// If `offset` is not -1, it is used to apply attributes
     /// from `analysis` that are relevant to line breaking.
@@ -1076,9 +1076,9 @@ public extension AttrIntProtocol {
 ///
 /// The `PangoAttrIterator` structure is used to represent an
 /// iterator through a `PangoAttrList`. A new iterator is created
-/// with pango_attr_list_get_iterator(). Once the iterator
+/// with `pango_attr_list_get_iterator()`. Once the iterator
 /// is created, it can be advanced through the style changes
-/// in the text using pango_attr_iterator_next(). At each
+/// in the text using `pango_attr_iterator_next()`. At each
 /// style change, the range of the current style segment and the
 /// attributes currently in effect can be queried.
 public protocol AttrIteratorProtocol {
@@ -1095,9 +1095,9 @@ public protocol AttrIteratorProtocol {
 ///
 /// The `PangoAttrIterator` structure is used to represent an
 /// iterator through a `PangoAttrList`. A new iterator is created
-/// with pango_attr_list_get_iterator(). Once the iterator
+/// with `pango_attr_list_get_iterator()`. Once the iterator
 /// is created, it can be advanced through the style changes
-/// in the text using pango_attr_iterator_next(). At each
+/// in the text using `pango_attr_iterator_next()`. At each
 /// style change, the range of the current style segment and the
 /// attributes currently in effect can be queried.
 public struct AttrIteratorRef: AttrIteratorProtocol {
@@ -1154,9 +1154,9 @@ public extension AttrIteratorRef {
 ///
 /// The `PangoAttrIterator` structure is used to represent an
 /// iterator through a `PangoAttrList`. A new iterator is created
-/// with pango_attr_list_get_iterator(). Once the iterator
+/// with `pango_attr_list_get_iterator()`. Once the iterator
 /// is created, it can be advanced through the style changes
-/// in the text using pango_attr_iterator_next(). At each
+/// in the text using `pango_attr_iterator_next()`. At each
 /// style change, the range of the current style segment and the
 /// attributes currently in effect can be queried.
 open class AttrIterator: AttrIteratorProtocol {
@@ -1284,7 +1284,7 @@ public extension AttrIteratorProtocol {
         return cast(rv)
     }
 
-    /// Like pango_itemize(), but the base direction to use when
+    /// Like `pango_itemize()`, but the base direction to use when
     /// computing bidirectional levels (see pango_context_set_base_dir ()),
     /// is specified explicitly rather than gotten from the `PangoContext`.
     func itemizeWithBaseDir(context: ContextProtocol, baseDir base_dir: Direction, text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, attrs: AttrListProtocol) -> UnsafeMutablePointer<GList>! {
@@ -1456,7 +1456,7 @@ public extension AttrLanguageProtocol {
 /// The `PangoAttrList` structure represents a list of attributes
 /// that apply to a section of text. The attributes are, in general,
 /// allowed to overlap in an arbitrary fashion, however, if the
-/// attributes are manipulated only through pango_attr_list_change(),
+/// attributes are manipulated only through `pango_attr_list_change()`,
 /// the overlap between properties will meet stricter criteria.
 /// 
 /// Since the `PangoAttrList` structure is stored as a linear list,
@@ -1478,7 +1478,7 @@ public protocol AttrListProtocol {
 /// The `PangoAttrList` structure represents a list of attributes
 /// that apply to a section of text. The attributes are, in general,
 /// allowed to overlap in an arbitrary fashion, however, if the
-/// attributes are manipulated only through pango_attr_list_change(),
+/// attributes are manipulated only through `pango_attr_list_change()`,
 /// the overlap between properties will meet stricter criteria.
 /// 
 /// Since the `PangoAttrList` structure is stored as a linear list,
@@ -1545,7 +1545,7 @@ public extension AttrListRef {
 /// The `PangoAttrList` structure represents a list of attributes
 /// that apply to a section of text. The attributes are, in general,
 /// allowed to overlap in an arbitrary fashion, however, if the
-/// attributes are manipulated only through pango_attr_list_change(),
+/// attributes are manipulated only through `pango_attr_list_change()`,
 /// the overlap between properties will meet stricter criteria.
 /// 
 /// Since the `PangoAttrList` structure is stored as a linear list,
@@ -1621,9 +1621,9 @@ public extension AttrListProtocol {
     /// replace any attributes of the same type on that segment
     /// and be merged with any adjoining attributes that are identical.
     /// 
-    /// This function is slower than pango_attr_list_insert() for
+    /// This function is slower than `pango_attr_list_insert()` for
     /// creating a attribute list in order (potentially much slower
-    /// for large lists). However, pango_attr_list_insert() is not
+    /// for large lists). However, `pango_attr_list_insert()` is not
     /// suitable for continually changing a set of attributes
     /// since it never removes or combines existing attributes.
     func change(attr: AttributeProtocol) {
@@ -1685,7 +1685,7 @@ public extension AttrListProtocol {
     /// 
     /// This operation is equivalent to stretching every attribute
     /// that applies at position `pos` in `list` by an amount `len`,
-    /// and then calling pango_attr_list_change() with a copy
+    /// and then calling `pango_attr_list_change()` with a copy
     /// of each attribute in `other` in sequence (offset in position by `pos`).
     /// 
     /// This operation proves useful for, for instance, inserting
@@ -1739,7 +1739,7 @@ public extension AttrListProtocol {
         return cast(rv)
     }
 
-    /// Like pango_itemize(), but the base direction to use when
+    /// Like `pango_itemize()`, but the base direction to use when
     /// computing bidirectional levels (see pango_context_set_base_dir ()),
     /// is specified explicitly rather than gotten from the `PangoContext`.
     func itemizeWithBaseDir(context: ContextProtocol, baseDir base_dir: Direction, text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, cachedIter cached_iter: AttrIteratorProtocol) -> UnsafeMutablePointer<GList>! {
@@ -1747,9 +1747,9 @@ public extension AttrListProtocol {
         return cast(rv)
     }
 
-    /// After feeding a pango markup parser some data with g_markup_parse_context_parse(),
+    /// After feeding a pango markup parser some data with `g_markup_parse_context_parse()`,
     /// use this function to get the list of pango attributes and text out of the
-    /// markup. This function will not free `context`, use g_markup_parse_context_free()
+    /// markup. This function will not free `context`, use `g_markup_parse_context_free()`
     /// to do so.
     func markupParserFinish(context: MarkupParseContextProtocol, text: UnsafeMutablePointer<UnsafeMutablePointer<CChar>>, accelChar accel_char: UnsafeMutablePointer<gunichar>) throws -> Bool {
         var error: Optional<UnsafeMutablePointer<GError>> = nil
@@ -1772,7 +1772,7 @@ public extension AttrListProtocol {
     /// Two `accel_marker` characters following each other produce a single
     /// literal `accel_marker` character.
     /// 
-    /// To parse a stream of pango markup incrementally, use pango_markup_parser_new().
+    /// To parse a stream of pango markup incrementally, use `pango_markup_parser_new()`.
     /// 
     /// If any error happens, none of the output arguments are touched except
     /// for `error`.
@@ -2241,7 +2241,7 @@ public extension AttrStringProtocol {
 /// attributes. Particular types of attributes include this structure
 /// as their initial portion. The common portion of the attribute holds
 /// the range to which the value in the type-specific part of the attribute
-/// applies and should be initialized using pango_attribute_init().
+/// applies and should be initialized using `pango_attribute_init()`.
 /// By default an attribute will have an all-inclusive range of [0,`G_MAXUINT`].
 public protocol AttributeProtocol {
     /// Untyped pointer to the underlying `PangoAttribute` instance.
@@ -2259,7 +2259,7 @@ public protocol AttributeProtocol {
 /// attributes. Particular types of attributes include this structure
 /// as their initial portion. The common portion of the attribute holds
 /// the range to which the value in the type-specific part of the attribute
-/// applies and should be initialized using pango_attribute_init().
+/// applies and should be initialized using `pango_attribute_init()`.
 /// By default an attribute will have an all-inclusive range of [0,`G_MAXUINT`].
 public struct AttributeRef: AttributeProtocol {
     /// Untyped pointer to the underlying `PangoAttribute` instance.
@@ -2317,7 +2317,7 @@ public extension AttributeRef {
 /// attributes. Particular types of attributes include this structure
 /// as their initial portion. The common portion of the attribute holds
 /// the range to which the value in the type-specific part of the attribute
-/// applies and should be initialized using pango_attribute_init().
+/// applies and should be initialized using `pango_attribute_init()`.
 /// By default an attribute will have an all-inclusive range of [0,`G_MAXUINT`].
 open class Attribute: AttributeProtocol {
     /// Untyped pointer to the underlying `PangoAttribute` instance.
@@ -2550,7 +2550,7 @@ public extension ColorProtocol {
     var color_ptr: UnsafeMutablePointer<PangoColor> { return ptr.assumingMemoryBound(to: PangoColor.self) }
 
     /// Creates a copy of `src`, which should be freed with
-    /// pango_color_free(). Primarily used by language bindings,
+    /// `pango_color_free()`. Primarily used by language bindings,
     /// not that useful otherwise (since colors can just be copied
     /// by assignment in C).
     func copy() -> UnsafeMutablePointer<PangoColor>! {
@@ -2558,7 +2558,7 @@ public extension ColorProtocol {
         return cast(rv)
     }
 
-    /// Frees a color allocated by pango_color_copy().
+    /// Frees a color allocated by `pango_color_copy()`.
     func free() {
         pango_color_free(cast(color_ptr))
     

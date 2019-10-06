@@ -129,27 +129,26 @@ open class Renderer: Object, RendererProtocol {
 
 public enum RendererSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -190,10 +189,10 @@ public extension RendererProtocol {
     var renderer_ptr: UnsafeMutablePointer<PangoRenderer> { return ptr.assumingMemoryBound(to: PangoRenderer.self) }
 
     /// Does initial setup before rendering operations on `renderer`.
-    /// pango_renderer_deactivate() should be called when done drawing.
-    /// Calls such as pango_renderer_draw_layout() automatically
+    /// `pango_renderer_deactivate()` should be called when done drawing.
+    /// Calls such as `pango_renderer_draw_layout()` automatically
     /// activate the layout before drawing on it. Calls to
-    /// pango_renderer_activate() and pango_renderer_deactivate() can
+    /// `pango_renderer_activate()` and `pango_renderer_deactivate()` can
     /// be nested and the renderer will only be initialized and
     /// deinitialized once.
     func activate() {
@@ -202,7 +201,7 @@ public extension RendererProtocol {
     }
 
     /// Cleans up after rendering operations on `renderer`. See
-    /// docs for pango_renderer_activate().
+    /// docs for `pango_renderer_activate()`.
     func deactivate() {
         pango_renderer_deactivate(cast(renderer_ptr))
     
@@ -215,7 +214,7 @@ public extension RendererProtocol {
     /// in the original rectangle)
     /// 
     /// This should be called while `renderer` is already active.  Use
-    /// pango_renderer_activate() to activate a renderer.
+    /// `pango_renderer_activate()` to activate a renderer.
     func drawErrorUnderline(x: CInt, y: CInt, width: CInt, height: CInt) {
         pango_renderer_draw_error_underline(cast(renderer_ptr), x, y, width, height)
     
@@ -234,10 +233,10 @@ public extension RendererProtocol {
     /// Note that `text` is the start of the text for layout, which is then
     /// indexed by <literal>`glyph_item`->item->offset</literal>.
     /// 
-    /// If `text` is `nil`, this simply calls pango_renderer_draw_glyphs().
+    /// If `text` is `nil`, this simply calls `pango_renderer_draw_glyphs()`.
     /// 
     /// The default implementation of this method simply falls back to
-    /// pango_renderer_draw_glyphs().
+    /// `pango_renderer_draw_glyphs()`.
     func drawGlyphItem(text: UnsafePointer<CChar>, glyphItem glyph_item: GlyphItemProtocol, x: CInt, y: CInt) {
         pango_renderer_draw_glyph_item(cast(renderer_ptr), text, cast(glyph_item.ptr), x, y)
     
@@ -265,7 +264,7 @@ public extension RendererProtocol {
     /// specified `PangoRenderer`.
     /// 
     /// This should be called while `renderer` is already active.  Use
-    /// pango_renderer_activate() to activate a renderer.
+    /// `pango_renderer_activate()` to activate a renderer.
     func drawRectangle(part: RenderPart, x: CInt, y: CInt, width: CInt, height: CInt) {
         pango_renderer_draw_rectangle(cast(renderer_ptr), part, x, y, width, height)
     
@@ -313,7 +312,7 @@ public extension RendererProtocol {
     }
 
     /// Gets the transformation matrix that will be applied when
-    /// rendering. See pango_renderer_set_matrix().
+    /// rendering. See `pango_renderer_set_matrix()`.
     func getMatrix() -> UnsafePointer<PangoMatrix>! {
         let rv = pango_renderer_get_matrix(cast(renderer_ptr))
         return cast(rv)
@@ -331,7 +330,7 @@ public extension RendererProtocol {
     /// 
     /// When the stipple changes or underlines with different stipples
     /// might be joined together. Pango automatically calls this for
-    /// changes to colors. (See pango_renderer_set_color())
+    /// changes to colors. (See `pango_renderer_set_color()`)
     func partChanged(part: RenderPart) {
         pango_renderer_part_changed(cast(renderer_ptr), part)
     
@@ -346,7 +345,7 @@ public extension RendererProtocol {
     }
 
     /// Sets the color for part of the rendering.
-    /// Also see pango_renderer_set_alpha().
+    /// Also see `pango_renderer_set_alpha()`.
     func setColor(part: RenderPart, color: ColorProtocol) {
         pango_renderer_set_color(cast(renderer_ptr), part, cast(color.ptr))
     
@@ -396,10 +395,10 @@ public extension RendererProtocol {
     }
 
     /// Gets the transformation matrix that will be applied when
-    /// rendering. See pango_renderer_set_matrix().
+    /// rendering. See `pango_renderer_set_matrix()`.
     var matrix: UnsafePointer<PangoMatrix>! {
         /// Gets the transformation matrix that will be applied when
-        /// rendering. See pango_renderer_set_matrix().
+        /// rendering. See `pango_renderer_set_matrix()`.
         get {
             let rv = pango_renderer_get_matrix(cast(renderer_ptr))
             return cast(rv)

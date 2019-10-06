@@ -296,7 +296,7 @@ public extension GlyphItemProtocol {
     /// Splits a shaped item (PangoGlyphItem) into multiple items based
     /// on an attribute list. The idea is that if you have attributes
     /// that don't affect shaping, such as color or underline, to avoid
-    /// affecting shaping, you filter them out (pango_attr_list_filter()),
+    /// affecting shaping, you filter them out (`pango_attr_list_filter()`),
     /// apply the shaping process and then reapply them to the result using
     /// this function.
     /// 
@@ -331,7 +331,7 @@ public extension GlyphItemProtocol {
     /// multiple characters compose a single cluster, the width of the entire
     /// cluster is divided equally among the characters.
     /// 
-    /// See also pango_glyph_string_get_logical_widths().
+    /// See also `pango_glyph_string_get_logical_widths()`.
     func getLogicalWidths(text: UnsafePointer<CChar>, logicalWidths logical_widths: UnsafeMutablePointer<CInt>) {
         pango_glyph_item_get_logical_widths(cast(glyph_item_ptr), text, cast(logical_widths))
     
@@ -352,7 +352,7 @@ public extension GlyphItemProtocol {
     /// be at least one byte assigned to each item, you can't create a
     /// zero-length item).
     /// 
-    /// This function is similar in function to pango_item_split() (and uses
+    /// This function is similar in function to `pango_item_split()` (and uses
     /// it internally.)
     func split(text: UnsafePointer<CChar>, splitIndex split_index: CInt) -> UnsafeMutablePointer<PangoGlyphItem>! {
         let rv = pango_glyph_item_split(cast(glyph_item_ptr), text, split_index)
@@ -378,11 +378,11 @@ public extension GlyphItemProtocol {
 /// in right-to-left cases, `start_glyph` is greater than `end_glyph`.
 /// 
 /// An iterator should be initialized using either of
-/// pango_glyph_item_iter_init_start() and
-/// pango_glyph_item_iter_init_end(), for forward and backward iteration
+/// `pango_glyph_item_iter_init_start()` and
+/// `pango_glyph_item_iter_init_end()`, for forward and backward iteration
 /// respectively, and walked over using any desired mixture of
-/// pango_glyph_item_iter_next_cluster() and
-/// pango_glyph_item_iter_prev_cluster().  A common idiom for doing a
+/// `pango_glyph_item_iter_next_cluster()` and
+/// `pango_glyph_item_iter_prev_cluster()`.  A common idiom for doing a
 /// forward iteration over the clusters is:
 /// <programlisting>
 /// PangoGlyphItemIter cluster_iter;
@@ -427,11 +427,11 @@ public protocol GlyphItemIterProtocol {
 /// in right-to-left cases, `start_glyph` is greater than `end_glyph`.
 /// 
 /// An iterator should be initialized using either of
-/// pango_glyph_item_iter_init_start() and
-/// pango_glyph_item_iter_init_end(), for forward and backward iteration
+/// `pango_glyph_item_iter_init_start()` and
+/// `pango_glyph_item_iter_init_end()`, for forward and backward iteration
 /// respectively, and walked over using any desired mixture of
-/// pango_glyph_item_iter_next_cluster() and
-/// pango_glyph_item_iter_prev_cluster().  A common idiom for doing a
+/// `pango_glyph_item_iter_next_cluster()` and
+/// `pango_glyph_item_iter_prev_cluster()`.  A common idiom for doing a
 /// forward iteration over the clusters is:
 /// <programlisting>
 /// PangoGlyphItemIter cluster_iter;
@@ -516,11 +516,11 @@ public extension GlyphItemIterRef {
 /// in right-to-left cases, `start_glyph` is greater than `end_glyph`.
 /// 
 /// An iterator should be initialized using either of
-/// pango_glyph_item_iter_init_start() and
-/// pango_glyph_item_iter_init_end(), for forward and backward iteration
+/// `pango_glyph_item_iter_init_start()` and
+/// `pango_glyph_item_iter_init_end()`, for forward and backward iteration
 /// respectively, and walked over using any desired mixture of
-/// pango_glyph_item_iter_next_cluster() and
-/// pango_glyph_item_iter_prev_cluster().  A common idiom for doing a
+/// `pango_glyph_item_iter_next_cluster()` and
+/// `pango_glyph_item_iter_prev_cluster()`.  A common idiom for doing a
 /// forward iteration over the clusters is:
 /// <programlisting>
 /// PangoGlyphItemIter cluster_iter;
@@ -610,7 +610,7 @@ public extension GlyphItemIterProtocol {
         return cast(rv)
     }
 
-    /// Frees a `PangoGlyphItemIter` created by pango_glyph_item_iter_copy().
+    /// Frees a `PangoGlyphItemIter` created by `pango_glyph_item_iter_copy()`.
     func free() {
         pango_glyph_item_iter_free(cast(glyph_item_iter_ptr))
     
@@ -809,7 +809,7 @@ public extension GlyphStringProtocol {
     }
 
     /// Compute the logical and ink extents of a glyph string. See the documentation
-    /// for pango_font_get_glyph_extents() for details about the interpretation
+    /// for `pango_font_get_glyph_extents()` for details about the interpretation
     /// of the rectangles.
     /// 
     /// Examples of logical (red) and ink (green) rects:
@@ -835,19 +835,19 @@ public extension GlyphStringProtocol {
     
     }
 
-    /// Given a `PangoGlyphString` resulting from pango_shape() and the corresponding
+    /// Given a `PangoGlyphString` resulting from `pango_shape()` and the corresponding
     /// text, determine the screen width corresponding to each character. When
     /// multiple characters compose a single cluster, the width of the entire
     /// cluster is divided equally among the characters.
     /// 
-    /// See also pango_glyph_item_get_logical_widths().
+    /// See also `pango_glyph_item_get_logical_widths()`.
     func getLogicalWidths(text: UnsafePointer<CChar>, length: CInt, embeddingLevel embedding_level: CInt, logicalWidths logical_widths: UnsafeMutablePointer<CInt>) {
         pango_glyph_string_get_logical_widths(cast(glyph_string_ptr), text, length, embedding_level, cast(logical_widths))
     
     }
 
     /// Computes the logical width of the glyph string as can also be computed
-    /// using pango_glyph_string_extents().  However, since this only computes the
+    /// using `pango_glyph_string_extents()`.  However, since this only computes the
     /// width, it's much faster.  This is in fact only a convenience function that
     /// computes the sum of geometry.width for each glyph in the `glyphs`.
     func getWidth() -> CInt {
@@ -881,11 +881,11 @@ public extension GlyphStringProtocol {
     }
 
     /// Given a segment of text and the corresponding
-    /// `PangoAnalysis` structure returned from pango_itemize(),
+    /// `PangoAnalysis` structure returned from `pango_itemize()`,
     /// convert the characters into glyphs. You may also pass
-    /// in only a substring of the item from pango_itemize().
+    /// in only a substring of the item from `pango_itemize()`.
     /// 
-    /// It is recommended that you use pango_shape_full() instead, since
+    /// It is recommended that you use `pango_shape_full()` instead, since
     /// that API allows for shaping interaction happening across text item
     /// boundaries.
     func shape(text: UnsafePointer<CChar>, length: CInt, analysis: AnalysisProtocol) {
@@ -894,11 +894,11 @@ public extension GlyphStringProtocol {
     }
 
     /// Given a segment of text and the corresponding
-    /// `PangoAnalysis` structure returned from pango_itemize(),
+    /// `PangoAnalysis` structure returned from `pango_itemize()`,
     /// convert the characters into glyphs. You may also pass
-    /// in only a substring of the item from pango_itemize().
+    /// in only a substring of the item from `pango_itemize()`.
     /// 
-    /// This is similar to pango_shape(), except it also can optionally take
+    /// This is similar to `pango_shape()`, except it also can optionally take
     /// the full paragraph text as input, which will then be used to perform
     /// certain cross-item shaping interactions.  If you have access to the broader
     /// text of which `item_text` is part of, provide the broader text as
@@ -909,23 +909,23 @@ public extension GlyphStringProtocol {
     }
 
     /// Given a segment of text and the corresponding
-    /// `PangoAnalysis` structure returned from pango_itemize(),
+    /// `PangoAnalysis` structure returned from `pango_itemize()`,
     /// convert the characters into glyphs. You may also pass
-    /// in only a substring of the item from pango_itemize().
+    /// in only a substring of the item from `pango_itemize()`.
     /// 
-    /// This is similar to pango_shape_full(), except it also takes
+    /// This is similar to `pango_shape_full()`, except it also takes
     /// flags that can influence the shaping process.
     func shapeWithFlags(itemText item_text: UnsafePointer<CChar>, itemLength item_length: CInt, paragraphText paragraph_text: UnsafePointer<CChar>, paragraphLength paragraph_length: CInt, analysis: AnalysisProtocol, flags: ShapeFlags) {
         pango_shape_with_flags(item_text, item_length, paragraph_text, paragraph_length, cast(analysis.ptr), cast(glyph_string_ptr), flags)
     
     }
     /// Computes the logical width of the glyph string as can also be computed
-    /// using pango_glyph_string_extents().  However, since this only computes the
+    /// using `pango_glyph_string_extents()`.  However, since this only computes the
     /// width, it's much faster.  This is in fact only a convenience function that
     /// computes the sum of geometry.width for each glyph in the `glyphs`.
     var width: CInt {
         /// Computes the logical width of the glyph string as can also be computed
-        /// using pango_glyph_string_extents().  However, since this only computes the
+        /// using `pango_glyph_string_extents()`.  However, since this only computes the
         /// width, it's much faster.  This is in fact only a convenience function that
         /// computes the sum of geometry.width for each glyph in the `glyphs`.
         get {

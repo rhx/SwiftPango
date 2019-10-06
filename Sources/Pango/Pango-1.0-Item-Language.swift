@@ -149,7 +149,7 @@ public extension ItemProtocol {
 
     /// Add attributes to a PangoItem. The idea is that you have
     /// attributes that don't affect itemization, such as font features,
-    /// so you filter them out using pango_attr_list_filter(), itemize
+    /// so you filter them out using `pango_attr_list_filter()`, itemize
     /// your text, then reapply the attributes to the resulting items
     /// using this function.
     /// 
@@ -182,7 +182,7 @@ public extension ItemProtocol {
     /// be at least one byte assigned to each item, you can't create a
     /// zero-length item). `split_offset` is the length of the first item in
     /// chars, and must be provided because the text used to generate the
-    /// item isn't available, so pango_item_split() can't count the char
+    /// item isn't available, so `pango_item_split()` can't count the char
     /// length of the split items itself.
     func split(splitIndex split_index: CInt, splitOffset split_offset: CInt) -> UnsafeMutablePointer<PangoItem>! {
         let rv = pango_item_split(cast(item_ptr), split_index, split_offset)
@@ -276,7 +276,7 @@ public extension LanguageRef {
     /// lowercase, mapping '_' to '-', and stripping all characters other
     /// than letters and '-'.
     /// 
-    /// Use pango_language_get_default() if you want to get the `PangoLanguage` for
+    /// Use `pango_language_get_default()` if you want to get the `PangoLanguage` for
     /// the current locale of the process.
     static func from(string language: UnsafePointer<CChar>) -> LanguageRef! {
         let rv = pango_language_from_string(language)
@@ -287,7 +287,7 @@ public extension LanguageRef {
     /// Note that this can change over the life of an application.
     /// 
     /// On Unix systems, this is the return value is derived from
-    /// <literal>setlocale(LC_CTYPE, NULL)</literal>, and the user can
+    /// `<literal>setlocale(LC_CTYPE, NULL)`</literal>, and the user can
     /// affect this through the environment variables LC_ALL, LC_CTYPE or
     /// LANG (checked in that order). The locale string typically is in
     /// the form lang_COUNTRY, where lang is an ISO-639 language code, and
@@ -297,17 +297,17 @@ public extension LanguageRef {
     /// 
     /// On Windows, the C library does not use any such environment
     /// variables, and setting them won't affect the behavior of functions
-    /// like ctime(). The user sets the locale through the Regional Options
-    /// in the Control Panel. The C library (in the setlocale() function)
+    /// like `ctime()`. The user sets the locale through the Regional Options
+    /// in the Control Panel. The C library (in the `setlocale()` function)
     /// does not use country and language codes, but country and language
     /// names spelled out in English.
     /// However, this function does check the above environment
     /// variables, and does return a Unix-style locale string based on
     /// either said environment variables or the thread's current locale.
     /// 
-    /// Your application should call <literal>setlocale(LC_ALL, "");</literal>
+    /// Your application should call `<literal>setlocale(LC_ALL, "")`;</literal>
     /// for the user settings to take effect.  Gtk+ does this in its initialization
-    /// functions automatically (by calling gtk_set_locale()).
+    /// functions automatically (by calling `gtk_set_locale()`).
     /// See <literal>man setlocale</literal> for more details.
     static func getDefault() -> LanguageRef! {
         let rv = pango_language_get_default()
@@ -381,7 +381,7 @@ open class Language: LanguageProtocol {
     /// lowercase, mapping '_' to '-', and stripping all characters other
     /// than letters and '-'.
     /// 
-    /// Use pango_language_get_default() if you want to get the `PangoLanguage` for
+    /// Use `pango_language_get_default()` if you want to get the `PangoLanguage` for
     /// the current locale of the process.
     public static func from(string language: UnsafePointer<CChar>) -> Language! {
         let rv = pango_language_from_string(language)
@@ -392,7 +392,7 @@ open class Language: LanguageProtocol {
     /// Note that this can change over the life of an application.
     /// 
     /// On Unix systems, this is the return value is derived from
-    /// <literal>setlocale(LC_CTYPE, NULL)</literal>, and the user can
+    /// `<literal>setlocale(LC_CTYPE, NULL)`</literal>, and the user can
     /// affect this through the environment variables LC_ALL, LC_CTYPE or
     /// LANG (checked in that order). The locale string typically is in
     /// the form lang_COUNTRY, where lang is an ISO-639 language code, and
@@ -402,17 +402,17 @@ open class Language: LanguageProtocol {
     /// 
     /// On Windows, the C library does not use any such environment
     /// variables, and setting them won't affect the behavior of functions
-    /// like ctime(). The user sets the locale through the Regional Options
-    /// in the Control Panel. The C library (in the setlocale() function)
+    /// like `ctime()`. The user sets the locale through the Regional Options
+    /// in the Control Panel. The C library (in the `setlocale()` function)
     /// does not use country and language codes, but country and language
     /// names spelled out in English.
     /// However, this function does check the above environment
     /// variables, and does return a Unix-style locale string based on
     /// either said environment variables or the thread's current locale.
     /// 
-    /// Your application should call <literal>setlocale(LC_ALL, "");</literal>
+    /// Your application should call `<literal>setlocale(LC_ALL, "")`;</literal>
     /// for the user settings to take effect.  Gtk+ does this in its initialization
-    /// functions automatically (by calling gtk_set_locale()).
+    /// functions automatically (by calling `gtk_set_locale()`).
     /// See <literal>man setlocale</literal> for more details.
     public static func getDefault() -> Language! {
         let rv = pango_language_get_default()
@@ -439,7 +439,7 @@ public extension LanguageProtocol {
     /// as sample text in a font selection dialog.
     /// 
     /// If `language` is `nil`, the default language as found by
-    /// pango_language_get_default() is used.
+    /// `pango_language_get_default()` is used.
     /// 
     /// If Pango does not have a sample string for `language`, the classic
     /// "The quick brown fox..." is returned.  This can be detected by
@@ -469,7 +469,7 @@ public extension LanguageProtocol {
     /// though, except that it is positive if the return value is not
     /// `nil`, and it is a small number.
     /// 
-    /// The pango_language_includes_script() function uses this function
+    /// The `pango_language_includes_script()` function uses this function
     /// internally.
     /// 
     /// Note: while the return value is declared as PangoScript, the
@@ -491,7 +491,7 @@ public extension LanguageProtocol {
     /// a particular section of text. It probably is not useful for
     /// applications in most circumstances.
     /// 
-    /// This function uses pango_language_get_scripts() internally.
+    /// This function uses `pango_language_get_scripts()` internally.
     func includes(script: Script) -> Bool {
         let rv = pango_language_includes_script(cast(language_ptr), script)
         return Bool(rv != 0)
@@ -548,7 +548,7 @@ public extension LanguageProtocol {
     /// as sample text in a font selection dialog.
     /// 
     /// If `language` is `nil`, the default language as found by
-    /// pango_language_get_default() is used.
+    /// `pango_language_get_default()` is used.
     /// 
     /// If Pango does not have a sample string for `language`, the classic
     /// "The quick brown fox..." is returned.  This can be detected by
@@ -567,7 +567,7 @@ public extension LanguageProtocol {
         /// as sample text in a font selection dialog.
         /// 
         /// If `language` is `nil`, the default language as found by
-        /// pango_language_get_default() is used.
+        /// `pango_language_get_default()` is used.
         /// 
         /// If Pango does not have a sample string for `language`, the classic
         /// "The quick brown fox..." is returned.  This can be detected by

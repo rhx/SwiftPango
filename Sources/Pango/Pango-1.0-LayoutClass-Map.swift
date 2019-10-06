@@ -331,7 +331,7 @@ public extension LayoutIterProtocol {
     /// Gets the current byte index. Note that iterating forward by char
     /// moves in visual order, not logical order, so indexes may not be
     /// sequential. Also, the index may be equal to the length of the text
-    /// in the layout, if on the `nil` run (see pango_layout_iter_get_run()).
+    /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
     func getIndex() -> CInt {
         let rv = pango_layout_iter_get_index(cast(layout_iter_ptr))
         return rv
@@ -353,7 +353,7 @@ public extension LayoutIterProtocol {
 
     /// Gets the current line.
     /// 
-    /// Use the faster pango_layout_iter_get_line_readonly() if you do not plan
+    /// Use the faster `pango_layout_iter_get_line_readonly()` if you do not plan
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
     func getLine() -> UnsafeMutablePointer<PangoLayoutLine>! {
         let rv = pango_layout_iter_get_line(cast(layout_iter_ptr))
@@ -365,7 +365,7 @@ public extension LayoutIterProtocol {
     /// coordinates (origin is the top-left corner of the entire
     /// `PangoLayout`).  Thus the extents returned by this function will be
     /// the same width/height but not at the same x/y as the extents
-    /// returned from pango_layout_line_get_extents().
+    /// returned from `pango_layout_line_get_extents()`.
     func getLineExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
         pango_layout_iter_get_line_extents(cast(layout_iter_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
     
@@ -373,7 +373,7 @@ public extension LayoutIterProtocol {
 
     /// Gets the current line for read-only access.
     /// 
-    /// This is a faster alternative to pango_layout_iter_get_line(),
+    /// This is a faster alternative to `pango_layout_iter_get_line()`,
     /// but the user is not expected
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
     func getLineReadonly() -> UnsafeMutablePointer<PangoLayoutLine>! {
@@ -385,7 +385,7 @@ public extension LayoutIterProtocol {
     /// between the lines in the layout, and returns the space belonging to
     /// the current line.  A line's range includes the line's logical
     /// extents, plus half of the spacing above and below the line, if
-    /// pango_layout_set_spacing() has been called to set layout spacing.
+    /// `pango_layout_set_spacing()` has been called to set layout spacing.
     /// The Y positions are in layout coordinates (origin at top left of the
     /// entire layout).
     /// 
@@ -402,7 +402,7 @@ public extension LayoutIterProtocol {
     /// `nil`. The `nil` run at the end of each line ensures that all lines have
     /// at least one run, even lines consisting of only a newline.
     /// 
-    /// Use the faster pango_layout_iter_get_run_readonly() if you do not plan
+    /// Use the faster `pango_layout_iter_get_run_readonly()` if you do not plan
     /// to modify the contents of the run (glyphs, glyph widths, etc.).
     func getRun() -> UnsafeMutablePointer<PangoLayoutRun>! {
         let rv = pango_layout_iter_get_run(cast(layout_iter_ptr))
@@ -421,7 +421,7 @@ public extension LayoutIterProtocol {
     /// `nil`. The `nil` run at the end of each line ensures that all lines have
     /// at least one run, even lines consisting of only a newline.
     /// 
-    /// This is a faster alternative to pango_layout_iter_get_run(),
+    /// This is a faster alternative to `pango_layout_iter_get_run()`,
     /// but the user is not expected
     /// to modify the contents of the run (glyphs, glyph widths, etc.).
     func getRunReadonly() -> UnsafeMutablePointer<PangoLayoutRun>! {
@@ -470,12 +470,12 @@ public extension LayoutIterProtocol {
     /// Gets the current byte index. Note that iterating forward by char
     /// moves in visual order, not logical order, so indexes may not be
     /// sequential. Also, the index may be equal to the length of the text
-    /// in the layout, if on the `nil` run (see pango_layout_iter_get_run()).
+    /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
     var index: CInt {
         /// Gets the current byte index. Note that iterating forward by char
         /// moves in visual order, not logical order, so indexes may not be
         /// sequential. Also, the index may be equal to the length of the text
-        /// in the layout, if on the `nil` run (see pango_layout_iter_get_run()).
+        /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
         get {
             let rv = pango_layout_iter_get_index(cast(layout_iter_ptr))
             return rv
@@ -493,12 +493,12 @@ public extension LayoutIterProtocol {
 
     /// Gets the current line.
     /// 
-    /// Use the faster pango_layout_iter_get_line_readonly() if you do not plan
+    /// Use the faster `pango_layout_iter_get_line_readonly()` if you do not plan
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
     var line: UnsafeMutablePointer<PangoLayoutLine>! {
         /// Gets the current line.
         /// 
-        /// Use the faster pango_layout_iter_get_line_readonly() if you do not plan
+        /// Use the faster `pango_layout_iter_get_line_readonly()` if you do not plan
         /// to modify the contents of the line (glyphs, glyph widths, etc.).
         get {
             let rv = pango_layout_iter_get_line(cast(layout_iter_ptr))
@@ -508,13 +508,13 @@ public extension LayoutIterProtocol {
 
     /// Gets the current line for read-only access.
     /// 
-    /// This is a faster alternative to pango_layout_iter_get_line(),
+    /// This is a faster alternative to `pango_layout_iter_get_line()`,
     /// but the user is not expected
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
     var lineReadonly: UnsafeMutablePointer<PangoLayoutLine>! {
         /// Gets the current line for read-only access.
         /// 
-        /// This is a faster alternative to pango_layout_iter_get_line(),
+        /// This is a faster alternative to `pango_layout_iter_get_line()`,
         /// but the user is not expected
         /// to modify the contents of the line (glyphs, glyph widths, etc.).
         get {
@@ -528,7 +528,7 @@ public extension LayoutIterProtocol {
     /// `nil`. The `nil` run at the end of each line ensures that all lines have
     /// at least one run, even lines consisting of only a newline.
     /// 
-    /// Use the faster pango_layout_iter_get_run_readonly() if you do not plan
+    /// Use the faster `pango_layout_iter_get_run_readonly()` if you do not plan
     /// to modify the contents of the run (glyphs, glyph widths, etc.).
     var run: UnsafeMutablePointer<PangoLayoutRun>! {
         /// Gets the current run. When iterating by run, at the end of each
@@ -536,7 +536,7 @@ public extension LayoutIterProtocol {
         /// `nil`. The `nil` run at the end of each line ensures that all lines have
         /// at least one run, even lines consisting of only a newline.
         /// 
-        /// Use the faster pango_layout_iter_get_run_readonly() if you do not plan
+        /// Use the faster `pango_layout_iter_get_run_readonly()` if you do not plan
         /// to modify the contents of the run (glyphs, glyph widths, etc.).
         get {
             let rv = pango_layout_iter_get_run(cast(layout_iter_ptr))
@@ -549,7 +549,7 @@ public extension LayoutIterProtocol {
     /// `nil`. The `nil` run at the end of each line ensures that all lines have
     /// at least one run, even lines consisting of only a newline.
     /// 
-    /// This is a faster alternative to pango_layout_iter_get_run(),
+    /// This is a faster alternative to `pango_layout_iter_get_run()`,
     /// but the user is not expected
     /// to modify the contents of the run (glyphs, glyph widths, etc.).
     var runReadonly: UnsafeMutablePointer<PangoLayoutRun>! {
@@ -558,7 +558,7 @@ public extension LayoutIterProtocol {
         /// `nil`. The `nil` run at the end of each line ensures that all lines have
         /// at least one run, even lines consisting of only a newline.
         /// 
-        /// This is a faster alternative to pango_layout_iter_get_run(),
+        /// This is a faster alternative to `pango_layout_iter_get_run()`,
         /// but the user is not expected
         /// to modify the contents of the run (glyphs, glyph widths, etc.).
         get {
@@ -579,7 +579,7 @@ public extension LayoutIterProtocol {
 ///
 /// The `PangoLayoutLine` structure represents one of the lines resulting
 /// from laying out a paragraph via `PangoLayout`. `PangoLayoutLine`
-/// structures are obtained by calling pango_layout_get_line() and
+/// structures are obtained by calling `pango_layout_get_line()` and
 /// are only valid until the text, attributes, or settings of the
 /// parent `PangoLayout` are modified.
 /// 
@@ -599,7 +599,7 @@ public protocol LayoutLineProtocol {
 ///
 /// The `PangoLayoutLine` structure represents one of the lines resulting
 /// from laying out a paragraph via `PangoLayout`. `PangoLayoutLine`
-/// structures are obtained by calling pango_layout_get_line() and
+/// structures are obtained by calling `pango_layout_get_line()` and
 /// are only valid until the text, attributes, or settings of the
 /// parent `PangoLayout` are modified.
 /// 
@@ -659,7 +659,7 @@ public extension LayoutLineRef {
 ///
 /// The `PangoLayoutLine` structure represents one of the lines resulting
 /// from laying out a paragraph via `PangoLayout`. `PangoLayoutLine`
-/// structures are obtained by calling pango_layout_get_line() and
+/// structures are obtained by calling `pango_layout_get_line()` and
 /// are only valid until the text, attributes, or settings of the
 /// parent `PangoLayout` are modified.
 /// 
@@ -726,7 +726,7 @@ public extension LayoutLineProtocol {
     var layout_line_ptr: UnsafeMutablePointer<PangoLayoutLine> { return ptr.assumingMemoryBound(to: PangoLayoutLine.self) }
 
     /// Computes the logical and ink extents of a layout line. See
-    /// pango_font_get_glyph_extents() for details about the interpretation
+    /// `pango_font_get_glyph_extents()` for details about the interpretation
     /// of the rectangles.
     func getExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
         pango_layout_line_get_extents(cast(layout_line_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
@@ -741,10 +741,10 @@ public extension LayoutLineProtocol {
     }
 
     /// Computes the logical and ink extents of `layout_line` in device units.
-    /// This function just calls pango_layout_line_get_extents() followed by
-    /// two pango_extents_to_pixels() calls, rounding `ink_rect` and `logical_rect`
+    /// This function just calls `pango_layout_line_get_extents()` followed by
+    /// two `pango_extents_to_pixels()` calls, rounding `ink_rect` and `logical_rect`
     /// such that the rounded rectangles fully contain the unrounded one (that is,
-    /// passes them as first argument to pango_extents_to_pixels()).
+    /// passes them as first argument to `pango_extents_to_pixels()`).
     func getPixelExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
         pango_layout_line_get_pixel_extents(cast(layout_line_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
     
@@ -939,7 +939,7 @@ public extension LogAttrProtocol {
     /// rules without language-specific tailoring, therefore
     /// the `analyis` argument is unused and can be `nil`.
     /// 
-    /// See pango_tailor_break() for language-specific breaks.
+    /// See `pango_tailor_break()` for language-specific breaks.
     func defaultBreak(text: UnsafePointer<gchar>, length: CInt, analysis: AnalysisProtocol, attrsLen attrs_len: CInt) {
         pango_default_break(text, length, cast(analysis.ptr), cast(_ptr), attrs_len)
     

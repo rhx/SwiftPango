@@ -138,27 +138,26 @@ open class EngineLang: Engine, EngineLangProtocol {
 
 public enum EngineLangSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -343,27 +342,26 @@ open class EngineShape: Engine, EngineShapeProtocol {
 
 public enum EngineShapeSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -422,7 +420,7 @@ public extension EngineShapeProtocol {
 /// `PangoFont`, fill in the <structfield>klass</structfield> member of
 /// the nested `PangoFont` with a pointer to
 /// a appropriate `PangoFontClass`, then call
-/// pango_font_init() on the structure.
+/// `pango_font_init()` on the structure.
 /// 
 /// The `PangoFont` structure contains one member
 /// which the implementation fills in.
@@ -446,7 +444,7 @@ public protocol FontProtocol: ObjectProtocol {
 /// `PangoFont`, fill in the <structfield>klass</structfield> member of
 /// the nested `PangoFont` with a pointer to
 /// a appropriate `PangoFontClass`, then call
-/// pango_font_init() on the structure.
+/// `pango_font_init()` on the structure.
 /// 
 /// The `PangoFont` structure contains one member
 /// which the implementation fills in.
@@ -510,7 +508,7 @@ public extension FontRef {
 /// `PangoFont`, fill in the <structfield>klass</structfield> member of
 /// the nested `PangoFont` with a pointer to
 /// a appropriate `PangoFontClass`, then call
-/// pango_font_init() on the structure.
+/// `pango_font_init()` on the structure.
 /// 
 /// The `PangoFont` structure contains one member
 /// which the implementation fills in.
@@ -560,27 +558,26 @@ open class Font: Object, FontProtocol {
 
 public enum FontSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -621,7 +618,7 @@ public extension FontProtocol {
     var font_ptr: UnsafeMutablePointer<PangoFont> { return ptr.assumingMemoryBound(to: PangoFont.self) }
 
     /// Returns a description of the font, with font size set in points.
-    /// Use pango_font_describe_with_absolute_size() if you want the font
+    /// Use `pango_font_describe_with_absolute_size()` if you want the font
     /// size in device units.
     func describe() -> UnsafeMutablePointer<PangoFontDescription>! {
         let rv = pango_font_describe(cast(font_ptr))
@@ -629,7 +626,7 @@ public extension FontProtocol {
     }
 
     /// Returns a description of the font, with absolute font size set
-    /// (in device units). Use pango_font_describe() if you want the font
+    /// (in device units). Use `pango_font_describe()` if you want the font
     /// size in points.
     func describeWithAbsoluteSize() -> UnsafeMutablePointer<PangoFontDescription>! {
         let rv = pango_font_describe_with_absolute_size(cast(font_ptr))
@@ -680,8 +677,8 @@ public extension FontProtocol {
     /// Gets the logical and ink extents of a glyph within a font. The
     /// coordinate system for each rectangle has its origin at the
     /// base line and horizontal origin of the character with increasing
-    /// coordinates extending to the right and down. The macros PANGO_ASCENT(),
-    /// PANGO_DESCENT(), PANGO_LBEARING(), and PANGO_RBEARING() can be used to convert
+    /// coordinates extending to the right and down. The macros `PANGO_ASCENT()`,
+    /// `PANGO_DESCENT()`, `PANGO_LBEARING()`, and `PANGO_RBEARING()` can be used to convert
     /// from the extents rectangle to more traditional font metrics. The units
     /// of the rectangles are in 1/PANGO_SCALE of a device unit.
     /// 
@@ -696,7 +693,7 @@ public extension FontProtocol {
     /// 
     /// Note that the objects returned by this function
     /// are cached and immutable. If you need to make
-    /// changes to the hb_font_t, use hb_font_create_sub_font().
+    /// changes to the hb_font_t, use `hb_font_create_sub_font()`.
     func getHbFont() -> UnsafeMutablePointer<hb_font_t>! {
         let rv = pango_font_get_hb_font(cast(font_ptr))
         return cast(rv)
@@ -705,7 +702,7 @@ public extension FontProtocol {
     /// Gets overall metric information for a font. Since the metrics may be
     /// substantially different for different scripts, a language tag can
     /// be provided to indicate that the metrics should be retrieved that
-    /// correspond to the script(s) used by that language.
+    /// correspond to the `script(s)` used by that language.
     /// 
     /// If `font` is `nil`, this function gracefully sets some sane values in the
     /// output variables and returns.
@@ -750,13 +747,13 @@ public extension FontProtocol {
     /// 
     /// Note that the objects returned by this function
     /// are cached and immutable. If you need to make
-    /// changes to the hb_font_t, use hb_font_create_sub_font().
+    /// changes to the hb_font_t, use `hb_font_create_sub_font()`.
     var hbFont: UnsafeMutablePointer<hb_font_t>! {
         /// Get a hb_font_t object backing this font.
         /// 
         /// Note that the objects returned by this function
         /// are cached and immutable. If you need to make
-        /// changes to the hb_font_t, use hb_font_create_sub_font().
+        /// changes to the hb_font_t, use `hb_font_create_sub_font()`.
         get {
             let rv = pango_font_get_hb_font(cast(font_ptr))
             return cast(rv)

@@ -310,7 +310,7 @@ public extension MatrixProtocol {
         return cast(rv)
     }
 
-    /// Free a `PangoMatrix` created with pango_matrix_copy().
+    /// Free a `PangoMatrix` created with `pango_matrix_copy()`.
     func free() {
         pango_matrix_free(cast(matrix_ptr))
     
@@ -319,7 +319,7 @@ public extension MatrixProtocol {
     /// Returns the scale factor of a matrix on the height of the font.
     /// That is, the scale factor in the direction perpendicular to the
     /// vector that the X coordinate is mapped to.  If the scale in the X
-    /// coordinate is needed as well, use pango_matrix_get_font_scale_factors().
+    /// coordinate is needed as well, use `pango_matrix_get_font_scale_factors()`.
     func getFontScaleFactor() -> CDouble {
         let rv = pango_matrix_get_font_scale_factor(cast(matrix_ptr))
         return rv
@@ -354,7 +354,7 @@ public extension MatrixProtocol {
     }
 
     /// Transforms the distance vector (`dx`,`dy`) by `matrix`. This is
-    /// similar to pango_matrix_transform_point() except that the translation
+    /// similar to `pango_matrix_transform_point()` except that the translation
     /// components of the transformation are ignored. The calculation of
     /// the returned vector is as follows:
     /// 
@@ -380,9 +380,9 @@ public extension MatrixProtocol {
     /// `PangoLayout` to an image buffer, and want to know how large the image
     /// should be and how much you should shift the layout when rendering.
     /// 
-    /// For better accuracy, you should use pango_matrix_transform_rectangle() on
+    /// For better accuracy, you should use `pango_matrix_transform_rectangle()` on
     /// original rectangle in Pango units and convert to pixels afterward
-    /// using pango_extents_to_pixels()'s first argument.
+    /// using `pango_extents_to_pixels()`'s first argument.
     func transformPixelRectangle(rect: RectangleProtocol) {
         pango_matrix_transform_pixel_rectangle(cast(matrix_ptr), cast(rect.ptr))
     
@@ -402,11 +402,11 @@ public extension MatrixProtocol {
     /// should be and how much you should shift the layout when rendering.
     /// 
     /// If you have a rectangle in device units (pixels), use
-    /// pango_matrix_transform_pixel_rectangle().
+    /// `pango_matrix_transform_pixel_rectangle()`.
     /// 
     /// If you have the rectangle in Pango units and want to convert to
     /// transformed pixel bounding box, it is more accurate to transform it first
-    /// (using this function) and pass the result to pango_extents_to_pixels(),
+    /// (using this function) and pass the result to `pango_extents_to_pixels()`,
     /// first argument, for an inclusive rounded rectangle.
     /// However, there are valid reasons that you may want to convert
     /// to pixels first and then transform, for example when the transformed
@@ -434,12 +434,12 @@ public extension MatrixProtocol {
     /// Returns the scale factor of a matrix on the height of the font.
     /// That is, the scale factor in the direction perpendicular to the
     /// vector that the X coordinate is mapped to.  If the scale in the X
-    /// coordinate is needed as well, use pango_matrix_get_font_scale_factors().
+    /// coordinate is needed as well, use `pango_matrix_get_font_scale_factors()`.
     var fontScaleFactor: CDouble {
         /// Returns the scale factor of a matrix on the height of the font.
         /// That is, the scale factor in the direction perpendicular to the
         /// vector that the X coordinate is mapped to.  If the scale in the X
-        /// coordinate is needed as well, use pango_matrix_get_font_scale_factors().
+        /// coordinate is needed as well, use `pango_matrix_get_font_scale_factors()`.
         get {
             let rv = pango_matrix_get_font_scale_factor(cast(matrix_ptr))
             return rv
@@ -458,7 +458,7 @@ public extension MatrixProtocol {
 ///
 /// The `PangoRectangle` structure represents a rectangle. It is frequently
 /// used to represent the logical or ink extents of a single glyph or section
-/// of text. (See, for instance, pango_font_get_glyph_extents())
+/// of text. (See, for instance, `pango_font_get_glyph_extents()`)
 public protocol RectangleProtocol {
     /// Untyped pointer to the underlying `PangoRectangle` instance.
     var ptr: UnsafeMutableRawPointer { get }
@@ -473,7 +473,7 @@ public protocol RectangleProtocol {
 ///
 /// The `PangoRectangle` structure represents a rectangle. It is frequently
 /// used to represent the logical or ink extents of a single glyph or section
-/// of text. (See, for instance, pango_font_get_glyph_extents())
+/// of text. (See, for instance, `pango_font_get_glyph_extents()`)
 public struct RectangleRef: RectangleProtocol {
     /// Untyped pointer to the underlying `PangoRectangle` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -528,7 +528,7 @@ public extension RectangleRef {
 ///
 /// The `PangoRectangle` structure represents a rectangle. It is frequently
 /// used to represent the logical or ink extents of a single glyph or section
-/// of text. (See, for instance, pango_font_get_glyph_extents())
+/// of text. (See, for instance, `pango_font_get_glyph_extents()`)
 open class Rectangle: RectangleProtocol {
     /// Untyped pointer to the underlying `PangoRectangle` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -598,7 +598,7 @@ public extension RectangleProtocol {
         return cast(rv)
     }
 
-    /// Like pango_attr_shape_new(), but a user data pointer is also
+    /// Like `pango_attr_shape_new()`, but a user data pointer is also
     /// provided; this pointer can be accessed when later
     /// rendering the glyph.
     func attrShapeNewWithData(logicalRect logical_rect: RectangleProtocol, data: UnsafeMutableRawPointer, copyFunc copy_func: @escaping AttrDataCopyFunc, destroyFunc destroy_func: @escaping GLib.DestroyNotify) -> UnsafeMutablePointer<PangoAttribute>! {
