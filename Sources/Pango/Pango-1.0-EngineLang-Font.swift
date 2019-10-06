@@ -159,7 +159,7 @@ public enum EngineLangSignalName: String, SignalNameProtocol {
     ///                   text_view)
     /// ```
     /// It is important to note that you must use
-    /// [canonical parameter names][canonical-parameter-names] as
+    /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
     case notify = "notify"
 
@@ -363,7 +363,7 @@ public enum EngineShapeSignalName: String, SignalNameProtocol {
     ///                   text_view)
     /// ```
     /// It is important to note that you must use
-    /// [canonical parameter names][canonical-parameter-names] as
+    /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
     case notify = "notify"
 
@@ -579,7 +579,7 @@ public enum FontSignalName: String, SignalNameProtocol {
     ///                   text_view)
     /// ```
     /// It is important to note that you must use
-    /// [canonical parameter names][canonical-parameter-names] as
+    /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
     case notify = "notify"
 

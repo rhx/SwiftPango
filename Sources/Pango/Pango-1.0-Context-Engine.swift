@@ -179,7 +179,7 @@ public enum ContextSignalName: String, SignalNameProtocol {
     ///                   text_view)
     /// ```
     /// It is important to note that you must use
-    /// [canonical parameter names][canonical-parameter-names] as
+    /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
     case notify = "notify"
 
@@ -804,7 +804,7 @@ public enum CoverageSignalName: String, SignalNameProtocol {
     ///                   text_view)
     /// ```
     /// It is important to note that you must use
-    /// [canonical parameter names][canonical-parameter-names] as
+    /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
     case notify = "notify"
 
@@ -1041,7 +1041,7 @@ public enum EngineSignalName: String, SignalNameProtocol {
     ///                   text_view)
     /// ```
     /// It is important to note that you must use
-    /// [canonical parameter names][canonical-parameter-names] as
+    /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
     case notify = "notify"
 

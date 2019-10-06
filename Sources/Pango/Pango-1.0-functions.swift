@@ -830,8 +830,8 @@ public func quantizeLineGeometry(thickness: UnsafeMutablePointer<CInt>, position
 
 /// Reads an entire line from a file into a buffer. Lines may
 /// be delimited with '\n', '\r', '\n\r', or '\r\n'. The delimiter
-/// is not written into the buffer. Text after a '``' character is treated as
-/// a comment and skipped. '\' can be used to escape a `` character.
+/// is not written into the buffer. Text after a '#' character is treated as
+/// a comment and skipped. '\' can be used to escape a # character.
 /// '\' proceeding a line delimiter combines adjacent lines. A '\' proceeding
 /// any other character is ignored and written into the output buffer
 /// unmodified.
