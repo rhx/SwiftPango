@@ -1305,7 +1305,7 @@ styles are equal.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like pango_font_description_copy(), but only a shallow copy is made
+                        <p>Like <code>pango_font_description_copy()</code>, but only a shallow copy is made
 of the family name and other allocated fields. The result can only
 be used until <code>desc</code> is modified or freed. This is meant to be used
 when the copy is only needed temporarily.</p>
@@ -1412,7 +1412,7 @@ being loaded, but still compare <code>false</code>.)</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the family name field of a font description. See
-pango_font_description_set_family().</p>
+<code>pango_font_description_set_family()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1446,7 +1446,7 @@ pango_font_description_set_family().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the gravity field of a font description. See
-pango_font_description_set_gravity().</p>
+<code>pango_font_description_set_gravity()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1513,7 +1513,7 @@ pango_font_description_set_gravity().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the size field of a font description.
-See pango_font_description_set_size().</p>
+See <code>pango_font_description_set_size()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1547,7 +1547,7 @@ See pango_font_description_set_size().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Determines whether the size of the font is in points (not absolute) or device units (absolute).
-See pango_font_description_set_size() and pango_font_description_set_absolute_size().</p>
+See <code>pango_font_description_set_size()</code> and <code>pango_font_description_set_absolute_size()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1581,7 +1581,7 @@ See pango_font_description_set_size() and pango_font_description_set_absolute_si
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the stretch field of a font description.
-See pango_font_description_set_stretch().</p>
+See <code>pango_font_description_set_stretch()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1615,7 +1615,7 @@ See pango_font_description_set_stretch().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the style field of a <code>PangoFontDescription</code>. See
-pango_font_description_set_style().</p>
+<code>pango_font_description_set_style()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1649,7 +1649,7 @@ pango_font_description_set_style().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the variant field of a <code>PangoFontDescription</code>. See
-pango_font_description_set_variant().</p>
+<code>pango_font_description_set_variant()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1683,7 +1683,7 @@ pango_font_description_set_variant().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the variations field of a font description. See
-pango_font_description_set_variations().</p>
+<code>pango_font_description_set_variations()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1717,7 +1717,7 @@ pango_font_description_set_variations().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the weight field of a font description. See
-pango_font_description_set_weight().</p>
+<code>pango_font_description_set_weight()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1751,7 +1751,7 @@ pango_font_description_set_weight().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Computes a hash of a <code>PangoFontDescription</code> structure suitable
-to be used, for example, as an argument to g_hash_table_new().
+to be used, for example, as an argument to <code>g_hash_table_new()</code>.
 The hash value is independent of <code>desc</code>-&gt;mask.</p>
 
                       </div>
@@ -1823,7 +1823,7 @@ already set will be replaced as well.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like pango_font_description_merge(), but only a shallow copy is made
+                        <p>Like <code>pango_font_description_merge()</code>, but only a shallow copy is made
 of the family name and other allocated fields. <code>desc</code> can only be
 used until <code>desc_to_merge</code> is modified or freed. This is meant
 to be used when the merged font description is only needed temporarily.</p>
@@ -1860,7 +1860,7 @@ to be used when the merged font description is only needed temporarily.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the size field of a font description, in device units. This is mutually
-exclusive with pango_font_description_set_size() which sets the font size
+exclusive with <code>pango_font_description_set_size()</code> which sets the font size
 in points.</p>
 
                       </div>
@@ -1931,7 +1931,7 @@ separated list of family names for this field.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like pango_font_description_set_family(), except that no
+                        <p>Like <code>pango_font_description_set_family()</code>, except that no
 copy of <code><a href="../Protocols/FontDescriptionProtocol.html#/s:5Pango23FontDescriptionProtocolPAAE6familySSSgvp">family</a></code> is made. The caller must make sure that the
 string passed in stays around until <code>desc</code> has been freed
 or the name is set again. This function can be used if
@@ -2009,7 +2009,7 @@ be set on a <code>PangoContext</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the size field of a font description in fractional points. This is mutually
-exclusive with pango_font_description_set_absolute_size().</p>
+exclusive with <code>pango_font_description_set_absolute_size()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2193,7 +2193,7 @@ a font. Both harfbuzz or freetype have API for this.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like pango_font_description_set_variations(), except that no
+                        <p>Like <code>pango_font_description_set_variations()</code>, except that no
 copy of <code><a href="../Protocols/FontDescriptionProtocol.html#/s:5Pango23FontDescriptionProtocolPAAE10variationsSSSgvp">variations</a></code> is made. The caller must make sure that the
 string passed in stays around until <code>desc</code> has been freed
 or the name is set again. This function can be used if
@@ -2269,7 +2269,7 @@ numeric values are possible.</p>
                       <div class="abstract">
                         <p>Creates a filename representation of a font description. The
 filename is identical to the result from calling
-pango_font_description_to_string(), but with underscores instead of
+<code>pango_font_description_to_string()</code>, but with underscores instead of
 characters that are untypical in filenames, and in lower case only.</p>
 
                       </div>
@@ -2304,7 +2304,7 @@ characters that are untypical in filenames, and in lower case only.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Creates a string representation of a font description. See
-pango_font_description_from_string() for a description of the
+<code>pango_font_description_from_string()</code> for a description of the
 format of the string representation. The family list in the
 string description will only have a terminating comma if the
 last word of the list is a valid style option.</p>
@@ -2410,7 +2410,7 @@ and size simultaneously.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the family name field of a font description. See
-pango_font_description_set_family().</p>
+<code>pango_font_description_set_family()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2444,7 +2444,7 @@ pango_font_description_set_family().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the gravity field of a font description. See
-pango_font_description_set_gravity().</p>
+<code>pango_font_description_set_gravity()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2511,7 +2511,7 @@ pango_font_description_set_gravity().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the size field of a font description.
-See pango_font_description_set_size().</p>
+See <code>pango_font_description_set_size()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2545,7 +2545,7 @@ See pango_font_description_set_size().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Determines whether the size of the font is in points (not absolute) or device units (absolute).
-See pango_font_description_set_size() and pango_font_description_set_absolute_size().</p>
+See <code>pango_font_description_set_size()</code> and <code>pango_font_description_set_absolute_size()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2579,7 +2579,7 @@ See pango_font_description_set_size() and pango_font_description_set_absolute_si
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the stretch field of a font description.
-See pango_font_description_set_stretch().</p>
+See <code>pango_font_description_set_stretch()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2613,7 +2613,7 @@ See pango_font_description_set_stretch().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the style field of a <code>PangoFontDescription</code>. See
-pango_font_description_set_style().</p>
+<code>pango_font_description_set_style()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2647,7 +2647,7 @@ pango_font_description_set_style().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the variant field of a <code>PangoFontDescription</code>. See
-pango_font_description_set_variant().</p>
+<code>pango_font_description_set_variant()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2681,7 +2681,7 @@ pango_font_description_set_variant().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the variations field of a font description. See
-pango_font_description_set_variations().</p>
+<code>pango_font_description_set_variations()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2715,7 +2715,7 @@ pango_font_description_set_variations().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the weight field of a font description. See
-pango_font_description_set_weight().</p>
+<code>pango_font_description_set_weight()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2740,7 +2740,7 @@ pango_font_description_set_weight().</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

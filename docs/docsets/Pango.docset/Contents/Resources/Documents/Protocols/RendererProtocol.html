@@ -1288,7 +1288,7 @@ render Pango objects such as <code>PangoGlyphString</code> and
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L166-L185">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L165-L184">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1321,10 +1321,10 @@ render Pango objects such as <code>PangoGlyphString</code> and
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Does initial setup before rendering operations on <code>renderer</code>.
-pango_renderer_deactivate() should be called when done drawing.
-Calls such as pango_renderer_draw_layout() automatically
+<code>pango_renderer_deactivate()</code> should be called when done drawing.
+Calls such as <code>pango_renderer_draw_layout()</code> automatically
 activate the layout before drawing on it. Calls to
-pango_renderer_activate() and pango_renderer_deactivate() can
+<code>pango_renderer_activate()</code> and <code>pango_renderer_deactivate()</code> can
 be nested and the renderer will only be initialized and
 deinitialized once.</p>
 
@@ -1338,7 +1338,7 @@ deinitialized once.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L199-L202">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L198-L201">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1360,7 +1360,7 @@ deinitialized once.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Cleans up after rendering operations on <code>renderer</code>. See
-docs for pango_renderer_activate().</p>
+docs for <code>pango_renderer_activate()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1372,7 +1372,7 @@ docs for pango_renderer_activate().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L206-L209">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L205-L208">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1400,7 +1400,7 @@ of up/down segments and the resulting rectangle is centered
 in the original rectangle)</p>
 
 <p>This should be called while <code>renderer</code> is already active.  Use
-pango_renderer_activate() to activate a renderer.</p>
+<code>pango_renderer_activate()</code> to activate a renderer.</p>
 
                       </div>
                       <div class="declaration">
@@ -1412,7 +1412,7 @@ pango_renderer_activate() to activate a renderer.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L219-L222">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L218-L221">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1445,7 +1445,7 @@ pango_renderer_activate() to activate a renderer.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L225-L228">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L224-L227">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1473,10 +1473,10 @@ output format supports it (PDF for example).</p>
 <p>Note that <code>text</code> is the start of the text for layout, which is then
 indexed by <literal><code>glyph_item</code>-&gt;item-&gt;offset</literal>.</p>
 
-<p>If <code>text</code> is <code>nil</code>, this simply calls pango_renderer_draw_glyphs().</p>
+<p>If <code>text</code> is <code>nil</code>, this simply calls <code>pango_renderer_draw_glyphs()</code>.</p>
 
 <p>The default implementation of this method simply falls back to
-pango_renderer_draw_glyphs().</p>
+<code>pango_renderer_draw_glyphs()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1488,7 +1488,7 @@ pango_renderer_draw_glyphs().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L241-L244">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L240-L243">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1521,7 +1521,7 @@ pango_renderer_draw_glyphs().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L247-L250">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L246-L249">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1554,7 +1554,7 @@ pango_renderer_draw_glyphs().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L253-L256">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L252-L255">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1587,7 +1587,7 @@ pango_renderer_draw_glyphs().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L259-L262">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L258-L261">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1612,7 +1612,7 @@ pango_renderer_draw_glyphs().</p>
 specified <code>PangoRenderer</code>.</p>
 
 <p>This should be called while <code>renderer</code> is already active.  Use
-pango_renderer_activate() to activate a renderer.</p>
+<code>pango_renderer_activate()</code> to activate a renderer.</p>
 
                       </div>
                       <div class="declaration">
@@ -1624,7 +1624,7 @@ pango_renderer_activate() to activate a renderer.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L269-L272">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L268-L271">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1658,7 +1658,7 @@ using the given <code>PangoRenderer</code>; coordinates are in device space.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L276-L279">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L275-L278">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1691,7 +1691,7 @@ using the given <code>PangoRenderer</code>; coordinates are in device space.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L282-L285">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L281-L284">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1724,7 +1724,7 @@ using the given <code>PangoRenderer</code>; coordinates are in device space.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L288-L291">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L287-L290">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1762,7 +1762,7 @@ rendered.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L299-L302">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L298-L301">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1800,7 +1800,7 @@ rendered.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L310-L313">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L309-L312">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1822,7 +1822,7 @@ rendered.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the transformation matrix that will be applied when
-rendering. See pango_renderer_set_matrix().</p>
+rendering. See <code>pango_renderer_set_matrix()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1834,7 +1834,7 @@ rendering. See pango_renderer_set_matrix().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L317-L320">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L316-L319">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1867,7 +1867,7 @@ pango_renderer_part_changed (render, PANGO_RENDER_PART_UNDERLINE);
 
 <p>When the stipple changes or underlines with different stipples
 might be joined together. Pango automatically calls this for
-changes to colors. (See pango_renderer_set_color())</p>
+changes to colors. (See <code>pango_renderer_set_color()</code>)</p>
 
                       </div>
                       <div class="declaration">
@@ -1879,7 +1879,7 @@ changes to colors. (See pango_renderer_set_color())</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L335-L338">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L334-L337">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1914,7 +1914,7 @@ specified for <code>part</code> as well.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L343-L346">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L342-L345">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1936,7 +1936,7 @@ specified for <code>part</code> as well.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets the color for part of the rendering.
-Also see pango_renderer_set_alpha().</p>
+Also see <code>pango_renderer_set_alpha()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1948,7 +1948,7 @@ Also see pango_renderer_set_alpha().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L350-L353">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L349-L352">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1981,7 +1981,7 @@ Also see pango_renderer_set_alpha().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L356-L359">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L355-L358">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2019,7 +2019,7 @@ rendered.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L366-L377">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L365-L376">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2057,7 +2057,7 @@ rendered.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L385-L396">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L384-L395">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2079,7 +2079,7 @@ rendered.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets the transformation matrix that will be applied when
-rendering. See pango_renderer_set_matrix().</p>
+rendering. See <code>pango_renderer_set_matrix()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2091,7 +2091,7 @@ rendering. See pango_renderer_set_matrix().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L400-L411">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L399-L410">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2104,7 +2104,7 @@ rendering. See pango_renderer_set_matrix().</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
