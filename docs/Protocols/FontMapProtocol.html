@@ -1129,7 +1129,7 @@ create an implementation of a <code>PangoFontMap</code>, the rendering-system
 specific code should allocate a larger structure that contains a nested
 <code>PangoFontMap</code>, fill in the <structfield>klass</structfield> member of the nested <code>PangoFontMap</code> with a
 pointer to a appropriate <code>PangoFontMapClass</code>, then call
-pango_font_map_init() on the structure.</p>
+<code>pango_font_map_init()</code> on the structure.</p>
 
 <p>The <code>PangoFontMap</code> structure contains one member which the implementation
 fills in.</p>
@@ -1166,7 +1166,7 @@ fills in.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L524">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L522">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1204,7 +1204,7 @@ fills in.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L527">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L525">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1296,7 +1296,7 @@ fills in.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L688-L707">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L685-L704">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1346,7 +1346,7 @@ and such data is changed.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L721-L724">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L718-L721">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1368,13 +1368,13 @@ and such data is changed.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Creates a <code>PangoContext</code> connected to <code>fontmap</code>.  This is equivalent
-to pango_context_new() followed by pango_context_set_font_map().</p>
+to <code>pango_context_new()</code> followed by <code>pango_context_set_font_map()</code>.</p>
 
 <p>If you are using Pango as part of a higher-level system,
 that system may have it&rsquo;s own way of create a <code>PangoContext</code>.
 For instance, the GTK+ toolkit has, among others,
-gdk_pango_context_get_for_screen(), and
-gtk_widget_get_pango_context().  Use those instead.</p>
+<code>gdk_pango_context_get_for_screen()</code>, and
+<code>gtk_widget_get_pango_context()</code>.  Use those instead.</p>
 
                       </div>
                       <div class="declaration">
@@ -1386,7 +1386,7 @@ gtk_widget_get_pango_context().  Use those instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L734-L737">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L731-L734">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1429,7 +1429,7 @@ in <code>PangoContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L750-L753">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L747-L750">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1462,7 +1462,7 @@ in <code>PangoContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L756-L759">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L753-L756">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1495,7 +1495,7 @@ in <code>PangoContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L762-L765">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L759-L762">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1529,7 +1529,7 @@ a font matching <code>desc</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L769-L772">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L766-L769">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1572,7 +1572,7 @@ in <code>PangoContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L784-L800">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L781-L797">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1585,7 +1585,7 @@ in <code>PangoContext</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

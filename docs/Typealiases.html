@@ -1168,7 +1168,7 @@ Pango. Dimensions are stored in 1/<code>PANGO_SCALE</code> of a device unit.
 (A device unit might be a pixel for screen display, or
 a point on a printer.) <code>PANGO_SCALE</code> is currently 1024, and
 may change in the future (unlikely though), but you should not
-depend on its exact value. The PANGO_PIXELS() macro can be used
+depend on its exact value. The <code>PANGO_PIXELS()</code> macro can be used
 to convert from glyph units into device units with correct rounding.</p>
 
                       </div>
@@ -1268,7 +1268,7 @@ See the <code>PangoGlyphItem</code> docs for details on the fields.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Flags influencing the shaping process.
-These can be passed to pango_shape_with_flags().</p>
+These can be passed to <code>pango_shape_with_flags()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1393,7 +1393,7 @@ not visible in the output.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A callback function used by pango_fontset_foreach() when enumerating
+                        <p>A callback function used by <code>pango_fontset_foreach()</code> when enumerating
 the fonts in a fontset.</p>
 
                       </div>
@@ -1430,7 +1430,7 @@ the fonts in a fontset.</p>
                       <div class="abstract">
                         <p>A <code>PangoAlignment</code> describes how to align the lines of a <code>PangoLayout</code> within the
 available space. If the <code>PangoLayout</code> is set to justify
-using pango_layout_set_justify(), this only has effect for partial lines.</p>
+using <code>pango_layout_set_justify()</code>, this only has effect for partial lines.</p>
 
                       </div>
                       <div class="declaration">
@@ -1463,7 +1463,7 @@ using pango_layout_set_justify(), this only has effect for partial lines.</p>
                         <p>The <code>PangoAttrType</code>
 distinguishes between different types of attributes. Along with the
 predefined values, it is possible to allocate additional values
-for custom attributes using pango_attr_type_register(). The predefined
+for custom attributes using <code>pango_attr_type_register()</code>. The predefined
 values are given below. The type of structure used to store the
 attribute is listed in parentheses after the description.</p>
 
@@ -1567,12 +1567,12 @@ will be returned.</p>
                         <p>The <code>PangoDirection</code> type represents a direction in the
 Unicode bidirectional algorithm; not every value in this
 enumeration makes sense for every usage of <code>PangoDirection</code>;
-for example, the return value of pango_unichar_direction()
-and pango_find_base_dir() cannot be <code>PANGO_DIRECTION_WEAK_LTR</code>
+for example, the return value of <code>pango_unichar_direction()</code>
+and <code>pango_find_base_dir()</code> cannot be <code>PANGO_DIRECTION_WEAK_LTR</code>
 or <code>PANGO_DIRECTION_WEAK_RTL</code>, since every character is either
 neutral or has a strong direction; on the other hand
 <code>PANGO_DIRECTION_NEUTRAL</code> doesn&rsquo;t make sense to pass
-to pango_itemize_with_base_dir().</p>
+to <code>pango_itemize_with_base_dir()</code>.</p>
 
 <p>The <code>PANGO_DIRECTION_TTB_LTR</code>, <code>PANGO_DIRECTION_TTB_RTL</code>
 values come from an earlier interpretation of this
@@ -1652,8 +1652,8 @@ those situations, the layout is rotated using a non-identity PangoMatrix,
 and then glyph orientation is controlled using <code>PangoGravity</code>.
 Not every value in this enumeration makes sense for every usage of
 <code>PangoGravity</code>; for example, <code>PANGO_GRAVITY_AUTO</code> only can be passed to
-pango_context_set_base_gravity() and can only be returned by
-pango_context_get_base_gravity().</p>
+<code>pango_context_set_base_gravity()</code> and can only be returned by
+<code>pango_context_get_base_gravity()</code>.</p>
 
 <p>See also: <code>PangoGravityHint</code></p>
 
@@ -1754,7 +1754,7 @@ purposes as setting colors.</p>
 systems. The values correspond to the names as defined in the
 Unicode standard. See <ulink
 url="http://www.unicode.org/reports/tr24/">Unicode Standard Annex
-<code>24</code>: Script names</ulink>.</p>
+<code>24:</code> Script names</ulink>.</p>
 
 <p>Note that this enumeration is deprecated and will not be updated
 to include values in newer versions of the Unicode standard.
@@ -1998,7 +1998,7 @@ value ranging from 100 to 1000, but there are some predefined values:</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

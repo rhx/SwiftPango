@@ -1263,7 +1263,7 @@ by the structure which simplifies memory management.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Compute the logical and ink extents of a glyph string. See the documentation
-for pango_font_get_glyph_extents() for details about the interpretation
+for <code>pango_font_get_glyph_extents()</code> for details about the interpretation
 of the rectangles.</p>
 
 <p>Examples of logical (red) and ink (green) rects:</p>
@@ -1370,12 +1370,12 @@ glyph string).</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Given a <code>PangoGlyphString</code> resulting from pango_shape() and the corresponding
+                        <p>Given a <code>PangoGlyphString</code> resulting from <code>pango_shape()</code> and the corresponding
 text, determine the screen width corresponding to each character. When
 multiple characters compose a single cluster, the width of the entire
 cluster is divided equally among the characters.</p>
 
-<p>See also pango_glyph_item_get_logical_widths().</p>
+<p>See also <code>pango_glyph_item_get_logical_widths()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -1409,7 +1409,7 @@ cluster is divided equally among the characters.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Computes the logical width of the glyph string as can also be computed
-using pango_glyph_string_extents().  However, since this only computes the
+using <code>pango_glyph_string_extents()</code>.  However, since this only computes the
 width, it&rsquo;s much faster.  This is in fact only a convenience function that
 computes the sum of geometry.width for each glyph in the <code>glyphs</code>.</p>
 
@@ -1551,11 +1551,11 @@ attributes for the text to compute the valid cursor position.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Given a segment of text and the corresponding
-<code>PangoAnalysis</code> structure returned from pango_itemize(),
+<code>PangoAnalysis</code> structure returned from <code>pango_itemize()</code>,
 convert the characters into glyphs. You may also pass
-in only a substring of the item from pango_itemize().</p>
+in only a substring of the item from <code>pango_itemize()</code>.</p>
 
-<p>It is recommended that you use pango_shape_full() instead, since
+<p>It is recommended that you use <code>pango_shape_full()</code> instead, since
 that API allows for shaping interaction happening across text item
 boundaries.</p>
 
@@ -1591,11 +1591,11 @@ boundaries.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Given a segment of text and the corresponding
-<code>PangoAnalysis</code> structure returned from pango_itemize(),
+<code>PangoAnalysis</code> structure returned from <code>pango_itemize()</code>,
 convert the characters into glyphs. You may also pass
-in only a substring of the item from pango_itemize().</p>
+in only a substring of the item from <code>pango_itemize()</code>.</p>
 
-<p>This is similar to pango_shape(), except it also can optionally take
+<p>This is similar to <code>pango_shape()</code>, except it also can optionally take
 the full paragraph text as input, which will then be used to perform
 certain cross-item shaping interactions.  If you have access to the broader
 text of which <code>item_text</code> is part of, provide the broader text as
@@ -1633,11 +1633,11 @@ text of which <code>item_text</code> is part of, provide the broader text as
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Given a segment of text and the corresponding
-<code>PangoAnalysis</code> structure returned from pango_itemize(),
+<code>PangoAnalysis</code> structure returned from <code>pango_itemize()</code>,
 convert the characters into glyphs. You may also pass
-in only a substring of the item from pango_itemize().</p>
+in only a substring of the item from <code>pango_itemize()</code>.</p>
 
-<p>This is similar to pango_shape_full(), except it also takes
+<p>This is similar to <code>pango_shape_full()</code>, except it also takes
 flags that can influence the shaping process.</p>
 
                       </div>
@@ -1672,7 +1672,7 @@ flags that can influence the shaping process.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Computes the logical width of the glyph string as can also be computed
-using pango_glyph_string_extents().  However, since this only computes the
+using <code>pango_glyph_string_extents()</code>.  However, since this only computes the
 width, it&rsquo;s much faster.  This is in fact only a convenience function that
 computes the sum of geometry.width for each glyph in the <code>glyphs</code>.</p>
 
@@ -1699,7 +1699,7 @@ computes the sum of geometry.width for each glyph in the <code>glyphs</code>.</p
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -1477,9 +1477,9 @@ Use <code>AttrIteratorRef</code> only as an <code>unowned</code> reference to an
 
 <p>The <code>PangoAttrIterator</code> structure is used to represent an
 iterator through a <code>PangoAttrList</code>. A new iterator is created
-with pango_attr_list_get_iterator(). Once the iterator
+with <code>pango_attr_list_get_iterator()</code>. Once the iterator
 is created, it can be advanced through the style changes
-in the text using pango_attr_iterator_next(). At each
+in the text using <code>pango_attr_iterator_next()</code>. At each
 style change, the range of the current style segment and the
 attributes currently in effect can be queried.</p>
 
@@ -1577,7 +1577,7 @@ Use <code>AttrListRef</code> only as an <code>unowned</code> reference to an exi
 <p>The <code>PangoAttrList</code> structure represents a list of attributes
 that apply to a section of text. The attributes are, in general,
 allowed to overlap in an arbitrary fashion, however, if the
-attributes are manipulated only through pango_attr_list_change(),
+attributes are manipulated only through <code>pango_attr_list_change()</code>,
 the overlap between properties will meet stricter criteria.</p>
 
 <p>Since the <code>PangoAttrList</code> structure is stored as a linear list,
@@ -1774,7 +1774,7 @@ Use <code>AttributeRef</code> only as an <code>unowned</code> reference to an ex
 attributes. Particular types of attributes include this structure
 as their initial portion. The common portion of the attribute holds
 the range to which the value in the type-specific part of the attribute
-applies and should be initialized using pango_attribute_init().
+applies and should be initialized using <code>pango_attribute_init()</code>.
 By default an attribute will have an all-inclusive range of [0,<code>G_MAXUINT</code>].</p>
 
                         <a href="Structs/AttributeRef.html" class="slightly-smaller">See more</a>
@@ -1929,7 +1929,7 @@ to <code>PangoCoverageLevel</code>. It is an opaque structure with no public fie
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L659-L663">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L658-L662">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1976,7 +1976,7 @@ script specific engines. It has no functionality by itself.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L925-L929">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L923-L927">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2400,7 +2400,7 @@ for Fontconfig-based backends.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-EngineLang-Font.swift#L240-L244">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-EngineLang-Font.swift#L239-L243">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2441,7 +2441,7 @@ a larger structure that contains a nested
 <code>PangoFont</code>, fill in the <structfield>klass</structfield> member of
 the nested <code>PangoFont</code> with a pointer to
 a appropriate <code>PangoFontClass</code>, then call
-pango_font_init() on the structure.</p>
+<code>pango_font_init()</code> on the structure.</p>
 
 <p>The <code>PangoFont</code> structure contains one member
 which the implementation fills in.</p>
@@ -2457,7 +2457,7 @@ which the implementation fills in.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-EngineLang-Font.swift#L453-L457">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-EngineLang-Font.swift#L451-L455">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2880,7 +2880,7 @@ slant, weight, width and other aspects.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L270-L274">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L269-L273">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2920,7 +2920,7 @@ create an implementation of a <code>PangoFontMap</code>, the rendering-system
 specific code should allocate a larger structure that contains a nested
 <code>PangoFontMap</code>, fill in the <structfield>klass</structfield> member of the nested <code>PangoFontMap</code> with a
 pointer to a appropriate <code>PangoFontMapClass</code>, then call
-pango_font_map_init() on the structure.</p>
+<code>pango_font_map_init()</code> on the structure.</p>
 
 <p>The <code>PangoFontMap</code> structure contains one member which the implementation
 fills in.</p>
@@ -2936,7 +2936,7 @@ fills in.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L545-L549">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L543-L547">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2987,7 +2987,7 @@ set of metrics for the entire fontset.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L836-L840">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L833-L837">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3052,7 +3052,7 @@ fields.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L1090-L1094">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L1086-L1090">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3192,11 +3192,11 @@ then <code>start_glyph</code> decreases as the iterator moves forward.  Moreover
 in right-to-left cases, <code>start_glyph</code> is greater than <code>end_glyph</code>.</p>
 
 <p>An iterator should be initialized using either of
-pango_glyph_item_iter_init_start() and
-pango_glyph_item_iter_init_end(), for forward and backward iteration
+<code>pango_glyph_item_iter_init_start()</code> and
+<code>pango_glyph_item_iter_init_end()</code>, for forward and backward iteration
 respectively, and walked over using any desired mixture of
-pango_glyph_item_iter_next_cluster() and
-pango_glyph_item_iter_prev_cluster().  A common idiom for doing a
+<code>pango_glyph_item_iter_next_cluster()</code> and
+<code>pango_glyph_item_iter_prev_cluster()</code>.  A common idiom for doing a
 forward iteration over the clusters is:
 <programlisting>
 PangoGlyphItemIter cluster_iter;
@@ -3602,7 +3602,7 @@ Use <code>LayoutLineRef</code> only as an <code>unowned</code> reference to an e
 
 <p>The <code>PangoLayoutLine</code> structure represents one of the lines resulting
 from laying out a paragraph via <code>PangoLayout</code>. <code>PangoLayoutLine</code>
-structures are obtained by calling pango_layout_get_line() and
+structures are obtained by calling <code>pango_layout_get_line()</code> and
 are only valid until the text, attributes, or settings of the
 parent <code>PangoLayout</code> are modified.</p>
 
@@ -3843,7 +3843,7 @@ Use <code>RectangleRef</code> only as an <code>unowned</code> reference to an ex
 
 <p>The <code>PangoRectangle</code> structure represents a rectangle. It is frequently
 used to represent the logical or ink extents of a single glyph or section
-of text. (See, for instance, pango_font_get_glyph_extents())</p>
+of text. (See, for instance, <code>pango_font_get_glyph_extents()</code>)</p>
 
                         <a href="Structs/RectangleRef.html" class="slightly-smaller">See more</a>
                       </div>
@@ -4122,7 +4122,7 @@ of tab stops. Each tab stop has an alignment and a position.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

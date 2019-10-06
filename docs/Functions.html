@@ -1660,7 +1660,7 @@ embedding a picture or a widget inside a <code>PangoLayout</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like pango_attr_shape_new(), but a user data pointer is also
+                        <p>Like <code>pango_attr_shape_new()</code>, but a user data pointer is also
 provided; this pointer can be accessed when later
 rendering the glyph.</p>
 
@@ -1906,9 +1906,9 @@ lines will use the foreground color.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Fetches the attribute type name passed in when registering the type using
-pango_attr_type_register().</p>
+<code>pango_attr_type_register()</code>.</p>
 
-<p>The returned value is an interned string (see g_intern_string() for what
+<p>The returned value is an interned string (see <code>g_intern_string()</code> for what
 that means) that should not be modified or freed.</p>
 
                       </div>
@@ -1940,7 +1940,7 @@ that means) that should not be modified or freed.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Allocate a new attribute type ID.  The attribute type name can be accessed
-later by using pango_attr_type_get_name().</p>
+later by using <code>pango_attr_type_get_name()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2096,7 +2096,7 @@ will use the foreground color.</p>
 character, as specified in the Unicode Character Database.</p>
 
 <p>A simplified version of this function is available as
-pango_unichar_direction().</p>
+<code>pango_unichar_direction()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -2128,7 +2128,7 @@ pango_unichar_direction().</p>
                       <div class="abstract">
                         <p>Determines possible line, word, and character breaks
 for a string of Unicode text with a single analysis.
-For most purposes you may want to use pango_get_log_attrs().</p>
+For most purposes you may want to use <code>pango_get_log_attrs()</code>.</p>
 
 <p><strong>break is deprecated:</strong>
 Use pango_default_break() and pango_tailor_break()</p>
@@ -2166,7 +2166,7 @@ Use pango_default_break() and pango_tailor_break()</p>
 rules without language-specific tailoring, therefore
 the <code>analyis</code> argument is unused and can be <code>nil</code>.</p>
 
-<p>See pango_tailor_break() for language-specific breaks.</p>
+<p>See <code>pango_tailor_break()</code> for language-specific breaks.</p>
 
                       </div>
                       <div class="declaration">
@@ -2455,7 +2455,7 @@ the word is a word).</p>
 character that typically has a glyph that is the mirror image of <code>ch</code>&lsquo;s
 glyph, puts that character in the address pointed to by <code>mirrored_ch</code>.</p>
 
-<p>Use g_unichar_get_mirror_char() instead; the docs for that function
+<p>Use <code>g_unichar_get_mirror_char()</code> instead; the docs for that function
 provide full details.</p>
 
                       </div>
@@ -2557,7 +2557,7 @@ pass <code>PANGO_GRAVITY_AUTO</code> and <code>PANGO_GRAVITY_HINT_STRONG</code> 
 returns actual gravity to use in laying out a single character
 or <code>PangoItem</code>.</p>
 
-<p>This function is similar to pango_gravity_get_for_script() except
+<p>This function is similar to <code>pango_gravity_get_for_script()</code> except
 that this function makes a distinction between narrow/half-width and
 wide/full-width characters also.  Wide/full-width characters always
 stand <emphasis>upright</emphasis>, that is, they always take the base gravity,
@@ -2598,8 +2598,8 @@ preferred gravity of <code>script</code>.</p>
                         <p>Converts a <code>PangoGravity</code> value to its natural rotation in radians.
 <code>gravity</code> should not be <code>PANGO_GRAVITY_AUTO</code>.</p>
 
-<p>Note that pango_matrix_rotate() takes angle in degrees, not radians.
-So, to call pango_matrix_rotate() with the output of this function
+<p>Note that <code>pango_matrix_rotate()</code> takes angle in degrees, not radians.
+So, to call <code>pango_matrix_rotate()</code> with the output of this function
 you should multiply it by (180. / G_PI).</p>
 
                       </div>
@@ -2633,7 +2633,7 @@ you should multiply it by (180. / G_PI).</p>
                         <p>Checks <code>ch</code> to see if it is a character that should not be
 normally rendered on the screen.  This includes all Unicode characters
 with <q>ZERO WIDTH</q> in their name, as well as <firstterm>bidi</firstterm> formatting characters, and
-a few other ones.  This is totally different from g_unichar_iszerowidth()
+a few other ones.  This is totally different from <code>g_unichar_iszerowidth()</code>
 and is at best misnamed.</p>
 
                       </div>
@@ -2703,7 +2703,7 @@ the range covering the position just after <code>start_index</code> + <code>leng
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Like pango_itemize(), but the base direction to use when
+                        <p>Like <code>pango_itemize()</code>, but the base direction to use when
 computing bidirectional levels (see pango_context_set_base_dir ()),
 is specified explicitly rather than gotten from the <code>PangoContext</code>.</p>
 
@@ -2744,7 +2744,7 @@ pointer.)</p>
 lowercase, mapping &lsquo;_&rsquo; to &lsquo;-&rsquo;, and stripping all characters other
 than letters and &lsquo;-&rsquo;.</p>
 
-<p>Use pango_language_get_default() if you want to get the <code>PangoLanguage</code> for
+<p>Use <code>pango_language_get_default()</code> if you want to get the <code>PangoLanguage</code> for
 the current locale of the process.</p>
 
                       </div>
@@ -2779,7 +2779,7 @@ the current locale of the process.</p>
 Note that this can change over the life of an application.</p>
 
 <p>On Unix systems, this is the return value is derived from
-<literal>setlocale(LC_CTYPE, NULL)</literal>, and the user can
+<code>&lt;literal&gt;setlocale(LC_CTYPE, NULL)</code></literal>, and the user can
 affect this through the environment variables LC_ALL, LC_CTYPE or
 LANG (checked in that order). The locale string typically is in
 the form lang_COUNTRY, where lang is an ISO-639 language code, and
@@ -2789,17 +2789,17 @@ Brazil.</p>
 
 <p>On Windows, the C library does not use any such environment
 variables, and setting them won&rsquo;t affect the behavior of functions
-like ctime(). The user sets the locale through the Regional Options
-in the Control Panel. The C library (in the setlocale() function)
+like <code>ctime()</code>. The user sets the locale through the Regional Options
+in the Control Panel. The C library (in the <code>setlocale()</code> function)
 does not use country and language codes, but country and language
 names spelled out in English.
 However, this function does check the above environment
 variables, and does return a Unix-style locale string based on
 either said environment variables or the thread&rsquo;s current locale.</p>
 
-<p>Your application should call <literal>setlocale(LC_ALL, &ldquo;&rdquo;);</literal>
+<p>Your application should call <code>&lt;literal&gt;setlocale(LC_ALL, &quot;&quot;)</code>;</literal>
 for the user settings to take effect.  Gtk+ does this in its initialization
-functions automatically (by calling gtk_set_locale()).
+functions automatically (by calling <code>gtk_set_locale()</code>).
 See <literal>man setlocale</literal> for more details.</p>
 
                       </div>
@@ -2866,9 +2866,9 @@ characters in the text will determine the final resolved direction.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>After feeding a pango markup parser some data with g_markup_parse_context_parse(),
+                        <p>After feeding a pango markup parser some data with <code>g_markup_parse_context_parse()</code>,
 use this function to get the list of pango attributes and text out of the
-markup. This function will not free <code>context</code>, use g_markup_parse_context_free()
+markup. This function will not free <code>context</code>, use <code>g_markup_parse_context_free()</code>
 to do so.</p>
 
                       </div>
@@ -2908,17 +2908,17 @@ character following it as an accelerator. For example, <code>accel_marker</code>
 might be an ampersand or underscore. All characters marked
 as an accelerator will receive a <code>PANGO_UNDERLINE_LOW</code> attribute,
 and the first character so marked will be returned in <code>accel_char</code>,
-when calling finish(). Two <code>accel_marker</code> characters following each
+when calling <code>finish()</code>. Two <code>accel_marker</code> characters following each
 other produce a single literal <code>accel_marker</code> character.</p>
 
-<p>To feed markup to the parser, use g_markup_parse_context_parse()
+<p>To feed markup to the parser, use <code>g_markup_parse_context_parse()</code>
 on the returned <code>GMarkupParseContext</code>. When done with feeding markup
-to the parser, use pango_markup_parser_finish() to get the data out
-of it, and then use g_markup_parse_context_free() to free it.</p>
+to the parser, use <code>pango_markup_parser_finish()</code> to get the data out
+of it, and then use <code>g_markup_parse_context_free()</code> to free it.</p>
 
 <p>This function is designed for applications that read pango markup
 from streams. To simply parse a string containing pango markup,
-the simpler pango_parse_markup() API is recommended instead.</p>
+the simpler <code>pango_parse_markup()</code> API is recommended instead.</p>
 
                       </div>
                       <div class="declaration">
@@ -2990,7 +2990,7 @@ if <code>warn</code> is <code>true</code>, and a
 string representing the list of possible values is stored in
 <code>possible_values</code>.  The list is slash-separated, eg.
 <q>none/start/middle/end</q>.  If failed and <code>possible_values</code> is not <code>nil</code>,
-returned string should be freed using g_free().</p>
+returned string should be freed using <code>g_free()</code>.</p>
 
 <p><strong>parse_enum is deprecated:</strong>
 This method is deprecated.</p>
@@ -3036,7 +3036,7 @@ and the first character so marked will be returned in <code>accel_char</code>.
 Two <code>accel_marker</code> characters following each other produce a single
 literal <code>accel_marker</code> character.</p>
 
-<p>To parse a stream of pango markup incrementally, use pango_markup_parser_new().</p>
+<p>To parse a stream of pango markup incrementally, use <code>pango_markup_parser_new()</code>.</p>
 
 <p>If any error happens, none of the output arguments are touched except
 for <code>error</code>.</p>
@@ -3423,7 +3423,7 @@ result is undefined.</p>
 
 <p>Note that while the return type of this function is declared
 as PangoScript, as of Pango 1.18, this function simply returns
-the return value of g_unichar_get_script(). Callers must be
+the return value of <code>g_unichar_get_script()</code>. Callers must be
 prepared to handle unknown values.</p>
 
 <p><strong>script_for_unichar is deprecated:</strong>
@@ -3480,7 +3480,7 @@ If one of them is set, it is parsed as a list of language tags
 separated by colons or other separators.  This function
 will return the first language in the parsed list that Pango
 believes may use <code>script</code> for writing.  This last predicate
-is tested using pango_language_includes_script().  This can
+is tested using <code>pango_language_includes_script()</code>.  This can
 be used to control Pango&rsquo;s font selection for non-primary
 languages.  For example, a PANGO_LANGUAGE enviroment variable
 set to <q>en:fa</q> makes Pango choose fonts suitable for Persian (fa)
@@ -3518,11 +3518,11 @@ context language is not feasible.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Given a segment of text and the corresponding
-<code>PangoAnalysis</code> structure returned from pango_itemize(),
+<code>PangoAnalysis</code> structure returned from <code>pango_itemize()</code>,
 convert the characters into glyphs. You may also pass
-in only a substring of the item from pango_itemize().</p>
+in only a substring of the item from <code>pango_itemize()</code>.</p>
 
-<p>It is recommended that you use pango_shape_full() instead, since
+<p>It is recommended that you use <code>pango_shape_full()</code> instead, since
 that API allows for shaping interaction happening across text item
 boundaries.</p>
 
@@ -3555,11 +3555,11 @@ boundaries.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Given a segment of text and the corresponding
-<code>PangoAnalysis</code> structure returned from pango_itemize(),
+<code>PangoAnalysis</code> structure returned from <code>pango_itemize()</code>,
 convert the characters into glyphs. You may also pass
-in only a substring of the item from pango_itemize().</p>
+in only a substring of the item from <code>pango_itemize()</code>.</p>
 
-<p>This is similar to pango_shape(), except it also can optionally take
+<p>This is similar to <code>pango_shape()</code>, except it also can optionally take
 the full paragraph text as input, which will then be used to perform
 certain cross-item shaping interactions.  If you have access to the broader
 text of which <code>item_text</code> is part of, provide the broader text as
@@ -3594,11 +3594,11 @@ text of which <code>item_text</code> is part of, provide the broader text as
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Given a segment of text and the corresponding
-<code>PangoAnalysis</code> structure returned from pango_itemize(),
+<code>PangoAnalysis</code> structure returned from <code>pango_itemize()</code>,
 convert the characters into glyphs. You may also pass
-in only a substring of the item from pango_itemize().</p>
+in only a substring of the item from <code>pango_itemize()</code>.</p>
 
-<p>This is similar to pango_shape_full(), except it also takes
+<p>This is similar to <code>pango_shape_full()</code>, except it also takes
 flags that can influence the shaping process.</p>
 
                       </div>
@@ -3700,7 +3700,7 @@ This method is deprecated.</p>
                       <div class="abstract">
                         <p>Apply language-specific tailoring to the breaks in
 <code>log_attrs</code>, which are assumed to have been produced
-by pango_default_break().</p>
+by <code>pango_default_break()</code>.</p>
 
 <p>If <code>offset</code> is not -1, it is used to apply attributes
 from <code>analysis</code> that are relevant to line breaking.</p>
@@ -3774,7 +3774,7 @@ This method is deprecated.</p>
 <p>This function is useful to categorize characters into left-to-right
 letters, right-to-left letters, and everything else.  If full
 Unicode bidirectional type of a character is needed,
-pango_bidi_type_for_unichar() can be used instead.</p>
+<code>pango_bidi_type_for_unichar()</code> can be used instead.</p>
 
                       </div>
                       <div class="declaration">
@@ -3871,7 +3871,7 @@ it returns the encoded version of Pango available at run-time,
 as opposed to the version available at compile-time.</p>
 
 <p>A version number can be encoded into an integer using
-PANGO_VERSION_ENCODE().</p>
+<code>PANGO_VERSION_ENCODE()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -3910,12 +3910,12 @@ the version of Pango the application or module was compiled against.</p>
 
 <p>Compatibility is defined by two things: first the version
 of the running library is newer than the version
-<code>required_major</code>.required_minor.<code>required_micro</code>. Second
+<code>required_major.required_minor</code>.<code>required_micro</code>. Second
 the running library must be binary compatible with the
-version <code>required_major</code>.required_minor.<code>required_micro</code>
+version <code>required_major.required_minor</code>.<code>required_micro</code>
 (same major version.)</p>
 
-<p>For compile-time version checking use PANGO_VERSION_CHECK().</p>
+<p>For compile-time version checking use <code>PANGO_VERSION_CHECK()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -3972,7 +3972,7 @@ the version available at compile-time.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
