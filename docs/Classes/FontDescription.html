@@ -174,6 +174,12 @@
                 <a class="nav-group-task-link" href="../Classes/FontsetClass.html">FontsetClass</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FontsetSimple.html">FontsetSimple</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FontsetSimpleClass.html">FontsetSimpleClass</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/GlyphGeometry.html">GlyphGeometry</a>
               </li>
               <li class="nav-group-task">
@@ -323,6 +329,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/FontsetSignalName.html">FontsetSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/FontsetSimpleSignalName.html">FontsetSimpleSignalName</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/LayoutSignalName.html">LayoutSignalName</a>
@@ -763,6 +772,12 @@
                 <a class="nav-group-task-link" href="../Protocols/FontsetProtocol.html">FontsetProtocol</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/FontsetSimpleClassProtocol.html">FontsetSimpleClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/FontsetSimpleProtocol.html">FontsetSimpleProtocol</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/GlyphGeometryProtocol.html">GlyphGeometryProtocol</a>
               </li>
               <li class="nav-group-task">
@@ -951,6 +966,12 @@
                 <a class="nav-group-task-link" href="../Structs/FontsetRef.html">FontsetRef</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/FontsetSimpleClassRef.html">FontsetSimpleClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/FontsetSimpleRef.html">FontsetSimpleRef</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/GlyphGeometryRef.html">GlyphGeometryRef</a>
               </li>
               <li class="nav-group-task">
@@ -1109,7 +1130,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>FontDescription</h1>
               <div class="declaration">
                 <div class="language">
@@ -1178,7 +1199,8 @@ For type-safe access, use the generated, typed pointer <code>font_description_pt
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Designated initialiser from the underlying <code>C</code> data type.
-Ownership is transferred to the <code>FontDescription</code> instance.</p>
+This creates an instance without performing an unbalanced retain
+i.e., ownership is transferred to the <code>FontDescription</code> instance.</p>
 
                       </div>
                       <div class="declaration">
@@ -1189,8 +1211,78 @@ Ownership is transferred to the <code>FontDescription</code> instance.</p>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>op</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>pointer to the underlying object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L147-L149">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L149-L151">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango15FontDescriptionC9retainingACSpySo01_abC0VG_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(retaining:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango15FontDescriptionC9retainingACSpySo01_abC0VG_tcfc">init(retaining:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Designated initialiser from the underlying <code>C</code> data type.
+<code>PangoFontDescription</code> does not allow reference counting, so despite the name no actual retaining will occur.
+i.e., ownership is transferred to the <code>FontDescription</code> instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">retaining</span> <span class="nv">op</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoFontDescription</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>op</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>pointer to the underlying object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L157-L160">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1208,7 +1300,7 @@ Ownership is transferred to the <code>FontDescription</code> instance.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Reference convenience intialiser for a related type that implements <code><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></code>
+                        <p>Reference intialiser for a related type that implements <code><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></code>
 <code>PangoFontDescription</code> does not allow reference counting.</p>
 
                       </div>
@@ -1216,12 +1308,31 @@ Ownership is transferred to the <code>FontDescription</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>other</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an instance of a related type that implements <code><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L153-L156">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L165-L168">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1247,12 +1358,81 @@ Ownership is transferred to the <code>FontDescription</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">cPointer</span> <span class="nv">p</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cPointer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>pointer to the underlying object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L165-L167">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L178-L180">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango15FontDescriptionC17retainingCPointerACSpyxG_tclufc"></a>
+                    <a name="//apple_ref/swift/Method/init(retainingCPointer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango15FontDescriptionC17retainingCPointerACSpyxG_tclufc">init(retainingCPointer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unsafe typed, retaining initialiser.
+<strong>Do not use unless you know the underlying data type the pointer points to conforms to <code><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></code>.</strong></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">retainingCPointer</span> <span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cPointer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>pointer to the underlying object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L185-L188">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1278,12 +1458,62 @@ Ownership is transferred to the <code>FontDescription</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">raw</span> <span class="nv">p</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>p</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>raw pointer to the underlying object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L193-L195">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango15FontDescriptionC12retainingRawACSV_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(retainingRaw:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango15FontDescriptionC12retainingRawACSV_tcfc">init(retainingRaw:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unsafe untyped, retaining initialiser.
+<strong>Do not use unless you know the underlying data type the pointer points to conforms to <code><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></code>.</strong></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">retainingRaw</span> <span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L171-L173">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L199-L202">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1309,12 +1539,81 @@ Ownership is transferred to the <code>FontDescription</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">raw</span> <span class="nv">p</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>p</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>mutable raw pointer to the underlying object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L177-L179">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L207-L209">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango15FontDescriptionC12retainingRawACSv_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(retainingRaw:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango15FontDescriptionC12retainingRawACSv_tcfc">init(retainingRaw:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unsafe untyped, retaining initialiser.
+<strong>Do not use unless you know the underlying data type the pointer points to conforms to <code><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></code>.</strong></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">retainingRaw</span> <span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>raw</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>mutable raw pointer to the underlying object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L214-L217">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1340,12 +1639,81 @@ Ownership is transferred to the <code>FontDescription</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">opaquePointer</span> <span class="nv">p</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>p</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>opaque pointer to the underlying object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L183-L185">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L222-L224">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango15FontDescriptionC22retainingOpaquePointerACs0eF0V_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(retainingOpaquePointer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango15FontDescriptionC22retainingOpaquePointerACs0eF0V_tcfc">init(retainingOpaquePointer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unsafe untyped, retaining initialiser.
+<strong>Do not use unless you know the underlying data type the pointer points to conforms to <code><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></code>.</strong></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">retainingOpaquePointer</span> <span class="nv">p</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>p</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>opaque pointer to the underlying object</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L229-L232">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1370,12 +1738,12 @@ Ownership is transferred to the <code>FontDescription</code> instance.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L188-L191">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L235-L238">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1396,35 +1764,35 @@ Ownership is transferred to the <code>FontDescription</code> instance.</p>
                         <p>Creates a new font description from a string representation in the
 form</p>
 
-<p><q>\[FAMILY-LIST] \[STYLE-OPTIONS] \[SIZE] \[VARIATIONS]</q>,</p>
+<p>&ldquo;[FAMILY-LIST] [STYLE-OPTIONS] [SIZE] [VARIATIONS]&rdquo;,</p>
 
 <p>where FAMILY-LIST is a comma-separated list of families optionally
 terminated by a comma, STYLE_OPTIONS is a whitespace-separated list
 of words where each word describes one of style, variant, weight,
 stretch, or gravity, and SIZE is a decimal number (size in points)
-or optionally followed by the unit modifier <q>px</q> for absolute size.
+or optionally followed by the unit modifier &ldquo;px&rdquo; for absolute size.
 VARIATIONS is a comma-separated list of font variation
-specifications of the form <q>`axis`=value</q> (the = sign is optional).</p>
+specifications of the form &ldquo;`axis`=value&rdquo; (the = sign is optional).</p>
 
 <p>The following words are understood as styles:
-<q>Normal</q>, <q>Roman</q>, <q>Oblique</q>, <q>Italic</q>.</p>
+&ldquo;Normal&rdquo;, &ldquo;Roman&rdquo;, &ldquo;Oblique&rdquo;, &ldquo;Italic&rdquo;.</p>
 
 <p>The following words are understood as variants:
-<q>Small-Caps</q>.</p>
+&ldquo;Small-Caps&rdquo;.</p>
 
 <p>The following words are understood as weights:
-<q>Thin</q>, <q>Ultra-Light</q>, <q>Extra-Light</q>, <q>Light</q>, <q>Semi-Light</q>,
-<q>Demi-Light</q>, <q>Book</q>, <q>Regular</q>, <q>Medium</q>, <q>Semi-Bold</q>, <q>Demi-Bold</q>,
-<q>Bold</q>, <q>Ultra-Bold</q>, <q>Extra-Bold</q>, <q>Heavy</q>, <q>Black</q>, <q>Ultra-Black</q>,
-<q>Extra-Black</q>.</p>
+&ldquo;Thin&rdquo;, &ldquo;Ultra-Light&rdquo;, &ldquo;Extra-Light&rdquo;, &ldquo;Light&rdquo;, &ldquo;Semi-Light&rdquo;,
+&ldquo;Demi-Light&rdquo;, &ldquo;Book&rdquo;, &ldquo;Regular&rdquo;, &ldquo;Medium&rdquo;, &ldquo;Semi-Bold&rdquo;, &ldquo;Demi-Bold&rdquo;,
+&ldquo;Bold&rdquo;, &ldquo;Ultra-Bold&rdquo;, &ldquo;Extra-Bold&rdquo;, &ldquo;Heavy&rdquo;, &ldquo;Black&rdquo;, &ldquo;Ultra-Black&rdquo;,
+&ldquo;Extra-Black&rdquo;.</p>
 
 <p>The following words are understood as stretch values:
-<q>Ultra-Condensed</q>, <q>Extra-Condensed</q>, <q>Condensed</q>, <q>Semi-Condensed</q>,
-<q>Semi-Expanded</q>, <q>Expanded</q>, <q>Extra-Expanded</q>, <q>Ultra-Expanded</q>.</p>
+&ldquo;Ultra-Condensed&rdquo;, &ldquo;Extra-Condensed&rdquo;, &ldquo;Condensed&rdquo;, &ldquo;Semi-Condensed&rdquo;,
+&ldquo;Semi-Expanded&rdquo;, &ldquo;Expanded&rdquo;, &ldquo;Extra-Expanded&rdquo;, &ldquo;Ultra-Expanded&rdquo;.</p>
 
 <p>The following words are understood as gravity values:
-<q>Not-Rotated</q>, <q>South</q>, <q>Upside-Down</q>, <q>North</q>, <q>Rotated-Left</q>,
-<q>East</q>, <q>Rotated-Right</q>, <q>West</q>.</p>
+&ldquo;Not-Rotated&rdquo;, &ldquo;South&rdquo;, &ldquo;Upside-Down&rdquo;, &ldquo;North&rdquo;, &ldquo;Rotated-Left&rdquo;,
+&ldquo;East&rdquo;, &ldquo;Rotated-Right&rdquo;, &ldquo;West&rdquo;.</p>
 
 <p>Any one of the options may be absent. If FAMILY-LIST is absent, then
 the family_name field of the resulting font description will be
@@ -1434,7 +1802,7 @@ size in the resulting font description will be set to 0.</p>
 
 <p>A typical example:</p>
 
-<p><q>Cantarell Italic Light 15 `wght`=200</q></p>
+<p>&ldquo;Cantarell Italic Light 15 `wght`=200&rdquo;</p>
 
                       </div>
                       <div class="declaration">
@@ -1446,7 +1814,7 @@ size in the resulting font description will be set to 0.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L235-L238">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L282-L285">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1459,8 +1827,8 @@ size in the resulting font description will be set to 0.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-03-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

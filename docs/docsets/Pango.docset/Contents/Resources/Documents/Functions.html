@@ -174,6 +174,12 @@
                 <a class="nav-group-task-link" href="Classes/FontsetClass.html">FontsetClass</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/FontsetSimple.html">FontsetSimple</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/FontsetSimpleClass.html">FontsetSimpleClass</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/GlyphGeometry.html">GlyphGeometry</a>
               </li>
               <li class="nav-group-task">
@@ -323,6 +329,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/FontsetSignalName.html">FontsetSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/FontsetSimpleSignalName.html">FontsetSimpleSignalName</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/LayoutSignalName.html">LayoutSignalName</a>
@@ -763,6 +772,12 @@
                 <a class="nav-group-task-link" href="Protocols/FontsetProtocol.html">FontsetProtocol</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/FontsetSimpleClassProtocol.html">FontsetSimpleClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/FontsetSimpleProtocol.html">FontsetSimpleProtocol</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/GlyphGeometryProtocol.html">GlyphGeometryProtocol</a>
               </li>
               <li class="nav-group-task">
@@ -951,6 +966,12 @@
                 <a class="nav-group-task-link" href="Structs/FontsetRef.html">FontsetRef</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/FontsetSimpleClassRef.html">FontsetSimpleClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/FontsetSimpleRef.html">FontsetSimpleRef</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/GlyphGeometryRef.html">GlyphGeometryRef</a>
               </li>
               <li class="nav-group-task">
@@ -1109,7 +1130,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>Functions</h1>
             <p>The following functions are available globally.</p>
 
@@ -2347,35 +2368,35 @@ off the end).</p>
                         <p>Creates a new font description from a string representation in the
 form</p>
 
-<p><q>\[FAMILY-LIST] \[STYLE-OPTIONS] \[SIZE] \[VARIATIONS]</q>,</p>
+<p>&ldquo;[FAMILY-LIST] [STYLE-OPTIONS] [SIZE] [VARIATIONS]&rdquo;,</p>
 
 <p>where FAMILY-LIST is a comma-separated list of families optionally
 terminated by a comma, STYLE_OPTIONS is a whitespace-separated list
 of words where each word describes one of style, variant, weight,
 stretch, or gravity, and SIZE is a decimal number (size in points)
-or optionally followed by the unit modifier <q>px</q> for absolute size.
+or optionally followed by the unit modifier &ldquo;px&rdquo; for absolute size.
 VARIATIONS is a comma-separated list of font variation
-specifications of the form <q>`axis`=value</q> (the = sign is optional).</p>
+specifications of the form &ldquo;`axis`=value&rdquo; (the = sign is optional).</p>
 
 <p>The following words are understood as styles:
-<q>Normal</q>, <q>Roman</q>, <q>Oblique</q>, <q>Italic</q>.</p>
+&ldquo;Normal&rdquo;, &ldquo;Roman&rdquo;, &ldquo;Oblique&rdquo;, &ldquo;Italic&rdquo;.</p>
 
 <p>The following words are understood as variants:
-<q>Small-Caps</q>.</p>
+&ldquo;Small-Caps&rdquo;.</p>
 
 <p>The following words are understood as weights:
-<q>Thin</q>, <q>Ultra-Light</q>, <q>Extra-Light</q>, <q>Light</q>, <q>Semi-Light</q>,
-<q>Demi-Light</q>, <q>Book</q>, <q>Regular</q>, <q>Medium</q>, <q>Semi-Bold</q>, <q>Demi-Bold</q>,
-<q>Bold</q>, <q>Ultra-Bold</q>, <q>Extra-Bold</q>, <q>Heavy</q>, <q>Black</q>, <q>Ultra-Black</q>,
-<q>Extra-Black</q>.</p>
+&ldquo;Thin&rdquo;, &ldquo;Ultra-Light&rdquo;, &ldquo;Extra-Light&rdquo;, &ldquo;Light&rdquo;, &ldquo;Semi-Light&rdquo;,
+&ldquo;Demi-Light&rdquo;, &ldquo;Book&rdquo;, &ldquo;Regular&rdquo;, &ldquo;Medium&rdquo;, &ldquo;Semi-Bold&rdquo;, &ldquo;Demi-Bold&rdquo;,
+&ldquo;Bold&rdquo;, &ldquo;Ultra-Bold&rdquo;, &ldquo;Extra-Bold&rdquo;, &ldquo;Heavy&rdquo;, &ldquo;Black&rdquo;, &ldquo;Ultra-Black&rdquo;,
+&ldquo;Extra-Black&rdquo;.</p>
 
 <p>The following words are understood as stretch values:
-<q>Ultra-Condensed</q>, <q>Extra-Condensed</q>, <q>Condensed</q>, <q>Semi-Condensed</q>,
-<q>Semi-Expanded</q>, <q>Expanded</q>, <q>Extra-Expanded</q>, <q>Ultra-Expanded</q>.</p>
+&ldquo;Ultra-Condensed&rdquo;, &ldquo;Extra-Condensed&rdquo;, &ldquo;Condensed&rdquo;, &ldquo;Semi-Condensed&rdquo;,
+&ldquo;Semi-Expanded&rdquo;, &ldquo;Expanded&rdquo;, &ldquo;Extra-Expanded&rdquo;, &ldquo;Ultra-Expanded&rdquo;.</p>
 
 <p>The following words are understood as gravity values:
-<q>Not-Rotated</q>, <q>South</q>, <q>Upside-Down</q>, <q>North</q>, <q>Rotated-Left</q>,
-<q>East</q>, <q>Rotated-Right</q>, <q>West</q>.</p>
+&ldquo;Not-Rotated&rdquo;, &ldquo;South&rdquo;, &ldquo;Upside-Down&rdquo;, &ldquo;North&rdquo;, &ldquo;Rotated-Left&rdquo;,
+&ldquo;East&rdquo;, &ldquo;Rotated-Right&rdquo;, &ldquo;West&rdquo;.</p>
 
 <p>Any one of the options may be absent. If FAMILY-LIST is absent, then
 the family_name field of the resulting font description will be
@@ -2385,7 +2406,7 @@ size in the resulting font description will be set to 0.</p>
 
 <p>A typical example:</p>
 
-<p><q>Cantarell Italic Light 15 `wght`=200</q></p>
+<p>&ldquo;Cantarell Italic Light 15 `wght`=200&rdquo;</p>
 
                       </div>
                       <div class="declaration">
@@ -2632,7 +2653,7 @@ you should multiply it by (180. / G_PI).</p>
                       <div class="abstract">
                         <p>Checks <code>ch</code> to see if it is a character that should not be
 normally rendered on the screen.  This includes all Unicode characters
-with <q>ZERO WIDTH</q> in their name, as well as <firstterm>bidi</firstterm> formatting characters, and
+with &ldquo;ZERO WIDTH&rdquo; in their name, as well as <firstterm>bidi</firstterm> formatting characters, and
 a few other ones.  This is totally different from <code>g_unichar_iszerowidth()</code>
 and is at best misnamed.</p>
 
@@ -2989,7 +3010,7 @@ enum and is not an integer, <code>false</code> is returned, a warning is issued
 if <code>warn</code> is <code>true</code>, and a
 string representing the list of possible values is stored in
 <code>possible_values</code>.  The list is slash-separated, eg.
-<q>none/start/middle/end</q>.  If failed and <code>possible_values</code> is not <code>nil</code>,
+&ldquo;none/start/middle/end&rdquo;.  If failed and <code>possible_values</code> is not <code>nil</code>,
 returned string should be freed using <code>g_free()</code>.</p>
 
 <p><strong>parse_enum is deprecated:</strong>
@@ -3070,9 +3091,9 @@ for <code>error</code>.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Parses a font stretch. The allowed values are
-<q>ultra_condensed</q>, <q>extra_condensed</q>, <q>condensed</q>,
-<q>semi_condensed</q>, <q>normal</q>, <q>semi_expanded</q>, <q>expanded</q>,
-<q>extra_expanded</q> and <q>ultra_expanded</q>. Case variations are
+&ldquo;ultra_condensed&rdquo;, &ldquo;extra_condensed&rdquo;, &ldquo;condensed&rdquo;,
+&ldquo;semi_condensed&rdquo;, &ldquo;normal&rdquo;, &ldquo;semi_expanded&rdquo;, &ldquo;expanded&rdquo;,
+&ldquo;extra_expanded&rdquo; and &ldquo;ultra_expanded&rdquo;. Case variations are
 ignored and the &lsquo;_&rsquo; characters may be omitted.</p>
 
                       </div>
@@ -3103,8 +3124,8 @@ ignored and the &lsquo;_&rsquo; characters may be omitted.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Parses a font style. The allowed values are <q>normal</q>,
-<q>italic</q> and <q>oblique</q>, case variations being
+                        <p>Parses a font style. The allowed values are &ldquo;normal&rdquo;,
+&ldquo;italic&rdquo; and &ldquo;oblique&rdquo;, case variations being
 ignored.</p>
 
                       </div>
@@ -3135,8 +3156,8 @@ ignored.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Parses a font variant. The allowed values are <q>normal</q>
-and <q>smallcaps</q> or <q>small_caps</q>, case variations being
+                        <p>Parses a font variant. The allowed values are &ldquo;normal&rdquo;
+and &ldquo;smallcaps&rdquo; or &ldquo;small_caps&rdquo;, case variations being
 ignored.</p>
 
                       </div>
@@ -3167,8 +3188,8 @@ ignored.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Parses a font weight. The allowed values are <q>heavy</q>,
-<q>ultrabold</q>, <q>bold</q>, <q>normal</q>, <q>light</q>, <q>ultraleight</q>
+                        <p>Parses a font weight. The allowed values are &ldquo;heavy&rdquo;,
+&ldquo;ultrabold&rdquo;, &ldquo;bold&rdquo;, &ldquo;normal&rdquo;, &ldquo;light&rdquo;, &ldquo;ultraleight&rdquo;
 and integers. Case variations are ignored.</p>
 
                       </div>
@@ -3345,7 +3366,7 @@ This method is deprecated.</p>
                       <div class="abstract">
                         <p>Scans a string into a <code>GString</code> buffer. The string may either
 be a sequence of non-white-space characters, or a quoted
-string with &lsquo;<q>&rsquo;. Instead a quoted string, &lsquo;\</q>&rsquo; represents
+string with &lsquo;&ldquo;&rsquo;. Instead a quoted string, &lsquo;\&rdquo;&rsquo; represents
 a literal quote. Leading white space outside of quotes is skipped.</p>
 
 <p><strong>scan_string is deprecated:</strong>
@@ -3483,7 +3504,7 @@ believes may use <code>script</code> for writing.  This last predicate
 is tested using <code>pango_language_includes_script()</code>.  This can
 be used to control Pango&rsquo;s font selection for non-primary
 languages.  For example, a PANGO_LANGUAGE enviroment variable
-set to <q>en:fa</q> makes Pango choose fonts suitable for Persian (fa)
+set to &ldquo;en:fa&rdquo; makes Pango choose fonts suitable for Persian (fa)
 instead of Arabic (ar) when a segment of Arabic text is found
 in an otherwise non-Arabic text.  The same trick can be used to
 choose a default language for <code>PANGO_SCRIPT_HAN</code> when setting
@@ -3972,8 +3993,8 @@ the version available at compile-time.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-03-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
