@@ -51,18 +51,18 @@ After that, use the (usual) Build and Test buttons to build/test this package.  
 To build, you need at least Swift 4.2 (Swift 5.x should work fine), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
 
 	$ swift --version
-	Apple Swift version 5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)
-	Target: x86_64-apple-darwin18.6.0
+	Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
+	Target: x86_64-apple-darwin19.4.0
 
 on macOS, or on Linux you should get something like:
 
 	$ swift --version
-	Swift version 5.1 (swift-5.1-RELEASE)
+	Swift version 5.2 (swift-5.2-RELEASE)
 	Target: x86_64-unknown-linux-gnu
 
 ### Pango 1.42 or higher
 
-These Swift wrappers have been tested with pango-1.42 and 1.44 as well as glib-2.46, 2.48, 2.52, 2.56, 2.58, 2.60, and 2.62.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
+These Swift wrappers have been tested with pango-1.42 and 1.44 as well as glib-2.46, 2.48, 2.52, 2.56, 2.58, 2.60, 2.62, and 2.64.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
 
 #### Linux
 
@@ -91,10 +91,10 @@ On Fedora 29, you can use the gtk that comes with the distribution.  Just instal
 On macOS, you can install glib and Cairo using HomeBrew (for setup instructions, see http://brew.sh).  Once you have a running HomeBrew installation, you can use it to install a native version of cairo:
 
 	brew update
-	brew install pango gobject-introspection
-
+	brew install pango glib glib-networking gobject-introspection pkg-config
 
 ## Building
+
 Normally, you don't build this package directly, but you embed it into your own project (see 'Embedding' below).  However, you can build and test this module separately to ensure that everything works.  Make sure you have all the prerequisites installed (see above).  After that, you can simply clone this repository and build the command line executable (be patient, this will download all the required dependencies and take a while to compile) using
 
 	git clone https://github.com/rhx/SwiftPango.git
