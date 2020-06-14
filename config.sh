@@ -5,7 +5,7 @@
 #
 VER=1.0
 GLIB_VER=2.0
-JAZZY_VER=1.44.6
+JAZZY_VER=1.44.7
 Mod=Pango
 Module=${Mod}-$VER
 module=`echo "${Module}" | tr '[:upper:]' '[:lower:]'`
