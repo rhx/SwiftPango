@@ -1,4 +1,7 @@
 s/public *func getMirrorChar/@available(*, deprecated) public func getMirrorChar/
+s/\(public func bidiTypeForUnichar\)/@available(*, deprecated) \1/
+s/\(public func findBaseDir\)/@available(*, deprecated) \1/
+s/\(public func unicharDirection\)/@available(*, deprecated) \1/
 s/: \([A-Za-z.]*Notify[,)]\)/: @escaping \1/g
 s/: \([A-Za-z.]*Func[,)]\)/: @escaping \1/g
 s/: \([A-Za-z.]*Marshal[,)]\)/: @escaping \1/g
