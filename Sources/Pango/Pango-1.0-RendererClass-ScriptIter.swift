@@ -27,7 +27,7 @@ import GLibObject
 /// - draw_trapezoid
 /// - draw_glyph
 public protocol RendererClassProtocol {
-    /// Untyped pointer to the underlying `PangoRendererClass` instance.
+        /// Untyped pointer to the underlying `PangoRendererClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoRendererClass` instance.
@@ -55,7 +55,7 @@ public protocol RendererClassProtocol {
 /// - draw_trapezoid
 /// - draw_glyph
 public struct RendererClassRef: RendererClassProtocol {
-    /// Untyped pointer to the underlying `PangoRendererClass` instance.
+        /// Untyped pointer to the underlying `PangoRendererClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -123,7 +123,7 @@ public extension RendererClassRef {
 /// - draw_trapezoid
 /// - draw_glyph
 open class RendererClass: RendererClassProtocol {
-    /// Untyped pointer to the underlying `PangoRendererClass` instance.
+        /// Untyped pointer to the underlying `PangoRendererClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -152,7 +152,7 @@ open class RendererClass: RendererClassProtocol {
         // no reference counting for PangoRendererClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoRendererClass`.
+    /// Do-nothing destructor for `PangoRendererClass`.
     deinit {
         // no reference counting for PangoRendererClass, cannot unref(cast(_ptr))
     }
@@ -220,14 +220,46 @@ open class RendererClass: RendererClassProtocol {
 
 }
 
-// MARK: - no RendererClass properties
+// MARK: no RendererClass properties
 
-// MARK: - no signals
+// MARK: no RendererClass signals
 
 
+// MARK: RendererClass Record: RendererClassProtocol extension (methods and fields)
 public extension RendererClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoRendererClass` instance.
     var _ptr: UnsafeMutablePointer<PangoRendererClass> { return ptr.assumingMemoryBound(to: PangoRendererClass.self) }
+
+
+    // var parentClass is unavailable because parent_class is private
+
+    // var drawGlyphs is unavailable because draw_glyphs is void
+
+    // var drawRectangle is unavailable because draw_rectangle is void
+
+    // var drawErrorUnderline is unavailable because draw_error_underline is void
+
+    // var drawShape is unavailable because draw_shape is void
+
+    // var drawTrapezoid is unavailable because draw_trapezoid is void
+
+    // var drawGlyph is unavailable because draw_glyph is void
+
+    // var partChanged is unavailable because part_changed is void
+
+    // var begin is unavailable because begin is void
+
+    // var end is unavailable because end is void
+
+    // var prepareRun is unavailable because prepare_run is void
+
+    // var drawGlyphItem is unavailable because draw_glyph_item is void
+
+    // var PangoReserved2 is unavailable because _pango_reserved2 is void
+
+    // var PangoReserved3 is unavailable because _pango_reserved3 is void
+
+    // var PangoReserved4 is unavailable because _pango_reserved4 is void
 
 }
 
@@ -242,7 +274,7 @@ public extension RendererClassProtocol {
 ///
 
 public protocol RendererPrivateProtocol {
-    /// Untyped pointer to the underlying `PangoRendererPrivate` instance.
+        /// Untyped pointer to the underlying `PangoRendererPrivate` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoRendererPrivate` instance.
@@ -255,7 +287,7 @@ public protocol RendererPrivateProtocol {
 ///
 
 public struct RendererPrivateRef: RendererPrivateProtocol {
-    /// Untyped pointer to the underlying `PangoRendererPrivate` instance.
+        /// Untyped pointer to the underlying `PangoRendererPrivate` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -308,7 +340,7 @@ public extension RendererPrivateRef {
 ///
 
 open class RendererPrivate: RendererPrivateProtocol {
-    /// Untyped pointer to the underlying `PangoRendererPrivate` instance.
+        /// Untyped pointer to the underlying `PangoRendererPrivate` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -337,7 +369,7 @@ open class RendererPrivate: RendererPrivateProtocol {
         // no reference counting for PangoRendererPrivate, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoRendererPrivate`.
+    /// Do-nothing destructor for `PangoRendererPrivate`.
     deinit {
         // no reference counting for PangoRendererPrivate, cannot unref(cast(_ptr))
     }
@@ -405,14 +437,17 @@ open class RendererPrivate: RendererPrivateProtocol {
 
 }
 
-// MARK: - no RendererPrivate properties
+// MARK: no RendererPrivate properties
 
-// MARK: - no signals
+// MARK: no RendererPrivate signals
 
 
+// MARK: RendererPrivate Record: RendererPrivateProtocol extension (methods and fields)
 public extension RendererPrivateProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoRendererPrivate` instance.
     var _ptr: UnsafeMutablePointer<PangoRendererPrivate> { return ptr.assumingMemoryBound(to: PangoRendererPrivate.self) }
+
+
 
 }
 
@@ -428,7 +463,7 @@ public extension RendererPrivateProtocol {
 /// A `PangoScriptIter` is used to iterate through a string
 /// and identify ranges in different scripts.
 public protocol ScriptIterProtocol {
-    /// Untyped pointer to the underlying `PangoScriptIter` instance.
+        /// Untyped pointer to the underlying `PangoScriptIter` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoScriptIter` instance.
@@ -442,7 +477,7 @@ public protocol ScriptIterProtocol {
 /// A `PangoScriptIter` is used to iterate through a string
 /// and identify ranges in different scripts.
 public struct ScriptIterRef: ScriptIterProtocol {
-    /// Untyped pointer to the underlying `PangoScriptIter` instance.
+        /// Untyped pointer to the underlying `PangoScriptIter` instance.
     /// For type-safe access, use the generated, typed pointer `script_iter_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -492,7 +527,7 @@ public extension ScriptIterRef {
     /// `text`, so the caller needs to make sure it remains valid until
     /// the iterator is freed with `pango_script_iter_free()`.
     init( text: UnsafePointer<CChar>, length: CInt) {
-        let rv = pango_script_iter_new(text, length)
+        let rv: UnsafeMutablePointer<PangoScriptIter>! = cast(pango_script_iter_new(text, length))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -504,7 +539,7 @@ public extension ScriptIterRef {
 /// A `PangoScriptIter` is used to iterate through a string
 /// and identify ranges in different scripts.
 open class ScriptIter: ScriptIterProtocol {
-    /// Untyped pointer to the underlying `PangoScriptIter` instance.
+        /// Untyped pointer to the underlying `PangoScriptIter` instance.
     /// For type-safe access, use the generated, typed pointer `script_iter_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -533,7 +568,7 @@ open class ScriptIter: ScriptIterProtocol {
         // no reference counting for PangoScriptIter, cannot ref(cast(script_iter_ptr))
     }
 
-    /// Do-nothing destructor for`PangoScriptIter`.
+    /// Do-nothing destructor for `PangoScriptIter`.
     deinit {
         // no reference counting for PangoScriptIter, cannot unref(cast(script_iter_ptr))
     }
@@ -602,18 +637,19 @@ open class ScriptIter: ScriptIterProtocol {
     /// `text`, so the caller needs to make sure it remains valid until
     /// the iterator is freed with `pango_script_iter_free()`.
     public init( text: UnsafePointer<CChar>, length: CInt) {
-        let rv = pango_script_iter_new(text, length)
+        let rv: UnsafeMutablePointer<PangoScriptIter>! = cast(pango_script_iter_new(text, length))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
 
 }
 
-// MARK: - no ScriptIter properties
+// MARK: no ScriptIter properties
 
-// MARK: - no signals
+// MARK: no ScriptIter signals
 
 
+// MARK: ScriptIter Record: ScriptIterProtocol extension (methods and fields)
 public extension ScriptIterProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoScriptIter` instance.
     var script_iter_ptr: UnsafeMutablePointer<PangoScriptIter> { return ptr.assumingMemoryBound(to: PangoScriptIter.self) }
@@ -644,6 +680,8 @@ public extension ScriptIterProtocol {
         let rv = pango_script_iter_next(cast(script_iter_ptr))
         return Bool(rv != 0)
     }
+
+
 }
 
 

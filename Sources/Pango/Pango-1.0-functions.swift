@@ -8,7 +8,7 @@ import GLibObject
 /// If breaks are disabled, the range will be kept in a
 /// single run, as far as possible.
 public func attrAllowBreaksNew(allowBreaks allow_breaks: Bool) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_allow_breaks_new(gboolean(allow_breaks ? 1 : 0))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_allow_breaks_new(gboolean(allow_breaks ? 1 : 0)))
     return cast(rv)
 }
 
@@ -17,7 +17,7 @@ public func attrAllowBreaksNew(allowBreaks allow_breaks: Bool) -> UnsafeMutableP
 
 /// Create a new background alpha attribute.
 public func attrBackgroundAlphaNew(alpha: UInt16) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_background_alpha_new(guint16(alpha))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_background_alpha_new(guint16(alpha)))
     return cast(rv)
 }
 
@@ -26,7 +26,7 @@ public func attrBackgroundAlphaNew(alpha: UInt16) -> UnsafeMutablePointer<PangoA
 
 /// Create a new background color attribute.
 public func attrBackgroundNew(red: UInt16, green: UInt16, blue: UInt16) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_background_new(guint16(red), guint16(green), guint16(blue))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_background_new(guint16(red), guint16(green), guint16(blue)))
     return cast(rv)
 }
 
@@ -40,7 +40,7 @@ public func attrBackgroundNew(red: UInt16, green: UInt16, blue: UInt16) -> Unsaf
 /// other fonts on the system that might contain the characters in the
 /// text.
 public func attrFallbackNew(enableFallback enable_fallback: Bool) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_fallback_new(gboolean(enable_fallback ? 1 : 0))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_fallback_new(gboolean(enable_fallback ? 1 : 0)))
     return cast(rv)
 }
 
@@ -49,7 +49,7 @@ public func attrFallbackNew(enableFallback enable_fallback: Bool) -> UnsafeMutab
 
 /// Create a new font family attribute.
 public func attrFamilyNew(family: UnsafePointer<CChar>) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_family_new(family)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_family_new(family))
     return cast(rv)
 }
 
@@ -60,7 +60,7 @@ public func attrFamilyNew(family: UnsafePointer<CChar>) -> UnsafeMutablePointer<
 /// allows setting family, style, weight, variant, stretch,
 /// and size simultaneously.
 public func attrFontDescNew(desc: FontDescriptionProtocol) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_font_desc_new(cast(desc.ptr))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_font_desc_new(cast(desc.ptr)))
     return cast(rv)
 }
 
@@ -69,7 +69,7 @@ public func attrFontDescNew(desc: FontDescriptionProtocol) -> UnsafeMutablePoint
 
 /// Create a new font features tag attribute.
 public func attrFontFeaturesNew(features: UnsafePointer<gchar>) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_font_features_new(features)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_font_features_new(features))
     return cast(rv)
 }
 
@@ -78,7 +78,7 @@ public func attrFontFeaturesNew(features: UnsafePointer<gchar>) -> UnsafeMutable
 
 /// Create a new foreground alpha attribute.
 public func attrForegroundAlphaNew(alpha: UInt16) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_foreground_alpha_new(guint16(alpha))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_foreground_alpha_new(guint16(alpha)))
     return cast(rv)
 }
 
@@ -87,7 +87,7 @@ public func attrForegroundAlphaNew(alpha: UInt16) -> UnsafeMutablePointer<PangoA
 
 /// Create a new foreground color attribute.
 public func attrForegroundNew(red: UInt16, green: UInt16, blue: UInt16) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_foreground_new(guint16(red), guint16(green), guint16(blue))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_foreground_new(guint16(red), guint16(green), guint16(blue)))
     return cast(rv)
 }
 
@@ -96,7 +96,7 @@ public func attrForegroundNew(red: UInt16, green: UInt16, blue: UInt16) -> Unsaf
 
 /// Create a new gravity hint attribute.
 public func attrGravityHintNew(hint: GravityHint) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_gravity_hint_new(hint)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_gravity_hint_new(hint))
     return cast(rv)
 }
 
@@ -105,7 +105,7 @@ public func attrGravityHintNew(hint: GravityHint) -> UnsafeMutablePointer<PangoA
 
 /// Create a new gravity attribute.
 public func attrGravityNew(gravity: Gravity) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_gravity_new(gravity)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_gravity_new(gravity))
     return cast(rv)
 }
 
@@ -117,7 +117,7 @@ public func attrGravityNew(gravity: Gravity) -> UnsafeMutablePointer<PangoAttrib
 /// Pango will insert hyphens when breaking lines in the middle
 /// of a word. This attribute can be used to suppress the hyphen.
 public func attrInsertHyphensNew(insertHyphens insert_hyphens: Bool) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_insert_hyphens_new(gboolean(insert_hyphens ? 1 : 0))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_insert_hyphens_new(gboolean(insert_hyphens ? 1 : 0)))
     return cast(rv)
 }
 
@@ -126,7 +126,7 @@ public func attrInsertHyphensNew(insertHyphens insert_hyphens: Bool) -> UnsafeMu
 
 /// Create a new language tag attribute.
 public func attrLanguageNew(language: LanguageProtocol) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_language_new(cast(language.ptr))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_language_new(cast(language.ptr)))
     return cast(rv)
 }
 
@@ -135,7 +135,7 @@ public func attrLanguageNew(language: LanguageProtocol) -> UnsafeMutablePointer<
 
 /// Create a new letter-spacing attribute.
 public func attrLetterSpacingNew(letterSpacing letter_spacing: CInt) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_letter_spacing_new(letter_spacing)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_letter_spacing_new(letter_spacing))
     return cast(rv)
 }
 
@@ -144,7 +144,7 @@ public func attrLetterSpacingNew(letterSpacing letter_spacing: CInt) -> UnsafeMu
 
 /// Create a new baseline displacement attribute.
 public func attrRiseNew(rise: CInt) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_rise_new(rise)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_rise_new(rise))
     return cast(rv)
 }
 
@@ -154,7 +154,7 @@ public func attrRiseNew(rise: CInt) -> UnsafeMutablePointer<PangoAttribute>! {
 /// Create a new font size scale attribute. The base font for the
 /// affected text will have its size multiplied by `scale_factor`.
 public func attrScaleNew(scaleFactor scale_factor: gdouble) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_scale_new(scale_factor)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_scale_new(scale_factor))
     return cast(rv)
 }
 
@@ -166,7 +166,7 @@ public func attrScaleNew(scaleFactor scale_factor: gdouble) -> UnsafeMutablePoin
 /// particular glyph. This might be used, for instance, for
 /// embedding a picture or a widget inside a `PangoLayout`.
 public func attrShapeNew(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_shape_new(cast(ink_rect.ptr), cast(logical_rect.ptr))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_shape_new(cast(ink_rect.ptr), cast(logical_rect.ptr)))
     return cast(rv)
 }
 
@@ -177,7 +177,7 @@ public func attrShapeNew(inkRect ink_rect: RectangleProtocol, logicalRect logica
 /// provided; this pointer can be accessed when later
 /// rendering the glyph.
 public func attrShapeNewWithData(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol, data: UnsafeMutableRawPointer, copyFunc copy_func: @escaping AttrDataCopyFunc, destroyFunc destroy_func: @escaping GLib.DestroyNotify) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_shape_new_with_data(cast(ink_rect.ptr), cast(logical_rect.ptr), cast(data), copy_func, destroy_func)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_shape_new_with_data(cast(ink_rect.ptr), cast(logical_rect.ptr), cast(data), copy_func, destroy_func))
     return cast(rv)
 }
 
@@ -187,7 +187,7 @@ public func attrShapeNewWithData(inkRect ink_rect: RectangleProtocol, logicalRec
 /// Create a new attribute that influences how invisible
 /// characters are rendered.
 public func attrShowNew(flags: ShowFlags) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_show_new(flags)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_show_new(flags.value))
     return cast(rv)
 }
 
@@ -196,7 +196,7 @@ public func attrShowNew(flags: ShowFlags) -> UnsafeMutablePointer<PangoAttribute
 
 /// Create a new font-size attribute in fractional points.
 public func attrSizeNew(size: CInt) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_size_new(size)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_size_new(size))
     return cast(rv)
 }
 
@@ -205,7 +205,7 @@ public func attrSizeNew(size: CInt) -> UnsafeMutablePointer<PangoAttribute>! {
 
 /// Create a new font-size attribute in device units.
 public func attrSizeNewAbsolute(size: CInt) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_size_new_absolute(size)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_size_new_absolute(size))
     return cast(rv)
 }
 
@@ -214,7 +214,7 @@ public func attrSizeNewAbsolute(size: CInt) -> UnsafeMutablePointer<PangoAttribu
 
 /// Create a new font stretch attribute
 public func attrStretchNew(stretch: Stretch) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_stretch_new(stretch)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_stretch_new(stretch))
     return cast(rv)
 }
 
@@ -225,7 +225,7 @@ public func attrStretchNew(stretch: Stretch) -> UnsafeMutablePointer<PangoAttrib
 /// modifies the color of strikethrough lines. If not set, strikethrough
 /// lines will use the foreground color.
 public func attrStrikethroughColorNew(red: UInt16, green: UInt16, blue: UInt16) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_strikethrough_color_new(guint16(red), guint16(green), guint16(blue))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_strikethrough_color_new(guint16(red), guint16(green), guint16(blue)))
     return cast(rv)
 }
 
@@ -234,7 +234,7 @@ public func attrStrikethroughColorNew(red: UInt16, green: UInt16, blue: UInt16) 
 
 /// Create a new strike-through attribute.
 public func attrStrikethroughNew(strikethrough: Bool) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_strikethrough_new(gboolean(strikethrough ? 1 : 0))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_strikethrough_new(gboolean(strikethrough ? 1 : 0)))
     return cast(rv)
 }
 
@@ -243,7 +243,7 @@ public func attrStrikethroughNew(strikethrough: Bool) -> UnsafeMutablePointer<Pa
 
 /// Create a new font slant style attribute.
 public func attrStyleNew(style: Style) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_style_new(style)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_style_new(style))
     return cast(rv)
 }
 
@@ -256,8 +256,8 @@ public func attrStyleNew(style: Style) -> UnsafeMutablePointer<PangoAttribute>! 
 /// The returned value is an interned string (see `g_intern_string()` for what
 /// that means) that should not be modified or freed.
 public func attrTypeGetName(type: AttrType) -> String! {
-    let rv = pango_attr_type_get_name(type)
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(pango_attr_type_get_name(type))
+    return cast(rv)
 }
 
 
@@ -267,7 +267,7 @@ public func attrTypeGetName(type: AttrType) -> String! {
 /// later by using `pango_attr_type_get_name()`.
 public func attrTypeRegister(name: UnsafePointer<gchar>) -> PangoAttrType {
     let rv = pango_attr_type_register(name)
-    return rv
+    return cast(rv)
 }
 
 
@@ -277,7 +277,7 @@ public func attrTypeRegister(name: UnsafePointer<gchar>) -> PangoAttrType {
 /// modifies the color of underlines. If not set, underlines
 /// will use the foreground color.
 public func attrUnderlineColorNew(red: UInt16, green: UInt16, blue: UInt16) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_underline_color_new(guint16(red), guint16(green), guint16(blue))
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_underline_color_new(guint16(red), guint16(green), guint16(blue)))
     return cast(rv)
 }
 
@@ -286,7 +286,7 @@ public func attrUnderlineColorNew(red: UInt16, green: UInt16, blue: UInt16) -> U
 
 /// Create a new underline-style attribute.
 public func attrUnderlineNew(underline: Underline) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_underline_new(underline)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_underline_new(underline))
     return cast(rv)
 }
 
@@ -295,7 +295,7 @@ public func attrUnderlineNew(underline: Underline) -> UnsafeMutablePointer<Pango
 
 /// Create a new font variant attribute (normal or small caps)
 public func attrVariantNew(variant: Variant) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_variant_new(variant)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_variant_new(variant))
     return cast(rv)
 }
 
@@ -304,7 +304,7 @@ public func attrVariantNew(variant: Variant) -> UnsafeMutablePointer<PangoAttrib
 
 /// Create a new font weight attribute.
 public func attrWeightNew(weight: Weight) -> UnsafeMutablePointer<PangoAttribute>! {
-    let rv = pango_attr_weight_new(weight)
+    let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_weight_new(weight))
     return cast(rv)
 }
 
@@ -316,9 +316,9 @@ public func attrWeightNew(weight: Weight) -> UnsafeMutablePointer<PangoAttribute
 /// 
 /// A simplified version of this function is available as
 /// `pango_unichar_direction()`.
-public func bidiTypeForUnichar(ch: gunichar) -> PangoBidiType {
+@available(*, deprecated) public func bidiTypeForUnichar(ch: gunichar) -> PangoBidiType {
     let rv = pango_bidi_type_for_unichar(ch)
-    return rv
+    return cast(rv)
 }
 
 
@@ -376,9 +376,9 @@ public func extentsToPixels(inclusive: RectangleProtocol, nearest: RectangleProt
 
 /// Searches a string the first character that has a strong
 /// direction, according to the Unicode bidirectional algorithm.
-public func findBaseDir(text: UnsafePointer<gchar>, length: CInt) -> PangoDirection {
+@available(*, deprecated) public func findBaseDir(text: UnsafePointer<gchar>, length: CInt) -> PangoDirection {
     let rv = pango_find_base_dir(text, gint(length))
-    return rv
+    return cast(rv)
 }
 
 
@@ -389,7 +389,7 @@ public func findBaseDir(text: UnsafePointer<gchar>, length: CInt) -> PangoDirect
 /// **find_map is deprecated:**
 /// This method is deprecated.
 @available(*, deprecated) public func findMap(language: LanguageProtocol, engineTypeId engine_type_id: CUnsignedInt, renderTypeId render_type_id: CUnsignedInt) -> UnsafeMutablePointer<PangoMap>! {
-    let rv = pango_find_map(cast(language.ptr), guint(engine_type_id), guint(render_type_id))
+    let rv: UnsafeMutablePointer<PangoMap>! = cast(pango_find_map(cast(language.ptr), guint(engine_type_id), guint(render_type_id)))
     return cast(rv)
 }
 
@@ -457,7 +457,7 @@ public func findParagraphBoundary(text: UnsafePointer<gchar>, length: CInt, para
 /// 
 /// "Cantarell Italic Light 15 \`wght`=200"
 public func fontDescriptionFromString(str: UnsafePointer<CChar>) -> UnsafeMutablePointer<PangoFontDescription>! {
-    let rv = pango_font_description_from_string(str)
+    let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_description_from_string(str))
     return cast(rv)
 }
 
@@ -497,7 +497,7 @@ public func getLogAttrs(text: UnsafePointer<CChar>, length: CInt, level: CInt, l
 /// in a `PangoMatrix`.
 public func gravityGetFor(matrix: MatrixProtocol) -> PangoGravity {
     let rv = pango_gravity_get_for_matrix(cast(matrix.ptr))
-    return rv
+    return cast(rv)
 }
 
 
@@ -511,7 +511,7 @@ public func gravityGetFor(matrix: MatrixProtocol) -> PangoGravity {
 /// pass `PANGO_GRAVITY_AUTO` and `PANGO_GRAVITY_HINT_STRONG` in.
 public func gravityGetFor(script: Script, baseGravity base_gravity: Gravity, hint: GravityHint) -> PangoGravity {
     let rv = pango_gravity_get_for_script(script, base_gravity, hint)
-    return rv
+    return cast(rv)
 }
 
 
@@ -532,7 +532,7 @@ public func gravityGetFor(script: Script, baseGravity base_gravity: Gravity, hin
 /// preferred gravity of `script`.
 public func gravityGetForScriptAndWidth(script: Script, wide: Bool, baseGravity base_gravity: Gravity, hint: GravityHint) -> PangoGravity {
     let rv = pango_gravity_get_for_script_and_width(script, gboolean(wide ? 1 : 0), base_gravity, hint)
-    return rv
+    return cast(rv)
 }
 
 
@@ -544,9 +544,9 @@ public func gravityGetForScriptAndWidth(script: Script, wide: Bool, baseGravity 
 /// Note that `pango_matrix_rotate()` takes angle in degrees, not radians.
 /// So, to call `pango_matrix_rotate()` with the output of this function
 /// you should multiply it by (180. / G_PI).
-public func gravityToRotation(gravity: Gravity) -> CDouble {
-    let rv = pango_gravity_to_rotation(gravity)
-    return rv
+public func gravityToRotation(gravity: Gravity) -> Double {
+    let rv: Double = cast(pango_gravity_to_rotation(gravity))
+    return cast(rv)
 }
 
 
@@ -576,7 +576,7 @@ public func isZeroWidth(ch: gunichar) -> Bool {
 /// the range covering the position just after `start_index` + `length`.
 /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
 public func itemize(context: ContextProtocol, text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, attrs: AttrListProtocol, cachedIter cached_iter: AttrIteratorProtocol) -> UnsafeMutablePointer<GList>! {
-    let rv = pango_itemize(cast(context.ptr), text, start_index, length, cast(attrs.ptr), cast(cached_iter.ptr))
+    let rv: UnsafeMutablePointer<GList>! = cast(pango_itemize(cast(context.ptr), text, start_index, length, cast(attrs.ptr), cast(cached_iter.ptr)))
     return cast(rv)
 }
 
@@ -587,7 +587,7 @@ public func itemize(context: ContextProtocol, text: UnsafePointer<CChar>, startI
 /// computing bidirectional levels (see pango_context_set_base_dir ()),
 /// is specified explicitly rather than gotten from the `PangoContext`.
 public func itemizeWithBaseDir(context: ContextProtocol, baseDir base_dir: Direction, text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, attrs: AttrListProtocol, cachedIter cached_iter: AttrIteratorProtocol) -> UnsafeMutablePointer<GList>! {
-    let rv = pango_itemize_with_base_dir(cast(context.ptr), base_dir, text, start_index, length, cast(attrs.ptr), cast(cached_iter.ptr))
+    let rv: UnsafeMutablePointer<GList>! = cast(pango_itemize_with_base_dir(cast(context.ptr), base_dir, text, start_index, length, cast(attrs.ptr), cast(cached_iter.ptr)))
     return cast(rv)
 }
 
@@ -606,7 +606,7 @@ public func itemizeWithBaseDir(context: ContextProtocol, baseDir base_dir: Direc
 /// Use `pango_language_get_default()` if you want to get the `PangoLanguage` for
 /// the current locale of the process.
 public func languageFromString(language: UnsafePointer<CChar>) -> UnsafeMutablePointer<PangoLanguage>! {
-    let rv = pango_language_from_string(language)
+    let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_language_from_string(language))
     return cast(rv)
 }
 
@@ -640,7 +640,7 @@ public func languageFromString(language: UnsafePointer<CChar>) -> UnsafeMutableP
 /// functions automatically (by calling `gtk_set_locale()`).
 /// See <literal>man setlocale</literal> for more details.
 public func languageGetDefault() -> UnsafeMutablePointer<PangoLanguage>! {
-    let rv = pango_language_get_default()
+    let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_language_get_default())
     return cast(rv)
 }
 
@@ -655,7 +655,7 @@ public func languageGetDefault() -> UnsafeMutablePointer<PangoLanguage>! {
 /// If the input base direction is a weak direction, the direction of the
 /// characters in the text will determine the final resolved direction.
 public func log2visGetEmbeddingLevels(text: UnsafePointer<gchar>, length: CInt, pbaseDir pbase_dir: UnsafeMutablePointer<PangoDirection>) -> UnsafeMutablePointer<UInt8>! {
-    let rv = pango_log2vis_get_embedding_levels(text, length, cast(pbase_dir))
+    let rv: UnsafeMutablePointer<UInt8>! = cast(pango_log2vis_get_embedding_levels(text, length, cast(pbase_dir)))
     return cast(rv)
 }
 
@@ -667,11 +667,9 @@ public func log2visGetEmbeddingLevels(text: UnsafePointer<gchar>, length: CInt, 
 /// markup. This function will not free `context`, use `g_markup_parse_context_free()`
 /// to do so.
 public func markupParserFinish(context: MarkupParseContextProtocol, attrList attr_list: AttrListProtocol, text: UnsafeMutablePointer<UnsafeMutablePointer<CChar>>, accelChar accel_char: UnsafeMutablePointer<gunichar>) throws -> Bool {
-    var error: Optional<UnsafeMutablePointer<GError>> = nil
+    var error: UnsafeMutablePointer<GError>?
     let rv = pango_markup_parser_finish(cast(context.ptr), cast(attr_list.ptr), cast(text), cast(accel_char), &error)
-    if let error = error {
-        throw ErrorType(error)
-    }
+    if let error = error { throw ErrorType(error) }
     return Bool(rv != 0)
 }
 
@@ -699,7 +697,7 @@ public func markupParserFinish(context: MarkupParseContextProtocol, attrList att
 /// from streams. To simply parse a string containing pango markup,
 /// the simpler `pango_parse_markup()` API is recommended instead.
 public func markupParserNew(accelMarker accel_marker: gunichar) -> UnsafeMutablePointer<GMarkupParseContext>! {
-    let rv = pango_markup_parser_new(accel_marker)
+    let rv: UnsafeMutablePointer<GMarkupParseContext>! = cast(pango_markup_parser_new(accel_marker))
     return cast(rv)
 }
 
@@ -755,11 +753,9 @@ public func markupParserNew(accelMarker accel_marker: gunichar) -> UnsafeMutable
 /// If any error happens, none of the output arguments are touched except
 /// for `error`.
 public func parseMarkup(markupText markup_text: UnsafePointer<CChar>, length: CInt, accelMarker accel_marker: gunichar, attrList attr_list: AttrListProtocol, text: UnsafeMutablePointer<UnsafeMutablePointer<CChar>>, accelChar accel_char: UnsafeMutablePointer<gunichar>) throws -> Bool {
-    var error: Optional<UnsafeMutablePointer<GError>> = nil
+    var error: UnsafeMutablePointer<GError>?
     let rv = pango_parse_markup(markup_text, length, accel_marker, cast(attr_list.ptr), cast(text), cast(accel_char), &error)
-    if let error = error {
-        throw ErrorType(error)
-    }
+    if let error = error { throw ErrorType(error) }
     return Bool(rv != 0)
 }
 
@@ -838,9 +834,9 @@ public func quantizeLineGeometry(thickness: UnsafeMutablePointer<CInt>, position
 ///
 /// **read_line is deprecated:**
 /// This method is deprecated.
-@available(*, deprecated) public func readLine(stream: UnsafeMutablePointer<FILE>, str: StringTypeProtocol) -> CInt {
-    let rv = pango_read_line(cast(stream), cast(str.ptr))
-    return CInt(rv)
+@available(*, deprecated) public func readLine(stream: UnsafeMutablePointer<FILE>, str: StringTypeProtocol) -> Int {
+    let rv: Int = cast(pango_read_line(cast(stream), cast(str.ptr)))
+    return Int(rv)
 }
 
 
@@ -850,7 +846,7 @@ public func quantizeLineGeometry(thickness: UnsafeMutablePointer<CInt>, position
 /// directional levels, produce a list in visual order.
 /// The original list is unmodified.
 public func reorderItems(logicalItems logical_items: ListProtocol) -> UnsafeMutablePointer<GList>! {
-    let rv = pango_reorder_items(cast(logical_items.ptr))
+    let rv: UnsafeMutablePointer<GList>! = cast(pango_reorder_items(cast(logical_items.ptr)))
     return cast(rv)
 }
 
@@ -913,7 +909,7 @@ public func reorderItems(logicalItems logical_items: ListProtocol) -> UnsafeMuta
 /// Use g_unichar_get_script()
 @available(*, deprecated) public func scriptForUnichar(ch: gunichar) -> PangoScript {
     let rv = pango_script_for_unichar(ch)
-    return rv
+    return cast(rv)
 }
 
 
@@ -950,7 +946,7 @@ public func reorderItems(logicalItems logical_items: ListProtocol) -> UnsafeMuta
 /// choose a default language for `PANGO_SCRIPT_HAN` when setting
 /// context language is not feasible.
 public func scriptGetSampleLanguage(script: Script) -> UnsafeMutablePointer<PangoLanguage>! {
-    let rv = pango_script_get_sample_language(script)
+    let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_script_get_sample_language(script))
     return cast(rv)
 }
 
@@ -999,7 +995,7 @@ public func shapeFull(itemText item_text: UnsafePointer<CChar>, itemLength item_
 /// This is similar to `pango_shape_full()`, except it also takes
 /// flags that can influence the shaping process.
 public func shapeWithFlags(itemText item_text: UnsafePointer<CChar>, itemLength item_length: CInt, paragraphText paragraph_text: UnsafePointer<CChar>, paragraphLength paragraph_length: CInt, analysis: AnalysisProtocol, glyphs: GlyphStringProtocol, flags: ShapeFlags) {
-    pango_shape_with_flags(item_text, item_length, paragraph_text, paragraph_length, cast(analysis.ptr), cast(glyphs.ptr), flags)
+    pango_shape_with_flags(item_text, item_length, paragraph_text, paragraph_length, cast(analysis.ptr), cast(glyphs.ptr), flags.value)
 
 }
 
@@ -1024,7 +1020,7 @@ public func shapeWithFlags(itemText item_text: UnsafePointer<CChar>, itemLength 
 /// **split_file_list is deprecated:**
 /// This method is deprecated.
 @available(*, deprecated) public func splitFileList(str: UnsafePointer<CChar>) -> UnsafeMutablePointer<UnsafeMutablePointer<CChar>>! {
-    let rv = pango_split_file_list(str)
+    let rv: UnsafeMutablePointer<UnsafeMutablePointer<CChar>>! = cast(pango_split_file_list(str))
     return cast(rv)
 }
 
@@ -1050,8 +1046,8 @@ public func tailorBreak(text: UnsafePointer<CChar>, length: CInt, analysis: Anal
 /// **trim_string is deprecated:**
 /// This method is deprecated.
 @available(*, deprecated) public func trimString(str: UnsafePointer<CChar>) -> String! {
-    let rv = pango_trim_string(str)
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(pango_trim_string(str))
+    return cast(rv)
 }
 
 
@@ -1065,9 +1061,9 @@ public func tailorBreak(text: UnsafePointer<CChar>, length: CInt, analysis: Anal
 /// letters, right-to-left letters, and everything else.  If full
 /// Unicode bidirectional type of a character is needed,
 /// `pango_bidi_type_for_unichar()` can be used instead.
-public func unicharDirection(ch: gunichar) -> PangoDirection {
+@available(*, deprecated) public func unicharDirection(ch: gunichar) -> PangoDirection {
     let rv = pango_unichar_direction(ch)
-    return rv
+    return cast(rv)
 }
 
 
@@ -1075,9 +1071,9 @@ public func unicharDirection(ch: gunichar) -> PangoDirection {
 
 /// Converts a floating-point number to Pango units: multiplies
 /// it by `PANGO_SCALE` and rounds to nearest integer.
-public func unitsFromDouble(d: gdouble) -> CInt {
-    let rv = pango_units_from_double(d)
-    return rv
+public func unitsFromDouble(d: gdouble) -> Int {
+    let rv: Int = cast(pango_units_from_double(d))
+    return cast(rv)
 }
 
 
@@ -1085,9 +1081,9 @@ public func unitsFromDouble(d: gdouble) -> CInt {
 
 /// Converts a number in Pango units to floating-point: divides
 /// it by `PANGO_SCALE`.
-public func unitsToDouble(i: CInt) -> CDouble {
-    let rv = pango_units_to_double(i)
-    return rv
+public func unitsToDouble(i: CInt) -> Double {
+    let rv: Double = cast(pango_units_to_double(i))
+    return cast(rv)
 }
 
 
@@ -1099,9 +1095,9 @@ public func unitsToDouble(i: CInt) -> CDouble {
 /// 
 /// A version number can be encoded into an integer using
 /// `PANGO_VERSION_ENCODE()`.
-public func version() -> CInt {
-    let rv = pango_version()
-    return rv
+public func version() -> Int {
+    let rv: Int = cast(pango_version())
+    return cast(rv)
 }
 
 
@@ -1123,8 +1119,8 @@ public func version() -> CInt {
 /// 
 /// For compile-time version checking use `PANGO_VERSION_CHECK()`.
 public func versionCheck(requiredMajor required_major: CInt, requiredMinor required_minor: CInt, requiredMicro required_micro: CInt) -> String! {
-    let rv = pango_version_check(required_major, required_minor, required_micro)
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(pango_version_check(required_major, required_minor, required_micro))
+    return cast(rv)
 }
 
 
@@ -1134,8 +1130,8 @@ public func versionCheck(requiredMajor required_major: CInt, requiredMinor requi
 /// it returns the version of Pango available at run-time, as opposed to
 /// the version available at compile-time.
 public func versionString() -> String! {
-    let rv = pango_version_string()
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(pango_version_string())
+    return cast(rv)
 }
 
 

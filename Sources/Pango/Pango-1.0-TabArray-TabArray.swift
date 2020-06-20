@@ -13,7 +13,7 @@ import GLibObject
 /// A `PangoTabArray` struct contains an array
 /// of tab stops. Each tab stop has an alignment and a position.
 public protocol TabArrayProtocol {
-    /// Untyped pointer to the underlying `PangoTabArray` instance.
+        /// Untyped pointer to the underlying `PangoTabArray` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoTabArray` instance.
@@ -27,7 +27,7 @@ public protocol TabArrayProtocol {
 /// A `PangoTabArray` struct contains an array
 /// of tab stops. Each tab stop has an alignment and a position.
 public struct TabArrayRef: TabArrayProtocol {
-    /// Untyped pointer to the underlying `PangoTabArray` instance.
+        /// Untyped pointer to the underlying `PangoTabArray` instance.
     /// For type-safe access, use the generated, typed pointer `tab_array_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -76,7 +76,7 @@ public extension TabArrayRef {
     /// pixel units if `positions_in_pixels` is `true`, otherwise in Pango
     /// units. All stops are initially at position 0.
     init( initial_size: CInt, positionsInPixels positions_in_pixels: Bool) {
-        let rv = pango_tab_array_new(gint(initial_size), gboolean(positions_in_pixels ? 1 : 0))
+        let rv: UnsafeMutablePointer<PangoTabArray>! = cast(pango_tab_array_new(gint(initial_size), gboolean(positions_in_pixels ? 1 : 0)))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
@@ -95,7 +95,7 @@ public extension TabArrayRef {
 /// A `PangoTabArray` struct contains an array
 /// of tab stops. Each tab stop has an alignment and a position.
 open class TabArray: TabArrayProtocol {
-    /// Untyped pointer to the underlying `PangoTabArray` instance.
+        /// Untyped pointer to the underlying `PangoTabArray` instance.
     /// For type-safe access, use the generated, typed pointer `tab_array_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -124,7 +124,7 @@ open class TabArray: TabArrayProtocol {
         // no reference counting for PangoTabArray, cannot ref(cast(tab_array_ptr))
     }
 
-    /// Do-nothing destructor for`PangoTabArray`.
+    /// Do-nothing destructor for `PangoTabArray`.
     deinit {
         // no reference counting for PangoTabArray, cannot unref(cast(tab_array_ptr))
     }
@@ -192,7 +192,7 @@ open class TabArray: TabArrayProtocol {
     /// pixel units if `positions_in_pixels` is `true`, otherwise in Pango
     /// units. All stops are initially at position 0.
     public init( initial_size: CInt, positionsInPixels positions_in_pixels: Bool) {
-        let rv = pango_tab_array_new(gint(initial_size), gboolean(positions_in_pixels ? 1 : 0))
+        let rv: UnsafeMutablePointer<PangoTabArray>! = cast(pango_tab_array_new(gint(initial_size), gboolean(positions_in_pixels ? 1 : 0)))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
@@ -206,18 +206,19 @@ open class TabArray: TabArrayProtocol {
 
 }
 
-// MARK: - no TabArray properties
+// MARK: no TabArray properties
 
-// MARK: - no signals
+// MARK: no TabArray signals
 
 
+// MARK: TabArray Record: TabArrayProtocol extension (methods and fields)
 public extension TabArrayProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoTabArray` instance.
     var tab_array_ptr: UnsafeMutablePointer<PangoTabArray> { return ptr.assumingMemoryBound(to: PangoTabArray.self) }
 
     /// Copies a `PangoTabArray`
     func copy() -> UnsafeMutablePointer<PangoTabArray>! {
-        let rv = pango_tab_array_copy(cast(tab_array_ptr))
+        let rv: UnsafeMutablePointer<PangoTabArray>! = cast(pango_tab_array_copy(cast(tab_array_ptr)))
         return cast(rv)
     }
 
@@ -235,9 +236,9 @@ public extension TabArrayProtocol {
     }
 
     /// Gets the number of tab stops in `tab_array`.
-    func getSize() -> CInt {
-        let rv = pango_tab_array_get_size(cast(tab_array_ptr))
-        return CInt(rv)
+    func getSize() -> Int {
+        let rv: Int = cast(pango_tab_array_get_size(cast(tab_array_ptr)))
+        return Int(rv)
     }
 
     /// Gets the alignment and position of a tab stop.
@@ -280,13 +281,15 @@ public extension TabArrayProtocol {
     }
 
     /// Gets the number of tab stops in `tab_array`.
-    var size: CInt {
+    var size: Int {
         /// Gets the number of tab stops in `tab_array`.
         get {
-            let rv = pango_tab_array_get_size(cast(tab_array_ptr))
-            return CInt(rv)
+            let rv: Int = cast(pango_tab_array_get_size(cast(tab_array_ptr)))
+            return Int(rv)
         }
     }
+
+
 }
 
 

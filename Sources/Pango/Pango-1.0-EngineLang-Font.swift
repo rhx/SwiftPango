@@ -17,7 +17,7 @@ import GLibObject
 /// Thai to implement the dictionary-based word boundary
 /// lookups needed for that language.
 public protocol EngineLangProtocol: EngineProtocol {
-    /// Untyped pointer to the underlying `PangoEngineLang` instance.
+        /// Untyped pointer to the underlying `PangoEngineLang` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoEngineLang` instance.
@@ -35,7 +35,7 @@ public protocol EngineLangProtocol: EngineProtocol {
 /// Thai to implement the dictionary-based word boundary
 /// lookups needed for that language.
 public struct EngineLangRef: EngineLangProtocol {
-    /// Untyped pointer to the underlying `PangoEngineLang` instance.
+        /// Untyped pointer to the underlying `PangoEngineLang` instance.
     /// For type-safe access, use the generated, typed pointer `engine_lang_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -93,7 +93,7 @@ public extension EngineLangRef {
 /// Thai to implement the dictionary-based word boundary
 /// lookups needed for that language.
 open class EngineLang: Engine, EngineLangProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `EngineLang` instance.
     /// - Parameter op: pointer to the underlying object
@@ -175,7 +175,7 @@ open class EngineLang: Engine, EngineLangProtocol {
 
 }
 
-// MARK: - no EngineLang properties
+// MARK: no EngineLang properties
 
 public enum EngineLangSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -212,8 +212,8 @@ public extension EngineLangProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: EngineLangSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: EngineLangSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(engine_lang_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -234,9 +234,13 @@ public extension EngineLangProtocol {
     }
 }
 
+// MARK: EngineLang Class: EngineLangProtocol extension (methods and fields)
 public extension EngineLangProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoEngineLang` instance.
     var engine_lang_ptr: UnsafeMutablePointer<PangoEngineLang> { return ptr.assumingMemoryBound(to: PangoEngineLang.self) }
+
+
+    // var parentInstance is unavailable because parent_instance is private
 
 }
 
@@ -258,7 +262,7 @@ public extension EngineLangProtocol {
 /// `PangoEngineShape` implementation to handle shaping Arabic
 /// for Fontconfig-based backends.
 public protocol EngineShapeProtocol: EngineProtocol {
-    /// Untyped pointer to the underlying `PangoEngineShape` instance.
+        /// Untyped pointer to the underlying `PangoEngineShape` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoEngineShape` instance.
@@ -278,7 +282,7 @@ public protocol EngineShapeProtocol: EngineProtocol {
 /// `PangoEngineShape` implementation to handle shaping Arabic
 /// for Fontconfig-based backends.
 public struct EngineShapeRef: EngineShapeProtocol {
-    /// Untyped pointer to the underlying `PangoEngineShape` instance.
+        /// Untyped pointer to the underlying `PangoEngineShape` instance.
     /// For type-safe access, use the generated, typed pointer `engine_shape_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -338,7 +342,7 @@ public extension EngineShapeRef {
 /// `PangoEngineShape` implementation to handle shaping Arabic
 /// for Fontconfig-based backends.
 open class EngineShape: Engine, EngineShapeProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `EngineShape` instance.
     /// - Parameter op: pointer to the underlying object
@@ -420,7 +424,7 @@ open class EngineShape: Engine, EngineShapeProtocol {
 
 }
 
-// MARK: - no EngineShape properties
+// MARK: no EngineShape properties
 
 public enum EngineShapeSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -457,8 +461,8 @@ public extension EngineShapeProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: EngineShapeSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: EngineShapeSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(engine_shape_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -479,9 +483,18 @@ public extension EngineShapeProtocol {
     }
 }
 
+// MARK: EngineShape Class: EngineShapeProtocol extension (methods and fields)
 public extension EngineShapeProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoEngineShape` instance.
     var engine_shape_ptr: UnsafeMutablePointer<PangoEngineShape> { return ptr.assumingMemoryBound(to: PangoEngineShape.self) }
+
+
+    var parentInstance: PangoEngine {
+        get {
+            let rv: PangoEngine = cast(engine_shape_ptr.pointee.parent_instance)
+            return rv
+        }
+    }
 
 }
 
@@ -507,7 +520,7 @@ public extension EngineShapeProtocol {
 /// The `PangoFont` structure contains one member
 /// which the implementation fills in.
 public protocol FontProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `PangoFont` instance.
+        /// Untyped pointer to the underlying `PangoFont` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFont` instance.
@@ -531,7 +544,7 @@ public protocol FontProtocol: ObjectProtocol {
 /// The `PangoFont` structure contains one member
 /// which the implementation fills in.
 public struct FontRef: FontProtocol {
-    /// Untyped pointer to the underlying `PangoFont` instance.
+        /// Untyped pointer to the underlying `PangoFont` instance.
     /// For type-safe access, use the generated, typed pointer `font_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -595,7 +608,7 @@ public extension FontRef {
 /// The `PangoFont` structure contains one member
 /// which the implementation fills in.
 open class Font: Object, FontProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Font` instance.
     /// - Parameter op: pointer to the underlying object
@@ -677,7 +690,7 @@ open class Font: Object, FontProtocol {
 
 }
 
-// MARK: - no Font properties
+// MARK: no Font properties
 
 public enum FontSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -714,8 +727,8 @@ public extension FontProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: FontSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(font_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -736,6 +749,7 @@ public extension FontProtocol {
     }
 }
 
+// MARK: Font Class: FontProtocol extension (methods and fields)
 public extension FontProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFont` instance.
     var font_ptr: UnsafeMutablePointer<PangoFont> { return ptr.assumingMemoryBound(to: PangoFont.self) }
@@ -744,7 +758,7 @@ public extension FontProtocol {
     /// Use `pango_font_describe_with_absolute_size()` if you want the font
     /// size in device units.
     func describe() -> UnsafeMutablePointer<PangoFontDescription>! {
-        let rv = pango_font_describe(cast(font_ptr))
+        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_describe(cast(font_ptr)))
         return cast(rv)
     }
 
@@ -752,7 +766,7 @@ public extension FontProtocol {
     /// (in device units). Use `pango_font_describe()` if you want the font
     /// size in points.
     func describeWithAbsoluteSize() -> UnsafeMutablePointer<PangoFontDescription>! {
-        let rv = pango_font_describe_with_absolute_size(cast(font_ptr))
+        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_describe_with_absolute_size(cast(font_ptr)))
         return cast(rv)
     }
 
@@ -762,13 +776,13 @@ public extension FontProtocol {
     /// **find_shaper is deprecated:**
     /// Shape engines are no longer used
     @available(*, deprecated) func findShaper(language: LanguageProtocol, ch: UInt32) -> UnsafeMutablePointer<PangoEngineShape>! {
-        let rv = pango_font_find_shaper(cast(font_ptr), cast(language.ptr), guint32(ch))
+        let rv: UnsafeMutablePointer<PangoEngineShape>! = cast(pango_font_find_shaper(cast(font_ptr), cast(language.ptr), guint32(ch)))
         return cast(rv)
     }
 
     /// Computes the coverage map for a given font and language tag.
     func getCoverage(language: LanguageProtocol) -> UnsafeMutablePointer<PangoCoverage>! {
-        let rv = pango_font_get_coverage(cast(font_ptr), cast(language.ptr))
+        let rv: UnsafeMutablePointer<PangoCoverage>! = cast(pango_font_get_coverage(cast(font_ptr), cast(language.ptr)))
         return cast(rv)
     }
 
@@ -793,7 +807,7 @@ public extension FontProtocol {
     /// alive.  In most uses this is not an issue as a `PangoContext` holds
     /// a reference to the font map.
     func getFontMap() -> UnsafeMutablePointer<PangoFontMap>! {
-        let rv = pango_font_get_font_map(cast(font_ptr))
+        let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_font_get_font_map(cast(font_ptr)))
         return cast(rv)
     }
 
@@ -818,7 +832,7 @@ public extension FontProtocol {
     /// are cached and immutable. If you need to make
     /// changes to the hb_font_t, use `hb_font_create_sub_font()`.
     func getHbFont() -> UnsafeMutablePointer<hb_font_t>! {
-        let rv = pango_font_get_hb_font(cast(font_ptr))
+        let rv: UnsafeMutablePointer<hb_font_t>! = cast(pango_font_get_hb_font(cast(font_ptr)))
         return cast(rv)
     }
 
@@ -830,7 +844,7 @@ public extension FontProtocol {
     /// If `font` is `nil`, this function gracefully sets some sane values in the
     /// output variables and returns.
     func getMetrics(language: LanguageProtocol) -> UnsafeMutablePointer<PangoFontMetrics>! {
-        let rv = pango_font_get_metrics(cast(font_ptr), cast(language.ptr))
+        let rv: UnsafeMutablePointer<PangoFontMetrics>! = cast(pango_font_get_metrics(cast(font_ptr), cast(language.ptr)))
         return cast(rv)
     }
 
@@ -861,7 +875,7 @@ public extension FontProtocol {
         /// alive.  In most uses this is not an issue as a `PangoContext` holds
         /// a reference to the font map.
         get {
-            let rv = pango_font_get_font_map(cast(font_ptr))
+            let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_font_get_font_map(cast(font_ptr)))
             return cast(rv)
         }
     }
@@ -878,10 +892,18 @@ public extension FontProtocol {
         /// are cached and immutable. If you need to make
         /// changes to the hb_font_t, use `hb_font_create_sub_font()`.
         get {
-            let rv = pango_font_get_hb_font(cast(font_ptr))
+            let rv: UnsafeMutablePointer<hb_font_t>! = cast(pango_font_get_hb_font(cast(font_ptr)))
             return cast(rv)
         }
     }
+
+    var parentInstance: GObject {
+        get {
+            let rv: GObject = cast(font_ptr.pointee.parent_instance)
+            return rv
+        }
+    }
+
 }
 
 

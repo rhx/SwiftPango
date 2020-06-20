@@ -13,7 +13,7 @@ import GLibObject
 /// The `PangoContext` structure stores global information
 /// used to control the itemization process.
 public protocol ContextProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `PangoContext` instance.
+        /// Untyped pointer to the underlying `PangoContext` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoContext` instance.
@@ -27,7 +27,7 @@ public protocol ContextProtocol: ObjectProtocol {
 /// The `PangoContext` structure stores global information
 /// used to control the itemization process.
 public struct ContextRef: ContextProtocol {
-    /// Untyped pointer to the underlying `PangoContext` instance.
+        /// Untyped pointer to the underlying `PangoContext` instance.
     /// For type-safe access, use the generated, typed pointer `context_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -85,7 +85,7 @@ public extension ContextRef {
     /// `gdk_pango_context_get_for_screen()`, and
     /// `gtk_widget_get_pango_context()`.  Use those instead.
     init() {
-        let rv = pango_context_new()
+        let rv: UnsafeMutablePointer<PangoContext>! = cast(pango_context_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -97,7 +97,7 @@ public extension ContextRef {
 /// The `PangoContext` structure stores global information
 /// used to control the itemization process.
 open class Context: Object, ContextProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Context` instance.
     /// - Parameter op: pointer to the underlying object
@@ -188,14 +188,14 @@ open class Context: Object, ContextProtocol {
     /// `gdk_pango_context_get_for_screen()`, and
     /// `gtk_widget_get_pango_context()`.  Use those instead.
     public init() {
-        let rv = pango_context_new()
+        let rv: UnsafeMutablePointer<PangoContext>! = cast(pango_context_new())
         super.init(cast(rv))
     }
 
 
 }
 
-// MARK: - no Context properties
+// MARK: no Context properties
 
 public enum ContextSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -232,8 +232,8 @@ public extension ContextProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: ContextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: ContextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(context_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -254,6 +254,7 @@ public extension ContextProtocol {
     }
 }
 
+// MARK: Context Class: ContextProtocol extension (methods and fields)
 public extension ContextProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoContext` instance.
     var context_ptr: UnsafeMutablePointer<PangoContext> { return ptr.assumingMemoryBound(to: PangoContext.self) }
@@ -274,25 +275,25 @@ public extension ContextProtocol {
     /// `pango_context_set_base_dir()`.
     func getBaseDir() -> PangoDirection {
         let rv = pango_context_get_base_dir(cast(context_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Retrieves the base gravity for the context. See
     /// `pango_context_set_base_gravity()`.
     func getBaseGravity() -> PangoGravity {
         let rv = pango_context_get_base_gravity(cast(context_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Retrieve the default font description for the context.
     func getFontDescription() -> UnsafeMutablePointer<PangoFontDescription>! {
-        let rv = pango_context_get_font_description(cast(context_ptr))
+        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_context_get_font_description(cast(context_ptr)))
         return cast(rv)
     }
 
     /// Gets the `PangoFontMap` used to look up fonts for this context.
     func getFontMap() -> UnsafeMutablePointer<PangoFontMap>! {
-        let rv = pango_context_get_font_map(cast(context_ptr))
+        let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_context_get_font_map(cast(context_ptr)))
         return cast(rv)
     }
 
@@ -302,26 +303,26 @@ public extension ContextProtocol {
     /// to return the gravity from the current context matrix.
     func getGravity() -> PangoGravity {
         let rv = pango_context_get_gravity(cast(context_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Retrieves the gravity hint for the context. See
     /// `pango_context_set_gravity_hint()` for details.
     func getGravityHint() -> PangoGravityHint {
         let rv = pango_context_get_gravity_hint(cast(context_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Retrieves the global language tag for the context.
     func getLanguage() -> UnsafeMutablePointer<PangoLanguage>! {
-        let rv = pango_context_get_language(cast(context_ptr))
+        let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_context_get_language(cast(context_ptr)))
         return cast(rv)
     }
 
     /// Gets the transformation matrix that will be applied when
     /// rendering with this context. See `pango_context_set_matrix()`.
     func getMatrix() -> UnsafePointer<PangoMatrix>! {
-        let rv = pango_context_get_matrix(cast(context_ptr))
+        let rv: UnsafePointer<PangoMatrix>! = cast(pango_context_get_matrix(cast(context_ptr)))
         return cast(rv)
     }
 
@@ -338,7 +339,7 @@ public extension ContextProtocol {
     /// be a composite of the metrics for the fonts loaded for the
     /// individual families.
     func getMetrics(desc: FontDescriptionProtocol, language: LanguageProtocol) -> UnsafeMutablePointer<PangoFontMetrics>! {
-        let rv = pango_context_get_metrics(cast(context_ptr), cast(desc.ptr), cast(language.ptr))
+        let rv: UnsafeMutablePointer<PangoFontMetrics>! = cast(pango_context_get_metrics(cast(context_ptr), cast(desc.ptr), cast(language.ptr)))
         return cast(rv)
     }
 
@@ -359,9 +360,9 @@ public extension ContextProtocol {
     /// This can be used to automatically detect changes to a `PangoContext`, and
     /// is only useful when implementing objects that need update when their
     /// `PangoContext` changes, like `PangoLayout`.
-    func getSerial() -> CUnsignedInt {
-        let rv = pango_context_get_serial(cast(context_ptr))
-        return CUnsignedInt(rv)
+    func getSerial() -> Int {
+        let rv: Int = cast(pango_context_get_serial(cast(context_ptr)))
+        return Int(rv)
     }
 
     /// List all families for a context.
@@ -373,14 +374,14 @@ public extension ContextProtocol {
     /// Loads the font in one of the fontmaps in the context
     /// that is the closest match for `desc`.
     func loadFont(desc: FontDescriptionProtocol) -> UnsafeMutablePointer<PangoFont>! {
-        let rv = pango_context_load_font(cast(context_ptr), cast(desc.ptr))
+        let rv: UnsafeMutablePointer<PangoFont>! = cast(pango_context_load_font(cast(context_ptr), cast(desc.ptr)))
         return cast(rv)
     }
 
     /// Load a set of fonts in the context that can be used to render
     /// a font matching `desc`.
     func loadFontset(desc: FontDescriptionProtocol, language: LanguageProtocol) -> UnsafeMutablePointer<PangoFontset>! {
-        let rv = pango_context_load_fontset(cast(context_ptr), cast(desc.ptr), cast(language.ptr))
+        let rv: UnsafeMutablePointer<PangoFontset>! = cast(pango_context_load_fontset(cast(context_ptr), cast(desc.ptr), cast(language.ptr)))
         return cast(rv)
     }
 
@@ -473,7 +474,7 @@ public extension ContextProtocol {
     /// the range covering the position just after `start_index` + `length`.
     /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
     func itemize(text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, attrs: AttrListProtocol, cachedIter cached_iter: AttrIteratorProtocol) -> UnsafeMutablePointer<GList>! {
-        let rv = pango_itemize(cast(context_ptr), text, start_index, length, cast(attrs.ptr), cast(cached_iter.ptr))
+        let rv: UnsafeMutablePointer<GList>! = cast(pango_itemize(cast(context_ptr), text, start_index, length, cast(attrs.ptr), cast(cached_iter.ptr)))
         return cast(rv)
     }
 
@@ -481,7 +482,7 @@ public extension ContextProtocol {
     /// computing bidirectional levels (see pango_context_set_base_dir ()),
     /// is specified explicitly rather than gotten from the `PangoContext`.
     func itemizeWith(baseDir base_dir: Direction, text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, attrs: AttrListProtocol, cachedIter cached_iter: AttrIteratorProtocol) -> UnsafeMutablePointer<GList>! {
-        let rv = pango_itemize_with_base_dir(cast(context_ptr), base_dir, text, start_index, length, cast(attrs.ptr), cast(cached_iter.ptr))
+        let rv: UnsafeMutablePointer<GList>! = cast(pango_itemize_with_base_dir(cast(context_ptr), base_dir, text, start_index, length, cast(attrs.ptr), cast(cached_iter.ptr)))
         return cast(rv)
     }
     /// Retrieves the base direction for the context. See
@@ -491,7 +492,7 @@ public extension ContextProtocol {
         /// `pango_context_set_base_dir()`.
         get {
             let rv = pango_context_get_base_dir(cast(context_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the base direction for the context.
         /// 
@@ -502,7 +503,7 @@ public extension ContextProtocol {
         /// `PANGO_DIRECTION_WEAK_LTR` or `PANGO_DIRECTION_WEAK_RTL` is used only
         /// for paragraphs that do not contain any strong characters themselves.
         nonmutating set {
-            pango_context_set_base_dir(cast(context_ptr), newValue)
+            pango_context_set_base_dir(cast(context_ptr), cast(newValue))
         }
     }
 
@@ -513,13 +514,13 @@ public extension ContextProtocol {
         /// `pango_context_set_base_gravity()`.
         get {
             let rv = pango_context_get_base_gravity(cast(context_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the base gravity for the context.
         /// 
         /// The base gravity is used in laying vertical text out.
         nonmutating set {
-            pango_context_set_base_gravity(cast(context_ptr), newValue)
+            pango_context_set_base_gravity(cast(context_ptr), cast(newValue))
         }
     }
 
@@ -527,7 +528,7 @@ public extension ContextProtocol {
     var fontDescription: UnsafeMutablePointer<PangoFontDescription>! {
         /// Retrieve the default font description for the context.
         get {
-            let rv = pango_context_get_font_description(cast(context_ptr))
+            let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_context_get_font_description(cast(context_ptr)))
             return cast(rv)
         }
         /// Set the default font description for the context
@@ -540,7 +541,7 @@ public extension ContextProtocol {
     var fontMap: UnsafeMutablePointer<PangoFontMap>! {
         /// Gets the `PangoFontMap` used to look up fonts for this context.
         get {
-            let rv = pango_context_get_font_map(cast(context_ptr))
+            let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_context_get_font_map(cast(context_ptr)))
             return cast(rv)
         }
         /// Sets the font map to be searched when fonts are looked-up in this context.
@@ -562,7 +563,7 @@ public extension ContextProtocol {
         /// to return the gravity from the current context matrix.
         get {
             let rv = pango_context_get_gravity(cast(context_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
@@ -573,7 +574,7 @@ public extension ContextProtocol {
         /// `pango_context_set_gravity_hint()` for details.
         get {
             let rv = pango_context_get_gravity_hint(cast(context_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the gravity hint for the context.
         /// 
@@ -581,7 +582,7 @@ public extension ContextProtocol {
         /// if gravity of the context as returned by `pango_context_get_gravity()`
         /// is set `PANGO_GRAVITY_EAST` or `PANGO_GRAVITY_WEST`.
         nonmutating set {
-            pango_context_set_gravity_hint(cast(context_ptr), newValue)
+            pango_context_set_gravity_hint(cast(context_ptr), cast(newValue))
         }
     }
 
@@ -589,7 +590,7 @@ public extension ContextProtocol {
     var language: UnsafeMutablePointer<PangoLanguage>! {
         /// Retrieves the global language tag for the context.
         get {
-            let rv = pango_context_get_language(cast(context_ptr))
+            let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_context_get_language(cast(context_ptr)))
             return cast(rv)
         }
         /// Sets the global language tag for the context.  The default language
@@ -606,7 +607,7 @@ public extension ContextProtocol {
         /// Gets the transformation matrix that will be applied when
         /// rendering with this context. See `pango_context_set_matrix()`.
         get {
-            let rv = pango_context_get_matrix(cast(context_ptr))
+            let rv: UnsafePointer<PangoMatrix>! = cast(pango_context_get_matrix(cast(context_ptr)))
             return cast(rv)
         }
         /// Sets the transformation matrix that will be applied when rendering
@@ -653,7 +654,7 @@ public extension ContextProtocol {
     /// This can be used to automatically detect changes to a `PangoContext`, and
     /// is only useful when implementing objects that need update when their
     /// `PangoContext` changes, like `PangoLayout`.
-    var serial: CUnsignedInt {
+    var serial: Int {
         /// Returns the current serial number of `context`.  The serial number is
         /// initialized to an small number larger than zero when a new context
         /// is created and is increased whenever the context is changed using any
@@ -665,10 +666,12 @@ public extension ContextProtocol {
         /// is only useful when implementing objects that need update when their
         /// `PangoContext` changes, like `PangoLayout`.
         get {
-            let rv = pango_context_get_serial(cast(context_ptr))
-            return CUnsignedInt(rv)
+            let rv: Int = cast(pango_context_get_serial(cast(context_ptr)))
+            return Int(rv)
         }
     }
+
+
 }
 
 
@@ -683,7 +686,7 @@ public extension ContextProtocol {
 /// The `PangoCoverage` structure represents a map from Unicode characters
 /// to `PangoCoverageLevel`. It is an opaque structure with no public fields.
 public protocol CoverageProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `PangoCoverage` instance.
+        /// Untyped pointer to the underlying `PangoCoverage` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoCoverage` instance.
@@ -697,7 +700,7 @@ public protocol CoverageProtocol: ObjectProtocol {
 /// The `PangoCoverage` structure represents a map from Unicode characters
 /// to `PangoCoverageLevel`. It is an opaque structure with no public fields.
 public struct CoverageRef: CoverageProtocol {
-    /// Untyped pointer to the underlying `PangoCoverage` instance.
+        /// Untyped pointer to the underlying `PangoCoverage` instance.
     /// For type-safe access, use the generated, typed pointer `coverage_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -744,7 +747,7 @@ public extension CoverageRef {
 
         /// Create a new `PangoCoverage`
     init() {
-        let rv = pango_coverage_new()
+        let rv: UnsafeMutablePointer<PangoCoverage>! = cast(pango_coverage_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
     /// Convert data generated from `pango_coverage_to_bytes()` back
@@ -753,7 +756,7 @@ public extension CoverageRef {
     /// **from_bytes is deprecated:**
     /// This returns %NULL
     @available(*, deprecated) static func from(bytes: UnsafeMutablePointer<guchar>, nBytes n_bytes: CInt) -> CoverageRef! {
-        let rv = pango_coverage_from_bytes(cast(bytes), n_bytes)
+        let rv: UnsafeMutablePointer<PangoCoverage>! = cast(pango_coverage_from_bytes(cast(bytes), n_bytes))
         return rv.map { CoverageRef(cast($0)) }
     }
 }
@@ -765,7 +768,7 @@ public extension CoverageRef {
 /// The `PangoCoverage` structure represents a map from Unicode characters
 /// to `PangoCoverageLevel`. It is an opaque structure with no public fields.
 open class Coverage: Object, CoverageProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Coverage` instance.
     /// - Parameter op: pointer to the underlying object
@@ -845,7 +848,7 @@ open class Coverage: Object, CoverageProtocol {
 
     /// Create a new `PangoCoverage`
     public init() {
-        let rv = pango_coverage_new()
+        let rv: UnsafeMutablePointer<PangoCoverage>! = cast(pango_coverage_new())
         super.init(cast(rv))
     }
 
@@ -855,13 +858,13 @@ open class Coverage: Object, CoverageProtocol {
     /// **from_bytes is deprecated:**
     /// This returns %NULL
     @available(*, deprecated) public static func from(bytes: UnsafeMutablePointer<guchar>, nBytes n_bytes: CInt) -> Coverage! {
-        let rv = pango_coverage_from_bytes(cast(bytes), n_bytes)
+        let rv: UnsafeMutablePointer<PangoCoverage>! = cast(pango_coverage_from_bytes(cast(bytes), n_bytes))
         return rv.map { Coverage(cast($0)) }
     }
 
 }
 
-// MARK: - no Coverage properties
+// MARK: no Coverage properties
 
 public enum CoverageSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -898,8 +901,8 @@ public extension CoverageProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: CoverageSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: CoverageSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(coverage_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -920,6 +923,7 @@ public extension CoverageProtocol {
     }
 }
 
+// MARK: Coverage Class: CoverageProtocol extension (methods and fields)
 public extension CoverageProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoCoverage` instance.
     var coverage_ptr: UnsafeMutablePointer<PangoCoverage> { return ptr.assumingMemoryBound(to: PangoCoverage.self) }
@@ -927,14 +931,14 @@ public extension CoverageProtocol {
     /// Copy an existing `PangoCoverage`. (This function may now be unnecessary
     /// since we refcount the structure. File a bug if you use it.)
     func copy() -> UnsafeMutablePointer<PangoCoverage>! {
-        let rv = pango_coverage_copy(cast(coverage_ptr))
+        let rv: UnsafeMutablePointer<PangoCoverage>! = cast(pango_coverage_copy(cast(coverage_ptr)))
         return cast(rv)
     }
 
     /// Determine whether a particular index is covered by `coverage`
     func get(index_: CInt) -> PangoCoverageLevel {
         let rv = pango_coverage_get(cast(coverage_ptr), index_)
-        return rv
+        return cast(rv)
     }
 
     /// Set the coverage for each index in `coverage` to be the max (better)
@@ -950,7 +954,7 @@ public extension CoverageProtocol {
 
     /// Increase the reference count on the `PangoCoverage` by one
     func ref() -> UnsafeMutablePointer<PangoCoverage>! {
-        let rv = pango_coverage_ref(cast(coverage_ptr))
+        let rv: UnsafeMutablePointer<PangoCoverage>! = cast(pango_coverage_ref(cast(coverage_ptr)))
         return cast(rv)
     }
 
@@ -975,6 +979,8 @@ public extension CoverageProtocol {
         pango_coverage_unref(cast(coverage_ptr))
     
     }
+
+
 }
 
 
@@ -989,7 +995,7 @@ public extension CoverageProtocol {
 /// `PangoEngine` is the base class for all types of language and
 /// script specific engines. It has no functionality by itself.
 public protocol EngineProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `PangoEngine` instance.
+        /// Untyped pointer to the underlying `PangoEngine` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoEngine` instance.
@@ -1003,7 +1009,7 @@ public protocol EngineProtocol: ObjectProtocol {
 /// `PangoEngine` is the base class for all types of language and
 /// script specific engines. It has no functionality by itself.
 public struct EngineRef: EngineProtocol {
-    /// Untyped pointer to the underlying `PangoEngine` instance.
+        /// Untyped pointer to the underlying `PangoEngine` instance.
     /// For type-safe access, use the generated, typed pointer `engine_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1057,7 +1063,7 @@ public extension EngineRef {
 /// `PangoEngine` is the base class for all types of language and
 /// script specific engines. It has no functionality by itself.
 open class Engine: Object, EngineProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Engine` instance.
     /// - Parameter op: pointer to the underlying object
@@ -1139,7 +1145,7 @@ open class Engine: Object, EngineProtocol {
 
 }
 
-// MARK: - no Engine properties
+// MARK: no Engine properties
 
 public enum EngineSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -1176,8 +1182,8 @@ public extension EngineProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: EngineSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: EngineSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(engine_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -1198,9 +1204,13 @@ public extension EngineProtocol {
     }
 }
 
+// MARK: Engine Class: EngineProtocol extension (methods and fields)
 public extension EngineProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoEngine` instance.
     var engine_ptr: UnsafeMutablePointer<PangoEngine> { return ptr.assumingMemoryBound(to: PangoEngine.self) }
+
+
+    // var parentInstance is unavailable because parent_instance is private
 
 }
 

@@ -12,7 +12,7 @@ import GLibObject
 ///
 
 public protocol MapEntryProtocol {
-    /// Untyped pointer to the underlying `PangoMapEntry` instance.
+        /// Untyped pointer to the underlying `PangoMapEntry` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoMapEntry` instance.
@@ -25,7 +25,7 @@ public protocol MapEntryProtocol {
 ///
 
 public struct MapEntryRef: MapEntryProtocol {
-    /// Untyped pointer to the underlying `PangoMapEntry` instance.
+        /// Untyped pointer to the underlying `PangoMapEntry` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension MapEntryRef {
 ///
 
 open class MapEntry: MapEntryProtocol {
-    /// Untyped pointer to the underlying `PangoMapEntry` instance.
+        /// Untyped pointer to the underlying `PangoMapEntry` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -107,7 +107,7 @@ open class MapEntry: MapEntryProtocol {
         // no reference counting for PangoMapEntry, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoMapEntry`.
+    /// Do-nothing destructor for `PangoMapEntry`.
     deinit {
         // no reference counting for PangoMapEntry, cannot unref(cast(_ptr))
     }
@@ -175,14 +175,17 @@ open class MapEntry: MapEntryProtocol {
 
 }
 
-// MARK: - no MapEntry properties
+// MARK: no MapEntry properties
 
-// MARK: - no signals
+// MARK: no MapEntry signals
 
 
+// MARK: MapEntry Record: MapEntryProtocol extension (methods and fields)
 public extension MapEntryProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoMapEntry` instance.
     var _ptr: UnsafeMutablePointer<PangoMapEntry> { return ptr.assumingMemoryBound(to: PangoMapEntry.self) }
+
+
 
 }
 
@@ -204,7 +207,7 @@ public extension MapEntryProtocol {
 /// y_device = x_user * matrix->yx + y_user * matrix->yy + matrix->y0;
 /// </programlisting>
 public protocol MatrixProtocol {
-    /// Untyped pointer to the underlying `PangoMatrix` instance.
+        /// Untyped pointer to the underlying `PangoMatrix` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoMatrix` instance.
@@ -224,7 +227,7 @@ public protocol MatrixProtocol {
 /// y_device = x_user * matrix->yx + y_user * matrix->yy + matrix->y0;
 /// </programlisting>
 public struct MatrixRef: MatrixProtocol {
-    /// Untyped pointer to the underlying `PangoMatrix` instance.
+        /// Untyped pointer to the underlying `PangoMatrix` instance.
     /// For type-safe access, use the generated, typed pointer `matrix_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -284,7 +287,7 @@ public extension MatrixRef {
 /// y_device = x_user * matrix->yx + y_user * matrix->yy + matrix->y0;
 /// </programlisting>
 open class Matrix: MatrixProtocol {
-    /// Untyped pointer to the underlying `PangoMatrix` instance.
+        /// Untyped pointer to the underlying `PangoMatrix` instance.
     /// For type-safe access, use the generated, typed pointer `matrix_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -313,7 +316,7 @@ open class Matrix: MatrixProtocol {
         // no reference counting for PangoMatrix, cannot ref(cast(matrix_ptr))
     }
 
-    /// Do-nothing destructor for`PangoMatrix`.
+    /// Do-nothing destructor for `PangoMatrix`.
     deinit {
         // no reference counting for PangoMatrix, cannot unref(cast(matrix_ptr))
     }
@@ -381,11 +384,12 @@ open class Matrix: MatrixProtocol {
 
 }
 
-// MARK: - no Matrix properties
+// MARK: no Matrix properties
 
-// MARK: - no signals
+// MARK: no Matrix signals
 
 
+// MARK: Matrix Record: MatrixProtocol extension (methods and fields)
 public extension MatrixProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoMatrix` instance.
     var matrix_ptr: UnsafeMutablePointer<PangoMatrix> { return ptr.assumingMemoryBound(to: PangoMatrix.self) }
@@ -400,7 +404,7 @@ public extension MatrixProtocol {
 
     /// Copies a `PangoMatrix`.
     func copy() -> UnsafeMutablePointer<PangoMatrix>! {
-        let rv = pango_matrix_copy(cast(matrix_ptr))
+        let rv: UnsafeMutablePointer<PangoMatrix>! = cast(pango_matrix_copy(cast(matrix_ptr)))
         return cast(rv)
     }
 
@@ -414,9 +418,9 @@ public extension MatrixProtocol {
     /// That is, the scale factor in the direction perpendicular to the
     /// vector that the X coordinate is mapped to.  If the scale in the X
     /// coordinate is needed as well, use `pango_matrix_get_font_scale_factors()`.
-    func getFontScaleFactor() -> CDouble {
-        let rv = pango_matrix_get_font_scale_factor(cast(matrix_ptr))
-        return rv
+    func getFontScaleFactor() -> Double {
+        let rv: Double = cast(pango_matrix_get_font_scale_factor(cast(matrix_ptr)))
+        return cast(rv)
     }
 
     /// Calculates the scale factor of a matrix on the width and height of the font.
@@ -523,22 +527,101 @@ public extension MatrixProtocol {
     /// in a `PangoMatrix`.
     func gravityGetForMatrix() -> PangoGravity {
         let rv = pango_gravity_get_for_matrix(cast(matrix_ptr))
-        return rv
+        return cast(rv)
     }
     /// Returns the scale factor of a matrix on the height of the font.
     /// That is, the scale factor in the direction perpendicular to the
     /// vector that the X coordinate is mapped to.  If the scale in the X
     /// coordinate is needed as well, use `pango_matrix_get_font_scale_factors()`.
-    var fontScaleFactor: CDouble {
+    var fontScaleFactor: Double {
         /// Returns the scale factor of a matrix on the height of the font.
         /// That is, the scale factor in the direction perpendicular to the
         /// vector that the X coordinate is mapped to.  If the scale in the X
         /// coordinate is needed as well, use `pango_matrix_get_font_scale_factors()`.
         get {
-            let rv = pango_matrix_get_font_scale_factor(cast(matrix_ptr))
-            return rv
+            let rv: Double = cast(pango_matrix_get_font_scale_factor(cast(matrix_ptr)))
+            return cast(rv)
         }
     }
+
+    /// 1st component of the transformation matrix
+    var xx: Double {
+        /// 1st component of the transformation matrix
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.xx)
+            return rv
+        }
+        /// 1st component of the transformation matrix
+         set {
+            matrix_ptr.pointee.xx = cast(newValue)
+        }
+    }
+
+    /// 2nd component of the transformation matrix
+    var xy: Double {
+        /// 2nd component of the transformation matrix
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.xy)
+            return rv
+        }
+        /// 2nd component of the transformation matrix
+         set {
+            matrix_ptr.pointee.xy = cast(newValue)
+        }
+    }
+
+    /// 3rd component of the transformation matrix
+    var yx: Double {
+        /// 3rd component of the transformation matrix
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.yx)
+            return rv
+        }
+        /// 3rd component of the transformation matrix
+         set {
+            matrix_ptr.pointee.yx = cast(newValue)
+        }
+    }
+
+    /// 4th component of the transformation matrix
+    var yy: Double {
+        /// 4th component of the transformation matrix
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.yy)
+            return rv
+        }
+        /// 4th component of the transformation matrix
+         set {
+            matrix_ptr.pointee.yy = cast(newValue)
+        }
+    }
+
+    /// x translation
+    var x0: Double {
+        /// x translation
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.x0)
+            return rv
+        }
+        /// x translation
+         set {
+            matrix_ptr.pointee.x0 = cast(newValue)
+        }
+    }
+
+    /// y translation
+    var y0: Double {
+        /// y translation
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.y0)
+            return rv
+        }
+        /// y translation
+         set {
+            matrix_ptr.pointee.y0 = cast(newValue)
+        }
+    }
+
 }
 
 
@@ -554,7 +637,7 @@ public extension MatrixProtocol {
 /// used to represent the logical or ink extents of a single glyph or section
 /// of text. (See, for instance, `pango_font_get_glyph_extents()`)
 public protocol RectangleProtocol {
-    /// Untyped pointer to the underlying `PangoRectangle` instance.
+        /// Untyped pointer to the underlying `PangoRectangle` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoRectangle` instance.
@@ -569,7 +652,7 @@ public protocol RectangleProtocol {
 /// used to represent the logical or ink extents of a single glyph or section
 /// of text. (See, for instance, `pango_font_get_glyph_extents()`)
 public struct RectangleRef: RectangleProtocol {
-    /// Untyped pointer to the underlying `PangoRectangle` instance.
+        /// Untyped pointer to the underlying `PangoRectangle` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -624,7 +707,7 @@ public extension RectangleRef {
 /// used to represent the logical or ink extents of a single glyph or section
 /// of text. (See, for instance, `pango_font_get_glyph_extents()`)
 open class Rectangle: RectangleProtocol {
-    /// Untyped pointer to the underlying `PangoRectangle` instance.
+        /// Untyped pointer to the underlying `PangoRectangle` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -653,7 +736,7 @@ open class Rectangle: RectangleProtocol {
         // no reference counting for PangoRectangle, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoRectangle`.
+    /// Do-nothing destructor for `PangoRectangle`.
     deinit {
         // no reference counting for PangoRectangle, cannot unref(cast(_ptr))
     }
@@ -721,11 +804,12 @@ open class Rectangle: RectangleProtocol {
 
 }
 
-// MARK: - no Rectangle properties
+// MARK: no Rectangle properties
 
-// MARK: - no signals
+// MARK: no Rectangle signals
 
 
+// MARK: Rectangle Record: RectangleProtocol extension (methods and fields)
 public extension RectangleProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoRectangle` instance.
     var _ptr: UnsafeMutablePointer<PangoRectangle> { return ptr.assumingMemoryBound(to: PangoRectangle.self) }
@@ -735,7 +819,7 @@ public extension RectangleProtocol {
     /// particular glyph. This might be used, for instance, for
     /// embedding a picture or a widget inside a `PangoLayout`.
     func attrShapeNew(logicalRect logical_rect: RectangleProtocol) -> UnsafeMutablePointer<PangoAttribute>! {
-        let rv = pango_attr_shape_new(cast(_ptr), cast(logical_rect.ptr))
+        let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_shape_new(cast(_ptr), cast(logical_rect.ptr)))
         return cast(rv)
     }
 
@@ -743,7 +827,7 @@ public extension RectangleProtocol {
     /// provided; this pointer can be accessed when later
     /// rendering the glyph.
     func attrShapeNewWithData(logicalRect logical_rect: RectangleProtocol, data: UnsafeMutableRawPointer, copyFunc copy_func: @escaping AttrDataCopyFunc, destroyFunc destroy_func: @escaping GLib.DestroyNotify) -> UnsafeMutablePointer<PangoAttribute>! {
-        let rv = pango_attr_shape_new_with_data(cast(_ptr), cast(logical_rect.ptr), cast(data), copy_func, destroy_func)
+        let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_shape_new_with_data(cast(_ptr), cast(logical_rect.ptr), cast(data), copy_func, destroy_func))
         return cast(rv)
     }
 
@@ -766,6 +850,59 @@ public extension RectangleProtocol {
         pango_extents_to_pixels(cast(_ptr), cast(nearest.ptr))
     
     }
+
+    /// X coordinate of the left side of the rectangle.
+    var x: Int {
+        /// X coordinate of the left side of the rectangle.
+        get {
+            let rv: Int = cast(_ptr.pointee.x)
+            return rv
+        }
+        /// X coordinate of the left side of the rectangle.
+         set {
+            _ptr.pointee.x = cast(newValue)
+        }
+    }
+
+    /// Y coordinate of the the top side of the rectangle.
+    var y: Int {
+        /// Y coordinate of the the top side of the rectangle.
+        get {
+            let rv: Int = cast(_ptr.pointee.y)
+            return rv
+        }
+        /// Y coordinate of the the top side of the rectangle.
+         set {
+            _ptr.pointee.y = cast(newValue)
+        }
+    }
+
+    /// width of the rectangle.
+    var width: Int {
+        /// width of the rectangle.
+        get {
+            let rv: Int = cast(_ptr.pointee.width)
+            return rv
+        }
+        /// width of the rectangle.
+         set {
+            _ptr.pointee.width = cast(newValue)
+        }
+    }
+
+    /// height of the rectangle.
+    var height: Int {
+        /// height of the rectangle.
+        get {
+            let rv: Int = cast(_ptr.pointee.height)
+            return rv
+        }
+        /// height of the rectangle.
+         set {
+            _ptr.pointee.height = cast(newValue)
+        }
+    }
+
 }
 
 

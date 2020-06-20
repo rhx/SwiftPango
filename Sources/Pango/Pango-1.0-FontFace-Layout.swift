@@ -13,7 +13,7 @@ import GLibObject
 /// The `PangoFontFace` structure is used to represent a group of fonts with
 /// the same family, slant, weight, width, but varying sizes.
 public protocol FontFaceProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `PangoFontFace` instance.
+        /// Untyped pointer to the underlying `PangoFontFace` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontFace` instance.
@@ -27,7 +27,7 @@ public protocol FontFaceProtocol: ObjectProtocol {
 /// The `PangoFontFace` structure is used to represent a group of fonts with
 /// the same family, slant, weight, width, but varying sizes.
 public struct FontFaceRef: FontFaceProtocol {
-    /// Untyped pointer to the underlying `PangoFontFace` instance.
+        /// Untyped pointer to the underlying `PangoFontFace` instance.
     /// For type-safe access, use the generated, typed pointer `font_face_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -81,7 +81,7 @@ public extension FontFaceRef {
 /// The `PangoFontFace` structure is used to represent a group of fonts with
 /// the same family, slant, weight, width, but varying sizes.
 open class FontFace: Object, FontFaceProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontFace` instance.
     /// - Parameter op: pointer to the underlying object
@@ -163,7 +163,7 @@ open class FontFace: Object, FontFaceProtocol {
 
 }
 
-// MARK: - no FontFace properties
+// MARK: no FontFace properties
 
 public enum FontFaceSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -200,8 +200,8 @@ public extension FontFaceProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontFaceSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: FontFaceSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(font_face_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -222,6 +222,7 @@ public extension FontFaceProtocol {
     }
 }
 
+// MARK: FontFace Class: FontFaceProtocol extension (methods and fields)
 public extension FontFaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontFace` instance.
     var font_face_ptr: UnsafeMutablePointer<PangoFontFace> { return ptr.assumingMemoryBound(to: PangoFontFace.self) }
@@ -230,7 +231,7 @@ public extension FontFaceProtocol {
     /// a `PangoFontFace`. The size field of the resulting font description
     /// will be unset.
     func describe() -> UnsafeMutablePointer<PangoFontDescription>! {
-        let rv = pango_font_face_describe(cast(font_face_ptr))
+        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_face_describe(cast(font_face_ptr)))
         return cast(rv)
     }
 
@@ -239,8 +240,8 @@ public extension FontFaceProtocol {
     /// name is unique among all faces in the family and is suitable
     /// for displaying to users.
     func getFaceName() -> String! {
-        let rv = pango_font_face_get_face_name(cast(font_face_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(pango_font_face_get_face_name(cast(font_face_ptr)))
+        return cast(rv)
     }
 
     /// List the available sizes for a font. This is only applicable to bitmap
@@ -261,8 +262,8 @@ public extension FontFaceProtocol {
         /// name is unique among all faces in the family and is suitable
         /// for displaying to users.
         get {
-            let rv = pango_font_face_get_face_name(cast(font_face_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(pango_font_face_get_face_name(cast(font_face_ptr)))
+            return cast(rv)
         }
     }
 
@@ -278,6 +279,14 @@ public extension FontFaceProtocol {
             return Bool(rv != 0)
         }
     }
+
+    var parentInstance: GObject {
+        get {
+            let rv: GObject = cast(font_face_ptr.pointee.parent_instance)
+            return rv
+        }
+    }
+
 }
 
 
@@ -293,7 +302,7 @@ public extension FontFaceProtocol {
 /// font faces. The faces in a family share a common design, but differ in
 /// slant, weight, width and other aspects.
 public protocol FontFamilyProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `PangoFontFamily` instance.
+        /// Untyped pointer to the underlying `PangoFontFamily` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontFamily` instance.
@@ -308,7 +317,7 @@ public protocol FontFamilyProtocol: ObjectProtocol {
 /// font faces. The faces in a family share a common design, but differ in
 /// slant, weight, width and other aspects.
 public struct FontFamilyRef: FontFamilyProtocol {
-    /// Untyped pointer to the underlying `PangoFontFamily` instance.
+        /// Untyped pointer to the underlying `PangoFontFamily` instance.
     /// For type-safe access, use the generated, typed pointer `font_family_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -363,7 +372,7 @@ public extension FontFamilyRef {
 /// font faces. The faces in a family share a common design, but differ in
 /// slant, weight, width and other aspects.
 open class FontFamily: Object, FontFamilyProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontFamily` instance.
     /// - Parameter op: pointer to the underlying object
@@ -445,7 +454,7 @@ open class FontFamily: Object, FontFamilyProtocol {
 
 }
 
-// MARK: - no FontFamily properties
+// MARK: no FontFamily properties
 
 public enum FontFamilySignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -482,8 +491,8 @@ public extension FontFamilyProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontFamilySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: FontFamilySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(font_family_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -504,6 +513,7 @@ public extension FontFamilyProtocol {
     }
 }
 
+// MARK: FontFamily Class: FontFamilyProtocol extension (methods and fields)
 public extension FontFamilyProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontFamily` instance.
     var font_family_ptr: UnsafeMutablePointer<PangoFontFamily> { return ptr.assumingMemoryBound(to: PangoFontFamily.self) }
@@ -512,8 +522,8 @@ public extension FontFamilyProtocol {
     /// fonts for the font backend and can be used in a `PangoFontDescription`
     /// to specify that a face from this family is desired.
     func getName() -> String! {
-        let rv = pango_font_family_get_name(cast(font_family_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(pango_font_family_get_name(cast(font_family_ptr)))
+        return cast(rv)
     }
 
     /// Lists the different font faces that make up `family`. The faces
@@ -573,10 +583,18 @@ public extension FontFamilyProtocol {
         /// fonts for the font backend and can be used in a `PangoFontDescription`
         /// to specify that a face from this family is desired.
         get {
-            let rv = pango_font_family_get_name(cast(font_family_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(pango_font_family_get_name(cast(font_family_ptr)))
+            return cast(rv)
         }
     }
+
+    var parentInstance: GObject {
+        get {
+            let rv: GObject = cast(font_family_ptr.pointee.parent_instance)
+            return rv
+        }
+    }
+
 }
 
 
@@ -600,7 +618,7 @@ public extension FontFamilyProtocol {
 /// The `PangoFontMap` structure contains one member which the implementation
 /// fills in.
 public protocol FontMapProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `PangoFontMap` instance.
+        /// Untyped pointer to the underlying `PangoFontMap` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontMap` instance.
@@ -623,7 +641,7 @@ public protocol FontMapProtocol: ObjectProtocol {
 /// The `PangoFontMap` structure contains one member which the implementation
 /// fills in.
 public struct FontMapRef: FontMapProtocol {
-    /// Untyped pointer to the underlying `PangoFontMap` instance.
+        /// Untyped pointer to the underlying `PangoFontMap` instance.
     /// For type-safe access, use the generated, typed pointer `font_map_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -686,7 +704,7 @@ public extension FontMapRef {
 /// The `PangoFontMap` structure contains one member which the implementation
 /// fills in.
 open class FontMap: Object, FontMapProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontMap` instance.
     /// - Parameter op: pointer to the underlying object
@@ -768,7 +786,7 @@ open class FontMap: Object, FontMapProtocol {
 
 }
 
-// MARK: - no FontMap properties
+// MARK: no FontMap properties
 
 public enum FontMapSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -805,8 +823,8 @@ public extension FontMapProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontMapSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: FontMapSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(font_map_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -827,6 +845,7 @@ public extension FontMapProtocol {
     }
 }
 
+// MARK: FontMap Class: FontMapProtocol extension (methods and fields)
 public extension FontMapProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontMap` instance.
     var font_map_ptr: UnsafeMutablePointer<PangoFontMap> { return ptr.assumingMemoryBound(to: PangoFontMap.self) }
@@ -852,7 +871,7 @@ public extension FontMapProtocol {
     /// `gdk_pango_context_get_for_screen()`, and
     /// `gtk_widget_get_pango_context()`.  Use those instead.
     func createContext() -> UnsafeMutablePointer<PangoContext>! {
-        let rv = pango_font_map_create_context(cast(font_map_ptr))
+        let rv: UnsafeMutablePointer<PangoContext>! = cast(pango_font_map_create_context(cast(font_map_ptr)))
         return cast(rv)
     }
 
@@ -867,9 +886,9 @@ public extension FontMapProtocol {
     /// 
     /// This can be used to automatically detect changes to a `PangoFontMap`, like
     /// in `PangoContext`.
-    func getSerial() -> CUnsignedInt {
-        let rv = pango_font_map_get_serial(cast(font_map_ptr))
-        return CUnsignedInt(rv)
+    func getSerial() -> Int {
+        let rv: Int = cast(pango_font_map_get_serial(cast(font_map_ptr)))
+        return Int(rv)
     }
 
     /// List all families for a fontmap.
@@ -880,14 +899,14 @@ public extension FontMapProtocol {
 
     /// Load the font in the fontmap that is the closest match for `desc`.
     func loadFont(context: ContextProtocol, desc: FontDescriptionProtocol) -> UnsafeMutablePointer<PangoFont>! {
-        let rv = pango_font_map_load_font(cast(font_map_ptr), cast(context.ptr), cast(desc.ptr))
+        let rv: UnsafeMutablePointer<PangoFont>! = cast(pango_font_map_load_font(cast(font_map_ptr), cast(context.ptr), cast(desc.ptr)))
         return cast(rv)
     }
 
     /// Load a set of fonts in the fontmap that can be used to render
     /// a font matching `desc`.
     func loadFontset(context: ContextProtocol, desc: FontDescriptionProtocol, language: LanguageProtocol) -> UnsafeMutablePointer<PangoFontset>! {
-        let rv = pango_font_map_load_fontset(cast(font_map_ptr), cast(context.ptr), cast(desc.ptr), cast(language.ptr))
+        let rv: UnsafeMutablePointer<PangoFontset>! = cast(pango_font_map_load_fontset(cast(font_map_ptr), cast(context.ptr), cast(desc.ptr), cast(language.ptr)))
         return cast(rv)
     }
     /// Returns the current serial number of `fontmap`.  The serial number is
@@ -901,7 +920,7 @@ public extension FontMapProtocol {
     /// 
     /// This can be used to automatically detect changes to a `PangoFontMap`, like
     /// in `PangoContext`.
-    var serial: CUnsignedInt {
+    var serial: Int {
         /// Returns the current serial number of `fontmap`.  The serial number is
         /// initialized to an small number larger than zero when a new fontmap
         /// is created and is increased whenever the fontmap is changed. It may
@@ -914,10 +933,18 @@ public extension FontMapProtocol {
         /// This can be used to automatically detect changes to a `PangoFontMap`, like
         /// in `PangoContext`.
         get {
-            let rv = pango_font_map_get_serial(cast(font_map_ptr))
-            return CUnsignedInt(rv)
+            let rv: Int = cast(pango_font_map_get_serial(cast(font_map_ptr)))
+            return Int(rv)
         }
     }
+
+    var parentInstance: GObject {
+        get {
+            let rv: GObject = cast(font_map_ptr.pointee.parent_instance)
+            return rv
+        }
+    }
+
 }
 
 
@@ -936,7 +963,7 @@ public extension FontMapProtocol {
 /// a particular Unicode character, and for finding a composite
 /// set of metrics for the entire fontset.
 public protocol FontsetProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `PangoFontset` instance.
+        /// Untyped pointer to the underlying `PangoFontset` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontset` instance.
@@ -954,7 +981,7 @@ public protocol FontsetProtocol: ObjectProtocol {
 /// a particular Unicode character, and for finding a composite
 /// set of metrics for the entire fontset.
 public struct FontsetRef: FontsetProtocol {
-    /// Untyped pointer to the underlying `PangoFontset` instance.
+        /// Untyped pointer to the underlying `PangoFontset` instance.
     /// For type-safe access, use the generated, typed pointer `fontset_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1012,7 +1039,7 @@ public extension FontsetRef {
 /// a particular Unicode character, and for finding a composite
 /// set of metrics for the entire fontset.
 open class Fontset: Object, FontsetProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Fontset` instance.
     /// - Parameter op: pointer to the underlying object
@@ -1094,7 +1121,7 @@ open class Fontset: Object, FontsetProtocol {
 
 }
 
-// MARK: - no Fontset properties
+// MARK: no Fontset properties
 
 public enum FontsetSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -1131,8 +1158,8 @@ public extension FontsetProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontsetSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: FontsetSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(fontset_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -1153,6 +1180,7 @@ public extension FontsetProtocol {
     }
 }
 
+// MARK: Fontset Class: FontsetProtocol extension (methods and fields)
 public extension FontsetProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontset` instance.
     var fontset_ptr: UnsafeMutablePointer<PangoFontset> { return ptr.assumingMemoryBound(to: PangoFontset.self) }
@@ -1167,23 +1195,31 @@ public extension FontsetProtocol {
     /// Returns the font in the fontset that contains the best glyph for the
     /// Unicode character `wc`.
     func getFont(wc: CUnsignedInt) -> UnsafeMutablePointer<PangoFont>! {
-        let rv = pango_fontset_get_font(cast(fontset_ptr), guint(wc))
+        let rv: UnsafeMutablePointer<PangoFont>! = cast(pango_fontset_get_font(cast(fontset_ptr), guint(wc)))
         return cast(rv)
     }
 
     /// Get overall metric information for the fonts in the fontset.
     func getMetrics() -> UnsafeMutablePointer<PangoFontMetrics>! {
-        let rv = pango_fontset_get_metrics(cast(fontset_ptr))
+        let rv: UnsafeMutablePointer<PangoFontMetrics>! = cast(pango_fontset_get_metrics(cast(fontset_ptr)))
         return cast(rv)
     }
     /// Get overall metric information for the fonts in the fontset.
     var metrics: UnsafeMutablePointer<PangoFontMetrics>! {
         /// Get overall metric information for the fonts in the fontset.
         get {
-            let rv = pango_fontset_get_metrics(cast(fontset_ptr))
+            let rv: UnsafeMutablePointer<PangoFontMetrics>! = cast(pango_fontset_get_metrics(cast(fontset_ptr)))
             return cast(rv)
         }
     }
+
+    var parentInstance: GObject {
+        get {
+            let rv: GObject = cast(fontset_ptr.pointee.parent_instance)
+            return rv
+        }
+    }
+
 }
 
 
@@ -1200,7 +1236,7 @@ public extension FontsetProtocol {
 /// which the creator provides when constructing the
 /// `PangoFontsetSimple`.
 public protocol FontsetSimpleProtocol: FontsetProtocol {
-    /// Untyped pointer to the underlying `PangoFontsetSimple` instance.
+        /// Untyped pointer to the underlying `PangoFontsetSimple` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontsetSimple` instance.
@@ -1216,7 +1252,7 @@ public protocol FontsetSimpleProtocol: FontsetProtocol {
 /// which the creator provides when constructing the
 /// `PangoFontsetSimple`.
 public struct FontsetSimpleRef: FontsetSimpleProtocol {
-    /// Untyped pointer to the underlying `PangoFontsetSimple` instance.
+        /// Untyped pointer to the underlying `PangoFontsetSimple` instance.
     /// For type-safe access, use the generated, typed pointer `fontset_simple_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1263,7 +1299,7 @@ public extension FontsetSimpleRef {
 
         /// Creates a new `PangoFontsetSimple` for the given language.
     init( language: LanguageProtocol) {
-        let rv = pango_fontset_simple_new(cast(language.ptr))
+        let rv: UnsafeMutablePointer<PangoFontsetSimple>! = cast(pango_fontset_simple_new(cast(language.ptr)))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -1277,7 +1313,7 @@ public extension FontsetSimpleRef {
 /// which the creator provides when constructing the
 /// `PangoFontsetSimple`.
 open class FontsetSimple: Fontset, FontsetSimpleProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontsetSimple` instance.
     /// - Parameter op: pointer to the underlying object
@@ -1357,14 +1393,14 @@ open class FontsetSimple: Fontset, FontsetSimpleProtocol {
 
     /// Creates a new `PangoFontsetSimple` for the given language.
     public init( language: LanguageProtocol) {
-        let rv = pango_fontset_simple_new(cast(language.ptr))
+        let rv: UnsafeMutablePointer<PangoFontsetSimple>! = cast(pango_fontset_simple_new(cast(language.ptr)))
         super.init(cast(rv))
     }
 
 
 }
 
-// MARK: - no FontsetSimple properties
+// MARK: no FontsetSimple properties
 
 public enum FontsetSimpleSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -1401,8 +1437,8 @@ public extension FontsetSimpleProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontsetSimpleSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: FontsetSimpleSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(fontset_simple_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -1423,6 +1459,7 @@ public extension FontsetSimpleProtocol {
     }
 }
 
+// MARK: FontsetSimple Class: FontsetSimpleProtocol extension (methods and fields)
 public extension FontsetSimpleProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontsetSimple` instance.
     var fontset_simple_ptr: UnsafeMutablePointer<PangoFontsetSimple> { return ptr.assumingMemoryBound(to: PangoFontsetSimple.self) }
@@ -1434,10 +1471,12 @@ public extension FontsetSimpleProtocol {
     }
 
     /// Returns the number of fonts in the fontset.
-    func size() -> CInt {
-        let rv = pango_fontset_simple_size(cast(fontset_simple_ptr))
-        return rv
+    func size() -> Int {
+        let rv: Int = cast(pango_fontset_simple_size(cast(fontset_simple_ptr)))
+        return cast(rv)
     }
+
+
 }
 
 
@@ -1470,7 +1509,7 @@ public extension FontsetSimpleProtocol {
 /// The `PangoLayout` structure is opaque, and has no user-visible
 /// fields.
 public protocol LayoutProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `PangoLayout` instance.
+        /// Untyped pointer to the underlying `PangoLayout` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoLayout` instance.
@@ -1502,7 +1541,7 @@ public protocol LayoutProtocol: ObjectProtocol {
 /// The `PangoLayout` structure is opaque, and has no user-visible
 /// fields.
 public struct LayoutRef: LayoutProtocol {
-    /// Untyped pointer to the underlying `PangoLayout` instance.
+        /// Untyped pointer to the underlying `PangoLayout` instance.
     /// For type-safe access, use the generated, typed pointer `layout_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1550,7 +1589,7 @@ public extension LayoutRef {
         /// Create a new `PangoLayout` object with attributes initialized to
     /// default values for a particular `PangoContext`.
     init( context: ContextProtocol) {
-        let rv = pango_layout_new(cast(context.ptr))
+        let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_layout_new(cast(context.ptr)))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -1580,7 +1619,7 @@ public extension LayoutRef {
 /// The `PangoLayout` structure is opaque, and has no user-visible
 /// fields.
 open class Layout: Object, LayoutProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Layout` instance.
     /// - Parameter op: pointer to the underlying object
@@ -1661,14 +1700,14 @@ open class Layout: Object, LayoutProtocol {
     /// Create a new `PangoLayout` object with attributes initialized to
     /// default values for a particular `PangoContext`.
     public init( context: ContextProtocol) {
-        let rv = pango_layout_new(cast(context.ptr))
+        let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_layout_new(cast(context.ptr)))
         super.init(cast(rv))
     }
 
 
 }
 
-// MARK: - no Layout properties
+// MARK: no Layout properties
 
 public enum LayoutSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -1705,8 +1744,8 @@ public extension LayoutProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: LayoutSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: LayoutSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(layout_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -1727,6 +1766,7 @@ public extension LayoutProtocol {
     }
 }
 
+// MARK: Layout Class: LayoutProtocol extension (methods and fields)
 public extension LayoutProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLayout` instance.
     var layout_ptr: UnsafeMutablePointer<PangoLayout> { return ptr.assumingMemoryBound(to: PangoLayout.self) }
@@ -1744,7 +1784,7 @@ public extension LayoutProtocol {
     /// tab array, and text from the original layout are all copied by
     /// value.
     func copy() -> UnsafeMutablePointer<PangoLayout>! {
-        let rv = pango_layout_copy(cast(layout_ptr))
+        let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_layout_copy(cast(layout_ptr)))
         return cast(rv)
     }
 
@@ -1752,12 +1792,12 @@ public extension LayoutProtocol {
     /// positioned within the horizontal space available.
     func getAlignment() -> PangoAlignment {
         let rv = pango_layout_get_alignment(cast(layout_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the attribute list for the layout, if any.
     func getAttributes() -> UnsafeMutablePointer<PangoAttrList>! {
-        let rv = pango_layout_get_attributes(cast(layout_ptr))
+        let rv: UnsafeMutablePointer<PangoAttrList>! = cast(pango_layout_get_attributes(cast(layout_ptr)))
         return cast(rv)
     }
 
@@ -1770,21 +1810,21 @@ public extension LayoutProtocol {
     }
 
     /// Gets the Y position of baseline of the first line in `layout`.
-    func getBaseline() -> CInt {
-        let rv = pango_layout_get_baseline(cast(layout_ptr))
-        return rv
+    func getBaseline() -> Int {
+        let rv: Int = cast(pango_layout_get_baseline(cast(layout_ptr)))
+        return cast(rv)
     }
 
     /// Returns the number of Unicode characters in the
     /// the text of `layout`.
-    func getCharacterCount() -> CInt {
-        let rv = pango_layout_get_character_count(cast(layout_ptr))
-        return CInt(rv)
+    func getCharacterCount() -> Int {
+        let rv: Int = cast(pango_layout_get_character_count(cast(layout_ptr)))
+        return Int(rv)
     }
 
     /// Retrieves the `PangoContext` used for this layout.
     func getContext() -> UnsafeMutablePointer<PangoContext>! {
-        let rv = pango_layout_get_context(cast(layout_ptr))
+        let rv: UnsafeMutablePointer<PangoContext>! = cast(pango_layout_get_context(cast(layout_ptr)))
         return cast(rv)
     }
 
@@ -1805,7 +1845,7 @@ public extension LayoutProtocol {
     /// See `pango_layout_set_ellipsize()`
     func getEllipsize() -> PangoEllipsizeMode {
         let rv = pango_layout_get_ellipsize(cast(layout_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Computes the logical and ink extents of `layout`. Logical extents
@@ -1824,27 +1864,27 @@ public extension LayoutProtocol {
 
     /// Gets the font description for the layout, if any.
     func getFontDescription() -> UnsafePointer<PangoFontDescription>! {
-        let rv = pango_layout_get_font_description(cast(layout_ptr))
+        let rv: UnsafePointer<PangoFontDescription>! = cast(pango_layout_get_font_description(cast(layout_ptr)))
         return cast(rv)
     }
 
     /// Gets the height of layout used for ellipsization.  See
     /// `pango_layout_set_height()` for details.
-    func getHeight() -> CInt {
-        let rv = pango_layout_get_height(cast(layout_ptr))
-        return rv
+    func getHeight() -> Int {
+        let rv: Int = cast(pango_layout_get_height(cast(layout_ptr)))
+        return cast(rv)
     }
 
     /// Gets the paragraph indent width in Pango units. A negative value
     /// indicates a hanging indentation.
-    func getIndent() -> CInt {
-        let rv = pango_layout_get_indent(cast(layout_ptr))
-        return rv
+    func getIndent() -> Int {
+        let rv: Int = cast(pango_layout_get_indent(cast(layout_ptr)))
+        return cast(rv)
     }
 
     /// Returns an iterator to iterate over the visual extents of the layout.
     func getIter() -> UnsafeMutablePointer<PangoLayoutIter>! {
-        let rv = pango_layout_get_iter(cast(layout_ptr))
+        let rv: UnsafeMutablePointer<PangoLayoutIter>! = cast(pango_layout_get_iter(cast(layout_ptr)))
         return cast(rv)
     }
 
@@ -1860,14 +1900,14 @@ public extension LayoutProtocol {
     /// Use the faster `pango_layout_get_line_readonly()` if you do not plan
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
     func get(line: CInt) -> UnsafeMutablePointer<PangoLayoutLine>! {
-        let rv = pango_layout_get_line(cast(layout_ptr), line)
+        let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_get_line(cast(layout_ptr), line))
         return cast(rv)
     }
 
     /// Retrieves the count of lines for the `layout`.
-    func getLineCount() -> CInt {
-        let rv = pango_layout_get_line_count(cast(layout_ptr))
-        return rv
+    func getLineCount() -> Int {
+        let rv: Int = cast(pango_layout_get_line_count(cast(layout_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves a particular line from a `PangoLayout`.
@@ -1876,15 +1916,15 @@ public extension LayoutProtocol {
     /// but the user is not expected
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
     func getLineReadonly(line: CInt) -> UnsafeMutablePointer<PangoLayoutLine>! {
-        let rv = pango_layout_get_line_readonly(cast(layout_ptr), line)
+        let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_get_line_readonly(cast(layout_ptr), line))
         return cast(rv)
     }
 
     /// Gets the value that has been
     /// set with `pango_layout_set_line_spacing()`.
-    func getLineSpacing() -> CFloat {
-        let rv = pango_layout_get_line_spacing(cast(layout_ptr))
-        return rv
+    func getLineSpacing() -> Double {
+        let rv: Float = cast(pango_layout_get_line_spacing(cast(layout_ptr)))
+        return cast(rv)
     }
 
     /// Returns the lines of the `layout` as a list.
@@ -1892,7 +1932,7 @@ public extension LayoutProtocol {
     /// Use the faster `pango_layout_get_lines_readonly()` if you do not plan
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
     func getLines() -> UnsafeMutablePointer<GSList>! {
-        let rv = pango_layout_get_lines(cast(layout_ptr))
+        let rv: UnsafeMutablePointer<GSList>! = cast(pango_layout_get_lines(cast(layout_ptr)))
         return cast(rv)
     }
 
@@ -1902,7 +1942,7 @@ public extension LayoutProtocol {
     /// but the user is not expected
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
     func getLinesReadonly() -> UnsafeMutablePointer<GSList>! {
-        let rv = pango_layout_get_lines_readonly(cast(layout_ptr))
+        let rv: UnsafeMutablePointer<GSList>! = cast(pango_layout_get_lines_readonly(cast(layout_ptr)))
         return cast(rv)
     }
 
@@ -1925,7 +1965,7 @@ public extension LayoutProtocol {
     /// need to be attributes corresponding to both the position before
     /// the first character and the position after the last character.
     func getLogAttrsReadonly(nAttrs n_attrs: UnsafeMutablePointer<CInt>) -> UnsafePointer<PangoLogAttr>! {
-        let rv = pango_layout_get_log_attrs_readonly(cast(layout_ptr), cast(n_attrs))
+        let rv: UnsafePointer<PangoLogAttr>! = cast(pango_layout_get_log_attrs_readonly(cast(layout_ptr), cast(n_attrs)))
         return cast(rv)
     }
 
@@ -1959,9 +1999,9 @@ public extension LayoutProtocol {
     /// This can be used to automatically detect changes to a `PangoLayout`, and
     /// is useful for example to decide whether a layout needs redrawing.
     /// To force the serial to be increased, use `pango_layout_context_changed()`.
-    func getSerial() -> CUnsignedInt {
-        let rv = pango_layout_get_serial(cast(layout_ptr))
-        return CUnsignedInt(rv)
+    func getSerial() -> Int {
+        let rv: Int = cast(pango_layout_get_serial(cast(layout_ptr)))
+        return Int(rv)
     }
 
     /// Obtains the value set by `pango_layout_set_single_paragraph_mode()`.
@@ -1979,9 +2019,9 @@ public extension LayoutProtocol {
     }
 
     /// Gets the amount of spacing between the lines of the layout.
-    func getSpacing() -> CInt {
-        let rv = pango_layout_get_spacing(cast(layout_ptr))
-        return rv
+    func getSpacing() -> Int {
+        let rv: Int = cast(pango_layout_get_spacing(cast(layout_ptr)))
+        return cast(rv)
     }
 
     /// Gets the current `PangoTabArray` used by this layout. If no
@@ -1989,15 +2029,15 @@ public extension LayoutProtocol {
     /// and `nil` is returned. Default tabs are every 8 spaces.
     /// The return value should be freed with `pango_tab_array_free()`.
     func getTabs() -> UnsafeMutablePointer<PangoTabArray>! {
-        let rv = pango_layout_get_tabs(cast(layout_ptr))
+        let rv: UnsafeMutablePointer<PangoTabArray>! = cast(pango_layout_get_tabs(cast(layout_ptr)))
         return cast(rv)
     }
 
     /// Gets the text in the layout. The returned text should not
     /// be freed or modified.
     func getText() -> String! {
-        let rv = pango_layout_get_text(cast(layout_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(pango_layout_get_text(cast(layout_ptr)))
+        return cast(rv)
     }
 
     /// Counts the number unknown glyphs in `layout`.  That is, zero if
@@ -2008,15 +2048,15 @@ public extension LayoutProtocol {
     /// available to render all characters in a certain string, or when
     /// used in combination with `PANGO_ATTR_FALLBACK`, to check if a
     /// certain font supports all the characters in the string.
-    func getUnknownGlyphsCount() -> CInt {
-        let rv = pango_layout_get_unknown_glyphs_count(cast(layout_ptr))
-        return rv
+    func getUnknownGlyphsCount() -> Int {
+        let rv: Int = cast(pango_layout_get_unknown_glyphs_count(cast(layout_ptr)))
+        return cast(rv)
     }
 
     /// Gets the width to which the lines of the `PangoLayout` should wrap.
-    func getWidth() -> CInt {
-        let rv = pango_layout_get_width(cast(layout_ptr))
-        return rv
+    func getWidth() -> Int {
+        let rv: Int = cast(pango_layout_get_width(cast(layout_ptr)))
+        return cast(rv)
     }
 
     /// Gets the wrap mode for the layout.
@@ -2025,7 +2065,7 @@ public extension LayoutProtocol {
     /// were actually wrapped.
     func getWrap() -> PangoWrapMode {
         let rv = pango_layout_get_wrap(cast(layout_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Converts from byte `index_` within the `layout` to line and X position.
@@ -2307,12 +2347,12 @@ public extension LayoutProtocol {
         /// positioned within the horizontal space available.
         get {
             let rv = pango_layout_get_alignment(cast(layout_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the alignment for the layout: how partial lines are
         /// positioned within the horizontal space available.
         nonmutating set {
-            pango_layout_set_alignment(cast(layout_ptr), newValue)
+            pango_layout_set_alignment(cast(layout_ptr), cast(newValue))
         }
     }
 
@@ -2320,7 +2360,7 @@ public extension LayoutProtocol {
     var attributes: UnsafeMutablePointer<PangoAttrList>! {
         /// Gets the attribute list for the layout, if any.
         get {
-            let rv = pango_layout_get_attributes(cast(layout_ptr))
+            let rv: UnsafeMutablePointer<PangoAttrList>! = cast(pango_layout_get_attributes(cast(layout_ptr)))
             return cast(rv)
         }
         /// Sets the text attributes for a layout object.
@@ -2363,22 +2403,22 @@ public extension LayoutProtocol {
     }
 
     /// Gets the Y position of baseline of the first line in `layout`.
-    var baseline: CInt {
+    var baseline: Int {
         /// Gets the Y position of baseline of the first line in `layout`.
         get {
-            let rv = pango_layout_get_baseline(cast(layout_ptr))
-            return rv
+            let rv: Int = cast(pango_layout_get_baseline(cast(layout_ptr)))
+            return cast(rv)
         }
     }
 
     /// Returns the number of Unicode characters in the
     /// the text of `layout`.
-    var characterCount: CInt {
+    var characterCount: Int {
         /// Returns the number of Unicode characters in the
         /// the text of `layout`.
         get {
-            let rv = pango_layout_get_character_count(cast(layout_ptr))
-            return CInt(rv)
+            let rv: Int = cast(pango_layout_get_character_count(cast(layout_ptr)))
+            return Int(rv)
         }
     }
 
@@ -2386,7 +2426,7 @@ public extension LayoutProtocol {
     var context: UnsafeMutablePointer<PangoContext>! {
         /// Retrieves the `PangoContext` used for this layout.
         get {
-            let rv = pango_layout_get_context(cast(layout_ptr))
+            let rv: UnsafeMutablePointer<PangoContext>! = cast(pango_layout_get_context(cast(layout_ptr)))
             return cast(rv)
         }
     }
@@ -2398,7 +2438,7 @@ public extension LayoutProtocol {
         /// See `pango_layout_set_ellipsize()`
         get {
             let rv = pango_layout_get_ellipsize(cast(layout_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the type of ellipsization being performed for `layout`.
         /// Depending on the ellipsization mode `ellipsize` text is
@@ -2412,7 +2452,7 @@ public extension LayoutProtocol {
         /// is ellipsized as a whole depends on the set height of the layout.
         /// See `pango_layout_set_height()` for details.
         nonmutating set {
-            pango_layout_set_ellipsize(cast(layout_ptr), newValue)
+            pango_layout_set_ellipsize(cast(layout_ptr), cast(newValue))
         }
     }
 
@@ -2420,7 +2460,7 @@ public extension LayoutProtocol {
     var fontDescription: UnsafePointer<PangoFontDescription>! {
         /// Gets the font description for the layout, if any.
         get {
-            let rv = pango_layout_get_font_description(cast(layout_ptr))
+            let rv: UnsafePointer<PangoFontDescription>! = cast(pango_layout_get_font_description(cast(layout_ptr)))
             return cast(rv)
         }
         /// Sets the default font description for the layout. If no font
@@ -2433,12 +2473,12 @@ public extension LayoutProtocol {
 
     /// Gets the height of layout used for ellipsization.  See
     /// `pango_layout_set_height()` for details.
-    var height: CInt {
+    var height: Int {
         /// Gets the height of layout used for ellipsization.  See
         /// `pango_layout_set_height()` for details.
         get {
-            let rv = pango_layout_get_height(cast(layout_ptr))
-            return rv
+            let rv: Int = cast(pango_layout_get_height(cast(layout_ptr)))
+            return cast(rv)
         }
         /// Sets the height to which the `PangoLayout` should be ellipsized at.  There
         /// are two different behaviors, based on whether `height` is positive or
@@ -2465,18 +2505,18 @@ public extension LayoutProtocol {
         /// ellipsization mode is set to `PANGO_ELLIPSIZE_NONE`, and may change in the
         /// future.
         nonmutating set {
-            pango_layout_set_height(cast(layout_ptr), newValue)
+            pango_layout_set_height(cast(layout_ptr), cast(newValue))
         }
     }
 
     /// Gets the paragraph indent width in Pango units. A negative value
     /// indicates a hanging indentation.
-    var indent: CInt {
+    var indent: Int {
         /// Gets the paragraph indent width in Pango units. A negative value
         /// indicates a hanging indentation.
         get {
-            let rv = pango_layout_get_indent(cast(layout_ptr))
-            return rv
+            let rv: Int = cast(pango_layout_get_indent(cast(layout_ptr)))
+            return cast(rv)
         }
         /// Sets the width in Pango units to indent each paragraph. A negative value
         /// of `indent` will produce a hanging indentation. That is, the first line will
@@ -2486,7 +2526,7 @@ public extension LayoutProtocol {
         /// The indent setting is ignored if layout alignment is set to
         /// `PANGO_ALIGN_CENTER`.
         nonmutating set {
-            pango_layout_set_indent(cast(layout_ptr), newValue)
+            pango_layout_set_indent(cast(layout_ptr), cast(newValue))
         }
     }
 
@@ -2532,7 +2572,7 @@ public extension LayoutProtocol {
     var iter: UnsafeMutablePointer<PangoLayoutIter>! {
         /// Returns an iterator to iterate over the visual extents of the layout.
         get {
-            let rv = pango_layout_get_iter(cast(layout_ptr))
+            let rv: UnsafeMutablePointer<PangoLayoutIter>! = cast(pango_layout_get_iter(cast(layout_ptr)))
             return cast(rv)
         }
     }
@@ -2560,22 +2600,22 @@ public extension LayoutProtocol {
     }
 
     /// Retrieves the count of lines for the `layout`.
-    var lineCount: CInt {
+    var lineCount: Int {
         /// Retrieves the count of lines for the `layout`.
         get {
-            let rv = pango_layout_get_line_count(cast(layout_ptr))
-            return rv
+            let rv: Int = cast(pango_layout_get_line_count(cast(layout_ptr)))
+            return cast(rv)
         }
     }
 
     /// Gets the value that has been
     /// set with `pango_layout_set_line_spacing()`.
-    var lineSpacing: CFloat {
+    var lineSpacing: Double {
         /// Gets the value that has been
         /// set with `pango_layout_set_line_spacing()`.
         get {
-            let rv = pango_layout_get_line_spacing(cast(layout_ptr))
-            return rv
+            let rv: Float = cast(pango_layout_get_line_spacing(cast(layout_ptr)))
+            return cast(rv)
         }
         /// Sets a factor for line spacing.
         /// Typical values are: 0, 1, 1.5, 2.
@@ -2594,7 +2634,7 @@ public extension LayoutProtocol {
         /// If `factor` is zero, spacing is applied as
         /// before.
         nonmutating set {
-            pango_layout_set_line_spacing(cast(layout_ptr), newValue)
+            pango_layout_set_line_spacing(cast(layout_ptr), cast(newValue))
         }
     }
 
@@ -2608,7 +2648,7 @@ public extension LayoutProtocol {
         /// Use the faster `pango_layout_get_lines_readonly()` if you do not plan
         /// to modify the contents of the lines (glyphs, glyph widths, etc.).
         get {
-            let rv = pango_layout_get_lines(cast(layout_ptr))
+            let rv: UnsafeMutablePointer<GSList>! = cast(pango_layout_get_lines(cast(layout_ptr)))
             return cast(rv)
         }
     }
@@ -2625,7 +2665,7 @@ public extension LayoutProtocol {
         /// but the user is not expected
         /// to modify the contents of the lines (glyphs, glyph widths, etc.).
         get {
-            let rv = pango_layout_get_lines_readonly(cast(layout_ptr))
+            let rv: UnsafeMutablePointer<GSList>! = cast(pango_layout_get_lines_readonly(cast(layout_ptr)))
             return cast(rv)
         }
     }
@@ -2640,7 +2680,7 @@ public extension LayoutProtocol {
     /// This can be used to automatically detect changes to a `PangoLayout`, and
     /// is useful for example to decide whether a layout needs redrawing.
     /// To force the serial to be increased, use `pango_layout_context_changed()`.
-    var serial: CUnsignedInt {
+    var serial: Int {
         /// Returns the current serial number of `layout`.  The serial number is
         /// initialized to an small number  larger than zero when a new layout
         /// is created and is increased whenever the layout is changed using any
@@ -2652,8 +2692,8 @@ public extension LayoutProtocol {
         /// is useful for example to decide whether a layout needs redrawing.
         /// To force the serial to be increased, use `pango_layout_context_changed()`.
         get {
-            let rv = pango_layout_get_serial(cast(layout_ptr))
-            return CUnsignedInt(rv)
+            let rv: Int = cast(pango_layout_get_serial(cast(layout_ptr)))
+            return Int(rv)
         }
     }
 
@@ -2674,11 +2714,11 @@ public extension LayoutProtocol {
     }
 
     /// Gets the amount of spacing between the lines of the layout.
-    var spacing: CInt {
+    var spacing: Int {
         /// Gets the amount of spacing between the lines of the layout.
         get {
-            let rv = pango_layout_get_spacing(cast(layout_ptr))
-            return rv
+            let rv: Int = cast(pango_layout_get_spacing(cast(layout_ptr)))
+            return cast(rv)
         }
         /// Sets the amount of spacing in Pango unit between
         /// the lines of the layout. When placing lines with
@@ -2692,7 +2732,7 @@ public extension LayoutProtocol {
         /// taken into account when the line-height factor is
         /// set to zero with `pango_layout_set_line_spacing()`.
         nonmutating set {
-            pango_layout_set_spacing(cast(layout_ptr), newValue)
+            pango_layout_set_spacing(cast(layout_ptr), cast(newValue))
         }
     }
 
@@ -2706,7 +2746,7 @@ public extension LayoutProtocol {
         /// and `nil` is returned. Default tabs are every 8 spaces.
         /// The return value should be freed with `pango_tab_array_free()`.
         get {
-            let rv = pango_layout_get_tabs(cast(layout_ptr))
+            let rv: UnsafeMutablePointer<PangoTabArray>! = cast(pango_layout_get_tabs(cast(layout_ptr)))
             return cast(rv)
         }
         /// Sets the tabs to use for `layout`, overriding the default tabs
@@ -2724,8 +2764,8 @@ public extension LayoutProtocol {
         /// Gets the text in the layout. The returned text should not
         /// be freed or modified.
         get {
-            let rv = pango_layout_get_text(cast(layout_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(pango_layout_get_text(cast(layout_ptr)))
+            return cast(rv)
         }
     }
 
@@ -2737,7 +2777,7 @@ public extension LayoutProtocol {
     /// available to render all characters in a certain string, or when
     /// used in combination with `PANGO_ATTR_FALLBACK`, to check if a
     /// certain font supports all the characters in the string.
-    var unknownGlyphsCount: CInt {
+    var unknownGlyphsCount: Int {
         /// Counts the number unknown glyphs in `layout`.  That is, zero if
         /// glyphs for all characters in the layout text were found, or more
         /// than zero otherwise.
@@ -2747,22 +2787,22 @@ public extension LayoutProtocol {
         /// used in combination with `PANGO_ATTR_FALLBACK`, to check if a
         /// certain font supports all the characters in the string.
         get {
-            let rv = pango_layout_get_unknown_glyphs_count(cast(layout_ptr))
-            return rv
+            let rv: Int = cast(pango_layout_get_unknown_glyphs_count(cast(layout_ptr)))
+            return cast(rv)
         }
     }
 
     /// Gets the width to which the lines of the `PangoLayout` should wrap.
-    var width: CInt {
+    var width: Int {
         /// Gets the width to which the lines of the `PangoLayout` should wrap.
         get {
-            let rv = pango_layout_get_width(cast(layout_ptr))
-            return rv
+            let rv: Int = cast(pango_layout_get_width(cast(layout_ptr)))
+            return cast(rv)
         }
         /// Sets the width to which the lines of the `PangoLayout` should wrap or
         /// ellipsized.  The default value is -1: no width set.
         nonmutating set {
-            pango_layout_set_width(cast(layout_ptr), newValue)
+            pango_layout_set_width(cast(layout_ptr), cast(newValue))
         }
     }
 
@@ -2777,15 +2817,17 @@ public extension LayoutProtocol {
         /// were actually wrapped.
         get {
             let rv = pango_layout_get_wrap(cast(layout_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the wrap mode; the wrap mode only has effect if a width
         /// is set on the layout with `pango_layout_set_width()`.
         /// To turn off wrapping, set the width to -1.
         nonmutating set {
-            pango_layout_set_wrap(cast(layout_ptr), newValue)
+            pango_layout_set_wrap(cast(layout_ptr), cast(newValue))
         }
     }
+
+
 }
 
 

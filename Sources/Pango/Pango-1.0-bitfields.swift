@@ -5,53 +5,124 @@ import GLibObject
 
 /// The bits in a `PangoFontMask` correspond to fields in a
 /// `PangoFontDescription` that have been set.
-public typealias FontMask = PangoFontMask
+public struct FontMask: OptionSet {
+    /// The corresponding value of the raw type
+    public var rawValue: UInt32 = 0
+    /// The equivalent raw Int value
+    public var intValue: Int { get { Int(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent raw `gint` value
+    public var int: gint { get { gint(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent underlying `PangoFontMask` enum value
+    public var value: PangoFontMask { get { PangoFontMask(rawValue: cast(rawValue)) } set { rawValue = UInt32(newValue.rawValue) } }
 
-public extension FontMask {
+    /// Creates a new instance with the specified raw value
+    public init(rawValue: UInt32) { self.rawValue = rawValue }
+    /// Creates a new instance with the specified `PangoFontMask` enum value
+    public init(_ enumValue: PangoFontMask) { self.rawValue = UInt32(enumValue.rawValue) }
+    /// Creates a new instance with the specified Int value
+    public init(_ intValue: Int)   { self.rawValue = UInt32(intValue)  }
+    /// Creates a new instance with the specified `gint` value
+    public init(_ gintValue: gint) { self.rawValue = UInt32(gintValue) }
+
     /// the font family is specified.
-    static let family = PANGO_FONT_MASK_FAMILY /* 1 */
+    public static let family = FontMask(1) /* PANGO_FONT_MASK_FAMILY */
     /// the font style is specified.
-    static let style = PANGO_FONT_MASK_STYLE /* 2 */
+    public static let style = FontMask(2) /* PANGO_FONT_MASK_STYLE */
     /// the font variant is specified.
-    static let variant = PANGO_FONT_MASK_VARIANT /* 4 */
+    public static let variant = FontMask(4) /* PANGO_FONT_MASK_VARIANT */
     /// the font weight is specified.
-    static let weight = PANGO_FONT_MASK_WEIGHT /* 8 */
+    public static let weight = FontMask(8) /* PANGO_FONT_MASK_WEIGHT */
     /// the font stretch is specified.
-    static let stretch = PANGO_FONT_MASK_STRETCH /* 16 */
+    public static let stretch = FontMask(16) /* PANGO_FONT_MASK_STRETCH */
     /// the font size is specified.
-    static let size = PANGO_FONT_MASK_SIZE /* 32 */
+    public static let size = FontMask(32) /* PANGO_FONT_MASK_SIZE */
     /// the font gravity is specified (Since: 1.16.)
-    static let gravity = PANGO_FONT_MASK_GRAVITY /* 64 */
+    public static let gravity = FontMask(64) /* PANGO_FONT_MASK_GRAVITY */
     /// OpenType font variations are specified (Since: 1.42)
-    static let variations = PANGO_FONT_MASK_VARIATIONS /* 128 */
+    public static let variations = FontMask(128) /* PANGO_FONT_MASK_VARIATIONS */
+
+
 }
+func cast<I: BinaryInteger>(_ param: I) -> FontMask { FontMask(rawValue: cast(param)) }
+func cast(_ param: FontMask) -> UInt32 { cast(param.rawValue) }
+
 
 /// Flags influencing the shaping process.
 /// These can be passed to `pango_shape_with_flags()`.
-public typealias ShapeFlags = PangoShapeFlags
+public struct ShapeFlags: OptionSet {
+    /// The corresponding value of the raw type
+    public var rawValue: UInt32 = 0
+    /// The equivalent raw Int value
+    public var intValue: Int { get { Int(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent raw `gint` value
+    public var int: gint { get { gint(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent underlying `PangoShapeFlags` enum value
+    public var value: PangoShapeFlags { get { PangoShapeFlags(rawValue: cast(rawValue)) } set { rawValue = UInt32(newValue.rawValue) } }
 
-public extension ShapeFlags {
+    /// Creates a new instance with the specified raw value
+    public init(rawValue: UInt32) { self.rawValue = rawValue }
+    /// Creates a new instance with the specified `PangoShapeFlags` enum value
+    public init(_ enumValue: PangoShapeFlags) { self.rawValue = UInt32(enumValue.rawValue) }
+    /// Creates a new instance with the specified Int value
+    public init(_ intValue: Int)   { self.rawValue = UInt32(intValue)  }
+    /// Creates a new instance with the specified `gint` value
+    public init(_ gintValue: gint) { self.rawValue = UInt32(gintValue) }
+
     /// Default value.
-    static let none_ = PANGO_SHAPE_NONE /* 0 */
+    public static let `none` = ShapeFlags(0) /* PANGO_SHAPE_NONE */
     /// Round glyph positions
     ///     and widths to whole device units. This option should
     ///     be set if the target renderer can't do subpixel
     ///     positioning of glyphs.
-    static let round_positions = PANGO_SHAPE_ROUND_POSITIONS /* 1 */
+    public static let roundPositions = ShapeFlags(1) /* PANGO_SHAPE_ROUND_POSITIONS */
+
+    /// Default value.
+    @available(*, deprecated) public static let none_ = ShapeFlags(0) /* PANGO_SHAPE_NONE */
+    /// Round glyph positions
+    ///     and widths to whole device units. This option should
+    ///     be set if the target renderer can't do subpixel
+    ///     positioning of glyphs.
+    @available(*, deprecated) public static let round_positions = ShapeFlags(1) /* PANGO_SHAPE_ROUND_POSITIONS */
 }
+func cast<I: BinaryInteger>(_ param: I) -> ShapeFlags { ShapeFlags(rawValue: cast(param)) }
+func cast(_ param: ShapeFlags) -> UInt32 { cast(param.rawValue) }
+
 
 /// These flags affect how Pango treats characters that are normally
 /// not visible in the output.
-public typealias ShowFlags = PangoShowFlags
+public struct ShowFlags: OptionSet {
+    /// The corresponding value of the raw type
+    public var rawValue: UInt32 = 0
+    /// The equivalent raw Int value
+    public var intValue: Int { get { Int(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent raw `gint` value
+    public var int: gint { get { gint(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent underlying `PangoShowFlags` enum value
+    public var value: PangoShowFlags { get { PangoShowFlags(rawValue: cast(rawValue)) } set { rawValue = UInt32(newValue.rawValue) } }
 
-public extension ShowFlags {
+    /// Creates a new instance with the specified raw value
+    public init(rawValue: UInt32) { self.rawValue = rawValue }
+    /// Creates a new instance with the specified `PangoShowFlags` enum value
+    public init(_ enumValue: PangoShowFlags) { self.rawValue = UInt32(enumValue.rawValue) }
+    /// Creates a new instance with the specified Int value
+    public init(_ intValue: Int)   { self.rawValue = UInt32(intValue)  }
+    /// Creates a new instance with the specified `gint` value
+    public init(_ gintValue: gint) { self.rawValue = UInt32(gintValue) }
+
     /// No special treatment for invisible characters
-    static let none_ = PANGO_SHOW_NONE /* 0 */
+    public static let `none` = ShowFlags(0) /* PANGO_SHOW_NONE */
     /// Render spaces, tabs and newlines visibly
-    static let spaces = PANGO_SHOW_SPACES /* 1 */
+    public static let spaces = ShowFlags(1) /* PANGO_SHOW_SPACES */
     /// Render line breaks visibly
-    static let line_breaks = PANGO_SHOW_LINE_BREAKS /* 2 */
+    public static let lineBreaks = ShowFlags(2) /* PANGO_SHOW_LINE_BREAKS */
     /// Render default-ignorable Unicode
     ///      characters visibly
-    static let ignorables = PANGO_SHOW_IGNORABLES /* 4 */
+    public static let ignorables = ShowFlags(4) /* PANGO_SHOW_IGNORABLES */
+
+    /// No special treatment for invisible characters
+    @available(*, deprecated) public static let none_ = ShowFlags(0) /* PANGO_SHOW_NONE */
+    /// Render line breaks visibly
+    @available(*, deprecated) public static let line_breaks = ShowFlags(2) /* PANGO_SHOW_LINE_BREAKS */
 }
+func cast<I: BinaryInteger>(_ param: I) -> ShowFlags { ShowFlags(rawValue: cast(param)) }
+func cast(_ param: ShowFlags) -> UInt32 { cast(param.rawValue) }

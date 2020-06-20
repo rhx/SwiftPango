@@ -15,7 +15,7 @@ import GLibObject
 /// what fonts are available on the system and also for specifying
 /// the characteristics of a font to load.
 public protocol FontDescriptionProtocol {
-    /// Untyped pointer to the underlying `PangoFontDescription` instance.
+        /// Untyped pointer to the underlying `PangoFontDescription` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontDescription` instance.
@@ -31,7 +31,7 @@ public protocol FontDescriptionProtocol {
 /// what fonts are available on the system and also for specifying
 /// the characteristics of a font to load.
 public struct FontDescriptionRef: FontDescriptionProtocol {
-    /// Untyped pointer to the underlying `PangoFontDescription` instance.
+        /// Untyped pointer to the underlying `PangoFontDescription` instance.
     /// For type-safe access, use the generated, typed pointer `font_description_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension FontDescriptionRef {
 
         /// Creates a new font description structure with all fields unset.
     init() {
-        let rv = pango_font_description_new()
+        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_description_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
     /// Creates a new font description from a string representation in the
@@ -124,7 +124,7 @@ public extension FontDescriptionRef {
     /// 
     /// "Cantarell Italic Light 15 \`wght`=200"
     static func from(string str: UnsafePointer<CChar>) -> FontDescriptionRef! {
-        let rv = pango_font_description_from_string(str)
+        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_description_from_string(str))
         return rv.map { FontDescriptionRef(cast($0)) }
     }
 }
@@ -138,7 +138,7 @@ public extension FontDescriptionRef {
 /// what fonts are available on the system and also for specifying
 /// the characteristics of a font to load.
 open class FontDescription: FontDescriptionProtocol {
-    /// Untyped pointer to the underlying `PangoFontDescription` instance.
+        /// Untyped pointer to the underlying `PangoFontDescription` instance.
     /// For type-safe access, use the generated, typed pointer `font_description_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -167,7 +167,7 @@ open class FontDescription: FontDescriptionProtocol {
         // no reference counting for PangoFontDescription, cannot ref(cast(font_description_ptr))
     }
 
-    /// Do-nothing destructor for`PangoFontDescription`.
+    /// Do-nothing destructor for `PangoFontDescription`.
     deinit {
         // no reference counting for PangoFontDescription, cannot unref(cast(font_description_ptr))
     }
@@ -233,7 +233,7 @@ open class FontDescription: FontDescriptionProtocol {
 
     /// Creates a new font description structure with all fields unset.
     public init() {
-        let rv = pango_font_description_new()
+        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_description_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
@@ -280,17 +280,18 @@ open class FontDescription: FontDescriptionProtocol {
     /// 
     /// "Cantarell Italic Light 15 \`wght`=200"
     public static func from(string str: UnsafePointer<CChar>) -> FontDescription! {
-        let rv = pango_font_description_from_string(str)
+        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_description_from_string(str))
         return rv.map { FontDescription(cast($0)) }
     }
 
 }
 
-// MARK: - no FontDescription properties
+// MARK: no FontDescription properties
 
-// MARK: - no signals
+// MARK: no FontDescription signals
 
 
+// MARK: FontDescription Record: FontDescriptionProtocol extension (methods and fields)
 public extension FontDescriptionProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontDescription` instance.
     var font_description_ptr: UnsafeMutablePointer<PangoFontDescription> { return ptr.assumingMemoryBound(to: PangoFontDescription.self) }
@@ -313,7 +314,7 @@ public extension FontDescriptionProtocol {
 
     /// Make a copy of a `PangoFontDescription`.
     func copy() -> UnsafeMutablePointer<PangoFontDescription>! {
-        let rv = pango_font_description_copy(cast(font_description_ptr))
+        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_description_copy(cast(font_description_ptr)))
         return cast(rv)
     }
 
@@ -322,7 +323,7 @@ public extension FontDescriptionProtocol {
     /// be used until `desc` is modified or freed. This is meant to be used
     /// when the copy is only needed temporarily.
     func copyStatic() -> UnsafeMutablePointer<PangoFontDescription>! {
-        let rv = pango_font_description_copy_static(cast(font_description_ptr))
+        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_description_copy_static(cast(font_description_ptr)))
         return cast(rv)
     }
 
@@ -345,28 +346,28 @@ public extension FontDescriptionProtocol {
     /// Gets the family name field of a font description. See
     /// `pango_font_description_set_family()`.
     func getFamily() -> String! {
-        let rv = pango_font_description_get_family(cast(font_description_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(pango_font_description_get_family(cast(font_description_ptr)))
+        return cast(rv)
     }
 
     /// Gets the gravity field of a font description. See
     /// `pango_font_description_set_gravity()`.
     func getGravity() -> PangoGravity {
         let rv = pango_font_description_get_gravity(cast(font_description_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Determines which fields in a font description have been set.
     func getSetFields() -> PangoFontMask {
         let rv = pango_font_description_get_set_fields(cast(font_description_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the size field of a font description.
     /// See `pango_font_description_set_size()`.
-    func getSize() -> CInt {
-        let rv = pango_font_description_get_size(cast(font_description_ptr))
-        return CInt(rv)
+    func getSize() -> Int {
+        let rv: Int = cast(pango_font_description_get_size(cast(font_description_ptr)))
+        return Int(rv)
     }
 
     /// Determines whether the size of the font is in points (not absolute) or device units (absolute).
@@ -380,43 +381,43 @@ public extension FontDescriptionProtocol {
     /// See `pango_font_description_set_stretch()`.
     func getStretch() -> PangoStretch {
         let rv = pango_font_description_get_stretch(cast(font_description_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the style field of a `PangoFontDescription`. See
     /// `pango_font_description_set_style()`.
     func getStyle() -> PangoStyle {
         let rv = pango_font_description_get_style(cast(font_description_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the variant field of a `PangoFontDescription`. See
     /// `pango_font_description_set_variant()`.
     func getVariant() -> PangoVariant {
         let rv = pango_font_description_get_variant(cast(font_description_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the variations field of a font description. See
     /// `pango_font_description_set_variations()`.
     func getVariations() -> String! {
-        let rv = pango_font_description_get_variations(cast(font_description_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(pango_font_description_get_variations(cast(font_description_ptr)))
+        return cast(rv)
     }
 
     /// Gets the weight field of a font description. See
     /// `pango_font_description_set_weight()`.
     func getWeight() -> PangoWeight {
         let rv = pango_font_description_get_weight(cast(font_description_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Computes a hash of a `PangoFontDescription` structure suitable
     /// to be used, for example, as an argument to `g_hash_table_new()`.
     /// The hash value is independent of `desc`->mask.
-    func hash() -> CUnsignedInt {
-        let rv = pango_font_description_hash(cast(font_description_ptr))
-        return CUnsignedInt(rv)
+    func hash() -> Int {
+        let rv: Int = cast(pango_font_description_hash(cast(font_description_ptr)))
+        return Int(rv)
     }
 
     /// Merges the fields that are set in `desc_to_merge` into the fields in
@@ -555,8 +556,8 @@ public extension FontDescriptionProtocol {
     /// `pango_font_description_to_string()`, but with underscores instead of
     /// characters that are untypical in filenames, and in lower case only.
     func toFilename() -> String! {
-        let rv = pango_font_description_to_filename(cast(font_description_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(pango_font_description_to_filename(cast(font_description_ptr)))
+        return cast(rv)
     }
 
     /// Creates a string representation of a font description. See
@@ -565,14 +566,14 @@ public extension FontDescriptionProtocol {
     /// string description will only have a terminating comma if the
     /// last word of the list is a valid style option.
     func toString() -> String! {
-        let rv = pango_font_description_to_string(cast(font_description_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(pango_font_description_to_string(cast(font_description_ptr)))
+        return cast(rv)
     }
 
     /// Unsets some of the fields in a `PangoFontDescription`.  The unset
     /// fields will get back to their default values.
     func unsetFields(toUnset to_unset: FontMask) {
-        pango_font_description_unset_fields(cast(font_description_ptr), to_unset)
+        pango_font_description_unset_fields(cast(font_description_ptr), to_unset.value)
     
     }
 
@@ -580,7 +581,7 @@ public extension FontDescriptionProtocol {
     /// allows setting family, style, weight, variant, stretch,
     /// and size simultaneously.
     func attrFontDescNew() -> UnsafeMutablePointer<PangoAttribute>! {
-        let rv = pango_attr_font_desc_new(cast(font_description_ptr))
+        let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_font_desc_new(cast(font_description_ptr)))
         return cast(rv)
     }
     /// Gets the family name field of a font description. See
@@ -589,8 +590,8 @@ public extension FontDescriptionProtocol {
         /// Gets the family name field of a font description. See
         /// `pango_font_description_set_family()`.
         get {
-            let rv = pango_font_description_get_family(cast(font_description_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(pango_font_description_get_family(cast(font_description_ptr)))
+            return cast(rv)
         }
         /// Sets the family name field of a font description. The family
         /// name represents a family of related font styles, and will
@@ -598,7 +599,7 @@ public extension FontDescriptionProtocol {
         /// `PangoFontDescription`, it is also possible to use a comma
         /// separated list of family names for this field.
         nonmutating set {
-            pango_font_description_set_family(cast(font_description_ptr), newValue)
+            pango_font_description_set_family(cast(font_description_ptr), cast(newValue))
         }
     }
 
@@ -609,7 +610,7 @@ public extension FontDescriptionProtocol {
         /// `pango_font_description_set_gravity()`.
         get {
             let rv = pango_font_description_get_gravity(cast(font_description_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the gravity field of a font description. The gravity field
         /// specifies how the glyphs should be rotated.  If `gravity` is
@@ -619,7 +620,7 @@ public extension FontDescriptionProtocol {
         /// This function is seldom useful to the user.  Gravity should normally
         /// be set on a `PangoContext`.
         nonmutating set {
-            pango_font_description_set_gravity(cast(font_description_ptr), newValue)
+            pango_font_description_set_gravity(cast(font_description_ptr), cast(newValue))
         }
     }
 
@@ -628,18 +629,18 @@ public extension FontDescriptionProtocol {
         /// Determines which fields in a font description have been set.
         get {
             let rv = pango_font_description_get_set_fields(cast(font_description_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
     /// Gets the size field of a font description.
     /// See `pango_font_description_set_size()`.
-    var size: CInt {
+    var size: Int {
         /// Gets the size field of a font description.
         /// See `pango_font_description_set_size()`.
         get {
-            let rv = pango_font_description_get_size(cast(font_description_ptr))
-            return CInt(rv)
+            let rv: Int = cast(pango_font_description_get_size(cast(font_description_ptr)))
+            return Int(rv)
         }
         /// Sets the size field of a font description in fractional points. This is mutually
         /// exclusive with `pango_font_description_set_absolute_size()`.
@@ -666,12 +667,12 @@ public extension FontDescriptionProtocol {
         /// See `pango_font_description_set_stretch()`.
         get {
             let rv = pango_font_description_get_stretch(cast(font_description_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the stretch field of a font description. The stretch field
         /// specifies how narrow or wide the font should be.
         nonmutating set {
-            pango_font_description_set_stretch(cast(font_description_ptr), newValue)
+            pango_font_description_set_stretch(cast(font_description_ptr), cast(newValue))
         }
     }
 
@@ -682,7 +683,7 @@ public extension FontDescriptionProtocol {
         /// `pango_font_description_set_style()`.
         get {
             let rv = pango_font_description_get_style(cast(font_description_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the style field of a `PangoFontDescription`. The
         /// `PangoStyle` enumeration describes whether the font is slanted and
@@ -693,7 +694,7 @@ public extension FontDescriptionProtocol {
         /// match italic specifications with oblique fonts and vice-versa
         /// if an exact match is not found.
         nonmutating set {
-            pango_font_description_set_style(cast(font_description_ptr), newValue)
+            pango_font_description_set_style(cast(font_description_ptr), cast(newValue))
         }
     }
 
@@ -704,12 +705,12 @@ public extension FontDescriptionProtocol {
         /// `pango_font_description_set_variant()`.
         get {
             let rv = pango_font_description_get_variant(cast(font_description_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the variant field of a font description. The `PangoVariant`
         /// can either be `PANGO_VARIANT_NORMAL` or `PANGO_VARIANT_SMALL_CAPS`.
         nonmutating set {
-            pango_font_description_set_variant(cast(font_description_ptr), newValue)
+            pango_font_description_set_variant(cast(font_description_ptr), cast(newValue))
         }
     }
 
@@ -719,8 +720,8 @@ public extension FontDescriptionProtocol {
         /// Gets the variations field of a font description. See
         /// `pango_font_description_set_variations()`.
         get {
-            let rv = pango_font_description_get_variations(cast(font_description_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(pango_font_description_get_variations(cast(font_description_ptr)))
+            return cast(rv)
         }
         /// Sets the variations field of a font description. OpenType
         /// font variations allow to select a font instance by specifying
@@ -734,7 +735,7 @@ public extension FontDescriptionProtocol {
         /// Pango does not currently have a way to find supported axes of
         /// a font. Both harfbuzz or freetype have API for this.
         nonmutating set {
-            pango_font_description_set_variations(cast(font_description_ptr), newValue)
+            pango_font_description_set_variations(cast(font_description_ptr), cast(newValue))
         }
     }
 
@@ -745,16 +746,18 @@ public extension FontDescriptionProtocol {
         /// `pango_font_description_set_weight()`.
         get {
             let rv = pango_font_description_get_weight(cast(font_description_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the weight field of a font description. The weight field
         /// specifies how bold or light the font should be. In addition
         /// to the values of the `PangoWeight` enumeration, other intermediate
         /// numeric values are possible.
         nonmutating set {
-            pango_font_description_set_weight(cast(font_description_ptr), newValue)
+            pango_font_description_set_weight(cast(font_description_ptr), cast(newValue))
         }
     }
+
+
 }
 
 
@@ -768,7 +771,7 @@ public extension FontDescriptionProtocol {
 ///
 
 public protocol FontFaceClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontFaceClass` instance.
+        /// Untyped pointer to the underlying `PangoFontFaceClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontFaceClass` instance.
@@ -781,7 +784,7 @@ public protocol FontFaceClassProtocol {
 ///
 
 public struct FontFaceClassRef: FontFaceClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontFaceClass` instance.
+        /// Untyped pointer to the underlying `PangoFontFaceClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -834,7 +837,7 @@ public extension FontFaceClassRef {
 ///
 
 open class FontFaceClass: FontFaceClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontFaceClass` instance.
+        /// Untyped pointer to the underlying `PangoFontFaceClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -863,7 +866,7 @@ open class FontFaceClass: FontFaceClassProtocol {
         // no reference counting for PangoFontFaceClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoFontFaceClass`.
+    /// Do-nothing destructor for `PangoFontFaceClass`.
     deinit {
         // no reference counting for PangoFontFaceClass, cannot unref(cast(_ptr))
     }
@@ -931,14 +934,35 @@ open class FontFaceClass: FontFaceClassProtocol {
 
 }
 
-// MARK: - no FontFaceClass properties
+// MARK: no FontFaceClass properties
 
-// MARK: - no signals
+// MARK: no FontFaceClass signals
 
 
+// MARK: FontFaceClass Record: FontFaceClassProtocol extension (methods and fields)
 public extension FontFaceClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontFaceClass` instance.
     var _ptr: UnsafeMutablePointer<PangoFontFaceClass> { return ptr.assumingMemoryBound(to: PangoFontFaceClass.self) }
+
+
+    var parentClass: GObjectClass {
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent_class)
+            return rv
+        }
+    }
+
+    // var getFaceName is unavailable because get_face_name is void
+
+    // var describe is unavailable because describe is void
+
+    // var listSizes is unavailable because list_sizes is void
+
+    // var isSynthesized is unavailable because is_synthesized is void
+
+    // var PangoReserved3 is unavailable because _pango_reserved3 is void
+
+    // var PangoReserved4 is unavailable because _pango_reserved4 is void
 
 }
 
@@ -953,7 +977,7 @@ public extension FontFaceClassProtocol {
 ///
 
 public protocol FontFamilyClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontFamilyClass` instance.
+        /// Untyped pointer to the underlying `PangoFontFamilyClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontFamilyClass` instance.
@@ -966,7 +990,7 @@ public protocol FontFamilyClassProtocol {
 ///
 
 public struct FontFamilyClassRef: FontFamilyClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontFamilyClass` instance.
+        /// Untyped pointer to the underlying `PangoFontFamilyClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1019,7 +1043,7 @@ public extension FontFamilyClassRef {
 ///
 
 open class FontFamilyClass: FontFamilyClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontFamilyClass` instance.
+        /// Untyped pointer to the underlying `PangoFontFamilyClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1048,7 +1072,7 @@ open class FontFamilyClass: FontFamilyClassProtocol {
         // no reference counting for PangoFontFamilyClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoFontFamilyClass`.
+    /// Do-nothing destructor for `PangoFontFamilyClass`.
     deinit {
         // no reference counting for PangoFontFamilyClass, cannot unref(cast(_ptr))
     }
@@ -1116,14 +1140,35 @@ open class FontFamilyClass: FontFamilyClassProtocol {
 
 }
 
-// MARK: - no FontFamilyClass properties
+// MARK: no FontFamilyClass properties
 
-// MARK: - no signals
+// MARK: no FontFamilyClass signals
 
 
+// MARK: FontFamilyClass Record: FontFamilyClassProtocol extension (methods and fields)
 public extension FontFamilyClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontFamilyClass` instance.
     var _ptr: UnsafeMutablePointer<PangoFontFamilyClass> { return ptr.assumingMemoryBound(to: PangoFontFamilyClass.self) }
+
+
+    var parentClass: GObjectClass {
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent_class)
+            return rv
+        }
+    }
+
+    // var listFaces is unavailable because list_faces is void
+
+    // var getName is unavailable because get_name is void
+
+    // var isMonospace is unavailable because is_monospace is void
+
+    // var isVariable is unavailable because is_variable is void
+
+    // var PangoReserved2 is unavailable because _pango_reserved2 is void
+
+    // var PangoReserved3 is unavailable because _pango_reserved3 is void
 
 }
 
@@ -1139,7 +1184,7 @@ public extension FontFamilyClassProtocol {
 /// The `PangoFontMapClass` structure holds the virtual functions for
 /// a particular `PangoFontMap` implementation.
 public protocol FontMapClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontMapClass` instance.
+        /// Untyped pointer to the underlying `PangoFontMapClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontMapClass` instance.
@@ -1153,7 +1198,7 @@ public protocol FontMapClassProtocol {
 /// The `PangoFontMapClass` structure holds the virtual functions for
 /// a particular `PangoFontMap` implementation.
 public struct FontMapClassRef: FontMapClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontMapClass` instance.
+        /// Untyped pointer to the underlying `PangoFontMapClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1207,7 +1252,7 @@ public extension FontMapClassRef {
 /// The `PangoFontMapClass` structure holds the virtual functions for
 /// a particular `PangoFontMap` implementation.
 open class FontMapClass: FontMapClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontMapClass` instance.
+        /// Untyped pointer to the underlying `PangoFontMapClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1236,7 +1281,7 @@ open class FontMapClass: FontMapClassProtocol {
         // no reference counting for PangoFontMapClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoFontMapClass`.
+    /// Do-nothing destructor for `PangoFontMapClass`.
     deinit {
         // no reference counting for PangoFontMapClass, cannot unref(cast(_ptr))
     }
@@ -1304,14 +1349,50 @@ open class FontMapClass: FontMapClassProtocol {
 
 }
 
-// MARK: - no FontMapClass properties
+// MARK: no FontMapClass properties
 
-// MARK: - no signals
+// MARK: no FontMapClass signals
 
 
+// MARK: FontMapClass Record: FontMapClassProtocol extension (methods and fields)
 public extension FontMapClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontMapClass` instance.
     var _ptr: UnsafeMutablePointer<PangoFontMapClass> { return ptr.assumingMemoryBound(to: PangoFontMapClass.self) }
+
+
+    /// parent `GObjectClass`.
+    var parentClass: GObjectClass {
+        /// parent `GObjectClass`.
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent_class)
+            return rv
+        }
+    }
+
+    // var loadFont is unavailable because load_font is void
+
+    // var listFamilies is unavailable because list_families is void
+
+    // var loadFontset is unavailable because load_fontset is void
+
+    /// the type of rendering-system-dependent engines that
+    /// can handle fonts of this fonts loaded with this fontmap.
+    var shapeEngineType: UnsafePointer<CChar> {
+        /// the type of rendering-system-dependent engines that
+        /// can handle fonts of this fonts loaded with this fontmap.
+        get {
+            let rv: UnsafePointer<CChar> = cast(_ptr.pointee.shape_engine_type)
+            return rv
+        }
+    }
+
+    // var getSerial is unavailable because get_serial is void
+
+    // var changed is unavailable because changed is void
+
+    // var PangoReserved1 is unavailable because _pango_reserved1 is void
+
+    // var PangoReserved2 is unavailable because _pango_reserved2 is void
 
 }
 
@@ -1330,7 +1411,7 @@ public extension FontMapClassProtocol {
 /// the documentation of the corresponding getters for documentation
 /// of their meaning.
 public protocol FontMetricsProtocol {
-    /// Untyped pointer to the underlying `PangoFontMetrics` instance.
+        /// Untyped pointer to the underlying `PangoFontMetrics` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontMetrics` instance.
@@ -1347,7 +1428,7 @@ public protocol FontMetricsProtocol {
 /// the documentation of the corresponding getters for documentation
 /// of their meaning.
 public struct FontMetricsRef: FontMetricsProtocol {
-    /// Untyped pointer to the underlying `PangoFontMetrics` instance.
+        /// Untyped pointer to the underlying `PangoFontMetrics` instance.
     /// For type-safe access, use the generated, typed pointer `font_metrics_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1404,7 +1485,7 @@ public extension FontMetricsRef {
 /// the documentation of the corresponding getters for documentation
 /// of their meaning.
 open class FontMetrics: FontMetricsProtocol {
-    /// Untyped pointer to the underlying `PangoFontMetrics` instance.
+        /// Untyped pointer to the underlying `PangoFontMetrics` instance.
     /// For type-safe access, use the generated, typed pointer `font_metrics_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1501,11 +1582,12 @@ open class FontMetrics: FontMetricsProtocol {
 
 }
 
-// MARK: - no FontMetrics properties
+// MARK: no FontMetrics properties
 
-// MARK: - no signals
+// MARK: no FontMetrics signals
 
 
+// MARK: FontMetrics Record: FontMetricsProtocol extension (methods and fields)
 public extension FontMetricsProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontMetrics` instance.
     var font_metrics_ptr: UnsafeMutablePointer<PangoFontMetrics> { return ptr.assumingMemoryBound(to: PangoFontMetrics.self) }
@@ -1514,9 +1596,9 @@ public extension FontMetricsProtocol {
     /// This is merely a representative value useful, for example, for
     /// determining the initial size for a window. Actual characters in
     /// text will be wider and narrower than this.
-    func getApproximateCharWidth() -> CInt {
-        let rv = pango_font_metrics_get_approximate_char_width(cast(font_metrics_ptr))
-        return rv
+    func getApproximateCharWidth() -> Int {
+        let rv: Int = cast(pango_font_metrics_get_approximate_char_width(cast(font_metrics_ptr)))
+        return cast(rv)
     }
 
     /// Gets the approximate digit width for a font metrics structure.
@@ -1525,9 +1607,9 @@ public extension FontMetricsProtocol {
     /// text can be wider or narrower than this, though this value
     /// is generally somewhat more accurate than the result of
     /// `pango_font_metrics_get_approximate_char_width()` for digits.
-    func getApproximateDigitWidth() -> CInt {
-        let rv = pango_font_metrics_get_approximate_digit_width(cast(font_metrics_ptr))
-        return rv
+    func getApproximateDigitWidth() -> Int {
+        let rv: Int = cast(pango_font_metrics_get_approximate_digit_width(cast(font_metrics_ptr)))
+        return cast(rv)
     }
 
     /// Gets the ascent from a font metrics structure. The ascent is
@@ -1535,9 +1617,9 @@ public extension FontMetricsProtocol {
     /// of text. (The logical top may be above or below the top of the
     /// actual drawn ink. It is necessary to lay out the text to figure
     /// where the ink will be.)
-    func getAscent() -> CInt {
-        let rv = pango_font_metrics_get_ascent(cast(font_metrics_ptr))
-        return rv
+    func getAscent() -> Int {
+        let rv: Int = cast(pango_font_metrics_get_ascent(cast(font_metrics_ptr)))
+        return cast(rv)
     }
 
     /// Gets the descent from a font metrics structure. The descent is
@@ -1545,9 +1627,9 @@ public extension FontMetricsProtocol {
     /// of text. (The logical bottom may be above or below the bottom of the
     /// actual drawn ink. It is necessary to lay out the text to figure
     /// where the ink will be.)
-    func getDescent() -> CInt {
-        let rv = pango_font_metrics_get_descent(cast(font_metrics_ptr))
-        return rv
+    func getDescent() -> Int {
+        let rv: Int = cast(pango_font_metrics_get_descent(cast(font_metrics_ptr)))
+        return cast(rv)
     }
 
     /// Gets the line height from a font metrics structure. The
@@ -1555,23 +1637,23 @@ public extension FontMetricsProtocol {
     /// in wrapped text.
     /// 
     /// If the line height is not available, 0 is returned.
-    func getHeight() -> CInt {
-        let rv = pango_font_metrics_get_height(cast(font_metrics_ptr))
-        return rv
+    func getHeight() -> Int {
+        let rv: Int = cast(pango_font_metrics_get_height(cast(font_metrics_ptr)))
+        return cast(rv)
     }
 
     /// Gets the suggested position to draw the strikethrough.
     /// The value returned is the distance <emphasis>above</emphasis> the
     /// baseline of the top of the strikethrough.
-    func getStrikethroughPosition() -> CInt {
-        let rv = pango_font_metrics_get_strikethrough_position(cast(font_metrics_ptr))
-        return rv
+    func getStrikethroughPosition() -> Int {
+        let rv: Int = cast(pango_font_metrics_get_strikethrough_position(cast(font_metrics_ptr)))
+        return cast(rv)
     }
 
     /// Gets the suggested thickness to draw for the strikethrough.
-    func getStrikethroughThickness() -> CInt {
-        let rv = pango_font_metrics_get_strikethrough_thickness(cast(font_metrics_ptr))
-        return rv
+    func getStrikethroughThickness() -> Int {
+        let rv: Int = cast(pango_font_metrics_get_strikethrough_thickness(cast(font_metrics_ptr)))
+        return cast(rv)
     }
 
     /// Gets the suggested position to draw the underline.
@@ -1579,20 +1661,20 @@ public extension FontMetricsProtocol {
     /// baseline of the top of the underline. Since most fonts have
     /// underline positions beneath the baseline, this value is typically
     /// negative.
-    func getUnderlinePosition() -> CInt {
-        let rv = pango_font_metrics_get_underline_position(cast(font_metrics_ptr))
-        return rv
+    func getUnderlinePosition() -> Int {
+        let rv: Int = cast(pango_font_metrics_get_underline_position(cast(font_metrics_ptr)))
+        return cast(rv)
     }
 
     /// Gets the suggested thickness to draw for the underline.
-    func getUnderlineThickness() -> CInt {
-        let rv = pango_font_metrics_get_underline_thickness(cast(font_metrics_ptr))
-        return rv
+    func getUnderlineThickness() -> Int {
+        let rv: Int = cast(pango_font_metrics_get_underline_thickness(cast(font_metrics_ptr)))
+        return cast(rv)
     }
 
     /// Increase the reference count of a font metrics structure by one.
     func ref() -> UnsafeMutablePointer<PangoFontMetrics>! {
-        let rv = pango_font_metrics_ref(cast(font_metrics_ptr))
+        let rv: UnsafeMutablePointer<PangoFontMetrics>! = cast(pango_font_metrics_ref(cast(font_metrics_ptr)))
         return cast(rv)
     }
 
@@ -1607,14 +1689,14 @@ public extension FontMetricsProtocol {
     /// This is merely a representative value useful, for example, for
     /// determining the initial size for a window. Actual characters in
     /// text will be wider and narrower than this.
-    var approximateCharWidth: CInt {
+    var approximateCharWidth: Int {
         /// Gets the approximate character width for a font metrics structure.
         /// This is merely a representative value useful, for example, for
         /// determining the initial size for a window. Actual characters in
         /// text will be wider and narrower than this.
         get {
-            let rv = pango_font_metrics_get_approximate_char_width(cast(font_metrics_ptr))
-            return rv
+            let rv: Int = cast(pango_font_metrics_get_approximate_char_width(cast(font_metrics_ptr)))
+            return cast(rv)
         }
     }
 
@@ -1624,7 +1706,7 @@ public extension FontMetricsProtocol {
     /// text can be wider or narrower than this, though this value
     /// is generally somewhat more accurate than the result of
     /// `pango_font_metrics_get_approximate_char_width()` for digits.
-    var approximateDigitWidth: CInt {
+    var approximateDigitWidth: Int {
         /// Gets the approximate digit width for a font metrics structure.
         /// This is merely a representative value useful, for example, for
         /// determining the initial size for a window. Actual digits in
@@ -1632,8 +1714,8 @@ public extension FontMetricsProtocol {
         /// is generally somewhat more accurate than the result of
         /// `pango_font_metrics_get_approximate_char_width()` for digits.
         get {
-            let rv = pango_font_metrics_get_approximate_digit_width(cast(font_metrics_ptr))
-            return rv
+            let rv: Int = cast(pango_font_metrics_get_approximate_digit_width(cast(font_metrics_ptr)))
+            return cast(rv)
         }
     }
 
@@ -1642,15 +1724,15 @@ public extension FontMetricsProtocol {
     /// of text. (The logical top may be above or below the top of the
     /// actual drawn ink. It is necessary to lay out the text to figure
     /// where the ink will be.)
-    var ascent: CInt {
+    var ascent: Int {
         /// Gets the ascent from a font metrics structure. The ascent is
         /// the distance from the baseline to the logical top of a line
         /// of text. (The logical top may be above or below the top of the
         /// actual drawn ink. It is necessary to lay out the text to figure
         /// where the ink will be.)
         get {
-            let rv = pango_font_metrics_get_ascent(cast(font_metrics_ptr))
-            return rv
+            let rv: Int = cast(pango_font_metrics_get_ascent(cast(font_metrics_ptr)))
+            return cast(rv)
         }
     }
 
@@ -1659,15 +1741,15 @@ public extension FontMetricsProtocol {
     /// of text. (The logical bottom may be above or below the bottom of the
     /// actual drawn ink. It is necessary to lay out the text to figure
     /// where the ink will be.)
-    var descent: CInt {
+    var descent: Int {
         /// Gets the descent from a font metrics structure. The descent is
         /// the distance from the baseline to the logical bottom of a line
         /// of text. (The logical bottom may be above or below the bottom of the
         /// actual drawn ink. It is necessary to lay out the text to figure
         /// where the ink will be.)
         get {
-            let rv = pango_font_metrics_get_descent(cast(font_metrics_ptr))
-            return rv
+            let rv: Int = cast(pango_font_metrics_get_descent(cast(font_metrics_ptr)))
+            return cast(rv)
         }
     }
 
@@ -1676,37 +1758,37 @@ public extension FontMetricsProtocol {
     /// in wrapped text.
     /// 
     /// If the line height is not available, 0 is returned.
-    var height: CInt {
+    var height: Int {
         /// Gets the line height from a font metrics structure. The
         /// line height is the distance between successive baselines
         /// in wrapped text.
         /// 
         /// If the line height is not available, 0 is returned.
         get {
-            let rv = pango_font_metrics_get_height(cast(font_metrics_ptr))
-            return rv
+            let rv: Int = cast(pango_font_metrics_get_height(cast(font_metrics_ptr)))
+            return cast(rv)
         }
     }
 
     /// Gets the suggested position to draw the strikethrough.
     /// The value returned is the distance <emphasis>above</emphasis> the
     /// baseline of the top of the strikethrough.
-    var strikethroughPosition: CInt {
+    var strikethroughPosition: Int {
         /// Gets the suggested position to draw the strikethrough.
         /// The value returned is the distance <emphasis>above</emphasis> the
         /// baseline of the top of the strikethrough.
         get {
-            let rv = pango_font_metrics_get_strikethrough_position(cast(font_metrics_ptr))
-            return rv
+            let rv: Int = cast(pango_font_metrics_get_strikethrough_position(cast(font_metrics_ptr)))
+            return cast(rv)
         }
     }
 
     /// Gets the suggested thickness to draw for the strikethrough.
-    var strikethroughThickness: CInt {
+    var strikethroughThickness: Int {
         /// Gets the suggested thickness to draw for the strikethrough.
         get {
-            let rv = pango_font_metrics_get_strikethrough_thickness(cast(font_metrics_ptr))
-            return rv
+            let rv: Int = cast(pango_font_metrics_get_strikethrough_thickness(cast(font_metrics_ptr)))
+            return cast(rv)
         }
     }
 
@@ -1715,26 +1797,47 @@ public extension FontMetricsProtocol {
     /// baseline of the top of the underline. Since most fonts have
     /// underline positions beneath the baseline, this value is typically
     /// negative.
-    var underlinePosition: CInt {
+    var underlinePosition: Int {
         /// Gets the suggested position to draw the underline.
         /// The value returned is the distance <emphasis>above</emphasis> the
         /// baseline of the top of the underline. Since most fonts have
         /// underline positions beneath the baseline, this value is typically
         /// negative.
         get {
-            let rv = pango_font_metrics_get_underline_position(cast(font_metrics_ptr))
-            return rv
+            let rv: Int = cast(pango_font_metrics_get_underline_position(cast(font_metrics_ptr)))
+            return cast(rv)
         }
     }
 
     /// Gets the suggested thickness to draw for the underline.
-    var underlineThickness: CInt {
+    var underlineThickness: Int {
         /// Gets the suggested thickness to draw for the underline.
         get {
-            let rv = pango_font_metrics_get_underline_thickness(cast(font_metrics_ptr))
-            return rv
+            let rv: Int = cast(pango_font_metrics_get_underline_thickness(cast(font_metrics_ptr)))
+            return cast(rv)
         }
     }
+
+    // var refCount is unavailable because ref_count is private
+
+    // var _ascent is unavailable because ascent is private
+
+    // var _descent is unavailable because descent is private
+
+    // var _height is unavailable because height is private
+
+    // var _approximateCharWidth is unavailable because approximate_char_width is private
+
+    // var _approximateDigitWidth is unavailable because approximate_digit_width is private
+
+    // var _underlinePosition is unavailable because underline_position is private
+
+    // var _underlineThickness is unavailable because underline_thickness is private
+
+    // var _strikethroughPosition is unavailable because strikethrough_position is private
+
+    // var _strikethroughThickness is unavailable because strikethrough_thickness is private
+
 }
 
 
@@ -1749,7 +1852,7 @@ public extension FontMetricsProtocol {
 /// The `PangoFontsetClass` structure holds the virtual functions for
 /// a particular `PangoFontset` implementation.
 public protocol FontsetClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontsetClass` instance.
+        /// Untyped pointer to the underlying `PangoFontsetClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontsetClass` instance.
@@ -1763,7 +1866,7 @@ public protocol FontsetClassProtocol {
 /// The `PangoFontsetClass` structure holds the virtual functions for
 /// a particular `PangoFontset` implementation.
 public struct FontsetClassRef: FontsetClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontsetClass` instance.
+        /// Untyped pointer to the underlying `PangoFontsetClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1817,7 +1920,7 @@ public extension FontsetClassRef {
 /// The `PangoFontsetClass` structure holds the virtual functions for
 /// a particular `PangoFontset` implementation.
 open class FontsetClass: FontsetClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontsetClass` instance.
+        /// Untyped pointer to the underlying `PangoFontsetClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1846,7 +1949,7 @@ open class FontsetClass: FontsetClassProtocol {
         // no reference counting for PangoFontsetClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoFontsetClass`.
+    /// Do-nothing destructor for `PangoFontsetClass`.
     deinit {
         // no reference counting for PangoFontsetClass, cannot unref(cast(_ptr))
     }
@@ -1914,14 +2017,41 @@ open class FontsetClass: FontsetClassProtocol {
 
 }
 
-// MARK: - no FontsetClass properties
+// MARK: no FontsetClass properties
 
-// MARK: - no signals
+// MARK: no FontsetClass signals
 
 
+// MARK: FontsetClass Record: FontsetClassProtocol extension (methods and fields)
 public extension FontsetClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontsetClass` instance.
     var _ptr: UnsafeMutablePointer<PangoFontsetClass> { return ptr.assumingMemoryBound(to: PangoFontsetClass.self) }
+
+
+    /// parent `GObjectClass`.
+    var parentClass: GObjectClass {
+        /// parent `GObjectClass`.
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent_class)
+            return rv
+        }
+    }
+
+    // var getFont is unavailable because get_font is void
+
+    // var getMetrics is unavailable because get_metrics is void
+
+    // var getLanguage is unavailable because get_language is void
+
+    // var foreach is unavailable because foreach is void
+
+    // var PangoReserved1 is unavailable because _pango_reserved1 is void
+
+    // var PangoReserved2 is unavailable because _pango_reserved2 is void
+
+    // var PangoReserved3 is unavailable because _pango_reserved3 is void
+
+    // var PangoReserved4 is unavailable because _pango_reserved4 is void
 
 }
 
@@ -1936,7 +2066,7 @@ public extension FontsetClassProtocol {
 ///
 
 public protocol FontsetSimpleClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontsetSimpleClass` instance.
+        /// Untyped pointer to the underlying `PangoFontsetSimpleClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontsetSimpleClass` instance.
@@ -1949,7 +2079,7 @@ public protocol FontsetSimpleClassProtocol {
 ///
 
 public struct FontsetSimpleClassRef: FontsetSimpleClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontsetSimpleClass` instance.
+        /// Untyped pointer to the underlying `PangoFontsetSimpleClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -2002,7 +2132,7 @@ public extension FontsetSimpleClassRef {
 ///
 
 open class FontsetSimpleClass: FontsetSimpleClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontsetSimpleClass` instance.
+        /// Untyped pointer to the underlying `PangoFontsetSimpleClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -2031,7 +2161,7 @@ open class FontsetSimpleClass: FontsetSimpleClassProtocol {
         // no reference counting for PangoFontsetSimpleClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoFontsetSimpleClass`.
+    /// Do-nothing destructor for `PangoFontsetSimpleClass`.
     deinit {
         // no reference counting for PangoFontsetSimpleClass, cannot unref(cast(_ptr))
     }
@@ -2099,14 +2229,17 @@ open class FontsetSimpleClass: FontsetSimpleClassProtocol {
 
 }
 
-// MARK: - no FontsetSimpleClass properties
+// MARK: no FontsetSimpleClass properties
 
-// MARK: - no signals
+// MARK: no FontsetSimpleClass signals
 
 
+// MARK: FontsetSimpleClass Record: FontsetSimpleClassProtocol extension (methods and fields)
 public extension FontsetSimpleClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontsetSimpleClass` instance.
     var _ptr: UnsafeMutablePointer<PangoFontsetSimpleClass> { return ptr.assumingMemoryBound(to: PangoFontsetSimpleClass.self) }
+
+
 
 }
 
@@ -2122,7 +2255,7 @@ public extension FontsetSimpleClassProtocol {
 /// The `PangoGlyphGeometry` structure contains width and positioning
 /// information for a single glyph.
 public protocol GlyphGeometryProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphGeometry` instance.
+        /// Untyped pointer to the underlying `PangoGlyphGeometry` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoGlyphGeometry` instance.
@@ -2136,7 +2269,7 @@ public protocol GlyphGeometryProtocol {
 /// The `PangoGlyphGeometry` structure contains width and positioning
 /// information for a single glyph.
 public struct GlyphGeometryRef: GlyphGeometryProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphGeometry` instance.
+        /// Untyped pointer to the underlying `PangoGlyphGeometry` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -2190,7 +2323,7 @@ public extension GlyphGeometryRef {
 /// The `PangoGlyphGeometry` structure contains width and positioning
 /// information for a single glyph.
 open class GlyphGeometry: GlyphGeometryProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphGeometry` instance.
+        /// Untyped pointer to the underlying `PangoGlyphGeometry` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -2219,7 +2352,7 @@ open class GlyphGeometry: GlyphGeometryProtocol {
         // no reference counting for PangoGlyphGeometry, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoGlyphGeometry`.
+    /// Do-nothing destructor for `PangoGlyphGeometry`.
     deinit {
         // no reference counting for PangoGlyphGeometry, cannot unref(cast(_ptr))
     }
@@ -2287,14 +2420,55 @@ open class GlyphGeometry: GlyphGeometryProtocol {
 
 }
 
-// MARK: - no GlyphGeometry properties
+// MARK: no GlyphGeometry properties
 
-// MARK: - no signals
+// MARK: no GlyphGeometry signals
 
 
+// MARK: GlyphGeometry Record: GlyphGeometryProtocol extension (methods and fields)
 public extension GlyphGeometryProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoGlyphGeometry` instance.
     var _ptr: UnsafeMutablePointer<PangoGlyphGeometry> { return ptr.assumingMemoryBound(to: PangoGlyphGeometry.self) }
+
+
+    /// the logical width to use for the the character.
+    var width: PangoGlyphUnit {
+        /// the logical width to use for the the character.
+        get {
+            let rv: PangoGlyphUnit = cast(_ptr.pointee.width)
+            return rv
+        }
+        /// the logical width to use for the the character.
+         set {
+            _ptr.pointee.width = cast(newValue)
+        }
+    }
+
+    /// horizontal offset from nominal character position.
+    var xOffset: PangoGlyphUnit {
+        /// horizontal offset from nominal character position.
+        get {
+            let rv: PangoGlyphUnit = cast(_ptr.pointee.x_offset)
+            return rv
+        }
+        /// horizontal offset from nominal character position.
+         set {
+            _ptr.pointee.x_offset = cast(newValue)
+        }
+    }
+
+    /// vertical offset from nominal character position.
+    var yOffset: PangoGlyphUnit {
+        /// vertical offset from nominal character position.
+        get {
+            let rv: PangoGlyphUnit = cast(_ptr.pointee.y_offset)
+            return rv
+        }
+        /// vertical offset from nominal character position.
+         set {
+            _ptr.pointee.y_offset = cast(newValue)
+        }
+    }
 
 }
 

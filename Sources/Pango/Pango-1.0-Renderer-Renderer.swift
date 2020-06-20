@@ -14,7 +14,7 @@ import GLibObject
 /// render Pango objects such as `PangoGlyphString` and
 /// `PangoLayout`.
 public protocol RendererProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `PangoRenderer` instance.
+        /// Untyped pointer to the underlying `PangoRenderer` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoRenderer` instance.
@@ -29,7 +29,7 @@ public protocol RendererProtocol: ObjectProtocol {
 /// render Pango objects such as `PangoGlyphString` and
 /// `PangoLayout`.
 public struct RendererRef: RendererProtocol {
-    /// Untyped pointer to the underlying `PangoRenderer` instance.
+        /// Untyped pointer to the underlying `PangoRenderer` instance.
     /// For type-safe access, use the generated, typed pointer `renderer_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -84,7 +84,7 @@ public extension RendererRef {
 /// render Pango objects such as `PangoGlyphString` and
 /// `PangoLayout`.
 open class Renderer: Object, RendererProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Renderer` instance.
     /// - Parameter op: pointer to the underlying object
@@ -166,7 +166,7 @@ open class Renderer: Object, RendererProtocol {
 
 }
 
-// MARK: - no Renderer properties
+// MARK: no Renderer properties
 
 public enum RendererSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -203,8 +203,8 @@ public extension RendererProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: RendererSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: RendererSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(renderer_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -225,6 +225,7 @@ public extension RendererProtocol {
     }
 }
 
+// MARK: Renderer Class: RendererProtocol extension (methods and fields)
 public extension RendererProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoRenderer` instance.
     var renderer_ptr: UnsafeMutablePointer<PangoRenderer> { return ptr.assumingMemoryBound(to: PangoRenderer.self) }
@@ -326,7 +327,7 @@ public extension RendererProtocol {
 
     /// Gets the current rendering color for the specified part.
     func getColor(part: RenderPart) -> UnsafeMutablePointer<PangoColor>! {
-        let rv = pango_renderer_get_color(cast(renderer_ptr), part)
+        let rv: UnsafeMutablePointer<PangoColor>! = cast(pango_renderer_get_color(cast(renderer_ptr), part))
         return cast(rv)
     }
 
@@ -337,7 +338,7 @@ public extension RendererProtocol {
     /// The returned layout should not be modified while still being
     /// rendered.
     func getLayout() -> UnsafeMutablePointer<PangoLayout>! {
-        let rv = pango_renderer_get_layout(cast(renderer_ptr))
+        let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_renderer_get_layout(cast(renderer_ptr)))
         return cast(rv)
     }
 
@@ -348,14 +349,14 @@ public extension RendererProtocol {
     /// The returned layout line should not be modified while still being
     /// rendered.
     func getLayoutLine() -> UnsafeMutablePointer<PangoLayoutLine>! {
-        let rv = pango_renderer_get_layout_line(cast(renderer_ptr))
+        let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_renderer_get_layout_line(cast(renderer_ptr)))
         return cast(rv)
     }
 
     /// Gets the transformation matrix that will be applied when
     /// rendering. See `pango_renderer_set_matrix()`.
     func getMatrix() -> UnsafePointer<PangoMatrix>! {
-        let rv = pango_renderer_get_matrix(cast(renderer_ptr))
+        let rv: UnsafePointer<PangoMatrix>! = cast(pango_renderer_get_matrix(cast(renderer_ptr)))
         return cast(rv)
     }
 
@@ -411,7 +412,7 @@ public extension RendererProtocol {
         /// The returned layout should not be modified while still being
         /// rendered.
         get {
-            let rv = pango_renderer_get_layout(cast(renderer_ptr))
+            let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_renderer_get_layout(cast(renderer_ptr)))
             return cast(rv)
         }
     }
@@ -430,7 +431,7 @@ public extension RendererProtocol {
         /// The returned layout line should not be modified while still being
         /// rendered.
         get {
-            let rv = pango_renderer_get_layout_line(cast(renderer_ptr))
+            let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_renderer_get_layout_line(cast(renderer_ptr)))
             return cast(rv)
         }
     }
@@ -441,7 +442,7 @@ public extension RendererProtocol {
         /// Gets the transformation matrix that will be applied when
         /// rendering. See `pango_renderer_set_matrix()`.
         get {
-            let rv = pango_renderer_get_matrix(cast(renderer_ptr))
+            let rv: UnsafePointer<PangoMatrix>! = cast(pango_renderer_get_matrix(cast(renderer_ptr)))
             return cast(rv)
         }
         /// Sets the transformation matrix that will be applied when rendering.
@@ -449,6 +450,30 @@ public extension RendererProtocol {
             pango_renderer_set_matrix(cast(renderer_ptr), cast(newValue))
         }
     }
+
+    // var parentInstance is unavailable because parent_instance is private
+
+    // var underline is unavailable because underline is private
+
+    // var strikethrough is unavailable because strikethrough is private
+
+    // var activeCount is unavailable because active_count is private
+
+    /// the current transformation matrix for
+    ///    the Renderer; may be `nil`, which should be treated the
+    ///    same as the identity matrix.
+    var _matrix: UnsafeMutablePointer<PangoMatrix> {
+        /// the current transformation matrix for
+        ///    the Renderer; may be `nil`, which should be treated the
+        ///    same as the identity matrix.
+        get {
+            let rv: UnsafeMutablePointer<PangoMatrix> = cast(renderer_ptr.pointee.matrix)
+            return rv
+        }
+    }
+
+    // var priv is unavailable because priv is private
+
 }
 
 

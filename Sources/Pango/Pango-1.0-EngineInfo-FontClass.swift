@@ -13,7 +13,7 @@ import GLibObject
 /// The `PangoEngineInfo` structure contains information about a particular
 /// engine. It contains the following fields:
 public protocol EngineInfoProtocol {
-    /// Untyped pointer to the underlying `PangoEngineInfo` instance.
+        /// Untyped pointer to the underlying `PangoEngineInfo` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoEngineInfo` instance.
@@ -27,7 +27,7 @@ public protocol EngineInfoProtocol {
 /// The `PangoEngineInfo` structure contains information about a particular
 /// engine. It contains the following fields:
 public struct EngineInfoRef: EngineInfoProtocol {
-    /// Untyped pointer to the underlying `PangoEngineInfo` instance.
+        /// Untyped pointer to the underlying `PangoEngineInfo` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -81,7 +81,7 @@ public extension EngineInfoRef {
 /// The `PangoEngineInfo` structure contains information about a particular
 /// engine. It contains the following fields:
 open class EngineInfo: EngineInfoProtocol {
-    /// Untyped pointer to the underlying `PangoEngineInfo` instance.
+        /// Untyped pointer to the underlying `PangoEngineInfo` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -110,7 +110,7 @@ open class EngineInfo: EngineInfoProtocol {
         // no reference counting for PangoEngineInfo, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoEngineInfo`.
+    /// Do-nothing destructor for `PangoEngineInfo`.
     deinit {
         // no reference counting for PangoEngineInfo, cannot unref(cast(_ptr))
     }
@@ -178,14 +178,81 @@ open class EngineInfo: EngineInfoProtocol {
 
 }
 
-// MARK: - no EngineInfo properties
+// MARK: no EngineInfo properties
 
-// MARK: - no signals
+// MARK: no EngineInfo signals
 
 
+// MARK: EngineInfo Record: EngineInfoProtocol extension (methods and fields)
 public extension EngineInfoProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoEngineInfo` instance.
     var _ptr: UnsafeMutablePointer<PangoEngineInfo> { return ptr.assumingMemoryBound(to: PangoEngineInfo.self) }
+
+
+    /// a unique string ID for the engine.
+    var id: UnsafePointer<CChar> {
+        /// a unique string ID for the engine.
+        get {
+            let rv: UnsafePointer<CChar> = cast(_ptr.pointee.id)
+            return rv
+        }
+        /// a unique string ID for the engine.
+         set {
+            _ptr.pointee.id = cast(newValue)
+        }
+    }
+
+    /// a string identifying the engine type.
+    var engineType: UnsafePointer<CChar> {
+        /// a string identifying the engine type.
+        get {
+            let rv: UnsafePointer<CChar> = cast(_ptr.pointee.engine_type)
+            return rv
+        }
+        /// a string identifying the engine type.
+         set {
+            _ptr.pointee.engine_type = cast(newValue)
+        }
+    }
+
+    /// a string identifying the render type.
+    var renderType: UnsafePointer<CChar> {
+        /// a string identifying the render type.
+        get {
+            let rv: UnsafePointer<CChar> = cast(_ptr.pointee.render_type)
+            return rv
+        }
+        /// a string identifying the render type.
+         set {
+            _ptr.pointee.render_type = cast(newValue)
+        }
+    }
+
+    /// array of scripts this engine supports.
+    var scripts: UnsafeMutablePointer<PangoEngineScriptInfo> {
+        /// array of scripts this engine supports.
+        get {
+            let rv: UnsafeMutablePointer<PangoEngineScriptInfo> = cast(_ptr.pointee.scripts)
+            return rv
+        }
+        /// array of scripts this engine supports.
+         set {
+            _ptr.pointee.scripts = cast(newValue)
+        }
+    }
+
+    /// number of items in `scripts`.
+    var nScripts: Int {
+        /// number of items in `scripts`.
+        get {
+            let rv: Int = cast(_ptr.pointee.n_scripts)
+            return rv
+        }
+        /// number of items in `scripts`.
+         set {
+            _ptr.pointee.n_scripts = gint(newValue)
+        }
+    }
 
 }
 
@@ -200,7 +267,7 @@ public extension EngineInfoProtocol {
 ///
 /// Class structure for `PangoEngineLang`
 public protocol EngineLangClassProtocol {
-    /// Untyped pointer to the underlying `PangoEngineLangClass` instance.
+        /// Untyped pointer to the underlying `PangoEngineLangClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoEngineLangClass` instance.
@@ -213,7 +280,7 @@ public protocol EngineLangClassProtocol {
 ///
 /// Class structure for `PangoEngineLang`
 public struct EngineLangClassRef: EngineLangClassProtocol {
-    /// Untyped pointer to the underlying `PangoEngineLangClass` instance.
+        /// Untyped pointer to the underlying `PangoEngineLangClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -266,7 +333,7 @@ public extension EngineLangClassRef {
 ///
 /// Class structure for `PangoEngineLang`
 open class EngineLangClass: EngineLangClassProtocol {
-    /// Untyped pointer to the underlying `PangoEngineLangClass` instance.
+        /// Untyped pointer to the underlying `PangoEngineLangClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -295,7 +362,7 @@ open class EngineLangClass: EngineLangClassProtocol {
         // no reference counting for PangoEngineLangClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoEngineLangClass`.
+    /// Do-nothing destructor for `PangoEngineLangClass`.
     deinit {
         // no reference counting for PangoEngineLangClass, cannot unref(cast(_ptr))
     }
@@ -363,14 +430,20 @@ open class EngineLangClass: EngineLangClassProtocol {
 
 }
 
-// MARK: - no EngineLangClass properties
+// MARK: no EngineLangClass properties
 
-// MARK: - no signals
+// MARK: no EngineLangClass signals
 
 
+// MARK: EngineLangClass Record: EngineLangClassProtocol extension (methods and fields)
 public extension EngineLangClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoEngineLangClass` instance.
     var _ptr: UnsafeMutablePointer<PangoEngineLangClass> { return ptr.assumingMemoryBound(to: PangoEngineLangClass.self) }
+
+
+    // var parentClass is unavailable because parent_class is private
+
+    // var scriptBreak is unavailable because script_break is void
 
 }
 
@@ -386,7 +459,7 @@ public extension EngineLangClassProtocol {
 /// The `PangoEngineScriptInfo` structure contains
 /// information about how the shaper covers a particular script.
 public protocol EngineScriptInfoProtocol {
-    /// Untyped pointer to the underlying `PangoEngineScriptInfo` instance.
+        /// Untyped pointer to the underlying `PangoEngineScriptInfo` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoEngineScriptInfo` instance.
@@ -400,7 +473,7 @@ public protocol EngineScriptInfoProtocol {
 /// The `PangoEngineScriptInfo` structure contains
 /// information about how the shaper covers a particular script.
 public struct EngineScriptInfoRef: EngineScriptInfoProtocol {
-    /// Untyped pointer to the underlying `PangoEngineScriptInfo` instance.
+        /// Untyped pointer to the underlying `PangoEngineScriptInfo` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -454,7 +527,7 @@ public extension EngineScriptInfoRef {
 /// The `PangoEngineScriptInfo` structure contains
 /// information about how the shaper covers a particular script.
 open class EngineScriptInfo: EngineScriptInfoProtocol {
-    /// Untyped pointer to the underlying `PangoEngineScriptInfo` instance.
+        /// Untyped pointer to the underlying `PangoEngineScriptInfo` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -483,7 +556,7 @@ open class EngineScriptInfo: EngineScriptInfoProtocol {
         // no reference counting for PangoEngineScriptInfo, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoEngineScriptInfo`.
+    /// Do-nothing destructor for `PangoEngineScriptInfo`.
     deinit {
         // no reference counting for PangoEngineScriptInfo, cannot unref(cast(_ptr))
     }
@@ -551,14 +624,69 @@ open class EngineScriptInfo: EngineScriptInfoProtocol {
 
 }
 
-// MARK: - no EngineScriptInfo properties
+// MARK: no EngineScriptInfo properties
 
-// MARK: - no signals
+// MARK: no EngineScriptInfo signals
 
 
+// MARK: EngineScriptInfo Record: EngineScriptInfoProtocol extension (methods and fields)
 public extension EngineScriptInfoProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoEngineScriptInfo` instance.
     var _ptr: UnsafeMutablePointer<PangoEngineScriptInfo> { return ptr.assumingMemoryBound(to: PangoEngineScriptInfo.self) }
+
+
+    /// a `PangoScript`. The value `PANGO_SCRIPT_COMMON` has
+    /// the special meaning here of "all scripts"
+    var script: PangoScript {
+        /// a `PangoScript`. The value `PANGO_SCRIPT_COMMON` has
+        /// the special meaning here of "all scripts"
+        get {
+            let rv: PangoScript = cast(_ptr.pointee.script)
+            return rv
+        }
+        /// a `PangoScript`. The value `PANGO_SCRIPT_COMMON` has
+        /// the special meaning here of "all scripts"
+         set {
+            _ptr.pointee.script = cast(newValue)
+        }
+    }
+
+    /// a semicolon separated list of languages that this
+    /// engine handles for this script. This may be empty,
+    /// in which case the engine is saying that it is a
+    /// fallback choice for all languages for this range,
+    /// but should not be used if another engine
+    /// indicates that it is specific for the language for
+    /// a given code point. An entry in this list of "*"
+    /// indicates that this engine is specific to all
+    /// languages for this range.
+    var langs: UnsafePointer<CChar> {
+        /// a semicolon separated list of languages that this
+        /// engine handles for this script. This may be empty,
+        /// in which case the engine is saying that it is a
+        /// fallback choice for all languages for this range,
+        /// but should not be used if another engine
+        /// indicates that it is specific for the language for
+        /// a given code point. An entry in this list of "*"
+        /// indicates that this engine is specific to all
+        /// languages for this range.
+        get {
+            let rv: UnsafePointer<CChar> = cast(_ptr.pointee.langs)
+            return rv
+        }
+        /// a semicolon separated list of languages that this
+        /// engine handles for this script. This may be empty,
+        /// in which case the engine is saying that it is a
+        /// fallback choice for all languages for this range,
+        /// but should not be used if another engine
+        /// indicates that it is specific for the language for
+        /// a given code point. An entry in this list of "*"
+        /// indicates that this engine is specific to all
+        /// languages for this range.
+         set {
+            _ptr.pointee.langs = cast(newValue)
+        }
+    }
 
 }
 
@@ -573,7 +701,7 @@ public extension EngineScriptInfoProtocol {
 ///
 /// Class structure for `PangoEngineShape`
 public protocol EngineShapeClassProtocol {
-    /// Untyped pointer to the underlying `PangoEngineShapeClass` instance.
+        /// Untyped pointer to the underlying `PangoEngineShapeClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoEngineShapeClass` instance.
@@ -586,7 +714,7 @@ public protocol EngineShapeClassProtocol {
 ///
 /// Class structure for `PangoEngineShape`
 public struct EngineShapeClassRef: EngineShapeClassProtocol {
-    /// Untyped pointer to the underlying `PangoEngineShapeClass` instance.
+        /// Untyped pointer to the underlying `PangoEngineShapeClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -639,7 +767,7 @@ public extension EngineShapeClassRef {
 ///
 /// Class structure for `PangoEngineShape`
 open class EngineShapeClass: EngineShapeClassProtocol {
-    /// Untyped pointer to the underlying `PangoEngineShapeClass` instance.
+        /// Untyped pointer to the underlying `PangoEngineShapeClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -668,7 +796,7 @@ open class EngineShapeClass: EngineShapeClassProtocol {
         // no reference counting for PangoEngineShapeClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoEngineShapeClass`.
+    /// Do-nothing destructor for `PangoEngineShapeClass`.
     deinit {
         // no reference counting for PangoEngineShapeClass, cannot unref(cast(_ptr))
     }
@@ -736,14 +864,22 @@ open class EngineShapeClass: EngineShapeClassProtocol {
 
 }
 
-// MARK: - no EngineShapeClass properties
+// MARK: no EngineShapeClass properties
 
-// MARK: - no signals
+// MARK: no EngineShapeClass signals
 
 
+// MARK: EngineShapeClass Record: EngineShapeClassProtocol extension (methods and fields)
 public extension EngineShapeClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoEngineShapeClass` instance.
     var _ptr: UnsafeMutablePointer<PangoEngineShapeClass> { return ptr.assumingMemoryBound(to: PangoEngineShapeClass.self) }
+
+
+    // var parentClass is unavailable because parent_class is private
+
+    // var scriptShape is unavailable because script_shape is void
+
+    // var covers is unavailable because covers is void
 
 }
 
@@ -758,7 +894,7 @@ public extension EngineShapeClassProtocol {
 ///
 
 public protocol FontClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontClass` instance.
+        /// Untyped pointer to the underlying `PangoFontClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoFontClass` instance.
@@ -771,7 +907,7 @@ public protocol FontClassProtocol {
 ///
 
 public struct FontClassRef: FontClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontClass` instance.
+        /// Untyped pointer to the underlying `PangoFontClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -824,7 +960,7 @@ public extension FontClassRef {
 ///
 
 open class FontClass: FontClassProtocol {
-    /// Untyped pointer to the underlying `PangoFontClass` instance.
+        /// Untyped pointer to the underlying `PangoFontClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -853,7 +989,7 @@ open class FontClass: FontClassProtocol {
         // no reference counting for PangoFontClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoFontClass`.
+    /// Do-nothing destructor for `PangoFontClass`.
     deinit {
         // no reference counting for PangoFontClass, cannot unref(cast(_ptr))
     }
@@ -921,14 +1057,39 @@ open class FontClass: FontClassProtocol {
 
 }
 
-// MARK: - no FontClass properties
+// MARK: no FontClass properties
 
-// MARK: - no signals
+// MARK: no FontClass signals
 
 
+// MARK: FontClass Record: FontClassProtocol extension (methods and fields)
 public extension FontClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontClass` instance.
     var _ptr: UnsafeMutablePointer<PangoFontClass> { return ptr.assumingMemoryBound(to: PangoFontClass.self) }
+
+
+    var parentClass: GObjectClass {
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent_class)
+            return rv
+        }
+    }
+
+    // var describe is unavailable because describe is void
+
+    // var getCoverage is unavailable because get_coverage is void
+
+    // var getGlyphExtents is unavailable because get_glyph_extents is void
+
+    // var getMetrics is unavailable because get_metrics is void
+
+    // var getFontMap is unavailable because get_font_map is void
+
+    // var describeAbsolute is unavailable because describe_absolute is void
+
+    // var getFeatures is unavailable because get_features is void
+
+    // var createHbFont is unavailable because create_hb_font is void
 
 }
 

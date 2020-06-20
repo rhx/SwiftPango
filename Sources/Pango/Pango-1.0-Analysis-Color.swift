@@ -13,7 +13,7 @@ import GLibObject
 /// The `PangoAnalysis` structure stores information about
 /// the properties of a segment of text.
 public protocol AnalysisProtocol {
-    /// Untyped pointer to the underlying `PangoAnalysis` instance.
+        /// Untyped pointer to the underlying `PangoAnalysis` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAnalysis` instance.
@@ -27,7 +27,7 @@ public protocol AnalysisProtocol {
 /// The `PangoAnalysis` structure stores information about
 /// the properties of a segment of text.
 public struct AnalysisRef: AnalysisProtocol {
-    /// Untyped pointer to the underlying `PangoAnalysis` instance.
+        /// Untyped pointer to the underlying `PangoAnalysis` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -81,7 +81,7 @@ public extension AnalysisRef {
 /// The `PangoAnalysis` structure stores information about
 /// the properties of a segment of text.
 open class Analysis: AnalysisProtocol {
-    /// Untyped pointer to the underlying `PangoAnalysis` instance.
+        /// Untyped pointer to the underlying `PangoAnalysis` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -110,7 +110,7 @@ open class Analysis: AnalysisProtocol {
         // no reference counting for PangoAnalysis, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAnalysis`.
+    /// Do-nothing destructor for `PangoAnalysis`.
     deinit {
         // no reference counting for PangoAnalysis, cannot unref(cast(_ptr))
     }
@@ -178,11 +178,12 @@ open class Analysis: AnalysisProtocol {
 
 }
 
-// MARK: - no Analysis properties
+// MARK: no Analysis properties
 
-// MARK: - no signals
+// MARK: no Analysis signals
 
 
+// MARK: Analysis Record: AnalysisProtocol extension (methods and fields)
 public extension AnalysisProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAnalysis` instance.
     var _ptr: UnsafeMutablePointer<PangoAnalysis> { return ptr.assumingMemoryBound(to: PangoAnalysis.self) }
@@ -244,7 +245,7 @@ public extension AnalysisProtocol {
     /// This is similar to `pango_shape_full()`, except it also takes
     /// flags that can influence the shaping process.
     func shapeWithFlags(itemText item_text: UnsafePointer<CChar>, itemLength item_length: CInt, paragraphText paragraph_text: UnsafePointer<CChar>, paragraphLength paragraph_length: CInt, glyphs: GlyphStringProtocol, flags: ShapeFlags) {
-        pango_shape_with_flags(item_text, item_length, paragraph_text, paragraph_length, cast(_ptr), cast(glyphs.ptr), flags)
+        pango_shape_with_flags(item_text, item_length, paragraph_text, paragraph_length, cast(_ptr), cast(glyphs.ptr), flags.value)
     
     }
 
@@ -258,6 +259,124 @@ public extension AnalysisProtocol {
         pango_tailor_break(text, length, cast(_ptr), offset, cast(log_attrs), log_attrs_len)
     
     }
+
+    /// unused
+    var shapeEngine: UnsafeMutablePointer<PangoEngineShape> {
+        /// unused
+        get {
+            let rv: UnsafeMutablePointer<PangoEngineShape> = cast(_ptr.pointee.shape_engine)
+            return rv
+        }
+        /// unused
+         set {
+            _ptr.pointee.shape_engine = cast(newValue)
+        }
+    }
+
+    /// unused
+    var langEngine: UnsafeMutablePointer<PangoEngineLang> {
+        /// unused
+        get {
+            let rv: UnsafeMutablePointer<PangoEngineLang> = cast(_ptr.pointee.lang_engine)
+            return rv
+        }
+        /// unused
+         set {
+            _ptr.pointee.lang_engine = cast(newValue)
+        }
+    }
+
+    /// the font for this segment.
+    var font: UnsafeMutablePointer<PangoFont> {
+        /// the font for this segment.
+        get {
+            let rv: UnsafeMutablePointer<PangoFont> = cast(_ptr.pointee.font)
+            return rv
+        }
+        /// the font for this segment.
+         set {
+            _ptr.pointee.font = cast(newValue)
+        }
+    }
+
+    /// the bidirectional level for this segment.
+    var level: UInt8 {
+        /// the bidirectional level for this segment.
+        get {
+            let rv: UInt8 = cast(_ptr.pointee.level)
+            return rv
+        }
+        /// the bidirectional level for this segment.
+         set {
+            _ptr.pointee.level = guint8(newValue)
+        }
+    }
+
+    /// the glyph orientation for this segment (A `PangoGravity`).
+    var gravity: UInt8 {
+        /// the glyph orientation for this segment (A `PangoGravity`).
+        get {
+            let rv: UInt8 = cast(_ptr.pointee.gravity)
+            return rv
+        }
+        /// the glyph orientation for this segment (A `PangoGravity`).
+         set {
+            _ptr.pointee.gravity = guint8(newValue)
+        }
+    }
+
+    /// boolean flags for this segment (Since: 1.16).
+    var flags: UInt8 {
+        /// boolean flags for this segment (Since: 1.16).
+        get {
+            let rv: UInt8 = cast(_ptr.pointee.flags)
+            return rv
+        }
+        /// boolean flags for this segment (Since: 1.16).
+         set {
+            _ptr.pointee.flags = guint8(newValue)
+        }
+    }
+
+    /// the detected script for this segment (A `PangoScript`) (Since: 1.18).
+    var script: UInt8 {
+        /// the detected script for this segment (A `PangoScript`) (Since: 1.18).
+        get {
+            let rv: UInt8 = cast(_ptr.pointee.script)
+            return rv
+        }
+        /// the detected script for this segment (A `PangoScript`) (Since: 1.18).
+         set {
+            _ptr.pointee.script = guint8(newValue)
+        }
+    }
+
+    /// the detected language for this segment.
+    var language: UnsafeMutablePointer<PangoLanguage> {
+        /// the detected language for this segment.
+        get {
+            let rv: UnsafeMutablePointer<PangoLanguage> = cast(_ptr.pointee.language)
+            return rv
+        }
+        /// the detected language for this segment.
+         set {
+            _ptr.pointee.language = cast(newValue)
+        }
+    }
+
+    /// extra attributes for this segment.
+    var extraAttrs: UnsafeMutablePointer<GSList> {
+        /// extra attributes for this segment.
+        get {
+            let rv: UnsafeMutablePointer<GSList> = cast(_ptr.pointee.extra_attrs)
+            return rv
+        }
+        /// extra attributes for this segment.
+         set {
+            _ptr.pointee.extra_attrs = cast(newValue)
+        }
+    }
+
 }
 
 
@@ -274,7 +393,7 @@ public extension AnalysisProtocol {
 /// not be called directly. Instead, one should use the wrapper functions
 /// provided for `PangoAttribute`.
 public protocol AttrClassProtocol {
-    /// Untyped pointer to the underlying `PangoAttrClass` instance.
+        /// Untyped pointer to the underlying `PangoAttrClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrClass` instance.
@@ -290,7 +409,7 @@ public protocol AttrClassProtocol {
 /// not be called directly. Instead, one should use the wrapper functions
 /// provided for `PangoAttribute`.
 public struct AttrClassRef: AttrClassProtocol {
-    /// Untyped pointer to the underlying `PangoAttrClass` instance.
+        /// Untyped pointer to the underlying `PangoAttrClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -346,7 +465,7 @@ public extension AttrClassRef {
 /// not be called directly. Instead, one should use the wrapper functions
 /// provided for `PangoAttribute`.
 open class AttrClass: AttrClassProtocol {
-    /// Untyped pointer to the underlying `PangoAttrClass` instance.
+        /// Untyped pointer to the underlying `PangoAttrClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -375,7 +494,7 @@ open class AttrClass: AttrClassProtocol {
         // no reference counting for PangoAttrClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttrClass`.
+    /// Do-nothing destructor for `PangoAttrClass`.
     deinit {
         // no reference counting for PangoAttrClass, cannot unref(cast(_ptr))
     }
@@ -443,14 +562,35 @@ open class AttrClass: AttrClassProtocol {
 
 }
 
-// MARK: - no AttrClass properties
+// MARK: no AttrClass properties
 
-// MARK: - no signals
+// MARK: no AttrClass signals
 
 
+// MARK: AttrClass Record: AttrClassProtocol extension (methods and fields)
 public extension AttrClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrClass` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrClass> { return ptr.assumingMemoryBound(to: PangoAttrClass.self) }
+
+
+    /// the type ID for this attribute
+    var type: PangoAttrType {
+        /// the type ID for this attribute
+        get {
+            let rv: PangoAttrType = cast(_ptr.pointee.type)
+            return rv
+        }
+        /// the type ID for this attribute
+         set {
+            _ptr.pointee.type = cast(newValue)
+        }
+    }
+
+    // var copy is unavailable because copy is void
+
+    // var destroy is unavailable because destroy is void
+
+    // var equal is unavailable because equal is void
 
 }
 
@@ -466,7 +606,7 @@ public extension AttrClassProtocol {
 /// The `PangoAttrColor` structure is used to represent attributes that
 /// are colors.
 public protocol AttrColorProtocol {
-    /// Untyped pointer to the underlying `PangoAttrColor` instance.
+        /// Untyped pointer to the underlying `PangoAttrColor` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrColor` instance.
@@ -480,7 +620,7 @@ public protocol AttrColorProtocol {
 /// The `PangoAttrColor` structure is used to represent attributes that
 /// are colors.
 public struct AttrColorRef: AttrColorProtocol {
-    /// Untyped pointer to the underlying `PangoAttrColor` instance.
+        /// Untyped pointer to the underlying `PangoAttrColor` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -534,7 +674,7 @@ public extension AttrColorRef {
 /// The `PangoAttrColor` structure is used to represent attributes that
 /// are colors.
 open class AttrColor: AttrColorProtocol {
-    /// Untyped pointer to the underlying `PangoAttrColor` instance.
+        /// Untyped pointer to the underlying `PangoAttrColor` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -563,7 +703,7 @@ open class AttrColor: AttrColorProtocol {
         // no reference counting for PangoAttrColor, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttrColor`.
+    /// Do-nothing destructor for `PangoAttrColor`.
     deinit {
         // no reference counting for PangoAttrColor, cannot unref(cast(_ptr))
     }
@@ -631,14 +771,42 @@ open class AttrColor: AttrColorProtocol {
 
 }
 
-// MARK: - no AttrColor properties
+// MARK: no AttrColor properties
 
-// MARK: - no signals
+// MARK: no AttrColor signals
 
 
+// MARK: AttrColor Record: AttrColorProtocol extension (methods and fields)
 public extension AttrColorProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrColor` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrColor> { return ptr.assumingMemoryBound(to: PangoAttrColor.self) }
+
+
+    /// the common portion of the attribute
+    var attr: PangoAttribute {
+        /// the common portion of the attribute
+        get {
+            let rv: PangoAttribute = cast(_ptr.pointee.attr)
+            return rv
+        }
+        /// the common portion of the attribute
+         set {
+            _ptr.pointee.attr = cast(newValue)
+        }
+    }
+
+    /// the `PangoColor` which is the value of the attribute
+    var color: PangoColor {
+        /// the `PangoColor` which is the value of the attribute
+        get {
+            let rv: PangoColor = cast(_ptr.pointee.color)
+            return rv
+        }
+        /// the `PangoColor` which is the value of the attribute
+         set {
+            _ptr.pointee.color = cast(newValue)
+        }
+    }
 
 }
 
@@ -654,7 +822,7 @@ public extension AttrColorProtocol {
 /// The `PangoAttrFloat` structure is used to represent attributes with
 /// a float or double value.
 public protocol AttrFloatProtocol {
-    /// Untyped pointer to the underlying `PangoAttrFloat` instance.
+        /// Untyped pointer to the underlying `PangoAttrFloat` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrFloat` instance.
@@ -668,7 +836,7 @@ public protocol AttrFloatProtocol {
 /// The `PangoAttrFloat` structure is used to represent attributes with
 /// a float or double value.
 public struct AttrFloatRef: AttrFloatProtocol {
-    /// Untyped pointer to the underlying `PangoAttrFloat` instance.
+        /// Untyped pointer to the underlying `PangoAttrFloat` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -722,7 +890,7 @@ public extension AttrFloatRef {
 /// The `PangoAttrFloat` structure is used to represent attributes with
 /// a float or double value.
 open class AttrFloat: AttrFloatProtocol {
-    /// Untyped pointer to the underlying `PangoAttrFloat` instance.
+        /// Untyped pointer to the underlying `PangoAttrFloat` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -751,7 +919,7 @@ open class AttrFloat: AttrFloatProtocol {
         // no reference counting for PangoAttrFloat, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttrFloat`.
+    /// Do-nothing destructor for `PangoAttrFloat`.
     deinit {
         // no reference counting for PangoAttrFloat, cannot unref(cast(_ptr))
     }
@@ -819,14 +987,42 @@ open class AttrFloat: AttrFloatProtocol {
 
 }
 
-// MARK: - no AttrFloat properties
+// MARK: no AttrFloat properties
 
-// MARK: - no signals
+// MARK: no AttrFloat signals
 
 
+// MARK: AttrFloat Record: AttrFloatProtocol extension (methods and fields)
 public extension AttrFloatProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrFloat` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrFloat> { return ptr.assumingMemoryBound(to: PangoAttrFloat.self) }
+
+
+    /// the common portion of the attribute
+    var attr: PangoAttribute {
+        /// the common portion of the attribute
+        get {
+            let rv: PangoAttribute = cast(_ptr.pointee.attr)
+            return rv
+        }
+        /// the common portion of the attribute
+         set {
+            _ptr.pointee.attr = cast(newValue)
+        }
+    }
+
+    /// the value of the attribute
+    var value: Double {
+        /// the value of the attribute
+        get {
+            let rv: Double = cast(_ptr.pointee.value)
+            return rv
+        }
+        /// the value of the attribute
+         set {
+            _ptr.pointee.value = cast(newValue)
+        }
+    }
 
 }
 
@@ -842,7 +1038,7 @@ public extension AttrFloatProtocol {
 /// The `PangoAttrFontDesc` structure is used to store an attribute that
 /// sets all aspects of the font description at once.
 public protocol AttrFontDescProtocol {
-    /// Untyped pointer to the underlying `PangoAttrFontDesc` instance.
+        /// Untyped pointer to the underlying `PangoAttrFontDesc` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrFontDesc` instance.
@@ -856,7 +1052,7 @@ public protocol AttrFontDescProtocol {
 /// The `PangoAttrFontDesc` structure is used to store an attribute that
 /// sets all aspects of the font description at once.
 public struct AttrFontDescRef: AttrFontDescProtocol {
-    /// Untyped pointer to the underlying `PangoAttrFontDesc` instance.
+        /// Untyped pointer to the underlying `PangoAttrFontDesc` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -910,7 +1106,7 @@ public extension AttrFontDescRef {
 /// The `PangoAttrFontDesc` structure is used to store an attribute that
 /// sets all aspects of the font description at once.
 open class AttrFontDesc: AttrFontDescProtocol {
-    /// Untyped pointer to the underlying `PangoAttrFontDesc` instance.
+        /// Untyped pointer to the underlying `PangoAttrFontDesc` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -939,7 +1135,7 @@ open class AttrFontDesc: AttrFontDescProtocol {
         // no reference counting for PangoAttrFontDesc, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttrFontDesc`.
+    /// Do-nothing destructor for `PangoAttrFontDesc`.
     deinit {
         // no reference counting for PangoAttrFontDesc, cannot unref(cast(_ptr))
     }
@@ -1007,14 +1203,42 @@ open class AttrFontDesc: AttrFontDescProtocol {
 
 }
 
-// MARK: - no AttrFontDesc properties
+// MARK: no AttrFontDesc properties
 
-// MARK: - no signals
+// MARK: no AttrFontDesc signals
 
 
+// MARK: AttrFontDesc Record: AttrFontDescProtocol extension (methods and fields)
 public extension AttrFontDescProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrFontDesc` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrFontDesc> { return ptr.assumingMemoryBound(to: PangoAttrFontDesc.self) }
+
+
+    /// the common portion of the attribute
+    var attr: PangoAttribute {
+        /// the common portion of the attribute
+        get {
+            let rv: PangoAttribute = cast(_ptr.pointee.attr)
+            return rv
+        }
+        /// the common portion of the attribute
+         set {
+            _ptr.pointee.attr = cast(newValue)
+        }
+    }
+
+    /// the font description which is the value of this attribute
+    var desc: UnsafeMutablePointer<PangoFontDescription> {
+        /// the font description which is the value of this attribute
+        get {
+            let rv: UnsafeMutablePointer<PangoFontDescription> = cast(_ptr.pointee.desc)
+            return rv
+        }
+        /// the font description which is the value of this attribute
+         set {
+            _ptr.pointee.desc = cast(newValue)
+        }
+    }
 
 }
 
@@ -1030,7 +1254,7 @@ public extension AttrFontDescProtocol {
 /// The `PangoAttrFontFeatures` structure is used to represent OpenType
 /// font features as an attribute.
 public protocol AttrFontFeaturesProtocol {
-    /// Untyped pointer to the underlying `PangoAttrFontFeatures` instance.
+        /// Untyped pointer to the underlying `PangoAttrFontFeatures` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrFontFeatures` instance.
@@ -1044,7 +1268,7 @@ public protocol AttrFontFeaturesProtocol {
 /// The `PangoAttrFontFeatures` structure is used to represent OpenType
 /// font features as an attribute.
 public struct AttrFontFeaturesRef: AttrFontFeaturesProtocol {
-    /// Untyped pointer to the underlying `PangoAttrFontFeatures` instance.
+        /// Untyped pointer to the underlying `PangoAttrFontFeatures` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1098,7 +1322,7 @@ public extension AttrFontFeaturesRef {
 /// The `PangoAttrFontFeatures` structure is used to represent OpenType
 /// font features as an attribute.
 open class AttrFontFeatures: AttrFontFeaturesProtocol {
-    /// Untyped pointer to the underlying `PangoAttrFontFeatures` instance.
+        /// Untyped pointer to the underlying `PangoAttrFontFeatures` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1127,7 +1351,7 @@ open class AttrFontFeatures: AttrFontFeaturesProtocol {
         // no reference counting for PangoAttrFontFeatures, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttrFontFeatures`.
+    /// Do-nothing destructor for `PangoAttrFontFeatures`.
     deinit {
         // no reference counting for PangoAttrFontFeatures, cannot unref(cast(_ptr))
     }
@@ -1195,14 +1419,42 @@ open class AttrFontFeatures: AttrFontFeaturesProtocol {
 
 }
 
-// MARK: - no AttrFontFeatures properties
+// MARK: no AttrFontFeatures properties
 
-// MARK: - no signals
+// MARK: no AttrFontFeatures signals
 
 
+// MARK: AttrFontFeatures Record: AttrFontFeaturesProtocol extension (methods and fields)
 public extension AttrFontFeaturesProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrFontFeatures` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrFontFeatures> { return ptr.assumingMemoryBound(to: PangoAttrFontFeatures.self) }
+
+
+    /// the common portion of the attribute
+    var attr: PangoAttribute {
+        /// the common portion of the attribute
+        get {
+            let rv: PangoAttribute = cast(_ptr.pointee.attr)
+            return rv
+        }
+        /// the common portion of the attribute
+         set {
+            _ptr.pointee.attr = cast(newValue)
+        }
+    }
+
+    /// the featues, as a string in CSS syntax
+    var features: UnsafePointer<CChar> {
+        /// the featues, as a string in CSS syntax
+        get {
+            let rv: UnsafePointer<CChar> = cast(_ptr.pointee.features)
+            return rv
+        }
+        /// the featues, as a string in CSS syntax
+         set {
+            _ptr.pointee.features = cast(newValue)
+        }
+    }
 
 }
 
@@ -1218,7 +1470,7 @@ public extension AttrFontFeaturesProtocol {
 /// The `PangoAttrInt` structure is used to represent attributes with
 /// an integer or enumeration value.
 public protocol AttrIntProtocol {
-    /// Untyped pointer to the underlying `PangoAttrInt` instance.
+        /// Untyped pointer to the underlying `PangoAttrInt` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrInt` instance.
@@ -1232,7 +1484,7 @@ public protocol AttrIntProtocol {
 /// The `PangoAttrInt` structure is used to represent attributes with
 /// an integer or enumeration value.
 public struct AttrIntRef: AttrIntProtocol {
-    /// Untyped pointer to the underlying `PangoAttrInt` instance.
+        /// Untyped pointer to the underlying `PangoAttrInt` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1286,7 +1538,7 @@ public extension AttrIntRef {
 /// The `PangoAttrInt` structure is used to represent attributes with
 /// an integer or enumeration value.
 open class AttrInt: AttrIntProtocol {
-    /// Untyped pointer to the underlying `PangoAttrInt` instance.
+        /// Untyped pointer to the underlying `PangoAttrInt` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1315,7 +1567,7 @@ open class AttrInt: AttrIntProtocol {
         // no reference counting for PangoAttrInt, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttrInt`.
+    /// Do-nothing destructor for `PangoAttrInt`.
     deinit {
         // no reference counting for PangoAttrInt, cannot unref(cast(_ptr))
     }
@@ -1383,14 +1635,42 @@ open class AttrInt: AttrIntProtocol {
 
 }
 
-// MARK: - no AttrInt properties
+// MARK: no AttrInt properties
 
-// MARK: - no signals
+// MARK: no AttrInt signals
 
 
+// MARK: AttrInt Record: AttrIntProtocol extension (methods and fields)
 public extension AttrIntProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrInt` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrInt> { return ptr.assumingMemoryBound(to: PangoAttrInt.self) }
+
+
+    /// the common portion of the attribute
+    var attr: PangoAttribute {
+        /// the common portion of the attribute
+        get {
+            let rv: PangoAttribute = cast(_ptr.pointee.attr)
+            return rv
+        }
+        /// the common portion of the attribute
+         set {
+            _ptr.pointee.attr = cast(newValue)
+        }
+    }
+
+    /// the value of the attribute
+    var value: Int {
+        /// the value of the attribute
+        get {
+            let rv: Int = cast(_ptr.pointee.value)
+            return rv
+        }
+        /// the value of the attribute
+         set {
+            _ptr.pointee.value = cast(newValue)
+        }
+    }
 
 }
 
@@ -1411,7 +1691,7 @@ public extension AttrIntProtocol {
 /// style change, the range of the current style segment and the
 /// attributes currently in effect can be queried.
 public protocol AttrIteratorProtocol {
-    /// Untyped pointer to the underlying `PangoAttrIterator` instance.
+        /// Untyped pointer to the underlying `PangoAttrIterator` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrIterator` instance.
@@ -1430,7 +1710,7 @@ public protocol AttrIteratorProtocol {
 /// style change, the range of the current style segment and the
 /// attributes currently in effect can be queried.
 public struct AttrIteratorRef: AttrIteratorProtocol {
-    /// Untyped pointer to the underlying `PangoAttrIterator` instance.
+        /// Untyped pointer to the underlying `PangoAttrIterator` instance.
     /// For type-safe access, use the generated, typed pointer `attr_iterator_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1489,7 +1769,7 @@ public extension AttrIteratorRef {
 /// style change, the range of the current style segment and the
 /// attributes currently in effect can be queried.
 open class AttrIterator: AttrIteratorProtocol {
-    /// Untyped pointer to the underlying `PangoAttrIterator` instance.
+        /// Untyped pointer to the underlying `PangoAttrIterator` instance.
     /// For type-safe access, use the generated, typed pointer `attr_iterator_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1518,7 +1798,7 @@ open class AttrIterator: AttrIteratorProtocol {
         // no reference counting for PangoAttrIterator, cannot ref(cast(attr_iterator_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttrIterator`.
+    /// Do-nothing destructor for `PangoAttrIterator`.
     deinit {
         // no reference counting for PangoAttrIterator, cannot unref(cast(attr_iterator_ptr))
     }
@@ -1586,18 +1866,19 @@ open class AttrIterator: AttrIteratorProtocol {
 
 }
 
-// MARK: - no AttrIterator properties
+// MARK: no AttrIterator properties
 
-// MARK: - no signals
+// MARK: no AttrIterator signals
 
 
+// MARK: AttrIterator Record: AttrIteratorProtocol extension (methods and fields)
 public extension AttrIteratorProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrIterator` instance.
     var attr_iterator_ptr: UnsafeMutablePointer<PangoAttrIterator> { return ptr.assumingMemoryBound(to: PangoAttrIterator.self) }
 
     /// Copy a `PangoAttrIterator`
     func copy() -> UnsafeMutablePointer<PangoAttrIterator>! {
-        let rv = pango_attr_iterator_copy(cast(attr_iterator_ptr))
+        let rv: UnsafeMutablePointer<PangoAttrIterator>! = cast(pango_attr_iterator_copy(cast(attr_iterator_ptr)))
         return cast(rv)
     }
 
@@ -1612,14 +1893,14 @@ public extension AttrIteratorProtocol {
     /// the attribute whose range starts closest to the current location
     /// is used.
     func get(type: AttrType) -> UnsafeMutablePointer<PangoAttribute>! {
-        let rv = pango_attr_iterator_get(cast(attr_iterator_ptr), type)
+        let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_iterator_get(cast(attr_iterator_ptr), type))
         return cast(rv)
     }
 
     /// Gets a list of all attributes at the current position of the
     /// iterator.
     func getAttrs() -> UnsafeMutablePointer<GSList>! {
-        let rv = pango_attr_iterator_get_attrs(cast(attr_iterator_ptr))
+        let rv: UnsafeMutablePointer<GSList>! = cast(pango_attr_iterator_get_attrs(cast(attr_iterator_ptr)))
         return cast(rv)
     }
 
@@ -1656,7 +1937,7 @@ public extension AttrIteratorProtocol {
     /// the range covering the position just after `start_index` + `length`.
     /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
     func itemize(context: ContextProtocol, text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, attrs: AttrListProtocol) -> UnsafeMutablePointer<GList>! {
-        let rv = pango_itemize(cast(context.ptr), text, start_index, length, cast(attrs.ptr), cast(attr_iterator_ptr))
+        let rv: UnsafeMutablePointer<GList>! = cast(pango_itemize(cast(context.ptr), text, start_index, length, cast(attrs.ptr), cast(attr_iterator_ptr)))
         return cast(rv)
     }
 
@@ -1664,7 +1945,7 @@ public extension AttrIteratorProtocol {
     /// computing bidirectional levels (see pango_context_set_base_dir ()),
     /// is specified explicitly rather than gotten from the `PangoContext`.
     func itemizeWithBaseDir(context: ContextProtocol, baseDir base_dir: Direction, text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, attrs: AttrListProtocol) -> UnsafeMutablePointer<GList>! {
-        let rv = pango_itemize_with_base_dir(cast(context.ptr), base_dir, text, start_index, length, cast(attrs.ptr), cast(attr_iterator_ptr))
+        let rv: UnsafeMutablePointer<GList>! = cast(pango_itemize_with_base_dir(cast(context.ptr), base_dir, text, start_index, length, cast(attrs.ptr), cast(attr_iterator_ptr)))
         return cast(rv)
     }
     /// Gets a list of all attributes at the current position of the
@@ -1673,10 +1954,12 @@ public extension AttrIteratorProtocol {
         /// Gets a list of all attributes at the current position of the
         /// iterator.
         get {
-            let rv = pango_attr_iterator_get_attrs(cast(attr_iterator_ptr))
+            let rv: UnsafeMutablePointer<GSList>! = cast(pango_attr_iterator_get_attrs(cast(attr_iterator_ptr)))
             return cast(rv)
         }
     }
+
+
 }
 
 
@@ -1691,7 +1974,7 @@ public extension AttrIteratorProtocol {
 /// The `PangoAttrLanguage` structure is used to represent attributes that
 /// are languages.
 public protocol AttrLanguageProtocol {
-    /// Untyped pointer to the underlying `PangoAttrLanguage` instance.
+        /// Untyped pointer to the underlying `PangoAttrLanguage` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrLanguage` instance.
@@ -1705,7 +1988,7 @@ public protocol AttrLanguageProtocol {
 /// The `PangoAttrLanguage` structure is used to represent attributes that
 /// are languages.
 public struct AttrLanguageRef: AttrLanguageProtocol {
-    /// Untyped pointer to the underlying `PangoAttrLanguage` instance.
+        /// Untyped pointer to the underlying `PangoAttrLanguage` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1759,7 +2042,7 @@ public extension AttrLanguageRef {
 /// The `PangoAttrLanguage` structure is used to represent attributes that
 /// are languages.
 open class AttrLanguage: AttrLanguageProtocol {
-    /// Untyped pointer to the underlying `PangoAttrLanguage` instance.
+        /// Untyped pointer to the underlying `PangoAttrLanguage` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1788,7 +2071,7 @@ open class AttrLanguage: AttrLanguageProtocol {
         // no reference counting for PangoAttrLanguage, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttrLanguage`.
+    /// Do-nothing destructor for `PangoAttrLanguage`.
     deinit {
         // no reference counting for PangoAttrLanguage, cannot unref(cast(_ptr))
     }
@@ -1856,14 +2139,42 @@ open class AttrLanguage: AttrLanguageProtocol {
 
 }
 
-// MARK: - no AttrLanguage properties
+// MARK: no AttrLanguage properties
 
-// MARK: - no signals
+// MARK: no AttrLanguage signals
 
 
+// MARK: AttrLanguage Record: AttrLanguageProtocol extension (methods and fields)
 public extension AttrLanguageProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrLanguage` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrLanguage> { return ptr.assumingMemoryBound(to: PangoAttrLanguage.self) }
+
+
+    /// the common portion of the attribute
+    var attr: PangoAttribute {
+        /// the common portion of the attribute
+        get {
+            let rv: PangoAttribute = cast(_ptr.pointee.attr)
+            return rv
+        }
+        /// the common portion of the attribute
+         set {
+            _ptr.pointee.attr = cast(newValue)
+        }
+    }
+
+    /// the `PangoLanguage` which is the value of the attribute
+    var value: UnsafeMutablePointer<PangoLanguage> {
+        /// the `PangoLanguage` which is the value of the attribute
+        get {
+            let rv: UnsafeMutablePointer<PangoLanguage> = cast(_ptr.pointee.value)
+            return rv
+        }
+        /// the `PangoLanguage` which is the value of the attribute
+         set {
+            _ptr.pointee.value = cast(newValue)
+        }
+    }
 
 }
 
@@ -1887,7 +2198,7 @@ public extension AttrLanguageProtocol {
 /// of text. In general, you should not use a single `PangoAttrList`
 /// for more than one paragraph of text.
 public protocol AttrListProtocol {
-    /// Untyped pointer to the underlying `PangoAttrList` instance.
+        /// Untyped pointer to the underlying `PangoAttrList` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrList` instance.
@@ -1909,7 +2220,7 @@ public protocol AttrListProtocol {
 /// of text. In general, you should not use a single `PangoAttrList`
 /// for more than one paragraph of text.
 public struct AttrListRef: AttrListProtocol {
-    /// Untyped pointer to the underlying `PangoAttrList` instance.
+        /// Untyped pointer to the underlying `PangoAttrList` instance.
     /// For type-safe access, use the generated, typed pointer `attr_list_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1956,7 +2267,7 @@ public extension AttrListRef {
 
         /// Create a new empty attribute list with a reference count of one.
     init() {
-        let rv = pango_attr_list_new()
+        let rv: UnsafeMutablePointer<PangoAttrList>! = cast(pango_attr_list_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -1976,7 +2287,7 @@ public extension AttrListRef {
 /// of text. In general, you should not use a single `PangoAttrList`
 /// for more than one paragraph of text.
 open class AttrList: AttrListProtocol {
-    /// Untyped pointer to the underlying `PangoAttrList` instance.
+        /// Untyped pointer to the underlying `PangoAttrList` instance.
     /// For type-safe access, use the generated, typed pointer `attr_list_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -2071,18 +2382,19 @@ open class AttrList: AttrListProtocol {
 
     /// Create a new empty attribute list with a reference count of one.
     public init() {
-        let rv = pango_attr_list_new()
+        let rv: UnsafeMutablePointer<PangoAttrList>! = cast(pango_attr_list_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
 
 }
 
-// MARK: - no AttrList properties
+// MARK: no AttrList properties
 
-// MARK: - no signals
+// MARK: no AttrList signals
 
 
+// MARK: AttrList Record: AttrListProtocol extension (methods and fields)
 public extension AttrListProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrList` instance.
     var attr_list_ptr: UnsafeMutablePointer<PangoAttrList> { return ptr.assumingMemoryBound(to: PangoAttrList.self) }
@@ -2103,7 +2415,7 @@ public extension AttrListProtocol {
 
     /// Copy `list` and return an identical new list.
     func copy() -> UnsafeMutablePointer<PangoAttrList>! {
-        let rv = pango_attr_list_copy(cast(attr_list_ptr))
+        let rv: UnsafeMutablePointer<PangoAttrList>! = cast(pango_attr_list_copy(cast(attr_list_ptr)))
         return cast(rv)
     }
 
@@ -2111,20 +2423,20 @@ public extension AttrListProtocol {
     /// of `list` for which `func` returns `true` and inserts them into
     /// a new list.
     func filter(func_: @escaping AttrFilterFunc, data: UnsafeMutableRawPointer) -> UnsafeMutablePointer<PangoAttrList>! {
-        let rv = pango_attr_list_filter(cast(attr_list_ptr), func_, cast(data))
+        let rv: UnsafeMutablePointer<PangoAttrList>! = cast(pango_attr_list_filter(cast(attr_list_ptr), func_, cast(data)))
         return cast(rv)
     }
 
     /// Gets a list of all attributes in `list`.
     func getAttributes() -> UnsafeMutablePointer<GSList>! {
-        let rv = pango_attr_list_get_attributes(cast(attr_list_ptr))
+        let rv: UnsafeMutablePointer<GSList>! = cast(pango_attr_list_get_attributes(cast(attr_list_ptr)))
         return cast(rv)
     }
 
     /// Create a iterator initialized to the beginning of the list.
     /// `list` must not be modified until this iterator is freed.
     func getIterator() -> UnsafeMutablePointer<PangoAttrIterator>! {
-        let rv = pango_attr_list_get_iterator(cast(attr_list_ptr))
+        let rv: UnsafeMutablePointer<PangoAttrIterator>! = cast(pango_attr_list_get_iterator(cast(attr_list_ptr)))
         return cast(rv)
     }
 
@@ -2146,7 +2458,7 @@ public extension AttrListProtocol {
 
     /// Increase the reference count of the given attribute list by one.
     func ref() -> UnsafeMutablePointer<PangoAttrList>! {
-        let rv = pango_attr_list_ref(cast(attr_list_ptr))
+        let rv: UnsafeMutablePointer<PangoAttrList>! = cast(pango_attr_list_ref(cast(attr_list_ptr)))
         return cast(rv)
     }
 
@@ -2205,7 +2517,7 @@ public extension AttrListProtocol {
     /// the range covering the position just after `start_index` + `length`.
     /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
     func itemize(context: ContextProtocol, text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, cachedIter cached_iter: AttrIteratorProtocol) -> UnsafeMutablePointer<GList>! {
-        let rv = pango_itemize(cast(context.ptr), text, start_index, length, cast(attr_list_ptr), cast(cached_iter.ptr))
+        let rv: UnsafeMutablePointer<GList>! = cast(pango_itemize(cast(context.ptr), text, start_index, length, cast(attr_list_ptr), cast(cached_iter.ptr)))
         return cast(rv)
     }
 
@@ -2213,7 +2525,7 @@ public extension AttrListProtocol {
     /// computing bidirectional levels (see pango_context_set_base_dir ()),
     /// is specified explicitly rather than gotten from the `PangoContext`.
     func itemizeWithBaseDir(context: ContextProtocol, baseDir base_dir: Direction, text: UnsafePointer<CChar>, startIndex start_index: CInt, length: CInt, cachedIter cached_iter: AttrIteratorProtocol) -> UnsafeMutablePointer<GList>! {
-        let rv = pango_itemize_with_base_dir(cast(context.ptr), base_dir, text, start_index, length, cast(attr_list_ptr), cast(cached_iter.ptr))
+        let rv: UnsafeMutablePointer<GList>! = cast(pango_itemize_with_base_dir(cast(context.ptr), base_dir, text, start_index, length, cast(attr_list_ptr), cast(cached_iter.ptr)))
         return cast(rv)
     }
 
@@ -2222,11 +2534,9 @@ public extension AttrListProtocol {
     /// markup. This function will not free `context`, use `g_markup_parse_context_free()`
     /// to do so.
     func markupParserFinish(context: MarkupParseContextProtocol, text: UnsafeMutablePointer<UnsafeMutablePointer<CChar>>, accelChar accel_char: UnsafeMutablePointer<gunichar>) throws -> Bool {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
+        var error: UnsafeMutablePointer<GError>?
         let rv = pango_markup_parser_finish(cast(context.ptr), cast(attr_list_ptr), cast(text), cast(accel_char), &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
+        if let error = error { throw ErrorType(error) }
         return Bool(rv != 0)
     }
 
@@ -2247,18 +2557,16 @@ public extension AttrListProtocol {
     /// If any error happens, none of the output arguments are touched except
     /// for `error`.
     func parseMarkup(markupText markup_text: UnsafePointer<CChar>, length: CInt, accelMarker accel_marker: gunichar, text: UnsafeMutablePointer<UnsafeMutablePointer<CChar>>, accelChar accel_char: UnsafeMutablePointer<gunichar>) throws -> Bool {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
+        var error: UnsafeMutablePointer<GError>?
         let rv = pango_parse_markup(markup_text, length, accel_marker, cast(attr_list_ptr), cast(text), cast(accel_char), &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
+        if let error = error { throw ErrorType(error) }
         return Bool(rv != 0)
     }
     /// Gets a list of all attributes in `list`.
     var attributes: UnsafeMutablePointer<GSList>! {
         /// Gets a list of all attributes in `list`.
         get {
-            let rv = pango_attr_list_get_attributes(cast(attr_list_ptr))
+            let rv: UnsafeMutablePointer<GSList>! = cast(pango_attr_list_get_attributes(cast(attr_list_ptr)))
             return cast(rv)
         }
     }
@@ -2269,10 +2577,12 @@ public extension AttrListProtocol {
         /// Create a iterator initialized to the beginning of the list.
         /// `list` must not be modified until this iterator is freed.
         get {
-            let rv = pango_attr_list_get_iterator(cast(attr_list_ptr))
+            let rv: UnsafeMutablePointer<PangoAttrIterator>! = cast(pango_attr_list_get_iterator(cast(attr_list_ptr)))
             return cast(rv)
         }
     }
+
+
 }
 
 
@@ -2287,7 +2597,7 @@ public extension AttrListProtocol {
 /// The `PangoAttrShape` structure is used to represent attributes which
 /// impose shape restrictions.
 public protocol AttrShapeProtocol {
-    /// Untyped pointer to the underlying `PangoAttrShape` instance.
+        /// Untyped pointer to the underlying `PangoAttrShape` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrShape` instance.
@@ -2301,7 +2611,7 @@ public protocol AttrShapeProtocol {
 /// The `PangoAttrShape` structure is used to represent attributes which
 /// impose shape restrictions.
 public struct AttrShapeRef: AttrShapeProtocol {
-    /// Untyped pointer to the underlying `PangoAttrShape` instance.
+        /// Untyped pointer to the underlying `PangoAttrShape` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -2355,7 +2665,7 @@ public extension AttrShapeRef {
 /// The `PangoAttrShape` structure is used to represent attributes which
 /// impose shape restrictions.
 open class AttrShape: AttrShapeProtocol {
-    /// Untyped pointer to the underlying `PangoAttrShape` instance.
+        /// Untyped pointer to the underlying `PangoAttrShape` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -2384,7 +2694,7 @@ open class AttrShape: AttrShapeProtocol {
         // no reference counting for PangoAttrShape, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttrShape`.
+    /// Do-nothing destructor for `PangoAttrShape`.
     deinit {
         // no reference counting for PangoAttrShape, cannot unref(cast(_ptr))
     }
@@ -2452,14 +2762,94 @@ open class AttrShape: AttrShapeProtocol {
 
 }
 
-// MARK: - no AttrShape properties
+// MARK: no AttrShape properties
 
-// MARK: - no signals
+// MARK: no AttrShape signals
 
 
+// MARK: AttrShape Record: AttrShapeProtocol extension (methods and fields)
 public extension AttrShapeProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrShape` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrShape> { return ptr.assumingMemoryBound(to: PangoAttrShape.self) }
+
+
+    /// the common portion of the attribute
+    var attr: PangoAttribute {
+        /// the common portion of the attribute
+        get {
+            let rv: PangoAttribute = cast(_ptr.pointee.attr)
+            return rv
+        }
+        /// the common portion of the attribute
+         set {
+            _ptr.pointee.attr = cast(newValue)
+        }
+    }
+
+    /// the ink rectangle to restrict to
+    var inkRect: PangoRectangle {
+        /// the ink rectangle to restrict to
+        get {
+            let rv: PangoRectangle = cast(_ptr.pointee.ink_rect)
+            return rv
+        }
+        /// the ink rectangle to restrict to
+         set {
+            _ptr.pointee.ink_rect = cast(newValue)
+        }
+    }
+
+    /// the logical rectangle to restrict to
+    var logicalRect: PangoRectangle {
+        /// the logical rectangle to restrict to
+        get {
+            let rv: PangoRectangle = cast(_ptr.pointee.logical_rect)
+            return rv
+        }
+        /// the logical rectangle to restrict to
+         set {
+            _ptr.pointee.logical_rect = cast(newValue)
+        }
+    }
+
+    /// user data set (see `pango_attr_shape_new_with_data()`)
+    var data: UnsafeMutableRawPointer {
+        /// user data set (see `pango_attr_shape_new_with_data()`)
+        get {
+            let rv: UnsafeMutableRawPointer = cast(_ptr.pointee.data)
+            return rv
+        }
+        /// user data set (see `pango_attr_shape_new_with_data()`)
+         set {
+            _ptr.pointee.data = cast(newValue)
+        }
+    }
+
+    /// copy function for the user data
+    var copyFunc: PangoAttrDataCopyFunc {
+        /// copy function for the user data
+        get {
+            let rv: PangoAttrDataCopyFunc = cast(_ptr.pointee.copy_func)
+            return rv
+        }
+        /// copy function for the user data
+         set {
+            _ptr.pointee.copy_func = cast(newValue)
+        }
+    }
+
+    /// destroy function for the user data
+    var destroyFunc: GDestroyNotify {
+        /// destroy function for the user data
+        get {
+            let rv: GDestroyNotify = cast(_ptr.pointee.destroy_func)
+            return rv
+        }
+        /// destroy function for the user data
+         set {
+            _ptr.pointee.destroy_func = cast(newValue)
+        }
+    }
 
 }
 
@@ -2475,7 +2865,7 @@ public extension AttrShapeProtocol {
 /// The `PangoAttrSize` structure is used to represent attributes which
 /// set font size.
 public protocol AttrSizeProtocol {
-    /// Untyped pointer to the underlying `PangoAttrSize` instance.
+        /// Untyped pointer to the underlying `PangoAttrSize` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrSize` instance.
@@ -2489,7 +2879,7 @@ public protocol AttrSizeProtocol {
 /// The `PangoAttrSize` structure is used to represent attributes which
 /// set font size.
 public struct AttrSizeRef: AttrSizeProtocol {
-    /// Untyped pointer to the underlying `PangoAttrSize` instance.
+        /// Untyped pointer to the underlying `PangoAttrSize` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -2543,7 +2933,7 @@ public extension AttrSizeRef {
 /// The `PangoAttrSize` structure is used to represent attributes which
 /// set font size.
 open class AttrSize: AttrSizeProtocol {
-    /// Untyped pointer to the underlying `PangoAttrSize` instance.
+        /// Untyped pointer to the underlying `PangoAttrSize` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -2572,7 +2962,7 @@ open class AttrSize: AttrSizeProtocol {
         // no reference counting for PangoAttrSize, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttrSize`.
+    /// Do-nothing destructor for `PangoAttrSize`.
     deinit {
         // no reference counting for PangoAttrSize, cannot unref(cast(_ptr))
     }
@@ -2640,14 +3030,67 @@ open class AttrSize: AttrSizeProtocol {
 
 }
 
-// MARK: - no AttrSize properties
+// MARK: no AttrSize properties
 
-// MARK: - no signals
+// MARK: no AttrSize signals
 
 
+// MARK: AttrSize Record: AttrSizeProtocol extension (methods and fields)
 public extension AttrSizeProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrSize` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrSize> { return ptr.assumingMemoryBound(to: PangoAttrSize.self) }
+
+
+    /// the common portion of the attribute
+    var attr: PangoAttribute {
+        /// the common portion of the attribute
+        get {
+            let rv: PangoAttribute = cast(_ptr.pointee.attr)
+            return rv
+        }
+        /// the common portion of the attribute
+         set {
+            _ptr.pointee.attr = cast(newValue)
+        }
+    }
+
+    /// size of font, in units of 1/`PANGO_SCALE` of a point (for
+    /// `PANGO_ATTR_SIZE`) or of a device uni (for `PANGO_ATTR_ABSOLUTE_SIZE`)
+    var size: Int {
+        /// size of font, in units of 1/`PANGO_SCALE` of a point (for
+        /// `PANGO_ATTR_SIZE`) or of a device uni (for `PANGO_ATTR_ABSOLUTE_SIZE`)
+        get {
+            let rv: Int = cast(_ptr.pointee.size)
+            return rv
+        }
+        /// size of font, in units of 1/`PANGO_SCALE` of a point (for
+        /// `PANGO_ATTR_SIZE`) or of a device uni (for `PANGO_ATTR_ABSOLUTE_SIZE`)
+         set {
+            _ptr.pointee.size = cast(newValue)
+        }
+    }
+
+    /// whether the font size is in device units or points.
+    /// This field is only present for compatibility with Pango-1.8.0
+    /// (`PANGO_ATTR_ABSOLUTE_SIZE` was added in 1.8.1); and always will
+    /// be `false` for `PANGO_ATTR_SIZE` and `true` for `PANGO_ATTR_ABSOLUTE_SIZE`.
+    var absolute: Int {
+        /// whether the font size is in device units or points.
+        /// This field is only present for compatibility with Pango-1.8.0
+        /// (`PANGO_ATTR_ABSOLUTE_SIZE` was added in 1.8.1); and always will
+        /// be `false` for `PANGO_ATTR_SIZE` and `true` for `PANGO_ATTR_ABSOLUTE_SIZE`.
+        get {
+            let rv: Int = cast(_ptr.pointee.absolute)
+            return rv
+        }
+        /// whether the font size is in device units or points.
+        /// This field is only present for compatibility with Pango-1.8.0
+        /// (`PANGO_ATTR_ABSOLUTE_SIZE` was added in 1.8.1); and always will
+        /// be `false` for `PANGO_ATTR_SIZE` and `true` for `PANGO_ATTR_ABSOLUTE_SIZE`.
+         set {
+            _ptr.pointee.absolute = guint(newValue)
+        }
+    }
 
 }
 
@@ -2663,7 +3106,7 @@ public extension AttrSizeProtocol {
 /// The `PangoAttrString` structure is used to represent attributes with
 /// a string value.
 public protocol AttrStringProtocol {
-    /// Untyped pointer to the underlying `PangoAttrString` instance.
+        /// Untyped pointer to the underlying `PangoAttrString` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttrString` instance.
@@ -2677,7 +3120,7 @@ public protocol AttrStringProtocol {
 /// The `PangoAttrString` structure is used to represent attributes with
 /// a string value.
 public struct AttrStringRef: AttrStringProtocol {
-    /// Untyped pointer to the underlying `PangoAttrString` instance.
+        /// Untyped pointer to the underlying `PangoAttrString` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -2731,7 +3174,7 @@ public extension AttrStringRef {
 /// The `PangoAttrString` structure is used to represent attributes with
 /// a string value.
 open class AttrString: AttrStringProtocol {
-    /// Untyped pointer to the underlying `PangoAttrString` instance.
+        /// Untyped pointer to the underlying `PangoAttrString` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -2760,7 +3203,7 @@ open class AttrString: AttrStringProtocol {
         // no reference counting for PangoAttrString, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttrString`.
+    /// Do-nothing destructor for `PangoAttrString`.
     deinit {
         // no reference counting for PangoAttrString, cannot unref(cast(_ptr))
     }
@@ -2828,14 +3271,42 @@ open class AttrString: AttrStringProtocol {
 
 }
 
-// MARK: - no AttrString properties
+// MARK: no AttrString properties
 
-// MARK: - no signals
+// MARK: no AttrString signals
 
 
+// MARK: AttrString Record: AttrStringProtocol extension (methods and fields)
 public extension AttrStringProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrString` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrString> { return ptr.assumingMemoryBound(to: PangoAttrString.self) }
+
+
+    /// the common portion of the attribute
+    var attr: PangoAttribute {
+        /// the common portion of the attribute
+        get {
+            let rv: PangoAttribute = cast(_ptr.pointee.attr)
+            return rv
+        }
+        /// the common portion of the attribute
+         set {
+            _ptr.pointee.attr = cast(newValue)
+        }
+    }
+
+    /// the string which is the value of the attribute
+    var value: UnsafePointer<CChar> {
+        /// the string which is the value of the attribute
+        get {
+            let rv: UnsafePointer<CChar> = cast(_ptr.pointee.value)
+            return rv
+        }
+        /// the string which is the value of the attribute
+         set {
+            _ptr.pointee.value = cast(newValue)
+        }
+    }
 
 }
 
@@ -2855,7 +3326,7 @@ public extension AttrStringProtocol {
 /// applies and should be initialized using `pango_attribute_init()`.
 /// By default an attribute will have an all-inclusive range of [0,`G_MAXUINT`].
 public protocol AttributeProtocol {
-    /// Untyped pointer to the underlying `PangoAttribute` instance.
+        /// Untyped pointer to the underlying `PangoAttribute` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoAttribute` instance.
@@ -2873,7 +3344,7 @@ public protocol AttributeProtocol {
 /// applies and should be initialized using `pango_attribute_init()`.
 /// By default an attribute will have an all-inclusive range of [0,`G_MAXUINT`].
 public struct AttributeRef: AttributeProtocol {
-    /// Untyped pointer to the underlying `PangoAttribute` instance.
+        /// Untyped pointer to the underlying `PangoAttribute` instance.
     /// For type-safe access, use the generated, typed pointer `attribute_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -2931,7 +3402,7 @@ public extension AttributeRef {
 /// applies and should be initialized using `pango_attribute_init()`.
 /// By default an attribute will have an all-inclusive range of [0,`G_MAXUINT`].
 open class Attribute: AttributeProtocol {
-    /// Untyped pointer to the underlying `PangoAttribute` instance.
+        /// Untyped pointer to the underlying `PangoAttribute` instance.
     /// For type-safe access, use the generated, typed pointer `attribute_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -2960,7 +3431,7 @@ open class Attribute: AttributeProtocol {
         // no reference counting for PangoAttribute, cannot ref(cast(attribute_ptr))
     }
 
-    /// Do-nothing destructor for`PangoAttribute`.
+    /// Do-nothing destructor for `PangoAttribute`.
     deinit {
         // no reference counting for PangoAttribute, cannot unref(cast(attribute_ptr))
     }
@@ -3028,18 +3499,19 @@ open class Attribute: AttributeProtocol {
 
 }
 
-// MARK: - no Attribute properties
+// MARK: no Attribute properties
 
-// MARK: - no signals
+// MARK: no Attribute signals
 
 
+// MARK: Attribute Record: AttributeProtocol extension (methods and fields)
 public extension AttributeProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttribute` instance.
     var attribute_ptr: UnsafeMutablePointer<PangoAttribute> { return ptr.assumingMemoryBound(to: PangoAttribute.self) }
 
     /// Make a copy of an attribute.
     func copy() -> UnsafeMutablePointer<PangoAttribute>! {
-        let rv = pango_attribute_copy(cast(attribute_ptr))
+        let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attribute_copy(cast(attribute_ptr)))
         return cast(rv)
     }
 
@@ -3066,6 +3538,49 @@ public extension AttributeProtocol {
         pango_attribute_init(cast(attribute_ptr), cast(klass.ptr))
     
     }
+
+    /// the class structure holding information about the type of the attribute
+    var klass: UnsafePointer<PangoAttrClass> {
+        /// the class structure holding information about the type of the attribute
+        get {
+            let rv: UnsafePointer<PangoAttrClass> = cast(attribute_ptr.pointee.klass)
+            return rv
+        }
+        /// the class structure holding information about the type of the attribute
+         set {
+            attribute_ptr.pointee.klass = cast(newValue)
+        }
+    }
+
+    /// the start index of the range (in bytes).
+    var startIndex: Int {
+        /// the start index of the range (in bytes).
+        get {
+            let rv: Int = cast(attribute_ptr.pointee.start_index)
+            return rv
+        }
+        /// the start index of the range (in bytes).
+         set {
+            attribute_ptr.pointee.start_index = guint(newValue)
+        }
+    }
+
+    /// end index of the range (in bytes). The character at this index
+    /// is not included in the range.
+    var endIndex: Int {
+        /// end index of the range (in bytes). The character at this index
+        /// is not included in the range.
+        get {
+            let rv: Int = cast(attribute_ptr.pointee.end_index)
+            return rv
+        }
+        /// end index of the range (in bytes). The character at this index
+        /// is not included in the range.
+         set {
+            attribute_ptr.pointee.end_index = guint(newValue)
+        }
+    }
+
 }
 
 
@@ -3080,7 +3595,7 @@ public extension AttributeProtocol {
 /// The `PangoColor` structure is used to
 /// represent a color in an uncalibrated RGB color-space.
 public protocol ColorProtocol {
-    /// Untyped pointer to the underlying `PangoColor` instance.
+        /// Untyped pointer to the underlying `PangoColor` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoColor` instance.
@@ -3094,7 +3609,7 @@ public protocol ColorProtocol {
 /// The `PangoColor` structure is used to
 /// represent a color in an uncalibrated RGB color-space.
 public struct ColorRef: ColorProtocol {
-    /// Untyped pointer to the underlying `PangoColor` instance.
+        /// Untyped pointer to the underlying `PangoColor` instance.
     /// For type-safe access, use the generated, typed pointer `color_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -3148,7 +3663,7 @@ public extension ColorRef {
 /// The `PangoColor` structure is used to
 /// represent a color in an uncalibrated RGB color-space.
 open class Color: ColorProtocol {
-    /// Untyped pointer to the underlying `PangoColor` instance.
+        /// Untyped pointer to the underlying `PangoColor` instance.
     /// For type-safe access, use the generated, typed pointer `color_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -3177,7 +3692,7 @@ open class Color: ColorProtocol {
         // no reference counting for PangoColor, cannot ref(cast(color_ptr))
     }
 
-    /// Do-nothing destructor for`PangoColor`.
+    /// Do-nothing destructor for `PangoColor`.
     deinit {
         // no reference counting for PangoColor, cannot unref(cast(color_ptr))
     }
@@ -3245,11 +3760,12 @@ open class Color: ColorProtocol {
 
 }
 
-// MARK: - no Color properties
+// MARK: no Color properties
 
-// MARK: - no signals
+// MARK: no Color signals
 
 
+// MARK: Color Record: ColorProtocol extension (methods and fields)
 public extension ColorProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoColor` instance.
     var color_ptr: UnsafeMutablePointer<PangoColor> { return ptr.assumingMemoryBound(to: PangoColor.self) }
@@ -3259,7 +3775,7 @@ public extension ColorProtocol {
     /// not that useful otherwise (since colors can just be copied
     /// by assignment in C).
     func copy() -> UnsafeMutablePointer<PangoColor>! {
-        let rv = pango_color_copy(cast(color_ptr))
+        let rv: UnsafeMutablePointer<PangoColor>! = cast(pango_color_copy(cast(color_ptr)))
         return cast(rv)
     }
 
@@ -3287,9 +3803,49 @@ public extension ColorProtocol {
     /// <literal>g</literal> and <literal>b</literal> are hex digits representing
     /// the red, green, and blue components respectively.
     func toString() -> String! {
-        let rv = pango_color_to_string(cast(color_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(pango_color_to_string(cast(color_ptr)))
+        return cast(rv)
     }
+
+    /// value of red component
+    var red: UInt16 {
+        /// value of red component
+        get {
+            let rv: UInt16 = cast(color_ptr.pointee.red)
+            return rv
+        }
+        /// value of red component
+         set {
+            color_ptr.pointee.red = guint16(newValue)
+        }
+    }
+
+    /// value of green component
+    var green: UInt16 {
+        /// value of green component
+        get {
+            let rv: UInt16 = cast(color_ptr.pointee.green)
+            return rv
+        }
+        /// value of green component
+         set {
+            color_ptr.pointee.green = guint16(newValue)
+        }
+    }
+
+    /// value of blue component
+    var blue: UInt16 {
+        /// value of blue component
+        get {
+            let rv: UInt16 = cast(color_ptr.pointee.blue)
+            return rv
+        }
+        /// value of blue component
+         set {
+            color_ptr.pointee.blue = guint16(newValue)
+        }
+    }
+
 }
 
 

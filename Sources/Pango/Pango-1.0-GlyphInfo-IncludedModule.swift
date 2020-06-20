@@ -14,7 +14,7 @@ import GLibObject
 /// positioning information and visual attributes.
 /// It contains the following fields.
 public protocol GlyphInfoProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphInfo` instance.
+        /// Untyped pointer to the underlying `PangoGlyphInfo` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoGlyphInfo` instance.
@@ -29,7 +29,7 @@ public protocol GlyphInfoProtocol {
 /// positioning information and visual attributes.
 /// It contains the following fields.
 public struct GlyphInfoRef: GlyphInfoProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphInfo` instance.
+        /// Untyped pointer to the underlying `PangoGlyphInfo` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -84,7 +84,7 @@ public extension GlyphInfoRef {
 /// positioning information and visual attributes.
 /// It contains the following fields.
 open class GlyphInfo: GlyphInfoProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphInfo` instance.
+        /// Untyped pointer to the underlying `PangoGlyphInfo` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -113,7 +113,7 @@ open class GlyphInfo: GlyphInfoProtocol {
         // no reference counting for PangoGlyphInfo, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoGlyphInfo`.
+    /// Do-nothing destructor for `PangoGlyphInfo`.
     deinit {
         // no reference counting for PangoGlyphInfo, cannot unref(cast(_ptr))
     }
@@ -181,14 +181,55 @@ open class GlyphInfo: GlyphInfoProtocol {
 
 }
 
-// MARK: - no GlyphInfo properties
+// MARK: no GlyphInfo properties
 
-// MARK: - no signals
+// MARK: no GlyphInfo signals
 
 
+// MARK: GlyphInfo Record: GlyphInfoProtocol extension (methods and fields)
 public extension GlyphInfoProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoGlyphInfo` instance.
     var _ptr: UnsafeMutablePointer<PangoGlyphInfo> { return ptr.assumingMemoryBound(to: PangoGlyphInfo.self) }
+
+
+    /// the glyph itself.
+    var glyph: PangoGlyph {
+        /// the glyph itself.
+        get {
+            let rv: PangoGlyph = cast(_ptr.pointee.glyph)
+            return rv
+        }
+        /// the glyph itself.
+         set {
+            _ptr.pointee.glyph = cast(newValue)
+        }
+    }
+
+    /// the positional information about the glyph.
+    var geometry: PangoGlyphGeometry {
+        /// the positional information about the glyph.
+        get {
+            let rv: PangoGlyphGeometry = cast(_ptr.pointee.geometry)
+            return rv
+        }
+        /// the positional information about the glyph.
+         set {
+            _ptr.pointee.geometry = cast(newValue)
+        }
+    }
+
+    /// the visual attributes of the glyph.
+    var attr: PangoGlyphVisAttr {
+        /// the visual attributes of the glyph.
+        get {
+            let rv: PangoGlyphVisAttr = cast(_ptr.pointee.attr)
+            return rv
+        }
+        /// the visual attributes of the glyph.
+         set {
+            _ptr.pointee.attr = cast(newValue)
+        }
+    }
 
 }
 
@@ -207,7 +248,7 @@ public extension GlyphInfoProtocol {
 /// of shaping text with `PangoLayout` is a list of `PangoLayoutLine`,
 /// each of which contains a list of `PangoGlyphItem`.
 public protocol GlyphItemProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphItem` instance.
+        /// Untyped pointer to the underlying `PangoGlyphItem` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoGlyphItem` instance.
@@ -224,7 +265,7 @@ public protocol GlyphItemProtocol {
 /// of shaping text with `PangoLayout` is a list of `PangoLayoutLine`,
 /// each of which contains a list of `PangoGlyphItem`.
 public struct GlyphItemRef: GlyphItemProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphItem` instance.
+        /// Untyped pointer to the underlying `PangoGlyphItem` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_item_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -281,7 +322,7 @@ public extension GlyphItemRef {
 /// of shaping text with `PangoLayout` is a list of `PangoLayoutLine`,
 /// each of which contains a list of `PangoGlyphItem`.
 open class GlyphItem: GlyphItemProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphItem` instance.
+        /// Untyped pointer to the underlying `PangoGlyphItem` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_item_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -310,7 +351,7 @@ open class GlyphItem: GlyphItemProtocol {
         // no reference counting for PangoGlyphItem, cannot ref(cast(glyph_item_ptr))
     }
 
-    /// Do-nothing destructor for`PangoGlyphItem`.
+    /// Do-nothing destructor for `PangoGlyphItem`.
     deinit {
         // no reference counting for PangoGlyphItem, cannot unref(cast(glyph_item_ptr))
     }
@@ -378,11 +419,12 @@ open class GlyphItem: GlyphItemProtocol {
 
 }
 
-// MARK: - no GlyphItem properties
+// MARK: no GlyphItem properties
 
-// MARK: - no signals
+// MARK: no GlyphItem signals
 
 
+// MARK: GlyphItem Record: GlyphItemProtocol extension (methods and fields)
 public extension GlyphItemProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoGlyphItem` instance.
     var glyph_item_ptr: UnsafeMutablePointer<PangoGlyphItem> { return ptr.assumingMemoryBound(to: PangoGlyphItem.self) }
@@ -404,13 +446,13 @@ public extension GlyphItemProtocol {
     /// This function takes ownership of `glyph_item`; it will be reused
     /// as one of the elements in the list.
     func applyAttrs(text: UnsafePointer<CChar>, list: AttrListProtocol) -> UnsafeMutablePointer<GSList>! {
-        let rv = pango_glyph_item_apply_attrs(cast(glyph_item_ptr), text, cast(list.ptr))
+        let rv: UnsafeMutablePointer<GSList>! = cast(pango_glyph_item_apply_attrs(cast(glyph_item_ptr), text, cast(list.ptr)))
         return cast(rv)
     }
 
     /// Make a deep copy of an existing `PangoGlyphItem` structure.
     func copy() -> UnsafeMutablePointer<PangoGlyphItem>! {
-        let rv = pango_glyph_item_copy(cast(glyph_item_ptr))
+        let rv: UnsafeMutablePointer<PangoGlyphItem>! = cast(pango_glyph_item_copy(cast(glyph_item_ptr)))
         return cast(rv)
     }
 
@@ -449,9 +491,36 @@ public extension GlyphItemProtocol {
     /// This function is similar in function to `pango_item_split()` (and uses
     /// it internally.)
     func split(text: UnsafePointer<CChar>, splitIndex split_index: CInt) -> UnsafeMutablePointer<PangoGlyphItem>! {
-        let rv = pango_glyph_item_split(cast(glyph_item_ptr), text, split_index)
+        let rv: UnsafeMutablePointer<PangoGlyphItem>! = cast(pango_glyph_item_split(cast(glyph_item_ptr), text, split_index))
         return cast(rv)
     }
+
+    /// corresponding `PangoItem`.
+    var item: UnsafeMutablePointer<PangoItem> {
+        /// corresponding `PangoItem`.
+        get {
+            let rv: UnsafeMutablePointer<PangoItem> = cast(glyph_item_ptr.pointee.item)
+            return rv
+        }
+        /// corresponding `PangoItem`.
+         set {
+            glyph_item_ptr.pointee.item = cast(newValue)
+        }
+    }
+
+    /// corresponding `PangoGlyphString`.
+    var glyphs: UnsafeMutablePointer<PangoGlyphString> {
+        /// corresponding `PangoGlyphString`.
+        get {
+            let rv: UnsafeMutablePointer<PangoGlyphString> = cast(glyph_item_ptr.pointee.glyphs)
+            return rv
+        }
+        /// corresponding `PangoGlyphString`.
+         set {
+            glyph_item_ptr.pointee.glyphs = cast(newValue)
+        }
+    }
+
 }
 
 
@@ -501,7 +570,7 @@ public extension GlyphItemProtocol {
 /// 
 /// None of the members of a `PangoGlyphItemIter` should be modified manually.
 public protocol GlyphItemIterProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphItemIter` instance.
+        /// Untyped pointer to the underlying `PangoGlyphItemIter` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoGlyphItemIter` instance.
@@ -550,7 +619,7 @@ public protocol GlyphItemIterProtocol {
 /// 
 /// None of the members of a `PangoGlyphItemIter` should be modified manually.
 public struct GlyphItemIterRef: GlyphItemIterProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphItemIter` instance.
+        /// Untyped pointer to the underlying `PangoGlyphItemIter` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_item_iter_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -639,7 +708,7 @@ public extension GlyphItemIterRef {
 /// 
 /// None of the members of a `PangoGlyphItemIter` should be modified manually.
 open class GlyphItemIter: GlyphItemIterProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphItemIter` instance.
+        /// Untyped pointer to the underlying `PangoGlyphItemIter` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_item_iter_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -668,7 +737,7 @@ open class GlyphItemIter: GlyphItemIterProtocol {
         // no reference counting for PangoGlyphItemIter, cannot ref(cast(glyph_item_iter_ptr))
     }
 
-    /// Do-nothing destructor for`PangoGlyphItemIter`.
+    /// Do-nothing destructor for `PangoGlyphItemIter`.
     deinit {
         // no reference counting for PangoGlyphItemIter, cannot unref(cast(glyph_item_iter_ptr))
     }
@@ -736,18 +805,19 @@ open class GlyphItemIter: GlyphItemIterProtocol {
 
 }
 
-// MARK: - no GlyphItemIter properties
+// MARK: no GlyphItemIter properties
 
-// MARK: - no signals
+// MARK: no GlyphItemIter signals
 
 
+// MARK: GlyphItemIter Record: GlyphItemIterProtocol extension (methods and fields)
 public extension GlyphItemIterProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoGlyphItemIter` instance.
     var glyph_item_iter_ptr: UnsafeMutablePointer<PangoGlyphItemIter> { return ptr.assumingMemoryBound(to: PangoGlyphItemIter.self) }
 
     /// Make a shallow copy of an existing `PangoGlyphItemIter` structure.
     func copy() -> UnsafeMutablePointer<PangoGlyphItemIter>! {
-        let rv = pango_glyph_item_iter_copy(cast(glyph_item_iter_ptr))
+        let rv: UnsafeMutablePointer<PangoGlyphItemIter>! = cast(pango_glyph_item_iter_copy(cast(glyph_item_iter_ptr)))
         return cast(rv)
     }
 
@@ -786,6 +856,87 @@ public extension GlyphItemIterProtocol {
         let rv = pango_glyph_item_iter_prev_cluster(cast(glyph_item_iter_ptr))
         return Bool(rv != 0)
     }
+
+    var glyphItem: UnsafeMutablePointer<PangoGlyphItem> {
+        get {
+            let rv: UnsafeMutablePointer<PangoGlyphItem> = cast(glyph_item_iter_ptr.pointee.glyph_item)
+            return rv
+        }
+         set {
+            glyph_item_iter_ptr.pointee.glyph_item = cast(newValue)
+        }
+    }
+
+    var text: UnsafePointer<CChar> {
+        get {
+            let rv: UnsafePointer<CChar> = cast(glyph_item_iter_ptr.pointee.text)
+            return rv
+        }
+         set {
+            glyph_item_iter_ptr.pointee.text = cast(newValue)
+        }
+    }
+
+    var startGlyph: Int {
+        get {
+            let rv: Int = cast(glyph_item_iter_ptr.pointee.start_glyph)
+            return rv
+        }
+         set {
+            glyph_item_iter_ptr.pointee.start_glyph = cast(newValue)
+        }
+    }
+
+    var startIndex: Int {
+        get {
+            let rv: Int = cast(glyph_item_iter_ptr.pointee.start_index)
+            return rv
+        }
+         set {
+            glyph_item_iter_ptr.pointee.start_index = cast(newValue)
+        }
+    }
+
+    var startChar: Int {
+        get {
+            let rv: Int = cast(glyph_item_iter_ptr.pointee.start_char)
+            return rv
+        }
+         set {
+            glyph_item_iter_ptr.pointee.start_char = cast(newValue)
+        }
+    }
+
+    var endGlyph: Int {
+        get {
+            let rv: Int = cast(glyph_item_iter_ptr.pointee.end_glyph)
+            return rv
+        }
+         set {
+            glyph_item_iter_ptr.pointee.end_glyph = cast(newValue)
+        }
+    }
+
+    var endIndex: Int {
+        get {
+            let rv: Int = cast(glyph_item_iter_ptr.pointee.end_index)
+            return rv
+        }
+         set {
+            glyph_item_iter_ptr.pointee.end_index = cast(newValue)
+        }
+    }
+
+    var endChar: Int {
+        get {
+            let rv: Int = cast(glyph_item_iter_ptr.pointee.end_char)
+            return rv
+        }
+         set {
+            glyph_item_iter_ptr.pointee.end_char = cast(newValue)
+        }
+    }
+
 }
 
 
@@ -802,7 +953,7 @@ public extension GlyphItemIterProtocol {
 /// The storage for the glyph information is owned
 /// by the structure which simplifies memory management.
 public protocol GlyphStringProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphString` instance.
+        /// Untyped pointer to the underlying `PangoGlyphString` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoGlyphString` instance.
@@ -818,7 +969,7 @@ public protocol GlyphStringProtocol {
 /// The storage for the glyph information is owned
 /// by the structure which simplifies memory management.
 public struct GlyphStringRef: GlyphStringProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphString` instance.
+        /// Untyped pointer to the underlying `PangoGlyphString` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_string_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -865,7 +1016,7 @@ public extension GlyphStringRef {
 
         /// Create a new `PangoGlyphString`.
     init() {
-        let rv = pango_glyph_string_new()
+        let rv: UnsafeMutablePointer<PangoGlyphString>! = cast(pango_glyph_string_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -879,7 +1030,7 @@ public extension GlyphStringRef {
 /// The storage for the glyph information is owned
 /// by the structure which simplifies memory management.
 open class GlyphString: GlyphStringProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphString` instance.
+        /// Untyped pointer to the underlying `PangoGlyphString` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_string_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -908,7 +1059,7 @@ open class GlyphString: GlyphStringProtocol {
         // no reference counting for PangoGlyphString, cannot ref(cast(glyph_string_ptr))
     }
 
-    /// Do-nothing destructor for`PangoGlyphString`.
+    /// Do-nothing destructor for `PangoGlyphString`.
     deinit {
         // no reference counting for PangoGlyphString, cannot unref(cast(glyph_string_ptr))
     }
@@ -974,25 +1125,26 @@ open class GlyphString: GlyphStringProtocol {
 
     /// Create a new `PangoGlyphString`.
     public init() {
-        let rv = pango_glyph_string_new()
+        let rv: UnsafeMutablePointer<PangoGlyphString>! = cast(pango_glyph_string_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
 
 }
 
-// MARK: - no GlyphString properties
+// MARK: no GlyphString properties
 
-// MARK: - no signals
+// MARK: no GlyphString signals
 
 
+// MARK: GlyphString Record: GlyphStringProtocol extension (methods and fields)
 public extension GlyphStringProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoGlyphString` instance.
     var glyph_string_ptr: UnsafeMutablePointer<PangoGlyphString> { return ptr.assumingMemoryBound(to: PangoGlyphString.self) }
 
     /// Copy a glyph string and associated storage.
     func copy() -> UnsafeMutablePointer<PangoGlyphString>! {
-        let rv = pango_glyph_string_copy(cast(glyph_string_ptr))
+        let rv: UnsafeMutablePointer<PangoGlyphString>! = cast(pango_glyph_string_copy(cast(glyph_string_ptr)))
         return cast(rv)
     }
 
@@ -1038,9 +1190,9 @@ public extension GlyphStringProtocol {
     /// using `pango_glyph_string_extents()`.  However, since this only computes the
     /// width, it's much faster.  This is in fact only a convenience function that
     /// computes the sum of geometry.width for each glyph in the `glyphs`.
-    func getWidth() -> CInt {
-        let rv = pango_glyph_string_get_width(cast(glyph_string_ptr))
-        return rv
+    func getWidth() -> Int {
+        let rv: Int = cast(pango_glyph_string_get_width(cast(glyph_string_ptr)))
+        return cast(rv)
     }
 
     /// Converts from character position to x position. (X position
@@ -1104,23 +1256,57 @@ public extension GlyphStringProtocol {
     /// This is similar to `pango_shape_full()`, except it also takes
     /// flags that can influence the shaping process.
     func shapeWithFlags(itemText item_text: UnsafePointer<CChar>, itemLength item_length: CInt, paragraphText paragraph_text: UnsafePointer<CChar>, paragraphLength paragraph_length: CInt, analysis: AnalysisProtocol, flags: ShapeFlags) {
-        pango_shape_with_flags(item_text, item_length, paragraph_text, paragraph_length, cast(analysis.ptr), cast(glyph_string_ptr), flags)
+        pango_shape_with_flags(item_text, item_length, paragraph_text, paragraph_length, cast(analysis.ptr), cast(glyph_string_ptr), flags.value)
     
     }
     /// Computes the logical width of the glyph string as can also be computed
     /// using `pango_glyph_string_extents()`.  However, since this only computes the
     /// width, it's much faster.  This is in fact only a convenience function that
     /// computes the sum of geometry.width for each glyph in the `glyphs`.
-    var width: CInt {
+    var width: Int {
         /// Computes the logical width of the glyph string as can also be computed
         /// using `pango_glyph_string_extents()`.  However, since this only computes the
         /// width, it's much faster.  This is in fact only a convenience function that
         /// computes the sum of geometry.width for each glyph in the `glyphs`.
         get {
-            let rv = pango_glyph_string_get_width(cast(glyph_string_ptr))
-            return rv
+            let rv: Int = cast(pango_glyph_string_get_width(cast(glyph_string_ptr)))
+            return cast(rv)
         }
     }
+
+    /// number of the glyphs in this glyph string.
+    var numGlyphs: Int {
+        /// number of the glyphs in this glyph string.
+        get {
+            let rv: Int = cast(glyph_string_ptr.pointee.num_glyphs)
+            return rv
+        }
+        /// number of the glyphs in this glyph string.
+         set {
+            glyph_string_ptr.pointee.num_glyphs = gint(newValue)
+        }
+    }
+
+    // var glyphs is unavailable because glyphs is void
+
+    /// logical cluster info, indexed by the byte index
+    ///                within the text corresponding to the glyph string.
+    var logClusters: UnsafeMutablePointer<CInt> {
+        /// logical cluster info, indexed by the byte index
+        ///                within the text corresponding to the glyph string.
+        get {
+            let rv: UnsafeMutablePointer<CInt> = cast(glyph_string_ptr.pointee.log_clusters)
+            return rv
+        }
+        /// logical cluster info, indexed by the byte index
+        ///                within the text corresponding to the glyph string.
+         set {
+            glyph_string_ptr.pointee.log_clusters = cast(newValue)
+        }
+    }
+
+    // var space is unavailable because space is private
+
 }
 
 
@@ -1136,7 +1322,7 @@ public extension GlyphStringProtocol {
 /// the shaping phase and the rendering phase.  More attributes may be
 /// added in the future.
 public protocol GlyphVisAttrProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
+        /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoGlyphVisAttr` instance.
@@ -1151,7 +1337,7 @@ public protocol GlyphVisAttrProtocol {
 /// the shaping phase and the rendering phase.  More attributes may be
 /// added in the future.
 public struct GlyphVisAttrRef: GlyphVisAttrProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
+        /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1206,7 +1392,7 @@ public extension GlyphVisAttrRef {
 /// the shaping phase and the rendering phase.  More attributes may be
 /// added in the future.
 open class GlyphVisAttr: GlyphVisAttrProtocol {
-    /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
+        /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1235,7 +1421,7 @@ open class GlyphVisAttr: GlyphVisAttrProtocol {
         // no reference counting for PangoGlyphVisAttr, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoGlyphVisAttr`.
+    /// Do-nothing destructor for `PangoGlyphVisAttr`.
     deinit {
         // no reference counting for PangoGlyphVisAttr, cannot unref(cast(_ptr))
     }
@@ -1303,14 +1489,41 @@ open class GlyphVisAttr: GlyphVisAttrProtocol {
 
 }
 
-// MARK: - no GlyphVisAttr properties
+// MARK: no GlyphVisAttr properties
 
-// MARK: - no signals
+// MARK: no GlyphVisAttr signals
 
 
+// MARK: GlyphVisAttr Record: GlyphVisAttrProtocol extension (methods and fields)
 public extension GlyphVisAttrProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoGlyphVisAttr` instance.
     var _ptr: UnsafeMutablePointer<PangoGlyphVisAttr> { return ptr.assumingMemoryBound(to: PangoGlyphVisAttr.self) }
+
+
+    /// set for the first logical glyph in each cluster. (Clusters
+    /// are stored in visual order, within the cluster, glyphs
+    /// are always ordered in logical order, since visual
+    /// order is meaningless; that is, in Arabic text, accent glyphs
+    /// follow the glyphs for the base character.)
+    var isClusterStart: Int {
+        /// set for the first logical glyph in each cluster. (Clusters
+        /// are stored in visual order, within the cluster, glyphs
+        /// are always ordered in logical order, since visual
+        /// order is meaningless; that is, in Arabic text, accent glyphs
+        /// follow the glyphs for the base character.)
+        get {
+            let rv: Int = cast(_ptr.pointee.is_cluster_start)
+            return rv
+        }
+        /// set for the first logical glyph in each cluster. (Clusters
+        /// are stored in visual order, within the cluster, glyphs
+        /// are always ordered in logical order, since visual
+        /// order is meaningless; that is, in Arabic text, accent glyphs
+        /// follow the glyphs for the base character.)
+         set {
+            _ptr.pointee.is_cluster_start = guint(newValue)
+        }
+    }
 
 }
 
@@ -1327,7 +1540,7 @@ public extension GlyphVisAttrProtocol {
 /// contains the functions that would otherwise be loaded from a dynamically
 /// loaded module.
 public protocol IncludedModuleProtocol {
-    /// Untyped pointer to the underlying `PangoIncludedModule` instance.
+        /// Untyped pointer to the underlying `PangoIncludedModule` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoIncludedModule` instance.
@@ -1342,7 +1555,7 @@ public protocol IncludedModuleProtocol {
 /// contains the functions that would otherwise be loaded from a dynamically
 /// loaded module.
 public struct IncludedModuleRef: IncludedModuleProtocol {
-    /// Untyped pointer to the underlying `PangoIncludedModule` instance.
+        /// Untyped pointer to the underlying `PangoIncludedModule` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1397,7 +1610,7 @@ public extension IncludedModuleRef {
 /// contains the functions that would otherwise be loaded from a dynamically
 /// loaded module.
 open class IncludedModule: IncludedModuleProtocol {
-    /// Untyped pointer to the underlying `PangoIncludedModule` instance.
+        /// Untyped pointer to the underlying `PangoIncludedModule` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1426,7 +1639,7 @@ open class IncludedModule: IncludedModuleProtocol {
         // no reference counting for PangoIncludedModule, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoIncludedModule`.
+    /// Do-nothing destructor for `PangoIncludedModule`.
     deinit {
         // no reference counting for PangoIncludedModule, cannot unref(cast(_ptr))
     }
@@ -1494,11 +1707,12 @@ open class IncludedModule: IncludedModuleProtocol {
 
 }
 
-// MARK: - no IncludedModule properties
+// MARK: no IncludedModule properties
 
-// MARK: - no signals
+// MARK: no IncludedModule signals
 
 
+// MARK: IncludedModule Record: IncludedModuleProtocol extension (methods and fields)
 public extension IncludedModuleProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoIncludedModule` instance.
     var _ptr: UnsafeMutablePointer<PangoIncludedModule> { return ptr.assumingMemoryBound(to: PangoIncludedModule.self) }
@@ -1511,6 +1725,15 @@ public extension IncludedModuleProtocol {
         pango_module_register(cast(_ptr))
     
     }
+
+    // var list is unavailable because list is void
+
+    // var `init` is unavailable because init is void
+
+    // var exit is unavailable because exit is void
+
+    // var create is unavailable because create is void
+
 }
 
 

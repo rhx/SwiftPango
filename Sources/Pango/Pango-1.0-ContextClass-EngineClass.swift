@@ -12,7 +12,7 @@ import GLibObject
 ///
 
 public protocol ContextClassProtocol {
-    /// Untyped pointer to the underlying `PangoContextClass` instance.
+        /// Untyped pointer to the underlying `PangoContextClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoContextClass` instance.
@@ -25,7 +25,7 @@ public protocol ContextClassProtocol {
 ///
 
 public struct ContextClassRef: ContextClassProtocol {
-    /// Untyped pointer to the underlying `PangoContextClass` instance.
+        /// Untyped pointer to the underlying `PangoContextClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension ContextClassRef {
 ///
 
 open class ContextClass: ContextClassProtocol {
-    /// Untyped pointer to the underlying `PangoContextClass` instance.
+        /// Untyped pointer to the underlying `PangoContextClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -107,7 +107,7 @@ open class ContextClass: ContextClassProtocol {
         // no reference counting for PangoContextClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoContextClass`.
+    /// Do-nothing destructor for `PangoContextClass`.
     deinit {
         // no reference counting for PangoContextClass, cannot unref(cast(_ptr))
     }
@@ -175,14 +175,17 @@ open class ContextClass: ContextClassProtocol {
 
 }
 
-// MARK: - no ContextClass properties
+// MARK: no ContextClass properties
 
-// MARK: - no signals
+// MARK: no ContextClass signals
 
 
+// MARK: ContextClass Record: ContextClassProtocol extension (methods and fields)
 public extension ContextClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoContextClass` instance.
     var _ptr: UnsafeMutablePointer<PangoContextClass> { return ptr.assumingMemoryBound(to: PangoContextClass.self) }
+
+
 
 }
 
@@ -197,7 +200,7 @@ public extension ContextClassProtocol {
 ///
 /// Class structure for `PangoEngine`
 public protocol EngineClassProtocol {
-    /// Untyped pointer to the underlying `PangoEngineClass` instance.
+        /// Untyped pointer to the underlying `PangoEngineClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoEngineClass` instance.
@@ -210,7 +213,7 @@ public protocol EngineClassProtocol {
 ///
 /// Class structure for `PangoEngine`
 public struct EngineClassRef: EngineClassProtocol {
-    /// Untyped pointer to the underlying `PangoEngineClass` instance.
+        /// Untyped pointer to the underlying `PangoEngineClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -263,7 +266,7 @@ public extension EngineClassRef {
 ///
 /// Class structure for `PangoEngine`
 open class EngineClass: EngineClassProtocol {
-    /// Untyped pointer to the underlying `PangoEngineClass` instance.
+        /// Untyped pointer to the underlying `PangoEngineClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -292,7 +295,7 @@ open class EngineClass: EngineClassProtocol {
         // no reference counting for PangoEngineClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoEngineClass`.
+    /// Do-nothing destructor for `PangoEngineClass`.
     deinit {
         // no reference counting for PangoEngineClass, cannot unref(cast(_ptr))
     }
@@ -360,14 +363,18 @@ open class EngineClass: EngineClassProtocol {
 
 }
 
-// MARK: - no EngineClass properties
+// MARK: no EngineClass properties
 
-// MARK: - no signals
+// MARK: no EngineClass signals
 
 
+// MARK: EngineClass Record: EngineClassProtocol extension (methods and fields)
 public extension EngineClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoEngineClass` instance.
     var _ptr: UnsafeMutablePointer<PangoEngineClass> { return ptr.assumingMemoryBound(to: PangoEngineClass.self) }
+
+
+    // var parentClass is unavailable because parent_class is private
 
 }
 

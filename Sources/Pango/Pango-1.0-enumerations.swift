@@ -10,12 +10,19 @@ public typealias Alignment = PangoAlignment
 
 public extension Alignment {
     /// Put all available space on the right
-    static let left_ = PANGO_ALIGN_LEFT /* 0 */
+    static let `left` = PANGO_ALIGN_LEFT /* 0 */
     /// Center the line within the available space
     static let center = PANGO_ALIGN_CENTER /* 1 */
     /// Put all available space on the left
-    static let right_ = PANGO_ALIGN_RIGHT /* 2 */
+    static let `right` = PANGO_ALIGN_RIGHT /* 2 */
+    /// Put all available space on the right
+    @available(*, deprecated) static let left_ = Alignment.`left` /* PANGO_ALIGN_LEFT */
+    /// Put all available space on the left
+    @available(*, deprecated) static let right_ = Alignment.`right` /* PANGO_ALIGN_RIGHT */
 }
+func cast<I: BinaryInteger>(_ param: I) -> Alignment { Alignment(rawValue: cast(param)) }
+func cast(_ param: Alignment) -> UInt32 { cast(param.rawValue) }
+
 
 /// The `PangoAttrType`
 /// distinguishes between different types of attributes. Along with the
@@ -43,7 +50,7 @@ public extension AttrType {
     /// font size in points scaled by `PANGO_SCALE` (`PangoAttrInt`)
     static let size = PANGO_ATTR_SIZE /* 7 */
     /// font description (`PangoAttrFontDesc`)
-    static let font_desc = PANGO_ATTR_FONT_DESC /* 8 */
+    static let fontDesc = PANGO_ATTR_FONT_DESC /* 8 */
     /// foreground color (`PangoAttrColor`)
     static let foreground = PANGO_ATTR_FOREGROUND /* 9 */
     /// background color (`PangoAttrColor`)
@@ -61,30 +68,55 @@ public extension AttrType {
     /// whether fallback is enabled (`PangoAttrInt`)
     static let fallback = PANGO_ATTR_FALLBACK /* 16 */
     /// letter spacing (`PangoAttrInt`)
-    static let letter_spacing = PANGO_ATTR_LETTER_SPACING /* 17 */
+    static let letterSpacing = PANGO_ATTR_LETTER_SPACING /* 17 */
     /// underline color (`PangoAttrColor`)
-    static let underline_color = PANGO_ATTR_UNDERLINE_COLOR /* 18 */
+    static let underlineColor = PANGO_ATTR_UNDERLINE_COLOR /* 18 */
     /// strikethrough color (`PangoAttrColor`)
-    static let strikethrough_color = PANGO_ATTR_STRIKETHROUGH_COLOR /* 19 */
+    static let strikethroughColor = PANGO_ATTR_STRIKETHROUGH_COLOR /* 19 */
     /// font size in pixels scaled by `PANGO_SCALE` (`PangoAttrInt`)
-    static let absolute_size = PANGO_ATTR_ABSOLUTE_SIZE /* 20 */
+    static let absoluteSize = PANGO_ATTR_ABSOLUTE_SIZE /* 20 */
     /// base text gravity (`PangoAttrInt`)
     static let gravity = PANGO_ATTR_GRAVITY /* 21 */
     /// gravity hint (`PangoAttrInt`)
-    static let gravity_hint = PANGO_ATTR_GRAVITY_HINT /* 22 */
+    static let gravityHint = PANGO_ATTR_GRAVITY_HINT /* 22 */
     /// OpenType font features (`PangoAttrString`). Since 1.38
-    static let font_features = PANGO_ATTR_FONT_FEATURES /* 23 */
+    static let fontFeatures = PANGO_ATTR_FONT_FEATURES /* 23 */
     /// foreground alpha (`PangoAttrInt`). Since 1.38
-    static let foreground_alpha = PANGO_ATTR_FOREGROUND_ALPHA /* 24 */
+    static let foregroundAlpha = PANGO_ATTR_FOREGROUND_ALPHA /* 24 */
     /// background alpha (`PangoAttrInt`). Since 1.38
-    static let background_alpha = PANGO_ATTR_BACKGROUND_ALPHA /* 25 */
+    static let backgroundAlpha = PANGO_ATTR_BACKGROUND_ALPHA /* 25 */
     /// whether breaks are allowed (`PangoAttrInt`). Since 1.44
-    static let allow_breaks = PANGO_ATTR_ALLOW_BREAKS /* 26 */
+    static let allowBreaks = PANGO_ATTR_ALLOW_BREAKS /* 26 */
     /// how to render invisible characters (`PangoAttrInt`). Since 1.44
     static let show = PANGO_ATTR_SHOW /* 27 */
     /// whether to insert hyphens at intra-word line breaks (`PangoAttrInt`). Since 1.44
-    static let insert_hyphens = PANGO_ATTR_INSERT_HYPHENS /* 28 */
+    static let insertHyphens = PANGO_ATTR_INSERT_HYPHENS /* 28 */
+    /// font description (`PangoAttrFontDesc`)
+    @available(*, deprecated) static let font_desc = AttrType.fontDesc /* PANGO_ATTR_FONT_DESC */
+    /// letter spacing (`PangoAttrInt`)
+    @available(*, deprecated) static let letter_spacing = AttrType.letterSpacing /* PANGO_ATTR_LETTER_SPACING */
+    /// underline color (`PangoAttrColor`)
+    @available(*, deprecated) static let underline_color = AttrType.underlineColor /* PANGO_ATTR_UNDERLINE_COLOR */
+    /// strikethrough color (`PangoAttrColor`)
+    @available(*, deprecated) static let strikethrough_color = AttrType.strikethroughColor /* PANGO_ATTR_STRIKETHROUGH_COLOR */
+    /// font size in pixels scaled by `PANGO_SCALE` (`PangoAttrInt`)
+    @available(*, deprecated) static let absolute_size = AttrType.absoluteSize /* PANGO_ATTR_ABSOLUTE_SIZE */
+    /// gravity hint (`PangoAttrInt`)
+    @available(*, deprecated) static let gravity_hint = AttrType.gravityHint /* PANGO_ATTR_GRAVITY_HINT */
+    /// OpenType font features (`PangoAttrString`). Since 1.38
+    @available(*, deprecated) static let font_features = AttrType.fontFeatures /* PANGO_ATTR_FONT_FEATURES */
+    /// foreground alpha (`PangoAttrInt`). Since 1.38
+    @available(*, deprecated) static let foreground_alpha = AttrType.foregroundAlpha /* PANGO_ATTR_FOREGROUND_ALPHA */
+    /// background alpha (`PangoAttrInt`). Since 1.38
+    @available(*, deprecated) static let background_alpha = AttrType.backgroundAlpha /* PANGO_ATTR_BACKGROUND_ALPHA */
+    /// whether breaks are allowed (`PangoAttrInt`). Since 1.44
+    @available(*, deprecated) static let allow_breaks = AttrType.allowBreaks /* PANGO_ATTR_ALLOW_BREAKS */
+    /// whether to insert hyphens at intra-word line breaks (`PangoAttrInt`). Since 1.44
+    @available(*, deprecated) static let insert_hyphens = AttrType.insertHyphens /* PANGO_ATTR_INSERT_HYPHENS */
 }
+func cast<I: BinaryInteger>(_ param: I) -> AttrType { AttrType(rawValue: cast(param)) }
+func cast(_ param: AttrType) -> UInt32 { cast(param.rawValue) }
+
 
 /// The `PangoBidiType` type represents the bidirectional character
 /// type of a Unicode character as specified by the
@@ -133,7 +165,11 @@ public extension BidiType {
     static let ws = PANGO_BIDI_TYPE_WS /* 17 */
     /// Other Neutrals
     static let on = PANGO_BIDI_TYPE_ON /* 18 */
+
 }
+func cast<I: BinaryInteger>(_ param: I) -> BidiType { BidiType(rawValue: cast(param)) }
+func cast(_ param: BidiType) -> UInt32 { cast(param.rawValue) }
+
 
 /// Used to indicate how well a font can represent a particular Unicode
 /// character point for a particular script.
@@ -144,7 +180,7 @@ public typealias CoverageLevel = PangoCoverageLevel
 
 public extension CoverageLevel {
     /// The character is not representable with the font.
-    static let none_ = PANGO_COVERAGE_NONE /* 0 */
+    static let `none` = PANGO_COVERAGE_NONE /* 0 */
     /// The character is represented in a way that may be
     /// comprehensible but is not the correct graphical form.
     /// For instance, a Hangul character represented as a
@@ -156,7 +192,12 @@ public extension CoverageLevel {
     static let approximate = PANGO_COVERAGE_APPROXIMATE /* 2 */
     /// The character is represented as the correct graphical form.
     static let exact = PANGO_COVERAGE_EXACT /* 3 */
+    /// The character is not representable with the font.
+    @available(*, deprecated) static let none_ = CoverageLevel.`none` /* PANGO_COVERAGE_NONE */
 }
+func cast<I: BinaryInteger>(_ param: I) -> CoverageLevel { CoverageLevel(rawValue: cast(param)) }
+func cast(_ param: CoverageLevel) -> UInt32 { cast(param.rawValue) }
+
 
 /// The `PangoDirection` type represents a direction in the
 /// Unicode bidirectional algorithm; not every value in this
@@ -186,17 +227,30 @@ public extension Direction {
     static let rtl = PANGO_DIRECTION_RTL /* 1 */
     /// Deprecated value; treated the
     ///   same as `PANGO_DIRECTION_RTL`.
-    static let ttb_ltr = PANGO_DIRECTION_TTB_LTR /* 2 */
+    static let ttbLtr = PANGO_DIRECTION_TTB_LTR /* 2 */
     /// Deprecated value; treated the
     ///   same as `PANGO_DIRECTION_LTR`
-    static let ttb_rtl = PANGO_DIRECTION_TTB_RTL /* 3 */
+    static let ttbRtl = PANGO_DIRECTION_TTB_RTL /* 3 */
     /// A weak left-to-right direction
-    static let weak_ltr = PANGO_DIRECTION_WEAK_LTR /* 4 */
+    static let weakLtr = PANGO_DIRECTION_WEAK_LTR /* 4 */
     /// A weak right-to-left direction
-    static let weak_rtl = PANGO_DIRECTION_WEAK_RTL /* 5 */
+    static let weakRtl = PANGO_DIRECTION_WEAK_RTL /* 5 */
     /// No direction specified
     static let neutral = PANGO_DIRECTION_NEUTRAL /* 6 */
+    /// Deprecated value; treated the
+    ///   same as `PANGO_DIRECTION_RTL`.
+    @available(*, deprecated) static let ttb_ltr = Direction.ttbLtr /* PANGO_DIRECTION_TTB_LTR */
+    /// Deprecated value; treated the
+    ///   same as `PANGO_DIRECTION_LTR`
+    @available(*, deprecated) static let ttb_rtl = Direction.ttbRtl /* PANGO_DIRECTION_TTB_RTL */
+    /// A weak left-to-right direction
+    @available(*, deprecated) static let weak_ltr = Direction.weakLtr /* PANGO_DIRECTION_WEAK_LTR */
+    /// A weak right-to-left direction
+    @available(*, deprecated) static let weak_rtl = Direction.weakRtl /* PANGO_DIRECTION_WEAK_RTL */
 }
+func cast<I: BinaryInteger>(_ param: I) -> Direction { Direction(rawValue: cast(param)) }
+func cast(_ param: Direction) -> UInt32 { cast(param.rawValue) }
+
 
 /// The `PangoEllipsizeMode` type describes what sort of (if any)
 /// ellipsization should be applied to a line of text. In
@@ -207,14 +261,19 @@ public typealias EllipsizeMode = PangoEllipsizeMode
 
 public extension EllipsizeMode {
     /// No ellipsization
-    static let none_ = PANGO_ELLIPSIZE_NONE /* 0 */
+    static let `none` = PANGO_ELLIPSIZE_NONE /* 0 */
     /// Omit characters at the start of the text
     static let start = PANGO_ELLIPSIZE_START /* 1 */
     /// Omit characters in the middle of the text
     static let middle = PANGO_ELLIPSIZE_MIDDLE /* 2 */
     /// Omit characters at the end of the text
     static let end = PANGO_ELLIPSIZE_END /* 3 */
+    /// No ellipsization
+    @available(*, deprecated) static let none_ = EllipsizeMode.`none` /* PANGO_ELLIPSIZE_NONE */
 }
+func cast<I: BinaryInteger>(_ param: I) -> EllipsizeMode { EllipsizeMode(rawValue: cast(param)) }
+func cast(_ param: EllipsizeMode) -> UInt32 { cast(param.rawValue) }
+
 
 /// The `PangoGravity` type represents the orientation of glyphs in a segment
 /// of text.  This is useful when rendering vertical text layouts.  In
@@ -239,7 +298,11 @@ public extension Gravity {
     static let west = PANGO_GRAVITY_WEST /* 3 */
     /// Gravity is resolved from the context matrix
     static let auto = PANGO_GRAVITY_AUTO /* 4 */
+
 }
+func cast<I: BinaryInteger>(_ param: I) -> Gravity { Gravity(rawValue: cast(param)) }
+func cast(_ param: Gravity) -> UInt32 { cast(param.rawValue) }
+
 
 /// The `PangoGravityHint` defines how horizontal scripts should behave in a
 /// vertical context.  That is, English excerpt in a vertical paragraph for
@@ -260,7 +323,11 @@ public extension GravityHint {
     /// respects the line progression.  This means, Latin and Arabic will take
     /// opposite gravities and both flow top-to-bottom for example.
     static let line = PANGO_GRAVITY_HINT_LINE /* 2 */
+
 }
+func cast<I: BinaryInteger>(_ param: I) -> GravityHint { GravityHint(rawValue: cast(param)) }
+func cast(_ param: GravityHint) -> UInt32 { cast(param.rawValue) }
+
 
 /// `PangoRenderPart` defines different items to render for such
 /// purposes as setting colors.
@@ -275,7 +342,11 @@ public extension RenderPart {
     static let underline = PANGO_RENDER_PART_UNDERLINE /* 2 */
     /// strikethrough lines
     static let strikethrough = PANGO_RENDER_PART_STRIKETHROUGH /* 3 */
+
 }
+func cast<I: BinaryInteger>(_ param: I) -> RenderPart { RenderPart(rawValue: cast(param)) }
+func cast(_ param: RenderPart) -> UInt32 { cast(param.rawValue) }
+
 
 /// The `PangoScript` enumeration identifies different writing
 /// systems. The values correspond to the names as defined in the
@@ -291,7 +362,7 @@ public typealias Script = PangoScript
 
 public extension Script {
     /// a value never returned from `pango_script_for_unichar()`
-    static let invalid_code = PANGO_SCRIPT_INVALID_CODE /* -1 */
+    static let invalidCode = PANGO_SCRIPT_INVALID_CODE /* -1 */
     /// a character used by multiple different scripts
     static let common = PANGO_SCRIPT_COMMON /* 0 */
     /// a mark glyph that takes its script from the
@@ -354,7 +425,7 @@ public extension Script {
     /// Ogham
     static let ogham = PANGO_SCRIPT_OGHAM /* 29 */
     /// Old Italic
-    static let old_italic = PANGO_SCRIPT_OLD_ITALIC /* 30 */
+    static let oldItalic = PANGO_SCRIPT_OLD_ITALIC /* 30 */
     /// Oriya
     static let oriya = PANGO_SCRIPT_ORIYA /* 31 */
     /// Runic
@@ -374,7 +445,7 @@ public extension Script {
     /// Tibetan
     static let tibetan = PANGO_SCRIPT_TIBETAN /* 39 */
     /// Canadian Aboriginal
-    static let canadian_aboriginal = PANGO_SCRIPT_CANADIAN_ABORIGINAL /* 40 */
+    static let canadianAboriginal = PANGO_SCRIPT_CANADIAN_ABORIGINAL /* 40 */
     /// Yi
     static let yi = PANGO_SCRIPT_YI /* 41 */
     /// Tagalog
@@ -396,13 +467,13 @@ public extension Script {
     /// Shavian
     static let shavian = PANGO_SCRIPT_SHAVIAN /* 50 */
     /// Linear B
-    static let linear_b = PANGO_SCRIPT_LINEAR_B /* 51 */
+    static let linearB = PANGO_SCRIPT_LINEAR_B /* 51 */
     /// Tai Le
-    static let tai_le = PANGO_SCRIPT_TAI_LE /* 52 */
+    static let taiLe = PANGO_SCRIPT_TAI_LE /* 52 */
     /// Ugaritic
     static let ugaritic = PANGO_SCRIPT_UGARITIC /* 53 */
     /// New Tai Lue. Since 1.10
-    static let new_tai_lue = PANGO_SCRIPT_NEW_TAI_LUE /* 54 */
+    static let newTaiLue = PANGO_SCRIPT_NEW_TAI_LUE /* 54 */
     /// Buginese. Since 1.10
     static let buginese = PANGO_SCRIPT_BUGINESE /* 55 */
     /// Glagolitic. Since 1.10
@@ -410,9 +481,9 @@ public extension Script {
     /// Tifinagh. Since 1.10
     static let tifinagh = PANGO_SCRIPT_TIFINAGH /* 57 */
     /// Syloti Nagri. Since 1.10
-    static let syloti_nagri = PANGO_SCRIPT_SYLOTI_NAGRI /* 58 */
+    static let sylotiNagri = PANGO_SCRIPT_SYLOTI_NAGRI /* 58 */
     /// Old Persian. Since 1.10
-    static let old_persian = PANGO_SCRIPT_OLD_PERSIAN /* 59 */
+    static let oldPersian = PANGO_SCRIPT_OLD_PERSIAN /* 59 */
     /// Kharoshthi. Since 1.10
     static let kharoshthi = PANGO_SCRIPT_KHAROSHTHI /* 60 */
     /// an unassigned code point. Since 1.14
@@ -424,11 +495,11 @@ public extension Script {
     /// Phoenician. Since 1.14
     static let phoenician = PANGO_SCRIPT_PHOENICIAN /* 64 */
     /// Phags-pa. Since 1.14
-    static let phags_pa = PANGO_SCRIPT_PHAGS_PA /* 65 */
+    static let phagsPa = PANGO_SCRIPT_PHAGS_PA /* 65 */
     /// N'Ko. Since 1.14
     static let nko = PANGO_SCRIPT_NKO /* 66 */
     /// Kayah Li. Since 1.20.1
-    static let kayah_li = PANGO_SCRIPT_KAYAH_LI /* 67 */
+    static let kayahLi = PANGO_SCRIPT_KAYAH_LI /* 67 */
     /// Lepcha. Since 1.20.1
     static let lepcha = PANGO_SCRIPT_LEPCHA /* 68 */
     /// Rejang. Since 1.20.1
@@ -440,7 +511,7 @@ public extension Script {
     /// Cham. Since 1.20.1
     static let cham = PANGO_SCRIPT_CHAM /* 72 */
     /// Ol Chiki. Since 1.20.1
-    static let ol_chiki = PANGO_SCRIPT_OL_CHIKI /* 73 */
+    static let olChiki = PANGO_SCRIPT_OL_CHIKI /* 73 */
     /// Vai. Since 1.20.1
     static let vai = PANGO_SCRIPT_VAI /* 74 */
     /// Carian. Since 1.20.1
@@ -458,21 +529,21 @@ public extension Script {
     /// Chakma. Since: 1.32
     static let chakma = PANGO_SCRIPT_CHAKMA /* 81 */
     /// Meroitic Cursive. Since: 1.32
-    static let meroitic_cursive = PANGO_SCRIPT_MEROITIC_CURSIVE /* 82 */
+    static let meroiticCursive = PANGO_SCRIPT_MEROITIC_CURSIVE /* 82 */
     /// Meroitic Hieroglyphs. Since: 1.32
-    static let meroitic_hieroglyphs = PANGO_SCRIPT_MEROITIC_HIEROGLYPHS /* 83 */
+    static let meroiticHieroglyphs = PANGO_SCRIPT_MEROITIC_HIEROGLYPHS /* 83 */
     /// Miao. Since: 1.32
     static let miao = PANGO_SCRIPT_MIAO /* 84 */
     /// Sharada. Since: 1.32
     static let sharada = PANGO_SCRIPT_SHARADA /* 85 */
     /// Sora Sompeng. Since: 1.32
-    static let sora_sompeng = PANGO_SCRIPT_SORA_SOMPENG /* 86 */
+    static let soraSompeng = PANGO_SCRIPT_SORA_SOMPENG /* 86 */
     /// Takri. Since: 1.32
     static let takri = PANGO_SCRIPT_TAKRI /* 87 */
     /// Bassa. Since: 1.40
-    static let bassa_vah = PANGO_SCRIPT_BASSA_VAH /* 88 */
+    static let bassaVah = PANGO_SCRIPT_BASSA_VAH /* 88 */
     /// Caucasian Albanian. Since: 1.40
-    static let caucasian_albanian = PANGO_SCRIPT_CAUCASIAN_ALBANIAN /* 89 */
+    static let caucasianAlbanian = PANGO_SCRIPT_CAUCASIAN_ALBANIAN /* 89 */
     /// Duployan. Since: 1.40
     static let duployan = PANGO_SCRIPT_DUPLOYAN /* 90 */
     /// Elbasan. Since: 1.40
@@ -484,13 +555,13 @@ public extension Script {
     /// Khudawadi, Sindhi. Since: 1.40
     static let khudawadi = PANGO_SCRIPT_KHUDAWADI /* 94 */
     /// Linear A. Since: 1.40
-    static let linear_a = PANGO_SCRIPT_LINEAR_A /* 95 */
+    static let linearA = PANGO_SCRIPT_LINEAR_A /* 95 */
     /// Mahajani. Since: 1.40
     static let mahajani = PANGO_SCRIPT_MAHAJANI /* 96 */
     /// Manichaean. Since: 1.40
     static let manichaean = PANGO_SCRIPT_MANICHAEAN /* 97 */
     /// Mende Kikakui. Since: 1.40
-    static let mende_kikakui = PANGO_SCRIPT_MENDE_KIKAKUI /* 98 */
+    static let mendeKikakui = PANGO_SCRIPT_MENDE_KIKAKUI /* 98 */
     /// Modi. Since: 1.40
     static let modi = PANGO_SCRIPT_MODI /* 99 */
     /// Mro. Since: 1.40
@@ -498,36 +569,91 @@ public extension Script {
     /// Nabataean. Since: 1.40
     static let nabataean = PANGO_SCRIPT_NABATAEAN /* 101 */
     /// Old North Arabian. Since: 1.40
-    static let old_north_arabian = PANGO_SCRIPT_OLD_NORTH_ARABIAN /* 102 */
+    static let oldNorthArabian = PANGO_SCRIPT_OLD_NORTH_ARABIAN /* 102 */
     /// Old Permic. Since: 1.40
-    static let old_permic = PANGO_SCRIPT_OLD_PERMIC /* 103 */
+    static let oldPermic = PANGO_SCRIPT_OLD_PERMIC /* 103 */
     /// Pahawh Hmong. Since: 1.40
-    static let pahawh_hmong = PANGO_SCRIPT_PAHAWH_HMONG /* 104 */
+    static let pahawhHmong = PANGO_SCRIPT_PAHAWH_HMONG /* 104 */
     /// Palmyrene. Since: 1.40
     static let palmyrene = PANGO_SCRIPT_PALMYRENE /* 105 */
     /// Pau Cin Hau. Since: 1.40
-    static let pau_cin_hau = PANGO_SCRIPT_PAU_CIN_HAU /* 106 */
+    static let pauCinHau = PANGO_SCRIPT_PAU_CIN_HAU /* 106 */
     /// Psalter Pahlavi. Since: 1.40
-    static let psalter_pahlavi = PANGO_SCRIPT_PSALTER_PAHLAVI /* 107 */
+    static let psalterPahlavi = PANGO_SCRIPT_PSALTER_PAHLAVI /* 107 */
     /// Siddham. Since: 1.40
     static let siddham = PANGO_SCRIPT_SIDDHAM /* 108 */
     /// Tirhuta. Since: 1.40
     static let tirhuta = PANGO_SCRIPT_TIRHUTA /* 109 */
     /// Warang Citi. Since: 1.40
-    static let warang_citi = PANGO_SCRIPT_WARANG_CITI /* 110 */
+    static let warangCiti = PANGO_SCRIPT_WARANG_CITI /* 110 */
     /// Ahom. Since: 1.40
     static let ahom = PANGO_SCRIPT_AHOM /* 111 */
     /// Anatolian Hieroglyphs. Since: 1.40
-    static let anatolian_hieroglyphs = PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS /* 112 */
+    static let anatolianHieroglyphs = PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS /* 112 */
     /// Hatran. Since: 1.40
     static let hatran = PANGO_SCRIPT_HATRAN /* 113 */
     /// Multani. Since: 1.40
     static let multani = PANGO_SCRIPT_MULTANI /* 114 */
     /// Old Hungarian. Since: 1.40
-    static let old_hungarian = PANGO_SCRIPT_OLD_HUNGARIAN /* 115 */
+    static let oldHungarian = PANGO_SCRIPT_OLD_HUNGARIAN /* 115 */
     /// Signwriting. Since: 1.40
     static let signwriting = PANGO_SCRIPT_SIGNWRITING /* 116 */
+    /// a value never returned from `pango_script_for_unichar()`
+    @available(*, deprecated) static let invalid_code = Script.invalidCode /* PANGO_SCRIPT_INVALID_CODE */
+    /// Old Italic
+    @available(*, deprecated) static let old_italic = Script.oldItalic /* PANGO_SCRIPT_OLD_ITALIC */
+    /// Canadian Aboriginal
+    @available(*, deprecated) static let canadian_aboriginal = Script.canadianAboriginal /* PANGO_SCRIPT_CANADIAN_ABORIGINAL */
+    /// Linear B
+    @available(*, deprecated) static let linear_b = Script.linearB /* PANGO_SCRIPT_LINEAR_B */
+    /// Tai Le
+    @available(*, deprecated) static let tai_le = Script.taiLe /* PANGO_SCRIPT_TAI_LE */
+    /// New Tai Lue. Since 1.10
+    @available(*, deprecated) static let new_tai_lue = Script.newTaiLue /* PANGO_SCRIPT_NEW_TAI_LUE */
+    /// Syloti Nagri. Since 1.10
+    @available(*, deprecated) static let syloti_nagri = Script.sylotiNagri /* PANGO_SCRIPT_SYLOTI_NAGRI */
+    /// Old Persian. Since 1.10
+    @available(*, deprecated) static let old_persian = Script.oldPersian /* PANGO_SCRIPT_OLD_PERSIAN */
+    /// Phags-pa. Since 1.14
+    @available(*, deprecated) static let phags_pa = Script.phagsPa /* PANGO_SCRIPT_PHAGS_PA */
+    /// Kayah Li. Since 1.20.1
+    @available(*, deprecated) static let kayah_li = Script.kayahLi /* PANGO_SCRIPT_KAYAH_LI */
+    /// Ol Chiki. Since 1.20.1
+    @available(*, deprecated) static let ol_chiki = Script.olChiki /* PANGO_SCRIPT_OL_CHIKI */
+    /// Meroitic Cursive. Since: 1.32
+    @available(*, deprecated) static let meroitic_cursive = Script.meroiticCursive /* PANGO_SCRIPT_MEROITIC_CURSIVE */
+    /// Meroitic Hieroglyphs. Since: 1.32
+    @available(*, deprecated) static let meroitic_hieroglyphs = Script.meroiticHieroglyphs /* PANGO_SCRIPT_MEROITIC_HIEROGLYPHS */
+    /// Sora Sompeng. Since: 1.32
+    @available(*, deprecated) static let sora_sompeng = Script.soraSompeng /* PANGO_SCRIPT_SORA_SOMPENG */
+    /// Bassa. Since: 1.40
+    @available(*, deprecated) static let bassa_vah = Script.bassaVah /* PANGO_SCRIPT_BASSA_VAH */
+    /// Caucasian Albanian. Since: 1.40
+    @available(*, deprecated) static let caucasian_albanian = Script.caucasianAlbanian /* PANGO_SCRIPT_CAUCASIAN_ALBANIAN */
+    /// Linear A. Since: 1.40
+    @available(*, deprecated) static let linear_a = Script.linearA /* PANGO_SCRIPT_LINEAR_A */
+    /// Mende Kikakui. Since: 1.40
+    @available(*, deprecated) static let mende_kikakui = Script.mendeKikakui /* PANGO_SCRIPT_MENDE_KIKAKUI */
+    /// Old North Arabian. Since: 1.40
+    @available(*, deprecated) static let old_north_arabian = Script.oldNorthArabian /* PANGO_SCRIPT_OLD_NORTH_ARABIAN */
+    /// Old Permic. Since: 1.40
+    @available(*, deprecated) static let old_permic = Script.oldPermic /* PANGO_SCRIPT_OLD_PERMIC */
+    /// Pahawh Hmong. Since: 1.40
+    @available(*, deprecated) static let pahawh_hmong = Script.pahawhHmong /* PANGO_SCRIPT_PAHAWH_HMONG */
+    /// Pau Cin Hau. Since: 1.40
+    @available(*, deprecated) static let pau_cin_hau = Script.pauCinHau /* PANGO_SCRIPT_PAU_CIN_HAU */
+    /// Psalter Pahlavi. Since: 1.40
+    @available(*, deprecated) static let psalter_pahlavi = Script.psalterPahlavi /* PANGO_SCRIPT_PSALTER_PAHLAVI */
+    /// Warang Citi. Since: 1.40
+    @available(*, deprecated) static let warang_citi = Script.warangCiti /* PANGO_SCRIPT_WARANG_CITI */
+    /// Anatolian Hieroglyphs. Since: 1.40
+    @available(*, deprecated) static let anatolian_hieroglyphs = Script.anatolianHieroglyphs /* PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS */
+    /// Old Hungarian. Since: 1.40
+    @available(*, deprecated) static let old_hungarian = Script.oldHungarian /* PANGO_SCRIPT_OLD_HUNGARIAN */
 }
+func cast<I: BinaryInteger>(_ param: I) -> Script { Script(rawValue: cast(param)) }
+func cast(_ param: Script) -> UInt32 { cast(param.rawValue) }
+
 
 /// An enumeration specifying the width of the font relative to other designs
 /// within a family.
@@ -535,24 +661,39 @@ public typealias Stretch = PangoStretch
 
 public extension Stretch {
     /// ultra condensed width
-    static let ultra_condensed = PANGO_STRETCH_ULTRA_CONDENSED /* 0 */
+    static let ultraCondensed = PANGO_STRETCH_ULTRA_CONDENSED /* 0 */
     /// extra condensed width
-    static let extra_condensed = PANGO_STRETCH_EXTRA_CONDENSED /* 1 */
+    static let extraCondensed = PANGO_STRETCH_EXTRA_CONDENSED /* 1 */
     /// condensed width
     static let condensed = PANGO_STRETCH_CONDENSED /* 2 */
     /// semi condensed width
-    static let semi_condensed = PANGO_STRETCH_SEMI_CONDENSED /* 3 */
+    static let semiCondensed = PANGO_STRETCH_SEMI_CONDENSED /* 3 */
     /// the normal width
     static let normal = PANGO_STRETCH_NORMAL /* 4 */
     /// semi expanded width
-    static let semi_expanded = PANGO_STRETCH_SEMI_EXPANDED /* 5 */
+    static let semiExpanded = PANGO_STRETCH_SEMI_EXPANDED /* 5 */
     /// expanded width
     static let expanded = PANGO_STRETCH_EXPANDED /* 6 */
     /// extra expanded width
-    static let extra_expanded = PANGO_STRETCH_EXTRA_EXPANDED /* 7 */
+    static let extraExpanded = PANGO_STRETCH_EXTRA_EXPANDED /* 7 */
     /// ultra expanded width
-    static let ultra_expanded = PANGO_STRETCH_ULTRA_EXPANDED /* 8 */
+    static let ultraExpanded = PANGO_STRETCH_ULTRA_EXPANDED /* 8 */
+    /// ultra condensed width
+    @available(*, deprecated) static let ultra_condensed = Stretch.ultraCondensed /* PANGO_STRETCH_ULTRA_CONDENSED */
+    /// extra condensed width
+    @available(*, deprecated) static let extra_condensed = Stretch.extraCondensed /* PANGO_STRETCH_EXTRA_CONDENSED */
+    /// semi condensed width
+    @available(*, deprecated) static let semi_condensed = Stretch.semiCondensed /* PANGO_STRETCH_SEMI_CONDENSED */
+    /// semi expanded width
+    @available(*, deprecated) static let semi_expanded = Stretch.semiExpanded /* PANGO_STRETCH_SEMI_EXPANDED */
+    /// extra expanded width
+    @available(*, deprecated) static let extra_expanded = Stretch.extraExpanded /* PANGO_STRETCH_EXTRA_EXPANDED */
+    /// ultra expanded width
+    @available(*, deprecated) static let ultra_expanded = Stretch.ultraExpanded /* PANGO_STRETCH_ULTRA_EXPANDED */
 }
+func cast<I: BinaryInteger>(_ param: I) -> Stretch { Stretch(rawValue: cast(param)) }
+func cast(_ param: Stretch) -> UInt32 { cast(param.rawValue) }
+
 
 /// An enumeration specifying the various slant styles possible for a font.
 public typealias Style = PangoStyle
@@ -564,15 +705,24 @@ public extension Style {
     static let oblique = PANGO_STYLE_OBLIQUE /* 1 */
     /// the font is slanted in an italic style.
     static let italic = PANGO_STYLE_ITALIC /* 2 */
+
 }
+func cast<I: BinaryInteger>(_ param: I) -> Style { Style(rawValue: cast(param)) }
+func cast(_ param: Style) -> UInt32 { cast(param.rawValue) }
+
 
 /// A `PangoTabAlign` specifies where a tab stop appears relative to the text.
 public typealias TabAlign = PangoTabAlign
 
 public extension TabAlign {
     /// the tab stop appears to the left of the text.
-    static let left_ = PANGO_TAB_LEFT /* 0 */
+    static let `left` = PANGO_TAB_LEFT /* 0 */
+    /// the tab stop appears to the left of the text.
+    @available(*, deprecated) static let left_ = TabAlign.`left` /* PANGO_TAB_LEFT */
 }
+func cast<I: BinaryInteger>(_ param: I) -> TabAlign { TabAlign(rawValue: cast(param)) }
+func cast(_ param: TabAlign) -> UInt32 { cast(param.rawValue) }
+
 
 /// The `PangoUnderline` enumeration is used to specify
 /// whether text should be underlined, and if so, the type
@@ -581,7 +731,7 @@ public typealias Underline = PangoUnderline
 
 public extension Underline {
     /// no underline should be drawn
-    static let none_ = PANGO_UNDERLINE_NONE /* 0 */
+    static let `none` = PANGO_UNDERLINE_NONE /* 0 */
     /// a single underline should be drawn
     static let single = PANGO_UNDERLINE_SINGLE /* 1 */
     /// a double underline should be drawn
@@ -599,7 +749,12 @@ public extension Underline {
     ///     may automatically be used. This type of underlining is
     ///     available since Pango 1.4.
     static let error = PANGO_UNDERLINE_ERROR /* 4 */
+    /// no underline should be drawn
+    @available(*, deprecated) static let none_ = Underline.`none` /* PANGO_UNDERLINE_NONE */
 }
+func cast<I: BinaryInteger>(_ param: I) -> Underline { Underline(rawValue: cast(param)) }
+func cast(_ param: Underline) -> UInt32 { cast(param.rawValue) }
+
 
 /// An enumeration specifying capitalization variant of the font.
 public typealias Variant = PangoVariant
@@ -609,8 +764,14 @@ public extension Variant {
     static let normal = PANGO_VARIANT_NORMAL /* 0 */
     /// A font with the lower case characters
     /// replaced by smaller variants of the capital characters.
-    static let small_caps = PANGO_VARIANT_SMALL_CAPS /* 1 */
+    static let smallCaps = PANGO_VARIANT_SMALL_CAPS /* 1 */
+    /// A font with the lower case characters
+    /// replaced by smaller variants of the capital characters.
+    @available(*, deprecated) static let small_caps = Variant.smallCaps /* PANGO_VARIANT_SMALL_CAPS */
 }
+func cast<I: BinaryInteger>(_ param: I) -> Variant { Variant(rawValue: cast(param)) }
+func cast(_ param: Variant) -> UInt32 { cast(param.rawValue) }
+
 
 /// An enumeration specifying the weight (boldness) of a font. This is a numerical
 /// value ranging from 100 to 1000, but there are some predefined values:
@@ -641,7 +802,11 @@ public extension Weight {
     static let heavy = PANGO_WEIGHT_HEAVY /* 900 */
     /// the ultraheavy weight (= 1000; Since: 1.24)
     static let ultraheavy = PANGO_WEIGHT_ULTRAHEAVY /* 1000 */
+
 }
+func cast<I: BinaryInteger>(_ param: I) -> Weight { Weight(rawValue: cast(param)) }
+func cast(_ param: Weight) -> UInt32 { cast(param.rawValue) }
+
 
 /// A `PangoWrapMode` describes how to wrap the lines of a `PangoLayout` to the desired width.
 public typealias WrapMode = PangoWrapMode
@@ -653,5 +818,10 @@ public extension WrapMode {
     static let char = PANGO_WRAP_CHAR /* 1 */
     /// wrap lines at word boundaries, but fall back to character boundaries if there is not
     /// enough space for a full word.
-    static let word_char = PANGO_WRAP_WORD_CHAR /* 2 */
+    static let wordChar = PANGO_WRAP_WORD_CHAR /* 2 */
+    /// wrap lines at word boundaries, but fall back to character boundaries if there is not
+    /// enough space for a full word.
+    @available(*, deprecated) static let word_char = WrapMode.wordChar /* PANGO_WRAP_WORD_CHAR */
 }
+func cast<I: BinaryInteger>(_ param: I) -> WrapMode { WrapMode(rawValue: cast(param)) }
+func cast(_ param: WrapMode) -> UInt32 { cast(param.rawValue) }

@@ -12,7 +12,7 @@ import GLibObject
 ///
 /// The `PangoItem` structure stores information about a segment of text.
 public protocol ItemProtocol {
-    /// Untyped pointer to the underlying `PangoItem` instance.
+        /// Untyped pointer to the underlying `PangoItem` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoItem` instance.
@@ -25,7 +25,7 @@ public protocol ItemProtocol {
 ///
 /// The `PangoItem` structure stores information about a segment of text.
 public struct ItemRef: ItemProtocol {
-    /// Untyped pointer to the underlying `PangoItem` instance.
+        /// Untyped pointer to the underlying `PangoItem` instance.
     /// For type-safe access, use the generated, typed pointer `item_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -72,7 +72,7 @@ public extension ItemRef {
 
         /// Creates a new `PangoItem` structure initialized to default values.
     init() {
-        let rv = pango_item_new()
+        let rv: UnsafeMutablePointer<PangoItem>! = cast(pango_item_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -83,7 +83,7 @@ public extension ItemRef {
 ///
 /// The `PangoItem` structure stores information about a segment of text.
 open class Item: ItemProtocol {
-    /// Untyped pointer to the underlying `PangoItem` instance.
+        /// Untyped pointer to the underlying `PangoItem` instance.
     /// For type-safe access, use the generated, typed pointer `item_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -112,7 +112,7 @@ open class Item: ItemProtocol {
         // no reference counting for PangoItem, cannot ref(cast(item_ptr))
     }
 
-    /// Do-nothing destructor for`PangoItem`.
+    /// Do-nothing destructor for `PangoItem`.
     deinit {
         // no reference counting for PangoItem, cannot unref(cast(item_ptr))
     }
@@ -178,18 +178,19 @@ open class Item: ItemProtocol {
 
     /// Creates a new `PangoItem` structure initialized to default values.
     public init() {
-        let rv = pango_item_new()
+        let rv: UnsafeMutablePointer<PangoItem>! = cast(pango_item_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
 
 }
 
-// MARK: - no Item properties
+// MARK: no Item properties
 
-// MARK: - no signals
+// MARK: no Item signals
 
 
+// MARK: Item Record: ItemProtocol extension (methods and fields)
 public extension ItemProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoItem` instance.
     var item_ptr: UnsafeMutablePointer<PangoItem> { return ptr.assumingMemoryBound(to: PangoItem.self) }
@@ -211,7 +212,7 @@ public extension ItemProtocol {
 
     /// Copy an existing `PangoItem` structure.
     func copy() -> UnsafeMutablePointer<PangoItem>! {
-        let rv = pango_item_copy(cast(item_ptr))
+        let rv: UnsafeMutablePointer<PangoItem>! = cast(pango_item_copy(cast(item_ptr)))
         return cast(rv)
     }
 
@@ -232,9 +233,62 @@ public extension ItemProtocol {
     /// item isn't available, so `pango_item_split()` can't count the char
     /// length of the split items itself.
     func split(splitIndex split_index: CInt, splitOffset split_offset: CInt) -> UnsafeMutablePointer<PangoItem>! {
-        let rv = pango_item_split(cast(item_ptr), split_index, split_offset)
+        let rv: UnsafeMutablePointer<PangoItem>! = cast(pango_item_split(cast(item_ptr), split_index, split_offset))
         return cast(rv)
     }
+
+    /// byte offset of the start of this item in text.
+    var offset: Int {
+        /// byte offset of the start of this item in text.
+        get {
+            let rv: Int = cast(item_ptr.pointee.offset)
+            return rv
+        }
+        /// byte offset of the start of this item in text.
+         set {
+            item_ptr.pointee.offset = gint(newValue)
+        }
+    }
+
+    /// length of this item in bytes.
+    var length: Int {
+        /// length of this item in bytes.
+        get {
+            let rv: Int = cast(item_ptr.pointee.length)
+            return rv
+        }
+        /// length of this item in bytes.
+         set {
+            item_ptr.pointee.length = gint(newValue)
+        }
+    }
+
+    /// number of Unicode characters in the item.
+    var numChars: Int {
+        /// number of Unicode characters in the item.
+        get {
+            let rv: Int = cast(item_ptr.pointee.num_chars)
+            return rv
+        }
+        /// number of Unicode characters in the item.
+         set {
+            item_ptr.pointee.num_chars = gint(newValue)
+        }
+    }
+
+    /// analysis results for the item.
+    var analysis: PangoAnalysis {
+        /// analysis results for the item.
+        get {
+            let rv: PangoAnalysis = cast(item_ptr.pointee.analysis)
+            return rv
+        }
+        /// analysis results for the item.
+         set {
+            item_ptr.pointee.analysis = cast(newValue)
+        }
+    }
+
 }
 
 
@@ -252,7 +306,7 @@ public extension ItemProtocol {
 /// `PangoLanguage` pointers can be efficiently
 /// copied and compared with each other.
 public protocol LanguageProtocol {
-    /// Untyped pointer to the underlying `PangoLanguage` instance.
+        /// Untyped pointer to the underlying `PangoLanguage` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoLanguage` instance.
@@ -269,7 +323,7 @@ public protocol LanguageProtocol {
 /// `PangoLanguage` pointers can be efficiently
 /// copied and compared with each other.
 public struct LanguageRef: LanguageProtocol {
-    /// Untyped pointer to the underlying `PangoLanguage` instance.
+        /// Untyped pointer to the underlying `PangoLanguage` instance.
     /// For type-safe access, use the generated, typed pointer `language_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -326,7 +380,7 @@ public extension LanguageRef {
     /// Use `pango_language_get_default()` if you want to get the `PangoLanguage` for
     /// the current locale of the process.
     static func from(string language: UnsafePointer<CChar>) -> LanguageRef! {
-        let rv = pango_language_from_string(language)
+        let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_language_from_string(language))
         return rv.map { LanguageRef(cast($0)) }
     }
 
@@ -357,7 +411,7 @@ public extension LanguageRef {
     /// functions automatically (by calling `gtk_set_locale()`).
     /// See <literal>man setlocale</literal> for more details.
     static func getDefault() -> LanguageRef! {
-        let rv = pango_language_get_default()
+        let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_language_get_default())
         return rv.map { LanguageRef(cast($0)) }
     }
 }
@@ -372,7 +426,7 @@ public extension LanguageRef {
 /// `PangoLanguage` pointers can be efficiently
 /// copied and compared with each other.
 open class Language: LanguageProtocol {
-    /// Untyped pointer to the underlying `PangoLanguage` instance.
+        /// Untyped pointer to the underlying `PangoLanguage` instance.
     /// For type-safe access, use the generated, typed pointer `language_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -401,7 +455,7 @@ open class Language: LanguageProtocol {
         // no reference counting for PangoLanguage, cannot ref(cast(language_ptr))
     }
 
-    /// Do-nothing destructor for`PangoLanguage`.
+    /// Do-nothing destructor for `PangoLanguage`.
     deinit {
         // no reference counting for PangoLanguage, cannot unref(cast(language_ptr))
     }
@@ -478,7 +532,7 @@ open class Language: LanguageProtocol {
     /// Use `pango_language_get_default()` if you want to get the `PangoLanguage` for
     /// the current locale of the process.
     public static func from(string language: UnsafePointer<CChar>) -> Language! {
-        let rv = pango_language_from_string(language)
+        let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_language_from_string(language))
         return rv.map { Language(cast($0)) }
     }
 
@@ -509,17 +563,18 @@ open class Language: LanguageProtocol {
     /// functions automatically (by calling `gtk_set_locale()`).
     /// See <literal>man setlocale</literal> for more details.
     public static func getDefault() -> Language! {
-        let rv = pango_language_get_default()
+        let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_language_get_default())
         return rv.map { Language(cast($0)) }
     }
 
 }
 
-// MARK: - no Language properties
+// MARK: no Language properties
 
-// MARK: - no signals
+// MARK: no Language signals
 
 
+// MARK: Language Record: LanguageProtocol extension (methods and fields)
 public extension LanguageProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLanguage` instance.
     var language_ptr: UnsafeMutablePointer<PangoLanguage> { return ptr.assumingMemoryBound(to: PangoLanguage.self) }
@@ -543,8 +598,8 @@ public extension LanguageProtocol {
     /// pango_language_get_sample_string (pango_language_from_string ("xx"))
     /// </programlisting></informalexample>
     func getSampleString() -> String! {
-        let rv = pango_language_get_sample_string(cast(language_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(pango_language_get_sample_string(cast(language_ptr)))
+        return cast(rv)
     }
 
     /// Determines the scripts used to to write `language`.
@@ -570,7 +625,7 @@ public extension LanguageProtocol {
     /// returned values are from the GUnicodeScript enumeration, which
     /// may have more values. Callers need to handle unknown values.
     func getScripts(numScripts num_scripts: UnsafeMutablePointer<CInt>) -> UnsafePointer<PangoScript>! {
-        let rv = pango_language_get_scripts(cast(language_ptr), cast(num_scripts))
+        let rv: UnsafePointer<PangoScript>! = cast(pango_language_get_scripts(cast(language_ptr), cast(num_scripts)))
         return cast(rv)
     }
 
@@ -603,13 +658,13 @@ public extension LanguageProtocol {
 
     /// Gets the RFC-3066 format string representing the given language tag.
     func toString() -> String! {
-        let rv = pango_language_to_string(cast(language_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(pango_language_to_string(cast(language_ptr)))
+        return cast(rv)
     }
 
     /// Create a new language tag attribute.
     func attrLanguageNew() -> UnsafeMutablePointer<PangoAttribute>! {
-        let rv = pango_attr_language_new(cast(language_ptr))
+        let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_language_new(cast(language_ptr)))
         return cast(rv)
     }
 
@@ -618,7 +673,7 @@ public extension LanguageProtocol {
     /// **find_map is deprecated:**
     /// This method is deprecated.
     @available(*, deprecated) func findMap(engineTypeId engine_type_id: CUnsignedInt, renderTypeId render_type_id: CUnsignedInt) -> UnsafeMutablePointer<PangoMap>! {
-        let rv = pango_find_map(cast(language_ptr), guint(engine_type_id), guint(render_type_id))
+        let rv: UnsafeMutablePointer<PangoMap>! = cast(pango_find_map(cast(language_ptr), guint(engine_type_id), guint(render_type_id)))
         return cast(rv)
     }
 
@@ -671,10 +726,12 @@ public extension LanguageProtocol {
         /// pango_language_get_sample_string (pango_language_from_string ("xx"))
         /// </programlisting></informalexample>
         get {
-            let rv = pango_language_get_sample_string(cast(language_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(pango_language_get_sample_string(cast(language_ptr)))
+            return cast(rv)
         }
     }
+
+
 }
 
 

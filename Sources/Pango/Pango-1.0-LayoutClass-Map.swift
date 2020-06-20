@@ -12,7 +12,7 @@ import GLibObject
 ///
 
 public protocol LayoutClassProtocol {
-    /// Untyped pointer to the underlying `PangoLayoutClass` instance.
+        /// Untyped pointer to the underlying `PangoLayoutClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoLayoutClass` instance.
@@ -25,7 +25,7 @@ public protocol LayoutClassProtocol {
 ///
 
 public struct LayoutClassRef: LayoutClassProtocol {
-    /// Untyped pointer to the underlying `PangoLayoutClass` instance.
+        /// Untyped pointer to the underlying `PangoLayoutClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension LayoutClassRef {
 ///
 
 open class LayoutClass: LayoutClassProtocol {
-    /// Untyped pointer to the underlying `PangoLayoutClass` instance.
+        /// Untyped pointer to the underlying `PangoLayoutClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -107,7 +107,7 @@ open class LayoutClass: LayoutClassProtocol {
         // no reference counting for PangoLayoutClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoLayoutClass`.
+    /// Do-nothing destructor for `PangoLayoutClass`.
     deinit {
         // no reference counting for PangoLayoutClass, cannot unref(cast(_ptr))
     }
@@ -175,14 +175,17 @@ open class LayoutClass: LayoutClassProtocol {
 
 }
 
-// MARK: - no LayoutClass properties
+// MARK: no LayoutClass properties
 
-// MARK: - no signals
+// MARK: no LayoutClass signals
 
 
+// MARK: LayoutClass Record: LayoutClassProtocol extension (methods and fields)
 public extension LayoutClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLayoutClass` instance.
     var _ptr: UnsafeMutablePointer<PangoLayoutClass> { return ptr.assumingMemoryBound(to: PangoLayoutClass.self) }
+
+
 
 }
 
@@ -201,7 +204,7 @@ public extension LayoutClassProtocol {
 /// The `PangoLayoutIter` structure is opaque, and
 /// has no user-visible fields.
 public protocol LayoutIterProtocol {
-    /// Untyped pointer to the underlying `PangoLayoutIter` instance.
+        /// Untyped pointer to the underlying `PangoLayoutIter` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoLayoutIter` instance.
@@ -218,7 +221,7 @@ public protocol LayoutIterProtocol {
 /// The `PangoLayoutIter` structure is opaque, and
 /// has no user-visible fields.
 public struct LayoutIterRef: LayoutIterProtocol {
-    /// Untyped pointer to the underlying `PangoLayoutIter` instance.
+        /// Untyped pointer to the underlying `PangoLayoutIter` instance.
     /// For type-safe access, use the generated, typed pointer `layout_iter_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -275,7 +278,7 @@ public extension LayoutIterRef {
 /// The `PangoLayoutIter` structure is opaque, and
 /// has no user-visible fields.
 open class LayoutIter: LayoutIterProtocol {
-    /// Untyped pointer to the underlying `PangoLayoutIter` instance.
+        /// Untyped pointer to the underlying `PangoLayoutIter` instance.
     /// For type-safe access, use the generated, typed pointer `layout_iter_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -304,7 +307,7 @@ open class LayoutIter: LayoutIterProtocol {
         // no reference counting for PangoLayoutIter, cannot ref(cast(layout_iter_ptr))
     }
 
-    /// Do-nothing destructor for`PangoLayoutIter`.
+    /// Do-nothing destructor for `PangoLayoutIter`.
     deinit {
         // no reference counting for PangoLayoutIter, cannot unref(cast(layout_iter_ptr))
     }
@@ -372,11 +375,12 @@ open class LayoutIter: LayoutIterProtocol {
 
 }
 
-// MARK: - no LayoutIter properties
+// MARK: no LayoutIter properties
 
-// MARK: - no signals
+// MARK: no LayoutIter signals
 
 
+// MARK: LayoutIter Record: LayoutIterProtocol extension (methods and fields)
 public extension LayoutIterProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLayoutIter` instance.
     var layout_iter_ptr: UnsafeMutablePointer<PangoLayoutIter> { return ptr.assumingMemoryBound(to: PangoLayoutIter.self) }
@@ -389,7 +393,7 @@ public extension LayoutIterProtocol {
 
     /// Copies a `PangoLayoutIter`.
     func copy() -> UnsafeMutablePointer<PangoLayoutIter>! {
-        let rv = pango_layout_iter_copy(cast(layout_iter_ptr))
+        let rv: UnsafeMutablePointer<PangoLayoutIter>! = cast(pango_layout_iter_copy(cast(layout_iter_ptr)))
         return cast(rv)
     }
 
@@ -401,9 +405,9 @@ public extension LayoutIterProtocol {
 
     /// Gets the Y position of the current line's baseline, in layout
     /// coordinates (origin at top left of the entire layout).
-    func getBaseline() -> CInt {
-        let rv = pango_layout_iter_get_baseline(cast(layout_iter_ptr))
-        return rv
+    func getBaseline() -> Int {
+        let rv: Int = cast(pango_layout_iter_get_baseline(cast(layout_iter_ptr)))
+        return cast(rv)
     }
 
     /// Gets the extents of the current character, in layout coordinates
@@ -426,14 +430,14 @@ public extension LayoutIterProtocol {
     /// moves in visual order, not logical order, so indexes may not be
     /// sequential. Also, the index may be equal to the length of the text
     /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
-    func getIndex() -> CInt {
-        let rv = pango_layout_iter_get_index(cast(layout_iter_ptr))
-        return rv
+    func getIndex() -> Int {
+        let rv: Int = cast(pango_layout_iter_get_index(cast(layout_iter_ptr)))
+        return cast(rv)
     }
 
     /// Gets the layout associated with a `PangoLayoutIter`.
     func getLayout() -> UnsafeMutablePointer<PangoLayout>! {
-        let rv = pango_layout_iter_get_layout(cast(layout_iter_ptr))
+        let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_layout_iter_get_layout(cast(layout_iter_ptr)))
         return cast(rv)
     }
 
@@ -450,7 +454,7 @@ public extension LayoutIterProtocol {
     /// Use the faster `pango_layout_iter_get_line_readonly()` if you do not plan
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
     func getLine() -> UnsafeMutablePointer<PangoLayoutLine>! {
-        let rv = pango_layout_iter_get_line(cast(layout_iter_ptr))
+        let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_iter_get_line(cast(layout_iter_ptr)))
         return cast(rv)
     }
 
@@ -471,7 +475,7 @@ public extension LayoutIterProtocol {
     /// but the user is not expected
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
     func getLineReadonly() -> UnsafeMutablePointer<PangoLayoutLine>! {
-        let rv = pango_layout_iter_get_line_readonly(cast(layout_iter_ptr))
+        let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_iter_get_line_readonly(cast(layout_iter_ptr)))
         return cast(rv)
     }
 
@@ -499,7 +503,7 @@ public extension LayoutIterProtocol {
     /// Use the faster `pango_layout_iter_get_run_readonly()` if you do not plan
     /// to modify the contents of the run (glyphs, glyph widths, etc.).
     func getRun() -> UnsafeMutablePointer<PangoLayoutRun>! {
-        let rv = pango_layout_iter_get_run(cast(layout_iter_ptr))
+        let rv: UnsafeMutablePointer<PangoLayoutRun>! = cast(pango_layout_iter_get_run(cast(layout_iter_ptr)))
         return cast(rv)
     }
 
@@ -519,7 +523,7 @@ public extension LayoutIterProtocol {
     /// but the user is not expected
     /// to modify the contents of the run (glyphs, glyph widths, etc.).
     func getRunReadonly() -> UnsafeMutablePointer<PangoLayoutRun>! {
-        let rv = pango_layout_iter_get_run_readonly(cast(layout_iter_ptr))
+        let rv: UnsafeMutablePointer<PangoLayoutRun>! = cast(pango_layout_iter_get_run_readonly(cast(layout_iter_ptr)))
         return cast(rv)
     }
 
@@ -552,12 +556,12 @@ public extension LayoutIterProtocol {
     }
     /// Gets the Y position of the current line's baseline, in layout
     /// coordinates (origin at top left of the entire layout).
-    var baseline: CInt {
+    var baseline: Int {
         /// Gets the Y position of the current line's baseline, in layout
         /// coordinates (origin at top left of the entire layout).
         get {
-            let rv = pango_layout_iter_get_baseline(cast(layout_iter_ptr))
-            return rv
+            let rv: Int = cast(pango_layout_iter_get_baseline(cast(layout_iter_ptr)))
+            return cast(rv)
         }
     }
 
@@ -565,14 +569,14 @@ public extension LayoutIterProtocol {
     /// moves in visual order, not logical order, so indexes may not be
     /// sequential. Also, the index may be equal to the length of the text
     /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
-    var index: CInt {
+    var index: Int {
         /// Gets the current byte index. Note that iterating forward by char
         /// moves in visual order, not logical order, so indexes may not be
         /// sequential. Also, the index may be equal to the length of the text
         /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
         get {
-            let rv = pango_layout_iter_get_index(cast(layout_iter_ptr))
-            return rv
+            let rv: Int = cast(pango_layout_iter_get_index(cast(layout_iter_ptr)))
+            return cast(rv)
         }
     }
 
@@ -580,7 +584,7 @@ public extension LayoutIterProtocol {
     var layout: UnsafeMutablePointer<PangoLayout>! {
         /// Gets the layout associated with a `PangoLayoutIter`.
         get {
-            let rv = pango_layout_iter_get_layout(cast(layout_iter_ptr))
+            let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_layout_iter_get_layout(cast(layout_iter_ptr)))
             return cast(rv)
         }
     }
@@ -595,7 +599,7 @@ public extension LayoutIterProtocol {
         /// Use the faster `pango_layout_iter_get_line_readonly()` if you do not plan
         /// to modify the contents of the line (glyphs, glyph widths, etc.).
         get {
-            let rv = pango_layout_iter_get_line(cast(layout_iter_ptr))
+            let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_iter_get_line(cast(layout_iter_ptr)))
             return cast(rv)
         }
     }
@@ -612,7 +616,7 @@ public extension LayoutIterProtocol {
         /// but the user is not expected
         /// to modify the contents of the line (glyphs, glyph widths, etc.).
         get {
-            let rv = pango_layout_iter_get_line_readonly(cast(layout_iter_ptr))
+            let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_iter_get_line_readonly(cast(layout_iter_ptr)))
             return cast(rv)
         }
     }
@@ -633,7 +637,7 @@ public extension LayoutIterProtocol {
         /// Use the faster `pango_layout_iter_get_run_readonly()` if you do not plan
         /// to modify the contents of the run (glyphs, glyph widths, etc.).
         get {
-            let rv = pango_layout_iter_get_run(cast(layout_iter_ptr))
+            let rv: UnsafeMutablePointer<PangoLayoutRun>! = cast(pango_layout_iter_get_run(cast(layout_iter_ptr)))
             return cast(rv)
         }
     }
@@ -656,10 +660,12 @@ public extension LayoutIterProtocol {
         /// but the user is not expected
         /// to modify the contents of the run (glyphs, glyph widths, etc.).
         get {
-            let rv = pango_layout_iter_get_run_readonly(cast(layout_iter_ptr))
+            let rv: UnsafeMutablePointer<PangoLayoutRun>! = cast(pango_layout_iter_get_run_readonly(cast(layout_iter_ptr)))
             return cast(rv)
         }
     }
+
+
 }
 
 
@@ -680,7 +686,7 @@ public extension LayoutIterProtocol {
 /// Routines for rendering PangoLayout objects are provided in
 /// code specific to each rendering system.
 public protocol LayoutLineProtocol {
-    /// Untyped pointer to the underlying `PangoLayoutLine` instance.
+        /// Untyped pointer to the underlying `PangoLayoutLine` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoLayoutLine` instance.
@@ -700,7 +706,7 @@ public protocol LayoutLineProtocol {
 /// Routines for rendering PangoLayout objects are provided in
 /// code specific to each rendering system.
 public struct LayoutLineRef: LayoutLineProtocol {
-    /// Untyped pointer to the underlying `PangoLayoutLine` instance.
+        /// Untyped pointer to the underlying `PangoLayoutLine` instance.
     /// For type-safe access, use the generated, typed pointer `layout_line_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -760,7 +766,7 @@ public extension LayoutLineRef {
 /// Routines for rendering PangoLayout objects are provided in
 /// code specific to each rendering system.
 open class LayoutLine: LayoutLineProtocol {
-    /// Untyped pointer to the underlying `PangoLayoutLine` instance.
+        /// Untyped pointer to the underlying `PangoLayoutLine` instance.
     /// For type-safe access, use the generated, typed pointer `layout_line_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -857,11 +863,12 @@ open class LayoutLine: LayoutLineProtocol {
 
 }
 
-// MARK: - no LayoutLine properties
+// MARK: no LayoutLine properties
 
-// MARK: - no signals
+// MARK: no LayoutLine signals
 
 
+// MARK: LayoutLine Record: LayoutLineProtocol extension (methods and fields)
 public extension LayoutLineProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLayoutLine` instance.
     var layout_line_ptr: UnsafeMutablePointer<PangoLayoutLine> { return ptr.assumingMemoryBound(to: PangoLayoutLine.self) }
@@ -909,7 +916,7 @@ public extension LayoutLineProtocol {
 
     /// Increase the reference count of a `PangoLayoutLine` by one.
     func ref() -> UnsafeMutablePointer<PangoLayoutLine>! {
-        let rv = pango_layout_line_ref(cast(layout_line_ptr))
+        let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_line_ref(cast(layout_line_ptr)))
         return cast(rv)
     }
 
@@ -935,6 +942,88 @@ public extension LayoutLineProtocol {
         let rv = pango_layout_line_x_to_index(cast(layout_line_ptr), x_pos, cast(index_), cast(trailing))
         return Bool(rv != 0)
     }
+
+    /// the layout this line belongs to, might be `nil`
+    var layout: UnsafeMutablePointer<PangoLayout> {
+        /// the layout this line belongs to, might be `nil`
+        get {
+            let rv: UnsafeMutablePointer<PangoLayout> = cast(layout_line_ptr.pointee.layout)
+            return rv
+        }
+        /// the layout this line belongs to, might be `nil`
+         set {
+            layout_line_ptr.pointee.layout = cast(newValue)
+        }
+    }
+
+    /// start of line as byte index into layout->text
+    var startIndex: Int {
+        /// start of line as byte index into layout->text
+        get {
+            let rv: Int = cast(layout_line_ptr.pointee.start_index)
+            return rv
+        }
+        /// start of line as byte index into layout->text
+         set {
+            layout_line_ptr.pointee.start_index = gint(newValue)
+        }
+    }
+
+    /// length of line in bytes
+    var length: Int {
+        /// length of line in bytes
+        get {
+            let rv: Int = cast(layout_line_ptr.pointee.length)
+            return rv
+        }
+        /// length of line in bytes
+         set {
+            layout_line_ptr.pointee.length = gint(newValue)
+        }
+    }
+
+    /// list of runs in the
+    ///        line, from left to right
+    var runs: UnsafeMutablePointer<GSList> {
+        /// list of runs in the
+        ///        line, from left to right
+        get {
+            let rv: UnsafeMutablePointer<GSList> = cast(layout_line_ptr.pointee.runs)
+            return rv
+        }
+        /// list of runs in the
+        ///        line, from left to right
+         set {
+            layout_line_ptr.pointee.runs = cast(newValue)
+        }
+    }
+
+    /// `TRUE` if this is the first line of the paragraph
+    var isParagraphStart: Int {
+        /// `TRUE` if this is the first line of the paragraph
+        get {
+            let rv: Int = cast(layout_line_ptr.pointee.is_paragraph_start)
+            return rv
+        }
+        /// `TRUE` if this is the first line of the paragraph
+         set {
+            layout_line_ptr.pointee.is_paragraph_start = guint(newValue)
+        }
+    }
+
+    /// `Resolved` PangoDirection of line
+    var resolvedDir: Int {
+        /// `Resolved` PangoDirection of line
+        get {
+            let rv: Int = cast(layout_line_ptr.pointee.resolved_dir)
+            return rv
+        }
+        /// `Resolved` PangoDirection of line
+         set {
+            layout_line_ptr.pointee.resolved_dir = guint(newValue)
+        }
+    }
+
 }
 
 
@@ -949,7 +1038,7 @@ public extension LayoutLineProtocol {
 /// The `PangoLogAttr` structure stores information
 /// about the attributes of a single character.
 public protocol LogAttrProtocol {
-    /// Untyped pointer to the underlying `PangoLogAttr` instance.
+        /// Untyped pointer to the underlying `PangoLogAttr` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoLogAttr` instance.
@@ -963,7 +1052,7 @@ public protocol LogAttrProtocol {
 /// The `PangoLogAttr` structure stores information
 /// about the attributes of a single character.
 public struct LogAttrRef: LogAttrProtocol {
-    /// Untyped pointer to the underlying `PangoLogAttr` instance.
+        /// Untyped pointer to the underlying `PangoLogAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1017,7 +1106,7 @@ public extension LogAttrRef {
 /// The `PangoLogAttr` structure stores information
 /// about the attributes of a single character.
 open class LogAttr: LogAttrProtocol {
-    /// Untyped pointer to the underlying `PangoLogAttr` instance.
+        /// Untyped pointer to the underlying `PangoLogAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1046,7 +1135,7 @@ open class LogAttr: LogAttrProtocol {
         // no reference counting for PangoLogAttr, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoLogAttr`.
+    /// Do-nothing destructor for `PangoLogAttr`.
     deinit {
         // no reference counting for PangoLogAttr, cannot unref(cast(_ptr))
     }
@@ -1114,11 +1203,12 @@ open class LogAttr: LogAttrProtocol {
 
 }
 
-// MARK: - no LogAttr properties
+// MARK: no LogAttr properties
 
-// MARK: - no signals
+// MARK: no LogAttr signals
 
 
+// MARK: LogAttr Record: LogAttrProtocol extension (methods and fields)
 public extension LogAttrProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLogAttr` instance.
     var _ptr: UnsafeMutablePointer<PangoLogAttr> { return ptr.assumingMemoryBound(to: PangoLogAttr.self) }
@@ -1132,6 +1222,278 @@ public extension LogAttrProtocol {
         pango_default_break(text, length, cast(analysis.ptr), cast(_ptr), attrs_len)
     
     }
+
+    /// if set, can break line in front of character
+    var isLineBreak: Int {
+        /// if set, can break line in front of character
+        get {
+            let rv: Int = cast(_ptr.pointee.is_line_break)
+            return rv
+        }
+        /// if set, can break line in front of character
+         set {
+            _ptr.pointee.is_line_break = guint(newValue)
+        }
+    }
+
+    /// if set, must break line in front of character
+    var isMandatoryBreak: Int {
+        /// if set, must break line in front of character
+        get {
+            let rv: Int = cast(_ptr.pointee.is_mandatory_break)
+            return rv
+        }
+        /// if set, must break line in front of character
+         set {
+            _ptr.pointee.is_mandatory_break = guint(newValue)
+        }
+    }
+
+    /// if set, can break here when doing character wrapping
+    var isCharBreak: Int {
+        /// if set, can break here when doing character wrapping
+        get {
+            let rv: Int = cast(_ptr.pointee.is_char_break)
+            return rv
+        }
+        /// if set, can break here when doing character wrapping
+         set {
+            _ptr.pointee.is_char_break = guint(newValue)
+        }
+    }
+
+    /// is whitespace character
+    var isWhite: Int {
+        /// is whitespace character
+        get {
+            let rv: Int = cast(_ptr.pointee.is_white)
+            return rv
+        }
+        /// is whitespace character
+         set {
+            _ptr.pointee.is_white = guint(newValue)
+        }
+    }
+
+    /// if set, cursor can appear in front of character.
+    /// i.e. this is a grapheme boundary, or the first character
+    /// in the text.
+    /// This flag implements Unicode's
+    /// <ulink url="http://www.unicode.org/reports/tr29/">Grapheme
+    /// Cluster Boundaries</ulink> semantics.
+    var isCursorPosition: Int {
+        /// if set, cursor can appear in front of character.
+        /// i.e. this is a grapheme boundary, or the first character
+        /// in the text.
+        /// This flag implements Unicode's
+        /// <ulink url="http://www.unicode.org/reports/tr29/">Grapheme
+        /// Cluster Boundaries</ulink> semantics.
+        get {
+            let rv: Int = cast(_ptr.pointee.is_cursor_position)
+            return rv
+        }
+        /// if set, cursor can appear in front of character.
+        /// i.e. this is a grapheme boundary, or the first character
+        /// in the text.
+        /// This flag implements Unicode's
+        /// <ulink url="http://www.unicode.org/reports/tr29/">Grapheme
+        /// Cluster Boundaries</ulink> semantics.
+         set {
+            _ptr.pointee.is_cursor_position = guint(newValue)
+        }
+    }
+
+    /// is first character in a word
+    var isWordStart: Int {
+        /// is first character in a word
+        get {
+            let rv: Int = cast(_ptr.pointee.is_word_start)
+            return rv
+        }
+        /// is first character in a word
+         set {
+            _ptr.pointee.is_word_start = guint(newValue)
+        }
+    }
+
+    /// is first non-word char after a word
+    /// Note that in degenerate cases, you could have both `is_word_start`
+    /// and `is_word_end` set for some character.
+    var isWordEnd: Int {
+        /// is first non-word char after a word
+        /// Note that in degenerate cases, you could have both `is_word_start`
+        /// and `is_word_end` set for some character.
+        get {
+            let rv: Int = cast(_ptr.pointee.is_word_end)
+            return rv
+        }
+        /// is first non-word char after a word
+        /// Note that in degenerate cases, you could have both `is_word_start`
+        /// and `is_word_end` set for some character.
+         set {
+            _ptr.pointee.is_word_end = guint(newValue)
+        }
+    }
+
+    /// is a sentence boundary.
+    /// There are two ways to divide sentences. The first assigns all
+    /// inter-sentence whitespace/control/format chars to some sentence,
+    /// so all chars are in some sentence; `is_sentence_boundary` denotes
+    /// the boundaries there. The second way doesn't assign
+    /// between-sentence spaces, etc. to any sentence, so
+    /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
+    var isSentenceBoundary: Int {
+        /// is a sentence boundary.
+        /// There are two ways to divide sentences. The first assigns all
+        /// inter-sentence whitespace/control/format chars to some sentence,
+        /// so all chars are in some sentence; `is_sentence_boundary` denotes
+        /// the boundaries there. The second way doesn't assign
+        /// between-sentence spaces, etc. to any sentence, so
+        /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
+        get {
+            let rv: Int = cast(_ptr.pointee.is_sentence_boundary)
+            return rv
+        }
+        /// is a sentence boundary.
+        /// There are two ways to divide sentences. The first assigns all
+        /// inter-sentence whitespace/control/format chars to some sentence,
+        /// so all chars are in some sentence; `is_sentence_boundary` denotes
+        /// the boundaries there. The second way doesn't assign
+        /// between-sentence spaces, etc. to any sentence, so
+        /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
+         set {
+            _ptr.pointee.is_sentence_boundary = guint(newValue)
+        }
+    }
+
+    /// is first character in a sentence
+    var isSentenceStart: Int {
+        /// is first character in a sentence
+        get {
+            let rv: Int = cast(_ptr.pointee.is_sentence_start)
+            return rv
+        }
+        /// is first character in a sentence
+         set {
+            _ptr.pointee.is_sentence_start = guint(newValue)
+        }
+    }
+
+    /// is first char after a sentence.
+    /// Note that in degenerate cases, you could have both `is_sentence_start`
+    /// and `is_sentence_end` set for some character. (e.g. no space after a
+    /// period, so the next sentence starts right away)
+    var isSentenceEnd: Int {
+        /// is first char after a sentence.
+        /// Note that in degenerate cases, you could have both `is_sentence_start`
+        /// and `is_sentence_end` set for some character. (e.g. no space after a
+        /// period, so the next sentence starts right away)
+        get {
+            let rv: Int = cast(_ptr.pointee.is_sentence_end)
+            return rv
+        }
+        /// is first char after a sentence.
+        /// Note that in degenerate cases, you could have both `is_sentence_start`
+        /// and `is_sentence_end` set for some character. (e.g. no space after a
+        /// period, so the next sentence starts right away)
+         set {
+            _ptr.pointee.is_sentence_end = guint(newValue)
+        }
+    }
+
+    /// if set, backspace deletes one character
+    /// rather than the entire grapheme cluster. This
+    /// field is only meaningful on grapheme
+    /// boundaries (where `is_cursor_position` is
+    /// set).  In some languages, the full grapheme
+    /// (e.g.  letter + diacritics) is considered a
+    /// unit, while in others, each decomposed
+    /// character in the grapheme is a unit. In the
+    /// default implementation of `pango_break()`, this
+    /// bit is set on all grapheme boundaries except
+    /// those following Latin, Cyrillic or Greek base characters.
+    var backspaceDeletesCharacter: Int {
+        /// if set, backspace deletes one character
+        /// rather than the entire grapheme cluster. This
+        /// field is only meaningful on grapheme
+        /// boundaries (where `is_cursor_position` is
+        /// set).  In some languages, the full grapheme
+        /// (e.g.  letter + diacritics) is considered a
+        /// unit, while in others, each decomposed
+        /// character in the grapheme is a unit. In the
+        /// default implementation of `pango_break()`, this
+        /// bit is set on all grapheme boundaries except
+        /// those following Latin, Cyrillic or Greek base characters.
+        get {
+            let rv: Int = cast(_ptr.pointee.backspace_deletes_character)
+            return rv
+        }
+        /// if set, backspace deletes one character
+        /// rather than the entire grapheme cluster. This
+        /// field is only meaningful on grapheme
+        /// boundaries (where `is_cursor_position` is
+        /// set).  In some languages, the full grapheme
+        /// (e.g.  letter + diacritics) is considered a
+        /// unit, while in others, each decomposed
+        /// character in the grapheme is a unit. In the
+        /// default implementation of `pango_break()`, this
+        /// bit is set on all grapheme boundaries except
+        /// those following Latin, Cyrillic or Greek base characters.
+         set {
+            _ptr.pointee.backspace_deletes_character = guint(newValue)
+        }
+    }
+
+    /// is a whitespace character that can possibly be
+    /// expanded for justification purposes. (Since: 1.18)
+    var isExpandableSpace: Int {
+        /// is a whitespace character that can possibly be
+        /// expanded for justification purposes. (Since: 1.18)
+        get {
+            let rv: Int = cast(_ptr.pointee.is_expandable_space)
+            return rv
+        }
+        /// is a whitespace character that can possibly be
+        /// expanded for justification purposes. (Since: 1.18)
+         set {
+            _ptr.pointee.is_expandable_space = guint(newValue)
+        }
+    }
+
+    /// is a word boundary, as defined by UAX`29`.
+    /// More specifically, means that this is not a position in the middle
+    /// of a word.  For example, both sides of a punctuation mark are
+    /// considered word boundaries.  This flag is particularly useful when
+    /// selecting text word-by-word.
+    /// This flag implements Unicode's
+    /// <ulink url="http://www.unicode.org/reports/tr29/">Word
+    /// Boundaries</ulink> semantics. (Since: 1.22)
+    var isWordBoundary: Int {
+        /// is a word boundary, as defined by UAX`29`.
+        /// More specifically, means that this is not a position in the middle
+        /// of a word.  For example, both sides of a punctuation mark are
+        /// considered word boundaries.  This flag is particularly useful when
+        /// selecting text word-by-word.
+        /// This flag implements Unicode's
+        /// <ulink url="http://www.unicode.org/reports/tr29/">Word
+        /// Boundaries</ulink> semantics. (Since: 1.22)
+        get {
+            let rv: Int = cast(_ptr.pointee.is_word_boundary)
+            return rv
+        }
+        /// is a word boundary, as defined by UAX`29`.
+        /// More specifically, means that this is not a position in the middle
+        /// of a word.  For example, both sides of a punctuation mark are
+        /// considered word boundaries.  This flag is particularly useful when
+        /// selecting text word-by-word.
+        /// This flag implements Unicode's
+        /// <ulink url="http://www.unicode.org/reports/tr29/">Word
+        /// Boundaries</ulink> semantics. (Since: 1.22)
+         set {
+            _ptr.pointee.is_word_boundary = guint(newValue)
+        }
+    }
+
 }
 
 
@@ -1145,7 +1507,7 @@ public extension LogAttrProtocol {
 ///
 
 public protocol MapProtocol {
-    /// Untyped pointer to the underlying `PangoMap` instance.
+        /// Untyped pointer to the underlying `PangoMap` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `PangoMap` instance.
@@ -1158,7 +1520,7 @@ public protocol MapProtocol {
 ///
 
 public struct MapRef: MapProtocol {
-    /// Untyped pointer to the underlying `PangoMap` instance.
+        /// Untyped pointer to the underlying `PangoMap` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1211,7 +1573,7 @@ public extension MapRef {
 ///
 
 open class Map: MapProtocol {
-    /// Untyped pointer to the underlying `PangoMap` instance.
+        /// Untyped pointer to the underlying `PangoMap` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1240,7 +1602,7 @@ open class Map: MapProtocol {
         // no reference counting for PangoMap, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`PangoMap`.
+    /// Do-nothing destructor for `PangoMap`.
     deinit {
         // no reference counting for PangoMap, cannot unref(cast(_ptr))
     }
@@ -1308,11 +1670,12 @@ open class Map: MapProtocol {
 
 }
 
-// MARK: - no Map properties
+// MARK: no Map properties
 
-// MARK: - no signals
+// MARK: no Map signals
 
 
+// MARK: Map Record: MapProtocol extension (methods and fields)
 public extension MapProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoMap` instance.
     var _ptr: UnsafeMutablePointer<PangoMap> { return ptr.assumingMemoryBound(to: PangoMap.self) }
@@ -1322,7 +1685,7 @@ public extension MapProtocol {
     /// **get_engine is deprecated:**
     /// This method is deprecated.
     @available(*, deprecated) func getEngine(script: Script) -> UnsafeMutablePointer<PangoEngine>! {
-        let rv = pango_map_get_engine(cast(_ptr), script)
+        let rv: UnsafeMutablePointer<PangoEngine>! = cast(pango_map_get_engine(cast(_ptr), script))
         return cast(rv)
     }
 
@@ -1334,6 +1697,8 @@ public extension MapProtocol {
         pango_map_get_engines(cast(_ptr), script, cast(exact_engines.ptr), cast(fallback_engines.ptr))
     
     }
+
+
 }
 
 
