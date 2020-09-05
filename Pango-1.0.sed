@@ -15,3 +15,6 @@ s/: \([A-Za-z.]*Transformer =\)/: @escaping \1/g
 s/: \([A-Za-z.]*Hook[,)]\)/: @escaping \1/g
 s/: \([A-Za-z.]*Function[,)]\)/: @escaping \1/g
 s/: \([A-Za-z.]*Mapping[,)]\)/: @escaping \1/g
+s/ -> UnsafeMutablePointer<PangoLogAttr>/ -> UnsafePointer<PangoLogAttr>/
+s/ -> UnsafeMutablePointer<PangoScript>/ -> UnsafePointer<PangoScript>/
+s/(CChar, CChar, CChar, CChar, CChar, CChar, CChar)/(Int8, Int8, Int8, Int8, Int8, Int8)/
