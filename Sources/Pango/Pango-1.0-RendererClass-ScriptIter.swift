@@ -28,10 +28,11 @@ import GLibObject
 /// - draw_glyph
 public protocol RendererClassProtocol {
         /// Untyped pointer to the underlying `PangoRendererClass` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoRendererClass` instance.
-    var _ptr: UnsafeMutablePointer<PangoRendererClass> { get }
+    var _ptr: UnsafeMutablePointer<PangoRendererClass>! { get }
+
 }
 
 /// The `RendererClassRef` type acts as a lightweight Swift reference to an underlying `PangoRendererClass` instance.
@@ -57,46 +58,76 @@ public protocol RendererClassProtocol {
 public struct RendererClassRef: RendererClassProtocol {
         /// Untyped pointer to the underlying `PangoRendererClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension RendererClassRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoRendererClass>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoRendererClass>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoRendererClass>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoRendererClass>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoRendererClass>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `RendererClassProtocol`
-    init<T: RendererClassProtocol>(_ other: T) {
+    @inlinable init<T: RendererClassProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -125,95 +156,141 @@ public extension RendererClassRef {
 open class RendererClass: RendererClassProtocol {
         /// Untyped pointer to the underlying `PangoRendererClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `RendererClass` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoRendererClass>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoRendererClass>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `RendererClass` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoRendererClass>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `RendererClass` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `RendererClass` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `RendererClass` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoRendererClass>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `RendererClass` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoRendererClass>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `PangoRendererClass` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `RendererClass` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoRendererClass>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoRendererClass>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for PangoRendererClass, cannot ref(cast(_ptr))
+        // no reference counting for PangoRendererClass, cannot ref(_ptr)
     }
 
     /// Reference intialiser for a related type that implements `RendererClassProtocol`
     /// `PangoRendererClass` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `RendererClassProtocol`
-    public init<T: RendererClassProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other._ptr)
-        // no reference counting for PangoRendererClass, cannot ref(cast(_ptr))
+    @inlinable public init<T: RendererClassProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for PangoRendererClass, cannot ref(_ptr)
     }
 
     /// Do-nothing destructor for `PangoRendererClass`.
     deinit {
-        // no reference counting for PangoRendererClass, cannot unref(cast(_ptr))
+        // no reference counting for PangoRendererClass, cannot unref(_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for PangoRendererClass, cannot ref(cast(_ptr))
+        // no reference counting for PangoRendererClass, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for PangoRendererClass, cannot ref(cast(_ptr))
+        // no reference counting for PangoRendererClass, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for PangoRendererClass, cannot ref(cast(_ptr))
+        // no reference counting for PangoRendererClass, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererClassProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for PangoRendererClass, cannot ref(cast(_ptr))
+        // no reference counting for PangoRendererClass, cannot ref(_ptr)
     }
 
 
@@ -228,7 +305,7 @@ open class RendererClass: RendererClassProtocol {
 // MARK: RendererClass Record: RendererClassProtocol extension (methods and fields)
 public extension RendererClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoRendererClass` instance.
-    var _ptr: UnsafeMutablePointer<PangoRendererClass> { return ptr.assumingMemoryBound(to: PangoRendererClass.self) }
+    @inlinable var _ptr: UnsafeMutablePointer<PangoRendererClass>! { return ptr?.assumingMemoryBound(to: PangoRendererClass.self) }
 
 
     // var parentClass is unavailable because parent_class is private
@@ -275,10 +352,11 @@ public extension RendererClassProtocol {
 
 public protocol RendererPrivateProtocol {
         /// Untyped pointer to the underlying `PangoRendererPrivate` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoRendererPrivate` instance.
-    var _ptr: UnsafeMutablePointer<PangoRendererPrivate> { get }
+    var _ptr: UnsafeMutablePointer<PangoRendererPrivate>! { get }
+
 }
 
 /// The `RendererPrivateRef` type acts as a lightweight Swift reference to an underlying `PangoRendererPrivate` instance.
@@ -289,46 +367,76 @@ public protocol RendererPrivateProtocol {
 public struct RendererPrivateRef: RendererPrivateProtocol {
         /// Untyped pointer to the underlying `PangoRendererPrivate` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension RendererPrivateRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoRendererPrivate>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoRendererPrivate>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoRendererPrivate>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoRendererPrivate>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoRendererPrivate>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `RendererPrivateProtocol`
-    init<T: RendererPrivateProtocol>(_ other: T) {
+    @inlinable init<T: RendererPrivateProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -342,95 +450,141 @@ public extension RendererPrivateRef {
 open class RendererPrivate: RendererPrivateProtocol {
         /// Untyped pointer to the underlying `PangoRendererPrivate` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `RendererPrivate` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoRendererPrivate>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoRendererPrivate>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `RendererPrivate` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoRendererPrivate>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `RendererPrivate` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `RendererPrivate` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `RendererPrivate` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoRendererPrivate>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `RendererPrivate` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoRendererPrivate>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `PangoRendererPrivate` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `RendererPrivate` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoRendererPrivate>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoRendererPrivate>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for PangoRendererPrivate, cannot ref(cast(_ptr))
+        // no reference counting for PangoRendererPrivate, cannot ref(_ptr)
     }
 
     /// Reference intialiser for a related type that implements `RendererPrivateProtocol`
     /// `PangoRendererPrivate` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `RendererPrivateProtocol`
-    public init<T: RendererPrivateProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other._ptr)
-        // no reference counting for PangoRendererPrivate, cannot ref(cast(_ptr))
+    @inlinable public init<T: RendererPrivateProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for PangoRendererPrivate, cannot ref(_ptr)
     }
 
     /// Do-nothing destructor for `PangoRendererPrivate`.
     deinit {
-        // no reference counting for PangoRendererPrivate, cannot unref(cast(_ptr))
+        // no reference counting for PangoRendererPrivate, cannot unref(_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for PangoRendererPrivate, cannot ref(cast(_ptr))
+        // no reference counting for PangoRendererPrivate, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for PangoRendererPrivate, cannot ref(cast(_ptr))
+        // no reference counting for PangoRendererPrivate, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for PangoRendererPrivate, cannot ref(cast(_ptr))
+        // no reference counting for PangoRendererPrivate, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererPrivateProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for PangoRendererPrivate, cannot ref(cast(_ptr))
+        // no reference counting for PangoRendererPrivate, cannot ref(_ptr)
     }
 
 
@@ -445,7 +599,7 @@ open class RendererPrivate: RendererPrivateProtocol {
 // MARK: RendererPrivate Record: RendererPrivateProtocol extension (methods and fields)
 public extension RendererPrivateProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoRendererPrivate` instance.
-    var _ptr: UnsafeMutablePointer<PangoRendererPrivate> { return ptr.assumingMemoryBound(to: PangoRendererPrivate.self) }
+    @inlinable var _ptr: UnsafeMutablePointer<PangoRendererPrivate>! { return ptr?.assumingMemoryBound(to: PangoRendererPrivate.self) }
 
 
 
@@ -464,10 +618,11 @@ public extension RendererPrivateProtocol {
 /// and identify ranges in different scripts.
 public protocol ScriptIterProtocol {
         /// Untyped pointer to the underlying `PangoScriptIter` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoScriptIter` instance.
-    var script_iter_ptr: UnsafeMutablePointer<PangoScriptIter> { get }
+    var script_iter_ptr: UnsafeMutablePointer<PangoScriptIter>! { get }
+
 }
 
 /// The `ScriptIterRef` type acts as a lightweight Swift reference to an underlying `PangoScriptIter` instance.
@@ -479,46 +634,76 @@ public protocol ScriptIterProtocol {
 public struct ScriptIterRef: ScriptIterProtocol {
         /// Untyped pointer to the underlying `PangoScriptIter` instance.
     /// For type-safe access, use the generated, typed pointer `script_iter_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension ScriptIterRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoScriptIter>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoScriptIter>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoScriptIter>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoScriptIter>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoScriptIter>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `ScriptIterProtocol`
-    init<T: ScriptIterProtocol>(_ other: T) {
+    @inlinable init<T: ScriptIterProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -526,9 +711,9 @@ public extension ScriptIterRef {
     /// Unicode text into runs by Unicode script. No copy is made of
     /// `text`, so the caller needs to make sure it remains valid until
     /// the iterator is freed with `pango_script_iter_free()`.
-    init( text: UnsafePointer<CChar>, length: CInt) {
-        let rv: UnsafeMutablePointer<PangoScriptIter>! = cast(pango_script_iter_new(text, length))
-        ptr = UnsafeMutableRawPointer(cast(rv))
+    @inlinable init( text: UnsafePointer<CChar>!, length: Int) {
+        let rv = pango_script_iter_new(text, gint(length))
+        ptr = UnsafeMutableRawPointer(rv)
     }
 }
 
@@ -541,104 +726,150 @@ public extension ScriptIterRef {
 open class ScriptIter: ScriptIterProtocol {
         /// Untyped pointer to the underlying `PangoScriptIter` instance.
     /// For type-safe access, use the generated, typed pointer `script_iter_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `ScriptIter` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoScriptIter>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoScriptIter>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `ScriptIter` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoScriptIter>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `ScriptIter` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `ScriptIter` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `ScriptIter` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoScriptIter>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `ScriptIter` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoScriptIter>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `PangoScriptIter` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `ScriptIter` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoScriptIter>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoScriptIter>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for PangoScriptIter, cannot ref(cast(script_iter_ptr))
+        // no reference counting for PangoScriptIter, cannot ref(script_iter_ptr)
     }
 
     /// Reference intialiser for a related type that implements `ScriptIterProtocol`
     /// `PangoScriptIter` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `ScriptIterProtocol`
-    public init<T: ScriptIterProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.script_iter_ptr)
-        // no reference counting for PangoScriptIter, cannot ref(cast(script_iter_ptr))
+    @inlinable public init<T: ScriptIterProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for PangoScriptIter, cannot ref(script_iter_ptr)
     }
 
     /// Do-nothing destructor for `PangoScriptIter`.
     deinit {
-        // no reference counting for PangoScriptIter, cannot unref(cast(script_iter_ptr))
+        // no reference counting for PangoScriptIter, cannot unref(script_iter_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for PangoScriptIter, cannot ref(cast(script_iter_ptr))
+        // no reference counting for PangoScriptIter, cannot ref(script_iter_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for PangoScriptIter, cannot ref(cast(script_iter_ptr))
+        // no reference counting for PangoScriptIter, cannot ref(script_iter_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for PangoScriptIter, cannot ref(cast(script_iter_ptr))
+        // no reference counting for PangoScriptIter, cannot ref(script_iter_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for PangoScriptIter, cannot ref(cast(script_iter_ptr))
+        // no reference counting for PangoScriptIter, cannot ref(script_iter_ptr)
     }
 
     /// Create a new `PangoScriptIter`, used to break a string of
     /// Unicode text into runs by Unicode script. No copy is made of
     /// `text`, so the caller needs to make sure it remains valid until
     /// the iterator is freed with `pango_script_iter_free()`.
-    public init( text: UnsafePointer<CChar>, length: CInt) {
-        let rv: UnsafeMutablePointer<PangoScriptIter>! = cast(pango_script_iter_new(text, length))
-        ptr = UnsafeMutableRawPointer(cast(rv))
+    @inlinable public init( text: UnsafePointer<CChar>!, length: Int) {
+        let rv = pango_script_iter_new(text, gint(length))
+        ptr = UnsafeMutableRawPointer(rv)
     }
 
 
@@ -652,11 +883,11 @@ open class ScriptIter: ScriptIterProtocol {
 // MARK: ScriptIter Record: ScriptIterProtocol extension (methods and fields)
 public extension ScriptIterProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoScriptIter` instance.
-    var script_iter_ptr: UnsafeMutablePointer<PangoScriptIter> { return ptr.assumingMemoryBound(to: PangoScriptIter.self) }
+    @inlinable var script_iter_ptr: UnsafeMutablePointer<PangoScriptIter>! { return ptr?.assumingMemoryBound(to: PangoScriptIter.self) }
 
     /// Frees a `PangoScriptIter` created with `pango_script_iter_new()`.
-    func free() {
-        pango_script_iter_free(cast(script_iter_ptr))
+    @inlinable func free() {
+        pango_script_iter_free(script_iter_ptr)
     
     }
 
@@ -668,17 +899,17 @@ public extension ScriptIterProtocol {
     /// as PangoScript, as of Pango 1.18, this function simply returns
     /// GUnicodeScript values. Callers must be prepared to handle unknown
     /// values.
-    func getRange(start: UnsafePointer<UnsafePointer<CChar>>, end: UnsafePointer<UnsafePointer<CChar>>, script: UnsafeMutablePointer<PangoScript>) {
-        pango_script_iter_get_range(cast(script_iter_ptr), cast(start), cast(end), cast(script))
+    @inlinable func getRange(start: UnsafeMutablePointer<UnsafePointer<CChar>?>! = nil, end: UnsafeMutablePointer<UnsafePointer<CChar>?>! = nil, script: UnsafeMutablePointer<PangoScript>! = nil) {
+        pango_script_iter_get_range(script_iter_ptr, start, end, script)
     
     }
 
     /// Advances a `PangoScriptIter` to the next range. If `iter`
     /// is already at the end, it is left unchanged and `false`
     /// is returned.
-    func next() -> Bool {
-        let rv = pango_script_iter_next(cast(script_iter_ptr))
-        return Bool(rv != 0)
+    @inlinable func next() -> Bool {
+        let rv = ((pango_script_iter_next(script_iter_ptr)) != 0)
+        return rv
     }
 
 

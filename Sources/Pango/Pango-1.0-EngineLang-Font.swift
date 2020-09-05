@@ -18,10 +18,11 @@ import GLibObject
 /// lookups needed for that language.
 public protocol EngineLangProtocol: EngineProtocol {
         /// Untyped pointer to the underlying `PangoEngineLang` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoEngineLang` instance.
-    var engine_lang_ptr: UnsafeMutablePointer<PangoEngineLang> { get }
+    var engine_lang_ptr: UnsafeMutablePointer<PangoEngineLang>! { get }
+
 }
 
 /// The `EngineLangRef` type acts as a lightweight Swift reference to an underlying `PangoEngineLang` instance.
@@ -37,46 +38,76 @@ public protocol EngineLangProtocol: EngineProtocol {
 public struct EngineLangRef: EngineLangProtocol {
         /// Untyped pointer to the underlying `PangoEngineLang` instance.
     /// For type-safe access, use the generated, typed pointer `engine_lang_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension EngineLangRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoEngineLang>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoEngineLang>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoEngineLang>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoEngineLang>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoEngineLang>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `EngineLangProtocol`
-    init<T: EngineLangProtocol>(_ other: T) {
+    @inlinable init<T: EngineLangProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -97,77 +128,123 @@ open class EngineLang: Engine, EngineLangProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `EngineLang` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoEngineLang>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoEngineLang>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EngineLang` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoEngineLang>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EngineLang` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EngineLang` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EngineLang` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoEngineLang>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EngineLang` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoEngineLang>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `PangoEngineLang`.
     /// i.e., ownership is transferred to the `EngineLang` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoEngineLang>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoEngineLang>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `EngineLangProtocol`
     /// Will retain `PangoEngineLang`.
     /// - Parameter other: an instance of a related type that implements `EngineLangProtocol`
-    public init<T: EngineLangProtocol>(engineLang other: T) {
-        super.init(retaining: cast(other.engine_lang_ptr))
+    @inlinable public init<T: EngineLangProtocol>(engineLang other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
@@ -212,11 +289,11 @@ public extension EngineLangProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: EngineLangSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: EngineLangSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(engine_lang_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -237,7 +314,7 @@ public extension EngineLangProtocol {
 // MARK: EngineLang Class: EngineLangProtocol extension (methods and fields)
 public extension EngineLangProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoEngineLang` instance.
-    var engine_lang_ptr: UnsafeMutablePointer<PangoEngineLang> { return ptr.assumingMemoryBound(to: PangoEngineLang.self) }
+    @inlinable var engine_lang_ptr: UnsafeMutablePointer<PangoEngineLang>! { return ptr?.assumingMemoryBound(to: PangoEngineLang.self) }
 
 
     // var parentInstance is unavailable because parent_instance is private
@@ -263,10 +340,11 @@ public extension EngineLangProtocol {
 /// for Fontconfig-based backends.
 public protocol EngineShapeProtocol: EngineProtocol {
         /// Untyped pointer to the underlying `PangoEngineShape` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoEngineShape` instance.
-    var engine_shape_ptr: UnsafeMutablePointer<PangoEngineShape> { get }
+    var engine_shape_ptr: UnsafeMutablePointer<PangoEngineShape>! { get }
+
 }
 
 /// The `EngineShapeRef` type acts as a lightweight Swift reference to an underlying `PangoEngineShape` instance.
@@ -284,46 +362,76 @@ public protocol EngineShapeProtocol: EngineProtocol {
 public struct EngineShapeRef: EngineShapeProtocol {
         /// Untyped pointer to the underlying `PangoEngineShape` instance.
     /// For type-safe access, use the generated, typed pointer `engine_shape_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension EngineShapeRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoEngineShape>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoEngineShape>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoEngineShape>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoEngineShape>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoEngineShape>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `EngineShapeProtocol`
-    init<T: EngineShapeProtocol>(_ other: T) {
+    @inlinable init<T: EngineShapeProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -346,77 +454,123 @@ open class EngineShape: Engine, EngineShapeProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `EngineShape` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoEngineShape>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoEngineShape>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EngineShape` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoEngineShape>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EngineShape` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EngineShape` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EngineShape` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoEngineShape>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EngineShape` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoEngineShape>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `PangoEngineShape`.
     /// i.e., ownership is transferred to the `EngineShape` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoEngineShape>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoEngineShape>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `EngineShapeProtocol`
     /// Will retain `PangoEngineShape`.
     /// - Parameter other: an instance of a related type that implements `EngineShapeProtocol`
-    public init<T: EngineShapeProtocol>(engineShape other: T) {
-        super.init(retaining: cast(other.engine_shape_ptr))
+    @inlinable public init<T: EngineShapeProtocol>(engineShape other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
@@ -461,11 +615,11 @@ public extension EngineShapeProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: EngineShapeSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: EngineShapeSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(engine_shape_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -486,12 +640,12 @@ public extension EngineShapeProtocol {
 // MARK: EngineShape Class: EngineShapeProtocol extension (methods and fields)
 public extension EngineShapeProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoEngineShape` instance.
-    var engine_shape_ptr: UnsafeMutablePointer<PangoEngineShape> { return ptr.assumingMemoryBound(to: PangoEngineShape.self) }
+    @inlinable var engine_shape_ptr: UnsafeMutablePointer<PangoEngineShape>! { return ptr?.assumingMemoryBound(to: PangoEngineShape.self) }
 
 
-    var parentInstance: PangoEngine {
+    @inlinable var parentInstance: PangoEngine {
         get {
-            let rv: PangoEngine = cast(engine_shape_ptr.pointee.parent_instance)
+            let rv = engine_shape_ptr.pointee.parent_instance
             return rv
         }
     }
@@ -521,10 +675,11 @@ public extension EngineShapeProtocol {
 /// which the implementation fills in.
 public protocol FontProtocol: ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFont` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoFont` instance.
-    var font_ptr: UnsafeMutablePointer<PangoFont> { get }
+    var font_ptr: UnsafeMutablePointer<PangoFont>! { get }
+
 }
 
 /// The `FontRef` type acts as a lightweight Swift reference to an underlying `PangoFont` instance.
@@ -546,46 +701,76 @@ public protocol FontProtocol: ObjectProtocol {
 public struct FontRef: FontProtocol {
         /// Untyped pointer to the underlying `PangoFont` instance.
     /// For type-safe access, use the generated, typed pointer `font_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension FontRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoFont>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoFont>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoFont>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoFont>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoFont>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `FontProtocol`
-    init<T: FontProtocol>(_ other: T) {
+    @inlinable init<T: FontProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -612,77 +797,123 @@ open class Font: Object, FontProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Font` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoFont>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoFont>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Font` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoFont>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Font` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Font` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Font` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoFont>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Font` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoFont>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `PangoFont`.
     /// i.e., ownership is transferred to the `Font` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoFont>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoFont>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `FontProtocol`
     /// Will retain `PangoFont`.
     /// - Parameter other: an instance of a related type that implements `FontProtocol`
-    public init<T: FontProtocol>(font other: T) {
-        super.init(retaining: cast(other.font_ptr))
+    @inlinable public init<T: FontProtocol>(font other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
@@ -727,11 +958,11 @@ public extension FontProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: FontSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(font_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -752,22 +983,22 @@ public extension FontProtocol {
 // MARK: Font Class: FontProtocol extension (methods and fields)
 public extension FontProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFont` instance.
-    var font_ptr: UnsafeMutablePointer<PangoFont> { return ptr.assumingMemoryBound(to: PangoFont.self) }
+    @inlinable var font_ptr: UnsafeMutablePointer<PangoFont>! { return ptr?.assumingMemoryBound(to: PangoFont.self) }
 
     /// Returns a description of the font, with font size set in points.
     /// Use `pango_font_describe_with_absolute_size()` if you want the font
     /// size in device units.
-    func describe() -> UnsafeMutablePointer<PangoFontDescription>! {
-        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_describe(cast(font_ptr)))
-        return cast(rv)
+    @inlinable func describe() -> FontDescriptionRef! {
+        let rv = FontDescriptionRef(gconstpointer: gconstpointer(pango_font_describe(font_ptr)))
+        return rv
     }
 
     /// Returns a description of the font, with absolute font size set
     /// (in device units). Use `pango_font_describe()` if you want the font
     /// size in points.
-    func describeWithAbsoluteSize() -> UnsafeMutablePointer<PangoFontDescription>! {
-        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_describe_with_absolute_size(cast(font_ptr)))
-        return cast(rv)
+    @inlinable func describeWithAbsoluteSize() -> FontDescriptionRef! {
+        let rv = FontDescriptionRef(gconstpointer: gconstpointer(pango_font_describe_with_absolute_size(font_ptr)))
+        return rv
     }
 
     /// Finds the best matching shaper for a font for a particular
@@ -775,15 +1006,21 @@ public extension FontProtocol {
     ///
     /// **find_shaper is deprecated:**
     /// Shape engines are no longer used
-    @available(*, deprecated) func findShaper(language: LanguageProtocol, ch: UInt32) -> UnsafeMutablePointer<PangoEngineShape>! {
-        let rv: UnsafeMutablePointer<PangoEngineShape>! = cast(pango_font_find_shaper(cast(font_ptr), cast(language.ptr), guint32(ch)))
-        return cast(rv)
+    @available(*, deprecated) @inlinable func findShaper<LanguageT: LanguageProtocol>(language: LanguageT, ch: guint32) -> EngineShapeRef! {
+        let rv = EngineShapeRef(gconstpointer: gconstpointer(pango_font_find_shaper(font_ptr, language.language_ptr, ch)))
+        return rv
     }
 
     /// Computes the coverage map for a given font and language tag.
-    func getCoverage(language: LanguageProtocol) -> UnsafeMutablePointer<PangoCoverage>! {
-        let rv: UnsafeMutablePointer<PangoCoverage>! = cast(pango_font_get_coverage(cast(font_ptr), cast(language.ptr)))
-        return cast(rv)
+    @inlinable func getCoverage<LanguageT: LanguageProtocol>(language: LanguageT) -> CoverageRef! {
+        let rv = CoverageRef(gconstpointer: gconstpointer(pango_font_get_coverage(font_ptr, language.language_ptr)))
+        return rv
+    }
+
+    /// Gets the `PangoFontFace` to which `font` belongs.
+    @inlinable func getFace() -> FontFaceRef! {
+        let rv = FontFaceRef(gconstpointer: gconstpointer(pango_font_get_face(font_ptr)))
+        return rv
     }
 
     /// Obtain the OpenType features that are provided by the font.
@@ -792,8 +1029,8 @@ public extension FontProtocol {
     /// 
     /// Note that this does not include OpenType features which the
     /// rendering system enables by default.
-    func get(features: UnsafeMutablePointer<hb_feature_t>, len: CUnsignedInt, numFeatures num_features: UnsafeMutablePointer<CUnsignedInt>) {
-        pango_font_get_features(cast(font_ptr), cast(features), guint(len), cast(num_features))
+    @inlinable func get(features: UnsafeMutablePointer<hb_feature_t>!, len: Int, numFeatures num_features: UnsafeMutablePointer<guint>!) {
+        pango_font_get_features(font_ptr, features, guint(len), num_features)
     
     }
 
@@ -806,9 +1043,9 @@ public extension FontProtocol {
     /// It is the responsibility of the user to ensure that the font map is kept
     /// alive.  In most uses this is not an issue as a `PangoContext` holds
     /// a reference to the font map.
-    func getFontMap() -> UnsafeMutablePointer<PangoFontMap>! {
-        let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_font_get_font_map(cast(font_ptr)))
-        return cast(rv)
+    @inlinable func getFontMap() -> FontMapRef! {
+        let rv = FontMapRef(gconstpointer: gconstpointer(pango_font_get_font_map(font_ptr)))
+        return rv
     }
 
     /// Gets the logical and ink extents of a glyph within a font. The
@@ -821,8 +1058,8 @@ public extension FontProtocol {
     /// 
     /// If `font` is `nil`, this function gracefully sets some sane values in the
     /// output variables and returns.
-    func getGlyphExtents(glyph: Glyph, inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
-        pango_font_get_glyph_extents(cast(font_ptr), glyph, cast(ink_rect.ptr), cast(logical_rect.ptr))
+    @inlinable func getGlyphExtents<RectangleT: RectangleProtocol>(glyph: PangoGlyph, inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
+        pango_font_get_glyph_extents(font_ptr, glyph, ink_rect?._ptr, logical_rect?._ptr)
     
     }
 
@@ -831,9 +1068,9 @@ public extension FontProtocol {
     /// Note that the objects returned by this function
     /// are cached and immutable. If you need to make
     /// changes to the hb_font_t, use `hb_font_create_sub_font()`.
-    func getHbFont() -> UnsafeMutablePointer<hb_font_t>! {
-        let rv: UnsafeMutablePointer<hb_font_t>! = cast(pango_font_get_hb_font(cast(font_ptr)))
-        return cast(rv)
+    @inlinable func getHbFont() -> UnsafeMutablePointer<hb_font_t>? {
+        let rv = pango_font_get_hb_font(font_ptr)
+        return rv
     }
 
     /// Gets overall metric information for a font. Since the metrics may be
@@ -843,18 +1080,27 @@ public extension FontProtocol {
     /// 
     /// If `font` is `nil`, this function gracefully sets some sane values in the
     /// output variables and returns.
-    func getMetrics(language: LanguageProtocol) -> UnsafeMutablePointer<PangoFontMetrics>! {
-        let rv: UnsafeMutablePointer<PangoFontMetrics>! = cast(pango_font_get_metrics(cast(font_ptr), cast(language.ptr)))
-        return cast(rv)
+    @inlinable func getMetrics<LanguageT: LanguageProtocol>(language: LanguageT? = nil) -> FontMetricsRef! {
+        let rv = FontMetricsRef(gconstpointer: gconstpointer(pango_font_get_metrics(font_ptr, language?.language_ptr)))
+        return rv
     }
 
     /// Returns whether the font provides a glyph for this character.
     /// 
     /// Returns `true` if `font` can render `wc`
-    func hasChar(wc: gunichar) -> Bool {
-        let rv = pango_font_has_char(cast(font_ptr), wc)
-        return Bool(rv != 0)
+    @inlinable func hasChar(wc: gunichar) -> Bool {
+        let rv = ((pango_font_has_char(font_ptr, wc)) != 0)
+        return rv
     }
+    /// Gets the `PangoFontFace` to which `font` belongs.
+    @inlinable var face: FontFaceRef! {
+        /// Gets the `PangoFontFace` to which `font` belongs.
+        get {
+            let rv = FontFaceRef(gconstpointer: gconstpointer(pango_font_get_face(font_ptr)))
+            return rv
+        }
+    }
+
     /// Gets the font map for which the font was created.
     /// 
     /// Note that the font maintains a <firstterm>weak</firstterm> reference
@@ -864,7 +1110,7 @@ public extension FontProtocol {
     /// It is the responsibility of the user to ensure that the font map is kept
     /// alive.  In most uses this is not an issue as a `PangoContext` holds
     /// a reference to the font map.
-    var fontMap: UnsafeMutablePointer<PangoFontMap>! {
+    @inlinable var fontMap: FontMapRef! {
         /// Gets the font map for which the font was created.
         /// 
         /// Note that the font maintains a <firstterm>weak</firstterm> reference
@@ -875,8 +1121,8 @@ public extension FontProtocol {
         /// alive.  In most uses this is not an issue as a `PangoContext` holds
         /// a reference to the font map.
         get {
-            let rv: UnsafeMutablePointer<PangoFontMap>! = cast(pango_font_get_font_map(cast(font_ptr)))
-            return cast(rv)
+            let rv = FontMapRef(gconstpointer: gconstpointer(pango_font_get_font_map(font_ptr)))
+            return rv
         }
     }
 
@@ -885,21 +1131,21 @@ public extension FontProtocol {
     /// Note that the objects returned by this function
     /// are cached and immutable. If you need to make
     /// changes to the hb_font_t, use `hb_font_create_sub_font()`.
-    var hbFont: UnsafeMutablePointer<hb_font_t>! {
+    @inlinable var hbFont: UnsafeMutablePointer<hb_font_t>? {
         /// Get a hb_font_t object backing this font.
         /// 
         /// Note that the objects returned by this function
         /// are cached and immutable. If you need to make
         /// changes to the hb_font_t, use `hb_font_create_sub_font()`.
         get {
-            let rv: UnsafeMutablePointer<hb_font_t>! = cast(pango_font_get_hb_font(cast(font_ptr)))
-            return cast(rv)
+            let rv = pango_font_get_hb_font(font_ptr)
+            return rv
         }
     }
 
-    var parentInstance: GObject {
+    @inlinable var parentInstance: GObject {
         get {
-            let rv: GObject = cast(font_ptr.pointee.parent_instance)
+            let rv = font_ptr.pointee.parent_instance
             return rv
         }
     }

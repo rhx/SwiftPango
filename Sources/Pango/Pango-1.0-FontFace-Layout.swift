@@ -14,10 +14,11 @@ import GLibObject
 /// the same family, slant, weight, width, but varying sizes.
 public protocol FontFaceProtocol: ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontFace` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoFontFace` instance.
-    var font_face_ptr: UnsafeMutablePointer<PangoFontFace> { get }
+    var font_face_ptr: UnsafeMutablePointer<PangoFontFace>! { get }
+
 }
 
 /// The `FontFaceRef` type acts as a lightweight Swift reference to an underlying `PangoFontFace` instance.
@@ -29,46 +30,76 @@ public protocol FontFaceProtocol: ObjectProtocol {
 public struct FontFaceRef: FontFaceProtocol {
         /// Untyped pointer to the underlying `PangoFontFace` instance.
     /// For type-safe access, use the generated, typed pointer `font_face_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension FontFaceRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoFontFace>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoFontFace>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoFontFace>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoFontFace>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoFontFace>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `FontFaceProtocol`
-    init<T: FontFaceProtocol>(_ other: T) {
+    @inlinable init<T: FontFaceProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -85,77 +116,123 @@ open class FontFace: Object, FontFaceProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontFace` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoFontFace>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoFontFace>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontFace` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoFontFace>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontFace` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontFace` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontFace` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoFontFace>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontFace` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoFontFace>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `PangoFontFace`.
     /// i.e., ownership is transferred to the `FontFace` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoFontFace>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoFontFace>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `FontFaceProtocol`
     /// Will retain `PangoFontFace`.
     /// - Parameter other: an instance of a related type that implements `FontFaceProtocol`
-    public init<T: FontFaceProtocol>(fontFace other: T) {
-        super.init(retaining: cast(other.font_face_ptr))
+    @inlinable public init<T: FontFaceProtocol>(fontFace other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
@@ -200,11 +277,11 @@ public extension FontFaceProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontFaceSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: FontFaceSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(font_face_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -225,64 +302,82 @@ public extension FontFaceProtocol {
 // MARK: FontFace Class: FontFaceProtocol extension (methods and fields)
 public extension FontFaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontFace` instance.
-    var font_face_ptr: UnsafeMutablePointer<PangoFontFace> { return ptr.assumingMemoryBound(to: PangoFontFace.self) }
+    @inlinable var font_face_ptr: UnsafeMutablePointer<PangoFontFace>! { return ptr?.assumingMemoryBound(to: PangoFontFace.self) }
 
     /// Returns the family, style, variant, weight and stretch of
     /// a `PangoFontFace`. The size field of the resulting font description
     /// will be unset.
-    func describe() -> UnsafeMutablePointer<PangoFontDescription>! {
-        let rv: UnsafeMutablePointer<PangoFontDescription>! = cast(pango_font_face_describe(cast(font_face_ptr)))
-        return cast(rv)
+    @inlinable func describe() -> FontDescriptionRef! {
+        let rv = FontDescriptionRef(gconstpointer: gconstpointer(pango_font_face_describe(font_face_ptr)))
+        return rv
     }
 
     /// Gets a name representing the style of this face among the
     /// different faces in the `PangoFontFamily` for the face. This
     /// name is unique among all faces in the family and is suitable
     /// for displaying to users.
-    func getFaceName() -> String! {
-        let rv: String! = cast(pango_font_face_get_face_name(cast(font_face_ptr)))
-        return cast(rv)
+    @inlinable func getFaceName() -> String! {
+        let rv = pango_font_face_get_face_name(font_face_ptr).map({ String(cString: $0) })
+        return rv
+    }
+
+    /// Gets the `PangoFontFamily` that `face`
+    /// belongs to.
+    @inlinable func getFamily() -> FontFamilyRef! {
+        let rv = FontFamilyRef(gconstpointer: gconstpointer(pango_font_face_get_family(font_face_ptr)))
+        return rv
     }
 
     /// List the available sizes for a font. This is only applicable to bitmap
     /// fonts. For scalable fonts, stores `nil` at the location pointed to by
     /// `sizes` and 0 at the location pointed to by `n_sizes`. The sizes returned
     /// are in Pango units and are sorted in ascending order.
-    func list(sizes: UnsafeMutablePointer<UnsafeMutablePointer<CInt>>, nSizes n_sizes: UnsafeMutablePointer<CInt>) {
-        pango_font_face_list_sizes(cast(font_face_ptr), cast(sizes), cast(n_sizes))
+    @inlinable func list(sizes: UnsafeMutablePointer<UnsafeMutablePointer<CInt>?>! = nil, nSizes n_sizes: UnsafeMutablePointer<gint>!) {
+        pango_font_face_list_sizes(font_face_ptr, sizes, n_sizes)
     
     }
     /// Gets a name representing the style of this face among the
     /// different faces in the `PangoFontFamily` for the face. This
     /// name is unique among all faces in the family and is suitable
     /// for displaying to users.
-    var faceName: String! {
+    @inlinable var faceName: String! {
         /// Gets a name representing the style of this face among the
         /// different faces in the `PangoFontFamily` for the face. This
         /// name is unique among all faces in the family and is suitable
         /// for displaying to users.
         get {
-            let rv: String! = cast(pango_font_face_get_face_name(cast(font_face_ptr)))
-            return cast(rv)
+            let rv = pango_font_face_get_face_name(font_face_ptr).map({ String(cString: $0) })
+            return rv
+        }
+    }
+
+    /// Gets the `PangoFontFamily` that `face`
+    /// belongs to.
+    @inlinable var family: FontFamilyRef! {
+        /// Gets the `PangoFontFamily` that `face`
+        /// belongs to.
+        get {
+            let rv = FontFamilyRef(gconstpointer: gconstpointer(pango_font_face_get_family(font_face_ptr)))
+            return rv
         }
     }
 
     /// Returns whether a `PangoFontFace` is synthesized by the underlying
     /// font rendering engine from another face, perhaps by shearing, emboldening,
     /// or lightening it.
-    var isSynthesized: Bool {
+    @inlinable var isSynthesized: Bool {
         /// Returns whether a `PangoFontFace` is synthesized by the underlying
         /// font rendering engine from another face, perhaps by shearing, emboldening,
         /// or lightening it.
         get {
-            let rv = pango_font_face_is_synthesized(cast(font_face_ptr))
-            return Bool(rv != 0)
+            let rv = ((pango_font_face_is_synthesized(font_face_ptr)) != 0)
+            return rv
         }
     }
 
-    var parentInstance: GObject {
+    @inlinable var parentInstance: GObject {
         get {
-            let rv: GObject = cast(font_face_ptr.pointee.parent_instance)
+            let rv = font_face_ptr.pointee.parent_instance
             return rv
         }
     }
@@ -303,10 +398,11 @@ public extension FontFaceProtocol {
 /// slant, weight, width and other aspects.
 public protocol FontFamilyProtocol: ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontFamily` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoFontFamily` instance.
-    var font_family_ptr: UnsafeMutablePointer<PangoFontFamily> { get }
+    var font_family_ptr: UnsafeMutablePointer<PangoFontFamily>! { get }
+
 }
 
 /// The `FontFamilyRef` type acts as a lightweight Swift reference to an underlying `PangoFontFamily` instance.
@@ -319,46 +415,76 @@ public protocol FontFamilyProtocol: ObjectProtocol {
 public struct FontFamilyRef: FontFamilyProtocol {
         /// Untyped pointer to the underlying `PangoFontFamily` instance.
     /// For type-safe access, use the generated, typed pointer `font_family_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension FontFamilyRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoFontFamily>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoFontFamily>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoFontFamily>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoFontFamily>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoFontFamily>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `FontFamilyProtocol`
-    init<T: FontFamilyProtocol>(_ other: T) {
+    @inlinable init<T: FontFamilyProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -376,77 +502,123 @@ open class FontFamily: Object, FontFamilyProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontFamily` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoFontFamily>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoFontFamily>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontFamily` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoFontFamily>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontFamily` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontFamily` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontFamily` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoFontFamily>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontFamily` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoFontFamily>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `PangoFontFamily`.
     /// i.e., ownership is transferred to the `FontFamily` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoFontFamily>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoFontFamily>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `FontFamilyProtocol`
     /// Will retain `PangoFontFamily`.
     /// - Parameter other: an instance of a related type that implements `FontFamilyProtocol`
-    public init<T: FontFamilyProtocol>(fontFamily other: T) {
-        super.init(retaining: cast(other.font_family_ptr))
+    @inlinable public init<T: FontFamilyProtocol>(fontFamily other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
@@ -491,11 +663,11 @@ public extension FontFamilyProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontFamilySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: FontFamilySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(font_family_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -516,21 +688,27 @@ public extension FontFamilyProtocol {
 // MARK: FontFamily Class: FontFamilyProtocol extension (methods and fields)
 public extension FontFamilyProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontFamily` instance.
-    var font_family_ptr: UnsafeMutablePointer<PangoFontFamily> { return ptr.assumingMemoryBound(to: PangoFontFamily.self) }
+    @inlinable var font_family_ptr: UnsafeMutablePointer<PangoFontFamily>! { return ptr?.assumingMemoryBound(to: PangoFontFamily.self) }
+
+    /// Gets the `PangoFontFace` of `family` with the given name.
+    @inlinable func getFace(name: UnsafePointer<CChar>? = nil) -> FontFaceRef! {
+        let rv = FontFaceRef(gconstpointer: gconstpointer(pango_font_family_get_face(font_family_ptr, name)))
+        return rv
+    }
 
     /// Gets the name of the family. The name is unique among all
     /// fonts for the font backend and can be used in a `PangoFontDescription`
     /// to specify that a face from this family is desired.
-    func getName() -> String! {
-        let rv: String! = cast(pango_font_family_get_name(cast(font_family_ptr)))
-        return cast(rv)
+    @inlinable func getName() -> String! {
+        let rv = pango_font_family_get_name(font_family_ptr).map({ String(cString: $0) })
+        return rv
     }
 
     /// Lists the different font faces that make up `family`. The faces
     /// in a family share a common design, but differ in slant, weight,
     /// width and other aspects.
-    func list(faces: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<PangoFontFace>>>, nFaces n_faces: UnsafeMutablePointer<CInt>) {
-        pango_font_family_list_faces(cast(font_family_ptr), cast(faces), cast(n_faces))
+    @inlinable func list(faces: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<PangoFontFace>?>?>! = nil, nFaces n_faces: UnsafeMutablePointer<gint>!) {
+        pango_font_family_list_faces(font_family_ptr, faces, n_faces)
     
     }
     /// A monospace font is a font designed for text display where the the
@@ -545,7 +723,7 @@ public extension FontFamilyProtocol {
     /// `pango_font_metrics_get_approximate_digit_width()`, since the results
     /// of `pango_font_metrics_get_approximate_char_width()` may be affected
     /// by double-width characters.
-    var isMonospace: Bool {
+    @inlinable var isMonospace: Bool {
         /// A monospace font is a font designed for text display where the the
         /// characters form a regular grid. For Western languages this would
         /// mean that the advance width of all characters are the same, but
@@ -559,38 +737,38 @@ public extension FontFamilyProtocol {
         /// of `pango_font_metrics_get_approximate_char_width()` may be affected
         /// by double-width characters.
         get {
-            let rv = pango_font_family_is_monospace(cast(font_family_ptr))
-            return Bool(rv != 0)
+            let rv = ((pango_font_family_is_monospace(font_family_ptr)) != 0)
+            return rv
         }
     }
 
     /// A variable font is a font which has axes that can be modified to
     /// produce different faces.
-    var isVariable: Bool {
+    @inlinable var isVariable: Bool {
         /// A variable font is a font which has axes that can be modified to
         /// produce different faces.
         get {
-            let rv = pango_font_family_is_variable(cast(font_family_ptr))
-            return Bool(rv != 0)
+            let rv = ((pango_font_family_is_variable(font_family_ptr)) != 0)
+            return rv
         }
     }
 
     /// Gets the name of the family. The name is unique among all
     /// fonts for the font backend and can be used in a `PangoFontDescription`
     /// to specify that a face from this family is desired.
-    var name: String! {
+    @inlinable var name: String! {
         /// Gets the name of the family. The name is unique among all
         /// fonts for the font backend and can be used in a `PangoFontDescription`
         /// to specify that a face from this family is desired.
         get {
-            let rv: String! = cast(pango_font_family_get_name(cast(font_family_ptr)))
-            return cast(rv)
+            let rv = pango_font_family_get_name(font_family_ptr).map({ String(cString: $0) })
+            return rv
         }
     }
 
-    var parentInstance: GObject {
+    @inlinable var parentInstance: GObject {
         get {
-            let rv: GObject = cast(font_family_ptr.pointee.parent_instance)
+            let rv = font_family_ptr.pointee.parent_instance
             return rv
         }
     }
@@ -619,10 +797,11 @@ public extension FontFamilyProtocol {
 /// fills in.
 public protocol FontMapProtocol: ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontMap` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoFontMap` instance.
-    var font_map_ptr: UnsafeMutablePointer<PangoFontMap> { get }
+    var font_map_ptr: UnsafeMutablePointer<PangoFontMap>! { get }
+
 }
 
 /// The `FontMapRef` type acts as a lightweight Swift reference to an underlying `PangoFontMap` instance.
@@ -643,46 +822,76 @@ public protocol FontMapProtocol: ObjectProtocol {
 public struct FontMapRef: FontMapProtocol {
         /// Untyped pointer to the underlying `PangoFontMap` instance.
     /// For type-safe access, use the generated, typed pointer `font_map_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension FontMapRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoFontMap>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoFontMap>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoFontMap>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoFontMap>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoFontMap>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `FontMapProtocol`
-    init<T: FontMapProtocol>(_ other: T) {
+    @inlinable init<T: FontMapProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -708,77 +917,123 @@ open class FontMap: Object, FontMapProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontMap` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoFontMap>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoFontMap>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontMap` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoFontMap>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontMap` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontMap` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontMap` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoFontMap>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontMap` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoFontMap>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `PangoFontMap`.
     /// i.e., ownership is transferred to the `FontMap` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoFontMap>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoFontMap>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `FontMapProtocol`
     /// Will retain `PangoFontMap`.
     /// - Parameter other: an instance of a related type that implements `FontMapProtocol`
-    public init<T: FontMapProtocol>(fontMap other: T) {
-        super.init(retaining: cast(other.font_map_ptr))
+    @inlinable public init<T: FontMapProtocol>(fontMap other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
@@ -823,11 +1078,11 @@ public extension FontMapProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontMapSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: FontMapSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(font_map_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -848,7 +1103,7 @@ public extension FontMapProtocol {
 // MARK: FontMap Class: FontMapProtocol extension (methods and fields)
 public extension FontMapProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontMap` instance.
-    var font_map_ptr: UnsafeMutablePointer<PangoFontMap> { return ptr.assumingMemoryBound(to: PangoFontMap.self) }
+    @inlinable var font_map_ptr: UnsafeMutablePointer<PangoFontMap>! { return ptr?.assumingMemoryBound(to: PangoFontMap.self) }
 
     /// Forces a change in the context, which will cause any `PangoContext`
     /// using this fontmap to change.
@@ -857,8 +1112,8 @@ public extension FontMapProtocol {
     /// for Pango, something applications won't do. Backends should
     /// call this function if they have attached extra data to the context
     /// and such data is changed.
-    func changed() {
-        pango_font_map_changed(cast(font_map_ptr))
+    @inlinable func changed() {
+        pango_font_map_changed(font_map_ptr)
     
     }
 
@@ -870,9 +1125,15 @@ public extension FontMapProtocol {
     /// For instance, the GTK+ toolkit has, among others,
     /// `gdk_pango_context_get_for_screen()`, and
     /// `gtk_widget_get_pango_context()`.  Use those instead.
-    func createContext() -> UnsafeMutablePointer<PangoContext>! {
-        let rv: UnsafeMutablePointer<PangoContext>! = cast(pango_font_map_create_context(cast(font_map_ptr)))
-        return cast(rv)
+    @inlinable func createContext() -> ContextRef! {
+        let rv = ContextRef(gconstpointer: gconstpointer(pango_font_map_create_context(font_map_ptr)))
+        return rv
+    }
+
+    /// Gets a font family by name.
+    @inlinable func getFamily(name: UnsafePointer<CChar>!) -> FontFamilyRef! {
+        let rv = FontFamilyRef(gconstpointer: gconstpointer(pango_font_map_get_family(font_map_ptr, name)))
+        return rv
     }
 
     /// Returns the current serial number of `fontmap`.  The serial number is
@@ -886,28 +1147,28 @@ public extension FontMapProtocol {
     /// 
     /// This can be used to automatically detect changes to a `PangoFontMap`, like
     /// in `PangoContext`.
-    func getSerial() -> Int {
-        let rv: Int = cast(pango_font_map_get_serial(cast(font_map_ptr)))
-        return Int(rv)
+    @inlinable func getSerial() -> Int {
+        let rv = Int(pango_font_map_get_serial(font_map_ptr))
+        return rv
     }
 
     /// List all families for a fontmap.
-    func list(families: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<PangoFontFamily>>>, nFamilies n_families: UnsafeMutablePointer<CInt>) {
-        pango_font_map_list_families(cast(font_map_ptr), cast(families), cast(n_families))
+    @inlinable func list(families: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<PangoFontFamily>?>?>!, nFamilies n_families: UnsafeMutablePointer<gint>!) {
+        pango_font_map_list_families(font_map_ptr, families, n_families)
     
     }
 
     /// Load the font in the fontmap that is the closest match for `desc`.
-    func loadFont(context: ContextProtocol, desc: FontDescriptionProtocol) -> UnsafeMutablePointer<PangoFont>! {
-        let rv: UnsafeMutablePointer<PangoFont>! = cast(pango_font_map_load_font(cast(font_map_ptr), cast(context.ptr), cast(desc.ptr)))
-        return cast(rv)
+    @inlinable func loadFont<ContextT: ContextProtocol, FontDescriptionT: FontDescriptionProtocol>(context: ContextT, desc: FontDescriptionT) -> FontRef! {
+        let rv = FontRef(gconstpointer: gconstpointer(pango_font_map_load_font(font_map_ptr, context.context_ptr, desc.font_description_ptr)))
+        return rv
     }
 
     /// Load a set of fonts in the fontmap that can be used to render
     /// a font matching `desc`.
-    func loadFontset(context: ContextProtocol, desc: FontDescriptionProtocol, language: LanguageProtocol) -> UnsafeMutablePointer<PangoFontset>! {
-        let rv: UnsafeMutablePointer<PangoFontset>! = cast(pango_font_map_load_fontset(cast(font_map_ptr), cast(context.ptr), cast(desc.ptr), cast(language.ptr)))
-        return cast(rv)
+    @inlinable func loadFontset<ContextT: ContextProtocol, FontDescriptionT: FontDescriptionProtocol, LanguageT: LanguageProtocol>(context: ContextT, desc: FontDescriptionT, language: LanguageT) -> FontsetRef! {
+        let rv = FontsetRef(gconstpointer: gconstpointer(pango_font_map_load_fontset(font_map_ptr, context.context_ptr, desc.font_description_ptr, language.language_ptr)))
+        return rv
     }
     /// Returns the current serial number of `fontmap`.  The serial number is
     /// initialized to an small number larger than zero when a new fontmap
@@ -920,7 +1181,7 @@ public extension FontMapProtocol {
     /// 
     /// This can be used to automatically detect changes to a `PangoFontMap`, like
     /// in `PangoContext`.
-    var serial: Int {
+    @inlinable var serial: Int {
         /// Returns the current serial number of `fontmap`.  The serial number is
         /// initialized to an small number larger than zero when a new fontmap
         /// is created and is increased whenever the fontmap is changed. It may
@@ -933,14 +1194,14 @@ public extension FontMapProtocol {
         /// This can be used to automatically detect changes to a `PangoFontMap`, like
         /// in `PangoContext`.
         get {
-            let rv: Int = cast(pango_font_map_get_serial(cast(font_map_ptr)))
-            return Int(rv)
+            let rv = Int(pango_font_map_get_serial(font_map_ptr))
+            return rv
         }
     }
 
-    var parentInstance: GObject {
+    @inlinable var parentInstance: GObject {
         get {
-            let rv: GObject = cast(font_map_ptr.pointee.parent_instance)
+            let rv = font_map_ptr.pointee.parent_instance
             return rv
         }
     }
@@ -964,10 +1225,11 @@ public extension FontMapProtocol {
 /// set of metrics for the entire fontset.
 public protocol FontsetProtocol: ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontset` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoFontset` instance.
-    var fontset_ptr: UnsafeMutablePointer<PangoFontset> { get }
+    var fontset_ptr: UnsafeMutablePointer<PangoFontset>! { get }
+
 }
 
 /// The `FontsetRef` type acts as a lightweight Swift reference to an underlying `PangoFontset` instance.
@@ -983,46 +1245,76 @@ public protocol FontsetProtocol: ObjectProtocol {
 public struct FontsetRef: FontsetProtocol {
         /// Untyped pointer to the underlying `PangoFontset` instance.
     /// For type-safe access, use the generated, typed pointer `fontset_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension FontsetRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoFontset>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoFontset>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoFontset>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoFontset>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoFontset>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `FontsetProtocol`
-    init<T: FontsetProtocol>(_ other: T) {
+    @inlinable init<T: FontsetProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -1043,77 +1335,123 @@ open class Fontset: Object, FontsetProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Fontset` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoFontset>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoFontset>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Fontset` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoFontset>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Fontset` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Fontset` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Fontset` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoFontset>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Fontset` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoFontset>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `PangoFontset`.
     /// i.e., ownership is transferred to the `Fontset` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoFontset>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoFontset>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `FontsetProtocol`
     /// Will retain `PangoFontset`.
     /// - Parameter other: an instance of a related type that implements `FontsetProtocol`
-    public init<T: FontsetProtocol>(fontset other: T) {
-        super.init(retaining: cast(other.fontset_ptr))
+    @inlinable public init<T: FontsetProtocol>(fontset other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
@@ -1158,11 +1496,11 @@ public extension FontsetProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontsetSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: FontsetSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(fontset_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -1183,39 +1521,39 @@ public extension FontsetProtocol {
 // MARK: Fontset Class: FontsetProtocol extension (methods and fields)
 public extension FontsetProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontset` instance.
-    var fontset_ptr: UnsafeMutablePointer<PangoFontset> { return ptr.assumingMemoryBound(to: PangoFontset.self) }
+    @inlinable var fontset_ptr: UnsafeMutablePointer<PangoFontset>! { return ptr?.assumingMemoryBound(to: PangoFontset.self) }
 
     /// Iterates through all the fonts in a fontset, calling `func` for
     /// each one. If `func` returns `true`, that stops the iteration.
-    func foreach(func_: @escaping FontsetForeachFunc, data: UnsafeMutableRawPointer) {
-        pango_fontset_foreach(cast(fontset_ptr), func_, cast(data))
+    @inlinable func foreach(`func`: PangoFontsetForeachFunc?, data: gpointer! = nil) {
+        pango_fontset_foreach(fontset_ptr, `func`, data)
     
     }
 
     /// Returns the font in the fontset that contains the best glyph for the
     /// Unicode character `wc`.
-    func getFont(wc: CUnsignedInt) -> UnsafeMutablePointer<PangoFont>! {
-        let rv: UnsafeMutablePointer<PangoFont>! = cast(pango_fontset_get_font(cast(fontset_ptr), guint(wc)))
-        return cast(rv)
+    @inlinable func getFont(wc: Int) -> FontRef! {
+        let rv = FontRef(gconstpointer: gconstpointer(pango_fontset_get_font(fontset_ptr, guint(wc))))
+        return rv
     }
 
     /// Get overall metric information for the fonts in the fontset.
-    func getMetrics() -> UnsafeMutablePointer<PangoFontMetrics>! {
-        let rv: UnsafeMutablePointer<PangoFontMetrics>! = cast(pango_fontset_get_metrics(cast(fontset_ptr)))
-        return cast(rv)
+    @inlinable func getMetrics() -> FontMetricsRef! {
+        let rv = FontMetricsRef(gconstpointer: gconstpointer(pango_fontset_get_metrics(fontset_ptr)))
+        return rv
     }
     /// Get overall metric information for the fonts in the fontset.
-    var metrics: UnsafeMutablePointer<PangoFontMetrics>! {
+    @inlinable var metrics: FontMetricsRef! {
         /// Get overall metric information for the fonts in the fontset.
         get {
-            let rv: UnsafeMutablePointer<PangoFontMetrics>! = cast(pango_fontset_get_metrics(cast(fontset_ptr)))
-            return cast(rv)
+            let rv = FontMetricsRef(gconstpointer: gconstpointer(pango_fontset_get_metrics(fontset_ptr)))
+            return rv
         }
     }
 
-    var parentInstance: GObject {
+    @inlinable var parentInstance: GObject {
         get {
-            let rv: GObject = cast(fontset_ptr.pointee.parent_instance)
+            let rv = fontset_ptr.pointee.parent_instance
             return rv
         }
     }
@@ -1237,10 +1575,11 @@ public extension FontsetProtocol {
 /// `PangoFontsetSimple`.
 public protocol FontsetSimpleProtocol: FontsetProtocol {
         /// Untyped pointer to the underlying `PangoFontsetSimple` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoFontsetSimple` instance.
-    var fontset_simple_ptr: UnsafeMutablePointer<PangoFontsetSimple> { get }
+    var fontset_simple_ptr: UnsafeMutablePointer<PangoFontsetSimple>! { get }
+
 }
 
 /// The `FontsetSimpleRef` type acts as a lightweight Swift reference to an underlying `PangoFontsetSimple` instance.
@@ -1254,53 +1593,83 @@ public protocol FontsetSimpleProtocol: FontsetProtocol {
 public struct FontsetSimpleRef: FontsetSimpleProtocol {
         /// Untyped pointer to the underlying `PangoFontsetSimple` instance.
     /// For type-safe access, use the generated, typed pointer `fontset_simple_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension FontsetSimpleRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoFontsetSimple>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoFontsetSimple>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoFontsetSimple>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoFontsetSimple>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoFontsetSimple>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `FontsetSimpleProtocol`
-    init<T: FontsetSimpleProtocol>(_ other: T) {
+    @inlinable init<T: FontsetSimpleProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
         /// Creates a new `PangoFontsetSimple` for the given language.
-    init( language: LanguageProtocol) {
-        let rv: UnsafeMutablePointer<PangoFontsetSimple>! = cast(pango_fontset_simple_new(cast(language.ptr)))
-        ptr = UnsafeMutableRawPointer(cast(rv))
+    @inlinable init<LanguageT: LanguageProtocol>( language: LanguageT) {
+        let rv = pango_fontset_simple_new(language.language_ptr)
+        ptr = UnsafeMutableRawPointer(rv)
     }
 }
 
@@ -1317,84 +1686,130 @@ open class FontsetSimple: Fontset, FontsetSimpleProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontsetSimple` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoFontsetSimple>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoFontsetSimple>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontsetSimple` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoFontsetSimple>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontsetSimple` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontsetSimple` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontsetSimple` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoFontsetSimple>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `FontsetSimple` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoFontsetSimple>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `PangoFontsetSimple`.
     /// i.e., ownership is transferred to the `FontsetSimple` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoFontsetSimple>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoFontsetSimple>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `FontsetSimpleProtocol`
     /// Will retain `PangoFontsetSimple`.
     /// - Parameter other: an instance of a related type that implements `FontsetSimpleProtocol`
-    public init<T: FontsetSimpleProtocol>(fontsetSimple other: T) {
-        super.init(retaining: cast(other.fontset_simple_ptr))
+    @inlinable public init<T: FontsetSimpleProtocol>(fontsetSimple other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
     /// Creates a new `PangoFontsetSimple` for the given language.
-    public init( language: LanguageProtocol) {
-        let rv: UnsafeMutablePointer<PangoFontsetSimple>! = cast(pango_fontset_simple_new(cast(language.ptr)))
-        super.init(cast(rv))
+    @inlinable public init<LanguageT: LanguageProtocol>( language: LanguageT) {
+        let rv = pango_fontset_simple_new(language.language_ptr)
+        super.init(gpointer: (rv))
     }
 
 
@@ -1437,11 +1852,11 @@ public extension FontsetSimpleProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: FontsetSimpleSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: FontsetSimpleSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(fontset_simple_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -1462,18 +1877,18 @@ public extension FontsetSimpleProtocol {
 // MARK: FontsetSimple Class: FontsetSimpleProtocol extension (methods and fields)
 public extension FontsetSimpleProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoFontsetSimple` instance.
-    var fontset_simple_ptr: UnsafeMutablePointer<PangoFontsetSimple> { return ptr.assumingMemoryBound(to: PangoFontsetSimple.self) }
+    @inlinable var fontset_simple_ptr: UnsafeMutablePointer<PangoFontsetSimple>! { return ptr?.assumingMemoryBound(to: PangoFontsetSimple.self) }
 
     /// Adds a font to the fontset.
-    func append(font: FontProtocol) {
-        pango_fontset_simple_append(cast(fontset_simple_ptr), cast(font.ptr))
+    @inlinable func append<FontT: FontProtocol>(font: FontT) {
+        pango_fontset_simple_append(fontset_simple_ptr, font.font_ptr)
     
     }
 
     /// Returns the number of fonts in the fontset.
-    func size() -> Int {
-        let rv: Int = cast(pango_fontset_simple_size(cast(fontset_simple_ptr)))
-        return cast(rv)
+    @inlinable func size() -> Int {
+        let rv = Int(pango_fontset_simple_size(fontset_simple_ptr))
+        return rv
     }
 
 
@@ -1510,10 +1925,11 @@ public extension FontsetSimpleProtocol {
 /// fields.
 public protocol LayoutProtocol: ObjectProtocol {
         /// Untyped pointer to the underlying `PangoLayout` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoLayout` instance.
-    var layout_ptr: UnsafeMutablePointer<PangoLayout> { get }
+    var layout_ptr: UnsafeMutablePointer<PangoLayout>! { get }
+
 }
 
 /// The `LayoutRef` type acts as a lightweight Swift reference to an underlying `PangoLayout` instance.
@@ -1543,54 +1959,84 @@ public protocol LayoutProtocol: ObjectProtocol {
 public struct LayoutRef: LayoutProtocol {
         /// Untyped pointer to the underlying `PangoLayout` instance.
     /// For type-safe access, use the generated, typed pointer `layout_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension LayoutRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoLayout>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoLayout>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoLayout>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoLayout>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoLayout>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `LayoutProtocol`
-    init<T: LayoutProtocol>(_ other: T) {
+    @inlinable init<T: LayoutProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
         /// Create a new `PangoLayout` object with attributes initialized to
     /// default values for a particular `PangoContext`.
-    init( context: ContextProtocol) {
-        let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_layout_new(cast(context.ptr)))
-        ptr = UnsafeMutableRawPointer(cast(rv))
+    @inlinable init<ContextT: ContextProtocol>( context: ContextT) {
+        let rv = pango_layout_new(context.context_ptr)
+        ptr = UnsafeMutableRawPointer(rv)
     }
 }
 
@@ -1623,85 +2069,131 @@ open class Layout: Object, LayoutProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Layout` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoLayout>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoLayout>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Layout` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoLayout>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Layout` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Layout` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Layout` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoLayout>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Layout` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoLayout>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `PangoLayout`.
     /// i.e., ownership is transferred to the `Layout` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoLayout>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoLayout>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `LayoutProtocol`
     /// Will retain `PangoLayout`.
     /// - Parameter other: an instance of a related type that implements `LayoutProtocol`
-    public init<T: LayoutProtocol>(layout other: T) {
-        super.init(retaining: cast(other.layout_ptr))
+    @inlinable public init<T: LayoutProtocol>(layout other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
     /// Create a new `PangoLayout` object with attributes initialized to
     /// default values for a particular `PangoContext`.
-    public init( context: ContextProtocol) {
-        let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_layout_new(cast(context.ptr)))
-        super.init(cast(rv))
+    @inlinable public init<ContextT: ContextProtocol>( context: ContextT) {
+        let rv = pango_layout_new(context.context_ptr)
+        super.init(gpointer: (rv))
     }
 
 
@@ -1744,11 +2236,11 @@ public extension LayoutProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: LayoutSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: LayoutSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(layout_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -1769,63 +2261,63 @@ public extension LayoutProtocol {
 // MARK: Layout Class: LayoutProtocol extension (methods and fields)
 public extension LayoutProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLayout` instance.
-    var layout_ptr: UnsafeMutablePointer<PangoLayout> { return ptr.assumingMemoryBound(to: PangoLayout.self) }
+    @inlinable var layout_ptr: UnsafeMutablePointer<PangoLayout>! { return ptr?.assumingMemoryBound(to: PangoLayout.self) }
 
     /// Forces recomputation of any state in the `PangoLayout` that
     /// might depend on the layout's context. This function should
     /// be called if you make changes to the context subsequent
     /// to creating the layout.
-    func contextChanged() {
-        pango_layout_context_changed(cast(layout_ptr))
+    @inlinable func contextChanged() {
+        pango_layout_context_changed(layout_ptr)
     
     }
 
     /// Does a deep copy-by-value of the `src` layout. The attribute list,
     /// tab array, and text from the original layout are all copied by
     /// value.
-    func copy() -> UnsafeMutablePointer<PangoLayout>! {
-        let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_layout_copy(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func copy() -> LayoutRef! {
+        guard let rv = LayoutRef(gconstpointer: gconstpointer(pango_layout_copy(layout_ptr))) else { return nil }
+        return rv
     }
 
     /// Gets the alignment for the layout: how partial lines are
     /// positioned within the horizontal space available.
-    func getAlignment() -> PangoAlignment {
-        let rv = pango_layout_get_alignment(cast(layout_ptr))
-        return cast(rv)
+    @inlinable func getAlignment() -> PangoAlignment {
+        let rv = pango_layout_get_alignment(layout_ptr)
+        return rv
     }
 
     /// Gets the attribute list for the layout, if any.
-    func getAttributes() -> UnsafeMutablePointer<PangoAttrList>! {
-        let rv: UnsafeMutablePointer<PangoAttrList>! = cast(pango_layout_get_attributes(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getAttributes() -> AttrListRef! {
+        let rv = AttrListRef(gconstpointer: gconstpointer(pango_layout_get_attributes(layout_ptr)))
+        return rv
     }
 
     /// Gets whether to calculate the bidirectional base direction
     /// for the layout according to the contents of the layout.
     /// See `pango_layout_set_auto_dir()`.
-    func getAutoDir() -> Bool {
-        let rv = pango_layout_get_auto_dir(cast(layout_ptr))
-        return Bool(rv != 0)
+    @inlinable func getAutoDir() -> Bool {
+        let rv = ((pango_layout_get_auto_dir(layout_ptr)) != 0)
+        return rv
     }
 
     /// Gets the Y position of baseline of the first line in `layout`.
-    func getBaseline() -> Int {
-        let rv: Int = cast(pango_layout_get_baseline(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getBaseline() -> Int {
+        let rv = Int(pango_layout_get_baseline(layout_ptr))
+        return rv
     }
 
     /// Returns the number of Unicode characters in the
     /// the text of `layout`.
-    func getCharacterCount() -> Int {
-        let rv: Int = cast(pango_layout_get_character_count(cast(layout_ptr)))
-        return Int(rv)
+    @inlinable func getCharacterCount() -> Int {
+        let rv = Int(pango_layout_get_character_count(layout_ptr))
+        return rv
     }
 
     /// Retrieves the `PangoContext` used for this layout.
-    func getContext() -> UnsafeMutablePointer<PangoContext>! {
-        let rv: UnsafeMutablePointer<PangoContext>! = cast(pango_layout_get_context(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getContext() -> ContextRef! {
+        let rv = ContextRef(gconstpointer: gconstpointer(pango_layout_get_context(layout_ptr)))
+        return rv
     }
 
     /// Given an index within a layout, determines the positions that of the
@@ -1836,16 +2328,23 @@ public extension LayoutProtocol {
     /// layout are inserted.  The weak cursor location is the location
     /// where characters of the directionality opposite to the base
     /// direction of the layout are inserted.
-    func getCursorPos(index_: CInt, strongPos strong_pos: RectangleProtocol, weakPos weak_pos: RectangleProtocol) {
-        pango_layout_get_cursor_pos(cast(layout_ptr), index_, cast(strong_pos.ptr), cast(weak_pos.ptr))
+    @inlinable func getCursorPos<RectangleT: RectangleProtocol>(index_: Int, strongPos strong_pos: RectangleT? = nil, weakPos weak_pos: RectangleT? = nil) {
+        pango_layout_get_cursor_pos(layout_ptr, gint(index_), strong_pos?._ptr, weak_pos?._ptr)
     
+    }
+
+    /// Gets the text direction at the given character
+    /// position in `layout`.
+    @inlinable func getDirection(index: Int) -> PangoDirection {
+        let rv = pango_layout_get_direction(layout_ptr, gint(index))
+        return rv
     }
 
     /// Gets the type of ellipsization being performed for `layout`.
     /// See `pango_layout_set_ellipsize()`
-    func getEllipsize() -> PangoEllipsizeMode {
-        let rv = pango_layout_get_ellipsize(cast(layout_ptr))
-        return cast(rv)
+    @inlinable func getEllipsize() -> PangoEllipsizeMode {
+        let rv = pango_layout_get_ellipsize(layout_ptr)
+        return rv
     }
 
     /// Computes the logical and ink extents of `layout`. Logical extents
@@ -1857,57 +2356,57 @@ public extension LayoutProtocol {
     /// 
     /// The extents are given in layout coordinates and in Pango units; layout
     /// coordinates begin at the top left corner of the layout.
-    func getExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
-        pango_layout_get_extents(cast(layout_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
+    @inlinable func getExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
+        pango_layout_get_extents(layout_ptr, ink_rect?._ptr, logical_rect?._ptr)
     
     }
 
     /// Gets the font description for the layout, if any.
-    func getFontDescription() -> UnsafePointer<PangoFontDescription>! {
-        let rv: UnsafePointer<PangoFontDescription>! = cast(pango_layout_get_font_description(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getFontDescription() -> FontDescriptionRef! {
+        let rv = FontDescriptionRef(gconstpointer: gconstpointer(pango_layout_get_font_description(layout_ptr)))
+        return rv
     }
 
     /// Gets the height of layout used for ellipsization.  See
     /// `pango_layout_set_height()` for details.
-    func getHeight() -> Int {
-        let rv: Int = cast(pango_layout_get_height(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getHeight() -> Int {
+        let rv = Int(pango_layout_get_height(layout_ptr))
+        return rv
     }
 
     /// Gets the paragraph indent width in Pango units. A negative value
     /// indicates a hanging indentation.
-    func getIndent() -> Int {
-        let rv: Int = cast(pango_layout_get_indent(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getIndent() -> Int {
+        let rv = Int(pango_layout_get_indent(layout_ptr))
+        return rv
     }
 
     /// Returns an iterator to iterate over the visual extents of the layout.
-    func getIter() -> UnsafeMutablePointer<PangoLayoutIter>! {
-        let rv: UnsafeMutablePointer<PangoLayoutIter>! = cast(pango_layout_get_iter(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getIter() -> LayoutIterRef! {
+        let rv = LayoutIterRef(gconstpointer: gconstpointer(pango_layout_get_iter(layout_ptr)))
+        return rv
     }
 
     /// Gets whether each complete line should be stretched to fill the entire
     /// width of the layout.
-    func getJustify() -> Bool {
-        let rv = pango_layout_get_justify(cast(layout_ptr))
-        return Bool(rv != 0)
+    @inlinable func getJustify() -> Bool {
+        let rv = ((pango_layout_get_justify(layout_ptr)) != 0)
+        return rv
     }
 
     /// Retrieves a particular line from a `PangoLayout`.
     /// 
     /// Use the faster `pango_layout_get_line_readonly()` if you do not plan
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
-    func get(line: CInt) -> UnsafeMutablePointer<PangoLayoutLine>! {
-        let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_get_line(cast(layout_ptr), line))
-        return cast(rv)
+    @inlinable func get(line: Int) -> LayoutLineRef! {
+        let rv = LayoutLineRef(gconstpointer: gconstpointer(pango_layout_get_line(layout_ptr, gint(line))))
+        return rv
     }
 
     /// Retrieves the count of lines for the `layout`.
-    func getLineCount() -> Int {
-        let rv: Int = cast(pango_layout_get_line_count(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getLineCount() -> Int {
+        let rv = Int(pango_layout_get_line_count(layout_ptr))
+        return rv
     }
 
     /// Retrieves a particular line from a `PangoLayout`.
@@ -1915,25 +2414,25 @@ public extension LayoutProtocol {
     /// This is a faster alternative to `pango_layout_get_line()`,
     /// but the user is not expected
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
-    func getLineReadonly(line: CInt) -> UnsafeMutablePointer<PangoLayoutLine>! {
-        let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_get_line_readonly(cast(layout_ptr), line))
-        return cast(rv)
+    @inlinable func getLineReadonly(line: Int) -> LayoutLineRef! {
+        let rv = LayoutLineRef(gconstpointer: gconstpointer(pango_layout_get_line_readonly(layout_ptr, gint(line))))
+        return rv
     }
 
     /// Gets the value that has been
     /// set with `pango_layout_set_line_spacing()`.
-    func getLineSpacing() -> Double {
-        let rv: Float = cast(pango_layout_get_line_spacing(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getLineSpacing() -> CFloat {
+        let rv = pango_layout_get_line_spacing(layout_ptr)
+        return rv
     }
 
     /// Returns the lines of the `layout` as a list.
     /// 
     /// Use the faster `pango_layout_get_lines_readonly()` if you do not plan
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
-    func getLines() -> UnsafeMutablePointer<GSList>! {
-        let rv: UnsafeMutablePointer<GSList>! = cast(pango_layout_get_lines(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getLines() -> SListRef! {
+        let rv = SListRef(gconstpointer: gconstpointer(pango_layout_get_lines(layout_ptr)))
+        return rv
     }
 
     /// Returns the lines of the `layout` as a list.
@@ -1941,15 +2440,15 @@ public extension LayoutProtocol {
     /// This is a faster alternative to `pango_layout_get_lines()`,
     /// but the user is not expected
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
-    func getLinesReadonly() -> UnsafeMutablePointer<GSList>! {
-        let rv: UnsafeMutablePointer<GSList>! = cast(pango_layout_get_lines_readonly(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getLinesReadonly() -> SListRef! {
+        let rv = SListRef(gconstpointer: gconstpointer(pango_layout_get_lines_readonly(layout_ptr)))
+        return rv
     }
 
     /// Retrieves an array of logical attributes for each character in
     /// the `layout`.
-    func getLog(attrs: UnsafeMutablePointer<UnsafeMutablePointer<PangoLogAttr>>, nAttrs n_attrs: UnsafeMutablePointer<CInt>) {
-        pango_layout_get_log_attrs(cast(layout_ptr), cast(attrs), cast(n_attrs))
+    @inlinable func getLog(attrs: UnsafeMutablePointer<UnsafeMutablePointer<PangoLogAttr>?>!, nAttrs n_attrs: UnsafeMutablePointer<gint>!) {
+        pango_layout_get_log_attrs(layout_ptr, attrs, n_attrs)
     
     }
 
@@ -1964,9 +2463,9 @@ public extension LayoutProtocol {
     /// than the total number of characters in the layout, since there
     /// need to be attributes corresponding to both the position before
     /// the first character and the position after the last character.
-    func getLogAttrsReadonly(nAttrs n_attrs: UnsafeMutablePointer<CInt>) -> UnsafePointer<PangoLogAttr>! {
-        let rv: UnsafePointer<PangoLogAttr>! = cast(pango_layout_get_log_attrs_readonly(cast(layout_ptr), cast(n_attrs)))
-        return cast(rv)
+    @inlinable func getLogAttrsReadonly(nAttrs n_attrs: UnsafeMutablePointer<gint>!) -> UnsafePointer<PangoLogAttr>! {
+        let rv = pango_layout_get_log_attrs_readonly(layout_ptr, n_attrs)
+        return rv
     }
 
     /// Computes the logical and ink extents of `layout` in device units.
@@ -1974,8 +2473,8 @@ public extension LayoutProtocol {
     /// two `pango_extents_to_pixels()` calls, rounding `ink_rect` and `logical_rect`
     /// such that the rounded rectangles fully contain the unrounded one (that is,
     /// passes them as first argument to `pango_extents_to_pixels()`).
-    func getPixelExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
-        pango_layout_get_pixel_extents(cast(layout_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
+    @inlinable func getPixelExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
+        pango_layout_get_pixel_extents(layout_ptr, ink_rect?._ptr, logical_rect?._ptr)
     
     }
 
@@ -1984,8 +2483,8 @@ public extension LayoutProtocol {
     /// and height scaled by `PANGO_SCALE`.) This
     /// is simply a convenience function around
     /// `pango_layout_get_pixel_extents()`.
-    func getPixelSize(width: UnsafeMutablePointer<CInt>, height: UnsafeMutablePointer<CInt>) {
-        pango_layout_get_pixel_size(cast(layout_ptr), cast(width), cast(height))
+    @inlinable func getPixelSize(width: UnsafeMutablePointer<gint>! = nil, height: UnsafeMutablePointer<gint>! = nil) {
+        pango_layout_get_pixel_size(layout_ptr, width, height)
     
     }
 
@@ -1999,45 +2498,45 @@ public extension LayoutProtocol {
     /// This can be used to automatically detect changes to a `PangoLayout`, and
     /// is useful for example to decide whether a layout needs redrawing.
     /// To force the serial to be increased, use `pango_layout_context_changed()`.
-    func getSerial() -> Int {
-        let rv: Int = cast(pango_layout_get_serial(cast(layout_ptr)))
-        return Int(rv)
+    @inlinable func getSerial() -> Int {
+        let rv = Int(pango_layout_get_serial(layout_ptr))
+        return rv
     }
 
     /// Obtains the value set by `pango_layout_set_single_paragraph_mode()`.
-    func getSingleParagraphMode() -> Bool {
-        let rv = pango_layout_get_single_paragraph_mode(cast(layout_ptr))
-        return Bool(rv != 0)
+    @inlinable func getSingleParagraphMode() -> Bool {
+        let rv = ((pango_layout_get_single_paragraph_mode(layout_ptr)) != 0)
+        return rv
     }
 
     /// Determines the logical width and height of a `PangoLayout`
     /// in Pango units (device units scaled by `PANGO_SCALE`). This
     /// is simply a convenience function around `pango_layout_get_extents()`.
-    func getSize(width: UnsafeMutablePointer<CInt>, height: UnsafeMutablePointer<CInt>) {
-        pango_layout_get_size(cast(layout_ptr), cast(width), cast(height))
+    @inlinable func getSize(width: UnsafeMutablePointer<gint>! = nil, height: UnsafeMutablePointer<gint>! = nil) {
+        pango_layout_get_size(layout_ptr, width, height)
     
     }
 
     /// Gets the amount of spacing between the lines of the layout.
-    func getSpacing() -> Int {
-        let rv: Int = cast(pango_layout_get_spacing(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getSpacing() -> Int {
+        let rv = Int(pango_layout_get_spacing(layout_ptr))
+        return rv
     }
 
     /// Gets the current `PangoTabArray` used by this layout. If no
     /// `PangoTabArray` has been set, then the default tabs are in use
     /// and `nil` is returned. Default tabs are every 8 spaces.
     /// The return value should be freed with `pango_tab_array_free()`.
-    func getTabs() -> UnsafeMutablePointer<PangoTabArray>! {
-        let rv: UnsafeMutablePointer<PangoTabArray>! = cast(pango_layout_get_tabs(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getTabs() -> TabArrayRef! {
+        let rv = TabArrayRef(gconstpointer: gconstpointer(pango_layout_get_tabs(layout_ptr)))
+        return rv
     }
 
     /// Gets the text in the layout. The returned text should not
     /// be freed or modified.
-    func getText() -> String! {
-        let rv: String! = cast(pango_layout_get_text(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getText() -> String! {
+        let rv = pango_layout_get_text(layout_ptr).map({ String(cString: $0) })
+        return rv
     }
 
     /// Counts the number unknown glyphs in `layout`.  That is, zero if
@@ -2048,30 +2547,30 @@ public extension LayoutProtocol {
     /// available to render all characters in a certain string, or when
     /// used in combination with `PANGO_ATTR_FALLBACK`, to check if a
     /// certain font supports all the characters in the string.
-    func getUnknownGlyphsCount() -> Int {
-        let rv: Int = cast(pango_layout_get_unknown_glyphs_count(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getUnknownGlyphsCount() -> Int {
+        let rv = Int(pango_layout_get_unknown_glyphs_count(layout_ptr))
+        return rv
     }
 
     /// Gets the width to which the lines of the `PangoLayout` should wrap.
-    func getWidth() -> Int {
-        let rv: Int = cast(pango_layout_get_width(cast(layout_ptr)))
-        return cast(rv)
+    @inlinable func getWidth() -> Int {
+        let rv = Int(pango_layout_get_width(layout_ptr))
+        return rv
     }
 
     /// Gets the wrap mode for the layout.
     /// 
     /// Use `pango_layout_is_wrapped()` to query whether any paragraphs
     /// were actually wrapped.
-    func getWrap() -> PangoWrapMode {
-        let rv = pango_layout_get_wrap(cast(layout_ptr))
-        return cast(rv)
+    @inlinable func getWrap() -> PangoWrapMode {
+        let rv = pango_layout_get_wrap(layout_ptr)
+        return rv
     }
 
     /// Converts from byte `index_` within the `layout` to line and X position.
     /// (X position is measured from the left edge of the line)
-    func indexToLineX(index_: CInt, trailing: Bool, line: UnsafeMutablePointer<CInt>, xPos x_pos: UnsafeMutablePointer<CInt>) {
-        pango_layout_index_to_line_x(cast(layout_ptr), index_, gboolean(trailing ? 1 : 0), cast(line), cast(x_pos))
+    @inlinable func indexToLineX(index_: Int, trailing: Bool, line: UnsafeMutablePointer<gint>! = nil, xPos x_pos: UnsafeMutablePointer<gint>! = nil) {
+        pango_layout_index_to_line_x(layout_ptr, gint(index_), gboolean((trailing) ? 1 : 0), line, x_pos)
     
     }
 
@@ -2081,8 +2580,8 @@ public extension LayoutProtocol {
     /// edge of the grapheme and <literal>pos->x + pos->width</literal> the trailing
     /// edge of the grapheme. If the directionality of the grapheme is right-to-left,
     /// then <literal>pos->width</literal> will be negative.
-    func indexToPos(index_: CInt, pos: RectangleProtocol) {
-        pango_layout_index_to_pos(cast(layout_ptr), index_, cast(pos.ptr))
+    @inlinable func indexToPos<RectangleT: RectangleProtocol>(index_: Int, pos: RectangleT) {
+        pango_layout_index_to_pos(layout_ptr, gint(index_), pos._ptr)
     
     }
 
@@ -2102,22 +2601,22 @@ public extension LayoutProtocol {
     /// single call to `pango_layout_move_cursor_visually()` may move the
     /// cursor over multiple characters when multiple characters combine
     /// to form a single grapheme.
-    func moveCursorVisually(strong: Bool, oldIndex old_index: CInt, oldTrailing old_trailing: CInt, direction: CInt, newIndex new_index: UnsafeMutablePointer<CInt>, newTrailing new_trailing: UnsafeMutablePointer<CInt>) {
-        pango_layout_move_cursor_visually(cast(layout_ptr), gboolean(strong ? 1 : 0), old_index, old_trailing, direction, cast(new_index), cast(new_trailing))
+    @inlinable func moveCursorVisually(strong: Bool, oldIndex old_index: Int, oldTrailing old_trailing: Int, direction: Int, newIndex new_index: UnsafeMutablePointer<gint>!, newTrailing new_trailing: UnsafeMutablePointer<gint>!) {
+        pango_layout_move_cursor_visually(layout_ptr, gboolean((strong) ? 1 : 0), gint(old_index), gint(old_trailing), gint(direction), new_index, new_trailing)
     
     }
 
     /// Sets the alignment for the layout: how partial lines are
     /// positioned within the horizontal space available.
-    func set(alignment: Alignment) {
-        pango_layout_set_alignment(cast(layout_ptr), alignment)
+    @inlinable func set(alignment: PangoAlignment) {
+        pango_layout_set_alignment(layout_ptr, alignment)
     
     }
 
     /// Sets the text attributes for a layout object.
     /// References `attrs`, so the caller can unref its reference.
-    func setAttributes(attrs: AttrListProtocol) {
-        pango_layout_set_attributes(cast(layout_ptr), cast(attrs.ptr))
+    @inlinable func setAttributes<AttrListT: AttrListProtocol>(attrs: AttrListT? = nil) {
+        pango_layout_set_attributes(layout_ptr, attrs?.attr_list_ptr)
     
     }
 
@@ -2137,8 +2636,8 @@ public extension LayoutProtocol {
     /// When the auto-computed direction of a paragraph differs from the
     /// base direction of the context, the interpretation of
     /// `PANGO_ALIGN_LEFT` and `PANGO_ALIGN_RIGHT` are swapped.
-    func set(autoDir auto_dir: Bool) {
-        pango_layout_set_auto_dir(cast(layout_ptr), gboolean(auto_dir ? 1 : 0))
+    @inlinable func set(autoDir auto_dir: Bool) {
+        pango_layout_set_auto_dir(layout_ptr, gboolean((auto_dir) ? 1 : 0))
     
     }
 
@@ -2153,16 +2652,16 @@ public extension LayoutProtocol {
     /// each paragraph is ellipsized separately or the entire layout
     /// is ellipsized as a whole depends on the set height of the layout.
     /// See `pango_layout_set_height()` for details.
-    func set(ellipsize: EllipsizeMode) {
-        pango_layout_set_ellipsize(cast(layout_ptr), ellipsize)
+    @inlinable func set(ellipsize: PangoEllipsizeMode) {
+        pango_layout_set_ellipsize(layout_ptr, ellipsize)
     
     }
 
     /// Sets the default font description for the layout. If no font
     /// description is set on the layout, the font description from
     /// the layout's context is used.
-    func setFontDescription(desc: FontDescriptionProtocol) {
-        pango_layout_set_font_description(cast(layout_ptr), cast(desc.ptr))
+    @inlinable func setFontDescription<FontDescriptionT: FontDescriptionProtocol>(desc: FontDescriptionT? = nil) {
+        pango_layout_set_font_description(layout_ptr, desc?.font_description_ptr)
     
     }
 
@@ -2190,8 +2689,8 @@ public extension LayoutProtocol {
     /// The behavior is undefined if a height other than -1 is set and
     /// ellipsization mode is set to `PANGO_ELLIPSIZE_NONE`, and may change in the
     /// future.
-    func set(height: CInt) {
-        pango_layout_set_height(cast(layout_ptr), height)
+    @inlinable func set(height: Int) {
+        pango_layout_set_height(layout_ptr, gint(height))
     
     }
 
@@ -2202,8 +2701,8 @@ public extension LayoutProtocol {
     /// 
     /// The indent setting is ignored if layout alignment is set to
     /// `PANGO_ALIGN_CENTER`.
-    func set(indent: CInt) {
-        pango_layout_set_indent(cast(layout_ptr), indent)
+    @inlinable func set(indent: Int) {
+        pango_layout_set_indent(layout_ptr, gint(indent))
     
     }
 
@@ -2215,8 +2714,8 @@ public extension LayoutProtocol {
     /// 
     /// Note that this setting is not implemented and so is ignored in Pango
     /// older than 1.18.
-    func set(justify: Bool) {
-        pango_layout_set_justify(cast(layout_ptr), gboolean(justify ? 1 : 0))
+    @inlinable func set(justify: Bool) {
+        pango_layout_set_justify(layout_ptr, gboolean((justify) ? 1 : 0))
     
     }
 
@@ -2236,15 +2735,15 @@ public extension LayoutProtocol {
     /// 
     /// If `factor` is zero, spacing is applied as
     /// before.
-    func setLineSpacing(factor: gfloat) {
-        pango_layout_set_line_spacing(cast(layout_ptr), factor)
+    @inlinable func setLineSpacing(factor: CFloat) {
+        pango_layout_set_line_spacing(layout_ptr, factor)
     
     }
 
     /// Same as `pango_layout_set_markup_with_accel()`, but
     /// the markup text isn't scanned for accelerators.
-    func set(markup: UnsafePointer<CChar>, length: CInt) {
-        pango_layout_set_markup(cast(layout_ptr), markup, length)
+    @inlinable func set(markup: UnsafePointer<CChar>!, length: Int) {
+        pango_layout_set_markup(layout_ptr, markup, gint(length))
     
     }
 
@@ -2259,8 +2758,8 @@ public extension LayoutProtocol {
     /// and the first character so marked will be returned in `accel_char`.
     /// Two `accel_marker` characters following each other produce a single
     /// literal `accel_marker` character.
-    func setMarkupWithAccel(markup: UnsafePointer<CChar>, length: CInt, accelMarker accel_marker: gunichar, accelChar accel_char: UnsafeMutablePointer<gunichar>) {
-        pango_layout_set_markup_with_accel(cast(layout_ptr), markup, length, accel_marker, cast(accel_char))
+    @inlinable func setMarkupWithAccel(markup: UnsafePointer<CChar>!, length: Int, accelMarker accel_marker: gunichar, accelChar accel_char: UnsafeMutablePointer<gunichar>! = nil) {
+        pango_layout_set_markup_with_accel(layout_ptr, markup, gint(length), accel_marker, accel_char)
     
     }
 
@@ -2268,8 +2767,8 @@ public extension LayoutProtocol {
     /// as paragraph separators; instead, keep all text in a single paragraph,
     /// and display a glyph for paragraph separator characters. Used when
     /// you want to allow editing of newlines on a single text line.
-    func setSingleParagraphMode(setting: Bool) {
-        pango_layout_set_single_paragraph_mode(cast(layout_ptr), gboolean(setting ? 1 : 0))
+    @inlinable func setSingleParagraphMode(setting: Bool) {
+        pango_layout_set_single_paragraph_mode(layout_ptr, gboolean((setting) ? 1 : 0))
     
     }
 
@@ -2284,8 +2783,8 @@ public extension LayoutProtocol {
     /// lines. The `spacing` set with this function is only
     /// taken into account when the line-height factor is
     /// set to zero with `pango_layout_set_line_spacing()`.
-    func set(spacing: CInt) {
-        pango_layout_set_spacing(cast(layout_ptr), spacing)
+    @inlinable func set(spacing: Int) {
+        pango_layout_set_spacing(layout_ptr, gint(spacing))
     
     }
 
@@ -2293,8 +2792,8 @@ public extension LayoutProtocol {
     /// (by default, tabs are every 8 spaces). If `tabs` is `nil`, the default
     /// tabs are reinstated. `tabs` is copied into the layout; you must
     /// free your copy of `tabs` yourself.
-    func set(tabs: TabArrayProtocol) {
-        pango_layout_set_tabs(cast(layout_ptr), cast(tabs.ptr))
+    @inlinable func set<TabArrayT: TabArrayProtocol>(tabs: TabArrayT? = nil) {
+        pango_layout_set_tabs(layout_ptr, tabs?.tab_array_ptr)
     
     }
 
@@ -2308,23 +2807,23 @@ public extension LayoutProtocol {
     /// want to call `pango_layout_set_attributes()` to clear the attributes
     /// set on the layout from the markup as this function does not clear
     /// attributes.
-    func set(text: UnsafePointer<CChar>, length: CInt) {
-        pango_layout_set_text(cast(layout_ptr), text, length)
+    @inlinable func set(text: UnsafePointer<CChar>!, length: Int) {
+        pango_layout_set_text(layout_ptr, text, gint(length))
     
     }
 
     /// Sets the width to which the lines of the `PangoLayout` should wrap or
     /// ellipsized.  The default value is -1: no width set.
-    func set(width: CInt) {
-        pango_layout_set_width(cast(layout_ptr), width)
+    @inlinable func set(width: Int) {
+        pango_layout_set_width(layout_ptr, gint(width))
     
     }
 
     /// Sets the wrap mode; the wrap mode only has effect if a width
     /// is set on the layout with `pango_layout_set_width()`.
     /// To turn off wrapping, set the width to -1.
-    func set(wrap: WrapMode) {
-        pango_layout_set_wrap(cast(layout_ptr), wrap)
+    @inlinable func set(wrap: PangoWrapMode) {
+        pango_layout_set_wrap(layout_ptr, wrap)
     
     }
 
@@ -2336,50 +2835,50 @@ public extension LayoutProtocol {
     /// end of the line is chosen as described for `pango_layout_line_x_to_index()`.
     /// If either the X or Y positions were not inside the layout, then the
     /// function returns `false`; on an exact hit, it returns `true`.
-    func xyToIndex(x: CInt, y: CInt, index_: UnsafeMutablePointer<CInt>, trailing: UnsafeMutablePointer<CInt>) -> Bool {
-        let rv = pango_layout_xy_to_index(cast(layout_ptr), x, y, cast(index_), cast(trailing))
-        return Bool(rv != 0)
+    @inlinable func xyToIndex(x: Int, y: Int, index_: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) -> Bool {
+        let rv = ((pango_layout_xy_to_index(layout_ptr, gint(x), gint(y), index_, trailing)) != 0)
+        return rv
     }
     /// Gets the alignment for the layout: how partial lines are
     /// positioned within the horizontal space available.
-    var alignment: PangoAlignment {
+    @inlinable var alignment: PangoAlignment {
         /// Gets the alignment for the layout: how partial lines are
         /// positioned within the horizontal space available.
         get {
-            let rv = pango_layout_get_alignment(cast(layout_ptr))
-            return cast(rv)
+            let rv = pango_layout_get_alignment(layout_ptr)
+            return rv
         }
         /// Sets the alignment for the layout: how partial lines are
         /// positioned within the horizontal space available.
         nonmutating set {
-            pango_layout_set_alignment(cast(layout_ptr), cast(newValue))
+            pango_layout_set_alignment(layout_ptr, newValue)
         }
     }
 
     /// Gets the attribute list for the layout, if any.
-    var attributes: UnsafeMutablePointer<PangoAttrList>! {
+    @inlinable var attributes: AttrListRef! {
         /// Gets the attribute list for the layout, if any.
         get {
-            let rv: UnsafeMutablePointer<PangoAttrList>! = cast(pango_layout_get_attributes(cast(layout_ptr)))
-            return cast(rv)
+            let rv = AttrListRef(gconstpointer: gconstpointer(pango_layout_get_attributes(layout_ptr)))
+            return rv
         }
         /// Sets the text attributes for a layout object.
         /// References `attrs`, so the caller can unref its reference.
         nonmutating set {
-            pango_layout_set_attributes(cast(layout_ptr), cast(newValue))
+            pango_layout_set_attributes(layout_ptr, UnsafeMutablePointer<PangoAttrList>(newValue?.attr_list_ptr))
         }
     }
 
     /// Gets whether to calculate the bidirectional base direction
     /// for the layout according to the contents of the layout.
     /// See `pango_layout_set_auto_dir()`.
-    var autoDir: Bool {
+    @inlinable var autoDir: Bool {
         /// Gets whether to calculate the bidirectional base direction
         /// for the layout according to the contents of the layout.
         /// See `pango_layout_set_auto_dir()`.
         get {
-            let rv = pango_layout_get_auto_dir(cast(layout_ptr))
-            return Bool(rv != 0)
+            let rv = ((pango_layout_get_auto_dir(layout_ptr)) != 0)
+            return rv
         }
         /// Sets whether to calculate the bidirectional base direction
         /// for the layout according to the contents of the layout;
@@ -2398,47 +2897,47 @@ public extension LayoutProtocol {
         /// base direction of the context, the interpretation of
         /// `PANGO_ALIGN_LEFT` and `PANGO_ALIGN_RIGHT` are swapped.
         nonmutating set {
-            pango_layout_set_auto_dir(cast(layout_ptr), gboolean(newValue ? 1 : 0))
+            pango_layout_set_auto_dir(layout_ptr, gboolean((newValue) ? 1 : 0))
         }
     }
 
     /// Gets the Y position of baseline of the first line in `layout`.
-    var baseline: Int {
+    @inlinable var baseline: Int {
         /// Gets the Y position of baseline of the first line in `layout`.
         get {
-            let rv: Int = cast(pango_layout_get_baseline(cast(layout_ptr)))
-            return cast(rv)
+            let rv = Int(pango_layout_get_baseline(layout_ptr))
+            return rv
         }
     }
 
     /// Returns the number of Unicode characters in the
     /// the text of `layout`.
-    var characterCount: Int {
+    @inlinable var characterCount: Int {
         /// Returns the number of Unicode characters in the
         /// the text of `layout`.
         get {
-            let rv: Int = cast(pango_layout_get_character_count(cast(layout_ptr)))
-            return Int(rv)
+            let rv = Int(pango_layout_get_character_count(layout_ptr))
+            return rv
         }
     }
 
     /// Retrieves the `PangoContext` used for this layout.
-    var context: UnsafeMutablePointer<PangoContext>! {
+    @inlinable var context: ContextRef! {
         /// Retrieves the `PangoContext` used for this layout.
         get {
-            let rv: UnsafeMutablePointer<PangoContext>! = cast(pango_layout_get_context(cast(layout_ptr)))
-            return cast(rv)
+            let rv = ContextRef(gconstpointer: gconstpointer(pango_layout_get_context(layout_ptr)))
+            return rv
         }
     }
 
     /// Gets the type of ellipsization being performed for `layout`.
     /// See `pango_layout_set_ellipsize()`
-    var ellipsize: PangoEllipsizeMode {
+    @inlinable var ellipsize: PangoEllipsizeMode {
         /// Gets the type of ellipsization being performed for `layout`.
         /// See `pango_layout_set_ellipsize()`
         get {
-            let rv = pango_layout_get_ellipsize(cast(layout_ptr))
-            return cast(rv)
+            let rv = pango_layout_get_ellipsize(layout_ptr)
+            return rv
         }
         /// Sets the type of ellipsization being performed for `layout`.
         /// Depending on the ellipsization mode `ellipsize` text is
@@ -2452,33 +2951,33 @@ public extension LayoutProtocol {
         /// is ellipsized as a whole depends on the set height of the layout.
         /// See `pango_layout_set_height()` for details.
         nonmutating set {
-            pango_layout_set_ellipsize(cast(layout_ptr), cast(newValue))
+            pango_layout_set_ellipsize(layout_ptr, newValue)
         }
     }
 
     /// Gets the font description for the layout, if any.
-    var fontDescription: UnsafePointer<PangoFontDescription>! {
+    @inlinable var fontDescription: FontDescriptionRef! {
         /// Gets the font description for the layout, if any.
         get {
-            let rv: UnsafePointer<PangoFontDescription>! = cast(pango_layout_get_font_description(cast(layout_ptr)))
-            return cast(rv)
+            let rv = FontDescriptionRef(gconstpointer: gconstpointer(pango_layout_get_font_description(layout_ptr)))
+            return rv
         }
         /// Sets the default font description for the layout. If no font
         /// description is set on the layout, the font description from
         /// the layout's context is used.
         nonmutating set {
-            pango_layout_set_font_description(cast(layout_ptr), cast(newValue))
+            pango_layout_set_font_description(layout_ptr, UnsafePointer<PangoFontDescription>(newValue?.font_description_ptr))
         }
     }
 
     /// Gets the height of layout used for ellipsization.  See
     /// `pango_layout_set_height()` for details.
-    var height: Int {
+    @inlinable var height: Int {
         /// Gets the height of layout used for ellipsization.  See
         /// `pango_layout_set_height()` for details.
         get {
-            let rv: Int = cast(pango_layout_get_height(cast(layout_ptr)))
-            return cast(rv)
+            let rv = Int(pango_layout_get_height(layout_ptr))
+            return rv
         }
         /// Sets the height to which the `PangoLayout` should be ellipsized at.  There
         /// are two different behaviors, based on whether `height` is positive or
@@ -2505,18 +3004,18 @@ public extension LayoutProtocol {
         /// ellipsization mode is set to `PANGO_ELLIPSIZE_NONE`, and may change in the
         /// future.
         nonmutating set {
-            pango_layout_set_height(cast(layout_ptr), cast(newValue))
+            pango_layout_set_height(layout_ptr, gint(newValue))
         }
     }
 
     /// Gets the paragraph indent width in Pango units. A negative value
     /// indicates a hanging indentation.
-    var indent: Int {
+    @inlinable var indent: Int {
         /// Gets the paragraph indent width in Pango units. A negative value
         /// indicates a hanging indentation.
         get {
-            let rv: Int = cast(pango_layout_get_indent(cast(layout_ptr)))
-            return cast(rv)
+            let rv = Int(pango_layout_get_indent(layout_ptr))
+            return rv
         }
         /// Sets the width in Pango units to indent each paragraph. A negative value
         /// of `indent` will produce a hanging indentation. That is, the first line will
@@ -2526,7 +3025,7 @@ public extension LayoutProtocol {
         /// The indent setting is ignored if layout alignment is set to
         /// `PANGO_ALIGN_CENTER`.
         nonmutating set {
-            pango_layout_set_indent(cast(layout_ptr), cast(newValue))
+            pango_layout_set_indent(layout_ptr, gint(newValue))
         }
     }
 
@@ -2536,7 +3035,7 @@ public extension LayoutProtocol {
     /// is not `PANGO_ELLIPSIZE_NONE`, a positive width is set on `layout`,
     /// and there are paragraphs exceeding that width that have to be
     /// ellipsized.
-    var isEllipsized: Bool {
+    @inlinable var isEllipsized: Bool {
         /// Queries whether the layout had to ellipsize any paragraphs.
         /// 
         /// This returns `true` if the ellipsization mode for `layout`
@@ -2544,8 +3043,8 @@ public extension LayoutProtocol {
         /// and there are paragraphs exceeding that width that have to be
         /// ellipsized.
         get {
-            let rv = pango_layout_is_ellipsized(cast(layout_ptr))
-            return Bool(rv != 0)
+            let rv = ((pango_layout_is_ellipsized(layout_ptr)) != 0)
+            return rv
         }
     }
 
@@ -2555,7 +3054,7 @@ public extension LayoutProtocol {
     /// ellipsization mode of `layout` is set to `PANGO_ELLIPSIZE_NONE`,
     /// and there are paragraphs exceeding the layout width that have
     /// to be wrapped.
-    var isWrapped: Bool {
+    @inlinable var isWrapped: Bool {
         /// Queries whether the layout had to wrap any paragraphs.
         /// 
         /// This returns `true` if a positive width is set on `layout`,
@@ -2563,28 +3062,28 @@ public extension LayoutProtocol {
         /// and there are paragraphs exceeding the layout width that have
         /// to be wrapped.
         get {
-            let rv = pango_layout_is_wrapped(cast(layout_ptr))
-            return Bool(rv != 0)
+            let rv = ((pango_layout_is_wrapped(layout_ptr)) != 0)
+            return rv
         }
     }
 
     /// Returns an iterator to iterate over the visual extents of the layout.
-    var iter: UnsafeMutablePointer<PangoLayoutIter>! {
+    @inlinable var iter: LayoutIterRef! {
         /// Returns an iterator to iterate over the visual extents of the layout.
         get {
-            let rv: UnsafeMutablePointer<PangoLayoutIter>! = cast(pango_layout_get_iter(cast(layout_ptr)))
-            return cast(rv)
+            let rv = LayoutIterRef(gconstpointer: gconstpointer(pango_layout_get_iter(layout_ptr)))
+            return rv
         }
     }
 
     /// Gets whether each complete line should be stretched to fill the entire
     /// width of the layout.
-    var justify: Bool {
+    @inlinable var justify: Bool {
         /// Gets whether each complete line should be stretched to fill the entire
         /// width of the layout.
         get {
-            let rv = pango_layout_get_justify(cast(layout_ptr))
-            return Bool(rv != 0)
+            let rv = ((pango_layout_get_justify(layout_ptr)) != 0)
+            return rv
         }
         /// Sets whether each complete line should be stretched to
         /// fill the entire width of the layout. This stretching is typically
@@ -2595,27 +3094,27 @@ public extension LayoutProtocol {
         /// Note that this setting is not implemented and so is ignored in Pango
         /// older than 1.18.
         nonmutating set {
-            pango_layout_set_justify(cast(layout_ptr), gboolean(newValue ? 1 : 0))
+            pango_layout_set_justify(layout_ptr, gboolean((newValue) ? 1 : 0))
         }
     }
 
     /// Retrieves the count of lines for the `layout`.
-    var lineCount: Int {
+    @inlinable var lineCount: Int {
         /// Retrieves the count of lines for the `layout`.
         get {
-            let rv: Int = cast(pango_layout_get_line_count(cast(layout_ptr)))
-            return cast(rv)
+            let rv = Int(pango_layout_get_line_count(layout_ptr))
+            return rv
         }
     }
 
     /// Gets the value that has been
     /// set with `pango_layout_set_line_spacing()`.
-    var lineSpacing: Double {
+    @inlinable var lineSpacing: CFloat {
         /// Gets the value that has been
         /// set with `pango_layout_set_line_spacing()`.
         get {
-            let rv: Float = cast(pango_layout_get_line_spacing(cast(layout_ptr)))
-            return cast(rv)
+            let rv = pango_layout_get_line_spacing(layout_ptr)
+            return rv
         }
         /// Sets a factor for line spacing.
         /// Typical values are: 0, 1, 1.5, 2.
@@ -2634,7 +3133,7 @@ public extension LayoutProtocol {
         /// If `factor` is zero, spacing is applied as
         /// before.
         nonmutating set {
-            pango_layout_set_line_spacing(cast(layout_ptr), cast(newValue))
+            pango_layout_set_line_spacing(layout_ptr, newValue)
         }
     }
 
@@ -2642,14 +3141,14 @@ public extension LayoutProtocol {
     /// 
     /// Use the faster `pango_layout_get_lines_readonly()` if you do not plan
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
-    var lines: UnsafeMutablePointer<GSList>! {
+    @inlinable var lines: SListRef! {
         /// Returns the lines of the `layout` as a list.
         /// 
         /// Use the faster `pango_layout_get_lines_readonly()` if you do not plan
         /// to modify the contents of the lines (glyphs, glyph widths, etc.).
         get {
-            let rv: UnsafeMutablePointer<GSList>! = cast(pango_layout_get_lines(cast(layout_ptr)))
-            return cast(rv)
+            let rv = SListRef(gconstpointer: gconstpointer(pango_layout_get_lines(layout_ptr)))
+            return rv
         }
     }
 
@@ -2658,15 +3157,15 @@ public extension LayoutProtocol {
     /// This is a faster alternative to `pango_layout_get_lines()`,
     /// but the user is not expected
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
-    var linesReadonly: UnsafeMutablePointer<GSList>! {
+    @inlinable var linesReadonly: SListRef! {
         /// Returns the lines of the `layout` as a list.
         /// 
         /// This is a faster alternative to `pango_layout_get_lines()`,
         /// but the user is not expected
         /// to modify the contents of the lines (glyphs, glyph widths, etc.).
         get {
-            let rv: UnsafeMutablePointer<GSList>! = cast(pango_layout_get_lines_readonly(cast(layout_ptr)))
-            return cast(rv)
+            let rv = SListRef(gconstpointer: gconstpointer(pango_layout_get_lines_readonly(layout_ptr)))
+            return rv
         }
     }
 
@@ -2680,7 +3179,7 @@ public extension LayoutProtocol {
     /// This can be used to automatically detect changes to a `PangoLayout`, and
     /// is useful for example to decide whether a layout needs redrawing.
     /// To force the serial to be increased, use `pango_layout_context_changed()`.
-    var serial: Int {
+    @inlinable var serial: Int {
         /// Returns the current serial number of `layout`.  The serial number is
         /// initialized to an small number  larger than zero when a new layout
         /// is created and is increased whenever the layout is changed using any
@@ -2692,33 +3191,33 @@ public extension LayoutProtocol {
         /// is useful for example to decide whether a layout needs redrawing.
         /// To force the serial to be increased, use `pango_layout_context_changed()`.
         get {
-            let rv: Int = cast(pango_layout_get_serial(cast(layout_ptr)))
-            return Int(rv)
+            let rv = Int(pango_layout_get_serial(layout_ptr))
+            return rv
         }
     }
 
     /// Obtains the value set by `pango_layout_set_single_paragraph_mode()`.
-    var singleParagraphMode: Bool {
+    @inlinable var singleParagraphMode: Bool {
         /// Obtains the value set by `pango_layout_set_single_paragraph_mode()`.
         get {
-            let rv = pango_layout_get_single_paragraph_mode(cast(layout_ptr))
-            return Bool(rv != 0)
+            let rv = ((pango_layout_get_single_paragraph_mode(layout_ptr)) != 0)
+            return rv
         }
         /// If `setting` is `true`, do not treat newlines and similar characters
         /// as paragraph separators; instead, keep all text in a single paragraph,
         /// and display a glyph for paragraph separator characters. Used when
         /// you want to allow editing of newlines on a single text line.
         nonmutating set {
-            pango_layout_set_single_paragraph_mode(cast(layout_ptr), gboolean(newValue ? 1 : 0))
+            pango_layout_set_single_paragraph_mode(layout_ptr, gboolean((newValue) ? 1 : 0))
         }
     }
 
     /// Gets the amount of spacing between the lines of the layout.
-    var spacing: Int {
+    @inlinable var spacing: Int {
         /// Gets the amount of spacing between the lines of the layout.
         get {
-            let rv: Int = cast(pango_layout_get_spacing(cast(layout_ptr)))
-            return cast(rv)
+            let rv = Int(pango_layout_get_spacing(layout_ptr))
+            return rv
         }
         /// Sets the amount of spacing in Pango unit between
         /// the lines of the layout. When placing lines with
@@ -2732,7 +3231,7 @@ public extension LayoutProtocol {
         /// taken into account when the line-height factor is
         /// set to zero with `pango_layout_set_line_spacing()`.
         nonmutating set {
-            pango_layout_set_spacing(cast(layout_ptr), cast(newValue))
+            pango_layout_set_spacing(layout_ptr, gint(newValue))
         }
     }
 
@@ -2740,32 +3239,32 @@ public extension LayoutProtocol {
     /// `PangoTabArray` has been set, then the default tabs are in use
     /// and `nil` is returned. Default tabs are every 8 spaces.
     /// The return value should be freed with `pango_tab_array_free()`.
-    var tabs: UnsafeMutablePointer<PangoTabArray>! {
+    @inlinable var tabs: TabArrayRef! {
         /// Gets the current `PangoTabArray` used by this layout. If no
         /// `PangoTabArray` has been set, then the default tabs are in use
         /// and `nil` is returned. Default tabs are every 8 spaces.
         /// The return value should be freed with `pango_tab_array_free()`.
         get {
-            let rv: UnsafeMutablePointer<PangoTabArray>! = cast(pango_layout_get_tabs(cast(layout_ptr)))
-            return cast(rv)
+            let rv = TabArrayRef(gconstpointer: gconstpointer(pango_layout_get_tabs(layout_ptr)))
+            return rv
         }
         /// Sets the tabs to use for `layout`, overriding the default tabs
         /// (by default, tabs are every 8 spaces). If `tabs` is `nil`, the default
         /// tabs are reinstated. `tabs` is copied into the layout; you must
         /// free your copy of `tabs` yourself.
         nonmutating set {
-            pango_layout_set_tabs(cast(layout_ptr), cast(newValue))
+            pango_layout_set_tabs(layout_ptr, UnsafeMutablePointer<PangoTabArray>(newValue?.tab_array_ptr))
         }
     }
 
     /// Gets the text in the layout. The returned text should not
     /// be freed or modified.
-    var text: String! {
+    @inlinable var text: String! {
         /// Gets the text in the layout. The returned text should not
         /// be freed or modified.
         get {
-            let rv: String! = cast(pango_layout_get_text(cast(layout_ptr)))
-            return cast(rv)
+            let rv = pango_layout_get_text(layout_ptr).map({ String(cString: $0) })
+            return rv
         }
     }
 
@@ -2777,7 +3276,7 @@ public extension LayoutProtocol {
     /// available to render all characters in a certain string, or when
     /// used in combination with `PANGO_ATTR_FALLBACK`, to check if a
     /// certain font supports all the characters in the string.
-    var unknownGlyphsCount: Int {
+    @inlinable var unknownGlyphsCount: Int {
         /// Counts the number unknown glyphs in `layout`.  That is, zero if
         /// glyphs for all characters in the layout text were found, or more
         /// than zero otherwise.
@@ -2787,22 +3286,22 @@ public extension LayoutProtocol {
         /// used in combination with `PANGO_ATTR_FALLBACK`, to check if a
         /// certain font supports all the characters in the string.
         get {
-            let rv: Int = cast(pango_layout_get_unknown_glyphs_count(cast(layout_ptr)))
-            return cast(rv)
+            let rv = Int(pango_layout_get_unknown_glyphs_count(layout_ptr))
+            return rv
         }
     }
 
     /// Gets the width to which the lines of the `PangoLayout` should wrap.
-    var width: Int {
+    @inlinable var width: Int {
         /// Gets the width to which the lines of the `PangoLayout` should wrap.
         get {
-            let rv: Int = cast(pango_layout_get_width(cast(layout_ptr)))
-            return cast(rv)
+            let rv = Int(pango_layout_get_width(layout_ptr))
+            return rv
         }
         /// Sets the width to which the lines of the `PangoLayout` should wrap or
         /// ellipsized.  The default value is -1: no width set.
         nonmutating set {
-            pango_layout_set_width(cast(layout_ptr), cast(newValue))
+            pango_layout_set_width(layout_ptr, gint(newValue))
         }
     }
 
@@ -2810,20 +3309,20 @@ public extension LayoutProtocol {
     /// 
     /// Use `pango_layout_is_wrapped()` to query whether any paragraphs
     /// were actually wrapped.
-    var wrap: PangoWrapMode {
+    @inlinable var wrap: PangoWrapMode {
         /// Gets the wrap mode for the layout.
         /// 
         /// Use `pango_layout_is_wrapped()` to query whether any paragraphs
         /// were actually wrapped.
         get {
-            let rv = pango_layout_get_wrap(cast(layout_ptr))
-            return cast(rv)
+            let rv = pango_layout_get_wrap(layout_ptr)
+            return rv
         }
         /// Sets the wrap mode; the wrap mode only has effect if a width
         /// is set on the layout with `pango_layout_set_width()`.
         /// To turn off wrapping, set the width to -1.
         nonmutating set {
-            pango_layout_set_wrap(cast(layout_ptr), cast(newValue))
+            pango_layout_set_wrap(layout_ptr, newValue)
         }
     }
 

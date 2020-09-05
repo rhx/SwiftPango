@@ -13,10 +13,11 @@ import GLibObject
 /// The `PangoItem` structure stores information about a segment of text.
 public protocol ItemProtocol {
         /// Untyped pointer to the underlying `PangoItem` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoItem` instance.
-    var item_ptr: UnsafeMutablePointer<PangoItem> { get }
+    var item_ptr: UnsafeMutablePointer<PangoItem>! { get }
+
 }
 
 /// The `ItemRef` type acts as a lightweight Swift reference to an underlying `PangoItem` instance.
@@ -27,53 +28,83 @@ public protocol ItemProtocol {
 public struct ItemRef: ItemProtocol {
         /// Untyped pointer to the underlying `PangoItem` instance.
     /// For type-safe access, use the generated, typed pointer `item_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension ItemRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoItem>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoItem>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoItem>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoItem>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoItem>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `ItemProtocol`
-    init<T: ItemProtocol>(_ other: T) {
+    @inlinable init<T: ItemProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
         /// Creates a new `PangoItem` structure initialized to default values.
-    init() {
-        let rv: UnsafeMutablePointer<PangoItem>! = cast(pango_item_new())
-        ptr = UnsafeMutableRawPointer(cast(rv))
+    @inlinable init() {
+        let rv = pango_item_new()
+        ptr = UnsafeMutableRawPointer(rv)
     }
 }
 
@@ -85,101 +116,147 @@ public extension ItemRef {
 open class Item: ItemProtocol {
         /// Untyped pointer to the underlying `PangoItem` instance.
     /// For type-safe access, use the generated, typed pointer `item_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Item` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoItem>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoItem>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Item` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoItem>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Item` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Item` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Item` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoItem>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Item` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoItem>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `PangoItem` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Item` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoItem>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoItem>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for PangoItem, cannot ref(cast(item_ptr))
+        // no reference counting for PangoItem, cannot ref(item_ptr)
     }
 
     /// Reference intialiser for a related type that implements `ItemProtocol`
     /// `PangoItem` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `ItemProtocol`
-    public init<T: ItemProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.item_ptr)
-        // no reference counting for PangoItem, cannot ref(cast(item_ptr))
+    @inlinable public init<T: ItemProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for PangoItem, cannot ref(item_ptr)
     }
 
     /// Do-nothing destructor for `PangoItem`.
     deinit {
-        // no reference counting for PangoItem, cannot unref(cast(item_ptr))
+        // no reference counting for PangoItem, cannot unref(item_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for PangoItem, cannot ref(cast(item_ptr))
+        // no reference counting for PangoItem, cannot ref(item_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for PangoItem, cannot ref(cast(item_ptr))
+        // no reference counting for PangoItem, cannot ref(item_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for PangoItem, cannot ref(cast(item_ptr))
+        // no reference counting for PangoItem, cannot ref(item_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for PangoItem, cannot ref(cast(item_ptr))
+        // no reference counting for PangoItem, cannot ref(item_ptr)
     }
 
     /// Creates a new `PangoItem` structure initialized to default values.
-    public init() {
-        let rv: UnsafeMutablePointer<PangoItem>! = cast(pango_item_new())
-        ptr = UnsafeMutableRawPointer(cast(rv))
+    @inlinable public init() {
+        let rv = pango_item_new()
+        ptr = UnsafeMutableRawPointer(rv)
     }
 
 
@@ -193,7 +270,7 @@ open class Item: ItemProtocol {
 // MARK: Item Record: ItemProtocol extension (methods and fields)
 public extension ItemProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoItem` instance.
-    var item_ptr: UnsafeMutablePointer<PangoItem> { return ptr.assumingMemoryBound(to: PangoItem.self) }
+    @inlinable var item_ptr: UnsafeMutablePointer<PangoItem>! { return ptr?.assumingMemoryBound(to: PangoItem.self) }
 
     /// Add attributes to a PangoItem. The idea is that you have
     /// attributes that don't affect itemization, such as font features,
@@ -205,20 +282,20 @@ public extension ItemProtocol {
     /// and will be advanced past it. This function is meant to be called
     /// in a loop over the items resulting from itemization, while passing
     /// the iter to each call.
-    func applyAttrs(iter: AttrIteratorProtocol) {
-        pango_item_apply_attrs(cast(item_ptr), cast(iter.ptr))
+    @inlinable func applyAttrs<AttrIteratorT: AttrIteratorProtocol>(iter: AttrIteratorT) {
+        pango_item_apply_attrs(item_ptr, iter.attr_iterator_ptr)
     
     }
 
     /// Copy an existing `PangoItem` structure.
-    func copy() -> UnsafeMutablePointer<PangoItem>! {
-        let rv: UnsafeMutablePointer<PangoItem>! = cast(pango_item_copy(cast(item_ptr)))
-        return cast(rv)
+    @inlinable func copy() -> ItemRef! {
+        guard let rv = ItemRef(gconstpointer: gconstpointer(pango_item_copy(item_ptr))) else { return nil }
+        return rv
     }
 
     /// Free a `PangoItem` and all associated memory.
-    func free() {
-        pango_item_free(cast(item_ptr))
+    @inlinable func free() {
+        pango_item_free(item_ptr)
     
     }
 
@@ -232,60 +309,60 @@ public extension ItemProtocol {
     /// chars, and must be provided because the text used to generate the
     /// item isn't available, so `pango_item_split()` can't count the char
     /// length of the split items itself.
-    func split(splitIndex split_index: CInt, splitOffset split_offset: CInt) -> UnsafeMutablePointer<PangoItem>! {
-        let rv: UnsafeMutablePointer<PangoItem>! = cast(pango_item_split(cast(item_ptr), split_index, split_offset))
-        return cast(rv)
+    @inlinable func split(splitIndex split_index: Int, splitOffset split_offset: Int) -> ItemRef! {
+        guard let rv = ItemRef(gconstpointer: gconstpointer(pango_item_split(item_ptr, gint(split_index), gint(split_offset)))) else { return nil }
+        return rv
     }
 
     /// byte offset of the start of this item in text.
-    var offset: Int {
+    @inlinable var offset: gint {
         /// byte offset of the start of this item in text.
         get {
-            let rv: Int = cast(item_ptr.pointee.offset)
+            let rv = item_ptr.pointee.offset
             return rv
         }
         /// byte offset of the start of this item in text.
          set {
-            item_ptr.pointee.offset = gint(newValue)
+            item_ptr.pointee.offset = newValue
         }
     }
 
     /// length of this item in bytes.
-    var length: Int {
+    @inlinable var length: gint {
         /// length of this item in bytes.
         get {
-            let rv: Int = cast(item_ptr.pointee.length)
+            let rv = item_ptr.pointee.length
             return rv
         }
         /// length of this item in bytes.
          set {
-            item_ptr.pointee.length = gint(newValue)
+            item_ptr.pointee.length = newValue
         }
     }
 
     /// number of Unicode characters in the item.
-    var numChars: Int {
+    @inlinable var numChars: gint {
         /// number of Unicode characters in the item.
         get {
-            let rv: Int = cast(item_ptr.pointee.num_chars)
+            let rv = item_ptr.pointee.num_chars
             return rv
         }
         /// number of Unicode characters in the item.
          set {
-            item_ptr.pointee.num_chars = gint(newValue)
+            item_ptr.pointee.num_chars = newValue
         }
     }
 
     /// analysis results for the item.
-    var analysis: PangoAnalysis {
+    @inlinable var analysis: PangoAnalysis {
         /// analysis results for the item.
         get {
-            let rv: PangoAnalysis = cast(item_ptr.pointee.analysis)
+            let rv = item_ptr.pointee.analysis
             return rv
         }
         /// analysis results for the item.
          set {
-            item_ptr.pointee.analysis = cast(newValue)
+            item_ptr.pointee.analysis = newValue
         }
     }
 
@@ -307,10 +384,11 @@ public extension ItemProtocol {
 /// copied and compared with each other.
 public protocol LanguageProtocol {
         /// Untyped pointer to the underlying `PangoLanguage` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoLanguage` instance.
-    var language_ptr: UnsafeMutablePointer<PangoLanguage> { get }
+    var language_ptr: UnsafeMutablePointer<PangoLanguage>! { get }
+
 }
 
 /// The `LanguageRef` type acts as a lightweight Swift reference to an underlying `PangoLanguage` instance.
@@ -325,46 +403,76 @@ public protocol LanguageProtocol {
 public struct LanguageRef: LanguageProtocol {
         /// Untyped pointer to the underlying `PangoLanguage` instance.
     /// For type-safe access, use the generated, typed pointer `language_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension LanguageRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoLanguage>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoLanguage>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoLanguage>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoLanguage>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoLanguage>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `LanguageProtocol`
-    init<T: LanguageProtocol>(_ other: T) {
+    @inlinable init<T: LanguageProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -379,9 +487,9 @@ public extension LanguageRef {
     /// 
     /// Use `pango_language_get_default()` if you want to get the `PangoLanguage` for
     /// the current locale of the process.
-    static func from(string language: UnsafePointer<CChar>) -> LanguageRef! {
-        let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_language_from_string(language))
-        return rv.map { LanguageRef(cast($0)) }
+    @inlinable static func from(string language: UnsafePointer<CChar>? = nil) -> LanguageRef! {
+        guard let rv = LanguageRef(gconstpointer: gconstpointer(pango_language_from_string(language))) else { return nil }
+        return rv
     }
 
     /// Returns the `PangoLanguage` for the current locale of the process.
@@ -410,9 +518,9 @@ public extension LanguageRef {
     /// for the user settings to take effect.  Gtk+ does this in its initialization
     /// functions automatically (by calling `gtk_set_locale()`).
     /// See <literal>man setlocale</literal> for more details.
-    static func getDefault() -> LanguageRef! {
-        let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_language_get_default())
-        return rv.map { LanguageRef(cast($0)) }
+    @inlinable static func getDefault() -> LanguageRef! {
+        guard let rv = LanguageRef(gconstpointer: gconstpointer(pango_language_get_default())) else { return nil }
+        return rv
     }
 }
 
@@ -428,95 +536,141 @@ public extension LanguageRef {
 open class Language: LanguageProtocol {
         /// Untyped pointer to the underlying `PangoLanguage` instance.
     /// For type-safe access, use the generated, typed pointer `language_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Language` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoLanguage>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoLanguage>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Language` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoLanguage>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Language` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Language` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Language` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoLanguage>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Language` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoLanguage>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `PangoLanguage` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Language` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoLanguage>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoLanguage>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for PangoLanguage, cannot ref(cast(language_ptr))
+        // no reference counting for PangoLanguage, cannot ref(language_ptr)
     }
 
     /// Reference intialiser for a related type that implements `LanguageProtocol`
     /// `PangoLanguage` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `LanguageProtocol`
-    public init<T: LanguageProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.language_ptr)
-        // no reference counting for PangoLanguage, cannot ref(cast(language_ptr))
+    @inlinable public init<T: LanguageProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for PangoLanguage, cannot ref(language_ptr)
     }
 
     /// Do-nothing destructor for `PangoLanguage`.
     deinit {
-        // no reference counting for PangoLanguage, cannot unref(cast(language_ptr))
+        // no reference counting for PangoLanguage, cannot unref(language_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for PangoLanguage, cannot ref(cast(language_ptr))
+        // no reference counting for PangoLanguage, cannot ref(language_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for PangoLanguage, cannot ref(cast(language_ptr))
+        // no reference counting for PangoLanguage, cannot ref(language_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for PangoLanguage, cannot ref(cast(language_ptr))
+        // no reference counting for PangoLanguage, cannot ref(language_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for PangoLanguage, cannot ref(cast(language_ptr))
+        // no reference counting for PangoLanguage, cannot ref(language_ptr)
     }
 
 
@@ -531,9 +685,9 @@ open class Language: LanguageProtocol {
     /// 
     /// Use `pango_language_get_default()` if you want to get the `PangoLanguage` for
     /// the current locale of the process.
-    public static func from(string language: UnsafePointer<CChar>) -> Language! {
-        let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_language_from_string(language))
-        return rv.map { Language(cast($0)) }
+    @inlinable public static func from(string language: UnsafePointer<CChar>? = nil) -> Language! {
+        guard let rv = Language(gconstpointer: gconstpointer(pango_language_from_string(language))) else { return nil }
+        return rv
     }
 
     /// Returns the `PangoLanguage` for the current locale of the process.
@@ -562,9 +716,9 @@ open class Language: LanguageProtocol {
     /// for the user settings to take effect.  Gtk+ does this in its initialization
     /// functions automatically (by calling `gtk_set_locale()`).
     /// See <literal>man setlocale</literal> for more details.
-    public static func getDefault() -> Language! {
-        let rv: UnsafeMutablePointer<PangoLanguage>! = cast(pango_language_get_default())
-        return rv.map { Language(cast($0)) }
+    @inlinable public static func getDefault() -> Language! {
+        guard let rv = Language(gconstpointer: gconstpointer(pango_language_get_default())) else { return nil }
+        return rv
     }
 
 }
@@ -577,7 +731,7 @@ open class Language: LanguageProtocol {
 // MARK: Language Record: LanguageProtocol extension (methods and fields)
 public extension LanguageProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLanguage` instance.
-    var language_ptr: UnsafeMutablePointer<PangoLanguage> { return ptr.assumingMemoryBound(to: PangoLanguage.self) }
+    @inlinable var language_ptr: UnsafeMutablePointer<PangoLanguage>! { return ptr?.assumingMemoryBound(to: PangoLanguage.self) }
 
     /// Get a string that is representative of the characters needed to
     /// render a particular language.
@@ -597,9 +751,9 @@ public extension LanguageProtocol {
     /// <informalexample><programlisting>
     /// pango_language_get_sample_string (pango_language_from_string ("xx"))
     /// </programlisting></informalexample>
-    func getSampleString() -> String! {
-        let rv: String! = cast(pango_language_get_sample_string(cast(language_ptr)))
-        return cast(rv)
+    @inlinable func getSampleString() -> String! {
+        let rv = pango_language_get_sample_string(language_ptr).map({ String(cString: $0) })
+        return rv
     }
 
     /// Determines the scripts used to to write `language`.
@@ -624,9 +778,9 @@ public extension LanguageProtocol {
     /// Note: while the return value is declared as PangoScript, the
     /// returned values are from the GUnicodeScript enumeration, which
     /// may have more values. Callers need to handle unknown values.
-    func getScripts(numScripts num_scripts: UnsafeMutablePointer<CInt>) -> UnsafePointer<PangoScript>! {
-        let rv: UnsafePointer<PangoScript>! = cast(pango_language_get_scripts(cast(language_ptr), cast(num_scripts)))
-        return cast(rv)
+    @inlinable func getScripts(numScripts num_scripts: UnsafeMutablePointer<gint>! = nil) -> UnsafePointer<PangoScript>! {
+        let rv = pango_language_get_scripts(language_ptr, num_scripts)
+        return rv
     }
 
     /// Determines if `script` is one of the scripts used to
@@ -641,9 +795,9 @@ public extension LanguageProtocol {
     /// applications in most circumstances.
     /// 
     /// This function uses `pango_language_get_scripts()` internally.
-    func includes(script: Script) -> Bool {
-        let rv = pango_language_includes_script(cast(language_ptr), script)
-        return Bool(rv != 0)
+    @inlinable func includes(script: PangoScript) -> Bool {
+        let rv = ((pango_language_includes_script(language_ptr, script)) != 0)
+        return rv
     }
 
     /// Checks if a language tag matches one of the elements in a list of
@@ -651,30 +805,30 @@ public extension LanguageProtocol {
     /// in the list if the range is '*', the range is exactly the tag,
     /// or the range is a prefix of the tag, and the character after it
     /// in the tag is '-'.
-    func matches(rangeList range_list: UnsafePointer<CChar>) -> Bool {
-        let rv = pango_language_matches(cast(language_ptr), range_list)
-        return Bool(rv != 0)
+    @inlinable func matches(rangeList range_list: UnsafePointer<CChar>!) -> Bool {
+        let rv = ((pango_language_matches(language_ptr, range_list)) != 0)
+        return rv
     }
 
     /// Gets the RFC-3066 format string representing the given language tag.
-    func toString() -> String! {
-        let rv: String! = cast(pango_language_to_string(cast(language_ptr)))
-        return cast(rv)
+    @inlinable func toString() -> String! {
+        let rv = pango_language_to_string(language_ptr).map({ String(cString: $0) })
+        return rv
     }
 
     /// Create a new language tag attribute.
-    func attrLanguageNew() -> UnsafeMutablePointer<PangoAttribute>! {
-        let rv: UnsafeMutablePointer<PangoAttribute>! = cast(pango_attr_language_new(cast(language_ptr)))
-        return cast(rv)
+    @inlinable func attrLanguageNew() -> AttributeRef! {
+        let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_language_new(language_ptr)))
+        return rv
     }
 
     /// Do not use.  Does not do anything.
     ///
     /// **find_map is deprecated:**
     /// This method is deprecated.
-    @available(*, deprecated) func findMap(engineTypeId engine_type_id: CUnsignedInt, renderTypeId render_type_id: CUnsignedInt) -> UnsafeMutablePointer<PangoMap>! {
-        let rv: UnsafeMutablePointer<PangoMap>! = cast(pango_find_map(cast(language_ptr), guint(engine_type_id), guint(render_type_id)))
-        return cast(rv)
+    @available(*, deprecated) @inlinable func findMap(engineTypeId engine_type_id: Int, renderTypeId render_type_id: Int) -> MapRef! {
+        let rv = MapRef(gconstpointer: gconstpointer(pango_find_map(language_ptr, guint(engine_type_id), guint(render_type_id))))
+        return rv
     }
 
     /// Computes a `PangoLogAttr` for each character in `text`. The `log_attrs`
@@ -684,8 +838,8 @@ public extension LanguageProtocol {
     /// paragraph; logical attributes can't be computed without context
     /// (for example you need to see spaces on either side of a word to know
     /// the word is a word).
-    func getLogAttrs(text: UnsafePointer<CChar>, length: CInt, level: CInt, logAttrs log_attrs: UnsafeMutablePointer<PangoLogAttr>, attrsLen attrs_len: CInt) {
-        pango_get_log_attrs(text, length, level, cast(language_ptr), cast(log_attrs), attrs_len)
+    @inlinable func getLogAttrs(text: UnsafePointer<CChar>!, length: Int, level: Int, logAttrs log_attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen attrs_len: Int) {
+        pango_get_log_attrs(text, gint(length), gint(level), language_ptr, log_attrs, gint(attrs_len))
     
     }
     /// Get a string that is representative of the characters needed to
@@ -706,7 +860,7 @@ public extension LanguageProtocol {
     /// <informalexample><programlisting>
     /// pango_language_get_sample_string (pango_language_from_string ("xx"))
     /// </programlisting></informalexample>
-    var sampleString: String! {
+    @inlinable var sampleString: String! {
         /// Get a string that is representative of the characters needed to
         /// render a particular language.
         /// 
@@ -726,8 +880,8 @@ public extension LanguageProtocol {
         /// pango_language_get_sample_string (pango_language_from_string ("xx"))
         /// </programlisting></informalexample>
         get {
-            let rv: String! = cast(pango_language_get_sample_string(cast(language_ptr)))
-            return cast(rv)
+            let rv = pango_language_get_sample_string(language_ptr).map({ String(cString: $0) })
+            return rv
         }
     }
 

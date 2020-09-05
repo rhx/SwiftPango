@@ -13,10 +13,11 @@ import GLibObject
 
 public protocol LayoutClassProtocol {
         /// Untyped pointer to the underlying `PangoLayoutClass` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoLayoutClass` instance.
-    var _ptr: UnsafeMutablePointer<PangoLayoutClass> { get }
+    var _ptr: UnsafeMutablePointer<PangoLayoutClass>! { get }
+
 }
 
 /// The `LayoutClassRef` type acts as a lightweight Swift reference to an underlying `PangoLayoutClass` instance.
@@ -27,46 +28,76 @@ public protocol LayoutClassProtocol {
 public struct LayoutClassRef: LayoutClassProtocol {
         /// Untyped pointer to the underlying `PangoLayoutClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension LayoutClassRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoLayoutClass>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoLayoutClass>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoLayoutClass>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoLayoutClass>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoLayoutClass>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `LayoutClassProtocol`
-    init<T: LayoutClassProtocol>(_ other: T) {
+    @inlinable init<T: LayoutClassProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -80,95 +111,141 @@ public extension LayoutClassRef {
 open class LayoutClass: LayoutClassProtocol {
         /// Untyped pointer to the underlying `PangoLayoutClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `LayoutClass` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoLayoutClass>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoLayoutClass>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutClass` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoLayoutClass>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutClass` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutClass` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutClass` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoLayoutClass>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutClass` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoLayoutClass>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `PangoLayoutClass` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `LayoutClass` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoLayoutClass>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoLayoutClass>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for PangoLayoutClass, cannot ref(cast(_ptr))
+        // no reference counting for PangoLayoutClass, cannot ref(_ptr)
     }
 
     /// Reference intialiser for a related type that implements `LayoutClassProtocol`
     /// `PangoLayoutClass` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `LayoutClassProtocol`
-    public init<T: LayoutClassProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other._ptr)
-        // no reference counting for PangoLayoutClass, cannot ref(cast(_ptr))
+    @inlinable public init<T: LayoutClassProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for PangoLayoutClass, cannot ref(_ptr)
     }
 
     /// Do-nothing destructor for `PangoLayoutClass`.
     deinit {
-        // no reference counting for PangoLayoutClass, cannot unref(cast(_ptr))
+        // no reference counting for PangoLayoutClass, cannot unref(_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for PangoLayoutClass, cannot ref(cast(_ptr))
+        // no reference counting for PangoLayoutClass, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for PangoLayoutClass, cannot ref(cast(_ptr))
+        // no reference counting for PangoLayoutClass, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for PangoLayoutClass, cannot ref(cast(_ptr))
+        // no reference counting for PangoLayoutClass, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for PangoLayoutClass, cannot ref(cast(_ptr))
+        // no reference counting for PangoLayoutClass, cannot ref(_ptr)
     }
 
 
@@ -183,7 +260,7 @@ open class LayoutClass: LayoutClassProtocol {
 // MARK: LayoutClass Record: LayoutClassProtocol extension (methods and fields)
 public extension LayoutClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLayoutClass` instance.
-    var _ptr: UnsafeMutablePointer<PangoLayoutClass> { return ptr.assumingMemoryBound(to: PangoLayoutClass.self) }
+    @inlinable var _ptr: UnsafeMutablePointer<PangoLayoutClass>! { return ptr?.assumingMemoryBound(to: PangoLayoutClass.self) }
 
 
 
@@ -205,10 +282,11 @@ public extension LayoutClassProtocol {
 /// has no user-visible fields.
 public protocol LayoutIterProtocol {
         /// Untyped pointer to the underlying `PangoLayoutIter` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoLayoutIter` instance.
-    var layout_iter_ptr: UnsafeMutablePointer<PangoLayoutIter> { get }
+    var layout_iter_ptr: UnsafeMutablePointer<PangoLayoutIter>! { get }
+
 }
 
 /// The `LayoutIterRef` type acts as a lightweight Swift reference to an underlying `PangoLayoutIter` instance.
@@ -223,46 +301,76 @@ public protocol LayoutIterProtocol {
 public struct LayoutIterRef: LayoutIterProtocol {
         /// Untyped pointer to the underlying `PangoLayoutIter` instance.
     /// For type-safe access, use the generated, typed pointer `layout_iter_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension LayoutIterRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoLayoutIter>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoLayoutIter>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoLayoutIter>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoLayoutIter>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoLayoutIter>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `LayoutIterProtocol`
-    init<T: LayoutIterProtocol>(_ other: T) {
+    @inlinable init<T: LayoutIterProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -280,95 +388,141 @@ public extension LayoutIterRef {
 open class LayoutIter: LayoutIterProtocol {
         /// Untyped pointer to the underlying `PangoLayoutIter` instance.
     /// For type-safe access, use the generated, typed pointer `layout_iter_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `LayoutIter` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoLayoutIter>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoLayoutIter>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutIter` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoLayoutIter>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutIter` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutIter` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutIter` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoLayoutIter>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutIter` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoLayoutIter>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `PangoLayoutIter` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `LayoutIter` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoLayoutIter>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoLayoutIter>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for PangoLayoutIter, cannot ref(cast(layout_iter_ptr))
+        // no reference counting for PangoLayoutIter, cannot ref(layout_iter_ptr)
     }
 
     /// Reference intialiser for a related type that implements `LayoutIterProtocol`
     /// `PangoLayoutIter` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `LayoutIterProtocol`
-    public init<T: LayoutIterProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.layout_iter_ptr)
-        // no reference counting for PangoLayoutIter, cannot ref(cast(layout_iter_ptr))
+    @inlinable public init<T: LayoutIterProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for PangoLayoutIter, cannot ref(layout_iter_ptr)
     }
 
     /// Do-nothing destructor for `PangoLayoutIter`.
     deinit {
-        // no reference counting for PangoLayoutIter, cannot unref(cast(layout_iter_ptr))
+        // no reference counting for PangoLayoutIter, cannot unref(layout_iter_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for PangoLayoutIter, cannot ref(cast(layout_iter_ptr))
+        // no reference counting for PangoLayoutIter, cannot ref(layout_iter_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for PangoLayoutIter, cannot ref(cast(layout_iter_ptr))
+        // no reference counting for PangoLayoutIter, cannot ref(layout_iter_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for PangoLayoutIter, cannot ref(cast(layout_iter_ptr))
+        // no reference counting for PangoLayoutIter, cannot ref(layout_iter_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for PangoLayoutIter, cannot ref(cast(layout_iter_ptr))
+        // no reference counting for PangoLayoutIter, cannot ref(layout_iter_ptr)
     }
 
 
@@ -383,46 +537,46 @@ open class LayoutIter: LayoutIterProtocol {
 // MARK: LayoutIter Record: LayoutIterProtocol extension (methods and fields)
 public extension LayoutIterProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLayoutIter` instance.
-    var layout_iter_ptr: UnsafeMutablePointer<PangoLayoutIter> { return ptr.assumingMemoryBound(to: PangoLayoutIter.self) }
+    @inlinable var layout_iter_ptr: UnsafeMutablePointer<PangoLayoutIter>! { return ptr?.assumingMemoryBound(to: PangoLayoutIter.self) }
 
     /// Determines whether `iter` is on the last line of the layout.
-    func atLastLine() -> Bool {
-        let rv = pango_layout_iter_at_last_line(cast(layout_iter_ptr))
-        return Bool(rv != 0)
+    @inlinable func atLastLine() -> Bool {
+        let rv = ((pango_layout_iter_at_last_line(layout_iter_ptr)) != 0)
+        return rv
     }
 
     /// Copies a `PangoLayoutIter`.
-    func copy() -> UnsafeMutablePointer<PangoLayoutIter>! {
-        let rv: UnsafeMutablePointer<PangoLayoutIter>! = cast(pango_layout_iter_copy(cast(layout_iter_ptr)))
-        return cast(rv)
+    @inlinable func copy() -> LayoutIterRef! {
+        guard let rv = LayoutIterRef(gconstpointer: gconstpointer(pango_layout_iter_copy(layout_iter_ptr))) else { return nil }
+        return rv
     }
 
     /// Frees an iterator that's no longer in use.
-    func free() {
-        pango_layout_iter_free(cast(layout_iter_ptr))
+    @inlinable func free() {
+        pango_layout_iter_free(layout_iter_ptr)
     
     }
 
     /// Gets the Y position of the current line's baseline, in layout
     /// coordinates (origin at top left of the entire layout).
-    func getBaseline() -> Int {
-        let rv: Int = cast(pango_layout_iter_get_baseline(cast(layout_iter_ptr)))
-        return cast(rv)
+    @inlinable func getBaseline() -> Int {
+        let rv = Int(pango_layout_iter_get_baseline(layout_iter_ptr))
+        return rv
     }
 
     /// Gets the extents of the current character, in layout coordinates
     /// (origin is the top left of the entire layout). Only logical extents
     /// can sensibly be obtained for characters; ink extents make sense only
     /// down to the level of clusters.
-    func getCharExtents(logicalRect logical_rect: RectangleProtocol) {
-        pango_layout_iter_get_char_extents(cast(layout_iter_ptr), cast(logical_rect.ptr))
+    @inlinable func getCharExtents<RectangleT: RectangleProtocol>(logicalRect logical_rect: RectangleT) {
+        pango_layout_iter_get_char_extents(layout_iter_ptr, logical_rect._ptr)
     
     }
 
     /// Gets the extents of the current cluster, in layout coordinates
     /// (origin is the top left of the entire layout).
-    func getClusterExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
-        pango_layout_iter_get_cluster_extents(cast(layout_iter_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
+    @inlinable func getClusterExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
+        pango_layout_iter_get_cluster_extents(layout_iter_ptr, ink_rect?._ptr, logical_rect?._ptr)
     
     }
 
@@ -430,22 +584,22 @@ public extension LayoutIterProtocol {
     /// moves in visual order, not logical order, so indexes may not be
     /// sequential. Also, the index may be equal to the length of the text
     /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
-    func getIndex() -> Int {
-        let rv: Int = cast(pango_layout_iter_get_index(cast(layout_iter_ptr)))
-        return cast(rv)
+    @inlinable func getIndex() -> Int {
+        let rv = Int(pango_layout_iter_get_index(layout_iter_ptr))
+        return rv
     }
 
     /// Gets the layout associated with a `PangoLayoutIter`.
-    func getLayout() -> UnsafeMutablePointer<PangoLayout>! {
-        let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_layout_iter_get_layout(cast(layout_iter_ptr)))
-        return cast(rv)
+    @inlinable func getLayout() -> LayoutRef! {
+        let rv = LayoutRef(gconstpointer: gconstpointer(pango_layout_iter_get_layout(layout_iter_ptr)))
+        return rv
     }
 
     /// Obtains the extents of the `PangoLayout` being iterated
     /// over. `ink_rect` or `logical_rect` can be `nil` if you
     /// aren't interested in them.
-    func getLayoutExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
-        pango_layout_iter_get_layout_extents(cast(layout_iter_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
+    @inlinable func getLayoutExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
+        pango_layout_iter_get_layout_extents(layout_iter_ptr, ink_rect?._ptr, logical_rect?._ptr)
     
     }
 
@@ -453,9 +607,9 @@ public extension LayoutIterProtocol {
     /// 
     /// Use the faster `pango_layout_iter_get_line_readonly()` if you do not plan
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
-    func getLine() -> UnsafeMutablePointer<PangoLayoutLine>! {
-        let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_iter_get_line(cast(layout_iter_ptr)))
-        return cast(rv)
+    @inlinable func getLine() -> LayoutLineRef! {
+        let rv = LayoutLineRef(gconstpointer: gconstpointer(pango_layout_iter_get_line(layout_iter_ptr)))
+        return rv
     }
 
     /// Obtains the extents of the current line. `ink_rect` or `logical_rect`
@@ -464,8 +618,8 @@ public extension LayoutIterProtocol {
     /// `PangoLayout`).  Thus the extents returned by this function will be
     /// the same width/height but not at the same x/y as the extents
     /// returned from `pango_layout_line_get_extents()`.
-    func getLineExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
-        pango_layout_iter_get_line_extents(cast(layout_iter_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
+    @inlinable func getLineExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
+        pango_layout_iter_get_line_extents(layout_iter_ptr, ink_rect?._ptr, logical_rect?._ptr)
     
     }
 
@@ -474,9 +628,9 @@ public extension LayoutIterProtocol {
     /// This is a faster alternative to `pango_layout_iter_get_line()`,
     /// but the user is not expected
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
-    func getLineReadonly() -> UnsafeMutablePointer<PangoLayoutLine>! {
-        let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_iter_get_line_readonly(cast(layout_iter_ptr)))
-        return cast(rv)
+    @inlinable func getLineReadonly() -> LayoutLineRef! {
+        let rv = LayoutLineRef(gconstpointer: gconstpointer(pango_layout_iter_get_line_readonly(layout_iter_ptr)))
+        return rv
     }
 
     /// Divides the vertical space in the `PangoLayout` being iterated over
@@ -490,8 +644,8 @@ public extension LayoutIterProtocol {
     /// Note: Since 1.44, Pango uses line heights for placing lines,
     /// and there may be gaps between the ranges returned by this
     /// function.
-    func getLineYrange(y0_: UnsafeMutablePointer<CInt>, y1_: UnsafeMutablePointer<CInt>) {
-        pango_layout_iter_get_line_yrange(cast(layout_iter_ptr), cast(y0_), cast(y1_))
+    @inlinable func getLineYrange(y0_: UnsafeMutablePointer<gint>! = nil, y1_: UnsafeMutablePointer<gint>! = nil) {
+        pango_layout_iter_get_line_yrange(layout_iter_ptr, y0_, y1_)
     
     }
 
@@ -502,15 +656,15 @@ public extension LayoutIterProtocol {
     /// 
     /// Use the faster `pango_layout_iter_get_run_readonly()` if you do not plan
     /// to modify the contents of the run (glyphs, glyph widths, etc.).
-    func getRun() -> UnsafeMutablePointer<PangoLayoutRun>! {
-        let rv: UnsafeMutablePointer<PangoLayoutRun>! = cast(pango_layout_iter_get_run(cast(layout_iter_ptr)))
-        return cast(rv)
+    @inlinable func getRun() -> UnsafeMutablePointer<PangoLayoutRun>? {
+        let rv = pango_layout_iter_get_run(layout_iter_ptr)
+        return rv
     }
 
     /// Gets the extents of the current run in layout coordinates
     /// (origin is the top left of the entire layout).
-    func getRunExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
-        pango_layout_iter_get_run_extents(cast(layout_iter_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
+    @inlinable func getRunExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
+        pango_layout_iter_get_run_extents(layout_iter_ptr, ink_rect?._ptr, logical_rect?._ptr)
     
     }
 
@@ -522,46 +676,46 @@ public extension LayoutIterProtocol {
     /// This is a faster alternative to `pango_layout_iter_get_run()`,
     /// but the user is not expected
     /// to modify the contents of the run (glyphs, glyph widths, etc.).
-    func getRunReadonly() -> UnsafeMutablePointer<PangoLayoutRun>! {
-        let rv: UnsafeMutablePointer<PangoLayoutRun>! = cast(pango_layout_iter_get_run_readonly(cast(layout_iter_ptr)))
-        return cast(rv)
+    @inlinable func getRunReadonly() -> UnsafeMutablePointer<PangoLayoutRun>? {
+        let rv = pango_layout_iter_get_run_readonly(layout_iter_ptr)
+        return rv
     }
 
     /// Moves `iter` forward to the next character in visual order. If `iter` was already at
     /// the end of the layout, returns `false`.
-    func nextChar() -> Bool {
-        let rv = pango_layout_iter_next_char(cast(layout_iter_ptr))
-        return Bool(rv != 0)
+    @inlinable func nextChar() -> Bool {
+        let rv = ((pango_layout_iter_next_char(layout_iter_ptr)) != 0)
+        return rv
     }
 
     /// Moves `iter` forward to the next cluster in visual order. If `iter`
     /// was already at the end of the layout, returns `false`.
-    func nextCluster() -> Bool {
-        let rv = pango_layout_iter_next_cluster(cast(layout_iter_ptr))
-        return Bool(rv != 0)
+    @inlinable func nextCluster() -> Bool {
+        let rv = ((pango_layout_iter_next_cluster(layout_iter_ptr)) != 0)
+        return rv
     }
 
     /// Moves `iter` forward to the start of the next line. If `iter` is
     /// already on the last line, returns `false`.
-    func nextLine() -> Bool {
-        let rv = pango_layout_iter_next_line(cast(layout_iter_ptr))
-        return Bool(rv != 0)
+    @inlinable func nextLine() -> Bool {
+        let rv = ((pango_layout_iter_next_line(layout_iter_ptr)) != 0)
+        return rv
     }
 
     /// Moves `iter` forward to the next run in visual order. If `iter` was
     /// already at the end of the layout, returns `false`.
-    func nextRun() -> Bool {
-        let rv = pango_layout_iter_next_run(cast(layout_iter_ptr))
-        return Bool(rv != 0)
+    @inlinable func nextRun() -> Bool {
+        let rv = ((pango_layout_iter_next_run(layout_iter_ptr)) != 0)
+        return rv
     }
     /// Gets the Y position of the current line's baseline, in layout
     /// coordinates (origin at top left of the entire layout).
-    var baseline: Int {
+    @inlinable var baseline: Int {
         /// Gets the Y position of the current line's baseline, in layout
         /// coordinates (origin at top left of the entire layout).
         get {
-            let rv: Int = cast(pango_layout_iter_get_baseline(cast(layout_iter_ptr)))
-            return cast(rv)
+            let rv = Int(pango_layout_iter_get_baseline(layout_iter_ptr))
+            return rv
         }
     }
 
@@ -569,23 +723,23 @@ public extension LayoutIterProtocol {
     /// moves in visual order, not logical order, so indexes may not be
     /// sequential. Also, the index may be equal to the length of the text
     /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
-    var index: Int {
+    @inlinable var index: Int {
         /// Gets the current byte index. Note that iterating forward by char
         /// moves in visual order, not logical order, so indexes may not be
         /// sequential. Also, the index may be equal to the length of the text
         /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
         get {
-            let rv: Int = cast(pango_layout_iter_get_index(cast(layout_iter_ptr)))
-            return cast(rv)
+            let rv = Int(pango_layout_iter_get_index(layout_iter_ptr))
+            return rv
         }
     }
 
     /// Gets the layout associated with a `PangoLayoutIter`.
-    var layout: UnsafeMutablePointer<PangoLayout>! {
+    @inlinable var layout: LayoutRef! {
         /// Gets the layout associated with a `PangoLayoutIter`.
         get {
-            let rv: UnsafeMutablePointer<PangoLayout>! = cast(pango_layout_iter_get_layout(cast(layout_iter_ptr)))
-            return cast(rv)
+            let rv = LayoutRef(gconstpointer: gconstpointer(pango_layout_iter_get_layout(layout_iter_ptr)))
+            return rv
         }
     }
 
@@ -593,14 +747,14 @@ public extension LayoutIterProtocol {
     /// 
     /// Use the faster `pango_layout_iter_get_line_readonly()` if you do not plan
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
-    var line: UnsafeMutablePointer<PangoLayoutLine>! {
+    @inlinable var line: LayoutLineRef! {
         /// Gets the current line.
         /// 
         /// Use the faster `pango_layout_iter_get_line_readonly()` if you do not plan
         /// to modify the contents of the line (glyphs, glyph widths, etc.).
         get {
-            let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_iter_get_line(cast(layout_iter_ptr)))
-            return cast(rv)
+            let rv = LayoutLineRef(gconstpointer: gconstpointer(pango_layout_iter_get_line(layout_iter_ptr)))
+            return rv
         }
     }
 
@@ -609,15 +763,15 @@ public extension LayoutIterProtocol {
     /// This is a faster alternative to `pango_layout_iter_get_line()`,
     /// but the user is not expected
     /// to modify the contents of the line (glyphs, glyph widths, etc.).
-    var lineReadonly: UnsafeMutablePointer<PangoLayoutLine>! {
+    @inlinable var lineReadonly: LayoutLineRef! {
         /// Gets the current line for read-only access.
         /// 
         /// This is a faster alternative to `pango_layout_iter_get_line()`,
         /// but the user is not expected
         /// to modify the contents of the line (glyphs, glyph widths, etc.).
         get {
-            let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_iter_get_line_readonly(cast(layout_iter_ptr)))
-            return cast(rv)
+            let rv = LayoutLineRef(gconstpointer: gconstpointer(pango_layout_iter_get_line_readonly(layout_iter_ptr)))
+            return rv
         }
     }
 
@@ -628,7 +782,7 @@ public extension LayoutIterProtocol {
     /// 
     /// Use the faster `pango_layout_iter_get_run_readonly()` if you do not plan
     /// to modify the contents of the run (glyphs, glyph widths, etc.).
-    var run: UnsafeMutablePointer<PangoLayoutRun>! {
+    @inlinable var run: UnsafeMutablePointer<PangoLayoutRun>? {
         /// Gets the current run. When iterating by run, at the end of each
         /// line, there's a position with a `nil` run, so this function can return
         /// `nil`. The `nil` run at the end of each line ensures that all lines have
@@ -637,8 +791,8 @@ public extension LayoutIterProtocol {
         /// Use the faster `pango_layout_iter_get_run_readonly()` if you do not plan
         /// to modify the contents of the run (glyphs, glyph widths, etc.).
         get {
-            let rv: UnsafeMutablePointer<PangoLayoutRun>! = cast(pango_layout_iter_get_run(cast(layout_iter_ptr)))
-            return cast(rv)
+            let rv = pango_layout_iter_get_run(layout_iter_ptr)
+            return rv
         }
     }
 
@@ -650,7 +804,7 @@ public extension LayoutIterProtocol {
     /// This is a faster alternative to `pango_layout_iter_get_run()`,
     /// but the user is not expected
     /// to modify the contents of the run (glyphs, glyph widths, etc.).
-    var runReadonly: UnsafeMutablePointer<PangoLayoutRun>! {
+    @inlinable var runReadonly: UnsafeMutablePointer<PangoLayoutRun>? {
         /// Gets the current run. When iterating by run, at the end of each
         /// line, there's a position with a `nil` run, so this function can return
         /// `nil`. The `nil` run at the end of each line ensures that all lines have
@@ -660,8 +814,8 @@ public extension LayoutIterProtocol {
         /// but the user is not expected
         /// to modify the contents of the run (glyphs, glyph widths, etc.).
         get {
-            let rv: UnsafeMutablePointer<PangoLayoutRun>! = cast(pango_layout_iter_get_run_readonly(cast(layout_iter_ptr)))
-            return cast(rv)
+            let rv = pango_layout_iter_get_run_readonly(layout_iter_ptr)
+            return rv
         }
     }
 
@@ -687,10 +841,11 @@ public extension LayoutIterProtocol {
 /// code specific to each rendering system.
 public protocol LayoutLineProtocol {
         /// Untyped pointer to the underlying `PangoLayoutLine` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoLayoutLine` instance.
-    var layout_line_ptr: UnsafeMutablePointer<PangoLayoutLine> { get }
+    var layout_line_ptr: UnsafeMutablePointer<PangoLayoutLine>! { get }
+
 }
 
 /// The `LayoutLineRef` type acts as a lightweight Swift reference to an underlying `PangoLayoutLine` instance.
@@ -708,46 +863,76 @@ public protocol LayoutLineProtocol {
 public struct LayoutLineRef: LayoutLineProtocol {
         /// Untyped pointer to the underlying `PangoLayoutLine` instance.
     /// For type-safe access, use the generated, typed pointer `layout_line_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension LayoutLineRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoLayoutLine>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoLayoutLine>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoLayoutLine>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoLayoutLine>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoLayoutLine>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `LayoutLineProtocol`
-    init<T: LayoutLineProtocol>(_ other: T) {
+    @inlinable init<T: LayoutLineProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -768,95 +953,141 @@ public extension LayoutLineRef {
 open class LayoutLine: LayoutLineProtocol {
         /// Untyped pointer to the underlying `PangoLayoutLine` instance.
     /// For type-safe access, use the generated, typed pointer `layout_line_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `LayoutLine` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoLayoutLine>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoLayoutLine>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutLine` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoLayoutLine>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutLine` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutLine` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutLine` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoLayoutLine>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LayoutLine` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoLayoutLine>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `PangoLayoutLine`.
     /// i.e., ownership is transferred to the `LayoutLine` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoLayoutLine>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoLayoutLine>) {
         ptr = UnsafeMutableRawPointer(op)
-        pango_layout_line_ref(cast(layout_line_ptr))
+        pango_layout_line_ref(ptr.assumingMemoryBound(to: PangoLayoutLine.self))
     }
 
     /// Reference intialiser for a related type that implements `LayoutLineProtocol`
     /// Will retain `PangoLayoutLine`.
     /// - Parameter other: an instance of a related type that implements `LayoutLineProtocol`
-    public init<T: LayoutLineProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.layout_line_ptr)
-        pango_layout_line_ref(cast(layout_line_ptr))
+    @inlinable public init<T: LayoutLineProtocol>(_ other: T) {
+        ptr = other.ptr
+        pango_layout_line_ref(ptr.assumingMemoryBound(to: PangoLayoutLine.self))
     }
 
     /// Releases the underlying `PangoLayoutLine` instance using `pango_layout_line_unref`.
     deinit {
-        pango_layout_line_unref(cast(layout_line_ptr))
+        pango_layout_line_unref(ptr.assumingMemoryBound(to: PangoLayoutLine.self))
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        pango_layout_line_ref(cast(layout_line_ptr))
+        pango_layout_line_ref(ptr.assumingMemoryBound(to: PangoLayoutLine.self))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        pango_layout_line_ref(cast(layout_line_ptr))
+        pango_layout_line_ref(ptr.assumingMemoryBound(to: PangoLayoutLine.self))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        pango_layout_line_ref(cast(layout_line_ptr))
+        pango_layout_line_ref(ptr.assumingMemoryBound(to: PangoLayoutLine.self))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        pango_layout_line_ref(cast(layout_line_ptr))
+        pango_layout_line_ref(ptr.assumingMemoryBound(to: PangoLayoutLine.self))
     }
 
 
@@ -871,20 +1102,20 @@ open class LayoutLine: LayoutLineProtocol {
 // MARK: LayoutLine Record: LayoutLineProtocol extension (methods and fields)
 public extension LayoutLineProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLayoutLine` instance.
-    var layout_line_ptr: UnsafeMutablePointer<PangoLayoutLine> { return ptr.assumingMemoryBound(to: PangoLayoutLine.self) }
+    @inlinable var layout_line_ptr: UnsafeMutablePointer<PangoLayoutLine>! { return ptr?.assumingMemoryBound(to: PangoLayoutLine.self) }
 
     /// Computes the logical and ink extents of a layout line. See
     /// `pango_font_get_glyph_extents()` for details about the interpretation
     /// of the rectangles.
-    func getExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
-        pango_layout_line_get_extents(cast(layout_line_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
+    @inlinable func getExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
+        pango_layout_line_get_extents(layout_line_ptr, ink_rect?._ptr, logical_rect?._ptr)
     
     }
 
     /// Computes the height of the line, ie the distance between
     /// this and the previous lines baseline.
-    func get(height: UnsafeMutablePointer<CInt>) {
-        pango_layout_line_get_height(cast(layout_line_ptr), cast(height))
+    @inlinable func get(height: UnsafeMutablePointer<gint>! = nil) {
+        pango_layout_line_get_height(layout_line_ptr, height)
     
     }
 
@@ -893,8 +1124,8 @@ public extension LayoutLineProtocol {
     /// two `pango_extents_to_pixels()` calls, rounding `ink_rect` and `logical_rect`
     /// such that the rounded rectangles fully contain the unrounded one (that is,
     /// passes them as first argument to `pango_extents_to_pixels()`).
-    func getPixelExtents(inkRect ink_rect: RectangleProtocol, logicalRect logical_rect: RectangleProtocol) {
-        pango_layout_line_get_pixel_extents(cast(layout_line_ptr), cast(ink_rect.ptr), cast(logical_rect.ptr))
+    @inlinable func getPixelExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
+        pango_layout_line_get_pixel_extents(layout_line_ptr, ink_rect?._ptr, logical_rect?._ptr)
     
     }
 
@@ -903,28 +1134,28 @@ public extension LayoutLineProtocol {
     /// ranges which are adjacent. The ranges will be sorted from left to
     /// right. The ranges are with respect to the left edge of the entire
     /// layout, not with respect to the line.
-    func getXRanges(startIndex start_index: CInt, endIndex end_index: CInt, ranges: UnsafeMutablePointer<UnsafeMutablePointer<CInt>>, nRanges n_ranges: UnsafeMutablePointer<CInt>) {
-        pango_layout_line_get_x_ranges(cast(layout_line_ptr), start_index, end_index, cast(ranges), cast(n_ranges))
+    @inlinable func getXRanges(startIndex start_index: Int, endIndex end_index: Int, ranges: UnsafeMutablePointer<UnsafeMutablePointer<CInt>?>!, nRanges n_ranges: UnsafeMutablePointer<gint>!) {
+        pango_layout_line_get_x_ranges(layout_line_ptr, gint(start_index), gint(end_index), ranges, n_ranges)
     
     }
 
     /// Converts an index within a line to a X position.
-    func indexToX(index_: CInt, trailing: Bool, xPos x_pos: UnsafeMutablePointer<CInt>) {
-        pango_layout_line_index_to_x(cast(layout_line_ptr), index_, gboolean(trailing ? 1 : 0), cast(x_pos))
+    @inlinable func indexToX(index_: Int, trailing: Bool, xPos x_pos: UnsafeMutablePointer<gint>!) {
+        pango_layout_line_index_to_x(layout_line_ptr, gint(index_), gboolean((trailing) ? 1 : 0), x_pos)
     
     }
 
     /// Increase the reference count of a `PangoLayoutLine` by one.
-    func ref() -> UnsafeMutablePointer<PangoLayoutLine>! {
-        let rv: UnsafeMutablePointer<PangoLayoutLine>! = cast(pango_layout_line_ref(cast(layout_line_ptr)))
-        return cast(rv)
+    @discardableResult @inlinable func ref() -> LayoutLineRef! {
+        guard let rv = LayoutLineRef(gconstpointer: gconstpointer(pango_layout_line_ref(layout_line_ptr))) else { return nil }
+        return rv
     }
 
     /// Decrease the reference count of a `PangoLayoutLine` by one.
     /// If the result is zero, the line and all associated memory
     /// will be freed.
-    func unref() {
-        pango_layout_line_unref(cast(layout_line_ptr))
+    @inlinable func unref() {
+        pango_layout_line_unref(layout_line_ptr)
     
     }
 
@@ -938,89 +1169,89 @@ public extension LayoutLineProtocol {
     /// left of the line results in `index_` pointing to the (logical) last
     /// grapheme in the line and `trailing` being set to the number of characters
     /// in that grapheme. The reverse is true for a left-to-right line.
-    func xToIndex(xPos x_pos: CInt, index_: UnsafeMutablePointer<CInt>, trailing: UnsafeMutablePointer<CInt>) -> Bool {
-        let rv = pango_layout_line_x_to_index(cast(layout_line_ptr), x_pos, cast(index_), cast(trailing))
-        return Bool(rv != 0)
+    @inlinable func xToIndex(xPos x_pos: Int, index_: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) -> Bool {
+        let rv = ((pango_layout_line_x_to_index(layout_line_ptr, gint(x_pos), index_, trailing)) != 0)
+        return rv
     }
 
     /// the layout this line belongs to, might be `nil`
-    var layout: UnsafeMutablePointer<PangoLayout> {
+    @inlinable var layout: LayoutRef! {
         /// the layout this line belongs to, might be `nil`
         get {
-            let rv: UnsafeMutablePointer<PangoLayout> = cast(layout_line_ptr.pointee.layout)
+            let rv = LayoutRef(gconstpointer: gconstpointer(layout_line_ptr.pointee.layout))
             return rv
         }
         /// the layout this line belongs to, might be `nil`
          set {
-            layout_line_ptr.pointee.layout = cast(newValue)
+            layout_line_ptr.pointee.layout = UnsafeMutablePointer<PangoLayout>(newValue.layout_ptr)
         }
     }
 
     /// start of line as byte index into layout->text
-    var startIndex: Int {
+    @inlinable var startIndex: gint {
         /// start of line as byte index into layout->text
         get {
-            let rv: Int = cast(layout_line_ptr.pointee.start_index)
+            let rv = layout_line_ptr.pointee.start_index
             return rv
         }
         /// start of line as byte index into layout->text
          set {
-            layout_line_ptr.pointee.start_index = gint(newValue)
+            layout_line_ptr.pointee.start_index = newValue
         }
     }
 
     /// length of line in bytes
-    var length: Int {
+    @inlinable var length: gint {
         /// length of line in bytes
         get {
-            let rv: Int = cast(layout_line_ptr.pointee.length)
+            let rv = layout_line_ptr.pointee.length
             return rv
         }
         /// length of line in bytes
          set {
-            layout_line_ptr.pointee.length = gint(newValue)
+            layout_line_ptr.pointee.length = newValue
         }
     }
 
     /// list of runs in the
     ///        line, from left to right
-    var runs: UnsafeMutablePointer<GSList> {
+    @inlinable var runs: SListRef! {
         /// list of runs in the
         ///        line, from left to right
         get {
-            let rv: UnsafeMutablePointer<GSList> = cast(layout_line_ptr.pointee.runs)
+            let rv = SListRef(gconstpointer: gconstpointer(layout_line_ptr.pointee.runs))
             return rv
         }
         /// list of runs in the
         ///        line, from left to right
          set {
-            layout_line_ptr.pointee.runs = cast(newValue)
+            layout_line_ptr.pointee.runs = UnsafeMutablePointer<GSList>(newValue._ptr)
         }
     }
 
     /// `TRUE` if this is the first line of the paragraph
-    var isParagraphStart: Int {
+    @inlinable var isParagraphStart: guint {
         /// `TRUE` if this is the first line of the paragraph
         get {
-            let rv: Int = cast(layout_line_ptr.pointee.is_paragraph_start)
+            let rv = layout_line_ptr.pointee.is_paragraph_start
             return rv
         }
         /// `TRUE` if this is the first line of the paragraph
          set {
-            layout_line_ptr.pointee.is_paragraph_start = guint(newValue)
+            layout_line_ptr.pointee.is_paragraph_start = newValue
         }
     }
 
     /// `Resolved` PangoDirection of line
-    var resolvedDir: Int {
+    @inlinable var resolvedDir: guint {
         /// `Resolved` PangoDirection of line
         get {
-            let rv: Int = cast(layout_line_ptr.pointee.resolved_dir)
+            let rv = layout_line_ptr.pointee.resolved_dir
             return rv
         }
         /// `Resolved` PangoDirection of line
          set {
-            layout_line_ptr.pointee.resolved_dir = guint(newValue)
+            layout_line_ptr.pointee.resolved_dir = newValue
         }
     }
 
@@ -1039,10 +1270,11 @@ public extension LayoutLineProtocol {
 /// about the attributes of a single character.
 public protocol LogAttrProtocol {
         /// Untyped pointer to the underlying `PangoLogAttr` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoLogAttr` instance.
-    var _ptr: UnsafeMutablePointer<PangoLogAttr> { get }
+    var _ptr: UnsafeMutablePointer<PangoLogAttr>! { get }
+
 }
 
 /// The `LogAttrRef` type acts as a lightweight Swift reference to an underlying `PangoLogAttr` instance.
@@ -1054,46 +1286,76 @@ public protocol LogAttrProtocol {
 public struct LogAttrRef: LogAttrProtocol {
         /// Untyped pointer to the underlying `PangoLogAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension LogAttrRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoLogAttr>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoLogAttr>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoLogAttr>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoLogAttr>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoLogAttr>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `LogAttrProtocol`
-    init<T: LogAttrProtocol>(_ other: T) {
+    @inlinable init<T: LogAttrProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -1108,95 +1370,141 @@ public extension LogAttrRef {
 open class LogAttr: LogAttrProtocol {
         /// Untyped pointer to the underlying `PangoLogAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `LogAttr` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoLogAttr>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoLogAttr>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LogAttr` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoLogAttr>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LogAttr` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LogAttr` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LogAttr` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoLogAttr>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `LogAttr` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoLogAttr>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `PangoLogAttr` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `LogAttr` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoLogAttr>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoLogAttr>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for PangoLogAttr, cannot ref(cast(_ptr))
+        // no reference counting for PangoLogAttr, cannot ref(_ptr)
     }
 
     /// Reference intialiser for a related type that implements `LogAttrProtocol`
     /// `PangoLogAttr` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `LogAttrProtocol`
-    public init<T: LogAttrProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other._ptr)
-        // no reference counting for PangoLogAttr, cannot ref(cast(_ptr))
+    @inlinable public init<T: LogAttrProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for PangoLogAttr, cannot ref(_ptr)
     }
 
     /// Do-nothing destructor for `PangoLogAttr`.
     deinit {
-        // no reference counting for PangoLogAttr, cannot unref(cast(_ptr))
+        // no reference counting for PangoLogAttr, cannot unref(_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for PangoLogAttr, cannot ref(cast(_ptr))
+        // no reference counting for PangoLogAttr, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for PangoLogAttr, cannot ref(cast(_ptr))
+        // no reference counting for PangoLogAttr, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for PangoLogAttr, cannot ref(cast(_ptr))
+        // no reference counting for PangoLogAttr, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for PangoLogAttr, cannot ref(cast(_ptr))
+        // no reference counting for PangoLogAttr, cannot ref(_ptr)
     }
 
 
@@ -1211,67 +1519,67 @@ open class LogAttr: LogAttrProtocol {
 // MARK: LogAttr Record: LogAttrProtocol extension (methods and fields)
 public extension LogAttrProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLogAttr` instance.
-    var _ptr: UnsafeMutablePointer<PangoLogAttr> { return ptr.assumingMemoryBound(to: PangoLogAttr.self) }
+    @inlinable var _ptr: UnsafeMutablePointer<PangoLogAttr>! { return ptr?.assumingMemoryBound(to: PangoLogAttr.self) }
 
     /// This is the default break algorithm. It applies Unicode
     /// rules without language-specific tailoring, therefore
     /// the `analyis` argument is unused and can be `nil`.
     /// 
     /// See `pango_tailor_break()` for language-specific breaks.
-    func defaultBreak(text: UnsafePointer<gchar>, length: CInt, analysis: AnalysisProtocol, attrsLen attrs_len: CInt) {
-        pango_default_break(text, length, cast(analysis.ptr), cast(_ptr), attrs_len)
+    @inlinable func defaultBreak<AnalysisT: AnalysisProtocol>(text: UnsafePointer<gchar>!, length: Int, analysis: AnalysisT? = nil, attrsLen attrs_len: Int) {
+        pango_default_break(text, gint(length), analysis?._ptr, _ptr, gint(attrs_len))
     
     }
 
     /// if set, can break line in front of character
-    var isLineBreak: Int {
+    @inlinable var isLineBreak: guint {
         /// if set, can break line in front of character
         get {
-            let rv: Int = cast(_ptr.pointee.is_line_break)
+            let rv = _ptr.pointee.is_line_break
             return rv
         }
         /// if set, can break line in front of character
          set {
-            _ptr.pointee.is_line_break = guint(newValue)
+            _ptr.pointee.is_line_break = newValue
         }
     }
 
     /// if set, must break line in front of character
-    var isMandatoryBreak: Int {
+    @inlinable var isMandatoryBreak: guint {
         /// if set, must break line in front of character
         get {
-            let rv: Int = cast(_ptr.pointee.is_mandatory_break)
+            let rv = _ptr.pointee.is_mandatory_break
             return rv
         }
         /// if set, must break line in front of character
          set {
-            _ptr.pointee.is_mandatory_break = guint(newValue)
+            _ptr.pointee.is_mandatory_break = newValue
         }
     }
 
     /// if set, can break here when doing character wrapping
-    var isCharBreak: Int {
+    @inlinable var isCharBreak: guint {
         /// if set, can break here when doing character wrapping
         get {
-            let rv: Int = cast(_ptr.pointee.is_char_break)
+            let rv = _ptr.pointee.is_char_break
             return rv
         }
         /// if set, can break here when doing character wrapping
          set {
-            _ptr.pointee.is_char_break = guint(newValue)
+            _ptr.pointee.is_char_break = newValue
         }
     }
 
     /// is whitespace character
-    var isWhite: Int {
+    @inlinable var isWhite: guint {
         /// is whitespace character
         get {
-            let rv: Int = cast(_ptr.pointee.is_white)
+            let rv = _ptr.pointee.is_white
             return rv
         }
         /// is whitespace character
          set {
-            _ptr.pointee.is_white = guint(newValue)
+            _ptr.pointee.is_white = newValue
         }
     }
 
@@ -1281,7 +1589,7 @@ public extension LogAttrProtocol {
     /// This flag implements Unicode's
     /// <ulink url="http://www.unicode.org/reports/tr29/">Grapheme
     /// Cluster Boundaries</ulink> semantics.
-    var isCursorPosition: Int {
+    @inlinable var isCursorPosition: guint {
         /// if set, cursor can appear in front of character.
         /// i.e. this is a grapheme boundary, or the first character
         /// in the text.
@@ -1289,7 +1597,7 @@ public extension LogAttrProtocol {
         /// <ulink url="http://www.unicode.org/reports/tr29/">Grapheme
         /// Cluster Boundaries</ulink> semantics.
         get {
-            let rv: Int = cast(_ptr.pointee.is_cursor_position)
+            let rv = _ptr.pointee.is_cursor_position
             return rv
         }
         /// if set, cursor can appear in front of character.
@@ -1299,39 +1607,39 @@ public extension LogAttrProtocol {
         /// <ulink url="http://www.unicode.org/reports/tr29/">Grapheme
         /// Cluster Boundaries</ulink> semantics.
          set {
-            _ptr.pointee.is_cursor_position = guint(newValue)
+            _ptr.pointee.is_cursor_position = newValue
         }
     }
 
     /// is first character in a word
-    var isWordStart: Int {
+    @inlinable var isWordStart: guint {
         /// is first character in a word
         get {
-            let rv: Int = cast(_ptr.pointee.is_word_start)
+            let rv = _ptr.pointee.is_word_start
             return rv
         }
         /// is first character in a word
          set {
-            _ptr.pointee.is_word_start = guint(newValue)
+            _ptr.pointee.is_word_start = newValue
         }
     }
 
     /// is first non-word char after a word
     /// Note that in degenerate cases, you could have both `is_word_start`
     /// and `is_word_end` set for some character.
-    var isWordEnd: Int {
+    @inlinable var isWordEnd: guint {
         /// is first non-word char after a word
         /// Note that in degenerate cases, you could have both `is_word_start`
         /// and `is_word_end` set for some character.
         get {
-            let rv: Int = cast(_ptr.pointee.is_word_end)
+            let rv = _ptr.pointee.is_word_end
             return rv
         }
         /// is first non-word char after a word
         /// Note that in degenerate cases, you could have both `is_word_start`
         /// and `is_word_end` set for some character.
          set {
-            _ptr.pointee.is_word_end = guint(newValue)
+            _ptr.pointee.is_word_end = newValue
         }
     }
 
@@ -1342,7 +1650,7 @@ public extension LogAttrProtocol {
     /// the boundaries there. The second way doesn't assign
     /// between-sentence spaces, etc. to any sentence, so
     /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
-    var isSentenceBoundary: Int {
+    @inlinable var isSentenceBoundary: guint {
         /// is a sentence boundary.
         /// There are two ways to divide sentences. The first assigns all
         /// inter-sentence whitespace/control/format chars to some sentence,
@@ -1351,7 +1659,7 @@ public extension LogAttrProtocol {
         /// between-sentence spaces, etc. to any sentence, so
         /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
         get {
-            let rv: Int = cast(_ptr.pointee.is_sentence_boundary)
+            let rv = _ptr.pointee.is_sentence_boundary
             return rv
         }
         /// is a sentence boundary.
@@ -1362,20 +1670,20 @@ public extension LogAttrProtocol {
         /// between-sentence spaces, etc. to any sentence, so
         /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
          set {
-            _ptr.pointee.is_sentence_boundary = guint(newValue)
+            _ptr.pointee.is_sentence_boundary = newValue
         }
     }
 
     /// is first character in a sentence
-    var isSentenceStart: Int {
+    @inlinable var isSentenceStart: guint {
         /// is first character in a sentence
         get {
-            let rv: Int = cast(_ptr.pointee.is_sentence_start)
+            let rv = _ptr.pointee.is_sentence_start
             return rv
         }
         /// is first character in a sentence
          set {
-            _ptr.pointee.is_sentence_start = guint(newValue)
+            _ptr.pointee.is_sentence_start = newValue
         }
     }
 
@@ -1383,13 +1691,13 @@ public extension LogAttrProtocol {
     /// Note that in degenerate cases, you could have both `is_sentence_start`
     /// and `is_sentence_end` set for some character. (e.g. no space after a
     /// period, so the next sentence starts right away)
-    var isSentenceEnd: Int {
+    @inlinable var isSentenceEnd: guint {
         /// is first char after a sentence.
         /// Note that in degenerate cases, you could have both `is_sentence_start`
         /// and `is_sentence_end` set for some character. (e.g. no space after a
         /// period, so the next sentence starts right away)
         get {
-            let rv: Int = cast(_ptr.pointee.is_sentence_end)
+            let rv = _ptr.pointee.is_sentence_end
             return rv
         }
         /// is first char after a sentence.
@@ -1397,7 +1705,7 @@ public extension LogAttrProtocol {
         /// and `is_sentence_end` set for some character. (e.g. no space after a
         /// period, so the next sentence starts right away)
          set {
-            _ptr.pointee.is_sentence_end = guint(newValue)
+            _ptr.pointee.is_sentence_end = newValue
         }
     }
 
@@ -1412,7 +1720,7 @@ public extension LogAttrProtocol {
     /// default implementation of `pango_break()`, this
     /// bit is set on all grapheme boundaries except
     /// those following Latin, Cyrillic or Greek base characters.
-    var backspaceDeletesCharacter: Int {
+    @inlinable var backspaceDeletesCharacter: guint {
         /// if set, backspace deletes one character
         /// rather than the entire grapheme cluster. This
         /// field is only meaningful on grapheme
@@ -1425,7 +1733,7 @@ public extension LogAttrProtocol {
         /// bit is set on all grapheme boundaries except
         /// those following Latin, Cyrillic or Greek base characters.
         get {
-            let rv: Int = cast(_ptr.pointee.backspace_deletes_character)
+            let rv = _ptr.pointee.backspace_deletes_character
             return rv
         }
         /// if set, backspace deletes one character
@@ -1440,23 +1748,23 @@ public extension LogAttrProtocol {
         /// bit is set on all grapheme boundaries except
         /// those following Latin, Cyrillic or Greek base characters.
          set {
-            _ptr.pointee.backspace_deletes_character = guint(newValue)
+            _ptr.pointee.backspace_deletes_character = newValue
         }
     }
 
     /// is a whitespace character that can possibly be
     /// expanded for justification purposes. (Since: 1.18)
-    var isExpandableSpace: Int {
+    @inlinable var isExpandableSpace: guint {
         /// is a whitespace character that can possibly be
         /// expanded for justification purposes. (Since: 1.18)
         get {
-            let rv: Int = cast(_ptr.pointee.is_expandable_space)
+            let rv = _ptr.pointee.is_expandable_space
             return rv
         }
         /// is a whitespace character that can possibly be
         /// expanded for justification purposes. (Since: 1.18)
          set {
-            _ptr.pointee.is_expandable_space = guint(newValue)
+            _ptr.pointee.is_expandable_space = newValue
         }
     }
 
@@ -1468,7 +1776,7 @@ public extension LogAttrProtocol {
     /// This flag implements Unicode's
     /// <ulink url="http://www.unicode.org/reports/tr29/">Word
     /// Boundaries</ulink> semantics. (Since: 1.22)
-    var isWordBoundary: Int {
+    @inlinable var isWordBoundary: guint {
         /// is a word boundary, as defined by UAX`29`.
         /// More specifically, means that this is not a position in the middle
         /// of a word.  For example, both sides of a punctuation mark are
@@ -1478,7 +1786,7 @@ public extension LogAttrProtocol {
         /// <ulink url="http://www.unicode.org/reports/tr29/">Word
         /// Boundaries</ulink> semantics. (Since: 1.22)
         get {
-            let rv: Int = cast(_ptr.pointee.is_word_boundary)
+            let rv = _ptr.pointee.is_word_boundary
             return rv
         }
         /// is a word boundary, as defined by UAX`29`.
@@ -1490,7 +1798,7 @@ public extension LogAttrProtocol {
         /// <ulink url="http://www.unicode.org/reports/tr29/">Word
         /// Boundaries</ulink> semantics. (Since: 1.22)
          set {
-            _ptr.pointee.is_word_boundary = guint(newValue)
+            _ptr.pointee.is_word_boundary = newValue
         }
     }
 
@@ -1508,10 +1816,11 @@ public extension LogAttrProtocol {
 
 public protocol MapProtocol {
         /// Untyped pointer to the underlying `PangoMap` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `PangoMap` instance.
-    var _ptr: UnsafeMutablePointer<PangoMap> { get }
+    var _ptr: UnsafeMutablePointer<PangoMap>! { get }
+
 }
 
 /// The `MapRef` type acts as a lightweight Swift reference to an underlying `PangoMap` instance.
@@ -1522,46 +1831,76 @@ public protocol MapProtocol {
 public struct MapRef: MapProtocol {
         /// Untyped pointer to the underlying `PangoMap` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension MapRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<PangoMap>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<PangoMap>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<PangoMap>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<PangoMap>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<PangoMap>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `MapProtocol`
-    init<T: MapProtocol>(_ other: T) {
+    @inlinable init<T: MapProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -1575,95 +1914,141 @@ public extension MapRef {
 open class Map: MapProtocol {
         /// Untyped pointer to the underlying `PangoMap` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Map` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<PangoMap>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<PangoMap>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Map` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<PangoMap>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Map` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Map` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Map` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<PangoMap>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Map` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<PangoMap>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `PangoMap` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Map` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<PangoMap>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<PangoMap>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for PangoMap, cannot ref(cast(_ptr))
+        // no reference counting for PangoMap, cannot ref(_ptr)
     }
 
     /// Reference intialiser for a related type that implements `MapProtocol`
     /// `PangoMap` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `MapProtocol`
-    public init<T: MapProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other._ptr)
-        // no reference counting for PangoMap, cannot ref(cast(_ptr))
+    @inlinable public init<T: MapProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for PangoMap, cannot ref(_ptr)
     }
 
     /// Do-nothing destructor for `PangoMap`.
     deinit {
-        // no reference counting for PangoMap, cannot unref(cast(_ptr))
+        // no reference counting for PangoMap, cannot unref(_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for PangoMap, cannot ref(cast(_ptr))
+        // no reference counting for PangoMap, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for PangoMap, cannot ref(cast(_ptr))
+        // no reference counting for PangoMap, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for PangoMap, cannot ref(cast(_ptr))
+        // no reference counting for PangoMap, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for PangoMap, cannot ref(cast(_ptr))
+        // no reference counting for PangoMap, cannot ref(_ptr)
     }
 
 
@@ -1678,23 +2063,23 @@ open class Map: MapProtocol {
 // MARK: Map Record: MapProtocol extension (methods and fields)
 public extension MapProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoMap` instance.
-    var _ptr: UnsafeMutablePointer<PangoMap> { return ptr.assumingMemoryBound(to: PangoMap.self) }
+    @inlinable var _ptr: UnsafeMutablePointer<PangoMap>! { return ptr?.assumingMemoryBound(to: PangoMap.self) }
 
     /// Do not use.  Does not do anything.
     ///
     /// **get_engine is deprecated:**
     /// This method is deprecated.
-    @available(*, deprecated) func getEngine(script: Script) -> UnsafeMutablePointer<PangoEngine>! {
-        let rv: UnsafeMutablePointer<PangoEngine>! = cast(pango_map_get_engine(cast(_ptr), script))
-        return cast(rv)
+    @available(*, deprecated) @inlinable func getEngine(script: PangoScript) -> EngineRef! {
+        let rv = EngineRef(gconstpointer: gconstpointer(pango_map_get_engine(_ptr, script)))
+        return rv
     }
 
     /// Do not use.  Does not do anything.
     ///
     /// **get_engines is deprecated:**
     /// This method is deprecated.
-    @available(*, deprecated) func getEngines(script: Script, exactEngines exact_engines: SListProtocol, fallbackEngines fallback_engines: SListProtocol) {
-        pango_map_get_engines(cast(_ptr), script, cast(exact_engines.ptr), cast(fallback_engines.ptr))
+    @available(*, deprecated) @inlinable func getEngines(script: PangoScript, exactEngines exact_engines: UnsafeMutablePointer<UnsafeMutablePointer<GSList>?>? = nil, fallbackEngines fallback_engines: UnsafeMutablePointer<UnsafeMutablePointer<GSList>?>? = nil) {
+        pango_map_get_engines(_ptr, script, exact_engines, fallback_engines)
     
     }
 
