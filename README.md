@@ -79,9 +79,9 @@ on macOS, or on Linux you should get something like:
 	Swift version 5.2.5 (swift-5.2.4-RELEASE)
 	Target: x86_64-unknown-linux-gnu
 
-### Pango 1.42 or higher
+### Pango 1.40 or higher
 
-These Swift wrappers have been tested with pango-1.42 and 1.44 as well as glib-2.46, 2.48, 2.52, 2.56, 2.58, 2.60, 2.62, and 2.64.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
+These Swift wrappers have been tested with pango-1.40, 1.42, 1.44, and 1.46 as well as glib-2.56, 2.58, 2.60, 2.62, and 2.64.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
 
 #### Linux
 
