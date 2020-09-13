@@ -509,7 +509,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango6break_4text6length8analysis5attrs0F3LenySPys4Int8VGSg_SixSpySo01_A7LogAttrVGSgSitAA16AnalysisProtocolRzlF">break_(text:length:analysis:attrs:attrsLen:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SiAA11AnalysisRefVSgxSitAA15LogAttrProtocolRzlF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SixSgq_SitAA16AnalysisProtocolRzAA07LogAttrK0R_r0_lF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyAA12RectangleRefVSg_AGtF">extentsToPixels(inclusive:nearest:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyxSg_AEtAA17RectangleProtocolRzlF">extentsToPixels(inclusive:nearest:)</a>
@@ -533,6 +539,9 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13getMirrorChar2ch10mirroredChSbs6UInt32V_SpyAFGSgtF">getMirrorChar(ch:mirroredCh:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaAA9MatrixRefVSg_tF">gravityGetFor(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaxSg_tAA14MatrixProtocolRzlF">gravityGetFor(matrix:)</a>
               </li>
               <li class="nav-group-task">
@@ -551,7 +560,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__SPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0olQ0R_AA07ContextQ0R0_r1_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__SPys4Int8VGSgS2ixAA012AttrIteratorM0VSgtAA0oL8ProtocolRzAA07ContextQ0R_r0_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__So0A9DirectionaSPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0tpV0R_AA07ContextV0R0_r1_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF">languageFromString(language:)</a>
@@ -1404,12 +1419,47 @@ down to the level of clusters.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">getCharExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">logicalRect</span> <span class="nv">logical_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">getCharExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
                         <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L571-L574">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango18LayoutIterProtocolPAAE17getClusterExtents7inkRect07logicalI0yAA12RectangleRefVSg_AItF"></a>
+                    <a name="//apple_ref/swift/Method/getClusterExtents(inkRect:logicalRect:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango18LayoutIterProtocolPAAE17getClusterExtents7inkRect07logicalI0yAA12RectangleRefVSg_AItF">getClusterExtents(inkRect:logicalRect:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the extents of the current cluster, in layout coordinates
+(origin is the top left of the entire layout).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">getClusterExtents</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L578-L581">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1439,12 +1489,12 @@ down to the level of clusters.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">getClusterExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inkRect</span> <span class="nv">ink_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">logicalRect</span> <span class="nv">logical_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">getClusterExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L578-L581">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L584-L587">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1481,7 +1531,7 @@ in the layout, if on the <code>nil</code> run (see <code>pango_layout_iter_get_r
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L587-L590">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L593-L596">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1515,7 +1565,43 @@ in the layout, if on the <code>nil</code> run (see <code>pango_layout_iter_get_r
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L593-L596">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L599-L602">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango18LayoutIterProtocolPAAE03getB7Extents7inkRect07logicalH0yAA12RectangleRefVSg_AItF"></a>
+                    <a name="//apple_ref/swift/Method/getLayoutExtents(inkRect:logicalRect:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango18LayoutIterProtocolPAAE03getB7Extents7inkRect07logicalH0yAA12RectangleRefVSg_AItF">getLayoutExtents(inkRect:logicalRect:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtains the extents of the <code>PangoLayout</code> being iterated
+over. <code>ink_rect</code> or <code>logical_rect</code> can be <code>nil</code> if you
+aren&rsquo;t interested in them.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">getLayoutExtents</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L607-L610">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1546,12 +1632,12 @@ aren&rsquo;t interested in them.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">getLayoutExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inkRect</span> <span class="nv">ink_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">logicalRect</span> <span class="nv">logical_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">getLayoutExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L601-L604">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L614-L617">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1588,7 +1674,46 @@ to modify the contents of the line (glyphs, glyph widths, etc.).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L610-L613">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L623-L626">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango18LayoutIterProtocolPAAE14getLineExtents7inkRect07logicalI0yAA12RectangleRefVSg_AItF"></a>
+                    <a name="//apple_ref/swift/Method/getLineExtents(inkRect:logicalRect:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango18LayoutIterProtocolPAAE14getLineExtents7inkRect07logicalI0yAA12RectangleRefVSg_AItF">getLineExtents(inkRect:logicalRect:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtains the extents of the current line. <code>ink_rect</code> or <code>logical_rect</code>
+can be <code>nil</code> if you aren&rsquo;t interested in them. Extents are in layout
+coordinates (origin is the top-left corner of the entire
+<code>PangoLayout</code>).  Thus the extents returned by this function will be
+the same width/height but not at the same x/y as the extents
+returned from <code>pango_layout_line_get_extents()</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">getLineExtents</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L634-L637">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1622,12 +1747,12 @@ returned from <code>pango_layout_line_get_extents()</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">getLineExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inkRect</span> <span class="nv">ink_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">logicalRect</span> <span class="nv">logical_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">getLineExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L621-L624">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L644-L647">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1665,7 +1790,7 @@ to modify the contents of the line (glyphs, glyph widths, etc.).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L631-L634">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L654-L657">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1709,7 +1834,7 @@ function.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L647-L650">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L670-L673">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1749,7 +1874,42 @@ to modify the contents of the run (glyphs, glyph widths, etc.).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L659-L662">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L682-L685">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango18LayoutIterProtocolPAAE13getRunExtents7inkRect07logicalI0yAA12RectangleRefVSg_AItF"></a>
+                    <a name="//apple_ref/swift/Method/getRunExtents(inkRect:logicalRect:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango18LayoutIterProtocolPAAE13getRunExtents7inkRect07logicalI0yAA12RectangleRefVSg_AItF">getRunExtents(inkRect:logicalRect:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the extents of the current run in layout coordinates
+(origin is the top left of the entire layout).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">getRunExtents</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L689-L692">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1779,12 +1939,12 @@ to modify the contents of the run (glyphs, glyph widths, etc.).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">getRunExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inkRect</span> <span class="nv">ink_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">logicalRect</span> <span class="nv">logical_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">getRunExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L666-L669">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L695-L698">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1825,7 +1985,7 @@ to modify the contents of the run (glyphs, glyph widths, etc.).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L679-L682">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L708-L711">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1860,7 +2020,7 @@ the end of the layout, returns <code>false</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L686-L689">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L715-L718">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1895,7 +2055,7 @@ was already at the end of the layout, returns <code>false</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L693-L696">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L722-L725">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1930,7 +2090,7 @@ already on the last line, returns <code>false</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L700-L703">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L729-L732">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1965,7 +2125,7 @@ already at the end of the layout, returns <code>false</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L707-L710">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L736-L739">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2000,7 +2160,7 @@ coordinates (origin at top left of the entire layout).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L713-L720">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L742-L749">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2037,7 +2197,7 @@ in the layout, if on the <code>nil</code> run (see <code>pango_layout_iter_get_r
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L726-L735">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L755-L764">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2071,7 +2231,7 @@ in the layout, if on the <code>nil</code> run (see <code>pango_layout_iter_get_r
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L738-L744">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L767-L773">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2108,7 +2268,7 @@ to modify the contents of the line (glyphs, glyph widths, etc.).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L750-L759">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L779-L788">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2146,7 +2306,7 @@ to modify the contents of the line (glyphs, glyph widths, etc.).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L766-L776">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L795-L805">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2186,7 +2346,7 @@ to modify the contents of the run (glyphs, glyph widths, etc.).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L785-L797">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L814-L826">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2227,7 +2387,7 @@ to modify the contents of the run (glyphs, glyph widths, etc.).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L807-L820">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-LayoutClass-Map.swift#L836-L849">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2240,7 +2400,7 @@ to modify the contents of the run (glyphs, glyph widths, etc.).</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

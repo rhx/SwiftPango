@@ -509,7 +509,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango6break_4text6length8analysis5attrs0F3LenySPys4Int8VGSg_SixSpySo01_A7LogAttrVGSgSitAA16AnalysisProtocolRzlF">break_(text:length:analysis:attrs:attrsLen:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SiAA11AnalysisRefVSgxSitAA15LogAttrProtocolRzlF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SixSgq_SitAA16AnalysisProtocolRzAA07LogAttrK0R_r0_lF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyAA12RectangleRefVSg_AGtF">extentsToPixels(inclusive:nearest:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyxSg_AEtAA17RectangleProtocolRzlF">extentsToPixels(inclusive:nearest:)</a>
@@ -533,6 +539,9 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13getMirrorChar2ch10mirroredChSbs6UInt32V_SpyAFGSgtF">getMirrorChar(ch:mirroredCh:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaAA9MatrixRefVSg_tF">gravityGetFor(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaxSg_tAA14MatrixProtocolRzlF">gravityGetFor(matrix:)</a>
               </li>
               <li class="nav-group-task">
@@ -551,7 +560,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__SPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0olQ0R_AA07ContextQ0R0_r1_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__SPys4Int8VGSgS2ixAA012AttrIteratorM0VSgtAA0oL8ProtocolRzAA07ContextQ0R_r0_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__So0A9DirectionaSPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0tpV0R_AA07ContextV0R0_r1_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF">languageFromString(language:)</a>
@@ -1269,7 +1284,7 @@ given by <code>new_matrix</code> then applying the original transformation.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">concat</span><span class="o">&lt;</span><span class="kt">MatrixT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">newMatrix</span> <span class="nv">new_matrix</span><span class="p">:</span> <span class="kt">MatrixT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">MatrixT</span> <span class="p">:</span> <span class="kt">MatrixProtocol</span></code></pre>
+<span class="kd">func</span> <span class="n">concat</span><span class="o">&lt;</span><span class="kt">MatrixT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">newMatrix</span><span class="p">:</span> <span class="kt">MatrixT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">MatrixT</span> <span class="p">:</span> <span class="kt">MatrixProtocol</span></code></pre>
 
                         </div>
                       </div>
@@ -1486,7 +1501,7 @@ transformation.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">scale</span><span class="p">(</span><span class="n">scaleX</span> <span class="nv">scale_x</span><span class="p">:</span> <span class="kt">CDouble</span><span class="p">,</span> <span class="n">scaleY</span> <span class="nv">scale_y</span><span class="p">:</span> <span class="kt">CDouble</span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">scale</span><span class="p">(</span><span class="nv">scaleX</span><span class="p">:</span> <span class="kt">CDouble</span><span class="p">,</span> <span class="nv">scaleY</span><span class="p">:</span> <span class="kt">CDouble</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1546,6 +1561,50 @@ to (<code>x2</code>,<code>y2</code>) then (<code>x1</code>+<code>dx1</code>,<cod
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:5Pango14MatrixProtocolPAAE23transformPixelRectangle4rectyAA0F3RefVSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/transformPixelRectangle(rect:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE23transformPixelRectangle4rectyAA0F3RefVSg_tF">transformPixelRectangle(rect:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>First transforms the <code>rect</code> using <code>matrix</code>, then calculates the bounding box
+of the transformed rectangle.  The rectangle should be in device units
+(pixels).</p>
+
+<p>This function is useful for example when you want to draw a rotated
+<code>PangoLayout</code> to an image buffer, and want to know how large the image
+should be and how much you should shift the layout when rendering.</p>
+
+<p>For better accuracy, you should use <code>pango_matrix_transform_rectangle()</code> on
+original rectangle in Pango units and convert to pixels afterward
+using <code>pango_extents_to_pixels()</code>&lsquo;s first argument.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">transformPixelRectangle</span><span class="p">(</span><span class="nv">rect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L638-L641">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE23transformPixelRectangle4rectyqd__Sg_tAA0fC0Rd__lF"></a>
                     <a name="//apple_ref/swift/Method/transformPixelRectangle(rect:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:5Pango14MatrixProtocolPAAE23transformPixelRectangle4rectyqd__Sg_tAA0fC0Rd__lF">transformPixelRectangle(rect:)</a>
@@ -1577,12 +1636,12 @@ using <code>pango_extents_to_pixels()</code>&lsquo;s first argument.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">transformPixelRectangle</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">transformPixelRectangle</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L638-L641">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L653-L656">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1616,7 +1675,58 @@ using <code>pango_extents_to_pixels()</code>&lsquo;s first argument.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L644-L647">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L659-L662">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango14MatrixProtocolPAAE18transformRectangle4rectyAA0E3RefVSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/transformRectangle(rect:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE18transformRectangle4rectyAA0E3RefVSg_tF">transformRectangle(rect:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>First transforms <code>rect</code> using <code>matrix</code>, then calculates the bounding box
+of the transformed rectangle.  The rectangle should be in Pango units.</p>
+
+<p>This function is useful for example when you want to draw a rotated
+<code>PangoLayout</code> to an image buffer, and want to know how large the image
+should be and how much you should shift the layout when rendering.</p>
+
+<p>If you have a rectangle in device units (pixels), use
+<code>pango_matrix_transform_pixel_rectangle()</code>.</p>
+
+<p>If you have the rectangle in Pango units and want to convert to
+transformed pixel bounding box, it is more accurate to transform it first
+(using this function) and pass the result to <code>pango_extents_to_pixels()</code>,
+first argument, for an inclusive rounded rectangle.
+However, there are valid reasons that you may want to convert
+to pixels first and then transform, for example when the transformed
+coordinates may overflow in Pango units (large matrix translation for
+example).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">transformRectangle</span><span class="p">(</span><span class="nv">rect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L682-L685">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1662,12 +1772,12 @@ example).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">transformRectangle</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">transformRectangle</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L667-L670">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L704-L707">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1703,7 +1813,7 @@ then applying the original transformation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L675-L678">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L712-L715">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1738,7 +1848,7 @@ in a <code>PangoMatrix</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L682-L685">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L719-L722">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1775,7 +1885,7 @@ coordinate is needed as well, use <code>pango_matrix_get_font_scale_factors()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L690-L699">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L727-L736">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1809,7 +1919,7 @@ coordinate is needed as well, use <code>pango_matrix_get_font_scale_factors()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L702-L712">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L739-L749">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1843,7 +1953,7 @@ coordinate is needed as well, use <code>pango_matrix_get_font_scale_factors()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L715-L725">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L752-L762">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1877,7 +1987,7 @@ coordinate is needed as well, use <code>pango_matrix_get_font_scale_factors()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L728-L738">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L765-L775">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1911,7 +2021,7 @@ coordinate is needed as well, use <code>pango_matrix_get_font_scale_factors()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L741-L751">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L778-L788">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1945,7 +2055,7 @@ coordinate is needed as well, use <code>pango_matrix_get_font_scale_factors()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L754-L764">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L791-L801">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1979,7 +2089,7 @@ coordinate is needed as well, use <code>pango_matrix_get_font_scale_factors()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L767-L777">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L804-L814">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1992,7 +2102,7 @@ coordinate is needed as well, use <code>pango_matrix_get_font_scale_factors()</c
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

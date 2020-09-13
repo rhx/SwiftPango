@@ -509,7 +509,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango6break_4text6length8analysis5attrs0F3LenySPys4Int8VGSg_SixSpySo01_A7LogAttrVGSgSitAA16AnalysisProtocolRzlF">break_(text:length:analysis:attrs:attrsLen:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SiAA11AnalysisRefVSgxSitAA15LogAttrProtocolRzlF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SixSgq_SitAA16AnalysisProtocolRzAA07LogAttrK0R_r0_lF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyAA12RectangleRefVSg_AGtF">extentsToPixels(inclusive:nearest:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyxSg_AEtAA17RectangleProtocolRzlF">extentsToPixels(inclusive:nearest:)</a>
@@ -533,6 +539,9 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13getMirrorChar2ch10mirroredChSbs6UInt32V_SpyAFGSgtF">getMirrorChar(ch:mirroredCh:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaAA9MatrixRefVSg_tF">gravityGetFor(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaxSg_tAA14MatrixProtocolRzlF">gravityGetFor(matrix:)</a>
               </li>
               <li class="nav-group-task">
@@ -551,7 +560,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__SPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0olQ0R_AA07ContextQ0R0_r1_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__SPys4Int8VGSgS2ixAA012AttrIteratorM0VSgtAA0oL8ProtocolRzAA07ContextQ0R_r0_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__So0A9DirectionaSPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0tpV0R_AA07ContextV0R0_r1_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF">languageFromString(language:)</a>
@@ -1273,7 +1288,7 @@ styles are equal.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">betterMatch</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">oldMatch</span> <span class="nv">old_match</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">newMatch</span> <span class="nv">new_match</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt">FontDescriptionProtocol</span></code></pre>
+<span class="kd">func</span> <span class="n">betterMatch</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">oldMatch</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">?,</span> <span class="nv">newMatch</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt">FontDescriptionProtocol</span></code></pre>
 
                         </div>
                       </div>
@@ -1814,6 +1829,45 @@ The hash value is independent of <code>desc</code>-&gt;mask.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:5Pango23FontDescriptionProtocolPAAE5merge11descToMerge15replaceExistingyAA0bC3RefVSg_SbtF"></a>
+                    <a name="//apple_ref/swift/Method/merge(descToMerge:replaceExisting:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango23FontDescriptionProtocolPAAE5merge11descToMerge15replaceExistingyAA0bC3RefVSg_SbtF">merge(descToMerge:replaceExisting:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Merges the fields that are set in <code>desc_to_merge</code> into the fields in
+<code>desc</code>.  If <code>replace_existing</code> is <code>false</code>, only fields in <code>desc</code> that
+are not already set are affected. If <code>true</code>, then fields that are
+already set will be replaced as well.</p>
+
+<p>If <code>desc_to_merge</code> is <code>nil</code>, this function performs nothing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">merge</span><span class="p">(</span><span class="nv">descToMerge</span><span class="p">:</span> <span class="kt"><a href="../Structs/FontDescriptionRef.html">FontDescriptionRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">replaceExisting</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L506-L509">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:5Pango23FontDescriptionProtocolPAAE5merge11descToMerge15replaceExistingyqd__Sg_SbtAaBRd__lF"></a>
                     <a name="//apple_ref/swift/Method/merge(descToMerge:replaceExisting:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:5Pango23FontDescriptionProtocolPAAE5merge11descToMerge15replaceExistingyqd__Sg_SbtAaBRd__lF">merge(descToMerge:replaceExisting:)</a>
@@ -1840,12 +1894,12 @@ already set will be replaced as well.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">merge</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">descToMerge</span> <span class="nv">desc_to_merge</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">replaceExisting</span> <span class="nv">replace_existing</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt">FontDescriptionProtocol</span></code></pre>
+<span class="kd">func</span> <span class="n">merge</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">descToMerge</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">?,</span> <span class="nv">replaceExisting</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt">FontDescriptionProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L506-L509">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L516-L519">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1877,12 +1931,12 @@ to be used when the merged font description is only needed temporarily.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">mergeStatic</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">descToMerge</span> <span class="nv">desc_to_merge</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">,</span> <span class="n">replaceExisting</span> <span class="nv">replace_existing</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt">FontDescriptionProtocol</span></code></pre>
+<span class="kd">func</span> <span class="n">mergeStatic</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">descToMerge</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">,</span> <span class="nv">replaceExisting</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt">FontDescriptionProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L515-L518">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L525-L528">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1918,7 +1972,7 @@ in points.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L523-L526">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L533-L536">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1956,7 +2010,7 @@ separated list of family names for this field.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L533-L536">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L543-L546">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1995,7 +2049,7 @@ if <code>desc</code> is only needed temporarily.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L544-L547">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L554-L557">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2035,7 +2089,7 @@ be set on a <code>PangoContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L556-L559">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L566-L569">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2070,7 +2124,7 @@ exclusive with <code>pango_font_description_set_absolute_size()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L563-L566">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L573-L576">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2105,7 +2159,7 @@ specifies how narrow or wide the font should be.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L570-L573">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L580-L583">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2146,7 +2200,7 @@ if an exact match is not found.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L583-L586">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L593-L596">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2181,7 +2235,7 @@ can either be <code>PANGO_VARIANT_NORMAL</code> or <code>PANGO_VARIANT_SMALL_CAP
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L590-L593">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L600-L603">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2225,7 +2279,7 @@ a font. Both harfbuzz or freetype have API for this.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L606-L609">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L616-L619">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2264,7 +2318,7 @@ if <code>desc</code> is only needed temporarily.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L617-L620">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L627-L630">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2301,7 +2355,7 @@ numeric values are possible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L626-L629">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L636-L639">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2338,7 +2392,7 @@ characters that are untypical in filenames, and in lower case only.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L635-L638">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L645-L648">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2376,7 +2430,7 @@ last word of the list is a valid style option.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L645-L648">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L655-L658">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2406,12 +2460,12 @@ fields will get back to their default values.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">unsetFields</span><span class="p">(</span><span class="n">toUnset</span> <span class="nv">to_unset</span><span class="p">:</span> <span class="kt"><a href="../Structs/FontMask.html">FontMask</a></span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">unsetFields</span><span class="p">(</span><span class="nv">toUnset</span><span class="p">:</span> <span class="kt"><a href="../Structs/FontMask.html">FontMask</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L652-L655">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L662-L665">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2447,7 +2501,7 @@ and size simultaneously.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L660-L663">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L670-L673">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2482,7 +2536,7 @@ and size simultaneously.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L666-L681">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L676-L691">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2517,7 +2571,7 @@ and size simultaneously.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L685-L702">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L695-L712">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2551,7 +2605,7 @@ and size simultaneously.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L705-L711">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L715-L721">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2586,7 +2640,7 @@ See <code>pango_font_description_set_size()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L715-L727">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L725-L737">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2621,7 +2675,7 @@ See <code>pango_font_description_set_size()</code> and <code>pango_font_descript
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L731-L738">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L741-L748">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2656,7 +2710,7 @@ See <code>pango_font_description_set_stretch()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L742-L754">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L752-L764">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2691,7 +2745,7 @@ See <code>pango_font_description_set_stretch()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L758-L776">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L768-L786">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2726,7 +2780,7 @@ See <code>pango_font_description_set_stretch()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L780-L792">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L790-L802">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2761,7 +2815,7 @@ See <code>pango_font_description_set_stretch()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L796-L817">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L806-L827">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2796,7 +2850,7 @@ See <code>pango_font_description_set_stretch()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L821-L835">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontDescription-GlyphGeometry.swift#L831-L845">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2809,7 +2863,7 @@ See <code>pango_font_description_set_stretch()</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

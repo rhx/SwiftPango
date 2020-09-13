@@ -509,7 +509,13 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango6break_4text6length8analysis5attrs0F3LenySPys4Int8VGSg_SixSpySo01_A7LogAttrVGSgSitAA16AnalysisProtocolRzlF">break_(text:length:analysis:attrs:attrsLen:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SiAA11AnalysisRefVSgxSitAA15LogAttrProtocolRzlF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SixSgq_SitAA16AnalysisProtocolRzAA07LogAttrK0R_r0_lF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyAA12RectangleRefVSg_AGtF">extentsToPixels(inclusive:nearest:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyxSg_AEtAA17RectangleProtocolRzlF">extentsToPixels(inclusive:nearest:)</a>
@@ -533,6 +539,9 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango13getMirrorChar2ch10mirroredChSbs6UInt32V_SpyAFGSgtF">getMirrorChar(ch:mirroredCh:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaAA9MatrixRefVSg_tF">gravityGetFor(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaxSg_tAA14MatrixProtocolRzlF">gravityGetFor(matrix:)</a>
               </li>
               <li class="nav-group-task">
@@ -551,7 +560,13 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__SPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0olQ0R_AA07ContextQ0R0_r1_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__SPys4Int8VGSgS2ixAA012AttrIteratorM0VSgtAA0oL8ProtocolRzAA07ContextQ0R_r0_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__So0A9DirectionaSPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0tpV0R_AA07ContextV0R0_r1_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF">languageFromString(language:)</a>
@@ -1168,7 +1183,7 @@ single run, as far as possible.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrAllowBreaksNew</span><span class="p">(</span><span class="n">allowBreaks</span> <span class="nv">allow_breaks</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrAllowBreaksNew</span><span class="p">(</span><span class="nv">allowBreaks</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -1266,7 +1281,7 @@ text.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrFallbackNew</span><span class="p">(</span><span class="n">enableFallback</span> <span class="nv">enable_fallback</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrFallbackNew</span><span class="p">(</span><span class="nv">enableFallback</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -1519,7 +1534,7 @@ of a word. This attribute can be used to suppress the hyphen.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrInsertHyphensNew</span><span class="p">(</span><span class="n">insertHyphens</span> <span class="nv">insert_hyphens</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrInsertHyphensNew</span><span class="p">(</span><span class="nv">insertHyphens</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -1581,7 +1596,7 @@ of a word. This attribute can be used to suppress the hyphen.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrLetterSpacingNew</span><span class="p">(</span><span class="n">letterSpacing</span> <span class="nv">letter_spacing</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrLetterSpacingNew</span><span class="p">(</span><span class="nv">letterSpacing</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -1708,7 +1723,7 @@ affected text will have its size multiplied by <code>scale_factor</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrScaleNew</span><span class="p">(</span><span class="n">scaleFactor</span> <span class="nv">scale_factor</span><span class="p">:</span> <span class="kt">CDouble</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrScaleNew</span><span class="p">(</span><span class="nv">scaleFactor</span><span class="p">:</span> <span class="kt">CDouble</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -1742,7 +1757,7 @@ embedding a picture or a widget inside a <code>PangoLayout</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrShapeNew</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inkRect</span> <span class="nv">ink_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="n">logicalRect</span> <span class="nv">logical_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrShapeNew</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1775,7 +1790,7 @@ rendering the glyph.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrShapeNewWithData</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inkRect</span> <span class="nv">ink_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="n">logicalRect</span> <span class="nv">logical_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="n">gpointer</span><span class="o">!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">copyFunc</span> <span class="nv">copy_func</span><span class="p">:</span> <span class="kt">PangoAttrDataCopyFunc</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">destroyFunc</span> <span class="nv">destroy_func</span><span class="p">:</span> <span class="kt">GDestroyNotify</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrShapeNewWithData</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="n">gpointer</span><span class="o">!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">copyFunc</span><span class="p">:</span> <span class="kt">PangoAttrDataCopyFunc</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">destroyFunc</span><span class="p">:</span> <span class="kt">GDestroyNotify</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
@@ -2261,12 +2276,47 @@ Use pango_default_break() and pango_tailor_break()</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">break_</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoLogAttr</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">attrsLen</span> <span class="nv">attrs_len</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">break_</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoLogAttr</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">attrsLen</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
                         <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L353-L356">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SiAA11AnalysisRefVSgxSitAA15LogAttrProtocolRzlF"></a>
+                    <a name="//apple_ref/swift/Function/defaultBreak(text:length:analysis:attrs:attrsLen:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SiAA11AnalysisRefVSgxSitAA15LogAttrProtocolRzlF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is the default break algorithm. It applies Unicode
+rules without language-specific tailoring, therefore
+the <code>analyis</code> argument is unused and can be <code>nil</code>.</p>
+
+<p>See <code>pango_tailor_break()</code> for language-specific breaks.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">defaultBreak</span><span class="o">&lt;</span><span class="kt">LogAttrT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt"><a href="Structs/AnalysisRef.html">AnalysisRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">LogAttrT</span><span class="p">,</span> <span class="nv">attrsLen</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">LogAttrT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/LogAttrProtocol.html">LogAttrProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L366-L369">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2296,12 +2346,57 @@ the <code>analyis</code> argument is unused and can be <code>nil</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">defaultBreak</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="p">,</span> <span class="kt">LogAttrT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">LogAttrT</span><span class="p">,</span> <span class="n">attrsLen</span> <span class="nv">attrs_len</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span><span class="p">,</span> <span class="kt">LogAttrT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/LogAttrProtocol.html">LogAttrProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">defaultBreak</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="p">,</span> <span class="kt">LogAttrT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">?,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">LogAttrT</span><span class="p">,</span> <span class="nv">attrsLen</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span><span class="p">,</span> <span class="kt">LogAttrT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/LogAttrProtocol.html">LogAttrProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L366-L369">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L375-L378">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango15extentsToPixels9inclusive7nearestyAA12RectangleRefVSg_AGtF"></a>
+                    <a name="//apple_ref/swift/Function/extentsToPixels(inclusive:nearest:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango15extentsToPixels9inclusive7nearestyAA12RectangleRefVSg_AGtF">extentsToPixels(inclusive:nearest:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Converts extents from Pango units to device units, dividing by the
+<code>PANGO_SCALE</code> factor and performing rounding.</p>
+
+<p>The <code>inclusive</code> rectangle is converted by flooring the x/y coordinates and extending
+width/height, such that the final rectangle completely includes the original
+rectangle.</p>
+
+<p>The <code>nearest</code> rectangle is converted by rounding the coordinates
+of the rectangle to the nearest device unit (pixel).</p>
+
+<p>The rule to which argument to use is: if you want the resulting device-space
+rectangle to completely contain the original rectangle, pass it in as <code>inclusive</code>.
+If you want two touching-but-not-overlapping rectangles stay
+touching-but-not-overlapping after rounding to device units, pass them in
+as <code>nearest</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">extentsToPixels</span><span class="p">(</span><span class="nv">inclusive</span><span class="p">:</span> <span class="kt"><a href="Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">nearest</span><span class="p">:</span> <span class="kt"><a href="Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L398-L401">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2341,12 +2436,12 @@ as <code>nearest</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">extentsToPixels</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inclusive</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">nearest</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">extentsToPixels</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inclusive</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?,</span> <span class="nv">nearest</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L389-L392">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L417-L420">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2379,7 +2474,7 @@ direction, according to the Unicode bidirectional algorithm.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L399-L402">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L427-L430">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2409,12 +2504,12 @@ This method is deprecated.</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">findMap</span><span class="o">&lt;</span><span class="kt">LanguageT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="kt">LanguageT</span><span class="p">,</span> <span class="n">engineTypeId</span> <span class="nv">engine_type_id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">renderTypeId</span> <span class="nv">render_type_id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/MapRef.html">MapRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">LanguageT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/LanguageProtocol.html">LanguageProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">findMap</span><span class="o">&lt;</span><span class="kt">LanguageT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="kt">LanguageT</span><span class="p">,</span> <span class="nv">engineTypeId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">renderTypeId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/MapRef.html">MapRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">LanguageT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/LanguageProtocol.html">LanguageProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L411-L414">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L439-L442">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2449,12 +2544,12 @@ off the end).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">findParagraphBoundary</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">paragraphDelimiterIndex</span> <span class="nv">paragraph_delimiter_index</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">nextParagraphStart</span> <span class="nv">next_paragraph_start</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">findParagraphBoundary</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">paragraphDelimiterIndex</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">nextParagraphStart</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L429-L432">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L457-L460">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2526,7 +2621,7 @@ size in the resulting font description will be set to 0.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L479-L482">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L507-L510">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2558,12 +2653,12 @@ the word is a word).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">getLogAttrs</span><span class="o">&lt;</span><span class="kt">LanguageT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">level</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">language</span><span class="p">:</span> <span class="kt">LanguageT</span><span class="p">,</span> <span class="n">logAttrs</span> <span class="nv">log_attrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoLogAttr</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">attrsLen</span> <span class="nv">attrs_len</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">LanguageT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/LanguageProtocol.html">LanguageProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">getLogAttrs</span><span class="o">&lt;</span><span class="kt">LanguageT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">level</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">language</span><span class="p">:</span> <span class="kt">LanguageT</span><span class="p">,</span> <span class="nv">logAttrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoLogAttr</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">attrsLen</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">LanguageT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/LanguageProtocol.html">LanguageProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L494-L497">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L522-L525">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2595,12 +2690,44 @@ provide full details.</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">getMirrorChar</span><span class="p">(</span><span class="nv">ch</span><span class="p">:</span> <span class="n">gunichar</span><span class="p">,</span> <span class="n">mirroredCh</span> <span class="nv">mirrored_ch</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gunichar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">getMirrorChar</span><span class="p">(</span><span class="nv">ch</span><span class="p">:</span> <span class="n">gunichar</span><span class="p">,</span> <span class="nv">mirroredCh</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gunichar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L508-L511">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L536-L539">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango13gravityGetFor6matrixSo0A7GravityaAA9MatrixRefVSg_tF"></a>
+                    <a name="//apple_ref/swift/Function/gravityGetFor(matrix:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango13gravityGetFor6matrixSo0A7GravityaAA9MatrixRefVSg_tF">gravityGetFor(matrix:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Finds the gravity that best matches the rotation component
+in a <code>PangoMatrix</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">gravityGetFor</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="Structs/MatrixRef.html">MatrixRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">PangoGravity</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L546-L549">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2627,12 +2754,12 @@ in a <code>PangoMatrix</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">gravityGetFor</span><span class="o">&lt;</span><span class="kt">MatrixT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt">MatrixT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">PangoGravity</span> <span class="k">where</span> <span class="kt">MatrixT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">gravityGetFor</span><span class="o">&lt;</span><span class="kt">MatrixT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt">MatrixT</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">PangoGravity</span> <span class="k">where</span> <span class="kt">MatrixT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L518-L521">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L552-L555">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2663,12 +2790,12 @@ pass <code>PANGO_GRAVITY_AUTO</code> and <code>PANGO_GRAVITY_HINT_STRONG</code> 
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">gravityGetFor</span><span class="p">(</span><span class="nv">script</span><span class="p">:</span> <span class="kt">PangoScript</span><span class="p">,</span> <span class="n">baseGravity</span> <span class="nv">base_gravity</span><span class="p">:</span> <span class="kt">PangoGravity</span><span class="p">,</span> <span class="nv">hint</span><span class="p">:</span> <span class="kt">PangoGravityHint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">PangoGravity</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">gravityGetFor</span><span class="p">(</span><span class="nv">script</span><span class="p">:</span> <span class="kt">PangoScript</span><span class="p">,</span> <span class="nv">baseGravity</span><span class="p">:</span> <span class="kt">PangoGravity</span><span class="p">,</span> <span class="nv">hint</span><span class="p">:</span> <span class="kt">PangoGravityHint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">PangoGravity</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L532-L535">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L566-L569">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2706,12 +2833,12 @@ preferred gravity of <code>script</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">gravityGetForScriptAndWidth</span><span class="p">(</span><span class="nv">script</span><span class="p">:</span> <span class="kt">PangoScript</span><span class="p">,</span> <span class="nv">wide</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">baseGravity</span> <span class="nv">base_gravity</span><span class="p">:</span> <span class="kt">PangoGravity</span><span class="p">,</span> <span class="nv">hint</span><span class="p">:</span> <span class="kt">PangoGravityHint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">PangoGravity</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">gravityGetForScriptAndWidth</span><span class="p">(</span><span class="nv">script</span><span class="p">:</span> <span class="kt">PangoScript</span><span class="p">,</span> <span class="nv">wide</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">baseGravity</span><span class="p">:</span> <span class="kt">PangoGravity</span><span class="p">,</span> <span class="nv">hint</span><span class="p">:</span> <span class="kt">PangoGravityHint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">PangoGravity</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L553-L556">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L587-L590">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2747,7 +2874,7 @@ you should multiply it by (180. / G_PI).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L567-L570">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L601-L604">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2782,7 +2909,47 @@ and is at best misnamed.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L580-L583">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L614-L617">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__SPys4Int8VGSgS2ixAA012AttrIteratorM0VSgtAA0oL8ProtocolRzAA07ContextQ0R_r0_lF"></a>
+                    <a name="//apple_ref/swift/Function/itemize(context:text:startIndex:length:attrs:cachedIter:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__SPys4Int8VGSgS2ixAA012AttrIteratorM0VSgtAA0oL8ProtocolRzAA07ContextQ0R_r0_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Breaks a piece of text into segments with consistent
+directional level and shaping engine. Each byte of <code>text</code> will
+be contained in exactly one of the items in the returned list;
+the generated list of items will be in logical order (the start
+offsets of the items are ascending).</p>
+
+<p><code>cached_iter</code> should be an iterator over <code>attrs</code> currently positioned at a
+range before or containing <code>start_index</code>; <code>cached_iter</code> will be advanced to
+the range covering the position just after <code>start_index</code> + <code>length</code>.
+(i.e. if itemizing in a loop, just keep passing in the same <code>cached_iter</code>).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">itemize</span><span class="o">&lt;</span><span class="kt">AttrListT</span><span class="p">,</span> <span class="kt">ContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">startIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="nv">cachedIter</span><span class="p">:</span> <span class="kt"><a href="Structs/AttrIteratorRef.html">AttrIteratorRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AttrListProtocol.html">AttrListProtocol</a></span><span class="p">,</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ContextProtocol.html">ContextProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L632-L635">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2817,12 +2984,45 @@ the range covering the position just after <code>start_index</code> + <code>leng
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">itemize</span><span class="o">&lt;</span><span class="kt">AttrIteratorT</span><span class="p">,</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="kt">ContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">startIndex</span> <span class="nv">start_index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="n">cachedIter</span> <span class="nv">cached_iter</span><span class="p">:</span> <span class="kt">AttrIteratorT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrIteratorT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AttrIteratorProtocol.html">AttrIteratorProtocol</a></span><span class="p">,</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AttrListProtocol.html">AttrListProtocol</a></span><span class="p">,</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ContextProtocol.html">ContextProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">itemize</span><span class="o">&lt;</span><span class="kt">AttrIteratorT</span><span class="p">,</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="kt">ContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">startIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="nv">cachedIter</span><span class="p">:</span> <span class="kt">AttrIteratorT</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrIteratorT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AttrIteratorProtocol.html">AttrIteratorProtocol</a></span><span class="p">,</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AttrListProtocol.html">AttrListProtocol</a></span><span class="p">,</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ContextProtocol.html">ContextProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L598-L601">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L646-L649">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF"></a>
+                    <a name="//apple_ref/swift/Function/itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Like <code>pango_itemize()</code>, but the base direction to use when
+computing bidirectional levels (see pango_context_set_base_dir ()),
+is specified explicitly rather than gotten from the <code>PangoContext</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">itemizeWithBaseDir</span><span class="o">&lt;</span><span class="kt">AttrListT</span><span class="p">,</span> <span class="kt">ContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">,</span> <span class="nv">baseDir</span><span class="p">:</span> <span class="kt">PangoDirection</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">startIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="nv">cachedIter</span><span class="p">:</span> <span class="kt"><a href="Structs/AttrIteratorRef.html">AttrIteratorRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AttrListProtocol.html">AttrListProtocol</a></span><span class="p">,</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ContextProtocol.html">ContextProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L657-L660">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2850,12 +3050,12 @@ is specified explicitly rather than gotten from the <code>PangoContext</code>.</
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">itemizeWithBaseDir</span><span class="o">&lt;</span><span class="kt">AttrIteratorT</span><span class="p">,</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="kt">ContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">,</span> <span class="n">baseDir</span> <span class="nv">base_dir</span><span class="p">:</span> <span class="kt">PangoDirection</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">startIndex</span> <span class="nv">start_index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="n">cachedIter</span> <span class="nv">cached_iter</span><span class="p">:</span> <span class="kt">AttrIteratorT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrIteratorT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AttrIteratorProtocol.html">AttrIteratorProtocol</a></span><span class="p">,</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AttrListProtocol.html">AttrListProtocol</a></span><span class="p">,</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ContextProtocol.html">ContextProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">itemizeWithBaseDir</span><span class="o">&lt;</span><span class="kt">AttrIteratorT</span><span class="p">,</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="kt">ContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">ContextT</span><span class="p">,</span> <span class="nv">baseDir</span><span class="p">:</span> <span class="kt">PangoDirection</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">startIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="nv">cachedIter</span><span class="p">:</span> <span class="kt">AttrIteratorT</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrIteratorT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AttrIteratorProtocol.html">AttrIteratorProtocol</a></span><span class="p">,</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AttrListProtocol.html">AttrListProtocol</a></span><span class="p">,</span> <span class="kt">ContextT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ContextProtocol.html">ContextProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L609-L612">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L664-L667">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2896,7 +3096,7 @@ the current locale of the process.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L628-L631">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L683-L686">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2952,7 +3152,7 @@ See <literal>man setlocale</literal> for more details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L662-L665">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L717-L720">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2984,12 +3184,12 @@ characters in the text will determine the final resolved direction.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">log2visGetEmbeddingLevels</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">pbaseDir</span> <span class="nv">pbase_dir</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoDirection</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">guint8</span><span class="o">&gt;!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">log2visGetEmbeddingLevels</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">pbaseDir</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoDirection</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">guint8</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L677-L680">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L732-L735">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3018,12 +3218,12 @@ to do so.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">markupParserFinish</span><span class="o">&lt;</span><span class="kt">MarkupParseContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">MarkupParseContextT</span><span class="p">,</span> <span class="n">attrList</span> <span class="nv">attr_list</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoAttrList</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">accelChar</span> <span class="nv">accel_char</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gunichar</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">where</span> <span class="kt">MarkupParseContextT</span> <span class="p">:</span> <span class="kt">MarkupParseContextProtocol</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">markupParserFinish</span><span class="o">&lt;</span><span class="kt">MarkupParseContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">MarkupParseContextT</span><span class="p">,</span> <span class="nv">attrList</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoAttrList</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">accelChar</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gunichar</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">where</span> <span class="kt">MarkupParseContextT</span> <span class="p">:</span> <span class="kt">MarkupParseContextProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L689-L694">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L744-L749">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3068,12 +3268,12 @@ the simpler <code>pango_parse_markup()</code> API is recommended instead.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">markupParserNew</span><span class="p">(</span><span class="n">accelMarker</span> <span class="nv">accel_marker</span><span class="p">:</span> <span class="n">gunichar</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">MarkupParseContextRef</span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">markupParserNew</span><span class="p">(</span><span class="nv">accelMarker</span><span class="p">:</span> <span class="n">gunichar</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">MarkupParseContextRef</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L719-L722">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L774-L777">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3108,7 +3308,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L731-L734">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L786-L789">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3146,12 +3346,12 @@ This method is deprecated.</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">parseEnum</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt">GType</span><span class="p">,</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">warn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">possibleValues</span> <span class="nv">possible_values</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">parseEnum</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt">GType</span><span class="p">,</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">warn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">possibleValues</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L751-L754">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L806-L809">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3192,12 +3392,12 @@ for <code>error</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">parseMarkup</span><span class="p">(</span><span class="n">markupText</span> <span class="nv">markup_text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">accelMarker</span> <span class="nv">accel_marker</span><span class="p">:</span> <span class="n">gunichar</span><span class="p">,</span> <span class="n">attrList</span> <span class="nv">attr_list</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoAttrList</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">accelChar</span> <span class="nv">accel_char</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gunichar</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">parseMarkup</span><span class="p">(</span><span class="nv">markupText</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">accelMarker</span><span class="p">:</span> <span class="n">gunichar</span><span class="p">,</span> <span class="nv">attrList</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoAttrList</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">accelChar</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gunichar</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L775-L780">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L830-L835">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3232,7 +3432,7 @@ ignored and the &lsquo;_&rsquo; characters may be omitted.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L790-L793">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L845-L848">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3265,7 +3465,7 @@ ignored.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L801-L804">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L856-L859">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3298,7 +3498,7 @@ ignored.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L812-L815">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L867-L870">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3331,7 +3531,7 @@ and integers. Case variations are ignored.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L823-L826">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L878-L881">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3369,7 +3569,7 @@ of rounding.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L839-L842">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L894-L897">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3410,7 +3610,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L857-L860">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L912-L915">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3438,12 +3638,12 @@ The original list is unmodified.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">reorderItems</span><span class="o">&lt;</span><span class="kt">ListT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">logicalItems</span> <span class="nv">logical_items</span><span class="p">:</span> <span class="kt">ListT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">ListT</span> <span class="p">:</span> <span class="kt">ListProtocol</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">reorderItems</span><span class="o">&lt;</span><span class="kt">ListT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">logicalItems</span><span class="p">:</span> <span class="kt">ListT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">ListT</span> <span class="p">:</span> <span class="kt">ListProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L868-L871">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L923-L926">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3479,7 +3679,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L881-L884">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L936-L939">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3517,7 +3717,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L896-L899">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L951-L954">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3554,7 +3754,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L910-L913">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L965-L968">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3597,7 +3797,7 @@ Use g_unichar_get_script()</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L930-L933">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L985-L988">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3657,7 +3857,7 @@ context language is not feasible.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L968-L971">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1023-L1026">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3695,7 +3895,7 @@ boundaries.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L984-L987">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1039-L1042">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3730,12 +3930,12 @@ text of which <code>item_text</code> is part of, provide the broader text as
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">shapeFull</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="p">,</span> <span class="kt">GlyphStringT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">itemText</span> <span class="nv">item_text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">itemLength</span> <span class="nv">item_length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">paragraphText</span> <span class="nv">paragraph_text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">paragraphLength</span> <span class="nv">paragraph_length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">glyphs</span><span class="p">:</span> <span class="kt">GlyphStringT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span><span class="p">,</span> <span class="kt">GlyphStringT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/GlyphStringProtocol.html">GlyphStringProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">shapeFull</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="p">,</span> <span class="kt">GlyphStringT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">itemText</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">itemLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">paragraphText</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">paragraphLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">glyphs</span><span class="p">:</span> <span class="kt">GlyphStringT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span><span class="p">,</span> <span class="kt">GlyphStringT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/GlyphStringProtocol.html">GlyphStringProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1002-L1005">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1057-L1060">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3767,12 +3967,12 @@ flags that can influence the shaping process.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">shapeWithFlags</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="p">,</span> <span class="kt">GlyphStringT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">itemText</span> <span class="nv">item_text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">itemLength</span> <span class="nv">item_length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">paragraphText</span> <span class="nv">paragraph_text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">paragraphLength</span> <span class="nv">paragraph_length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">glyphs</span><span class="p">:</span> <span class="kt">GlyphStringT</span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="Structs/ShapeFlags.html">ShapeFlags</a></span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span><span class="p">,</span> <span class="kt">GlyphStringT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/GlyphStringProtocol.html">GlyphStringProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">shapeWithFlags</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="p">,</span> <span class="kt">GlyphStringT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">itemText</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">itemLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">paragraphText</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">paragraphLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">glyphs</span><span class="p">:</span> <span class="kt">GlyphStringT</span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="Structs/ShapeFlags.html">ShapeFlags</a></span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span><span class="p">,</span> <span class="kt">GlyphStringT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/GlyphStringProtocol.html">GlyphStringProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1017-L1020">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1072-L1075">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3807,7 +4007,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1029-L1032">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1084-L1087">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3843,7 +4043,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1042-L1045">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1097-L1100">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3874,12 +4074,12 @@ from <code>analysis</code> that are relevant to line breaking.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">tailorBreak</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">logAttrs</span> <span class="nv">log_attrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoLogAttr</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">logAttrsLen</span> <span class="nv">log_attrs_len</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">tailorBreak</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">logAttrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoLogAttr</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">logAttrsLen</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1056-L1059">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1111-L1114">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3914,7 +4114,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1068-L1071">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1123-L1126">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3953,7 +4153,7 @@ Unicode bidirectional type of a character is needed,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1084-L1087">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1139-L1142">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3985,7 +4185,7 @@ it by <code>PANGO_SCALE</code> and rounds to nearest integer.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1094-L1097">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1149-L1152">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4017,7 +4217,7 @@ it by <code>PANGO_SCALE</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1104-L1107">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1159-L1162">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4053,7 +4253,7 @@ as opposed to the version available at compile-time.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1118-L1121">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1173-L1176">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4093,12 +4293,12 @@ version <code>required_major.required_minor</code>.<code>required_micro</code>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">versionCheck</span><span class="p">(</span><span class="n">requiredMajor</span> <span class="nv">required_major</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">requiredMinor</span> <span class="nv">required_minor</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">requiredMicro</span> <span class="nv">required_micro</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">versionCheck</span><span class="p">(</span><span class="nv">requiredMajor</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">requiredMinor</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">requiredMicro</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1141-L1144">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1196-L1199">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4131,7 +4331,7 @@ the version available at compile-time.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1152-L1155">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1207-L1210">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4144,7 +4344,7 @@ the version available at compile-time.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
