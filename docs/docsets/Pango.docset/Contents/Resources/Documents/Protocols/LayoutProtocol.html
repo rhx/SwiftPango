@@ -509,7 +509,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango6break_4text6length8analysis5attrs0F3LenySPys4Int8VGSg_SixSpySo01_A7LogAttrVGSgSitAA16AnalysisProtocolRzlF">break_(text:length:analysis:attrs:attrsLen:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SiAA11AnalysisRefVSgxSitAA15LogAttrProtocolRzlF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SixSgq_SitAA16AnalysisProtocolRzAA07LogAttrK0R_r0_lF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyAA12RectangleRefVSg_AGtF">extentsToPixels(inclusive:nearest:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyxSg_AEtAA17RectangleProtocolRzlF">extentsToPixels(inclusive:nearest:)</a>
@@ -533,6 +539,9 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13getMirrorChar2ch10mirroredChSbs6UInt32V_SpyAFGSgtF">getMirrorChar(ch:mirroredCh:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaAA9MatrixRefVSg_tF">gravityGetFor(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaxSg_tAA14MatrixProtocolRzlF">gravityGetFor(matrix:)</a>
               </li>
               <li class="nav-group-task">
@@ -551,7 +560,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__SPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0olQ0R_AA07ContextQ0R0_r1_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__SPys4Int8VGSgS2ixAA012AttrIteratorM0VSgtAA0oL8ProtocolRzAA07ContextQ0R_r0_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__So0A9DirectionaSPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0tpV0R_AA07ContextV0R0_r1_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF">languageFromString(language:)</a>
@@ -1634,6 +1649,47 @@ the text of <code>layout</code>.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:5Pango14LayoutProtocolPAAE12getCursorPos6index_06strongF004weakF0ySi_AA12RectangleRefVSgAJtF"></a>
+                    <a name="//apple_ref/swift/Method/getCursorPos(index_:strongPos:weakPos:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango14LayoutProtocolPAAE12getCursorPos6index_06strongF004weakF0ySi_AA12RectangleRefVSgAJtF">getCursorPos(index_:strongPos:weakPos:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Given an index within a layout, determines the positions that of the
+strong and weak cursors if the insertion point is at that
+index. The position of each cursor is stored as a zero-width
+rectangle. The strong cursor location is the location where
+characters of the directionality equal to the base direction of the
+layout are inserted.  The weak cursor location is the location
+where characters of the directionality opposite to the base
+direction of the layout are inserted.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">getCursorPos</span><span class="p">(</span><span class="nv">index_</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">strongPos</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">weakPos</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2331-L2334">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:5Pango14LayoutProtocolPAAE12getCursorPos6index_06strongF004weakF0ySi_qd__SgAHtAA09RectangleC0Rd__lF"></a>
                     <a name="//apple_ref/swift/Method/getCursorPos(index_:strongPos:weakPos:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:5Pango14LayoutProtocolPAAE12getCursorPos6index_06strongF004weakF0ySi_qd__SgAHtAA09RectangleC0Rd__lF">getCursorPos(index_:strongPos:weakPos:)</a>
@@ -1662,12 +1718,12 @@ direction of the layout are inserted.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">getCursorPos</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">index_</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">strongPos</span> <span class="nv">strong_pos</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">weakPos</span> <span class="nv">weak_pos</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">getCursorPos</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">index_</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">strongPos</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?,</span> <span class="nv">weakPos</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2331-L2334">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2343-L2346">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1702,7 +1758,7 @@ position in <code>layout</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2338-L2341">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2350-L2353">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1737,7 +1793,49 @@ See <code>pango_layout_set_ellipsize()</code></p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2345-L2348">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2357-L2360">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango14LayoutProtocolPAAE10getExtents7inkRect07logicalG0yAA12RectangleRefVSg_AItF"></a>
+                    <a name="//apple_ref/swift/Method/getExtents(inkRect:logicalRect:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango14LayoutProtocolPAAE10getExtents7inkRect07logicalG0yAA12RectangleRefVSg_AItF">getExtents(inkRect:logicalRect:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Computes the logical and ink extents of <code>layout</code>. Logical extents
+are usually what you want for positioning things.  Note that both extents
+may have non-zero x and y.  You may want to use those to offset where you
+render the layout.  Not doing that is a very typical bug that shows up as
+right-to-left layouts not being correctly positioned in a layout with
+a set width.</p>
+
+<p>The extents are given in layout coordinates and in Pango units; layout
+coordinates begin at the top left corner of the layout.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">getExtents</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2371-L2374">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1774,12 +1872,12 @@ coordinates begin at the top left corner of the layout.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">getExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inkRect</span> <span class="nv">ink_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">logicalRect</span> <span class="nv">logical_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">getExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2359-L2362">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2384-L2387">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1813,7 +1911,7 @@ coordinates begin at the top left corner of the layout.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2365-L2368">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2390-L2393">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1848,7 +1946,7 @@ coordinates begin at the top left corner of the layout.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2372-L2375">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2397-L2400">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1883,7 +1981,7 @@ indicates a hanging indentation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2379-L2382">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2404-L2407">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1917,7 +2015,7 @@ indicates a hanging indentation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2385-L2388">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2410-L2413">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1952,7 +2050,7 @@ width of the layout.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2392-L2395">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2417-L2420">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1989,7 +2087,7 @@ to modify the contents of the line (glyphs, glyph widths, etc.).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2401-L2404">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2426-L2429">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2023,7 +2121,7 @@ to modify the contents of the line (glyphs, glyph widths, etc.).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2407-L2410">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2432-L2435">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2061,7 +2159,7 @@ to modify the contents of the line (glyphs, glyph widths, etc.).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2417-L2420">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2442-L2445">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2096,7 +2194,7 @@ set with <code>pango_layout_set_line_spacing()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2424-L2427">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2449-L2452">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2128,12 +2226,12 @@ to modify the contents of the lines (glyphs, glyph widths, etc.).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">getLines</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">SListRef</span><span class="o">!</span></code></pre>
+<span class="kd">func</span> <span class="nf">getLines</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">SListRef</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2433-L2436">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2458-L2461">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2166,12 +2264,12 @@ to modify the contents of the lines (glyphs, glyph widths, etc.).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">getLinesReadonly</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">SListRef</span><span class="o">!</span></code></pre>
+<span class="kd">func</span> <span class="nf">getLinesReadonly</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">SListRef</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2443-L2446">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2468-L2471">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2201,12 +2299,12 @@ the <code>layout</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">getLog</span><span class="p">(</span><span class="nv">attrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoLogAttr</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">nAttrs</span> <span class="nv">n_attrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">getLog</span><span class="p">(</span><span class="nv">attrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoLogAttr</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">nAttrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2450-L2453">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2475-L2478">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2245,12 +2343,50 @@ the first character and the position after the last character.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">getLogAttrsReadonly</span><span class="p">(</span><span class="n">nAttrs</span> <span class="nv">n_attrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">PangoLogAttr</span><span class="o">&gt;!</span></code></pre>
+<span class="kd">func</span> <span class="nf">getLogAttrsReadonly</span><span class="p">(</span><span class="nv">nAttrs</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">PangoLogAttr</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2466-L2469">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2491-L2494">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango14LayoutProtocolPAAE15getPixelExtents7inkRect07logicalH0yAA12RectangleRefVSg_AItF"></a>
+                    <a name="//apple_ref/swift/Method/getPixelExtents(inkRect:logicalRect:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango14LayoutProtocolPAAE15getPixelExtents7inkRect07logicalH0yAA12RectangleRefVSg_AItF">getPixelExtents(inkRect:logicalRect:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Computes the logical and ink extents of <code>layout</code> in device units.
+This function just calls <code>pango_layout_get_extents()</code> followed by
+two <code>pango_extents_to_pixels()</code> calls, rounding <code>ink_rect</code> and <code>logical_rect</code>
+such that the rounded rectangles fully contain the unrounded one (that is,
+passes them as first argument to <code>pango_extents_to_pixels()</code>).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">getPixelExtents</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2501-L2504">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2283,12 +2419,12 @@ passes them as first argument to <code>pango_extents_to_pixels()</code>).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">getPixelExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inkRect</span> <span class="nv">ink_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">logicalRect</span> <span class="nv">logical_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">getPixelExtents</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2476-L2479">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2510-L2513">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2326,7 +2462,7 @@ is simply a convenience function around
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2486-L2489">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2520-L2523">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2369,7 +2505,7 @@ To force the serial to be increased, use <code>pango_layout_context_changed()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2501-L2504">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2535-L2538">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2403,7 +2539,7 @@ To force the serial to be increased, use <code>pango_layout_context_changed()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2507-L2510">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2541-L2544">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2439,7 +2575,7 @@ is simply a convenience function around <code>pango_layout_get_extents()</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2515-L2518">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2549-L2552">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2473,7 +2609,7 @@ is simply a convenience function around <code>pango_layout_get_extents()</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2521-L2524">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2555-L2558">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2510,7 +2646,7 @@ The return value should be freed with <code>pango_tab_array_free()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2530-L2533">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2564-L2567">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2545,7 +2681,7 @@ be freed or modified.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2537-L2540">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2571-L2574">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2586,7 +2722,7 @@ certain font supports all the characters in the string.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2550-L2553">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2584-L2587">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2620,7 +2756,7 @@ certain font supports all the characters in the string.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2556-L2559">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2590-L2593">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2657,7 +2793,7 @@ were actually wrapped.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2565-L2568">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2599-L2602">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2687,12 +2823,12 @@ were actually wrapped.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">indexToLineX</span><span class="p">(</span><span class="nv">index_</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">trailing</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">xPos</span> <span class="nv">x_pos</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">indexToLineX</span><span class="p">(</span><span class="nv">index_</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">trailing</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">xPos</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2572-L2575">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2606-L2609">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2731,7 +2867,7 @@ then <literal>pos-&gt;width</literal> will be negative.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2583-L2586">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2617-L2620">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2775,12 +2911,12 @@ to form a single grapheme.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">moveCursorVisually</span><span class="p">(</span><span class="nv">strong</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">oldIndex</span> <span class="nv">old_index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">oldTrailing</span> <span class="nv">old_trailing</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">newIndex</span> <span class="nv">new_index</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">newTrailing</span> <span class="nv">new_trailing</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">moveCursorVisually</span><span class="p">(</span><span class="nv">strong</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">oldIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">oldTrailing</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">newIndex</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">newTrailing</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2604-L2607">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2638-L2641">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2815,7 +2951,42 @@ positioned within the horizontal space available.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2611-L2614">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2645-L2648">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango14LayoutProtocolPAAE13setAttributes5attrsyAA11AttrListRefVSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/setAttributes(attrs:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango14LayoutProtocolPAAE13setAttributes5attrsyAA11AttrListRefVSg_tF">setAttributes(attrs:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the text attributes for a layout object.
+References <code>attrs</code>, so the caller can unref its reference.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">setAttributes</span><span class="p">(</span><span class="nv">attrs</span><span class="p">:</span> <span class="kt"><a href="../Structs/AttrListRef.html">AttrListRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2652-L2655">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2845,12 +3016,12 @@ References <code>attrs</code>, so the caller can unref its reference.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">setAttributes</span><span class="o">&lt;</span><span class="kt">AttrListT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrListProtocol.html">AttrListProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">setAttributes</span><span class="o">&lt;</span><span class="kt">AttrListT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrListProtocol.html">AttrListProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2618-L2621">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2658-L2661">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2894,12 +3065,12 @@ base direction of the context, the interpretation of
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="n"><a href="../Protocols/LayoutProtocol.html#/s:5Pango14LayoutProtocolPAAE7autoDirSbvp">autoDir</a></span> <span class="nv">auto_dir</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">autoDir</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2639-L2642">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2679-L2682">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2943,7 +3114,43 @@ See <code>pango_layout_set_height()</code> for details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2655-L2658">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2695-L2698">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango14LayoutProtocolPAAE18setFontDescription4descyAA0eF3RefVSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/setFontDescription(desc:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango14LayoutProtocolPAAE18setFontDescription4descyAA0eF3RefVSg_tF">setFontDescription(desc:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the default font description for the layout. If no font
+description is set on the layout, the font description from
+the layout&rsquo;s context is used.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">setFontDescription</span><span class="p">(</span><span class="nv">desc</span><span class="p">:</span> <span class="kt"><a href="../Structs/FontDescriptionRef.html">FontDescriptionRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2703-L2706">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2974,12 +3181,12 @@ the layout&rsquo;s context is used.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">setFontDescription</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">desc</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">setFontDescription</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">desc</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2663-L2666">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2710-L2713">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3036,7 +3243,7 @@ future.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2692-L2695">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2739-L2742">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3076,7 +3283,7 @@ absolute value of <code><a href="../Protocols/LayoutProtocol.html#/s:5Pango14Lay
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2704-L2707">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2751-L2754">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3117,7 +3324,7 @@ older than 1.18.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2717-L2720">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2764-L2767">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3166,7 +3373,7 @@ before.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2738-L2741">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2785-L2788">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3201,7 +3408,7 @@ the markup text isn&rsquo;t scanned for accelerators.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2745-L2748">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2792-L2795">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3240,12 +3447,12 @@ literal <code>accel_marker</code> character.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">setMarkupWithAccel</span><span class="p">(</span><span class="nv">markup</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">accelMarker</span> <span class="nv">accel_marker</span><span class="p">:</span> <span class="n">gunichar</span><span class="p">,</span> <span class="n">accelChar</span> <span class="nv">accel_char</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gunichar</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">setMarkupWithAccel</span><span class="p">(</span><span class="nv">markup</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">accelMarker</span><span class="p">:</span> <span class="n">gunichar</span><span class="p">,</span> <span class="nv">accelChar</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gunichar</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2761-L2764">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2808-L2811">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3282,7 +3489,7 @@ you want to allow editing of newlines on a single text line.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2770-L2773">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2817-L2820">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3326,7 +3533,44 @@ set to zero with <code>pango_layout_set_line_spacing()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2786-L2789">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2833-L2836">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango14LayoutProtocolPAAE3set4tabsyAA11TabArrayRefVSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/set(tabs:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango14LayoutProtocolPAAE3set4tabsyAA11TabArrayRefVSg_tF">set(tabs:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the tabs to use for <code>layout</code>, overriding the default tabs
+(by default, tabs are every 8 spaces). If <code><a href="../Protocols/LayoutProtocol.html#/s:5Pango14LayoutProtocolPAAE4tabsAA11TabArrayRefVSgvp">tabs</a></code> is <code>nil</code>, the default
+tabs are reinstated. <code><a href="../Protocols/LayoutProtocol.html#/s:5Pango14LayoutProtocolPAAE4tabsAA11TabArrayRefVSgvp">tabs</a></code> is copied into the layout; you must
+free your copy of <code><a href="../Protocols/LayoutProtocol.html#/s:5Pango14LayoutProtocolPAAE4tabsAA11TabArrayRefVSgvp">tabs</a></code> yourself.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">tabs</span><span class="p">:</span> <span class="kt"><a href="../Structs/TabArrayRef.html">TabArrayRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2842-L2845">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3358,12 +3602,12 @@ free your copy of <code><a href="../Protocols/LayoutProtocol.html#/s:5Pango14Lay
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="k">set</span><span class="o">&lt;</span><span class="kt">TabArrayT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">tabs</span><span class="p">:</span> <span class="kt">TabArrayT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TabArrayT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/TabArrayProtocol.html">TabArrayProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="k">set</span><span class="o">&lt;</span><span class="kt">TabArrayT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">tabs</span><span class="p">:</span> <span class="kt">TabArrayT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">TabArrayT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/TabArrayProtocol.html">TabArrayProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2795-L2798">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2850-L2853">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3406,7 +3650,7 @@ attributes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2810-L2813">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2865-L2868">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3441,7 +3685,7 @@ ellipsized.  The default value is -1: no width set.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2817-L2820">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2872-L2875">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3477,7 +3721,7 @@ To turn off wrapping, set the width to -1.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2825-L2828">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2880-L2883">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3518,7 +3762,7 @@ function returns <code>false</code>; on an exact hit, it returns <code>true</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2838-L2841">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2893-L2896">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3553,7 +3797,7 @@ positioned within the horizontal space available.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2844-L2856">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2899-L2911">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3587,7 +3831,7 @@ positioned within the horizontal space available.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2859-L2870">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2914-L2925">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3623,7 +3867,7 @@ See <code>pango_layout_set_auto_dir()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2875-L2902">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2930-L2957">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3657,7 +3901,7 @@ See <code>pango_layout_set_auto_dir()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2905-L2911">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2960-L2966">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3692,7 +3936,7 @@ the text of <code>layout</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2915-L2922">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2970-L2977">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3726,7 +3970,7 @@ the text of <code>layout</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2925-L2931">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2980-L2986">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3761,7 +4005,7 @@ See <code>pango_layout_set_ellipsize()</code></p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2935-L2956">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2990-L3011">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3795,7 +4039,7 @@ See <code>pango_layout_set_ellipsize()</code></p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2959-L2971">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3014-L3026">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3830,7 +4074,7 @@ See <code>pango_layout_set_ellipsize()</code></p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L2975-L3009">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3030-L3064">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3865,7 +4109,7 @@ indicates a hanging indentation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3013-L3030">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3068-L3085">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3904,7 +4148,7 @@ ellipsized.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3038-L3049">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3093-L3104">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3943,7 +4187,7 @@ to be wrapped.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3057-L3068">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3112-L3123">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3977,7 +4221,7 @@ to be wrapped.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3071-L3077">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3126-L3132">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4012,7 +4256,7 @@ width of the layout.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3081-L3099">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3136-L3154">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4046,7 +4290,7 @@ width of the layout.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3102-L3108">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3157-L3163">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4081,7 +4325,7 @@ set with <code>pango_layout_set_line_spacing()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3112-L3138">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3167-L3193">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4113,12 +4357,12 @@ to modify the contents of the lines (glyphs, glyph widths, etc.).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="k">var</span> <span class="nv">lines</span><span class="p">:</span> <span class="kt">SListRef</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+<span class="k">var</span> <span class="nv">lines</span><span class="p">:</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">SListRef</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3144-L3153">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3199-L3208">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4151,12 +4395,12 @@ to modify the contents of the lines (glyphs, glyph widths, etc.).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="k">var</span> <span class="nv">linesReadonly</span><span class="p">:</span> <span class="kt">SListRef</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+<span class="k">var</span> <span class="nv">linesReadonly</span><span class="p">:</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">SListRef</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3160-L3170">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3215-L3225">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4199,7 +4443,7 @@ To force the serial to be increased, use <code>pango_layout_context_changed()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3182-L3197">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3237-L3252">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4233,7 +4477,7 @@ To force the serial to be increased, use <code>pango_layout_context_changed()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3200-L3213">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3255-L3268">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4267,7 +4511,7 @@ To force the serial to be increased, use <code>pango_layout_context_changed()</c
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3216-L3236">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3271-L3291">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4304,7 +4548,7 @@ The return value should be freed with <code>pango_tab_array_free()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3242-L3258">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3297-L3313">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4339,7 +4583,7 @@ be freed or modified.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3262-L3269">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3317-L3324">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4380,7 +4624,7 @@ certain font supports all the characters in the string.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3279-L3292">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3334-L3347">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4414,7 +4658,7 @@ certain font supports all the characters in the string.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3295-L3306">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3350-L3361">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4451,7 +4695,7 @@ were actually wrapped.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3312-L3327">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-FontFace-Layout.swift#L3367-L3382">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4464,7 +4708,7 @@ were actually wrapped.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -95,7 +95,7 @@ public extension EngineLangRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineLangProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -419,7 +419,7 @@ public extension EngineShapeRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineShapeProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -673,7 +673,7 @@ public extension EngineShapeProtocol {
 /// 
 /// The `PangoFont` structure contains one member
 /// which the implementation fills in.
-public protocol FontProtocol: ObjectProtocol {
+public protocol FontProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFont` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -758,7 +758,7 @@ public extension FontRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -792,7 +792,7 @@ public extension FontRef {
 /// 
 /// The `PangoFont` structure contains one member
 /// which the implementation fills in.
-open class Font: Object, FontProtocol {
+open class Font: GLibObject.Object, FontProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Font` instance.
@@ -1029,8 +1029,8 @@ public extension FontProtocol {
     /// 
     /// Note that this does not include OpenType features which the
     /// rendering system enables by default.
-    @inlinable func get(features: UnsafeMutablePointer<hb_feature_t>!, len: Int, numFeatures num_features: UnsafeMutablePointer<guint>!) {
-        pango_font_get_features(font_ptr, features, guint(len), num_features)
+    @inlinable func get(features: UnsafeMutablePointer<hb_feature_t>!, len: Int, numFeatures: UnsafeMutablePointer<guint>!) {
+        pango_font_get_features(font_ptr, features, guint(len), numFeatures)
     
     }
 
@@ -1058,8 +1058,22 @@ public extension FontProtocol {
     /// 
     /// If `font` is `nil`, this function gracefully sets some sane values in the
     /// output variables and returns.
-    @inlinable func getGlyphExtents<RectangleT: RectangleProtocol>(glyph: PangoGlyph, inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
-        pango_font_get_glyph_extents(font_ptr, glyph, ink_rect?._ptr, logical_rect?._ptr)
+    @inlinable func getGlyphExtents(glyph: PangoGlyph, inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
+        pango_font_get_glyph_extents(font_ptr, glyph, inkRect?._ptr, logicalRect?._ptr)
+    
+    }
+    /// Gets the logical and ink extents of a glyph within a font. The
+    /// coordinate system for each rectangle has its origin at the
+    /// base line and horizontal origin of the character with increasing
+    /// coordinates extending to the right and down. The macros `PANGO_ASCENT()`,
+    /// `PANGO_DESCENT()`, `PANGO_LBEARING()`, and `PANGO_RBEARING()` can be used to convert
+    /// from the extents rectangle to more traditional font metrics. The units
+    /// of the rectangles are in 1/PANGO_SCALE of a device unit.
+    /// 
+    /// If `font` is `nil`, this function gracefully sets some sane values in the
+    /// output variables and returns.
+    @inlinable func getGlyphExtents<RectangleT: RectangleProtocol>(glyph: PangoGlyph, inkRect: RectangleT?, logicalRect: RectangleT?) {
+        pango_font_get_glyph_extents(font_ptr, glyph, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
@@ -1080,7 +1094,18 @@ public extension FontProtocol {
     /// 
     /// If `font` is `nil`, this function gracefully sets some sane values in the
     /// output variables and returns.
-    @inlinable func getMetrics<LanguageT: LanguageProtocol>(language: LanguageT? = nil) -> FontMetricsRef! {
+    @inlinable func getMetrics(language: LanguageRef? = nil) -> FontMetricsRef! {
+        let rv = FontMetricsRef(gconstpointer: gconstpointer(pango_font_get_metrics(font_ptr, language?.language_ptr)))
+        return rv
+    }
+    /// Gets overall metric information for a font. Since the metrics may be
+    /// substantially different for different scripts, a language tag can
+    /// be provided to indicate that the metrics should be retrieved that
+    /// correspond to the `script(s)` used by that language.
+    /// 
+    /// If `font` is `nil`, this function gracefully sets some sane values in the
+    /// output variables and returns.
+    @inlinable func getMetrics<LanguageT: LanguageProtocol>(language: LanguageT?) -> FontMetricsRef! {
         let rv = FontMetricsRef(gconstpointer: gconstpointer(pango_font_get_metrics(font_ptr, language?.language_ptr)))
         return rv
     }

@@ -89,7 +89,7 @@ public extension GlyphInfoRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GlyphInfoProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -402,7 +402,7 @@ public extension GlyphItemRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GlyphItemProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -599,8 +599,8 @@ public extension GlyphItemProtocol {
     /// 
     /// This function takes ownership of `glyph_item`; it will be reused
     /// as one of the elements in the list.
-    @inlinable func applyAttrs<AttrListT: AttrListProtocol>(text: UnsafePointer<CChar>!, list: AttrListT) -> SListRef! {
-        let rv = SListRef(gconstpointer: gconstpointer(pango_glyph_item_apply_attrs(glyph_item_ptr, text, list.attr_list_ptr)))
+    @inlinable func applyAttrs<AttrListT: AttrListProtocol>(text: UnsafePointer<CChar>!, list: AttrListT) -> GLib.SListRef! {
+        let rv = GLib.SListRef(pango_glyph_item_apply_attrs(glyph_item_ptr, text, list.attr_list_ptr))
         return rv
     }
 
@@ -622,15 +622,15 @@ public extension GlyphItemProtocol {
     /// cluster is divided equally among the characters.
     /// 
     /// See also `pango_glyph_string_get_logical_widths()`.
-    @inlinable func getLogicalWidths(text: UnsafePointer<CChar>!, logicalWidths logical_widths: UnsafeMutablePointer<CInt>!) {
-        pango_glyph_item_get_logical_widths(glyph_item_ptr, text, logical_widths)
+    @inlinable func getLogicalWidths(text: UnsafePointer<CChar>!, logicalWidths: UnsafeMutablePointer<CInt>!) {
+        pango_glyph_item_get_logical_widths(glyph_item_ptr, text, logicalWidths)
     
     }
 
     /// Adds spacing between the graphemes of `glyph_item` to
     /// give the effect of typographic letter spacing.
-    @inlinable func letterSpace(text: UnsafePointer<CChar>!, logAttrs log_attrs: UnsafeMutablePointer<PangoLogAttr>!, letterSpacing letter_spacing: Int) {
-        pango_glyph_item_letter_space(glyph_item_ptr, text, log_attrs, gint(letter_spacing))
+    @inlinable func letterSpace(text: UnsafePointer<CChar>!, logAttrs: UnsafeMutablePointer<PangoLogAttr>!, letterSpacing: Int) {
+        pango_glyph_item_letter_space(glyph_item_ptr, text, logAttrs, gint(letterSpacing))
     
     }
 
@@ -644,8 +644,8 @@ public extension GlyphItemProtocol {
     /// 
     /// This function is similar in function to `pango_item_split()` (and uses
     /// it internally.)
-    @inlinable func split(text: UnsafePointer<CChar>!, splitIndex split_index: Int) -> GlyphItemRef! {
-        guard let rv = GlyphItemRef(gconstpointer: gconstpointer(pango_glyph_item_split(glyph_item_ptr, text, gint(split_index)))) else { return nil }
+    @inlinable func split(text: UnsafePointer<CChar>!, splitIndex: Int) -> GlyphItemRef! {
+        guard let rv = GlyphItemRef(gconstpointer: gconstpointer(pango_glyph_item_split(glyph_item_ptr, text, gint(splitIndex)))) else { return nil }
         return rv
     }
 
@@ -833,7 +833,7 @@ public extension GlyphItemIterRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GlyphItemIterProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1061,16 +1061,16 @@ public extension GlyphItemIterProtocol {
     /// Initializes a `PangoGlyphItemIter` structure to point to the
     /// last cluster in a glyph item.
     /// See `PangoGlyphItemIter` for details of cluster orders.
-    @inlinable func initEnd<GlyphItemT: GlyphItemProtocol>(glyphItem glyph_item: GlyphItemT, text: UnsafePointer<CChar>!) -> Bool {
-        let rv = ((pango_glyph_item_iter_init_end(glyph_item_iter_ptr, glyph_item.glyph_item_ptr, text)) != 0)
+    @inlinable func initEnd<GlyphItemT: GlyphItemProtocol>(glyphItem: GlyphItemT, text: UnsafePointer<CChar>!) -> Bool {
+        let rv = ((pango_glyph_item_iter_init_end(glyph_item_iter_ptr, glyphItem.glyph_item_ptr, text)) != 0)
         return rv
     }
 
     /// Initializes a `PangoGlyphItemIter` structure to point to the
     /// first cluster in a glyph item.
     /// See `PangoGlyphItemIter` for details of cluster orders.
-    @inlinable func initStart<GlyphItemT: GlyphItemProtocol>(glyphItem glyph_item: GlyphItemT, text: UnsafePointer<CChar>!) -> Bool {
-        let rv = ((pango_glyph_item_iter_init_start(glyph_item_iter_ptr, glyph_item.glyph_item_ptr, text)) != 0)
+    @inlinable func initStart<GlyphItemT: GlyphItemProtocol>(glyphItem: GlyphItemT, text: UnsafePointer<CChar>!) -> Bool {
+        let rv = ((pango_glyph_item_iter_init_start(glyph_item_iter_ptr, glyphItem.glyph_item_ptr, text)) != 0)
         return rv
     }
 
@@ -1260,7 +1260,7 @@ public extension GlyphStringRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GlyphStringProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1463,8 +1463,19 @@ public extension GlyphStringProtocol {
     /// Examples of logical (red) and ink (green) rects:
     /// 
     /// ![](rects1.png) ![](rects2.png)
-    @inlinable func extents<FontT: FontProtocol, RectangleT: RectangleProtocol>(font: FontT, inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
-        pango_glyph_string_extents(glyph_string_ptr, font.font_ptr, ink_rect?._ptr, logical_rect?._ptr)
+    @inlinable func extents<FontT: FontProtocol>(font: FontT, inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
+        pango_glyph_string_extents(glyph_string_ptr, font.font_ptr, inkRect?._ptr, logicalRect?._ptr)
+    
+    }
+    /// Compute the logical and ink extents of a glyph string. See the documentation
+    /// for `pango_font_get_glyph_extents()` for details about the interpretation
+    /// of the rectangles.
+    /// 
+    /// Examples of logical (red) and ink (green) rects:
+    /// 
+    /// ![](rects1.png) ![](rects2.png)
+    @inlinable func extents<FontT: FontProtocol, RectangleT: RectangleProtocol>(font: FontT, inkRect: RectangleT?, logicalRect: RectangleT?) {
+        pango_glyph_string_extents(glyph_string_ptr, font.font_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
@@ -1472,8 +1483,16 @@ public extension GlyphStringProtocol {
     /// relative to the start of the glyph string range (the origin of their
     /// coordinate system is at the start of the range, not at the start of the entire
     /// glyph string).
-    @inlinable func extentsRange<FontT: FontProtocol, RectangleT: RectangleProtocol>(start: Int, end: Int, font: FontT, inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
-        pango_glyph_string_extents_range(glyph_string_ptr, gint(start), gint(end), font.font_ptr, ink_rect?._ptr, logical_rect?._ptr)
+    @inlinable func extentsRange<FontT: FontProtocol>(start: Int, end: Int, font: FontT, inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
+        pango_glyph_string_extents_range(glyph_string_ptr, gint(start), gint(end), font.font_ptr, inkRect?._ptr, logicalRect?._ptr)
+    
+    }
+    /// Computes the extents of a sub-portion of a glyph string. The extents are
+    /// relative to the start of the glyph string range (the origin of their
+    /// coordinate system is at the start of the range, not at the start of the entire
+    /// glyph string).
+    @inlinable func extentsRange<FontT: FontProtocol, RectangleT: RectangleProtocol>(start: Int, end: Int, font: FontT, inkRect: RectangleT?, logicalRect: RectangleT?) {
+        pango_glyph_string_extents_range(glyph_string_ptr, gint(start), gint(end), font.font_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
@@ -1489,8 +1508,8 @@ public extension GlyphStringProtocol {
     /// cluster is divided equally among the characters.
     /// 
     /// See also `pango_glyph_item_get_logical_widths()`.
-    @inlinable func getLogicalWidths(text: UnsafePointer<CChar>!, length: Int, embeddingLevel embedding_level: Int, logicalWidths logical_widths: UnsafeMutablePointer<CInt>!) {
-        pango_glyph_string_get_logical_widths(glyph_string_ptr, text, gint(length), gint(embedding_level), logical_widths)
+    @inlinable func getLogicalWidths(text: UnsafePointer<CChar>!, length: Int, embeddingLevel: Int, logicalWidths: UnsafeMutablePointer<CInt>!) {
+        pango_glyph_string_get_logical_widths(glyph_string_ptr, text, gint(length), gint(embeddingLevel), logicalWidths)
     
     }
 
@@ -1506,14 +1525,14 @@ public extension GlyphStringProtocol {
     /// Converts from character position to x position. (X position
     /// is measured from the left edge of the run). Character positions
     /// are computed by dividing up each cluster into equal portions.
-    @inlinable func indexToX<AnalysisT: AnalysisProtocol>(text: UnsafeMutablePointer<CChar>!, length: Int, analysis: AnalysisT, index_: Int, trailing: Bool, xPos x_pos: UnsafeMutablePointer<gint>!) {
-        pango_glyph_string_index_to_x(glyph_string_ptr, text, gint(length), analysis._ptr, gint(index_), gboolean((trailing) ? 1 : 0), x_pos)
+    @inlinable func indexToX<AnalysisT: AnalysisProtocol>(text: UnsafeMutablePointer<CChar>!, length: Int, analysis: AnalysisT, index_: Int, trailing: Bool, xPos: UnsafeMutablePointer<gint>!) {
+        pango_glyph_string_index_to_x(glyph_string_ptr, text, gint(length), analysis._ptr, gint(index_), gboolean((trailing) ? 1 : 0), xPos)
     
     }
 
     /// Resize a glyph string to the given length.
-    @inlinable func setSize(newLen new_len: Int) {
-        pango_glyph_string_set_size(glyph_string_ptr, gint(new_len))
+    @inlinable func setSize(newLen: Int) {
+        pango_glyph_string_set_size(glyph_string_ptr, gint(newLen))
     
     }
 
@@ -1523,8 +1542,8 @@ public extension GlyphStringProtocol {
     /// (such as Thai), the returned value may not be a valid cursor
     /// position; the caller must combine the result with the logical
     /// attributes for the text to compute the valid cursor position.
-    @inlinable func xToIndex<AnalysisT: AnalysisProtocol>(text: UnsafeMutablePointer<CChar>!, length: Int, analysis: AnalysisT, xPos x_pos: Int, index_: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) {
-        pango_glyph_string_x_to_index(glyph_string_ptr, text, gint(length), analysis._ptr, gint(x_pos), index_, trailing)
+    @inlinable func xToIndex<AnalysisT: AnalysisProtocol>(text: UnsafeMutablePointer<CChar>!, length: Int, analysis: AnalysisT, xPos: Int, index_: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) {
+        pango_glyph_string_x_to_index(glyph_string_ptr, text, gint(length), analysis._ptr, gint(xPos), index_, trailing)
     
     }
 
@@ -1551,8 +1570,8 @@ public extension GlyphStringProtocol {
     /// certain cross-item shaping interactions.  If you have access to the broader
     /// text of which `item_text` is part of, provide the broader text as
     /// `paragraph_text`.  If `paragraph_text` is `nil`, item text is used instead.
-    @inlinable func shapeFull<AnalysisT: AnalysisProtocol>(itemText item_text: UnsafePointer<CChar>!, itemLength item_length: Int, paragraphText paragraph_text: UnsafePointer<CChar>? = nil, paragraphLength paragraph_length: Int, analysis: AnalysisT) {
-        pango_shape_full(item_text, gint(item_length), paragraph_text, gint(paragraph_length), analysis._ptr, glyph_string_ptr)
+    @inlinable func shapeFull<AnalysisT: AnalysisProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, analysis: AnalysisT) {
+        pango_shape_full(itemText, gint(itemLength), paragraphText, gint(paragraphLength), analysis._ptr, glyph_string_ptr)
     
     }
 
@@ -1563,8 +1582,8 @@ public extension GlyphStringProtocol {
     /// 
     /// This is similar to `pango_shape_full()`, except it also takes
     /// flags that can influence the shaping process.
-    @inlinable func shapeWithFlags<AnalysisT: AnalysisProtocol>(itemText item_text: UnsafePointer<CChar>!, itemLength item_length: Int, paragraphText paragraph_text: UnsafePointer<CChar>? = nil, paragraphLength paragraph_length: Int, analysis: AnalysisT, flags: ShapeFlags) {
-        pango_shape_with_flags(item_text, gint(item_length), paragraph_text, gint(paragraph_length), analysis._ptr, glyph_string_ptr, flags.value)
+    @inlinable func shapeWithFlags<AnalysisT: AnalysisProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, analysis: AnalysisT, flags: ShapeFlags) {
+        pango_shape_with_flags(itemText, gint(itemLength), paragraphText, gint(paragraphLength), analysis._ptr, glyph_string_ptr, flags.value)
     
     }
     /// Computes the logical width of the glyph string as can also be computed
@@ -1719,7 +1738,7 @@ public extension GlyphVisAttrRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GlyphVisAttrProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -2014,7 +2033,7 @@ public extension IncludedModuleRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `IncludedModuleProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 

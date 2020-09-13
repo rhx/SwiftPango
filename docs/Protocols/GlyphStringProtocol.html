@@ -509,7 +509,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango6break_4text6length8analysis5attrs0F3LenySPys4Int8VGSg_SixSpySo01_A7LogAttrVGSgSitAA16AnalysisProtocolRzlF">break_(text:length:analysis:attrs:attrsLen:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SiAA11AnalysisRefVSgxSitAA15LogAttrProtocolRzlF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SixSgq_SitAA16AnalysisProtocolRzAA07LogAttrK0R_r0_lF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyAA12RectangleRefVSg_AGtF">extentsToPixels(inclusive:nearest:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyxSg_AEtAA17RectangleProtocolRzlF">extentsToPixels(inclusive:nearest:)</a>
@@ -533,6 +539,9 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13getMirrorChar2ch10mirroredChSbs6UInt32V_SpyAFGSgtF">getMirrorChar(ch:mirroredCh:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaAA9MatrixRefVSg_tF">gravityGetFor(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaxSg_tAA14MatrixProtocolRzlF">gravityGetFor(matrix:)</a>
               </li>
               <li class="nav-group-task">
@@ -551,7 +560,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__SPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0olQ0R_AA07ContextQ0R0_r1_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__SPys4Int8VGSgS2ixAA012AttrIteratorM0VSgtAA0oL8ProtocolRzAA07ContextQ0R_r0_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__So0A9DirectionaSPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0tpV0R_AA07ContextV0R0_r1_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF">languageFromString(language:)</a>
@@ -1276,6 +1291,46 @@ by the structure which simplifies memory management.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:5Pango19GlyphStringProtocolPAAE7extents4font7inkRect07logicalH0yqd___AA12RectangleRefVSgAJtAA04FontD0Rd__lF"></a>
+                    <a name="//apple_ref/swift/Method/extents(font:inkRect:logicalRect:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango19GlyphStringProtocolPAAE7extents4font7inkRect07logicalH0yqd___AA12RectangleRefVSgAJtAA04FontD0Rd__lF">extents(font:inkRect:logicalRect:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compute the logical and ink extents of a glyph string. See the documentation
+for <code>pango_font_get_glyph_extents()</code> for details about the interpretation
+of the rectangles.</p>
+
+<p>Examples of logical (red) and ink (green) rects:</p>
+
+<p><img src="rects1.png" alt=""> <img src="rects2.png" alt=""></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="n">extents</span><span class="o">&lt;</span><span class="kt">FontT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">font</span><span class="p">:</span> <span class="kt">FontT</span><span class="p">,</span> <span class="nv">inkRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">FontT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontProtocol.html">FontProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1466-L1469">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:5Pango19GlyphStringProtocolPAAE7extents4font7inkRect07logicalH0yqd___qd_0_SgAHtAA04FontD0Rd__AA09RectangleD0Rd_0_r0_lF"></a>
                     <a name="//apple_ref/swift/Method/extents(font:inkRect:logicalRect:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:5Pango19GlyphStringProtocolPAAE7extents4font7inkRect07logicalH0yqd___qd_0_SgAHtAA04FontD0Rd__AA09RectangleD0Rd_0_r0_lF">extents(font:inkRect:logicalRect:)</a>
@@ -1303,12 +1358,49 @@ of the rectangles.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">extents</span><span class="o">&lt;</span><span class="kt">FontT</span><span class="p">,</span> <span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">font</span><span class="p">:</span> <span class="kt">FontT</span><span class="p">,</span> <span class="n">inkRect</span> <span class="nv">ink_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">logicalRect</span> <span class="nv">logical_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">FontT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontProtocol.html">FontProtocol</a></span><span class="p">,</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">extents</span><span class="o">&lt;</span><span class="kt">FontT</span><span class="p">,</span> <span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">font</span><span class="p">:</span> <span class="kt">FontT</span><span class="p">,</span> <span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">FontT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontProtocol.html">FontProtocol</a></span><span class="p">,</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1466-L1469">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1477-L1480">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango19GlyphStringProtocolPAAE12extentsRange5start3end4font7inkRect07logicalK0ySi_Siqd__AA12RectangleRefVSgALtAA04FontD0Rd__lF"></a>
+                    <a name="//apple_ref/swift/Method/extentsRange(start:end:font:inkRect:logicalRect:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango19GlyphStringProtocolPAAE12extentsRange5start3end4font7inkRect07logicalK0ySi_Siqd__AA12RectangleRefVSgALtAA04FontD0Rd__lF">extentsRange(start:end:font:inkRect:logicalRect:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Computes the extents of a sub-portion of a glyph string. The extents are
+relative to the start of the glyph string range (the origin of their
+coordinate system is at the start of the range, not at the start of the entire
+glyph string).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="n">extentsRange</span><span class="o">&lt;</span><span class="kt">FontT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">start</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">end</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">font</span><span class="p">:</span> <span class="kt">FontT</span><span class="p">,</span> <span class="nv">inkRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt"><a href="../Structs/RectangleRef.html">RectangleRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">FontT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontProtocol.html">FontProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1486-L1489">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1340,12 +1432,12 @@ glyph string).</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">extentsRange</span><span class="o">&lt;</span><span class="kt">FontT</span><span class="p">,</span> <span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">start</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">end</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">font</span><span class="p">:</span> <span class="kt">FontT</span><span class="p">,</span> <span class="n">inkRect</span> <span class="nv">ink_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">logicalRect</span> <span class="nv">logical_rect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">FontT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontProtocol.html">FontProtocol</a></span><span class="p">,</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">extentsRange</span><span class="o">&lt;</span><span class="kt">FontT</span><span class="p">,</span> <span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">start</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">end</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">font</span><span class="p">:</span> <span class="kt">FontT</span><span class="p">,</span> <span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">FontT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontProtocol.html">FontProtocol</a></span><span class="p">,</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1475-L1478">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1494-L1497">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1379,7 +1471,7 @@ glyph string).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1481-L1484">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1500-L1503">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1413,12 +1505,12 @@ cluster is divided equally among the characters.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">getLogicalWidths</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">embeddingLevel</span> <span class="nv">embedding_level</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">logicalWidths</span> <span class="nv">logical_widths</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">getLogicalWidths</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">embeddingLevel</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">logicalWidths</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1492-L1495">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1511-L1514">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1455,7 +1547,7 @@ computes the sum of geometry.width for each glyph in the <code><a href="../Proto
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1501-L1504">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1520-L1523">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1486,12 +1578,12 @@ are computed by dividing up each cluster into equal portions.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">indexToX</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">index_</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">trailing</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">xPos</span> <span class="nv">x_pos</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">indexToX</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">index_</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">trailing</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">xPos</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1509-L1512">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1528-L1531">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1520,12 +1612,12 @@ are computed by dividing up each cluster into equal portions.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">setSize</span><span class="p">(</span><span class="n">newLen</span> <span class="nv">new_len</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">setSize</span><span class="p">(</span><span class="nv">newLen</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1515-L1518">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1534-L1537">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1559,12 +1651,12 @@ attributes for the text to compute the valid cursor position.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">xToIndex</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="n">xPos</span> <span class="nv">x_pos</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">index_</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">trailing</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">xToIndex</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">xPos</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">index_</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">trailing</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1526-L1529">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1545-L1548">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1605,7 +1697,7 @@ boundaries.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1539-L1542">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1558-L1561">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1643,12 +1735,12 @@ text of which <code>item_text</code> is part of, provide the broader text as
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">shapeFull</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">itemText</span> <span class="nv">item_text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">itemLength</span> <span class="nv">item_length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">paragraphText</span> <span class="nv">paragraph_text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">paragraphLength</span> <span class="nv">paragraph_length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">shapeFull</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">itemText</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">itemLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">paragraphText</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">paragraphLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1554-L1557">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1573-L1576">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1683,12 +1775,12 @@ flags that can influence the shaping process.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">shapeWithFlags</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">itemText</span> <span class="nv">item_text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">itemLength</span> <span class="nv">item_length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">paragraphText</span> <span class="nv">paragraph_text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">paragraphLength</span> <span class="nv">paragraph_length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Structs/ShapeFlags.html">ShapeFlags</a></span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">shapeWithFlags</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">itemText</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">itemLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">paragraphText</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">paragraphLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Structs/ShapeFlags.html">ShapeFlags</a></span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1566-L1569">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1585-L1588">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1725,7 +1817,7 @@ computes the sum of geometry.width for each glyph in the <code><a href="../Proto
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1574-L1583">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1593-L1602">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1759,7 +1851,7 @@ computes the sum of geometry.width for each glyph in the <code><a href="../Proto
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1586-L1596">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1605-L1615">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1794,7 +1886,7 @@ computes the sum of geometry.width for each glyph in the <code><a href="../Proto
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1600-L1612">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1619-L1631">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1829,7 +1921,7 @@ computes the sum of geometry.width for each glyph in the <code><a href="../Proto
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1616-L1628">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-GlyphInfo-IncludedModule.swift#L1635-L1647">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1842,7 +1934,7 @@ computes the sum of geometry.width for each glyph in the <code><a href="../Proto
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

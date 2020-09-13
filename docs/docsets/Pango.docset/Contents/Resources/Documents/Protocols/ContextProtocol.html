@@ -509,7 +509,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango6break_4text6length8analysis5attrs0F3LenySPys4Int8VGSg_SixSpySo01_A7LogAttrVGSgSitAA16AnalysisProtocolRzlF">break_(text:length:analysis:attrs:attrsLen:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SiAA11AnalysisRefVSgxSitAA15LogAttrProtocolRzlF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SixSgq_SitAA16AnalysisProtocolRzAA07LogAttrK0R_r0_lF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyAA12RectangleRefVSg_AGtF">extentsToPixels(inclusive:nearest:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyxSg_AEtAA17RectangleProtocolRzlF">extentsToPixels(inclusive:nearest:)</a>
@@ -533,6 +539,9 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13getMirrorChar2ch10mirroredChSbs6UInt32V_SpyAFGSgtF">getMirrorChar(ch:mirroredCh:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaAA9MatrixRefVSg_tF">gravityGetFor(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaxSg_tAA14MatrixProtocolRzlF">gravityGetFor(matrix:)</a>
               </li>
               <li class="nav-group-task">
@@ -551,7 +560,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__SPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0olQ0R_AA07ContextQ0R0_r1_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__SPys4Int8VGSgS2ixAA012AttrIteratorM0VSgtAA0oL8ProtocolRzAA07ContextQ0R_r0_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__So0A9DirectionaSPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0tpV0R_AA07ContextV0R0_r1_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF">languageFromString(language:)</a>
@@ -1654,6 +1669,51 @@ rendering with this context. See <code>pango_context_set_matrix()</code>.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:5Pango15ContextProtocolPAAE10getMetrics4desc8languageAA04FontE3RefVSgAA0h11DescriptionI0VSg_AA08LanguageI0VSgtF"></a>
+                    <a name="//apple_ref/swift/Method/getMetrics(desc:language:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango15ContextProtocolPAAE10getMetrics4desc8languageAA04FontE3RefVSgAA0h11DescriptionI0VSg_AA08LanguageI0VSgtF">getMetrics(desc:language:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get overall metric information for a particular font
+description.  Since the metrics may be substantially different for
+different scripts, a language tag can be provided to indicate that
+the metrics should be retrieved that correspond to the <code>script(s)</code>
+used by that language.</p>
+
+<p>The <code>PangoFontDescription</code> is interpreted in the same way as
+by <code>pango_itemize()</code>, and the family name may be a comma separated
+list of figures. If characters from multiple of these families
+would be used to render the string, then the returned fonts would
+be a composite of the metrics for the fonts loaded for the
+individual families.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">getMetrics</span><span class="p">(</span><span class="nv">desc</span><span class="p">:</span> <span class="kt"><a href="../Structs/FontDescriptionRef.html">FontDescriptionRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">language</span><span class="p">:</span> <span class="kt"><a href="../Structs/LanguageRef.html">LanguageRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/FontMetricsRef.html">FontMetricsRef</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L418-L421">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:5Pango15ContextProtocolPAAE10getMetrics4desc8languageAA04FontE3RefVSgqd__Sg_qd_0_SgtAA0h11DescriptionC0Rd__AA08LanguageC0Rd_0_r0_lF"></a>
                     <a name="//apple_ref/swift/Method/getMetrics(desc:language:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:5Pango15ContextProtocolPAAE10getMetrics4desc8languageAA04FontE3RefVSgqd__Sg_qd_0_SgtAA0h11DescriptionC0Rd__AA08LanguageC0Rd_0_r0_lF">getMetrics(desc:language:)</a>
@@ -1686,12 +1746,12 @@ individual families.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">getMetrics</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="p">,</span> <span class="kt">LanguageT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">desc</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">language</span><span class="p">:</span> <span class="kt">LanguageT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/FontMetricsRef.html">FontMetricsRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></span><span class="p">,</span> <span class="kt">LanguageT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/LanguageProtocol.html">LanguageProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">getMetrics</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="p">,</span> <span class="kt">LanguageT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">desc</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">?,</span> <span class="nv">language</span><span class="p">:</span> <span class="kt">LanguageT</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/FontMetricsRef.html">FontMetricsRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></span><span class="p">,</span> <span class="kt">LanguageT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/LanguageProtocol.html">LanguageProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L418-L421">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L434-L437">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1726,7 +1786,7 @@ round glyph positions and widths.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L425-L428">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L441-L444">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1769,7 +1829,7 @@ is only useful when implementing objects that need update when their
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L440-L443">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L456-L459">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1798,12 +1858,12 @@ is only useful when implementing objects that need update when their
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">list</span><span class="p">(</span><span class="nv">families</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoFontFamily</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">nFamilies</span> <span class="nv">n_families</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">list</span><span class="p">(</span><span class="nv">families</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoFontFamily</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">nFamilies</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L446-L449">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L462-L465">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1838,7 +1898,7 @@ that is the closest match for <code>desc</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L453-L456">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L469-L472">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1873,7 +1933,7 @@ a font matching <code>desc</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L460-L463">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L476-L479">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1914,7 +1974,7 @@ for paragraphs that do not contain any strong characters themselves.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L473-L476">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L489-L492">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1950,7 +2010,7 @@ for paragraphs that do not contain any strong characters themselves.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L481-L484">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L497-L500">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1984,7 +2044,7 @@ for paragraphs that do not contain any strong characters themselves.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L487-L490">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L503-L506">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2015,12 +2075,12 @@ via one of the recommended methods should already have a suitable font map.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="k">set</span><span class="o">&lt;</span><span class="kt">FontMapT</span><span class="o">&gt;</span><span class="p">(</span><span class="n"><a href="../Protocols/ContextProtocol.html#/s:5Pango15ContextProtocolPAAE7fontMapAA04FontE3RefVSgvp">fontMap</a></span> <span class="nv">font_map</span><span class="p">:</span> <span class="kt">FontMapT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">FontMapT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontMapProtocol.html">FontMapProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="k">set</span><span class="o">&lt;</span><span class="kt">FontMapT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">fontMap</span><span class="p">:</span> <span class="kt">FontMapT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">FontMapT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FontMapProtocol.html">FontMapProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L495-L498">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L511-L514">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2058,7 +2118,7 @@ is set <code>PANGO_GRAVITY_EAST</code> or <code>PANGO_GRAVITY_WEST</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L505-L508">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L521-L524">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2094,7 +2154,46 @@ for the locale of the running process can be found using
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L513-L516">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L529-L532">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango15ContextProtocolPAAE3set6matrixyAA9MatrixRefVSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/set(matrix:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango15ContextProtocolPAAE3set6matrixyAA9MatrixRefVSg_tF">set(matrix:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the transformation matrix that will be applied when rendering
+with this context. Note that reported metrics are in the user space
+coordinates before the application of the matrix, not device-space
+coordinates after the application of the matrix. So, they don&rsquo;t scale
+with the matrix, though they may change slightly for different
+matrices, depending on how the text is fit to the pixel grid.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="../Structs/MatrixRef.html">MatrixRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L540-L543">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2128,12 +2227,12 @@ matrices, depending on how the text is fit to the pixel grid.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="k">set</span><span class="o">&lt;</span><span class="kt">MatrixT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt">MatrixT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">MatrixT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/MatrixProtocol.html">MatrixProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="k">set</span><span class="o">&lt;</span><span class="kt">MatrixT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt">MatrixT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">MatrixT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/MatrixProtocol.html">MatrixProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L524-L527">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L550-L553">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2170,12 +2269,55 @@ compatible with previous Pango behavior.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">setRoundGlyphPositions</span><span class="p">(</span><span class="n">roundPositions</span> <span class="nv">round_positions</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">setRoundGlyphPositions</span><span class="p">(</span><span class="nv">roundPositions</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L538-L541">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L564-L567">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango15ContextProtocolPAAE7itemize4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgSPys4Int8VGSg_S2iqd__AA012AttrIteratorN0VSgtAA0pmC0Rd__lF"></a>
+                    <a name="//apple_ref/swift/Method/itemize(text:startIndex:length:attrs:cachedIter:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango15ContextProtocolPAAE7itemize4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgSPys4Int8VGSg_S2iqd__AA012AttrIteratorN0VSgtAA0pmC0Rd__lF">itemize(text:startIndex:length:attrs:cachedIter:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Breaks a piece of text into segments with consistent
+directional level and shaping engine. Each byte of <code>text</code> will
+be contained in exactly one of the items in the returned list;
+the generated list of items will be in logical order (the start
+offsets of the items are ascending).</p>
+
+<p><code>cached_iter</code> should be an iterator over <code>attrs</code> currently positioned at a
+range before or containing <code>start_index</code>; <code>cached_iter</code> will be advanced to
+the range covering the position just after <code>start_index</code> + <code>length</code>.
+(i.e. if itemizing in a loop, just keep passing in the same <code>cached_iter</code>).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="n">itemize</span><span class="o">&lt;</span><span class="kt">AttrListT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">startIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="nv">cachedIter</span><span class="p">:</span> <span class="kt"><a href="../Structs/AttrIteratorRef.html">AttrIteratorRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrListProtocol.html">AttrListProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L579-L582">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2213,12 +2355,48 @@ the range covering the position just after <code>start_index</code> + <code>leng
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">itemize</span><span class="o">&lt;</span><span class="kt">AttrIteratorT</span><span class="p">,</span> <span class="kt">AttrListT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">startIndex</span> <span class="nv">start_index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="n">cachedIter</span> <span class="nv">cached_iter</span><span class="p">:</span> <span class="kt">AttrIteratorT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrIteratorT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrIteratorProtocol.html">AttrIteratorProtocol</a></span><span class="p">,</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrListProtocol.html">AttrListProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">itemize</span><span class="o">&lt;</span><span class="kt">AttrIteratorT</span><span class="p">,</span> <span class="kt">AttrListT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">startIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="nv">cachedIter</span><span class="p">:</span> <span class="kt">AttrIteratorT</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrIteratorT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrIteratorProtocol.html">AttrIteratorProtocol</a></span><span class="p">,</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrListProtocol.html">AttrListProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L553-L556">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L593-L596">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango15ContextProtocolPAAE11itemizeWith7baseDir4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgSo0A9Directiona_SPys4Int8VGSgS2iqd__AA012AttrIteratorQ0VSgtAA0tpC0Rd__lF"></a>
+                    <a name="//apple_ref/swift/Method/itemizeWith(baseDir:text:startIndex:length:attrs:cachedIter:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango15ContextProtocolPAAE11itemizeWith7baseDir4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgSo0A9Directiona_SPys4Int8VGSgS2iqd__AA012AttrIteratorQ0VSgtAA0tpC0Rd__lF">itemizeWith(baseDir:text:startIndex:length:attrs:cachedIter:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Like <code>pango_itemize()</code>, but the base direction to use when
+computing bidirectional levels (see pango_context_set_base_dir ()),
+is specified explicitly rather than gotten from the <code>PangoContext</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="n">itemizeWith</span><span class="o">&lt;</span><span class="kt">AttrListT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">baseDir</span><span class="p">:</span> <span class="kt">PangoDirection</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">startIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="nv">cachedIter</span><span class="p">:</span> <span class="kt"><a href="../Structs/AttrIteratorRef.html">AttrIteratorRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrListProtocol.html">AttrListProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L601-L604">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2249,12 +2427,12 @@ is specified explicitly rather than gotten from the <code>PangoContext</code>.</
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">itemizeWith</span><span class="o">&lt;</span><span class="kt">AttrIteratorT</span><span class="p">,</span> <span class="kt">AttrListT</span><span class="o">&gt;</span><span class="p">(</span><span class="n"><a href="../Protocols/ContextProtocol.html#/s:5Pango15ContextProtocolPAAE7baseDirSo0A9Directionavp">baseDir</a></span> <span class="nv">base_dir</span><span class="p">:</span> <span class="kt">PangoDirection</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">startIndex</span> <span class="nv">start_index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="n">cachedIter</span> <span class="nv">cached_iter</span><span class="p">:</span> <span class="kt">AttrIteratorT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrIteratorT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrIteratorProtocol.html">AttrIteratorProtocol</a></span><span class="p">,</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrListProtocol.html">AttrListProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">itemizeWith</span><span class="o">&lt;</span><span class="kt">AttrIteratorT</span><span class="p">,</span> <span class="kt">AttrListT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">baseDir</span><span class="p">:</span> <span class="kt">PangoDirection</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">startIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">attrs</span><span class="p">:</span> <span class="kt">AttrListT</span><span class="p">,</span> <span class="nv">cachedIter</span><span class="p">:</span> <span class="kt">AttrIteratorT</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">AttrIteratorT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrIteratorProtocol.html">AttrIteratorProtocol</a></span><span class="p">,</span> <span class="kt">AttrListT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/AttrListProtocol.html">AttrListProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L561-L564">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L608-L611">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2289,7 +2467,7 @@ is specified explicitly rather than gotten from the <code>PangoContext</code>.</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L567-L585">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L614-L632">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2324,7 +2502,7 @@ is specified explicitly rather than gotten from the <code>PangoContext</code>.</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L589-L602">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L636-L649">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2358,7 +2536,7 @@ is specified explicitly rather than gotten from the <code>PangoContext</code>.</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L605-L615">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L652-L662">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2392,7 +2570,7 @@ is specified explicitly rather than gotten from the <code>PangoContext</code>.</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L618-L630">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L665-L677">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2429,7 +2607,7 @@ to return the gravity from the current context matrix.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L636-L645">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L683-L692">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2464,7 +2642,7 @@ to return the gravity from the current context matrix.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L649-L664">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L696-L711">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2498,7 +2676,7 @@ to return the gravity from the current context matrix.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L667-L679">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L714-L726">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2533,7 +2711,7 @@ rendering with this context. See <code>pango_context_set_matrix()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L683-L699">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L730-L746">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2568,7 +2746,7 @@ round glyph positions and widths.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L703-L722">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L750-L769">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2611,7 +2789,7 @@ is only useful when implementing objects that need update when their
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L734-L749">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Context-Engine.swift#L781-L796">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2624,7 +2802,7 @@ is only useful when implementing objects that need update when their
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -91,7 +91,7 @@ public extension FontDescriptionRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontDescriptionProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -384,8 +384,8 @@ public extension FontDescriptionProtocol {
     /// styles are equal.
     /// 
     /// Note that `old_match` must match `desc`.
-    @inlinable func betterMatch<FontDescriptionT: FontDescriptionProtocol>(oldMatch old_match: FontDescriptionT? = nil, newMatch new_match: FontDescriptionT) -> Bool {
-        let rv = ((pango_font_description_better_match(font_description_ptr, old_match?.font_description_ptr, new_match.font_description_ptr)) != 0)
+    @inlinable func betterMatch<FontDescriptionT: FontDescriptionProtocol>(oldMatch: FontDescriptionT?, newMatch: FontDescriptionT) -> Bool {
+        let rv = ((pango_font_description_better_match(font_description_ptr, oldMatch?.font_description_ptr, newMatch.font_description_ptr)) != 0)
         return rv
     }
 
@@ -503,8 +503,18 @@ public extension FontDescriptionProtocol {
     /// already set will be replaced as well.
     /// 
     /// If `desc_to_merge` is `nil`, this function performs nothing.
-    @inlinable func merge<FontDescriptionT: FontDescriptionProtocol>(descToMerge desc_to_merge: FontDescriptionT? = nil, replaceExisting replace_existing: Bool) {
-        pango_font_description_merge(font_description_ptr, desc_to_merge?.font_description_ptr, gboolean((replace_existing) ? 1 : 0))
+    @inlinable func merge(descToMerge: FontDescriptionRef? = nil, replaceExisting: Bool) {
+        pango_font_description_merge(font_description_ptr, descToMerge?.font_description_ptr, gboolean((replaceExisting) ? 1 : 0))
+    
+    }
+    /// Merges the fields that are set in `desc_to_merge` into the fields in
+    /// `desc`.  If `replace_existing` is `false`, only fields in `desc` that
+    /// are not already set are affected. If `true`, then fields that are
+    /// already set will be replaced as well.
+    /// 
+    /// If `desc_to_merge` is `nil`, this function performs nothing.
+    @inlinable func merge<FontDescriptionT: FontDescriptionProtocol>(descToMerge: FontDescriptionT?, replaceExisting: Bool) {
+        pango_font_description_merge(font_description_ptr, descToMerge?.font_description_ptr, gboolean((replaceExisting) ? 1 : 0))
     
     }
 
@@ -512,8 +522,8 @@ public extension FontDescriptionProtocol {
     /// of the family name and other allocated fields. `desc` can only be
     /// used until `desc_to_merge` is modified or freed. This is meant
     /// to be used when the merged font description is only needed temporarily.
-    @inlinable func mergeStatic<FontDescriptionT: FontDescriptionProtocol>(descToMerge desc_to_merge: FontDescriptionT, replaceExisting replace_existing: Bool) {
-        pango_font_description_merge_static(font_description_ptr, desc_to_merge.font_description_ptr, gboolean((replace_existing) ? 1 : 0))
+    @inlinable func mergeStatic<FontDescriptionT: FontDescriptionProtocol>(descToMerge: FontDescriptionT, replaceExisting: Bool) {
+        pango_font_description_merge_static(font_description_ptr, descToMerge.font_description_ptr, gboolean((replaceExisting) ? 1 : 0))
     
     }
 
@@ -649,8 +659,8 @@ public extension FontDescriptionProtocol {
 
     /// Unsets some of the fields in a `PangoFontDescription`.  The unset
     /// fields will get back to their default values.
-    @inlinable func unsetFields(toUnset to_unset: FontMask) {
-        pango_font_description_unset_fields(font_description_ptr, to_unset.value)
+    @inlinable func unsetFields(toUnset: FontMask) {
+        pango_font_description_unset_fields(font_description_ptr, toUnset.value)
     
     }
 
@@ -921,7 +931,7 @@ public extension FontFaceClassRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceClassProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1206,7 +1216,7 @@ public extension FontFamilyClassRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyClassProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1491,7 +1501,7 @@ public extension FontMapClassRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapClassProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1798,7 +1808,7 @@ public extension FontMetricsRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMetricsProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -2313,7 +2323,7 @@ public extension FontsetClassRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetClassProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -2603,7 +2613,7 @@ public extension FontsetSimpleClassRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleClassProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -2870,7 +2880,7 @@ public extension GlyphGeometryRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GlyphGeometryProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 

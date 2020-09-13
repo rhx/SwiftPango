@@ -12,7 +12,7 @@ import GLibObject
 ///
 /// The `PangoContext` structure stores global information
 /// used to control the itemization process.
-public protocol ContextProtocol: ObjectProtocol {
+public protocol ContextProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoContext` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -87,7 +87,7 @@ public extension ContextRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ContextProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -127,7 +127,7 @@ public extension ContextRef {
 ///
 /// The `PangoContext` structure stores global information
 /// used to control the itemization process.
-open class Context: Object, ContextProtocol {
+open class Context: GLibObject.Object, ContextProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Context` instance.
@@ -415,7 +415,23 @@ public extension ContextProtocol {
     /// would be used to render the string, then the returned fonts would
     /// be a composite of the metrics for the fonts loaded for the
     /// individual families.
-    @inlinable func getMetrics<FontDescriptionT: FontDescriptionProtocol, LanguageT: LanguageProtocol>(desc: FontDescriptionT? = nil, language: LanguageT? = nil) -> FontMetricsRef! {
+    @inlinable func getMetrics(desc: FontDescriptionRef? = nil, language: LanguageRef? = nil) -> FontMetricsRef! {
+        let rv = FontMetricsRef(gconstpointer: gconstpointer(pango_context_get_metrics(context_ptr, desc?.font_description_ptr, language?.language_ptr)))
+        return rv
+    }
+    /// Get overall metric information for a particular font
+    /// description.  Since the metrics may be substantially different for
+    /// different scripts, a language tag can be provided to indicate that
+    /// the metrics should be retrieved that correspond to the `script(s)`
+    /// used by that language.
+    /// 
+    /// The `PangoFontDescription` is interpreted in the same way as
+    /// by `pango_itemize()`, and the family name may be a comma separated
+    /// list of figures. If characters from multiple of these families
+    /// would be used to render the string, then the returned fonts would
+    /// be a composite of the metrics for the fonts loaded for the
+    /// individual families.
+    @inlinable func getMetrics<FontDescriptionT: FontDescriptionProtocol, LanguageT: LanguageProtocol>(desc: FontDescriptionT?, language: LanguageT?) -> FontMetricsRef! {
         let rv = FontMetricsRef(gconstpointer: gconstpointer(pango_context_get_metrics(context_ptr, desc?.font_description_ptr, language?.language_ptr)))
         return rv
     }
@@ -443,8 +459,8 @@ public extension ContextProtocol {
     }
 
     /// List all families for a context.
-    @inlinable func list(families: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<PangoFontFamily>?>?>!, nFamilies n_families: UnsafeMutablePointer<gint>!) {
-        pango_context_list_families(context_ptr, families, n_families)
+    @inlinable func list(families: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<PangoFontFamily>?>?>!, nFamilies: UnsafeMutablePointer<gint>!) {
+        pango_context_list_families(context_ptr, families, nFamilies)
     
     }
 
@@ -492,8 +508,8 @@ public extension ContextProtocol {
     /// Sets the font map to be searched when fonts are looked-up in this context.
     /// This is only for internal use by Pango backends, a `PangoContext` obtained
     /// via one of the recommended methods should already have a suitable font map.
-    @inlinable func set<FontMapT: FontMapProtocol>(fontMap font_map: FontMapT) {
-        pango_context_set_font_map(context_ptr, font_map.font_map_ptr)
+    @inlinable func set<FontMapT: FontMapProtocol>(fontMap: FontMapT) {
+        pango_context_set_font_map(context_ptr, fontMap.font_map_ptr)
     
     }
 
@@ -521,7 +537,17 @@ public extension ContextProtocol {
     /// coordinates after the application of the matrix. So, they don't scale
     /// with the matrix, though they may change slightly for different
     /// matrices, depending on how the text is fit to the pixel grid.
-    @inlinable func set<MatrixT: MatrixProtocol>(matrix: MatrixT? = nil) {
+    @inlinable func set(matrix: MatrixRef? = nil) {
+        pango_context_set_matrix(context_ptr, matrix?.matrix_ptr)
+    
+    }
+    /// Sets the transformation matrix that will be applied when rendering
+    /// with this context. Note that reported metrics are in the user space
+    /// coordinates before the application of the matrix, not device-space
+    /// coordinates after the application of the matrix. So, they don't scale
+    /// with the matrix, though they may change slightly for different
+    /// matrices, depending on how the text is fit to the pixel grid.
+    @inlinable func set<MatrixT: MatrixProtocol>(matrix: MatrixT?) {
         pango_context_set_matrix(context_ptr, matrix?.matrix_ptr)
     
     }
@@ -535,8 +561,8 @@ public extension ContextProtocol {
     /// 
     /// The default value is to round glyph positions, to remain
     /// compatible with previous Pango behavior.
-    @inlinable func setRoundGlyphPositions(roundPositions round_positions: Bool) {
-        pango_context_set_round_glyph_positions(context_ptr, gboolean((round_positions) ? 1 : 0))
+    @inlinable func setRoundGlyphPositions(roundPositions: Bool) {
+        pango_context_set_round_glyph_positions(context_ptr, gboolean((roundPositions) ? 1 : 0))
     
     }
 
@@ -550,16 +576,37 @@ public extension ContextProtocol {
     /// range before or containing `start_index`; `cached_iter` will be advanced to
     /// the range covering the position just after `start_index` + `length`.
     /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
-    @inlinable func itemize<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol>(text: UnsafePointer<CChar>!, startIndex start_index: Int, length: Int, attrs: AttrListT, cachedIter cached_iter: AttrIteratorT? = nil) -> ListRef! {
-        let rv = ListRef(gconstpointer: gconstpointer(pango_itemize(context_ptr, text, gint(start_index), gint(length), attrs.attr_list_ptr, cached_iter?.attr_iterator_ptr)))
+    @inlinable func itemize<AttrListT: AttrListProtocol>(text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
+        let rv = GLib.ListRef(pango_itemize(context_ptr, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr))
+        return rv
+    }
+    /// Breaks a piece of text into segments with consistent
+    /// directional level and shaping engine. Each byte of `text` will
+    /// be contained in exactly one of the items in the returned list;
+    /// the generated list of items will be in logical order (the start
+    /// offsets of the items are ascending).
+    /// 
+    /// `cached_iter` should be an iterator over `attrs` currently positioned at a
+    /// range before or containing `start_index`; `cached_iter` will be advanced to
+    /// the range covering the position just after `start_index` + `length`.
+    /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
+    @inlinable func itemize<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol>(text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
+        let rv = GLib.ListRef(pango_itemize(context_ptr, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv
     }
 
     /// Like `pango_itemize()`, but the base direction to use when
     /// computing bidirectional levels (see pango_context_set_base_dir ()),
     /// is specified explicitly rather than gotten from the `PangoContext`.
-    @inlinable func itemizeWith<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol>(baseDir base_dir: PangoDirection, text: UnsafePointer<CChar>!, startIndex start_index: Int, length: Int, attrs: AttrListT, cachedIter cached_iter: AttrIteratorT? = nil) -> ListRef! {
-        let rv = ListRef(gconstpointer: gconstpointer(pango_itemize_with_base_dir(context_ptr, base_dir, text, gint(start_index), gint(length), attrs.attr_list_ptr, cached_iter?.attr_iterator_ptr)))
+    @inlinable func itemizeWith<AttrListT: AttrListProtocol>(baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
+        let rv = GLib.ListRef(pango_itemize_with_base_dir(context_ptr, baseDir, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr))
+        return rv
+    }
+    /// Like `pango_itemize()`, but the base direction to use when
+    /// computing bidirectional levels (see pango_context_set_base_dir ()),
+    /// is specified explicitly rather than gotten from the `PangoContext`.
+    @inlinable func itemizeWith<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol>(baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
+        let rv = GLib.ListRef(pango_itemize_with_base_dir(context_ptr, baseDir, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv
     }
     /// Retrieves the base direction for the context. See
@@ -762,7 +809,7 @@ public extension ContextProtocol {
 ///
 /// The `PangoCoverage` structure represents a map from Unicode characters
 /// to `PangoCoverageLevel`. It is an opaque structure with no public fields.
-public protocol CoverageProtocol: ObjectProtocol {
+public protocol CoverageProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoCoverage` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -837,7 +884,7 @@ public extension CoverageRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `CoverageProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -863,8 +910,8 @@ public extension CoverageRef {
     ///
     /// **from_bytes is deprecated:**
     /// This returns %NULL
-    @available(*, deprecated) @inlinable static func from(bytes: UnsafeMutablePointer<guchar>!, nBytes n_bytes: Int) -> CoverageRef! {
-        guard let rv = CoverageRef(gconstpointer: gconstpointer(pango_coverage_from_bytes(bytes, gint(n_bytes)))) else { return nil }
+    @available(*, deprecated) @inlinable static func from(bytes: UnsafeMutablePointer<guchar>!, nBytes: Int) -> CoverageRef! {
+        guard let rv = CoverageRef(gconstpointer: gconstpointer(pango_coverage_from_bytes(bytes, gint(nBytes)))) else { return nil }
         return rv
     }
 }
@@ -875,7 +922,7 @@ public extension CoverageRef {
 ///
 /// The `PangoCoverage` structure represents a map from Unicode characters
 /// to `PangoCoverageLevel`. It is an opaque structure with no public fields.
-open class Coverage: Object, CoverageProtocol {
+open class Coverage: GLibObject.Object, CoverageProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Coverage` instance.
@@ -1011,8 +1058,8 @@ open class Coverage: Object, CoverageProtocol {
     ///
     /// **from_bytes is deprecated:**
     /// This returns %NULL
-    @available(*, deprecated) @inlinable public static func from(bytes: UnsafeMutablePointer<guchar>!, nBytes n_bytes: Int) -> Coverage! {
-        guard let rv = Coverage(gconstpointer: gconstpointer(pango_coverage_from_bytes(bytes, gint(n_bytes)))) else { return nil }
+    @available(*, deprecated) @inlinable public static func from(bytes: UnsafeMutablePointer<guchar>!, nBytes: Int) -> Coverage! {
+        guard let rv = Coverage(gconstpointer: gconstpointer(pango_coverage_from_bytes(bytes, gint(nBytes)))) else { return nil }
         return rv
     }
 
@@ -1122,8 +1169,8 @@ public extension CoverageProtocol {
     ///
     /// **to_bytes is deprecated:**
     /// This returns %NULL
-    @available(*, deprecated) @inlinable func to(bytes: UnsafeMutablePointer<UnsafeMutablePointer<guchar>?>!, nBytes n_bytes: UnsafeMutablePointer<gint>!) {
-        pango_coverage_to_bytes(coverage_ptr, bytes, n_bytes)
+    @available(*, deprecated) @inlinable func to(bytes: UnsafeMutablePointer<UnsafeMutablePointer<guchar>?>!, nBytes: UnsafeMutablePointer<gint>!) {
+        pango_coverage_to_bytes(coverage_ptr, bytes, nBytes)
     
     }
 
@@ -1148,7 +1195,7 @@ public extension CoverageProtocol {
 ///
 /// `PangoEngine` is the base class for all types of language and
 /// script specific engines. It has no functionality by itself.
-public protocol EngineProtocol: ObjectProtocol {
+public protocol EngineProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoEngine` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -1223,7 +1270,7 @@ public extension EngineRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EngineProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1247,7 +1294,7 @@ public extension EngineRef {
 ///
 /// `PangoEngine` is the base class for all types of language and
 /// script specific engines. It has no functionality by itself.
-open class Engine: Object, EngineProtocol {
+open class Engine: GLibObject.Object, EngineProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Engine` instance.

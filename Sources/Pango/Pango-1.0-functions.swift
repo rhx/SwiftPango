@@ -7,8 +7,8 @@ import GLibObject
 /// 
 /// If breaks are disabled, the range will be kept in a
 /// single run, as far as possible.
-@inlinable public func attrAllowBreaksNew(allowBreaks allow_breaks: Bool) -> AttributeRef! {
-    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_allow_breaks_new(gboolean((allow_breaks) ? 1 : 0)))) else { return nil }
+@inlinable public func attrAllowBreaksNew(allowBreaks: Bool) -> AttributeRef! {
+    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_allow_breaks_new(gboolean((allowBreaks) ? 1 : 0)))) else { return nil }
     return rv
 }
 
@@ -39,8 +39,8 @@ import GLibObject
 /// closest matching font on the system. No fallback will be done to
 /// other fonts on the system that might contain the characters in the
 /// text.
-@inlinable public func attrFallbackNew(enableFallback enable_fallback: Bool) -> AttributeRef! {
-    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_fallback_new(gboolean((enable_fallback) ? 1 : 0)))) else { return nil }
+@inlinable public func attrFallbackNew(enableFallback: Bool) -> AttributeRef! {
+    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_fallback_new(gboolean((enableFallback) ? 1 : 0)))) else { return nil }
     return rv
 }
 
@@ -116,8 +116,8 @@ import GLibObject
 /// 
 /// Pango will insert hyphens when breaking lines in the middle
 /// of a word. This attribute can be used to suppress the hyphen.
-@inlinable public func attrInsertHyphensNew(insertHyphens insert_hyphens: Bool) -> AttributeRef! {
-    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_insert_hyphens_new(gboolean((insert_hyphens) ? 1 : 0)))) else { return nil }
+@inlinable public func attrInsertHyphensNew(insertHyphens: Bool) -> AttributeRef! {
+    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_insert_hyphens_new(gboolean((insertHyphens) ? 1 : 0)))) else { return nil }
     return rv
 }
 
@@ -134,8 +134,8 @@ import GLibObject
 
 
 /// Create a new letter-spacing attribute.
-@inlinable public func attrLetterSpacingNew(letterSpacing letter_spacing: Int) -> AttributeRef! {
-    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_letter_spacing_new(gint(letter_spacing)))) else { return nil }
+@inlinable public func attrLetterSpacingNew(letterSpacing: Int) -> AttributeRef! {
+    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_letter_spacing_new(gint(letterSpacing)))) else { return nil }
     return rv
 }
 
@@ -173,8 +173,8 @@ import GLibObject
 
 /// Create a new font size scale attribute. The base font for the
 /// affected text will have its size multiplied by `scale_factor`.
-@inlinable public func attrScaleNew(scaleFactor scale_factor: CDouble) -> AttributeRef! {
-    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_scale_new(scale_factor))) else { return nil }
+@inlinable public func attrScaleNew(scaleFactor: CDouble) -> AttributeRef! {
+    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_scale_new(scaleFactor))) else { return nil }
     return rv
 }
 
@@ -185,8 +185,8 @@ import GLibObject
 /// particular ink and logical rectangle on the result of shaping a
 /// particular glyph. This might be used, for instance, for
 /// embedding a picture or a widget inside a `PangoLayout`.
-@inlinable public func attrShapeNew<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT, logicalRect logical_rect: RectangleT) -> AttributeRef! {
-    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new(ink_rect._ptr, logical_rect._ptr))) else { return nil }
+@inlinable public func attrShapeNew<RectangleT: RectangleProtocol>(inkRect: RectangleT, logicalRect: RectangleT) -> AttributeRef! {
+    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new(inkRect._ptr, logicalRect._ptr))) else { return nil }
     return rv
 }
 
@@ -196,8 +196,8 @@ import GLibObject
 /// Like `pango_attr_shape_new()`, but a user data pointer is also
 /// provided; this pointer can be accessed when later
 /// rendering the glyph.
-@inlinable public func attrShapeNewWithData<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT, logicalRect logical_rect: RectangleT, data: gpointer! = nil, copyFunc copy_func: PangoAttrDataCopyFunc? = nil, destroyFunc destroy_func: GDestroyNotify? = nil) -> AttributeRef! {
-    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new_with_data(ink_rect._ptr, logical_rect._ptr, data, copy_func, destroy_func))) else { return nil }
+@inlinable public func attrShapeNewWithData<RectangleT: RectangleProtocol>(inkRect: RectangleT, logicalRect: RectangleT, data: gpointer! = nil, copyFunc: PangoAttrDataCopyFunc? = nil, destroyFunc: GDestroyNotify? = nil) -> AttributeRef! {
+    guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new_with_data(inkRect._ptr, logicalRect._ptr, data, copyFunc, destroyFunc))) else { return nil }
     return rv
 }
 
@@ -350,8 +350,8 @@ import GLibObject
 ///
 /// **break is deprecated:**
 /// Use pango_default_break() and pango_tailor_break()
-@available(*, deprecated) @inlinable public func break_<AnalysisT: AnalysisProtocol>(text: UnsafePointer<gchar>!, length: Int, analysis: AnalysisT, attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen attrs_len: Int) {
-    pango_break(text, gint(length), analysis._ptr, attrs, gint(attrs_len))
+@available(*, deprecated) @inlinable public func break_<AnalysisT: AnalysisProtocol>(text: UnsafePointer<gchar>!, length: Int, analysis: AnalysisT, attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
+    pango_break(text, gint(length), analysis._ptr, attrs, gint(attrsLen))
 
 }
 
@@ -363,8 +363,17 @@ import GLibObject
 /// the `analyis` argument is unused and can be `nil`.
 /// 
 /// See `pango_tailor_break()` for language-specific breaks.
-@inlinable public func defaultBreak<AnalysisT: AnalysisProtocol, LogAttrT: LogAttrProtocol>(text: UnsafePointer<gchar>!, length: Int, analysis: AnalysisT? = nil, attrs: LogAttrT, attrsLen attrs_len: Int) {
-    pango_default_break(text, gint(length), analysis?._ptr, attrs._ptr, gint(attrs_len))
+@inlinable public func defaultBreak<LogAttrT: LogAttrProtocol>(text: UnsafePointer<gchar>!, length: Int, analysis: AnalysisRef? = nil, attrs: LogAttrT, attrsLen: Int) {
+    pango_default_break(text, gint(length), analysis?._ptr, attrs._ptr, gint(attrsLen))
+
+}
+/// This is the default break algorithm. It applies Unicode
+/// rules without language-specific tailoring, therefore
+/// the `analyis` argument is unused and can be `nil`.
+/// 
+/// See `pango_tailor_break()` for language-specific breaks.
+@inlinable public func defaultBreak<AnalysisT: AnalysisProtocol, LogAttrT: LogAttrProtocol>(text: UnsafePointer<gchar>!, length: Int, analysis: AnalysisT?, attrs: LogAttrT, attrsLen: Int) {
+    pango_default_break(text, gint(length), analysis?._ptr, attrs._ptr, gint(attrsLen))
 
 }
 
@@ -386,7 +395,26 @@ import GLibObject
 /// If you want two touching-but-not-overlapping rectangles stay
 /// touching-but-not-overlapping after rounding to device units, pass them in
 /// as `nearest`.
-@inlinable public func extentsToPixels<RectangleT: RectangleProtocol>(inclusive: RectangleT? = nil, nearest: RectangleT? = nil) {
+@inlinable public func extentsToPixels(inclusive: RectangleRef? = nil, nearest: RectangleRef? = nil) {
+    pango_extents_to_pixels(inclusive?._ptr, nearest?._ptr)
+
+}
+/// Converts extents from Pango units to device units, dividing by the
+/// `PANGO_SCALE` factor and performing rounding.
+/// 
+/// The `inclusive` rectangle is converted by flooring the x/y coordinates and extending
+/// width/height, such that the final rectangle completely includes the original
+/// rectangle.
+/// 
+/// The `nearest` rectangle is converted by rounding the coordinates
+/// of the rectangle to the nearest device unit (pixel).
+/// 
+/// The rule to which argument to use is: if you want the resulting device-space
+/// rectangle to completely contain the original rectangle, pass it in as `inclusive`.
+/// If you want two touching-but-not-overlapping rectangles stay
+/// touching-but-not-overlapping after rounding to device units, pass them in
+/// as `nearest`.
+@inlinable public func extentsToPixels<RectangleT: RectangleProtocol>(inclusive: RectangleT?, nearest: RectangleT?) {
     pango_extents_to_pixels(inclusive?._ptr, nearest?._ptr)
 
 }
@@ -408,8 +436,8 @@ import GLibObject
 ///
 /// **find_map is deprecated:**
 /// This method is deprecated.
-@available(*, deprecated) @inlinable public func findMap<LanguageT: LanguageProtocol>(language: LanguageT, engineTypeId engine_type_id: Int, renderTypeId render_type_id: Int) -> MapRef! {
-    guard let rv = MapRef(gconstpointer: gconstpointer(pango_find_map(language.language_ptr, guint(engine_type_id), guint(render_type_id)))) else { return nil }
+@available(*, deprecated) @inlinable public func findMap<LanguageT: LanguageProtocol>(language: LanguageT, engineTypeId: Int, renderTypeId: Int) -> MapRef! {
+    guard let rv = MapRef(gconstpointer: gconstpointer(pango_find_map(language.language_ptr, guint(engineTypeId), guint(renderTypeId)))) else { return nil }
     return rv
 }
 
@@ -426,8 +454,8 @@ import GLibObject
 /// If no delimiters are found, both `paragraph_delimiter_index` and
 /// `next_paragraph_start` are filled with the length of `text` (an index one
 /// off the end).
-@inlinable public func findParagraphBoundary(text: UnsafePointer<gchar>!, length: Int, paragraphDelimiterIndex paragraph_delimiter_index: UnsafeMutablePointer<gint>!, nextParagraphStart next_paragraph_start: UnsafeMutablePointer<gint>!) {
-    pango_find_paragraph_boundary(text, gint(length), paragraph_delimiter_index, next_paragraph_start)
+@inlinable public func findParagraphBoundary(text: UnsafePointer<gchar>!, length: Int, paragraphDelimiterIndex: UnsafeMutablePointer<gint>!, nextParagraphStart: UnsafeMutablePointer<gint>!) {
+    pango_find_paragraph_boundary(text, gint(length), paragraphDelimiterIndex, nextParagraphStart)
 
 }
 
@@ -491,8 +519,8 @@ import GLibObject
 /// paragraph; logical attributes can't be computed without context
 /// (for example you need to see spaces on either side of a word to know
 /// the word is a word).
-@inlinable public func getLogAttrs<LanguageT: LanguageProtocol>(text: UnsafePointer<CChar>!, length: Int, level: Int, language: LanguageT, logAttrs log_attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen attrs_len: Int) {
-    pango_get_log_attrs(text, gint(length), gint(level), language.language_ptr, log_attrs, gint(attrs_len))
+@inlinable public func getLogAttrs<LanguageT: LanguageProtocol>(text: UnsafePointer<CChar>!, length: Int, level: Int, language: LanguageT, logAttrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
+    pango_get_log_attrs(text, gint(length), gint(level), language.language_ptr, logAttrs, gint(attrsLen))
 
 }
 
@@ -505,8 +533,8 @@ import GLibObject
 /// 
 /// Use `g_unichar_get_mirror_char()` instead; the docs for that function
 /// provide full details.
-@inlinable @available(*, deprecated) public func getMirrorChar(ch: gunichar, mirroredCh mirrored_ch: UnsafeMutablePointer<gunichar>!) -> Bool {
-    let rv = ((pango_get_mirror_char(ch, mirrored_ch)) != 0)
+@inlinable @available(*, deprecated) public func getMirrorChar(ch: gunichar, mirroredCh: UnsafeMutablePointer<gunichar>!) -> Bool {
+    let rv = ((pango_get_mirror_char(ch, mirroredCh)) != 0)
     return rv
 }
 
@@ -515,7 +543,13 @@ import GLibObject
 
 /// Finds the gravity that best matches the rotation component
 /// in a `PangoMatrix`.
-@inlinable public func gravityGetFor<MatrixT: MatrixProtocol>(matrix: MatrixT? = nil) -> PangoGravity {
+@inlinable public func gravityGetFor(matrix: MatrixRef? = nil) -> PangoGravity {
+    let rv = pango_gravity_get_for_matrix(matrix?.matrix_ptr)
+    return rv
+}
+/// Finds the gravity that best matches the rotation component
+/// in a `PangoMatrix`.
+@inlinable public func gravityGetFor<MatrixT: MatrixProtocol>(matrix: MatrixT?) -> PangoGravity {
     let rv = pango_gravity_get_for_matrix(matrix?.matrix_ptr)
     return rv
 }
@@ -529,8 +563,8 @@ import GLibObject
 /// If `base_gravity` is `PANGO_GRAVITY_AUTO`, it is first replaced with the
 /// preferred gravity of `script`.  To get the preferred gravity of a script,
 /// pass `PANGO_GRAVITY_AUTO` and `PANGO_GRAVITY_HINT_STRONG` in.
-@inlinable public func gravityGetFor(script: PangoScript, baseGravity base_gravity: PangoGravity, hint: PangoGravityHint) -> PangoGravity {
-    let rv = pango_gravity_get_for_script(script, base_gravity, hint)
+@inlinable public func gravityGetFor(script: PangoScript, baseGravity: PangoGravity, hint: PangoGravityHint) -> PangoGravity {
+    let rv = pango_gravity_get_for_script(script, baseGravity, hint)
     return rv
 }
 
@@ -550,8 +584,8 @@ import GLibObject
 /// 
 /// If `base_gravity` is `PANGO_GRAVITY_AUTO`, it is first replaced with the
 /// preferred gravity of `script`.
-@inlinable public func gravityGetForScriptAndWidth(script: PangoScript, wide: Bool, baseGravity base_gravity: PangoGravity, hint: PangoGravityHint) -> PangoGravity {
-    let rv = pango_gravity_get_for_script_and_width(script, gboolean((wide) ? 1 : 0), base_gravity, hint)
+@inlinable public func gravityGetForScriptAndWidth(script: PangoScript, wide: Bool, baseGravity: PangoGravity, hint: PangoGravityHint) -> PangoGravity {
+    let rv = pango_gravity_get_for_script_and_width(script, gboolean((wide) ? 1 : 0), baseGravity, hint)
     return rv
 }
 
@@ -595,8 +629,22 @@ import GLibObject
 /// range before or containing `start_index`; `cached_iter` will be advanced to
 /// the range covering the position just after `start_index` + `length`.
 /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
-@inlinable public func itemize<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex start_index: Int, length: Int, attrs: AttrListT, cachedIter cached_iter: AttrIteratorT? = nil) -> ListRef! {
-    guard let rv = ListRef(gconstpointer: gconstpointer(pango_itemize(context.context_ptr, text, gint(start_index), gint(length), attrs.attr_list_ptr, cached_iter?.attr_iterator_ptr))) else { return nil }
+@inlinable public func itemize<AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
+    guard let rv = GLib.ListRef(pango_itemize(context.context_ptr, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr)) else { return nil }
+    return rv
+}
+/// Breaks a piece of text into segments with consistent
+/// directional level and shaping engine. Each byte of `text` will
+/// be contained in exactly one of the items in the returned list;
+/// the generated list of items will be in logical order (the start
+/// offsets of the items are ascending).
+/// 
+/// `cached_iter` should be an iterator over `attrs` currently positioned at a
+/// range before or containing `start_index`; `cached_iter` will be advanced to
+/// the range covering the position just after `start_index` + `length`.
+/// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
+@inlinable public func itemize<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
+    guard let rv = GLib.ListRef(pango_itemize(context.context_ptr, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr)) else { return nil }
     return rv
 }
 
@@ -606,8 +654,15 @@ import GLibObject
 /// Like `pango_itemize()`, but the base direction to use when
 /// computing bidirectional levels (see pango_context_set_base_dir ()),
 /// is specified explicitly rather than gotten from the `PangoContext`.
-@inlinable public func itemizeWithBaseDir<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, baseDir base_dir: PangoDirection, text: UnsafePointer<CChar>!, startIndex start_index: Int, length: Int, attrs: AttrListT, cachedIter cached_iter: AttrIteratorT? = nil) -> ListRef! {
-    guard let rv = ListRef(gconstpointer: gconstpointer(pango_itemize_with_base_dir(context.context_ptr, base_dir, text, gint(start_index), gint(length), attrs.attr_list_ptr, cached_iter?.attr_iterator_ptr))) else { return nil }
+@inlinable public func itemizeWithBaseDir<AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
+    guard let rv = GLib.ListRef(pango_itemize_with_base_dir(context.context_ptr, baseDir, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr)) else { return nil }
+    return rv
+}
+/// Like `pango_itemize()`, but the base direction to use when
+/// computing bidirectional levels (see pango_context_set_base_dir ()),
+/// is specified explicitly rather than gotten from the `PangoContext`.
+@inlinable public func itemizeWithBaseDir<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
+    guard let rv = GLib.ListRef(pango_itemize_with_base_dir(context.context_ptr, baseDir, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr)) else { return nil }
     return rv
 }
 
@@ -674,8 +729,8 @@ import GLibObject
 /// 
 /// If the input base direction is a weak direction, the direction of the
 /// characters in the text will determine the final resolved direction.
-@inlinable public func log2visGetEmbeddingLevels(text: UnsafePointer<gchar>!, length: Int, pbaseDir pbase_dir: UnsafeMutablePointer<PangoDirection>!) -> UnsafeMutablePointer<guint8>! {
-    guard let rv = pango_log2vis_get_embedding_levels(text, gint(length), pbase_dir) else { return nil }
+@inlinable public func log2visGetEmbeddingLevels(text: UnsafePointer<gchar>!, length: Int, pbaseDir: UnsafeMutablePointer<PangoDirection>!) -> UnsafeMutablePointer<guint8>! {
+    guard let rv = pango_log2vis_get_embedding_levels(text, gint(length), pbaseDir) else { return nil }
     return rv
 }
 
@@ -686,9 +741,9 @@ import GLibObject
 /// use this function to get the list of pango attributes and text out of the
 /// markup. This function will not free `context`, use `g_markup_parse_context_free()`
 /// to do so.
-@inlinable public func markupParserFinish<MarkupParseContextT: MarkupParseContextProtocol>(context: MarkupParseContextT, attrList attr_list: UnsafeMutablePointer<UnsafeMutablePointer<PangoAttrList>?>! = nil, text: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>! = nil, accelChar accel_char: UnsafeMutablePointer<gunichar>! = nil) throws -> Bool {
+@inlinable public func markupParserFinish<MarkupParseContextT: GLib.MarkupParseContextProtocol>(context: MarkupParseContextT, attrList: UnsafeMutablePointer<UnsafeMutablePointer<PangoAttrList>?>! = nil, text: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>! = nil, accelChar: UnsafeMutablePointer<gunichar>! = nil) throws -> Bool {
     var error: UnsafeMutablePointer<GError>?
-    let rv = ((pango_markup_parser_finish(context.markup_parse_context_ptr, attr_list, text, accel_char, &error)) != 0)
+    let rv = ((pango_markup_parser_finish(context.markup_parse_context_ptr, attrList, text, accelChar, &error)) != 0)
     if let error = error { throw GLibError(error) }
     return rv
 }
@@ -716,8 +771,8 @@ import GLibObject
 /// This function is designed for applications that read pango markup
 /// from streams. To simply parse a string containing pango markup,
 /// the simpler `pango_parse_markup()` API is recommended instead.
-@inlinable public func markupParserNew(accelMarker accel_marker: gunichar) -> MarkupParseContextRef! {
-    guard let rv = MarkupParseContextRef(gconstpointer: gconstpointer(pango_markup_parser_new(accel_marker))) else { return nil }
+@inlinable public func markupParserNew(accelMarker: gunichar) -> GLib.MarkupParseContextRef! {
+    guard let rv = GLib.MarkupParseContextRef(pango_markup_parser_new(accelMarker)) else { return nil }
     return rv
 }
 
@@ -748,8 +803,8 @@ import GLibObject
 ///
 /// **parse_enum is deprecated:**
 /// This method is deprecated.
-@available(*, deprecated) @inlinable public func parseEnum(type: GType, str: UnsafePointer<CChar>? = nil, value: UnsafeMutablePointer<gint>! = nil, warn: Bool, possibleValues possible_values: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>! = nil) -> Bool {
-    let rv = ((pango_parse_enum(type, str, value, gboolean((warn) ? 1 : 0), possible_values)) != 0)
+@available(*, deprecated) @inlinable public func parseEnum(type: GType, str: UnsafePointer<CChar>? = nil, value: UnsafeMutablePointer<gint>! = nil, warn: Bool, possibleValues: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>! = nil) -> Bool {
+    let rv = ((pango_parse_enum(type, str, value, gboolean((warn) ? 1 : 0), possibleValues)) != 0)
     return rv
 }
 
@@ -772,9 +827,9 @@ import GLibObject
 /// 
 /// If any error happens, none of the output arguments are touched except
 /// for `error`.
-@inlinable public func parseMarkup(markupText markup_text: UnsafePointer<CChar>!, length: Int, accelMarker accel_marker: gunichar, attrList attr_list: UnsafeMutablePointer<UnsafeMutablePointer<PangoAttrList>?>! = nil, text: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>! = nil, accelChar accel_char: UnsafeMutablePointer<gunichar>! = nil) throws -> Bool {
+@inlinable public func parseMarkup(markupText: UnsafePointer<CChar>!, length: Int, accelMarker: gunichar, attrList: UnsafeMutablePointer<UnsafeMutablePointer<PangoAttrList>?>! = nil, text: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>! = nil, accelChar: UnsafeMutablePointer<gunichar>! = nil) throws -> Bool {
     var error: UnsafeMutablePointer<GError>?
-    let rv = ((pango_parse_markup(markup_text, gint(length), accel_marker, attr_list, text, accel_char, &error)) != 0)
+    let rv = ((pango_parse_markup(markupText, gint(length), accelMarker, attrList, text, accelChar, &error)) != 0)
     if let error = error { throw GLibError(error) }
     return rv
 }
@@ -865,8 +920,8 @@ import GLibObject
 /// From a list of items in logical order and the associated
 /// directional levels, produce a list in visual order.
 /// The original list is unmodified.
-@inlinable public func reorderItems<ListT: ListProtocol>(logicalItems logical_items: ListT) -> ListRef! {
-    guard let rv = ListRef(gconstpointer: gconstpointer(pango_reorder_items(logical_items._ptr))) else { return nil }
+@inlinable public func reorderItems<ListT: GLib.ListProtocol>(logicalItems: ListT) -> GLib.ListRef! {
+    guard let rv = GLib.ListRef(pango_reorder_items(logicalItems._ptr)) else { return nil }
     return rv
 }
 
@@ -999,8 +1054,8 @@ import GLibObject
 /// certain cross-item shaping interactions.  If you have access to the broader
 /// text of which `item_text` is part of, provide the broader text as
 /// `paragraph_text`.  If `paragraph_text` is `nil`, item text is used instead.
-@inlinable public func shapeFull<AnalysisT: AnalysisProtocol, GlyphStringT: GlyphStringProtocol>(itemText item_text: UnsafePointer<CChar>!, itemLength item_length: Int, paragraphText paragraph_text: UnsafePointer<CChar>? = nil, paragraphLength paragraph_length: Int, analysis: AnalysisT, glyphs: GlyphStringT) {
-    pango_shape_full(item_text, gint(item_length), paragraph_text, gint(paragraph_length), analysis._ptr, glyphs.glyph_string_ptr)
+@inlinable public func shapeFull<AnalysisT: AnalysisProtocol, GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, analysis: AnalysisT, glyphs: GlyphStringT) {
+    pango_shape_full(itemText, gint(itemLength), paragraphText, gint(paragraphLength), analysis._ptr, glyphs.glyph_string_ptr)
 
 }
 
@@ -1014,8 +1069,8 @@ import GLibObject
 /// 
 /// This is similar to `pango_shape_full()`, except it also takes
 /// flags that can influence the shaping process.
-@inlinable public func shapeWithFlags<AnalysisT: AnalysisProtocol, GlyphStringT: GlyphStringProtocol>(itemText item_text: UnsafePointer<CChar>!, itemLength item_length: Int, paragraphText paragraph_text: UnsafePointer<CChar>? = nil, paragraphLength paragraph_length: Int, analysis: AnalysisT, glyphs: GlyphStringT, flags: ShapeFlags) {
-    pango_shape_with_flags(item_text, gint(item_length), paragraph_text, gint(paragraph_length), analysis._ptr, glyphs.glyph_string_ptr, flags.value)
+@inlinable public func shapeWithFlags<AnalysisT: AnalysisProtocol, GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, analysis: AnalysisT, glyphs: GlyphStringT, flags: ShapeFlags) {
+    pango_shape_with_flags(itemText, gint(itemLength), paragraphText, gint(paragraphLength), analysis._ptr, glyphs.glyph_string_ptr, flags.value)
 
 }
 
@@ -1053,8 +1108,8 @@ import GLibObject
 /// 
 /// If `offset` is not -1, it is used to apply attributes
 /// from `analysis` that are relevant to line breaking.
-@inlinable public func tailorBreak<AnalysisT: AnalysisProtocol>(text: UnsafePointer<CChar>!, length: Int, analysis: AnalysisT, offset: Int, logAttrs log_attrs: UnsafeMutablePointer<PangoLogAttr>!, logAttrsLen log_attrs_len: Int) {
-    pango_tailor_break(text, gint(length), analysis._ptr, gint(offset), log_attrs, gint(log_attrs_len))
+@inlinable public func tailorBreak<AnalysisT: AnalysisProtocol>(text: UnsafePointer<CChar>!, length: Int, analysis: AnalysisT, offset: Int, logAttrs: UnsafeMutablePointer<PangoLogAttr>!, logAttrsLen: Int) {
+    pango_tailor_break(text, gint(length), analysis._ptr, gint(offset), logAttrs, gint(logAttrsLen))
 
 }
 
@@ -1138,8 +1193,8 @@ import GLibObject
 /// (same major version.)
 /// 
 /// For compile-time version checking use `PANGO_VERSION_CHECK()`.
-@inlinable public func versionCheck(requiredMajor required_major: Int, requiredMinor required_minor: Int, requiredMicro required_micro: Int) -> String! {
-    guard let rv = pango_version_check(gint(required_major), gint(required_minor), gint(required_micro)).map({ String(cString: $0) }) else { return nil }
+@inlinable public func versionCheck(requiredMajor: Int, requiredMinor: Int, requiredMicro: Int) -> String! {
+    guard let rv = pango_version_check(gint(requiredMajor), gint(requiredMinor), gint(requiredMicro)).map({ String(cString: $0) }) else { return nil }
     return rv
 }
 

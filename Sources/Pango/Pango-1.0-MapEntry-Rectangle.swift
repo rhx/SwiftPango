@@ -85,7 +85,7 @@ public extension MapEntryRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapEntryProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -364,7 +364,7 @@ public extension MatrixRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MatrixProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -551,8 +551,8 @@ public extension MatrixProtocol {
     /// Changes the transformation represented by `matrix` to be the
     /// transformation given by first applying transformation
     /// given by `new_matrix` then applying the original transformation.
-    @inlinable func concat<MatrixT: MatrixProtocol>(newMatrix new_matrix: MatrixT) {
-        pango_matrix_concat(matrix_ptr, new_matrix.matrix_ptr)
+    @inlinable func concat<MatrixT: MatrixProtocol>(newMatrix: MatrixT) {
+        pango_matrix_concat(matrix_ptr, newMatrix.matrix_ptr)
     
     }
 
@@ -600,8 +600,8 @@ public extension MatrixProtocol {
     /// transformation given by first scaling by `sx` in the X direction
     /// and `sy` in the Y direction then applying the original
     /// transformation.
-    @inlinable func scale(scaleX scale_x: CDouble, scaleY scale_y: CDouble) {
-        pango_matrix_scale(matrix_ptr, scale_x, scale_y)
+    @inlinable func scale(scaleX: CDouble, scaleY: CDouble) {
+        pango_matrix_scale(matrix_ptr, scaleX, scaleY)
     
     }
 
@@ -635,7 +635,22 @@ public extension MatrixProtocol {
     /// For better accuracy, you should use `pango_matrix_transform_rectangle()` on
     /// original rectangle in Pango units and convert to pixels afterward
     /// using `pango_extents_to_pixels()`'s first argument.
-    @inlinable func transformPixelRectangle<RectangleT: RectangleProtocol>(rect: RectangleT? = nil) {
+    @inlinable func transformPixelRectangle(rect: RectangleRef? = nil) {
+        pango_matrix_transform_pixel_rectangle(matrix_ptr, rect?._ptr)
+    
+    }
+    /// First transforms the `rect` using `matrix`, then calculates the bounding box
+    /// of the transformed rectangle.  The rectangle should be in device units
+    /// (pixels).
+    /// 
+    /// This function is useful for example when you want to draw a rotated
+    /// `PangoLayout` to an image buffer, and want to know how large the image
+    /// should be and how much you should shift the layout when rendering.
+    /// 
+    /// For better accuracy, you should use `pango_matrix_transform_rectangle()` on
+    /// original rectangle in Pango units and convert to pixels afterward
+    /// using `pango_extents_to_pixels()`'s first argument.
+    @inlinable func transformPixelRectangle<RectangleT: RectangleProtocol>(rect: RectangleT?) {
         pango_matrix_transform_pixel_rectangle(matrix_ptr, rect?._ptr)
     
     }
@@ -664,7 +679,29 @@ public extension MatrixProtocol {
     /// to pixels first and then transform, for example when the transformed
     /// coordinates may overflow in Pango units (large matrix translation for
     /// example).
-    @inlinable func transformRectangle<RectangleT: RectangleProtocol>(rect: RectangleT? = nil) {
+    @inlinable func transformRectangle(rect: RectangleRef? = nil) {
+        pango_matrix_transform_rectangle(matrix_ptr, rect?._ptr)
+    
+    }
+    /// First transforms `rect` using `matrix`, then calculates the bounding box
+    /// of the transformed rectangle.  The rectangle should be in Pango units.
+    /// 
+    /// This function is useful for example when you want to draw a rotated
+    /// `PangoLayout` to an image buffer, and want to know how large the image
+    /// should be and how much you should shift the layout when rendering.
+    /// 
+    /// If you have a rectangle in device units (pixels), use
+    /// `pango_matrix_transform_pixel_rectangle()`.
+    /// 
+    /// If you have the rectangle in Pango units and want to convert to
+    /// transformed pixel bounding box, it is more accurate to transform it first
+    /// (using this function) and pass the result to `pango_extents_to_pixels()`,
+    /// first argument, for an inclusive rounded rectangle.
+    /// However, there are valid reasons that you may want to convert
+    /// to pixels first and then transform, for example when the transformed
+    /// coordinates may overflow in Pango units (large matrix translation for
+    /// example).
+    @inlinable func transformRectangle<RectangleT: RectangleProtocol>(rect: RectangleT?) {
         pango_matrix_transform_rectangle(matrix_ptr, rect?._ptr)
     
     }
@@ -866,7 +903,7 @@ public extension RectangleRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RectangleProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1049,16 +1086,16 @@ public extension RectangleProtocol {
     /// particular ink and logical rectangle on the result of shaping a
     /// particular glyph. This might be used, for instance, for
     /// embedding a picture or a widget inside a `PangoLayout`.
-    @inlinable func attrShapeNew<RectangleT: RectangleProtocol>(logicalRect logical_rect: RectangleT) -> AttributeRef! {
-        let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new(_ptr, logical_rect._ptr)))
+    @inlinable func attrShapeNew<RectangleT: RectangleProtocol>(logicalRect: RectangleT) -> AttributeRef! {
+        let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new(_ptr, logicalRect._ptr)))
         return rv
     }
 
     /// Like `pango_attr_shape_new()`, but a user data pointer is also
     /// provided; this pointer can be accessed when later
     /// rendering the glyph.
-    @inlinable func attrShapeNewWithData<RectangleT: RectangleProtocol>(logicalRect logical_rect: RectangleT, data: gpointer! = nil, copyFunc copy_func: PangoAttrDataCopyFunc? = nil, destroyFunc destroy_func: GDestroyNotify? = nil) -> AttributeRef! {
-        let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new_with_data(_ptr, logical_rect._ptr, data, copy_func, destroy_func)))
+    @inlinable func attrShapeNewWithData<RectangleT: RectangleProtocol>(logicalRect: RectangleT, data: gpointer! = nil, copyFunc: PangoAttrDataCopyFunc? = nil, destroyFunc: GDestroyNotify? = nil) -> AttributeRef! {
+        let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new_with_data(_ptr, logicalRect._ptr, data, copyFunc, destroyFunc)))
         return rv
     }
 
@@ -1077,7 +1114,26 @@ public extension RectangleProtocol {
     /// If you want two touching-but-not-overlapping rectangles stay
     /// touching-but-not-overlapping after rounding to device units, pass them in
     /// as `nearest`.
-    @inlinable func extentsToPixels<RectangleT: RectangleProtocol>(nearest: RectangleT? = nil) {
+    @inlinable func extentsToPixels(nearest: RectangleRef? = nil) {
+        pango_extents_to_pixels(_ptr, nearest?._ptr)
+    
+    }
+    /// Converts extents from Pango units to device units, dividing by the
+    /// `PANGO_SCALE` factor and performing rounding.
+    /// 
+    /// The `inclusive` rectangle is converted by flooring the x/y coordinates and extending
+    /// width/height, such that the final rectangle completely includes the original
+    /// rectangle.
+    /// 
+    /// The `nearest` rectangle is converted by rounding the coordinates
+    /// of the rectangle to the nearest device unit (pixel).
+    /// 
+    /// The rule to which argument to use is: if you want the resulting device-space
+    /// rectangle to completely contain the original rectangle, pass it in as `inclusive`.
+    /// If you want two touching-but-not-overlapping rectangles stay
+    /// touching-but-not-overlapping after rounding to device units, pass them in
+    /// as `nearest`.
+    @inlinable func extentsToPixels<RectangleT: RectangleProtocol>(nearest: RectangleT?) {
         pango_extents_to_pixels(_ptr, nearest?._ptr)
     
     }

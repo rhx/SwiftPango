@@ -85,7 +85,7 @@ public extension ItemRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -309,8 +309,8 @@ public extension ItemProtocol {
     /// chars, and must be provided because the text used to generate the
     /// item isn't available, so `pango_item_split()` can't count the char
     /// length of the split items itself.
-    @inlinable func split(splitIndex split_index: Int, splitOffset split_offset: Int) -> ItemRef! {
-        guard let rv = ItemRef(gconstpointer: gconstpointer(pango_item_split(item_ptr, gint(split_index), gint(split_offset)))) else { return nil }
+    @inlinable func split(splitIndex: Int, splitOffset: Int) -> ItemRef! {
+        guard let rv = ItemRef(gconstpointer: gconstpointer(pango_item_split(item_ptr, gint(splitIndex), gint(splitOffset)))) else { return nil }
         return rv
     }
 
@@ -460,7 +460,7 @@ public extension LanguageRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -778,8 +778,8 @@ public extension LanguageProtocol {
     /// Note: while the return value is declared as PangoScript, the
     /// returned values are from the GUnicodeScript enumeration, which
     /// may have more values. Callers need to handle unknown values.
-    @inlinable func getScripts(numScripts num_scripts: UnsafeMutablePointer<gint>! = nil) -> UnsafePointer<PangoScript>! {
-        let rv = pango_language_get_scripts(language_ptr, num_scripts)
+    @inlinable func getScripts(numScripts: UnsafeMutablePointer<gint>! = nil) -> UnsafePointer<PangoScript>! {
+        let rv = pango_language_get_scripts(language_ptr, numScripts)
         return rv
     }
 
@@ -805,8 +805,8 @@ public extension LanguageProtocol {
     /// in the list if the range is '*', the range is exactly the tag,
     /// or the range is a prefix of the tag, and the character after it
     /// in the tag is '-'.
-    @inlinable func matches(rangeList range_list: UnsafePointer<CChar>!) -> Bool {
-        let rv = ((pango_language_matches(language_ptr, range_list)) != 0)
+    @inlinable func matches(rangeList: UnsafePointer<CChar>!) -> Bool {
+        let rv = ((pango_language_matches(language_ptr, rangeList)) != 0)
         return rv
     }
 
@@ -826,8 +826,8 @@ public extension LanguageProtocol {
     ///
     /// **find_map is deprecated:**
     /// This method is deprecated.
-    @available(*, deprecated) @inlinable func findMap(engineTypeId engine_type_id: Int, renderTypeId render_type_id: Int) -> MapRef! {
-        let rv = MapRef(gconstpointer: gconstpointer(pango_find_map(language_ptr, guint(engine_type_id), guint(render_type_id))))
+    @available(*, deprecated) @inlinable func findMap(engineTypeId: Int, renderTypeId: Int) -> MapRef! {
+        let rv = MapRef(gconstpointer: gconstpointer(pango_find_map(language_ptr, guint(engineTypeId), guint(renderTypeId))))
         return rv
     }
 
@@ -838,8 +838,8 @@ public extension LanguageProtocol {
     /// paragraph; logical attributes can't be computed without context
     /// (for example you need to see spaces on either side of a word to know
     /// the word is a word).
-    @inlinable func getLogAttrs(text: UnsafePointer<CChar>!, length: Int, level: Int, logAttrs log_attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen attrs_len: Int) {
-        pango_get_log_attrs(text, gint(length), gint(level), language_ptr, log_attrs, gint(attrs_len))
+    @inlinable func getLogAttrs(text: UnsafePointer<CChar>!, length: Int, level: Int, logAttrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
+        pango_get_log_attrs(text, gint(length), gint(level), language_ptr, logAttrs, gint(attrsLen))
     
     }
     /// Get a string that is representative of the characters needed to

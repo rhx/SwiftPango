@@ -13,7 +13,7 @@ import GLibObject
 /// `PangoRenderer` is a base class for objects that are used to
 /// render Pango objects such as `PangoGlyphString` and
 /// `PangoLayout`.
-public protocol RendererProtocol: ObjectProtocol {
+public protocol RendererProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoRenderer` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -89,7 +89,7 @@ public extension RendererRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -114,7 +114,7 @@ public extension RendererRef {
 /// `PangoRenderer` is a base class for objects that are used to
 /// render Pango objects such as `PangoGlyphString` and
 /// `PangoLayout`.
-open class Renderer: Object, RendererProtocol {
+open class Renderer: GLibObject.Object, RendererProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Renderer` instance.
@@ -356,8 +356,8 @@ public extension RendererProtocol {
     /// 
     /// The default implementation of this method simply falls back to
     /// `pango_renderer_draw_glyphs()`.
-    @inlinable func drawGlyphItem<GlyphItemT: GlyphItemProtocol>(text: UnsafePointer<CChar>? = nil, glyphItem glyph_item: GlyphItemT, x: Int, y: Int) {
-        pango_renderer_draw_glyph_item(renderer_ptr, text, glyph_item.glyph_item_ptr, gint(x), gint(y))
+    @inlinable func drawGlyphItem<GlyphItemT: GlyphItemProtocol>(text: UnsafePointer<CChar>? = nil, glyphItem: GlyphItemT, x: Int, y: Int) {
+        pango_renderer_draw_glyph_item(renderer_ptr, text, glyphItem.glyph_item_ptr, gint(x), gint(y))
     
     }
 
@@ -465,13 +465,24 @@ public extension RendererProtocol {
 
     /// Sets the color for part of the rendering.
     /// Also see `pango_renderer_set_alpha()`.
-    @inlinable func setColor<ColorT: ColorProtocol>(part: PangoRenderPart, color: ColorT? = nil) {
+    @inlinable func setColor(part: PangoRenderPart, color: ColorRef? = nil) {
+        pango_renderer_set_color(renderer_ptr, part, color?.color_ptr)
+    
+    }
+    /// Sets the color for part of the rendering.
+    /// Also see `pango_renderer_set_alpha()`.
+    @inlinable func setColor<ColorT: ColorProtocol>(part: PangoRenderPart, color: ColorT?) {
         pango_renderer_set_color(renderer_ptr, part, color?.color_ptr)
     
     }
 
     /// Sets the transformation matrix that will be applied when rendering.
-    @inlinable func set<MatrixT: MatrixProtocol>(matrix: MatrixT? = nil) {
+    @inlinable func set(matrix: MatrixRef? = nil) {
+        pango_renderer_set_matrix(renderer_ptr, matrix?.matrix_ptr)
+    
+    }
+    /// Sets the transformation matrix that will be applied when rendering.
+    @inlinable func set<MatrixT: MatrixProtocol>(matrix: MatrixT?) {
         pango_renderer_set_matrix(renderer_ptr, matrix?.matrix_ptr)
     
     }

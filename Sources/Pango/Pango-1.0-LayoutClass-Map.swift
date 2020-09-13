@@ -85,7 +85,7 @@ public extension LayoutClassRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutClassProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -358,7 +358,7 @@ public extension LayoutIterRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -568,15 +568,21 @@ public extension LayoutIterProtocol {
     /// (origin is the top left of the entire layout). Only logical extents
     /// can sensibly be obtained for characters; ink extents make sense only
     /// down to the level of clusters.
-    @inlinable func getCharExtents<RectangleT: RectangleProtocol>(logicalRect logical_rect: RectangleT) {
-        pango_layout_iter_get_char_extents(layout_iter_ptr, logical_rect._ptr)
+    @inlinable func getCharExtents<RectangleT: RectangleProtocol>(logicalRect: RectangleT) {
+        pango_layout_iter_get_char_extents(layout_iter_ptr, logicalRect._ptr)
     
     }
 
     /// Gets the extents of the current cluster, in layout coordinates
     /// (origin is the top left of the entire layout).
-    @inlinable func getClusterExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
-        pango_layout_iter_get_cluster_extents(layout_iter_ptr, ink_rect?._ptr, logical_rect?._ptr)
+    @inlinable func getClusterExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
+        pango_layout_iter_get_cluster_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
+    
+    }
+    /// Gets the extents of the current cluster, in layout coordinates
+    /// (origin is the top left of the entire layout).
+    @inlinable func getClusterExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
+        pango_layout_iter_get_cluster_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
@@ -598,8 +604,15 @@ public extension LayoutIterProtocol {
     /// Obtains the extents of the `PangoLayout` being iterated
     /// over. `ink_rect` or `logical_rect` can be `nil` if you
     /// aren't interested in them.
-    @inlinable func getLayoutExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
-        pango_layout_iter_get_layout_extents(layout_iter_ptr, ink_rect?._ptr, logical_rect?._ptr)
+    @inlinable func getLayoutExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
+        pango_layout_iter_get_layout_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
+    
+    }
+    /// Obtains the extents of the `PangoLayout` being iterated
+    /// over. `ink_rect` or `logical_rect` can be `nil` if you
+    /// aren't interested in them.
+    @inlinable func getLayoutExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
+        pango_layout_iter_get_layout_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
@@ -618,8 +631,18 @@ public extension LayoutIterProtocol {
     /// `PangoLayout`).  Thus the extents returned by this function will be
     /// the same width/height but not at the same x/y as the extents
     /// returned from `pango_layout_line_get_extents()`.
-    @inlinable func getLineExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
-        pango_layout_iter_get_line_extents(layout_iter_ptr, ink_rect?._ptr, logical_rect?._ptr)
+    @inlinable func getLineExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
+        pango_layout_iter_get_line_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
+    
+    }
+    /// Obtains the extents of the current line. `ink_rect` or `logical_rect`
+    /// can be `nil` if you aren't interested in them. Extents are in layout
+    /// coordinates (origin is the top-left corner of the entire
+    /// `PangoLayout`).  Thus the extents returned by this function will be
+    /// the same width/height but not at the same x/y as the extents
+    /// returned from `pango_layout_line_get_extents()`.
+    @inlinable func getLineExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
+        pango_layout_iter_get_line_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
@@ -663,8 +686,14 @@ public extension LayoutIterProtocol {
 
     /// Gets the extents of the current run in layout coordinates
     /// (origin is the top left of the entire layout).
-    @inlinable func getRunExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
-        pango_layout_iter_get_run_extents(layout_iter_ptr, ink_rect?._ptr, logical_rect?._ptr)
+    @inlinable func getRunExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
+        pango_layout_iter_get_run_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
+    
+    }
+    /// Gets the extents of the current run in layout coordinates
+    /// (origin is the top left of the entire layout).
+    @inlinable func getRunExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
+        pango_layout_iter_get_run_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
@@ -920,7 +949,7 @@ public extension LayoutLineRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutLineProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1107,8 +1136,15 @@ public extension LayoutLineProtocol {
     /// Computes the logical and ink extents of a layout line. See
     /// `pango_font_get_glyph_extents()` for details about the interpretation
     /// of the rectangles.
-    @inlinable func getExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
-        pango_layout_line_get_extents(layout_line_ptr, ink_rect?._ptr, logical_rect?._ptr)
+    @inlinable func getExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
+        pango_layout_line_get_extents(layout_line_ptr, inkRect?._ptr, logicalRect?._ptr)
+    
+    }
+    /// Computes the logical and ink extents of a layout line. See
+    /// `pango_font_get_glyph_extents()` for details about the interpretation
+    /// of the rectangles.
+    @inlinable func getExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
+        pango_layout_line_get_extents(layout_line_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
@@ -1124,8 +1160,17 @@ public extension LayoutLineProtocol {
     /// two `pango_extents_to_pixels()` calls, rounding `ink_rect` and `logical_rect`
     /// such that the rounded rectangles fully contain the unrounded one (that is,
     /// passes them as first argument to `pango_extents_to_pixels()`).
-    @inlinable func getPixelExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
-        pango_layout_line_get_pixel_extents(layout_line_ptr, ink_rect?._ptr, logical_rect?._ptr)
+    @inlinable func getPixelExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
+        pango_layout_line_get_pixel_extents(layout_line_ptr, inkRect?._ptr, logicalRect?._ptr)
+    
+    }
+    /// Computes the logical and ink extents of `layout_line` in device units.
+    /// This function just calls `pango_layout_line_get_extents()` followed by
+    /// two `pango_extents_to_pixels()` calls, rounding `ink_rect` and `logical_rect`
+    /// such that the rounded rectangles fully contain the unrounded one (that is,
+    /// passes them as first argument to `pango_extents_to_pixels()`).
+    @inlinable func getPixelExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
+        pango_layout_line_get_pixel_extents(layout_line_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
@@ -1134,14 +1179,14 @@ public extension LayoutLineProtocol {
     /// ranges which are adjacent. The ranges will be sorted from left to
     /// right. The ranges are with respect to the left edge of the entire
     /// layout, not with respect to the line.
-    @inlinable func getXRanges(startIndex start_index: Int, endIndex end_index: Int, ranges: UnsafeMutablePointer<UnsafeMutablePointer<CInt>?>!, nRanges n_ranges: UnsafeMutablePointer<gint>!) {
-        pango_layout_line_get_x_ranges(layout_line_ptr, gint(start_index), gint(end_index), ranges, n_ranges)
+    @inlinable func getXRanges(startIndex: Int, endIndex: Int, ranges: UnsafeMutablePointer<UnsafeMutablePointer<CInt>?>!, nRanges: UnsafeMutablePointer<gint>!) {
+        pango_layout_line_get_x_ranges(layout_line_ptr, gint(startIndex), gint(endIndex), ranges, nRanges)
     
     }
 
     /// Converts an index within a line to a X position.
-    @inlinable func indexToX(index_: Int, trailing: Bool, xPos x_pos: UnsafeMutablePointer<gint>!) {
-        pango_layout_line_index_to_x(layout_line_ptr, gint(index_), gboolean((trailing) ? 1 : 0), x_pos)
+    @inlinable func indexToX(index_: Int, trailing: Bool, xPos: UnsafeMutablePointer<gint>!) {
+        pango_layout_line_index_to_x(layout_line_ptr, gint(index_), gboolean((trailing) ? 1 : 0), xPos)
     
     }
 
@@ -1169,8 +1214,8 @@ public extension LayoutLineProtocol {
     /// left of the line results in `index_` pointing to the (logical) last
     /// grapheme in the line and `trailing` being set to the number of characters
     /// in that grapheme. The reverse is true for a left-to-right line.
-    @inlinable func xToIndex(xPos x_pos: Int, index_: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) -> Bool {
-        let rv = ((pango_layout_line_x_to_index(layout_line_ptr, gint(x_pos), index_, trailing)) != 0)
+    @inlinable func xToIndex(xPos: Int, index_: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) -> Bool {
+        let rv = ((pango_layout_line_x_to_index(layout_line_ptr, gint(xPos), index_, trailing)) != 0)
         return rv
     }
 
@@ -1343,7 +1388,7 @@ public extension LogAttrRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1526,8 +1571,17 @@ public extension LogAttrProtocol {
     /// the `analyis` argument is unused and can be `nil`.
     /// 
     /// See `pango_tailor_break()` for language-specific breaks.
-    @inlinable func defaultBreak<AnalysisT: AnalysisProtocol>(text: UnsafePointer<gchar>!, length: Int, analysis: AnalysisT? = nil, attrsLen attrs_len: Int) {
-        pango_default_break(text, gint(length), analysis?._ptr, _ptr, gint(attrs_len))
+    @inlinable func defaultBreak(text: UnsafePointer<gchar>!, length: Int, analysis: AnalysisRef? = nil, attrsLen: Int) {
+        pango_default_break(text, gint(length), analysis?._ptr, _ptr, gint(attrsLen))
+    
+    }
+    /// This is the default break algorithm. It applies Unicode
+    /// rules without language-specific tailoring, therefore
+    /// the `analyis` argument is unused and can be `nil`.
+    /// 
+    /// See `pango_tailor_break()` for language-specific breaks.
+    @inlinable func defaultBreak<AnalysisT: AnalysisProtocol>(text: UnsafePointer<gchar>!, length: Int, analysis: AnalysisT?, attrsLen: Int) {
+        pango_default_break(text, gint(length), analysis?._ptr, _ptr, gint(attrsLen))
     
     }
 
@@ -1888,7 +1942,7 @@ public extension MapRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MapProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -2078,8 +2132,8 @@ public extension MapProtocol {
     ///
     /// **get_engines is deprecated:**
     /// This method is deprecated.
-    @available(*, deprecated) @inlinable func getEngines(script: PangoScript, exactEngines exact_engines: UnsafeMutablePointer<UnsafeMutablePointer<GSList>?>? = nil, fallbackEngines fallback_engines: UnsafeMutablePointer<UnsafeMutablePointer<GSList>?>? = nil) {
-        pango_map_get_engines(_ptr, script, exact_engines, fallback_engines)
+    @available(*, deprecated) @inlinable func getEngines(script: PangoScript, exactEngines: UnsafeMutablePointer<UnsafeMutablePointer<GSList>?>? = nil, fallbackEngines: UnsafeMutablePointer<UnsafeMutablePointer<GSList>?>? = nil) {
+        pango_map_get_engines(_ptr, script, exactEngines, fallbackEngines)
     
     }
 

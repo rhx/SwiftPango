@@ -509,7 +509,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango6break_4text6length8analysis5attrs0F3LenySPys4Int8VGSg_SixSpySo01_A7LogAttrVGSgSitAA16AnalysisProtocolRzlF">break_(text:length:analysis:attrs:attrsLen:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SiAA11AnalysisRefVSgxSitAA15LogAttrProtocolRzlF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango12defaultBreak4text6length8analysis5attrs0G3LenySPys4Int8VGSg_SixSgq_SitAA16AnalysisProtocolRzAA07LogAttrK0R_r0_lF">defaultBreak(text:length:analysis:attrs:attrsLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyAA12RectangleRefVSg_AGtF">extentsToPixels(inclusive:nearest:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango15extentsToPixels9inclusive7nearestyxSg_AEtAA17RectangleProtocolRzlF">extentsToPixels(inclusive:nearest:)</a>
@@ -533,6 +539,9 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13getMirrorChar2ch10mirroredChSbs6UInt32V_SpyAFGSgtF">getMirrorChar(ch:mirroredCh:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaAA9MatrixRefVSg_tF">gravityGetFor(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango13gravityGetFor6matrixSo0A7GravityaxSg_tAA14MatrixProtocolRzlF">gravityGetFor(matrix:)</a>
               </li>
               <li class="nav-group-task">
@@ -551,7 +560,13 @@
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__SPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0olQ0R_AA07ContextQ0R0_r1_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango7itemize7context4text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__SPys4Int8VGSgS2ixAA012AttrIteratorM0VSgtAA0oL8ProtocolRzAA07ContextQ0R_r0_lF">itemize(context:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq0__So0A9DirectionaSPys4Int8VGSgS2iq_xSgtAA20AttrIteratorProtocolRzAA0tpV0R_AA07ContextV0R0_r1_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF">languageFromString(language:)</a>
@@ -1517,7 +1532,7 @@ indexed by <literal><code>glyph_item</code>-&gt;item-&gt;offset</literal>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">drawGlyphItem</span><span class="o">&lt;</span><span class="kt">GlyphItemT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">glyphItem</span> <span class="nv">glyph_item</span><span class="p">:</span> <span class="kt">GlyphItemT</span><span class="p">,</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">GlyphItemT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/GlyphItemProtocol.html">GlyphItemProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">drawGlyphItem</span><span class="o">&lt;</span><span class="kt">GlyphItemT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">glyphItem</span><span class="p">:</span> <span class="kt">GlyphItemT</span><span class="p">,</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">GlyphItemT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/GlyphItemProtocol.html">GlyphItemProtocol</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1968,6 +1983,41 @@ specified for <code>part</code> as well.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:5Pango16RendererProtocolPAAE8setColor4part5colorySo0A10RenderParta_AA0E3RefVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/setColor(part:color:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango16RendererProtocolPAAE8setColor4part5colorySo0A10RenderParta_AA0E3RefVSgtF">setColor(part:color:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the color for part of the rendering.
+Also see <code>pango_renderer_set_alpha()</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">setColor</span><span class="p">(</span><span class="nv">part</span><span class="p">:</span> <span class="kt">PangoRenderPart</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="../Structs/ColorRef.html">ColorRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L468-L471">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:5Pango16RendererProtocolPAAE8setColor4part5colorySo0A10RenderParta_qd__SgtAA0eC0Rd__lF"></a>
                     <a name="//apple_ref/swift/Method/setColor(part:color:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:5Pango16RendererProtocolPAAE8setColor4part5colorySo0A10RenderParta_qd__SgtAA0eC0Rd__lF">setColor(part:color:)</a>
@@ -1990,12 +2040,46 @@ Also see <code>pango_renderer_set_alpha()</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="n">setColor</span><span class="o">&lt;</span><span class="kt">ColorT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">part</span><span class="p">:</span> <span class="kt">PangoRenderPart</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">ColorT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">ColorT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ColorProtocol.html">ColorProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="n">setColor</span><span class="o">&lt;</span><span class="kt">ColorT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">part</span><span class="p">:</span> <span class="kt">PangoRenderPart</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">ColorT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">ColorT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ColorProtocol.html">ColorProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L468-L471">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L474-L477">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Pango16RendererProtocolPAAE3set6matrixyAA9MatrixRefVSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/set(matrix:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Pango16RendererProtocolPAAE3set6matrixyAA9MatrixRefVSg_tF">set(matrix:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the transformation matrix that will be applied when rendering.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="../Structs/MatrixRef.html">MatrixRef</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L480-L483">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2024,12 +2108,12 @@ Also see <code>pango_renderer_set_alpha()</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="k">set</span><span class="o">&lt;</span><span class="kt">MatrixT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt">MatrixT</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">where</span> <span class="kt">MatrixT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/MatrixProtocol.html">MatrixProtocol</a></span></code></pre>
+<span class="kd">func</span> <span class="k">set</span><span class="o">&lt;</span><span class="kt">MatrixT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt">MatrixT</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">MatrixT</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/MatrixProtocol.html">MatrixProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L474-L477">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L485-L488">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2068,7 +2152,7 @@ rendered.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L484-L495">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L495-L506">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2107,7 +2191,7 @@ rendered.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L503-L514">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L514-L525">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2142,7 +2226,7 @@ rendering. See <code>pango_renderer_set_matrix()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L518-L529">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L529-L540">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2178,7 +2262,7 @@ rendering. See <code>pango_renderer_set_matrix()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L542-L550">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-Renderer-Renderer.swift#L553-L561">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2191,7 +2275,7 @@ rendering. See <code>pango_renderer_set_matrix()</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -87,7 +87,7 @@ public extension AnalysisRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AnalysisProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -271,8 +271,8 @@ public extension AnalysisProtocol {
     ///
     /// **break is deprecated:**
     /// Use pango_default_break() and pango_tailor_break()
-    @available(*, deprecated) @inlinable func break_(text: UnsafePointer<gchar>!, length: Int, attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen attrs_len: Int) {
-        pango_break(text, gint(length), _ptr, attrs, gint(attrs_len))
+    @available(*, deprecated) @inlinable func break_(text: UnsafePointer<gchar>!, length: Int, attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
+        pango_break(text, gint(length), _ptr, attrs, gint(attrsLen))
     
     }
 
@@ -281,8 +281,8 @@ public extension AnalysisProtocol {
     /// the `analyis` argument is unused and can be `nil`.
     /// 
     /// See `pango_tailor_break()` for language-specific breaks.
-    @inlinable func defaultBreak<LogAttrT: LogAttrProtocol>(text: UnsafePointer<gchar>!, length: Int, attrs: LogAttrT, attrsLen attrs_len: Int) {
-        pango_default_break(text, gint(length), _ptr, attrs._ptr, gint(attrs_len))
+    @inlinable func defaultBreak<LogAttrT: LogAttrProtocol>(text: UnsafePointer<gchar>!, length: Int, attrs: LogAttrT, attrsLen: Int) {
+        pango_default_break(text, gint(length), _ptr, attrs._ptr, gint(attrsLen))
     
     }
 
@@ -309,8 +309,8 @@ public extension AnalysisProtocol {
     /// certain cross-item shaping interactions.  If you have access to the broader
     /// text of which `item_text` is part of, provide the broader text as
     /// `paragraph_text`.  If `paragraph_text` is `nil`, item text is used instead.
-    @inlinable func shapeFull<GlyphStringT: GlyphStringProtocol>(itemText item_text: UnsafePointer<CChar>!, itemLength item_length: Int, paragraphText paragraph_text: UnsafePointer<CChar>? = nil, paragraphLength paragraph_length: Int, glyphs: GlyphStringT) {
-        pango_shape_full(item_text, gint(item_length), paragraph_text, gint(paragraph_length), _ptr, glyphs.glyph_string_ptr)
+    @inlinable func shapeFull<GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, glyphs: GlyphStringT) {
+        pango_shape_full(itemText, gint(itemLength), paragraphText, gint(paragraphLength), _ptr, glyphs.glyph_string_ptr)
     
     }
 
@@ -321,8 +321,8 @@ public extension AnalysisProtocol {
     /// 
     /// This is similar to `pango_shape_full()`, except it also takes
     /// flags that can influence the shaping process.
-    @inlinable func shapeWithFlags<GlyphStringT: GlyphStringProtocol>(itemText item_text: UnsafePointer<CChar>!, itemLength item_length: Int, paragraphText paragraph_text: UnsafePointer<CChar>? = nil, paragraphLength paragraph_length: Int, glyphs: GlyphStringT, flags: ShapeFlags) {
-        pango_shape_with_flags(item_text, gint(item_length), paragraph_text, gint(paragraph_length), _ptr, glyphs.glyph_string_ptr, flags.value)
+    @inlinable func shapeWithFlags<GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, glyphs: GlyphStringT, flags: ShapeFlags) {
+        pango_shape_with_flags(itemText, gint(itemLength), paragraphText, gint(paragraphLength), _ptr, glyphs.glyph_string_ptr, flags.value)
     
     }
 
@@ -332,8 +332,8 @@ public extension AnalysisProtocol {
     /// 
     /// If `offset` is not -1, it is used to apply attributes
     /// from `analysis` that are relevant to line breaking.
-    @inlinable func tailorBreak(text: UnsafePointer<CChar>!, length: Int, offset: Int, logAttrs log_attrs: UnsafeMutablePointer<PangoLogAttr>!, logAttrsLen log_attrs_len: Int) {
-        pango_tailor_break(text, gint(length), _ptr, gint(offset), log_attrs, gint(log_attrs_len))
+    @inlinable func tailorBreak(text: UnsafePointer<CChar>!, length: Int, offset: Int, logAttrs: UnsafeMutablePointer<PangoLogAttr>!, logAttrsLen: Int) {
+        pango_tailor_break(text, gint(length), _ptr, gint(offset), logAttrs, gint(logAttrsLen))
     
     }
 
@@ -546,7 +546,7 @@ public extension AttrClassRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrClassProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -834,7 +834,7 @@ public extension AttrColorRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrColorProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1127,7 +1127,7 @@ public extension AttrFloatRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrFloatProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1420,7 +1420,7 @@ public extension AttrFontDescRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrFontDescProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1713,7 +1713,7 @@ public extension AttrFontFeaturesRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrFontFeaturesProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -2006,7 +2006,7 @@ public extension AttrIntRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrIntProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -2309,7 +2309,7 @@ public extension AttrIteratorRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrIteratorProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -2515,14 +2515,14 @@ public extension AttrIteratorProtocol {
 
     /// Gets a list of all attributes at the current position of the
     /// iterator.
-    @inlinable func getAttrs() -> SListRef! {
-        let rv = SListRef(gconstpointer: gconstpointer(pango_attr_iterator_get_attrs(attr_iterator_ptr)))
+    @inlinable func getAttrs() -> GLib.SListRef! {
+        let rv = GLib.SListRef(pango_attr_iterator_get_attrs(attr_iterator_ptr))
         return rv
     }
 
     /// Get the font and other attributes at the current iterator position.
-    @inlinable func getFont<FontDescriptionT: FontDescriptionProtocol>(desc: FontDescriptionT, language: UnsafeMutablePointer<UnsafeMutablePointer<PangoLanguage>?>? = nil, extraAttrs extra_attrs: UnsafeMutablePointer<UnsafeMutablePointer<GSList>?>? = nil) {
-        pango_attr_iterator_get_font(attr_iterator_ptr, desc.font_description_ptr, language, extra_attrs)
+    @inlinable func getFont<FontDescriptionT: FontDescriptionProtocol>(desc: FontDescriptionT, language: UnsafeMutablePointer<UnsafeMutablePointer<PangoLanguage>?>? = nil, extraAttrs: UnsafeMutablePointer<UnsafeMutablePointer<GSList>?>? = nil) {
+        pango_attr_iterator_get_font(attr_iterator_ptr, desc.font_description_ptr, language, extraAttrs)
     
     }
 
@@ -2552,25 +2552,25 @@ public extension AttrIteratorProtocol {
     /// range before or containing `start_index`; `cached_iter` will be advanced to
     /// the range covering the position just after `start_index` + `length`.
     /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
-    @inlinable func itemize<AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex start_index: Int, length: Int, attrs: AttrListT) -> ListRef! {
-        let rv = ListRef(gconstpointer: gconstpointer(pango_itemize(context.context_ptr, text, gint(start_index), gint(length), attrs.attr_list_ptr, attr_iterator_ptr)))
+    @inlinable func itemize<AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT) -> GLib.ListRef! {
+        let rv = GLib.ListRef(pango_itemize(context.context_ptr, text, gint(startIndex), gint(length), attrs.attr_list_ptr, attr_iterator_ptr))
         return rv
     }
 
     /// Like `pango_itemize()`, but the base direction to use when
     /// computing bidirectional levels (see pango_context_set_base_dir ()),
     /// is specified explicitly rather than gotten from the `PangoContext`.
-    @inlinable func itemizeWithBaseDir<AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, baseDir base_dir: PangoDirection, text: UnsafePointer<CChar>!, startIndex start_index: Int, length: Int, attrs: AttrListT) -> ListRef! {
-        let rv = ListRef(gconstpointer: gconstpointer(pango_itemize_with_base_dir(context.context_ptr, base_dir, text, gint(start_index), gint(length), attrs.attr_list_ptr, attr_iterator_ptr)))
+    @inlinable func itemizeWithBaseDir<AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT) -> GLib.ListRef! {
+        let rv = GLib.ListRef(pango_itemize_with_base_dir(context.context_ptr, baseDir, text, gint(startIndex), gint(length), attrs.attr_list_ptr, attr_iterator_ptr))
         return rv
     }
     /// Gets a list of all attributes at the current position of the
     /// iterator.
-    @inlinable var attrs: SListRef! {
+    @inlinable var attrs: GLib.SListRef! {
         /// Gets a list of all attributes at the current position of the
         /// iterator.
         get {
-            let rv = SListRef(gconstpointer: gconstpointer(pango_attr_iterator_get_attrs(attr_iterator_ptr)))
+            let rv = GLib.SListRef(pango_attr_iterator_get_attrs(attr_iterator_ptr))
             return rv
         }
     }
@@ -2664,7 +2664,7 @@ public extension AttrLanguageRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrLanguageProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -2973,7 +2973,7 @@ public extension AttrListRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrListProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -3192,8 +3192,8 @@ public extension AttrListProtocol {
     /// Checks whether `list` and `other_list` contain the same attributes and
     /// whether those attributes apply to the same ranges. Beware that this
     /// will return wrong values if any list contains duplicates.
-    @inlinable func equal<AttrListT: AttrListProtocol>(otherList other_list: AttrListT) -> Bool {
-        let rv = ((pango_attr_list_equal(attr_list_ptr, other_list.attr_list_ptr)) != 0)
+    @inlinable func equal<AttrListT: AttrListProtocol>(otherList: AttrListT) -> Bool {
+        let rv = ((pango_attr_list_equal(attr_list_ptr, otherList.attr_list_ptr)) != 0)
         return rv
     }
 
@@ -3206,8 +3206,8 @@ public extension AttrListProtocol {
     }
 
     /// Gets a list of all attributes in `list`.
-    @inlinable func getAttributes() -> SListRef! {
-        let rv = SListRef(gconstpointer: gconstpointer(pango_attr_list_get_attributes(attr_list_ptr)))
+    @inlinable func getAttributes() -> GLib.SListRef! {
+        let rv = GLib.SListRef(pango_attr_list_get_attributes(attr_list_ptr))
         return rv
     }
 
@@ -3294,23 +3294,44 @@ public extension AttrListProtocol {
     /// range before or containing `start_index`; `cached_iter` will be advanced to
     /// the range covering the position just after `start_index` + `length`.
     /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
-    @inlinable func itemize<AttrIteratorT: AttrIteratorProtocol, ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex start_index: Int, length: Int, cachedIter cached_iter: AttrIteratorT? = nil) -> ListRef! {
-        let rv = ListRef(gconstpointer: gconstpointer(pango_itemize(context.context_ptr, text, gint(start_index), gint(length), attr_list_ptr, cached_iter?.attr_iterator_ptr)))
+    @inlinable func itemize<ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
+        let rv = GLib.ListRef(pango_itemize(context.context_ptr, text, gint(startIndex), gint(length), attr_list_ptr, cachedIter?.attr_iterator_ptr))
+        return rv
+    }
+    /// Breaks a piece of text into segments with consistent
+    /// directional level and shaping engine. Each byte of `text` will
+    /// be contained in exactly one of the items in the returned list;
+    /// the generated list of items will be in logical order (the start
+    /// offsets of the items are ascending).
+    /// 
+    /// `cached_iter` should be an iterator over `attrs` currently positioned at a
+    /// range before or containing `start_index`; `cached_iter` will be advanced to
+    /// the range covering the position just after `start_index` + `length`.
+    /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
+    @inlinable func itemize<AttrIteratorT: AttrIteratorProtocol, ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
+        let rv = GLib.ListRef(pango_itemize(context.context_ptr, text, gint(startIndex), gint(length), attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv
     }
 
     /// Like `pango_itemize()`, but the base direction to use when
     /// computing bidirectional levels (see pango_context_set_base_dir ()),
     /// is specified explicitly rather than gotten from the `PangoContext`.
-    @inlinable func itemizeWithBaseDir<AttrIteratorT: AttrIteratorProtocol, ContextT: ContextProtocol>(context: ContextT, baseDir base_dir: PangoDirection, text: UnsafePointer<CChar>!, startIndex start_index: Int, length: Int, cachedIter cached_iter: AttrIteratorT? = nil) -> ListRef! {
-        let rv = ListRef(gconstpointer: gconstpointer(pango_itemize_with_base_dir(context.context_ptr, base_dir, text, gint(start_index), gint(length), attr_list_ptr, cached_iter?.attr_iterator_ptr)))
+    @inlinable func itemizeWithBaseDir<ContextT: ContextProtocol>(context: ContextT, baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
+        let rv = GLib.ListRef(pango_itemize_with_base_dir(context.context_ptr, baseDir, text, gint(startIndex), gint(length), attr_list_ptr, cachedIter?.attr_iterator_ptr))
+        return rv
+    }
+    /// Like `pango_itemize()`, but the base direction to use when
+    /// computing bidirectional levels (see pango_context_set_base_dir ()),
+    /// is specified explicitly rather than gotten from the `PangoContext`.
+    @inlinable func itemizeWithBaseDir<AttrIteratorT: AttrIteratorProtocol, ContextT: ContextProtocol>(context: ContextT, baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
+        let rv = GLib.ListRef(pango_itemize_with_base_dir(context.context_ptr, baseDir, text, gint(startIndex), gint(length), attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv
     }
     /// Gets a list of all attributes in `list`.
-    @inlinable var attributes: SListRef! {
+    @inlinable var attributes: GLib.SListRef! {
         /// Gets a list of all attributes in `list`.
         get {
-            let rv = SListRef(gconstpointer: gconstpointer(pango_attr_list_get_attributes(attr_list_ptr)))
+            let rv = GLib.SListRef(pango_attr_list_get_attributes(attr_list_ptr))
             return rv
         }
     }
@@ -3415,7 +3436,7 @@ public extension AttrShapeRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrShapeProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -3760,7 +3781,7 @@ public extension AttrSizeRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrSizeProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -4078,7 +4099,7 @@ public extension AttrStringRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrStringProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -4379,7 +4400,7 @@ public extension AttributeRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttributeProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -4721,7 +4742,7 @@ public extension ColorRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ColorProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 

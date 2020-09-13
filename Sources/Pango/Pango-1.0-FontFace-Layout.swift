@@ -12,7 +12,7 @@ import GLibObject
 ///
 /// The `PangoFontFace` structure is used to represent a group of fonts with
 /// the same family, slant, weight, width, but varying sizes.
-public protocol FontFaceProtocol: ObjectProtocol {
+public protocol FontFaceProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontFace` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -87,7 +87,7 @@ public extension FontFaceRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -111,7 +111,7 @@ public extension FontFaceRef {
 ///
 /// The `PangoFontFace` structure is used to represent a group of fonts with
 /// the same family, slant, weight, width, but varying sizes.
-open class FontFace: Object, FontFaceProtocol {
+open class FontFace: GLibObject.Object, FontFaceProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontFace` instance.
@@ -332,8 +332,8 @@ public extension FontFaceProtocol {
     /// fonts. For scalable fonts, stores `nil` at the location pointed to by
     /// `sizes` and 0 at the location pointed to by `n_sizes`. The sizes returned
     /// are in Pango units and are sorted in ascending order.
-    @inlinable func list(sizes: UnsafeMutablePointer<UnsafeMutablePointer<CInt>?>! = nil, nSizes n_sizes: UnsafeMutablePointer<gint>!) {
-        pango_font_face_list_sizes(font_face_ptr, sizes, n_sizes)
+    @inlinable func list(sizes: UnsafeMutablePointer<UnsafeMutablePointer<CInt>?>! = nil, nSizes: UnsafeMutablePointer<gint>!) {
+        pango_font_face_list_sizes(font_face_ptr, sizes, nSizes)
     
     }
     /// Gets a name representing the style of this face among the
@@ -396,7 +396,7 @@ public extension FontFaceProtocol {
 /// The `PangoFontFamily` structure is used to represent a family of related
 /// font faces. The faces in a family share a common design, but differ in
 /// slant, weight, width and other aspects.
-public protocol FontFamilyProtocol: ObjectProtocol {
+public protocol FontFamilyProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontFamily` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -472,7 +472,7 @@ public extension FontFamilyRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -497,7 +497,7 @@ public extension FontFamilyRef {
 /// The `PangoFontFamily` structure is used to represent a family of related
 /// font faces. The faces in a family share a common design, but differ in
 /// slant, weight, width and other aspects.
-open class FontFamily: Object, FontFamilyProtocol {
+open class FontFamily: GLibObject.Object, FontFamilyProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontFamily` instance.
@@ -707,8 +707,8 @@ public extension FontFamilyProtocol {
     /// Lists the different font faces that make up `family`. The faces
     /// in a family share a common design, but differ in slant, weight,
     /// width and other aspects.
-    @inlinable func list(faces: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<PangoFontFace>?>?>! = nil, nFaces n_faces: UnsafeMutablePointer<gint>!) {
-        pango_font_family_list_faces(font_family_ptr, faces, n_faces)
+    @inlinable func list(faces: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<PangoFontFace>?>?>! = nil, nFaces: UnsafeMutablePointer<gint>!) {
+        pango_font_family_list_faces(font_family_ptr, faces, nFaces)
     
     }
     /// A monospace font is a font designed for text display where the the
@@ -795,7 +795,7 @@ public extension FontFamilyProtocol {
 /// 
 /// The `PangoFontMap` structure contains one member which the implementation
 /// fills in.
-public protocol FontMapProtocol: ObjectProtocol {
+public protocol FontMapProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontMap` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -879,7 +879,7 @@ public extension FontMapRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -912,7 +912,7 @@ public extension FontMapRef {
 /// 
 /// The `PangoFontMap` structure contains one member which the implementation
 /// fills in.
-open class FontMap: Object, FontMapProtocol {
+open class FontMap: GLibObject.Object, FontMapProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `FontMap` instance.
@@ -1153,8 +1153,8 @@ public extension FontMapProtocol {
     }
 
     /// List all families for a fontmap.
-    @inlinable func list(families: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<PangoFontFamily>?>?>!, nFamilies n_families: UnsafeMutablePointer<gint>!) {
-        pango_font_map_list_families(font_map_ptr, families, n_families)
+    @inlinable func list(families: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<PangoFontFamily>?>?>!, nFamilies: UnsafeMutablePointer<gint>!) {
+        pango_font_map_list_families(font_map_ptr, families, nFamilies)
     
     }
 
@@ -1223,7 +1223,7 @@ public extension FontMapProtocol {
 /// It has operations for finding the component font for
 /// a particular Unicode character, and for finding a composite
 /// set of metrics for the entire fontset.
-public protocol FontsetProtocol: ObjectProtocol {
+public protocol FontsetProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontset` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -1302,7 +1302,7 @@ public extension FontsetRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1330,7 +1330,7 @@ public extension FontsetRef {
 /// It has operations for finding the component font for
 /// a particular Unicode character, and for finding a composite
 /// set of metrics for the entire fontset.
-open class Fontset: Object, FontsetProtocol {
+open class Fontset: GLibObject.Object, FontsetProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Fontset` instance.
@@ -1650,7 +1650,7 @@ public extension FontsetSimpleRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1923,7 +1923,7 @@ public extension FontsetSimpleProtocol {
 /// 
 /// The `PangoLayout` structure is opaque, and has no user-visible
 /// fields.
-public protocol LayoutProtocol: ObjectProtocol {
+public protocol LayoutProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoLayout` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -2016,7 +2016,7 @@ public extension LayoutRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -2064,7 +2064,7 @@ public extension LayoutRef {
 /// 
 /// The `PangoLayout` structure is opaque, and has no user-visible
 /// fields.
-open class Layout: Object, LayoutProtocol {
+open class Layout: GLibObject.Object, LayoutProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Layout` instance.
@@ -2328,8 +2328,20 @@ public extension LayoutProtocol {
     /// layout are inserted.  The weak cursor location is the location
     /// where characters of the directionality opposite to the base
     /// direction of the layout are inserted.
-    @inlinable func getCursorPos<RectangleT: RectangleProtocol>(index_: Int, strongPos strong_pos: RectangleT? = nil, weakPos weak_pos: RectangleT? = nil) {
-        pango_layout_get_cursor_pos(layout_ptr, gint(index_), strong_pos?._ptr, weak_pos?._ptr)
+    @inlinable func getCursorPos(index_: Int, strongPos: RectangleRef? = nil, weakPos: RectangleRef? = nil) {
+        pango_layout_get_cursor_pos(layout_ptr, gint(index_), strongPos?._ptr, weakPos?._ptr)
+    
+    }
+    /// Given an index within a layout, determines the positions that of the
+    /// strong and weak cursors if the insertion point is at that
+    /// index. The position of each cursor is stored as a zero-width
+    /// rectangle. The strong cursor location is the location where
+    /// characters of the directionality equal to the base direction of the
+    /// layout are inserted.  The weak cursor location is the location
+    /// where characters of the directionality opposite to the base
+    /// direction of the layout are inserted.
+    @inlinable func getCursorPos<RectangleT: RectangleProtocol>(index_: Int, strongPos: RectangleT?, weakPos: RectangleT?) {
+        pango_layout_get_cursor_pos(layout_ptr, gint(index_), strongPos?._ptr, weakPos?._ptr)
     
     }
 
@@ -2356,8 +2368,21 @@ public extension LayoutProtocol {
     /// 
     /// The extents are given in layout coordinates and in Pango units; layout
     /// coordinates begin at the top left corner of the layout.
-    @inlinable func getExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
-        pango_layout_get_extents(layout_ptr, ink_rect?._ptr, logical_rect?._ptr)
+    @inlinable func getExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
+        pango_layout_get_extents(layout_ptr, inkRect?._ptr, logicalRect?._ptr)
+    
+    }
+    /// Computes the logical and ink extents of `layout`. Logical extents
+    /// are usually what you want for positioning things.  Note that both extents
+    /// may have non-zero x and y.  You may want to use those to offset where you
+    /// render the layout.  Not doing that is a very typical bug that shows up as
+    /// right-to-left layouts not being correctly positioned in a layout with
+    /// a set width.
+    /// 
+    /// The extents are given in layout coordinates and in Pango units; layout
+    /// coordinates begin at the top left corner of the layout.
+    @inlinable func getExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
+        pango_layout_get_extents(layout_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
@@ -2430,8 +2455,8 @@ public extension LayoutProtocol {
     /// 
     /// Use the faster `pango_layout_get_lines_readonly()` if you do not plan
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
-    @inlinable func getLines() -> SListRef! {
-        let rv = SListRef(gconstpointer: gconstpointer(pango_layout_get_lines(layout_ptr)))
+    @inlinable func getLines() -> GLib.SListRef! {
+        let rv = GLib.SListRef(pango_layout_get_lines(layout_ptr))
         return rv
     }
 
@@ -2440,15 +2465,15 @@ public extension LayoutProtocol {
     /// This is a faster alternative to `pango_layout_get_lines()`,
     /// but the user is not expected
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
-    @inlinable func getLinesReadonly() -> SListRef! {
-        let rv = SListRef(gconstpointer: gconstpointer(pango_layout_get_lines_readonly(layout_ptr)))
+    @inlinable func getLinesReadonly() -> GLib.SListRef! {
+        let rv = GLib.SListRef(pango_layout_get_lines_readonly(layout_ptr))
         return rv
     }
 
     /// Retrieves an array of logical attributes for each character in
     /// the `layout`.
-    @inlinable func getLog(attrs: UnsafeMutablePointer<UnsafeMutablePointer<PangoLogAttr>?>!, nAttrs n_attrs: UnsafeMutablePointer<gint>!) {
-        pango_layout_get_log_attrs(layout_ptr, attrs, n_attrs)
+    @inlinable func getLog(attrs: UnsafeMutablePointer<UnsafeMutablePointer<PangoLogAttr>?>!, nAttrs: UnsafeMutablePointer<gint>!) {
+        pango_layout_get_log_attrs(layout_ptr, attrs, nAttrs)
     
     }
 
@@ -2463,8 +2488,8 @@ public extension LayoutProtocol {
     /// than the total number of characters in the layout, since there
     /// need to be attributes corresponding to both the position before
     /// the first character and the position after the last character.
-    @inlinable func getLogAttrsReadonly(nAttrs n_attrs: UnsafeMutablePointer<gint>!) -> UnsafePointer<PangoLogAttr>! {
-        let rv = pango_layout_get_log_attrs_readonly(layout_ptr, n_attrs)
+    @inlinable func getLogAttrsReadonly(nAttrs: UnsafeMutablePointer<gint>!) -> UnsafePointer<PangoLogAttr>! {
+        let rv = pango_layout_get_log_attrs_readonly(layout_ptr, nAttrs)
         return rv
     }
 
@@ -2473,8 +2498,17 @@ public extension LayoutProtocol {
     /// two `pango_extents_to_pixels()` calls, rounding `ink_rect` and `logical_rect`
     /// such that the rounded rectangles fully contain the unrounded one (that is,
     /// passes them as first argument to `pango_extents_to_pixels()`).
-    @inlinable func getPixelExtents<RectangleT: RectangleProtocol>(inkRect ink_rect: RectangleT? = nil, logicalRect logical_rect: RectangleT? = nil) {
-        pango_layout_get_pixel_extents(layout_ptr, ink_rect?._ptr, logical_rect?._ptr)
+    @inlinable func getPixelExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
+        pango_layout_get_pixel_extents(layout_ptr, inkRect?._ptr, logicalRect?._ptr)
+    
+    }
+    /// Computes the logical and ink extents of `layout` in device units.
+    /// This function just calls `pango_layout_get_extents()` followed by
+    /// two `pango_extents_to_pixels()` calls, rounding `ink_rect` and `logical_rect`
+    /// such that the rounded rectangles fully contain the unrounded one (that is,
+    /// passes them as first argument to `pango_extents_to_pixels()`).
+    @inlinable func getPixelExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
+        pango_layout_get_pixel_extents(layout_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
@@ -2569,8 +2603,8 @@ public extension LayoutProtocol {
 
     /// Converts from byte `index_` within the `layout` to line and X position.
     /// (X position is measured from the left edge of the line)
-    @inlinable func indexToLineX(index_: Int, trailing: Bool, line: UnsafeMutablePointer<gint>! = nil, xPos x_pos: UnsafeMutablePointer<gint>! = nil) {
-        pango_layout_index_to_line_x(layout_ptr, gint(index_), gboolean((trailing) ? 1 : 0), line, x_pos)
+    @inlinable func indexToLineX(index_: Int, trailing: Bool, line: UnsafeMutablePointer<gint>! = nil, xPos: UnsafeMutablePointer<gint>! = nil) {
+        pango_layout_index_to_line_x(layout_ptr, gint(index_), gboolean((trailing) ? 1 : 0), line, xPos)
     
     }
 
@@ -2601,8 +2635,8 @@ public extension LayoutProtocol {
     /// single call to `pango_layout_move_cursor_visually()` may move the
     /// cursor over multiple characters when multiple characters combine
     /// to form a single grapheme.
-    @inlinable func moveCursorVisually(strong: Bool, oldIndex old_index: Int, oldTrailing old_trailing: Int, direction: Int, newIndex new_index: UnsafeMutablePointer<gint>!, newTrailing new_trailing: UnsafeMutablePointer<gint>!) {
-        pango_layout_move_cursor_visually(layout_ptr, gboolean((strong) ? 1 : 0), gint(old_index), gint(old_trailing), gint(direction), new_index, new_trailing)
+    @inlinable func moveCursorVisually(strong: Bool, oldIndex: Int, oldTrailing: Int, direction: Int, newIndex: UnsafeMutablePointer<gint>!, newTrailing: UnsafeMutablePointer<gint>!) {
+        pango_layout_move_cursor_visually(layout_ptr, gboolean((strong) ? 1 : 0), gint(oldIndex), gint(oldTrailing), gint(direction), newIndex, newTrailing)
     
     }
 
@@ -2615,7 +2649,13 @@ public extension LayoutProtocol {
 
     /// Sets the text attributes for a layout object.
     /// References `attrs`, so the caller can unref its reference.
-    @inlinable func setAttributes<AttrListT: AttrListProtocol>(attrs: AttrListT? = nil) {
+    @inlinable func setAttributes(attrs: AttrListRef? = nil) {
+        pango_layout_set_attributes(layout_ptr, attrs?.attr_list_ptr)
+    
+    }
+    /// Sets the text attributes for a layout object.
+    /// References `attrs`, so the caller can unref its reference.
+    @inlinable func setAttributes<AttrListT: AttrListProtocol>(attrs: AttrListT?) {
         pango_layout_set_attributes(layout_ptr, attrs?.attr_list_ptr)
     
     }
@@ -2636,8 +2676,8 @@ public extension LayoutProtocol {
     /// When the auto-computed direction of a paragraph differs from the
     /// base direction of the context, the interpretation of
     /// `PANGO_ALIGN_LEFT` and `PANGO_ALIGN_RIGHT` are swapped.
-    @inlinable func set(autoDir auto_dir: Bool) {
-        pango_layout_set_auto_dir(layout_ptr, gboolean((auto_dir) ? 1 : 0))
+    @inlinable func set(autoDir: Bool) {
+        pango_layout_set_auto_dir(layout_ptr, gboolean((autoDir) ? 1 : 0))
     
     }
 
@@ -2660,7 +2700,14 @@ public extension LayoutProtocol {
     /// Sets the default font description for the layout. If no font
     /// description is set on the layout, the font description from
     /// the layout's context is used.
-    @inlinable func setFontDescription<FontDescriptionT: FontDescriptionProtocol>(desc: FontDescriptionT? = nil) {
+    @inlinable func setFontDescription(desc: FontDescriptionRef? = nil) {
+        pango_layout_set_font_description(layout_ptr, desc?.font_description_ptr)
+    
+    }
+    /// Sets the default font description for the layout. If no font
+    /// description is set on the layout, the font description from
+    /// the layout's context is used.
+    @inlinable func setFontDescription<FontDescriptionT: FontDescriptionProtocol>(desc: FontDescriptionT?) {
         pango_layout_set_font_description(layout_ptr, desc?.font_description_ptr)
     
     }
@@ -2758,8 +2805,8 @@ public extension LayoutProtocol {
     /// and the first character so marked will be returned in `accel_char`.
     /// Two `accel_marker` characters following each other produce a single
     /// literal `accel_marker` character.
-    @inlinable func setMarkupWithAccel(markup: UnsafePointer<CChar>!, length: Int, accelMarker accel_marker: gunichar, accelChar accel_char: UnsafeMutablePointer<gunichar>! = nil) {
-        pango_layout_set_markup_with_accel(layout_ptr, markup, gint(length), accel_marker, accel_char)
+    @inlinable func setMarkupWithAccel(markup: UnsafePointer<CChar>!, length: Int, accelMarker: gunichar, accelChar: UnsafeMutablePointer<gunichar>! = nil) {
+        pango_layout_set_markup_with_accel(layout_ptr, markup, gint(length), accelMarker, accelChar)
     
     }
 
@@ -2792,7 +2839,15 @@ public extension LayoutProtocol {
     /// (by default, tabs are every 8 spaces). If `tabs` is `nil`, the default
     /// tabs are reinstated. `tabs` is copied into the layout; you must
     /// free your copy of `tabs` yourself.
-    @inlinable func set<TabArrayT: TabArrayProtocol>(tabs: TabArrayT? = nil) {
+    @inlinable func set(tabs: TabArrayRef? = nil) {
+        pango_layout_set_tabs(layout_ptr, tabs?.tab_array_ptr)
+    
+    }
+    /// Sets the tabs to use for `layout`, overriding the default tabs
+    /// (by default, tabs are every 8 spaces). If `tabs` is `nil`, the default
+    /// tabs are reinstated. `tabs` is copied into the layout; you must
+    /// free your copy of `tabs` yourself.
+    @inlinable func set<TabArrayT: TabArrayProtocol>(tabs: TabArrayT?) {
         pango_layout_set_tabs(layout_ptr, tabs?.tab_array_ptr)
     
     }
@@ -3141,13 +3196,13 @@ public extension LayoutProtocol {
     /// 
     /// Use the faster `pango_layout_get_lines_readonly()` if you do not plan
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
-    @inlinable var lines: SListRef! {
+    @inlinable var lines: GLib.SListRef! {
         /// Returns the lines of the `layout` as a list.
         /// 
         /// Use the faster `pango_layout_get_lines_readonly()` if you do not plan
         /// to modify the contents of the lines (glyphs, glyph widths, etc.).
         get {
-            let rv = SListRef(gconstpointer: gconstpointer(pango_layout_get_lines(layout_ptr)))
+            let rv = GLib.SListRef(pango_layout_get_lines(layout_ptr))
             return rv
         }
     }
@@ -3157,14 +3212,14 @@ public extension LayoutProtocol {
     /// This is a faster alternative to `pango_layout_get_lines()`,
     /// but the user is not expected
     /// to modify the contents of the lines (glyphs, glyph widths, etc.).
-    @inlinable var linesReadonly: SListRef! {
+    @inlinable var linesReadonly: GLib.SListRef! {
         /// Returns the lines of the `layout` as a list.
         /// 
         /// This is a faster alternative to `pango_layout_get_lines()`,
         /// but the user is not expected
         /// to modify the contents of the lines (glyphs, glyph widths, etc.).
         get {
-            let rv = SListRef(gconstpointer: gconstpointer(pango_layout_get_lines_readonly(layout_ptr)))
+            let rv = GLib.SListRef(pango_layout_get_lines_readonly(layout_ptr))
             return rv
         }
     }
