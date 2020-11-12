@@ -17,7 +17,10 @@ function generate_arg-path_arg-g2s-exec_arg-gir-pre_arg-gir-path {
     
     bash -c "${G2S_EXEC} -o Sources/${NAME} -s -m ${GIR_NAME}.module ${GIR_PATH}/${GIR_NAME}.gir ${GIR_PRE_ARGS}"
 
-    ...
+    for src in Sources/${NAME}/*-*.swift ; do
+	    sed -f ${GIR_NAME}.sed < ${src} > ${src}.out
+	    mv ${src}.out ${src}
+    done
 
     cd $CALLER
 }
