@@ -15,7 +15,11 @@ let package = Package(
 		.brew(["pango", "glib", "glib-networking", "gobject-introspection"]),
 		.apt(["libpango1.0-dev", "libglib2.0-dev", "glib-networking", "gobject-introspection", "libgirepository1.0-dev"])
 	    ]),
-        .target(name: "Pango", dependencies: ["CPango", "GLibObject"]),
+        .target(
+            name: "Pango", 
+            dependencies: ["CPango", "GLibObject"],
+            swiftSettings: [.unsafeFlags(["-Xfrontend", "-serialize-debugging-options"], .when(configuration: .debug))]
+        ),
         .testTarget(name: "PangoTests", dependencies: ["Pango"]),
     ]
 )
