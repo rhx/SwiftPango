@@ -5,7 +5,7 @@
 #
 VER=1.0
 GLIB_VER=2.0
-JAZZY_VER=1.48.0
+JAZZY_VER=1.44.7
 Mod=Pango
 Module=${Mod}-$VER
 module=`echo "${Module}" | tr '[:upper:]' '[:lower:]'`
@@ -23,9 +23,9 @@ export PKG_CONFIG_PATH=/usr/local/opt/libffi/lib/pkgconfig:${PKG_CONFIG_PATH}
 LINKFLAGS=`pkg-config --libs pangocairo pangoft2 $mod gobject-$GLIB_VER gio-unix-$GLIB_VER glib-$GLIB_VER | tr ' ' '\n' | sed -e 's/^/-Xlinker /' -e 's/-Wl,//' | tr '\n' ' ' | sed -e 's/-Xcc[ 	]*-Xlinker/-Xlinker/g' -e 's/-Xlinker[ 	]*-Xcc/-Xcc/g' -e 's/-Xlinker[ 	]*--export-dynamic//g' -e 's/-Xlinker[ 	]*-Xlinker/-Xlinker/g' -e 's/-Xcc *$//' -e 's/-Xlinker *$//'`
 CCFLAGS=`pkg-config --cflags pangocairo pangoft2 $mod gobject-$GLIB_VER gio-unix-$GLIB_VER glib-$GLIB_VER | tr ' ' '\n' | sed 's/^/-Xcc /' | tr '\n' ' ' | sed -e 's/-Xcc[ 	]*-Xlinker/-Xlinker/g' -e 's/-Xlinker[ 	]*-Xcc/-Xcc/g' -e 's/-Xlinker[ 	]*--export-dynamic//g' -e 's/-Xlinker[ 	]*-Xlinker/-Xlinker/g' -e 's/-Xcc *$//' -e 's/-Xlinker *$//'`
 TAC="tail -r"
-if which tac >/dev/null ; then
+if which tac >/dev/null 2>&1 ; then
    TAC=tac
-   else if which gtac >/dev/null ; then
+   else if which gtac >/dev/null 2>&1 ; then
 	TAC=gtac
    fi
 fi
