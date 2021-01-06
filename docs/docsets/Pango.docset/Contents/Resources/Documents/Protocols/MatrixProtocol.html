@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          Pango 1.44.7 Docs
+          Pango 1.48.0 Docs
         </a>
          (99% documented)
       </p>
@@ -40,7 +40,7 @@
         </p>
     
         <p class="header-col header-col--secondary">
-          <a class="header-link" href="dash-feed://http%3A%2F%2Frhx%2Egithub%2Eio%2FSwiftPango%2Fdocsets%2FPango%2Exml">
+          <a class="header-link" href="dash-feed://http%3A%2F%2Frhx.github.io%2FSwiftPango%2Fdocsets%2FPango.xml">
             <img class="header-icon" src="../img/dash.png"/>
             Install in Dash
           </a>
@@ -573,6 +573,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango18languageGetDefaultAA11LanguageRefVSgyF">languageGetDefault()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:5Pango20languageGetPreferredSpySpySo01_A8LanguageVGSgGSgyF">languageGetPreferred()</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Functions.html#/s:5Pango25log2visGetEmbeddingLevels4text6length8pbaseDirSpys5UInt8VGSgSPys4Int8VGSg_SiSpySo0A9DirectionaGSgtF">log2visGetEmbeddingLevels(text:length:pbaseDir:)</a>
@@ -1152,6 +1155,7 @@
             <h1>MatrixProtocol</h1>
               <div class="declaration">
                 <div class="language">
+                  
                   <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MatrixProtocol</span></code></pre>
 
                 </div>
@@ -1170,6 +1174,9 @@ x_device = x_user * matrix-&gt;xx + y_user * matrix-&gt;xy + matrix-&gt;x0;
 y_device = x_user * matrix-&gt;yx + y_user * matrix-&gt;yy + matrix-&gt;y0;
 </programlisting></p>
 
+              <div class="slightly-smaller">
+                <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-MapEntry-Rectangle.swift#L286-L293">Show on GitHub</a>
+              </div>
           </div>
         </section>
 
@@ -1249,10 +1256,10 @@ y_device = x_user * matrix-&gt;yx + y_user * matrix-&gt;yy + matrix-&gt;y0;
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Matrix%20Record:%20MatrixProtocol%20extension%20(methods%20and%20fields)"></a>
+                <a name="/Matrix%20Record%3A%20MatrixProtocol%20extension%20%28methods%20and%20fields%29"></a>
                 <a name="//apple_ref/swift/Section/Matrix Record: MatrixProtocol extension (methods and fields)" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Matrix%20Record:%20MatrixProtocol%20extension%20(methods%20and%20fields)"></a>
+                  <a class="section-name-link" href="#/Matrix%20Record%3A%20MatrixProtocol%20extension%20%28methods%20and%20fields%29"></a>
                   <h3 class="section-name"><p>Matrix Record: MatrixProtocol extension (methods and fields)</p>
 </h3>
                 </div>
@@ -1263,7 +1270,7 @@ y_device = x_user * matrix-&gt;yx + y_user * matrix-&gt;yy + matrix-&gt;y0;
                     <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE6concat03newB0yqd___tAaBRd__lF"></a>
                     <a name="//apple_ref/swift/Method/concat(newMatrix:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE6concat03newB0yqd___tAaBRd__lF">concat(newMatrix:)</a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE6concat03newB0yqd___tAaBRd__lF">concat(newMatrix:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1404,7 +1411,7 @@ coordinate is needed as well, use <code>pango_matrix_get_font_scale_factors()</c
                     <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE19getFontScaleFactors6xscale6yscaleySpySdGSg_AHtF"></a>
                     <a name="//apple_ref/swift/Method/getFontScaleFactors(xscale:yscale:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE19getFontScaleFactors6xscale6yscaleySpySdGSg_AHtF">getFontScaleFactors(xscale:yscale:)</a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE19getFontScaleFactors6xscale6yscaleySpySdGSg_AHtF">getFontScaleFactors(xscale:<wbr>yscale:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1443,7 +1450,7 @@ vector that the X coordinate is mapped to.</p>
                     <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE6rotate7degreesySd_tF"></a>
                     <a name="//apple_ref/swift/Method/rotate(degrees:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE6rotate7degreesySd_tF">rotate(degrees:)</a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE6rotate7degreesySd_tF">rotate(degrees:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1479,7 +1486,7 @@ counter-clockwise then applying the original transformation.</p>
                     <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE5scale0D1X0D1YySd_SdtF"></a>
                     <a name="//apple_ref/swift/Method/scale(scaleX:scaleY:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE5scale0D1X0D1YySd_SdtF">scale(scaleX:scaleY:)</a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE5scale0D1X0D1YySd_SdtF">scale(scaleX:<wbr>scaleY:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1516,7 +1523,7 @@ transformation.</p>
                     <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE17transformDistance2dx2dyySpySdGSg_AHtF"></a>
                     <a name="//apple_ref/swift/Method/transformDistance(dx:dy:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE17transformDistance2dx2dyySpySdGSg_AHtF">transformDistance(dx:dy:)</a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE17transformDistance2dx2dyySpySdGSg_AHtF">transformDistance(dx:<wbr>dy:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1563,7 +1570,7 @@ to (<code>x2</code>,<code>y2</code>) then (<code>x1</code>+<code>dx1</code>,<cod
                     <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE23transformPixelRectangle4rectyAA0F3RefVSg_tF"></a>
                     <a name="//apple_ref/swift/Method/transformPixelRectangle(rect:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE23transformPixelRectangle4rectyAA0F3RefVSg_tF">transformPixelRectangle(rect:)</a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE23transformPixelRectangle4rectyAA0F3RefVSg_tF">transformPixelRectangle(rect:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1607,7 +1614,7 @@ using <code>pango_extents_to_pixels()</code>&lsquo;s first argument.</p>
                     <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE23transformPixelRectangle4rectyqd__Sg_tAA0fC0Rd__lF"></a>
                     <a name="//apple_ref/swift/Method/transformPixelRectangle(rect:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE23transformPixelRectangle4rectyqd__Sg_tAA0fC0Rd__lF">transformPixelRectangle(rect:)</a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE23transformPixelRectangle4rectyqd__Sg_tAA0fC0Rd__lF">transformPixelRectangle(rect:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1651,7 +1658,7 @@ using <code>pango_extents_to_pixels()</code>&lsquo;s first argument.</p>
                     <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE14transformPoint1x1yySpySdGSg_AHtF"></a>
                     <a name="//apple_ref/swift/Method/transformPoint(x:y:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE14transformPoint1x1yySpySdGSg_AHtF">transformPoint(x:y:)</a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE14transformPoint1x1yySpySdGSg_AHtF">transformPoint(x:<wbr>y:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1685,7 +1692,7 @@ using <code>pango_extents_to_pixels()</code>&lsquo;s first argument.</p>
                     <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE18transformRectangle4rectyAA0E3RefVSg_tF"></a>
                     <a name="//apple_ref/swift/Method/transformRectangle(rect:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE18transformRectangle4rectyAA0E3RefVSg_tF">transformRectangle(rect:)</a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE18transformRectangle4rectyAA0E3RefVSg_tF">transformRectangle(rect:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1736,7 +1743,7 @@ example).</p>
                     <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE18transformRectangle4rectyqd__Sg_tAA0eC0Rd__lF"></a>
                     <a name="//apple_ref/swift/Method/transformRectangle(rect:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE18transformRectangle4rectyqd__Sg_tAA0eC0Rd__lF">transformRectangle(rect:)</a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE18transformRectangle4rectyqd__Sg_tAA0eC0Rd__lF">transformRectangle(rect:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1787,7 +1794,7 @@ example).</p>
                     <code>
                     <a name="/s:5Pango14MatrixProtocolPAAE9translate2tx2tyySd_SdtF"></a>
                     <a name="//apple_ref/swift/Method/translate(tx:ty:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE9translate2tx2tyySd_SdtF">translate(tx:ty:)</a>
+                    <a class="token" href="#/s:5Pango14MatrixProtocolPAAE9translate2tx2tyySd_SdtF">translate(tx:<wbr>ty:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2102,8 +2109,8 @@ coordinate is needed as well, use <code>pango_matrix_get_font_scale_factors()</c
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-01-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

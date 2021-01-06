@@ -286,14 +286,18 @@ public extension AnalysisProtocol {
     
     }
 
-    /// Given a segment of text and the corresponding
-    /// `PangoAnalysis` structure returned from `pango_itemize()`,
-    /// convert the characters into glyphs. You may also pass
-    /// in only a substring of the item from `pango_itemize()`.
+    /// Given a segment of text and the corresponding `PangoAnalysis` structure
+    /// returned from `pango_itemize()`, convert the characters into glyphs. You
+    /// may also pass in only a substring of the item from `pango_itemize()`.
     /// 
     /// It is recommended that you use `pango_shape_full()` instead, since
     /// that API allows for shaping interaction happening across text item
     /// boundaries.
+    /// 
+    /// Note that the extra attributes in the `analyis` that is returned from
+    /// `pango_itemize()` have indices that are relative to the entire paragraph,
+    /// so you need to subtract the item offset from their indices before
+    /// calling `pango_shape()`.
     @inlinable func shape<GlyphStringT: GlyphStringProtocol>(text: UnsafePointer<CChar>!, length: Int, glyphs: GlyphStringT) {
         pango_shape(text, gint(length), _ptr, glyphs.glyph_string_ptr)
     
@@ -309,6 +313,11 @@ public extension AnalysisProtocol {
     /// certain cross-item shaping interactions.  If you have access to the broader
     /// text of which `item_text` is part of, provide the broader text as
     /// `paragraph_text`.  If `paragraph_text` is `nil`, item text is used instead.
+    /// 
+    /// Note that the extra attributes in the `analyis` that is returned from
+    /// `pango_itemize()` have indices that are relative to the entire paragraph,
+    /// so you do not pass the full paragraph text as `paragraph_text`, you need
+    /// to subtract the item offset from their indices before calling `pango_shape_full()`.
     @inlinable func shapeFull<GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, glyphs: GlyphStringT) {
         pango_shape_full(itemText, gint(itemLength), paragraphText, gint(paragraphLength), _ptr, glyphs.glyph_string_ptr)
     
@@ -321,6 +330,12 @@ public extension AnalysisProtocol {
     /// 
     /// This is similar to `pango_shape_full()`, except it also takes
     /// flags that can influence the shaping process.
+    /// 
+    /// Note that the extra attributes in the `analyis` that is returned from
+    /// `pango_itemize()` have indices that are relative to the entire paragraph,
+    /// so you do not pass the full paragraph text as `paragraph_text`, you need
+    /// to subtract the item offset from their indices before calling
+    /// `pango_shape_with_flags()`.
     @inlinable func shapeWithFlags<GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, glyphs: GlyphStringT, flags: ShapeFlags) {
         pango_shape_with_flags(itemText, gint(itemLength), paragraphText, gint(paragraphLength), _ptr, glyphs.glyph_string_ptr, flags.value)
     
