@@ -13,7 +13,6 @@ struct _PangoLayoutIter {};
 struct _PangoMap {};
 struct _PangoMapEntry {};
 struct _PangoRendererPrivate {};
-struct _PangoScriptForLang {};
 struct _PangoScriptIter {};
 struct _PangoTabArray {};
 
@@ -67,7 +66,8 @@ struct _PangoCairoFontMap {};
 struct hb_font_t {};
 #endif
 
-typedef struct {
-	const char lang[6];
-	PangoScript scripts[3];
-} PangoScriptForLang;
+struct _PangoScriptForLang {
+    char lang[6];
+    PangoScript scripts[3];
+};
+typedef struct _PangoScriptForLang PangoScriptForLang;
