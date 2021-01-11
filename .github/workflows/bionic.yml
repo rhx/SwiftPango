@@ -49,7 +49,7 @@ jobs:
           swift test
           cd ..
 
-      - name: Remove unneeded files and archive artifacts
+      - name: Remove unneeded files and archive artefacts
         run: |
           cd SwiftPango
           swift package clean

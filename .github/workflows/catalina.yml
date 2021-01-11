@@ -3,7 +3,6 @@ name: macOS 10.15
 # Dependencies of this package
 env:
   MACOS_BREW: ${{ 'pango glib glib-networking gobject-introspection pkg-config jq' }}
-  UBUNTU_APT: ${{ 'libpango1.0-dev gir1.2-pango-1.0 libglib2.0-dev glib-networking gobject-introspection libgirepository1.0-dev libxml2-dev jq' }}
 
 on:
   push:
@@ -56,7 +55,7 @@ jobs:
           swift test `./run-gir2swift.sh flags -noUpdate`
           cd ..
 
-      - name: Remove unneeded files and archive artifacts
+      - name: Remove unneeded files and archive artefacts
         run: | 
           cd SwiftPango
           swift package clean
