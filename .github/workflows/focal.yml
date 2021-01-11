@@ -2,16 +2,17 @@ name: Build and test SwiftPango
 
 # Dependencies of this package
 env:
-  MACOS_BREW: ${{ 'pango glib glib-networking gobject-introspection pkg-config jq' }}
   UBUNTU_APT: ${{ 'libpango1.0-dev gir1.2-pango-1.0 libglib2.0-dev glib-networking gobject-introspection libgirepository1.0-dev libxml2-dev jq' }}
 
 on:
   push:
     branches:
       - development
+      - main
   pull_request:
     branches:
       - development
+      - main
 
 jobs:
   # macOS tasks
