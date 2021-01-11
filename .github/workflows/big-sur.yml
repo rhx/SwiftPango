@@ -55,7 +55,7 @@ jobs:
           swift test `./run-gir2swift.sh flags -noUpdate`
           cd ..
 
-      - name: Remove unneeded files and archive artifacts
+      - name: Remove unneeded files and archive artefacts
         run: | 
           cd SwiftPango
           swift package clean
