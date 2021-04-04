@@ -6,8 +6,8 @@ let package = Package(
     name: "Pango",
     products: [ .library(name: "Pango", targets: ["Pango"]) ],
     dependencies: [
-        .package(name: "gir2swift", url: "https://github.com/rhx/gir2swift.git", .branch("development")),
-        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("development"))
+        .package(name: "gir2swift", url: "https://github.com/rhx/gir2swift.git", .branch("main")),
+        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("main"))
     ],
     targets: [
 	.systemLibrary(name: "CPango", pkgConfig: "pangocairo", // apperently, `pangoft2` is not required in order to build successfuly

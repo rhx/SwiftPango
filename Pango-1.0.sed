@@ -18,3 +18,5 @@ s/: \([A-Za-z.]*Mapping[,)]\)/: @escaping \1/g
 s/ -> UnsafeMutablePointer<PangoLogAttr>/ -> UnsafePointer<PangoLogAttr>/
 s/ -> UnsafeMutablePointer<PangoScript>/ -> UnsafePointer<PangoScript>/
 s/(CChar, CChar, CChar, CChar, CChar, CChar, CChar)/(Int8, Int8, Int8, Int8, Int8, Int8)/
+s/\(@inlinable var shapeEngine:\) gpointer. {/\1 UnsafeMutablePointer<PangoEngineShape>! {/
+s/\(@inlinable var langEngine:\) gpointer. {/\1 UnsafeMutablePointer<PangoEngineLang>! {/
