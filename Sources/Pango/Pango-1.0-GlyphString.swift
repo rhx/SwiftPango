@@ -10,10 +10,11 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `GlyphString`.
 /// Alternatively, use `GlyphStringRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoGlyphString` structure is used to store strings
-/// of glyphs with geometry and visual attribute information.
-/// The storage for the glyph information is owned
-/// by the structure which simplifies memory management.
+/// A `PangoGlyphString` is used to store strings of glyphs with geometry
+/// and visual attribute information.
+/// 
+/// The storage for the glyph information is owned by the structure
+/// which simplifies memory management.
 public protocol GlyphStringProtocol {
         /// Untyped pointer to the underlying `PangoGlyphString` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -21,16 +22,19 @@ public protocol GlyphStringProtocol {
     /// Typed pointer to the underlying `PangoGlyphString` instance.
     var glyph_string_ptr: UnsafeMutablePointer<PangoGlyphString>! { get }
 
+    /// Required Initialiser for types conforming to `GlyphStringProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `GlyphStringRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphString` instance.
 /// It exposes methods that can operate on this data type through `GlyphStringProtocol` conformance.
 /// Use `GlyphStringRef` only as an `unowned` reference to an existing `PangoGlyphString` instance.
 ///
-/// The `PangoGlyphString` structure is used to store strings
-/// of glyphs with geometry and visual attribute information.
-/// The storage for the glyph information is owned
-/// by the structure which simplifies memory management.
+/// A `PangoGlyphString` is used to store strings of glyphs with geometry
+/// and visual attribute information.
+/// 
+/// The storage for the glyph information is owned by the structure
+/// which simplifies memory management.
 public struct GlyphStringRef: GlyphStringProtocol {
         /// Untyped pointer to the underlying `PangoGlyphString` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_string_ptr` property instead.
@@ -118,10 +122,11 @@ public extension GlyphStringRef {
 /// It provides the methods that can operate on this data type through `GlyphStringProtocol` conformance.
 /// Use `GlyphString` as a strong reference or owner of a `PangoGlyphString` instance.
 ///
-/// The `PangoGlyphString` structure is used to store strings
-/// of glyphs with geometry and visual attribute information.
-/// The storage for the glyph information is owned
-/// by the structure which simplifies memory management.
+/// A `PangoGlyphString` is used to store strings of glyphs with geometry
+/// and visual attribute information.
+/// 
+/// The storage for the glyph information is owned by the structure
+/// which simplifies memory management.
 open class GlyphString: GlyphStringProtocol {
         /// Untyped pointer to the underlying `PangoGlyphString` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_string_ptr` property instead.
@@ -235,7 +240,7 @@ open class GlyphString: GlyphStringProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GlyphStringProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -287,9 +292,10 @@ public extension GlyphStringProtocol {
         return rv
     }
 
-    /// Compute the logical and ink extents of a glyph string. See the documentation
-    /// for `pango_font_get_glyph_extents()` for details about the interpretation
-    /// of the rectangles.
+    /// Compute the logical and ink extents of a glyph string.
+    /// 
+    /// See the documentation for [method`Pango.Font.get_glyph_extents`] for details
+    /// about the interpretation of the rectangles.
     /// 
     /// Examples of logical (red) and ink (green) rects:
     /// 
@@ -298,9 +304,10 @@ public extension GlyphStringProtocol {
         pango_glyph_string_extents(glyph_string_ptr, font.font_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
-    /// Compute the logical and ink extents of a glyph string. See the documentation
-    /// for `pango_font_get_glyph_extents()` for details about the interpretation
-    /// of the rectangles.
+    /// Compute the logical and ink extents of a glyph string.
+    /// 
+    /// See the documentation for [method`Pango.Font.get_glyph_extents`] for details
+    /// about the interpretation of the rectangles.
     /// 
     /// Examples of logical (red) and ink (green) rects:
     /// 
@@ -310,18 +317,20 @@ public extension GlyphStringProtocol {
     
     }
 
-    /// Computes the extents of a sub-portion of a glyph string. The extents are
-    /// relative to the start of the glyph string range (the origin of their
-    /// coordinate system is at the start of the range, not at the start of the entire
-    /// glyph string).
+    /// Computes the extents of a sub-portion of a glyph string.
+    /// 
+    /// The extents are relative to the start of the glyph string range
+    /// (the origin of their coordinate system is at the start of the range,
+    /// not at the start of the entire glyph string).
     @inlinable func extentsRange<FontT: FontProtocol>(start: Int, end: Int, font: FontT, inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
         pango_glyph_string_extents_range(glyph_string_ptr, gint(start), gint(end), font.font_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
-    /// Computes the extents of a sub-portion of a glyph string. The extents are
-    /// relative to the start of the glyph string range (the origin of their
-    /// coordinate system is at the start of the range, not at the start of the entire
-    /// glyph string).
+    /// Computes the extents of a sub-portion of a glyph string.
+    /// 
+    /// The extents are relative to the start of the glyph string range
+    /// (the origin of their coordinate system is at the start of the range,
+    /// not at the start of the entire glyph string).
     @inlinable func extentsRange<FontT: FontProtocol, RectangleT: RectangleProtocol>(start: Int, end: Int, font: FontT, inkRect: RectangleT?, logicalRect: RectangleT?) {
         pango_glyph_string_extents_range(glyph_string_ptr, gint(start), gint(end), font.font_ptr, inkRect?._ptr, logicalRect?._ptr)
     
@@ -333,29 +342,34 @@ public extension GlyphStringProtocol {
     
     }
 
-    /// Given a `PangoGlyphString` resulting from `pango_shape()` and the corresponding
-    /// text, determine the screen width corresponding to each character. When
-    /// multiple characters compose a single cluster, the width of the entire
-    /// cluster is divided equally among the characters.
+    /// Given a `PangoGlyphString` and corresponding text, determine the width
+    /// corresponding to each character.
     /// 
-    /// See also `pango_glyph_item_get_logical_widths()`.
+    /// When multiple characters compose a single cluster, the width of the
+    /// entire cluster is divided equally among the characters.
+    /// 
+    /// See also [method`Pango.GlyphItem.get_logical_widths`].
     @inlinable func getLogicalWidths(text: UnsafePointer<CChar>!, length: Int, embeddingLevel: Int, logicalWidths: UnsafeMutablePointer<CInt>!) {
         pango_glyph_string_get_logical_widths(glyph_string_ptr, text, gint(length), gint(embeddingLevel), logicalWidths)
     
     }
 
-    /// Computes the logical width of the glyph string as can also be computed
-    /// using `pango_glyph_string_extents()`.  However, since this only computes the
-    /// width, it's much faster.  This is in fact only a convenience function that
-    /// computes the sum of geometry.width for each glyph in the `glyphs`.
+    /// Computes the logical width of the glyph string.
+    /// 
+    /// This can also be computed using [method`Pango.GlyphString.extents`].
+    /// However, since this only computes the width, it's much faster. This
+    /// is in fact only a convenience function that computes the sum of
+    /// `geometry.width` for each glyph in the `glyphs`.
     @inlinable func getWidth() -> Int {
         let rv = Int(pango_glyph_string_get_width(glyph_string_ptr))
         return rv
     }
 
-    /// Converts from character position to x position. (X position
-    /// is measured from the left edge of the run). Character positions
-    /// are computed by dividing up each cluster into equal portions.
+    /// Converts from character position to x position.
+    /// 
+    /// The X position is measured from the left edge of the run.
+    /// Character positions are computed by dividing up each cluster
+    /// into equal portions.
     @inlinable func indexToX<AnalysisT: AnalysisProtocol>(text: UnsafeMutablePointer<CChar>!, length: Int, analysis: AnalysisT, index_: Int, trailing: Bool, xPos: UnsafeMutablePointer<gint>!) {
         pango_glyph_string_index_to_x(glyph_string_ptr, text, gint(length), analysis._ptr, gint(index_), gboolean((trailing) ? 1 : 0), xPos)
     
@@ -367,80 +381,89 @@ public extension GlyphStringProtocol {
     
     }
 
-    /// Convert from x offset to character position. Character positions
-    /// are computed by dividing up each cluster into equal portions.
-    /// In scripts where positioning within a cluster is not allowed
-    /// (such as Thai), the returned value may not be a valid cursor
-    /// position; the caller must combine the result with the logical
+    /// Convert from x offset to character position.
+    /// 
+    /// Character positions are computed by dividing up each cluster into
+    /// equal portions. In scripts where positioning within a cluster is
+    /// not allowed (such as Thai), the returned value may not be a valid
+    /// cursor position; the caller must combine the result with the logical
     /// attributes for the text to compute the valid cursor position.
     @inlinable func xToIndex<AnalysisT: AnalysisProtocol>(text: UnsafeMutablePointer<CChar>!, length: Int, analysis: AnalysisT, xPos: Int, index_: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) {
         pango_glyph_string_x_to_index(glyph_string_ptr, text, gint(length), analysis._ptr, gint(xPos), index_, trailing)
     
     }
 
-    /// Given a segment of text and the corresponding `PangoAnalysis` structure
-    /// returned from `pango_itemize()`, convert the characters into glyphs. You
-    /// may also pass in only a substring of the item from `pango_itemize()`.
+    /// Convert the characters in `text` into glyphs.
     /// 
-    /// It is recommended that you use `pango_shape_full()` instead, since
+    /// Given a segment of text and the corresponding `PangoAnalysis` structure
+    /// returned from [func`itemize`], convert the characters into glyphs. You
+    /// may also pass in only a substring of the item from [func`itemize`].
+    /// 
+    /// It is recommended that you use [func`shape_full`] instead, since
     /// that API allows for shaping interaction happening across text item
     /// boundaries.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// `pango_itemize()` have indices that are relative to the entire paragraph,
+    /// [func`itemize`] have indices that are relative to the entire paragraph,
     /// so you need to subtract the item offset from their indices before
-    /// calling `pango_shape()`.
+    /// calling [func`shape`].
     @inlinable func shape<AnalysisT: AnalysisProtocol>(text: UnsafePointer<CChar>!, length: Int, analysis: AnalysisT) {
         pango_shape(text, gint(length), analysis._ptr, glyph_string_ptr)
     
     }
 
-    /// Given a segment of text and the corresponding
-    /// `PangoAnalysis` structure returned from `pango_itemize()`,
-    /// convert the characters into glyphs. You may also pass
-    /// in only a substring of the item from `pango_itemize()`.
+    /// Convert the characters in `text` into glyphs.
     /// 
-    /// This is similar to `pango_shape()`, except it also can optionally take
+    /// Given a segment of text and the corresponding `PangoAnalysis` structure
+    /// returned from [func`itemize`], convert the characters into glyphs. You may
+    /// also pass in only a substring of the item from [func`itemize`].
+    /// 
+    /// This is similar to [func`shape`], except it also can optionally take
     /// the full paragraph text as input, which will then be used to perform
-    /// certain cross-item shaping interactions.  If you have access to the broader
+    /// certain cross-item shaping interactions. If you have access to the broader
     /// text of which `item_text` is part of, provide the broader text as
-    /// `paragraph_text`.  If `paragraph_text` is `nil`, item text is used instead.
+    /// `paragraph_text`. If `paragraph_text` is `nil`, item text is used instead.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// `pango_itemize()` have indices that are relative to the entire paragraph,
+    /// [func`itemize`] have indices that are relative to the entire paragraph,
     /// so you do not pass the full paragraph text as `paragraph_text`, you need
-    /// to subtract the item offset from their indices before calling `pango_shape_full()`.
+    /// to subtract the item offset from their indices before calling [func`shape_full`].
     @inlinable func shapeFull<AnalysisT: AnalysisProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, analysis: AnalysisT) {
         pango_shape_full(itemText, gint(itemLength), paragraphText, gint(paragraphLength), analysis._ptr, glyph_string_ptr)
     
     }
 
-    /// Given a segment of text and the corresponding
-    /// `PangoAnalysis` structure returned from `pango_itemize()`,
-    /// convert the characters into glyphs. You may also pass
-    /// in only a substring of the item from `pango_itemize()`.
+    /// Convert the characters in `text` into glyphs.
     /// 
-    /// This is similar to `pango_shape_full()`, except it also takes
-    /// flags that can influence the shaping process.
+    /// Given a segment of text and the corresponding `PangoAnalysis` structure
+    /// returned from [func`itemize`], convert the characters into glyphs. You may
+    /// also pass in only a substring of the item from [func`itemize`].
+    /// 
+    /// This is similar to [func`shape_full`], except it also takes flags that can
+    /// influence the shaping process.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// `pango_itemize()` have indices that are relative to the entire paragraph,
+    /// [func`itemize`] have indices that are relative to the entire paragraph,
     /// so you do not pass the full paragraph text as `paragraph_text`, you need
     /// to subtract the item offset from their indices before calling
-    /// `pango_shape_with_flags()`.
+    /// [func`shape_with_flags`].
     @inlinable func shapeWithFlags<AnalysisT: AnalysisProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, analysis: AnalysisT, flags: ShapeFlags) {
         pango_shape_with_flags(itemText, gint(itemLength), paragraphText, gint(paragraphLength), analysis._ptr, glyph_string_ptr, flags.value)
     
     }
-    /// Computes the logical width of the glyph string as can also be computed
-    /// using `pango_glyph_string_extents()`.  However, since this only computes the
-    /// width, it's much faster.  This is in fact only a convenience function that
-    /// computes the sum of geometry.width for each glyph in the `glyphs`.
+    /// Computes the logical width of the glyph string.
+    /// 
+    /// This can also be computed using [method`Pango.GlyphString.extents`].
+    /// However, since this only computes the width, it's much faster. This
+    /// is in fact only a convenience function that computes the sum of
+    /// `geometry.width` for each glyph in the `glyphs`.
     @inlinable var width: Int {
-        /// Computes the logical width of the glyph string as can also be computed
-        /// using `pango_glyph_string_extents()`.  However, since this only computes the
-        /// width, it's much faster.  This is in fact only a convenience function that
-        /// computes the sum of geometry.width for each glyph in the `glyphs`.
+        /// Computes the logical width of the glyph string.
+        /// 
+        /// This can also be computed using [method`Pango.GlyphString.extents`].
+        /// However, since this only computes the width, it's much faster. This
+        /// is in fact only a convenience function that computes the sum of
+        /// `geometry.width` for each glyph in the `glyphs`.
         get {
             let rv = Int(pango_glyph_string_get_width(glyph_string_ptr))
             return rv

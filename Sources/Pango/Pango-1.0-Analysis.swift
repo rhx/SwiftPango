@@ -19,6 +19,8 @@ public protocol AnalysisProtocol {
     /// Typed pointer to the underlying `PangoAnalysis` instance.
     var _ptr: UnsafeMutablePointer<PangoAnalysis>! { get }
 
+    /// Required Initialiser for types conforming to `AnalysisProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AnalysisRef` type acts as a lightweight Swift reference to an underlying `PangoAnalysis` instance.
@@ -224,7 +226,7 @@ open class Analysis: AnalysisProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AnalysisProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -265,8 +267,9 @@ public extension AnalysisProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAnalysis` instance.
     @inlinable var _ptr: UnsafeMutablePointer<PangoAnalysis>! { return ptr?.assumingMemoryBound(to: PangoAnalysis.self) }
 
-    /// Determines possible line, word, and character breaks
-    /// for a string of Unicode text with a single analysis.
+    /// Determines possible line, word, and character breaks for a string of
+    /// Unicode text with a single analysis.
+    /// 
     /// For most purposes you may want to use `pango_get_log_attrs()`.
     ///
     /// **break is deprecated:**
@@ -276,8 +279,9 @@ public extension AnalysisProtocol {
     
     }
 
-    /// This is the default break algorithm. It applies Unicode
-    /// rules without language-specific tailoring, therefore
+    /// This is the default break algorithm.
+    /// 
+    /// It applies Unicode rules without language-specific tailoring, therefore
     /// the `analyis` argument is unused and can be `nil`.
     /// 
     /// See `pango_tailor_break()` for language-specific breaks.
@@ -286,64 +290,68 @@ public extension AnalysisProtocol {
     
     }
 
-    /// Given a segment of text and the corresponding `PangoAnalysis` structure
-    /// returned from `pango_itemize()`, convert the characters into glyphs. You
-    /// may also pass in only a substring of the item from `pango_itemize()`.
+    /// Convert the characters in `text` into glyphs.
     /// 
-    /// It is recommended that you use `pango_shape_full()` instead, since
+    /// Given a segment of text and the corresponding `PangoAnalysis` structure
+    /// returned from [func`itemize`], convert the characters into glyphs. You
+    /// may also pass in only a substring of the item from [func`itemize`].
+    /// 
+    /// It is recommended that you use [func`shape_full`] instead, since
     /// that API allows for shaping interaction happening across text item
     /// boundaries.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// `pango_itemize()` have indices that are relative to the entire paragraph,
+    /// [func`itemize`] have indices that are relative to the entire paragraph,
     /// so you need to subtract the item offset from their indices before
-    /// calling `pango_shape()`.
+    /// calling [func`shape`].
     @inlinable func shape<GlyphStringT: GlyphStringProtocol>(text: UnsafePointer<CChar>!, length: Int, glyphs: GlyphStringT) {
         pango_shape(text, gint(length), _ptr, glyphs.glyph_string_ptr)
     
     }
 
-    /// Given a segment of text and the corresponding
-    /// `PangoAnalysis` structure returned from `pango_itemize()`,
-    /// convert the characters into glyphs. You may also pass
-    /// in only a substring of the item from `pango_itemize()`.
+    /// Convert the characters in `text` into glyphs.
     /// 
-    /// This is similar to `pango_shape()`, except it also can optionally take
+    /// Given a segment of text and the corresponding `PangoAnalysis` structure
+    /// returned from [func`itemize`], convert the characters into glyphs. You may
+    /// also pass in only a substring of the item from [func`itemize`].
+    /// 
+    /// This is similar to [func`shape`], except it also can optionally take
     /// the full paragraph text as input, which will then be used to perform
-    /// certain cross-item shaping interactions.  If you have access to the broader
+    /// certain cross-item shaping interactions. If you have access to the broader
     /// text of which `item_text` is part of, provide the broader text as
-    /// `paragraph_text`.  If `paragraph_text` is `nil`, item text is used instead.
+    /// `paragraph_text`. If `paragraph_text` is `nil`, item text is used instead.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// `pango_itemize()` have indices that are relative to the entire paragraph,
+    /// [func`itemize`] have indices that are relative to the entire paragraph,
     /// so you do not pass the full paragraph text as `paragraph_text`, you need
-    /// to subtract the item offset from their indices before calling `pango_shape_full()`.
+    /// to subtract the item offset from their indices before calling [func`shape_full`].
     @inlinable func shapeFull<GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, glyphs: GlyphStringT) {
         pango_shape_full(itemText, gint(itemLength), paragraphText, gint(paragraphLength), _ptr, glyphs.glyph_string_ptr)
     
     }
 
-    /// Given a segment of text and the corresponding
-    /// `PangoAnalysis` structure returned from `pango_itemize()`,
-    /// convert the characters into glyphs. You may also pass
-    /// in only a substring of the item from `pango_itemize()`.
+    /// Convert the characters in `text` into glyphs.
     /// 
-    /// This is similar to `pango_shape_full()`, except it also takes
-    /// flags that can influence the shaping process.
+    /// Given a segment of text and the corresponding `PangoAnalysis` structure
+    /// returned from [func`itemize`], convert the characters into glyphs. You may
+    /// also pass in only a substring of the item from [func`itemize`].
+    /// 
+    /// This is similar to [func`shape_full`], except it also takes flags that can
+    /// influence the shaping process.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// `pango_itemize()` have indices that are relative to the entire paragraph,
+    /// [func`itemize`] have indices that are relative to the entire paragraph,
     /// so you do not pass the full paragraph text as `paragraph_text`, you need
     /// to subtract the item offset from their indices before calling
-    /// `pango_shape_with_flags()`.
+    /// [func`shape_with_flags`].
     @inlinable func shapeWithFlags<GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, glyphs: GlyphStringT, flags: ShapeFlags) {
         pango_shape_with_flags(itemText, gint(itemLength), paragraphText, gint(paragraphLength), _ptr, glyphs.glyph_string_ptr, flags.value)
     
     }
 
-    /// Apply language-specific tailoring to the breaks in
-    /// `log_attrs`, which are assumed to have been produced
-    /// by `pango_default_break()`.
+    /// Apply language-specific tailoring to the breaks in `log_attrs`.
+    /// 
+    /// The line breaks are assumed to have been produced by [func`default_break`].
     /// 
     /// If `offset` is not -1, it is used to apply attributes
     /// from `analysis` that are relevant to line breaking.
@@ -353,28 +361,28 @@ public extension AnalysisProtocol {
     }
 
     /// unused
-    @inlinable var shapeEngine: EngineShapeRef! {
+    @inlinable var shapeEngine: UnsafeMutablePointer<PangoEngineShape>! {
         /// unused
         get {
-            let rv = EngineShapeRef(gconstpointer: gconstpointer(_ptr.pointee.shape_engine))
+            let rv = _ptr.pointee.shape_engine
             return rv
         }
         /// unused
          set {
-            _ptr.pointee.shape_engine = UnsafeMutablePointer<PangoEngineShape>(newValue.engine_shape_ptr)
+            _ptr.pointee.shape_engine = newValue
         }
     }
 
     /// unused
-    @inlinable var langEngine: EngineLangRef! {
+    @inlinable var langEngine: UnsafeMutablePointer<PangoEngineLang>! {
         /// unused
         get {
-            let rv = EngineLangRef(gconstpointer: gconstpointer(_ptr.pointee.lang_engine))
+            let rv = _ptr.pointee.lang_engine
             return rv
         }
         /// unused
          set {
-            _ptr.pointee.lang_engine = UnsafeMutablePointer<PangoEngineLang>(newValue.engine_lang_ptr)
+            _ptr.pointee.lang_engine = newValue
         }
     }
 

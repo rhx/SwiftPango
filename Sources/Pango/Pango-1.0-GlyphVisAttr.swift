@@ -10,9 +10,11 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `GlyphVisAttr`.
 /// Alternatively, use `GlyphVisAttrRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The PangoGlyphVisAttr is used to communicate information between
-/// the shaping phase and the rendering phase.  More attributes may be
-/// added in the future.
+/// A `PangoGlyphVisAttr` structure communicates information between
+/// the shaping and rendering phases.
+/// 
+/// Currently, it contains only cluster start information. yMore attributes
+/// may be added in the future.
 public protocol GlyphVisAttrProtocol {
         /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -20,15 +22,19 @@ public protocol GlyphVisAttrProtocol {
     /// Typed pointer to the underlying `PangoGlyphVisAttr` instance.
     var _ptr: UnsafeMutablePointer<PangoGlyphVisAttr>! { get }
 
+    /// Required Initialiser for types conforming to `GlyphVisAttrProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `GlyphVisAttrRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphVisAttr` instance.
 /// It exposes methods that can operate on this data type through `GlyphVisAttrProtocol` conformance.
 /// Use `GlyphVisAttrRef` only as an `unowned` reference to an existing `PangoGlyphVisAttr` instance.
 ///
-/// The PangoGlyphVisAttr is used to communicate information between
-/// the shaping phase and the rendering phase.  More attributes may be
-/// added in the future.
+/// A `PangoGlyphVisAttr` structure communicates information between
+/// the shaping and rendering phases.
+/// 
+/// Currently, it contains only cluster start information. yMore attributes
+/// may be added in the future.
 public struct GlyphVisAttrRef: GlyphVisAttrProtocol {
         /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -111,9 +117,11 @@ public extension GlyphVisAttrRef {
 /// It provides the methods that can operate on this data type through `GlyphVisAttrProtocol` conformance.
 /// Use `GlyphVisAttr` as a strong reference or owner of a `PangoGlyphVisAttr` instance.
 ///
-/// The PangoGlyphVisAttr is used to communicate information between
-/// the shaping phase and the rendering phase.  More attributes may be
-/// added in the future.
+/// A `PangoGlyphVisAttr` structure communicates information between
+/// the shaping and rendering phases.
+/// 
+/// Currently, it contains only cluster start information. yMore attributes
+/// may be added in the future.
 open class GlyphVisAttr: GlyphVisAttrProtocol {
         /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -227,7 +235,7 @@ open class GlyphVisAttr: GlyphVisAttrProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GlyphVisAttrProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -269,26 +277,26 @@ public extension GlyphVisAttrProtocol {
     @inlinable var _ptr: UnsafeMutablePointer<PangoGlyphVisAttr>! { return ptr?.assumingMemoryBound(to: PangoGlyphVisAttr.self) }
 
 
-    /// set for the first logical glyph in each cluster. (Clusters
-    /// are stored in visual order, within the cluster, glyphs
-    /// are always ordered in logical order, since visual
-    /// order is meaningless; that is, in Arabic text, accent glyphs
-    /// follow the glyphs for the base character.)
+    /// set for the first logical glyph in each cluster.
+    ///   (Clusters are stored in visual order, within the cluster, glyphs
+    ///   are always ordered in logical order, since visual order is meaningless;
+    ///   that is, in Arabic text, accent glyphs follow the glyphs for the
+    ///   base character.)
     @inlinable var isClusterStart: guint {
-        /// set for the first logical glyph in each cluster. (Clusters
-        /// are stored in visual order, within the cluster, glyphs
-        /// are always ordered in logical order, since visual
-        /// order is meaningless; that is, in Arabic text, accent glyphs
-        /// follow the glyphs for the base character.)
+        /// set for the first logical glyph in each cluster.
+        ///   (Clusters are stored in visual order, within the cluster, glyphs
+        ///   are always ordered in logical order, since visual order is meaningless;
+        ///   that is, in Arabic text, accent glyphs follow the glyphs for the
+        ///   base character.)
         get {
             let rv = _ptr.pointee.is_cluster_start
             return rv
         }
-        /// set for the first logical glyph in each cluster. (Clusters
-        /// are stored in visual order, within the cluster, glyphs
-        /// are always ordered in logical order, since visual
-        /// order is meaningless; that is, in Arabic text, accent glyphs
-        /// follow the glyphs for the base character.)
+        /// set for the first logical glyph in each cluster.
+        ///   (Clusters are stored in visual order, within the cluster, glyphs
+        ///   are always ordered in logical order, since visual order is meaningless;
+        ///   that is, in Arabic text, accent glyphs follow the glyphs for the
+        ///   base character.)
          set {
             _ptr.pointee.is_cluster_start = newValue
         }

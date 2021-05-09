@@ -10,16 +10,17 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `AttrList`.
 /// Alternatively, use `AttrListRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAttrList` structure represents a list of attributes
-/// that apply to a section of text. The attributes are, in general,
-/// allowed to overlap in an arbitrary fashion, however, if the
-/// attributes are manipulated only through `pango_attr_list_change()`,
-/// the overlap between properties will meet stricter criteria.
+/// A `PangoAttrList` represents a list of attributes that apply to a section
+/// of text.
 /// 
-/// Since the `PangoAttrList` structure is stored as a linear list,
-/// it is not suitable for storing attributes for large amounts
-/// of text. In general, you should not use a single `PangoAttrList`
-/// for more than one paragraph of text.
+/// The attributes in a `PangoAttrList` are, in general, allowed to overlap in
+/// an arbitrary fashion. However, if the attributes are manipulated only through
+/// [method`Pango.AttrList.change`], the overlap between properties will meet
+/// stricter criteria.
+/// 
+/// Since the `PangoAttrList` structure is stored as a linear list, it is not
+/// suitable for storing attributes for large amounts of text. In general, you
+/// should not use a single `PangoAttrList` for more than one paragraph of text.
 public protocol AttrListProtocol {
         /// Untyped pointer to the underlying `PangoAttrList` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -27,22 +28,25 @@ public protocol AttrListProtocol {
     /// Typed pointer to the underlying `PangoAttrList` instance.
     var attr_list_ptr: UnsafeMutablePointer<PangoAttrList>! { get }
 
+    /// Required Initialiser for types conforming to `AttrListProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AttrListRef` type acts as a lightweight Swift reference to an underlying `PangoAttrList` instance.
 /// It exposes methods that can operate on this data type through `AttrListProtocol` conformance.
 /// Use `AttrListRef` only as an `unowned` reference to an existing `PangoAttrList` instance.
 ///
-/// The `PangoAttrList` structure represents a list of attributes
-/// that apply to a section of text. The attributes are, in general,
-/// allowed to overlap in an arbitrary fashion, however, if the
-/// attributes are manipulated only through `pango_attr_list_change()`,
-/// the overlap between properties will meet stricter criteria.
+/// A `PangoAttrList` represents a list of attributes that apply to a section
+/// of text.
 /// 
-/// Since the `PangoAttrList` structure is stored as a linear list,
-/// it is not suitable for storing attributes for large amounts
-/// of text. In general, you should not use a single `PangoAttrList`
-/// for more than one paragraph of text.
+/// The attributes in a `PangoAttrList` are, in general, allowed to overlap in
+/// an arbitrary fashion. However, if the attributes are manipulated only through
+/// [method`Pango.AttrList.change`], the overlap between properties will meet
+/// stricter criteria.
+/// 
+/// Since the `PangoAttrList` structure is stored as a linear list, it is not
+/// suitable for storing attributes for large amounts of text. In general, you
+/// should not use a single `PangoAttrList` for more than one paragraph of text.
 public struct AttrListRef: AttrListProtocol {
         /// Untyped pointer to the underlying `PangoAttrList` instance.
     /// For type-safe access, use the generated, typed pointer `attr_list_ptr` property instead.
@@ -130,16 +134,17 @@ public extension AttrListRef {
 /// It provides the methods that can operate on this data type through `AttrListProtocol` conformance.
 /// Use `AttrList` as a strong reference or owner of a `PangoAttrList` instance.
 ///
-/// The `PangoAttrList` structure represents a list of attributes
-/// that apply to a section of text. The attributes are, in general,
-/// allowed to overlap in an arbitrary fashion, however, if the
-/// attributes are manipulated only through `pango_attr_list_change()`,
-/// the overlap between properties will meet stricter criteria.
+/// A `PangoAttrList` represents a list of attributes that apply to a section
+/// of text.
 /// 
-/// Since the `PangoAttrList` structure is stored as a linear list,
-/// it is not suitable for storing attributes for large amounts
-/// of text. In general, you should not use a single `PangoAttrList`
-/// for more than one paragraph of text.
+/// The attributes in a `PangoAttrList` are, in general, allowed to overlap in
+/// an arbitrary fashion. However, if the attributes are manipulated only through
+/// [method`Pango.AttrList.change`], the overlap between properties will meet
+/// stricter criteria.
+/// 
+/// Since the `PangoAttrList` structure is stored as a linear list, it is not
+/// suitable for storing attributes for large amounts of text. In general, you
+/// should not use a single `PangoAttrList` for more than one paragraph of text.
 open class AttrList: AttrListProtocol {
         /// Untyped pointer to the underlying `PangoAttrList` instance.
     /// For type-safe access, use the generated, typed pointer `attr_list_ptr` property instead.
@@ -253,7 +258,7 @@ open class AttrList: AttrListProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrListProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -299,15 +304,16 @@ public extension AttrListProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrList` instance.
     @inlinable var attr_list_ptr: UnsafeMutablePointer<PangoAttrList>! { return ptr?.assumingMemoryBound(to: PangoAttrList.self) }
 
-    /// Insert the given attribute into the `PangoAttrList`. It will
-    /// replace any attributes of the same type on that segment
+    /// Insert the given attribute into the `PangoAttrList`.
+    /// 
+    /// It will replace any attributes of the same type on that segment
     /// and be merged with any adjoining attributes that are identical.
     /// 
-    /// This function is slower than `pango_attr_list_insert()` for
-    /// creating an attribute list in order (potentially much slower
-    /// for large lists). However, `pango_attr_list_insert()` is not
-    /// suitable for continually changing a set of attributes
-    /// since it never removes or combines existing attributes.
+    /// This function is slower than [method`Pango.AttrList.insert`] for
+    /// creating an attribute list in order (potentially much slower for
+    /// large lists). However, [method`Pango.AttrList.insert`] is not
+    /// suitable for continually changing a set of attributes since it
+    /// never removes or combines existing attributes.
     @inlinable func change<AttributeT: AttributeProtocol>(attr: AttributeT) {
         pango_attr_list_change(attr_list_ptr, attr.attribute_ptr)
     
@@ -328,8 +334,7 @@ public extension AttrListProtocol {
     }
 
     /// Given a `PangoAttrList` and callback function, removes any elements
-    /// of `list` for which `func` returns `true` and inserts them into
-    /// a new list.
+    /// of `list` for which `func` returns `true` and inserts them into a new list.
     @inlinable func filter(`func`: PangoAttrFilterFunc?, data: gpointer! = nil) -> AttrListRef! {
         guard let rv = AttrListRef(gconstpointer: gconstpointer(pango_attr_list_filter(attr_list_ptr, `func`, data))) else { return nil }
         return rv
@@ -348,17 +353,19 @@ public extension AttrListProtocol {
         return rv
     }
 
-    /// Insert the given attribute into the `PangoAttrList`. It will
-    /// be inserted after all other attributes with a matching
-    /// `start_index`.
+    /// Insert the given attribute into the `PangoAttrList`.
+    /// 
+    /// It will be inserted after all other attributes with a
+    /// matching `start_index`.
     @inlinable func insert<AttributeT: AttributeProtocol>(attr: AttributeT) {
         pango_attr_list_insert(attr_list_ptr, attr.attribute_ptr)
     
     }
 
-    /// Insert the given attribute into the `PangoAttrList`. It will
-    /// be inserted before all other attributes with a matching
-    /// `start_index`.
+    /// Insert the given attribute into the `PangoAttrList`.
+    /// 
+    /// It will be inserted before all other attributes with a
+    /// matching `start_index`.
     @inlinable func insertBefore<AttributeT: AttributeProtocol>(attr: AttributeT) {
         pango_attr_list_insert_before(attr_list_ptr, attr.attribute_ptr)
     
@@ -370,13 +377,14 @@ public extension AttrListProtocol {
         return rv
     }
 
-    /// This function opens up a hole in `list`, fills it in with attributes from
-    /// the left, and then merges `other` on top of the hole.
+    /// This function opens up a hole in `list`, fills it in with attributes
+    /// from the left, and then merges `other` on top of the hole.
     /// 
     /// This operation is equivalent to stretching every attribute
     /// that applies at position `pos` in `list` by an amount `len`,
-    /// and then calling `pango_attr_list_change()` with a copy
-    /// of each attribute in `other` in sequence (offset in position by `pos`).
+    /// and then calling [method`Pango.AttrList.change`] with a copy
+    /// of each attribute in `other` in sequence (offset in position
+    /// by `pos`).
     /// 
     /// This operation proves useful for, for instance, inserting
     /// a pre-edit string in the middle of an edit buffer.
@@ -393,66 +401,72 @@ public extension AttrListProtocol {
     
     }
 
-    /// Update indices of attributes in `list` for
-    /// a change in the text they refer to.
+    /// Update indices of attributes in `list` for a change in the
+    /// text they refer to.
     /// 
-    /// The change that this function applies is
-    /// removing `remove` bytes at position `pos`
-    /// and inserting `add` bytes instead.
+    /// The change that this function applies is removing `remove`
+    /// bytes at position `pos` and inserting `add` bytes instead.
     /// 
-    /// Attributes that fall entirely in the
-    /// (`pos`, `pos` + `remove`) range are removed.
+    /// Attributes that fall entirely in the (`pos`, `pos` + `remove`)
+    /// range are removed.
     /// 
-    /// Attributes that start or end inside the
-    /// (`pos`, `pos` + `remove`) range are shortened to
-    /// reflect the removal.
+    /// Attributes that start or end inside the (`pos`, `pos` + `remove`)
+    /// range are shortened to reflect the removal.
     /// 
-    /// Attributes start and end positions are updated
-    /// if they are behind `pos` + `remove`.
+    /// Attributes start and end positions are updated if they are
+    /// behind `pos` + `remove`.
     @inlinable func update(pos: Int, remove: Int, add: Int) {
         pango_attr_list_update(attr_list_ptr, gint(pos), gint(remove), gint(add))
     
     }
 
-    /// Breaks a piece of text into segments with consistent
-    /// directional level and shaping engine. Each byte of `text` will
-    /// be contained in exactly one of the items in the returned list;
-    /// the generated list of items will be in logical order (the start
-    /// offsets of the items are ascending).
+    /// Breaks a piece of text into segments with consistent directional
+    /// level and font.
     /// 
-    /// `cached_iter` should be an iterator over `attrs` currently positioned at a
-    /// range before or containing `start_index`; `cached_iter` will be advanced to
-    /// the range covering the position just after `start_index` + `length`.
-    /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
+    /// Each byte of `text` will be contained in exactly one of the items in the
+    /// returned list; the generated list of items will be in logical order (the
+    /// start offsets of the items are ascending).
+    /// 
+    /// `cached_iter` should be an iterator over `attrs` currently positioned
+    /// at a range before or containing `start_index`; `cached_iter` will be
+    /// advanced to the range covering the position just after
+    /// `start_index` + `length`. (i.e. if itemizing in a loop, just keep passing
+    /// in the same `cached_iter`).
     @inlinable func itemize<ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
         let rv = GLib.ListRef(pango_itemize(context.context_ptr, text, gint(startIndex), gint(length), attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv
     }
-    /// Breaks a piece of text into segments with consistent
-    /// directional level and shaping engine. Each byte of `text` will
-    /// be contained in exactly one of the items in the returned list;
-    /// the generated list of items will be in logical order (the start
-    /// offsets of the items are ascending).
+    /// Breaks a piece of text into segments with consistent directional
+    /// level and font.
     /// 
-    /// `cached_iter` should be an iterator over `attrs` currently positioned at a
-    /// range before or containing `start_index`; `cached_iter` will be advanced to
-    /// the range covering the position just after `start_index` + `length`.
-    /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
+    /// Each byte of `text` will be contained in exactly one of the items in the
+    /// returned list; the generated list of items will be in logical order (the
+    /// start offsets of the items are ascending).
+    /// 
+    /// `cached_iter` should be an iterator over `attrs` currently positioned
+    /// at a range before or containing `start_index`; `cached_iter` will be
+    /// advanced to the range covering the position just after
+    /// `start_index` + `length`. (i.e. if itemizing in a loop, just keep passing
+    /// in the same `cached_iter`).
     @inlinable func itemize<AttrIteratorT: AttrIteratorProtocol, ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
         let rv = GLib.ListRef(pango_itemize(context.context_ptr, text, gint(startIndex), gint(length), attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv
     }
 
-    /// Like `pango_itemize()`, but the base direction to use when
-    /// computing bidirectional levels (see pango_context_set_base_dir ()),
-    /// is specified explicitly rather than gotten from the `PangoContext`.
+    /// Like ``pango_itemize()``, but with an explicitly specified base direction.
+    /// 
+    /// The base direction is used when computing bidirectional levels.
+    /// (see [method`Pango.Context.set_base_dir`]). [func`itemize`] gets the
+    /// base direction from the `PangoContext`.
     @inlinable func itemizeWithBaseDir<ContextT: ContextProtocol>(context: ContextT, baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
         let rv = GLib.ListRef(pango_itemize_with_base_dir(context.context_ptr, baseDir, text, gint(startIndex), gint(length), attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv
     }
-    /// Like `pango_itemize()`, but the base direction to use when
-    /// computing bidirectional levels (see pango_context_set_base_dir ()),
-    /// is specified explicitly rather than gotten from the `PangoContext`.
+    /// Like ``pango_itemize()``, but with an explicitly specified base direction.
+    /// 
+    /// The base direction is used when computing bidirectional levels.
+    /// (see [method`Pango.Context.set_base_dir`]). [func`itemize`] gets the
+    /// base direction from the `PangoContext`.
     @inlinable func itemizeWithBaseDir<AttrIteratorT: AttrIteratorProtocol, ContextT: ContextProtocol>(context: ContextT, baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
         let rv = GLib.ListRef(pango_itemize_with_base_dir(context.context_ptr, baseDir, text, gint(startIndex), gint(length), attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv

@@ -10,14 +10,15 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `Matrix`.
 /// Alternatively, use `MatrixRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// A structure specifying a transformation between user-space
-/// coordinates and device coordinates. The transformation
-/// is given by
+/// A `PangoMatrix` specifies a transformation between user-space
+/// and device coordinates.
 /// 
-/// <programlisting>
-/// x_device = x_user * matrix->xx + y_user * matrix->xy + matrix->x0;
-/// y_device = x_user * matrix->yx + y_user * matrix->yy + matrix->y0;
-/// </programlisting>
+/// The transformation is given by
+/// 
+/// ```
+/// x_device = x_user * matrix-&gt;xx + y_user * matrix-&gt;xy + matrix-&gt;x0;
+/// y_device = x_user * matrix-&gt;yx + y_user * matrix-&gt;yy + matrix-&gt;y0;
+/// ```
 public protocol MatrixProtocol {
         /// Untyped pointer to the underlying `PangoMatrix` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -25,20 +26,23 @@ public protocol MatrixProtocol {
     /// Typed pointer to the underlying `PangoMatrix` instance.
     var matrix_ptr: UnsafeMutablePointer<PangoMatrix>! { get }
 
+    /// Required Initialiser for types conforming to `MatrixProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `MatrixRef` type acts as a lightweight Swift reference to an underlying `PangoMatrix` instance.
 /// It exposes methods that can operate on this data type through `MatrixProtocol` conformance.
 /// Use `MatrixRef` only as an `unowned` reference to an existing `PangoMatrix` instance.
 ///
-/// A structure specifying a transformation between user-space
-/// coordinates and device coordinates. The transformation
-/// is given by
+/// A `PangoMatrix` specifies a transformation between user-space
+/// and device coordinates.
 /// 
-/// <programlisting>
-/// x_device = x_user * matrix->xx + y_user * matrix->xy + matrix->x0;
-/// y_device = x_user * matrix->yx + y_user * matrix->yy + matrix->y0;
-/// </programlisting>
+/// The transformation is given by
+/// 
+/// ```
+/// x_device = x_user * matrix-&gt;xx + y_user * matrix-&gt;xy + matrix-&gt;x0;
+/// y_device = x_user * matrix-&gt;yx + y_user * matrix-&gt;yy + matrix-&gt;y0;
+/// ```
 public struct MatrixRef: MatrixProtocol {
         /// Untyped pointer to the underlying `PangoMatrix` instance.
     /// For type-safe access, use the generated, typed pointer `matrix_ptr` property instead.
@@ -121,14 +125,15 @@ public extension MatrixRef {
 /// It provides the methods that can operate on this data type through `MatrixProtocol` conformance.
 /// Use `Matrix` as a strong reference or owner of a `PangoMatrix` instance.
 ///
-/// A structure specifying a transformation between user-space
-/// coordinates and device coordinates. The transformation
-/// is given by
+/// A `PangoMatrix` specifies a transformation between user-space
+/// and device coordinates.
 /// 
-/// <programlisting>
-/// x_device = x_user * matrix->xx + y_user * matrix->xy + matrix->x0;
-/// y_device = x_user * matrix->yx + y_user * matrix->yy + matrix->y0;
-/// </programlisting>
+/// The transformation is given by
+/// 
+/// ```
+/// x_device = x_user * matrix-&gt;xx + y_user * matrix-&gt;xy + matrix-&gt;x0;
+/// y_device = x_user * matrix-&gt;yx + y_user * matrix-&gt;yy + matrix-&gt;y0;
+/// ```
 open class Matrix: MatrixProtocol {
         /// Untyped pointer to the underlying `PangoMatrix` instance.
     /// For type-safe access, use the generated, typed pointer `matrix_ptr` property instead.
@@ -242,7 +247,7 @@ open class Matrix: MatrixProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MatrixProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -297,22 +302,24 @@ public extension MatrixProtocol {
         return rv
     }
 
-    /// Free a `PangoMatrix` created with `pango_matrix_copy()`.
+    /// Free a `PangoMatrix`.
     @inlinable func free() {
         pango_matrix_free(matrix_ptr)
     
     }
 
     /// Returns the scale factor of a matrix on the height of the font.
+    /// 
     /// That is, the scale factor in the direction perpendicular to the
     /// vector that the X coordinate is mapped to.  If the scale in the X
-    /// coordinate is needed as well, use `pango_matrix_get_font_scale_factors()`.
+    /// coordinate is needed as well, use [method`Pango.Matrix.get_font_scale_factors`].
     @inlinable func getFontScaleFactor() -> CDouble {
         let rv = pango_matrix_get_font_scale_factor(matrix_ptr)
         return rv
     }
 
     /// Calculates the scale factor of a matrix on the width and height of the font.
+    /// 
     /// That is, `xscale` is the scale factor in the direction of the X coordinate,
     /// and `yscale` is the scale factor in the direction perpendicular to the
     /// vector that the X coordinate is mapped to.
@@ -340,15 +347,16 @@ public extension MatrixProtocol {
     
     }
 
-    /// Transforms the distance vector (`dx`,`dy`) by `matrix`. This is
-    /// similar to `pango_matrix_transform_point()` except that the translation
-    /// components of the transformation are ignored. The calculation of
-    /// the returned vector is as follows:
+    /// Transforms the distance vector (`dx`,`dy`) by `matrix`.
     /// 
-    /// <programlisting>
+    /// This is similar to [method`Pango.Matrix.transform_point`],
+    /// except that the translation components of the transformation
+    /// are ignored. The calculation of the returned vector is as follows:
+    /// 
+    /// ```
     /// dx2 = dx1 * xx + dy1 * xy;
     /// dy2 = dx1 * yx + dy1 * yy;
-    /// </programlisting>
+    /// ```
     /// 
     /// Affine transformations are position invariant, so the same vector
     /// always transforms to the same vector. If (`x1`,`y1`) transforms
@@ -360,31 +368,29 @@ public extension MatrixProtocol {
     }
 
     /// First transforms the `rect` using `matrix`, then calculates the bounding box
-    /// of the transformed rectangle.  The rectangle should be in device units
-    /// (pixels).
+    /// of the transformed rectangle.
     /// 
     /// This function is useful for example when you want to draw a rotated
     /// `PangoLayout` to an image buffer, and want to know how large the image
     /// should be and how much you should shift the layout when rendering.
     /// 
-    /// For better accuracy, you should use `pango_matrix_transform_rectangle()` on
-    /// original rectangle in Pango units and convert to pixels afterward
-    /// using `pango_extents_to_pixels()`'s first argument.
+    /// For better accuracy, you should use [method`Pango.Matrix.transform_rectangle`]
+    /// on original rectangle in Pango units and convert to pixels afterward
+    /// using [func`extents_to_pixels`]'s first argument.
     @inlinable func transformPixelRectangle(rect: RectangleRef? = nil) {
         pango_matrix_transform_pixel_rectangle(matrix_ptr, rect?._ptr)
     
     }
     /// First transforms the `rect` using `matrix`, then calculates the bounding box
-    /// of the transformed rectangle.  The rectangle should be in device units
-    /// (pixels).
+    /// of the transformed rectangle.
     /// 
     /// This function is useful for example when you want to draw a rotated
     /// `PangoLayout` to an image buffer, and want to know how large the image
     /// should be and how much you should shift the layout when rendering.
     /// 
-    /// For better accuracy, you should use `pango_matrix_transform_rectangle()` on
-    /// original rectangle in Pango units and convert to pixels afterward
-    /// using `pango_extents_to_pixels()`'s first argument.
+    /// For better accuracy, you should use [method`Pango.Matrix.transform_rectangle`]
+    /// on original rectangle in Pango units and convert to pixels afterward
+    /// using [func`extents_to_pixels`]'s first argument.
     @inlinable func transformPixelRectangle<RectangleT: RectangleProtocol>(rect: RectangleT?) {
         pango_matrix_transform_pixel_rectangle(matrix_ptr, rect?._ptr)
     
@@ -397,14 +403,14 @@ public extension MatrixProtocol {
     }
 
     /// First transforms `rect` using `matrix`, then calculates the bounding box
-    /// of the transformed rectangle.  The rectangle should be in Pango units.
+    /// of the transformed rectangle.
     /// 
     /// This function is useful for example when you want to draw a rotated
     /// `PangoLayout` to an image buffer, and want to know how large the image
     /// should be and how much you should shift the layout when rendering.
     /// 
     /// If you have a rectangle in device units (pixels), use
-    /// `pango_matrix_transform_pixel_rectangle()`.
+    /// [method`Pango.Matrix.transform_pixel_rectangle`].
     /// 
     /// If you have the rectangle in Pango units and want to convert to
     /// transformed pixel bounding box, it is more accurate to transform it first
@@ -419,14 +425,14 @@ public extension MatrixProtocol {
     
     }
     /// First transforms `rect` using `matrix`, then calculates the bounding box
-    /// of the transformed rectangle.  The rectangle should be in Pango units.
+    /// of the transformed rectangle.
     /// 
     /// This function is useful for example when you want to draw a rotated
     /// `PangoLayout` to an image buffer, and want to know how large the image
     /// should be and how much you should shift the layout when rendering.
     /// 
     /// If you have a rectangle in device units (pixels), use
-    /// `pango_matrix_transform_pixel_rectangle()`.
+    /// [method`Pango.Matrix.transform_pixel_rectangle`].
     /// 
     /// If you have the rectangle in Pango units and want to convert to
     /// transformed pixel bounding box, it is more accurate to transform it first
@@ -456,14 +462,16 @@ public extension MatrixProtocol {
         return rv
     }
     /// Returns the scale factor of a matrix on the height of the font.
+    /// 
     /// That is, the scale factor in the direction perpendicular to the
     /// vector that the X coordinate is mapped to.  If the scale in the X
-    /// coordinate is needed as well, use `pango_matrix_get_font_scale_factors()`.
+    /// coordinate is needed as well, use [method`Pango.Matrix.get_font_scale_factors`].
     @inlinable var fontScaleFactor: CDouble {
         /// Returns the scale factor of a matrix on the height of the font.
+        /// 
         /// That is, the scale factor in the direction perpendicular to the
         /// vector that the X coordinate is mapped to.  If the scale in the X
-        /// coordinate is needed as well, use `pango_matrix_get_font_scale_factors()`.
+        /// coordinate is needed as well, use [method`Pango.Matrix.get_font_scale_factors`].
         get {
             let rv = pango_matrix_get_font_scale_factor(matrix_ptr)
             return rv

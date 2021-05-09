@@ -10,10 +10,12 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `FontDescription`.
 /// Alternatively, use `FontDescriptionRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoFontDescription` structure represents the description
-/// of an ideal font. These structures are used both to list
-/// what fonts are available on the system and also for specifying
-/// the characteristics of a font to load.
+/// A `PangoFontDescription` describes a font in an implementation-independent
+/// manner.
+/// 
+/// `PangoFontDescription` structures are used both to list what fonts are
+/// available on the system and also for specifying the characteristics of
+/// a font to load.
 public protocol FontDescriptionProtocol {
         /// Untyped pointer to the underlying `PangoFontDescription` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -21,16 +23,20 @@ public protocol FontDescriptionProtocol {
     /// Typed pointer to the underlying `PangoFontDescription` instance.
     var font_description_ptr: UnsafeMutablePointer<PangoFontDescription>! { get }
 
+    /// Required Initialiser for types conforming to `FontDescriptionProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontDescriptionRef` type acts as a lightweight Swift reference to an underlying `PangoFontDescription` instance.
 /// It exposes methods that can operate on this data type through `FontDescriptionProtocol` conformance.
 /// Use `FontDescriptionRef` only as an `unowned` reference to an existing `PangoFontDescription` instance.
 ///
-/// The `PangoFontDescription` structure represents the description
-/// of an ideal font. These structures are used both to list
-/// what fonts are available on the system and also for specifying
-/// the characteristics of a font to load.
+/// A `PangoFontDescription` describes a font in an implementation-independent
+/// manner.
+/// 
+/// `PangoFontDescription` structures are used both to list what fonts are
+/// available on the system and also for specifying the characteristics of
+/// a font to load.
 public struct FontDescriptionRef: FontDescriptionProtocol {
         /// Untyped pointer to the underlying `PangoFontDescription` instance.
     /// For type-safe access, use the generated, typed pointer `font_description_ptr` property instead.
@@ -112,10 +118,11 @@ public extension FontDescriptionRef {
         let rv = pango_font_description_new()
         ptr = UnsafeMutableRawPointer(rv)
     }
-    /// Creates a new font description from a string representation in the
-    /// form
+    /// Creates a new font description from a string representation.
     /// 
-    /// "\[FAMILY-LIST] \[STYLE-OPTIONS] \[SIZE] \[VARIATIONS]",
+    /// The string must have the form
+    /// 
+    ///     "\[FAMILY-LIST] \[STYLE-OPTIONS] \[SIZE] \[VARIATIONS]",
     /// 
     /// where FAMILY-LIST is a comma-separated list of families optionally
     /// terminated by a comma, STYLE_OPTIONS is a whitespace-separated list
@@ -153,7 +160,7 @@ public extension FontDescriptionRef {
     /// 
     /// A typical example:
     /// 
-    /// "Cantarell Italic Light 15 \`wght`=200"
+    ///     "Cantarell Italic Light 15 \`wght`=200"
     @inlinable static func from(string str: UnsafePointer<CChar>!) -> FontDescriptionRef! {
         guard let rv = FontDescriptionRef(gconstpointer: gconstpointer(pango_font_description_from_string(str))) else { return nil }
         return rv
@@ -164,10 +171,12 @@ public extension FontDescriptionRef {
 /// It provides the methods that can operate on this data type through `FontDescriptionProtocol` conformance.
 /// Use `FontDescription` as a strong reference or owner of a `PangoFontDescription` instance.
 ///
-/// The `PangoFontDescription` structure represents the description
-/// of an ideal font. These structures are used both to list
-/// what fonts are available on the system and also for specifying
-/// the characteristics of a font to load.
+/// A `PangoFontDescription` describes a font in an implementation-independent
+/// manner.
+/// 
+/// `PangoFontDescription` structures are used both to list what fonts are
+/// available on the system and also for specifying the characteristics of
+/// a font to load.
 open class FontDescription: FontDescriptionProtocol {
         /// Untyped pointer to the underlying `PangoFontDescription` instance.
     /// For type-safe access, use the generated, typed pointer `font_description_ptr` property instead.
@@ -281,7 +290,7 @@ open class FontDescription: FontDescriptionProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontDescriptionProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -314,10 +323,11 @@ open class FontDescription: FontDescriptionProtocol {
         ptr = UnsafeMutableRawPointer(rv)
     }
 
-    /// Creates a new font description from a string representation in the
-    /// form
+    /// Creates a new font description from a string representation.
     /// 
-    /// "\[FAMILY-LIST] \[STYLE-OPTIONS] \[SIZE] \[VARIATIONS]",
+    /// The string must have the form
+    /// 
+    ///     "\[FAMILY-LIST] \[STYLE-OPTIONS] \[SIZE] \[VARIATIONS]",
     /// 
     /// where FAMILY-LIST is a comma-separated list of families optionally
     /// terminated by a comma, STYLE_OPTIONS is a whitespace-separated list
@@ -355,7 +365,7 @@ open class FontDescription: FontDescriptionProtocol {
     /// 
     /// A typical example:
     /// 
-    /// "Cantarell Italic Light 15 \`wght`=200"
+    ///     "Cantarell Italic Light 15 \`wght`=200"
     @inlinable public static func from(string str: UnsafePointer<CChar>!) -> FontDescription! {
         guard let rv = FontDescription(gconstpointer: gconstpointer(pango_font_description_from_string(str))) else { return nil }
         return rv
@@ -376,12 +386,12 @@ public extension FontDescriptionProtocol {
     /// Determines if the style attributes of `new_match` are a closer match
     /// for `desc` than those of `old_match` are, or if `old_match` is `nil`,
     /// determines if `new_match` is a match at all.
-    /// Approximate matching is done for
-    /// weight and style; other style attributes must match exactly.
-    /// Style attributes are all attributes other than family and size-related
-    /// attributes.  Approximate matching for style considers PANGO_STYLE_OBLIQUE
-    /// and PANGO_STYLE_ITALIC as matches, but not as good a match as when the
-    /// styles are equal.
+    /// 
+    /// Approximate matching is done for weight and style; other style attributes
+    /// must match exactly. Style attributes are all attributes other than family
+    /// and size-related attributes. Approximate matching for style considers
+    /// `PANGO_STYLE_OBLIQUE` and `PANGO_STYLE_ITALIC` as matches, but not as good
+    /// a match as when the styles are equal.
     /// 
     /// Note that `old_match` must match `desc`.
     @inlinable func betterMatch<FontDescriptionT: FontDescriptionProtocol>(oldMatch: FontDescriptionT?, newMatch: FontDescriptionT) -> Bool {
@@ -395,20 +405,24 @@ public extension FontDescriptionProtocol {
         return rv
     }
 
-    /// Like `pango_font_description_copy()`, but only a shallow copy is made
-    /// of the family name and other allocated fields. The result can only
-    /// be used until `desc` is modified or freed. This is meant to be used
-    /// when the copy is only needed temporarily.
+    /// Make a copy of a `PangoFontDescription`, but don't duplicate
+    /// allocated fields.
+    /// 
+    /// This is like [method`Pango.FontDescription.copy`], but only a shallow
+    /// copy is made of the family name and other allocated fields. The result
+    /// can only be used until `desc` is modified or freed. This is meant
+    /// to be used when the copy is only needed temporarily.
     @inlinable func copyStatic() -> FontDescriptionRef! {
         guard let rv = FontDescriptionRef(gconstpointer: gconstpointer(pango_font_description_copy_static(font_description_ptr))) else { return nil }
         return rv
     }
 
-    /// Compares two font descriptions for equality. Two font descriptions
-    /// are considered equal if the fonts they describe are provably identical.
-    /// This means that their masks do not have to match, as long as other fields
-    /// are all the same. (Two font descriptions may result in identical fonts
-    /// being loaded, but still compare `false`.)
+    /// Compares two font descriptions for equality.
+    /// 
+    /// Two font descriptions are considered equal if the fonts they describe
+    /// are provably identical. This means that their masks do not have to match,
+    /// as long as other fields are all the same. (Two font descriptions may
+    /// result in identical fonts being loaded, but still compare `false`.)
     @inlinable func equal<FontDescriptionT: FontDescriptionProtocol>(desc2: FontDescriptionT) -> Bool {
         let rv = ((pango_font_description_equal(font_description_ptr, desc2.font_description_ptr)) != 0)
         return rv
@@ -420,15 +434,17 @@ public extension FontDescriptionProtocol {
     
     }
 
-    /// Gets the family name field of a font description. See
-    /// `pango_font_description_set_family()`.
+    /// Gets the family name field of a font description.
+    /// 
+    /// See [method`Pango.FontDescription.set_family`].
     @inlinable func getFamily() -> String! {
         let rv = pango_font_description_get_family(font_description_ptr).map({ String(cString: $0) })
         return rv
     }
 
-    /// Gets the gravity field of a font description. See
-    /// `pango_font_description_set_gravity()`.
+    /// Gets the gravity field of a font description.
+    /// 
+    /// See [method`Pango.FontDescription.set_gravity`].
     @inlinable func getGravity() -> PangoGravity {
         let rv = pango_font_description_get_gravity(font_description_ptr)
         return rv
@@ -441,64 +457,76 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the size field of a font description.
-    /// See `pango_font_description_set_size()`.
+    /// 
+    /// See [method`Pango.FontDescription.set_size`].
     @inlinable func getSize() -> Int {
         let rv = Int(pango_font_description_get_size(font_description_ptr))
         return rv
     }
 
-    /// Determines whether the size of the font is in points (not absolute) or device units (absolute).
-    /// See `pango_font_description_set_size()` and `pango_font_description_set_absolute_size()`.
+    /// Determines whether the size of the font is in points (not absolute)
+    /// or device units (absolute).
+    /// 
+    /// See [method`Pango.FontDescription.set_size`]
+    /// and [method`Pango.FontDescription.set_absolute_size`].
     @inlinable func getSizeIsAbsolute() -> Bool {
         let rv = ((pango_font_description_get_size_is_absolute(font_description_ptr)) != 0)
         return rv
     }
 
     /// Gets the stretch field of a font description.
-    /// See `pango_font_description_set_stretch()`.
+    /// 
+    /// See [method`Pango.FontDescription.set_stretch`].
     @inlinable func getStretch() -> PangoStretch {
         let rv = pango_font_description_get_stretch(font_description_ptr)
         return rv
     }
 
-    /// Gets the style field of a `PangoFontDescription`. See
-    /// `pango_font_description_set_style()`.
+    /// Gets the style field of a `PangoFontDescription`.
+    /// 
+    /// See [method`Pango.FontDescription.set_style`].
     @inlinable func getStyle() -> PangoStyle {
         let rv = pango_font_description_get_style(font_description_ptr)
         return rv
     }
 
-    /// Gets the variant field of a `PangoFontDescription`. See
-    /// `pango_font_description_set_variant()`.
+    /// Gets the variant field of a `PangoFontDescription`.
+    /// 
+    /// See [method`Pango.FontDescription.set_variant`].
     @inlinable func getVariant() -> PangoVariant {
         let rv = pango_font_description_get_variant(font_description_ptr)
         return rv
     }
 
-    /// Gets the variations field of a font description. See
-    /// `pango_font_description_set_variations()`.
+    /// Gets the variations field of a font description.
+    /// 
+    /// See [method`Pango.FontDescription.set_variations`].
     @inlinable func getVariations() -> String! {
         let rv = pango_font_description_get_variations(font_description_ptr).map({ String(cString: $0) })
         return rv
     }
 
-    /// Gets the weight field of a font description. See
-    /// `pango_font_description_set_weight()`.
+    /// Gets the weight field of a font description.
+    /// 
+    /// See [method`Pango.FontDescription.set_weight`].
     @inlinable func getWeight() -> PangoWeight {
         let rv = pango_font_description_get_weight(font_description_ptr)
         return rv
     }
 
-    /// Computes a hash of a `PangoFontDescription` structure suitable
-    /// to be used, for example, as an argument to `g_hash_table_new()`.
-    /// The hash value is independent of `desc`->mask.
+    /// Computes a hash of a `PangoFontDescription` structure.
+    /// 
+    /// This is suitable to be used, for example, as an argument
+    /// to `g_hash_table_new()`. The hash value is independent of `desc-`&gt;mask.
     @inlinable func hash() -> Int {
         let rv = Int(pango_font_description_hash(font_description_ptr))
         return rv
     }
 
     /// Merges the fields that are set in `desc_to_merge` into the fields in
-    /// `desc`.  If `replace_existing` is `false`, only fields in `desc` that
+    /// `desc`.
+    /// 
+    /// If `replace_existing` is `false`, only fields in `desc` that
     /// are not already set are affected. If `true`, then fields that are
     /// already set will be replaced as well.
     /// 
@@ -508,7 +536,9 @@ public extension FontDescriptionProtocol {
     
     }
     /// Merges the fields that are set in `desc_to_merge` into the fields in
-    /// `desc`.  If `replace_existing` is `false`, only fields in `desc` that
+    /// `desc`.
+    /// 
+    /// If `replace_existing` is `false`, only fields in `desc` that
     /// are not already set are affected. If `true`, then fields that are
     /// already set will be replaced as well.
     /// 
@@ -518,24 +548,30 @@ public extension FontDescriptionProtocol {
     
     }
 
-    /// Like `pango_font_description_merge()`, but only a shallow copy is made
-    /// of the family name and other allocated fields. `desc` can only be
-    /// used until `desc_to_merge` is modified or freed. This is meant
-    /// to be used when the merged font description is only needed temporarily.
+    /// Merges the fields that are set in `desc_to_merge` into the fields in
+    /// `desc`, without copying allocated fields.
+    /// 
+    /// This is like [method`Pango.FontDescription.merge`], but only a shallow copy
+    /// is made of the family name and other allocated fields. `desc` can only
+    /// be used until `desc_to_merge` is modified or freed. This is meant to
+    /// be used when the merged font description is only needed temporarily.
     @inlinable func mergeStatic<FontDescriptionT: FontDescriptionProtocol>(descToMerge: FontDescriptionT, replaceExisting: Bool) {
         pango_font_description_merge_static(font_description_ptr, descToMerge.font_description_ptr, gboolean((replaceExisting) ? 1 : 0))
     
     }
 
-    /// Sets the size field of a font description, in device units. This is mutually
-    /// exclusive with `pango_font_description_set_size()` which sets the font size
-    /// in points.
+    /// Sets the size field of a font description, in device units.
+    /// 
+    /// This is mutually exclusive with [method`Pango.FontDescription.set_size`]
+    /// which sets the font size in points.
     @inlinable func setAbsolute(size: CDouble) {
         pango_font_description_set_absolute_size(font_description_ptr, size)
     
     }
 
-    /// Sets the family name field of a font description. The family
+    /// Sets the family name field of a font description.
+    /// 
+    /// The family
     /// name represents a family of related font styles, and will
     /// resolve to a particular `PangoFontFamily`. In some uses of
     /// `PangoFontDescription`, it is also possible to use a comma
@@ -545,68 +581,83 @@ public extension FontDescriptionProtocol {
     
     }
 
-    /// Like `pango_font_description_set_family()`, except that no
+    /// Sets the family name field of a font description, without copying the string.
+    /// 
+    /// This is like [method`Pango.FontDescription.set_family`], except that no
     /// copy of `family` is made. The caller must make sure that the
-    /// string passed in stays around until `desc` has been freed
-    /// or the name is set again. This function can be used if
-    /// `family` is a static string such as a C string literal, or
-    /// if `desc` is only needed temporarily.
+    /// string passed in stays around until `desc` has been freed or the
+    /// name is set again. This function can be used if `family` is a static
+    /// string such as a C string literal, or if `desc` is only needed temporarily.
     @inlinable func setFamilyStatic(family: UnsafePointer<CChar>!) {
         pango_font_description_set_family_static(font_description_ptr, family)
     
     }
 
-    /// Sets the gravity field of a font description. The gravity field
-    /// specifies how the glyphs should be rotated.  If `gravity` is
+    /// Sets the gravity field of a font description.
+    /// 
+    /// The gravity field
+    /// specifies how the glyphs should be rotated. If `gravity` is
     /// `PANGO_GRAVITY_AUTO`, this actually unsets the gravity mask on
     /// the font description.
     /// 
-    /// This function is seldom useful to the user.  Gravity should normally
+    /// This function is seldom useful to the user. Gravity should normally
     /// be set on a `PangoContext`.
     @inlinable func set(gravity: PangoGravity) {
         pango_font_description_set_gravity(font_description_ptr, gravity)
     
     }
 
-    /// Sets the size field of a font description in fractional points. This is mutually
-    /// exclusive with `pango_font_description_set_absolute_size()`.
+    /// Sets the size field of a font description in fractional points.
+    /// 
+    /// This is mutually exclusive with
+    /// [method`Pango.FontDescription.set_absolute_size`].
     @inlinable func set(size: Int) {
         pango_font_description_set_size(font_description_ptr, gint(size))
     
     }
 
-    /// Sets the stretch field of a font description. The stretch field
-    /// specifies how narrow or wide the font should be.
+    /// Sets the stretch field of a font description.
+    /// 
+    /// The [enum`Pango.Stretch`] field specifies how narrow or
+    /// wide the font should be.
     @inlinable func set(stretch: PangoStretch) {
         pango_font_description_set_stretch(font_description_ptr, stretch)
     
     }
 
-    /// Sets the style field of a `PangoFontDescription`. The
-    /// `PangoStyle` enumeration describes whether the font is slanted and
-    /// the manner in which it is slanted; it can be either
+    /// Sets the style field of a `PangoFontDescription`.
+    /// 
+    /// The [enum`Pango.Style`] enumeration describes whether the font is
+    /// slanted and the manner in which it is slanted; it can be either
     /// `PANGO_STYLE_NORMAL`, `PANGO_STYLE_ITALIC`, or `PANGO_STYLE_OBLIQUE`.
-    /// Most fonts will either have a italic style or an oblique
-    /// style, but not both, and font matching in Pango will
-    /// match italic specifications with oblique fonts and vice-versa
-    /// if an exact match is not found.
+    /// 
+    /// Most fonts will either have a italic style or an oblique style,
+    /// but not both, and font matching in Pango will match italic
+    /// specifications with oblique fonts and vice-versa if an exact
+    /// match is not found.
     @inlinable func set(style: PangoStyle) {
         pango_font_description_set_style(font_description_ptr, style)
     
     }
 
-    /// Sets the variant field of a font description. The `PangoVariant`
-    /// can either be `PANGO_VARIANT_NORMAL` or `PANGO_VARIANT_SMALL_CAPS`.
+    /// Sets the variant field of a font description.
+    /// 
+    /// The [enum`Pango.Variant`] can either be `PANGO_VARIANT_NORMAL`
+    /// or `PANGO_VARIANT_SMALL_CAPS`.
     @inlinable func set(variant: PangoVariant) {
         pango_font_description_set_variant(font_description_ptr, variant)
     
     }
 
-    /// Sets the variations field of a font description. OpenType
-    /// font variations allow to select a font instance by specifying
-    /// values for a number of axes, such as width or weight.
+    /// Sets the variations field of a font description.
     /// 
-    /// The format of the variations string is AXIS1=VALUE,AXIS2=VALUE...,
+    /// OpenType font variations allow to select a font instance by
+    /// specifying values for a number of axes, such as width or weight.
+    /// 
+    /// The format of the variations string is
+    /// 
+    ///     AXIS1=VALUE,AXIS2=VALUE...
+    /// 
     /// with each AXIS a 4 character tag that identifies a font axis,
     /// and each VALUE a floating point number. Unknown axes are ignored,
     /// and values are clamped to their allowed range.
@@ -618,69 +669,82 @@ public extension FontDescriptionProtocol {
     
     }
 
-    /// Like `pango_font_description_set_variations()`, except that no
-    /// copy of `variations` is made. The caller must make sure that the
-    /// string passed in stays around until `desc` has been freed
+    /// Sets the variations field of a font description.
+    /// 
+    /// This is like [method`Pango.FontDescription.set_variations`], except
+    /// that no copy of `variations` is made. The caller must make sure that
+    /// the string passed in stays around until `desc` has been freed
     /// or the name is set again. This function can be used if
-    /// `variations` is a static string such as a C string literal, or
-    /// if `desc` is only needed temporarily.
+    /// `variations` is a static string such as a C string literal,
+    /// or if `desc` is only needed temporarily.
     @inlinable func setVariationsStatic(variations: UnsafePointer<CChar>!) {
         pango_font_description_set_variations_static(font_description_ptr, variations)
     
     }
 
-    /// Sets the weight field of a font description. The weight field
+    /// Sets the weight field of a font description.
+    /// 
+    /// The weight field
     /// specifies how bold or light the font should be. In addition
-    /// to the values of the `PangoWeight` enumeration, other intermediate
-    /// numeric values are possible.
+    /// to the values of the [enum`Pango.Weight`] enumeration, other
+    /// intermediate numeric values are possible.
     @inlinable func set(weight: PangoWeight) {
         pango_font_description_set_weight(font_description_ptr, weight)
     
     }
 
-    /// Creates a filename representation of a font description. The
-    /// filename is identical to the result from calling
-    /// `pango_font_description_to_string()`, but with underscores instead of
-    /// characters that are untypical in filenames, and in lower case only.
+    /// Creates a filename representation of a font description.
+    /// 
+    /// The filename is identical to the result from calling
+    /// [method`Pango.FontDescription.to_string`], but with underscores
+    /// instead of characters that are untypical in filenames, and in
+    /// lower case only.
     @inlinable func toFilename() -> String! {
         let rv = pango_font_description_to_filename(font_description_ptr).map({ String(cString: $0) })
         return rv
     }
 
-    /// Creates a string representation of a font description. See
-    /// `pango_font_description_from_string()` for a description of the
-    /// format of the string representation. The family list in the
-    /// string description will only have a terminating comma if the
-    /// last word of the list is a valid style option.
+    /// Creates a string representation of a font description.
+    /// 
+    /// See [type_func`Pango.FontDescription.from_string`] for a description
+    /// of the format of the string representation. The family list in
+    /// the string description will only have a terminating comma if
+    /// the last word of the list is a valid style option.
     @inlinable func toString() -> String! {
         let rv = pango_font_description_to_string(font_description_ptr).map({ String(cString: $0) })
         return rv
     }
 
-    /// Unsets some of the fields in a `PangoFontDescription`.  The unset
-    /// fields will get back to their default values.
+    /// Unsets some of the fields in a `PangoFontDescription`.
+    /// 
+    /// The unset fields will get back to their default values.
     @inlinable func unsetFields(toUnset: FontMask) {
         pango_font_description_unset_fields(font_description_ptr, toUnset.value)
     
     }
 
-    /// Create a new font description attribute. This attribute
-    /// allows setting family, style, weight, variant, stretch,
-    /// and size simultaneously.
+    /// Create a new font description attribute.
+    /// 
+    /// This attribute allows setting family, style, weight, variant,
+    /// stretch, and size simultaneously.
     @inlinable func attrFontDescNew() -> AttributeRef! {
         let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_font_desc_new(font_description_ptr)))
         return rv
     }
-    /// Gets the family name field of a font description. See
-    /// `pango_font_description_set_family()`.
+    /// Gets the family name field of a font description.
+    /// 
+    /// See [method`Pango.FontDescription.set_family`].
     @inlinable var family: String! {
-        /// Gets the family name field of a font description. See
-        /// `pango_font_description_set_family()`.
+        /// Gets the family name field of a font description.
+        /// 
+        /// See [method`Pango.FontDescription.set_family`].
         get {
             let rv = pango_font_description_get_family(font_description_ptr).map({ String(cString: $0) })
             return rv
         }
-        /// Sets the family name field of a font description. The family
+        /// Sets the family name field of a font description.
+        /// 
+        /// The family
         /// name represents a family of related font styles, and will
         /// resolve to a particular `PangoFontFamily`. In some uses of
         /// `PangoFontDescription`, it is also possible to use a comma
@@ -690,21 +754,25 @@ public extension FontDescriptionProtocol {
         }
     }
 
-    /// Gets the gravity field of a font description. See
-    /// `pango_font_description_set_gravity()`.
+    /// Gets the gravity field of a font description.
+    /// 
+    /// See [method`Pango.FontDescription.set_gravity`].
     @inlinable var gravity: PangoGravity {
-        /// Gets the gravity field of a font description. See
-        /// `pango_font_description_set_gravity()`.
+        /// Gets the gravity field of a font description.
+        /// 
+        /// See [method`Pango.FontDescription.set_gravity`].
         get {
             let rv = pango_font_description_get_gravity(font_description_ptr)
             return rv
         }
-        /// Sets the gravity field of a font description. The gravity field
-        /// specifies how the glyphs should be rotated.  If `gravity` is
+        /// Sets the gravity field of a font description.
+        /// 
+        /// The gravity field
+        /// specifies how the glyphs should be rotated. If `gravity` is
         /// `PANGO_GRAVITY_AUTO`, this actually unsets the gravity mask on
         /// the font description.
         /// 
-        /// This function is seldom useful to the user.  Gravity should normally
+        /// This function is seldom useful to the user. Gravity should normally
         /// be set on a `PangoContext`.
         nonmutating set {
             pango_font_description_set_gravity(font_description_ptr, newValue)
@@ -721,26 +789,36 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the size field of a font description.
-    /// See `pango_font_description_set_size()`.
+    /// 
+    /// See [method`Pango.FontDescription.set_size`].
     @inlinable var size: Int {
         /// Gets the size field of a font description.
-        /// See `pango_font_description_set_size()`.
+        /// 
+        /// See [method`Pango.FontDescription.set_size`].
         get {
             let rv = Int(pango_font_description_get_size(font_description_ptr))
             return rv
         }
-        /// Sets the size field of a font description in fractional points. This is mutually
-        /// exclusive with `pango_font_description_set_absolute_size()`.
+        /// Sets the size field of a font description in fractional points.
+        /// 
+        /// This is mutually exclusive with
+        /// [method`Pango.FontDescription.set_absolute_size`].
         nonmutating set {
             pango_font_description_set_size(font_description_ptr, gint(newValue))
         }
     }
 
-    /// Determines whether the size of the font is in points (not absolute) or device units (absolute).
-    /// See `pango_font_description_set_size()` and `pango_font_description_set_absolute_size()`.
+    /// Determines whether the size of the font is in points (not absolute)
+    /// or device units (absolute).
+    /// 
+    /// See [method`Pango.FontDescription.set_size`]
+    /// and [method`Pango.FontDescription.set_absolute_size`].
     @inlinable var sizeIsAbsolute: Bool {
-        /// Determines whether the size of the font is in points (not absolute) or device units (absolute).
-        /// See `pango_font_description_set_size()` and `pango_font_description_set_absolute_size()`.
+        /// Determines whether the size of the font is in points (not absolute)
+        /// or device units (absolute).
+        /// 
+        /// See [method`Pango.FontDescription.set_size`]
+        /// and [method`Pango.FontDescription.set_absolute_size`].
         get {
             let rv = ((pango_font_description_get_size_is_absolute(font_description_ptr)) != 0)
             return rv
@@ -748,73 +826,91 @@ public extension FontDescriptionProtocol {
     }
 
     /// Gets the stretch field of a font description.
-    /// See `pango_font_description_set_stretch()`.
+    /// 
+    /// See [method`Pango.FontDescription.set_stretch`].
     @inlinable var stretch: PangoStretch {
         /// Gets the stretch field of a font description.
-        /// See `pango_font_description_set_stretch()`.
+        /// 
+        /// See [method`Pango.FontDescription.set_stretch`].
         get {
             let rv = pango_font_description_get_stretch(font_description_ptr)
             return rv
         }
-        /// Sets the stretch field of a font description. The stretch field
-        /// specifies how narrow or wide the font should be.
+        /// Sets the stretch field of a font description.
+        /// 
+        /// The [enum`Pango.Stretch`] field specifies how narrow or
+        /// wide the font should be.
         nonmutating set {
             pango_font_description_set_stretch(font_description_ptr, newValue)
         }
     }
 
-    /// Gets the style field of a `PangoFontDescription`. See
-    /// `pango_font_description_set_style()`.
+    /// Gets the style field of a `PangoFontDescription`.
+    /// 
+    /// See [method`Pango.FontDescription.set_style`].
     @inlinable var style: PangoStyle {
-        /// Gets the style field of a `PangoFontDescription`. See
-        /// `pango_font_description_set_style()`.
+        /// Gets the style field of a `PangoFontDescription`.
+        /// 
+        /// See [method`Pango.FontDescription.set_style`].
         get {
             let rv = pango_font_description_get_style(font_description_ptr)
             return rv
         }
-        /// Sets the style field of a `PangoFontDescription`. The
-        /// `PangoStyle` enumeration describes whether the font is slanted and
-        /// the manner in which it is slanted; it can be either
+        /// Sets the style field of a `PangoFontDescription`.
+        /// 
+        /// The [enum`Pango.Style`] enumeration describes whether the font is
+        /// slanted and the manner in which it is slanted; it can be either
         /// `PANGO_STYLE_NORMAL`, `PANGO_STYLE_ITALIC`, or `PANGO_STYLE_OBLIQUE`.
-        /// Most fonts will either have a italic style or an oblique
-        /// style, but not both, and font matching in Pango will
-        /// match italic specifications with oblique fonts and vice-versa
-        /// if an exact match is not found.
+        /// 
+        /// Most fonts will either have a italic style or an oblique style,
+        /// but not both, and font matching in Pango will match italic
+        /// specifications with oblique fonts and vice-versa if an exact
+        /// match is not found.
         nonmutating set {
             pango_font_description_set_style(font_description_ptr, newValue)
         }
     }
 
-    /// Gets the variant field of a `PangoFontDescription`. See
-    /// `pango_font_description_set_variant()`.
+    /// Gets the variant field of a `PangoFontDescription`.
+    /// 
+    /// See [method`Pango.FontDescription.set_variant`].
     @inlinable var variant: PangoVariant {
-        /// Gets the variant field of a `PangoFontDescription`. See
-        /// `pango_font_description_set_variant()`.
+        /// Gets the variant field of a `PangoFontDescription`.
+        /// 
+        /// See [method`Pango.FontDescription.set_variant`].
         get {
             let rv = pango_font_description_get_variant(font_description_ptr)
             return rv
         }
-        /// Sets the variant field of a font description. The `PangoVariant`
-        /// can either be `PANGO_VARIANT_NORMAL` or `PANGO_VARIANT_SMALL_CAPS`.
+        /// Sets the variant field of a font description.
+        /// 
+        /// The [enum`Pango.Variant`] can either be `PANGO_VARIANT_NORMAL`
+        /// or `PANGO_VARIANT_SMALL_CAPS`.
         nonmutating set {
             pango_font_description_set_variant(font_description_ptr, newValue)
         }
     }
 
-    /// Gets the variations field of a font description. See
-    /// `pango_font_description_set_variations()`.
+    /// Gets the variations field of a font description.
+    /// 
+    /// See [method`Pango.FontDescription.set_variations`].
     @inlinable var variations: String! {
-        /// Gets the variations field of a font description. See
-        /// `pango_font_description_set_variations()`.
+        /// Gets the variations field of a font description.
+        /// 
+        /// See [method`Pango.FontDescription.set_variations`].
         get {
             let rv = pango_font_description_get_variations(font_description_ptr).map({ String(cString: $0) })
             return rv
         }
-        /// Sets the variations field of a font description. OpenType
-        /// font variations allow to select a font instance by specifying
-        /// values for a number of axes, such as width or weight.
+        /// Sets the variations field of a font description.
         /// 
-        /// The format of the variations string is AXIS1=VALUE,AXIS2=VALUE...,
+        /// OpenType font variations allow to select a font instance by
+        /// specifying values for a number of axes, such as width or weight.
+        /// 
+        /// The format of the variations string is
+        /// 
+        ///     AXIS1=VALUE,AXIS2=VALUE...
+        /// 
         /// with each AXIS a 4 character tag that identifies a font axis,
         /// and each VALUE a floating point number. Unknown axes are ignored,
         /// and values are clamped to their allowed range.
@@ -826,19 +922,23 @@ public extension FontDescriptionProtocol {
         }
     }
 
-    /// Gets the weight field of a font description. See
-    /// `pango_font_description_set_weight()`.
+    /// Gets the weight field of a font description.
+    /// 
+    /// See [method`Pango.FontDescription.set_weight`].
     @inlinable var weight: PangoWeight {
-        /// Gets the weight field of a font description. See
-        /// `pango_font_description_set_weight()`.
+        /// Gets the weight field of a font description.
+        /// 
+        /// See [method`Pango.FontDescription.set_weight`].
         get {
             let rv = pango_font_description_get_weight(font_description_ptr)
             return rv
         }
-        /// Sets the weight field of a font description. The weight field
+        /// Sets the weight field of a font description.
+        /// 
+        /// The weight field
         /// specifies how bold or light the font should be. In addition
-        /// to the values of the `PangoWeight` enumeration, other intermediate
-        /// numeric values are possible.
+        /// to the values of the [enum`Pango.Weight`] enumeration, other
+        /// intermediate numeric values are possible.
         nonmutating set {
             pango_font_description_set_weight(font_description_ptr, newValue)
         }

@@ -10,8 +10,10 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `TabArray`.
 /// Alternatively, use `TabArrayRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// A `PangoTabArray` struct contains an array
-/// of tab stops. Each tab stop has an alignment and a position.
+/// A `PangoTabArray` contains an array of tab stops.
+/// 
+/// `PangoTabArray` can be used to set tab stops in a `PangoLayout`.
+/// Each tab stop has an alignment and a position.
 public protocol TabArrayProtocol {
         /// Untyped pointer to the underlying `PangoTabArray` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -19,14 +21,18 @@ public protocol TabArrayProtocol {
     /// Typed pointer to the underlying `PangoTabArray` instance.
     var tab_array_ptr: UnsafeMutablePointer<PangoTabArray>! { get }
 
+    /// Required Initialiser for types conforming to `TabArrayProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `TabArrayRef` type acts as a lightweight Swift reference to an underlying `PangoTabArray` instance.
 /// It exposes methods that can operate on this data type through `TabArrayProtocol` conformance.
 /// Use `TabArrayRef` only as an `unowned` reference to an existing `PangoTabArray` instance.
 ///
-/// A `PangoTabArray` struct contains an array
-/// of tab stops. Each tab stop has an alignment and a position.
+/// A `PangoTabArray` contains an array of tab stops.
+/// 
+/// `PangoTabArray` can be used to set tab stops in a `PangoLayout`.
+/// Each tab stop has an alignment and a position.
 public struct TabArrayRef: TabArrayProtocol {
         /// Untyped pointer to the underlying `PangoTabArray` instance.
     /// For type-safe access, use the generated, typed pointer `tab_array_ptr` property instead.
@@ -103,9 +109,10 @@ public extension TabArrayRef {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
-        /// Creates an array of `initial_size` tab stops. Tab stops are specified in
-    /// pixel units if `positions_in_pixels` is `true`, otherwise in Pango
-    /// units. All stops are initially at position 0.
+        /// Creates an array of `initial_size` tab stops.
+    /// 
+    /// Tab stops are specified in pixel units if `positions_in_pixels` is `true`,
+    /// otherwise in Pango units. All stops are initially at position 0.
     @inlinable init( initialSize: Int, positionsInPixels: Bool) {
         let rv = pango_tab_array_new(gint(initialSize), gboolean((positionsInPixels) ? 1 : 0))
         ptr = UnsafeMutableRawPointer(rv)
@@ -123,8 +130,10 @@ public extension TabArrayRef {
 /// It provides the methods that can operate on this data type through `TabArrayProtocol` conformance.
 /// Use `TabArray` as a strong reference or owner of a `PangoTabArray` instance.
 ///
-/// A `PangoTabArray` struct contains an array
-/// of tab stops. Each tab stop has an alignment and a position.
+/// A `PangoTabArray` contains an array of tab stops.
+/// 
+/// `PangoTabArray` can be used to set tab stops in a `PangoLayout`.
+/// Each tab stop has an alignment and a position.
 open class TabArray: TabArrayProtocol {
         /// Untyped pointer to the underlying `PangoTabArray` instance.
     /// For type-safe access, use the generated, typed pointer `tab_array_ptr` property instead.
@@ -238,7 +247,7 @@ open class TabArray: TabArrayProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TabArrayProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -265,9 +274,10 @@ open class TabArray: TabArrayProtocol {
         // no reference counting for PangoTabArray, cannot ref(tab_array_ptr)
     }
 
-    /// Creates an array of `initial_size` tab stops. Tab stops are specified in
-    /// pixel units if `positions_in_pixels` is `true`, otherwise in Pango
-    /// units. All stops are initially at position 0.
+    /// Creates an array of `initial_size` tab stops.
+    /// 
+    /// Tab stops are specified in pixel units if `positions_in_pixels` is `true`,
+    /// otherwise in Pango units. All stops are initially at position 0.
     @inlinable public init( initialSize: Int, positionsInPixels: Bool) {
         let rv = pango_tab_array_new(gint(initialSize), gboolean((positionsInPixels) ? 1 : 0))
         ptr = UnsafeMutableRawPointer(rv)
@@ -293,7 +303,7 @@ public extension TabArrayProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoTabArray` instance.
     @inlinable var tab_array_ptr: UnsafeMutablePointer<PangoTabArray>! { return ptr?.assumingMemoryBound(to: PangoTabArray.self) }
 
-    /// Copies a `PangoTabArray`
+    /// Copies a `PangoTabArray`.
     @inlinable func copy() -> TabArrayRef! {
         guard let rv = TabArrayRef(gconstpointer: gconstpointer(pango_tab_array_copy(tab_array_ptr))) else { return nil }
         return rv
@@ -305,8 +315,8 @@ public extension TabArrayProtocol {
     
     }
 
-    /// Returns `true` if the tab positions are in pixels, `false` if they are
-    /// in Pango units.
+    /// Returns `true` if the tab positions are in pixels,
+    /// `false` if they are in Pango units.
     @inlinable func getPositionsInPixels() -> Bool {
         let rv = ((pango_tab_array_get_positions_in_pixels(tab_array_ptr)) != 0)
         return rv
@@ -325,32 +335,37 @@ public extension TabArrayProtocol {
     }
 
     /// If non-`nil`, `alignments` and `locations` are filled with allocated
-    /// arrays of length `pango_tab_array_get_size()`. You must free the
-    /// returned array.
+    /// arrays.
+    /// 
+    /// The arrays are of length [method`Pango.TabArray.get_size`].
+    /// You must free the returned array.
     @inlinable func getTabs(alignments: UnsafeMutablePointer<UnsafeMutablePointer<PangoTabAlign>?>! = nil, locations: UnsafeMutablePointer<UnsafeMutablePointer<gint>?>! = nil) {
         pango_tab_array_get_tabs(tab_array_ptr, alignments, locations)
     
     }
 
-    /// Resizes a tab array. You must subsequently initialize any tabs that
-    /// were added as a result of growing the array.
+    /// Resizes a tab array.
+    /// 
+    /// You must subsequently initialize any tabs
+    /// that were added as a result of growing the array.
     @inlinable func resize(newSize: Int) {
         pango_tab_array_resize(tab_array_ptr, gint(newSize))
     
     }
 
     /// Sets the alignment and location of a tab stop.
+    /// 
     /// `alignment` must always be `PANGO_TAB_LEFT` in the current
     /// implementation.
     @inlinable func setTab(tabIndex: Int, alignment: PangoTabAlign, location: Int) {
         pango_tab_array_set_tab(tab_array_ptr, gint(tabIndex), alignment, gint(location))
     
     }
-    /// Returns `true` if the tab positions are in pixels, `false` if they are
-    /// in Pango units.
+    /// Returns `true` if the tab positions are in pixels,
+    /// `false` if they are in Pango units.
     @inlinable var positionsInPixels: Bool {
-        /// Returns `true` if the tab positions are in pixels, `false` if they are
-        /// in Pango units.
+        /// Returns `true` if the tab positions are in pixels,
+        /// `false` if they are in Pango units.
         get {
             let rv = ((pango_tab_array_get_positions_in_pixels(tab_array_ptr)) != 0)
             return rv

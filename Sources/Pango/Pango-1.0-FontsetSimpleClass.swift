@@ -33,6 +33,8 @@ public protocol FontsetSimpleClassProtocol {
     /// Typed pointer to the underlying `PangoFontsetSimpleClass` instance.
     var _ptr: UnsafeMutablePointer<PangoFontsetSimpleClass>! { get }
 
+    /// Required Initialiser for types conforming to `FontsetSimpleClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontsetSimpleClassRef` type acts as a lightweight Swift reference to an underlying `PangoFontsetSimpleClass` instance.

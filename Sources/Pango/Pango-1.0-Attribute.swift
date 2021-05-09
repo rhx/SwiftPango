@@ -11,11 +11,13 @@ import GLibObject
 /// Alternatively, use `AttributeRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
 /// The `PangoAttribute` structure represents the common portions of all
-/// attributes. Particular types of attributes include this structure
-/// as their initial portion. The common portion of the attribute holds
-/// the range to which the value in the type-specific part of the attribute
-/// applies and should be initialized using `pango_attribute_init()`.
-/// By default an attribute will have an all-inclusive range of [0,`G_MAXUINT`].
+/// attributes.
+/// 
+/// Particular types of attributes include this structure as their initial
+/// portion. The common portion of the attribute holds the range to which
+/// the value in the type-specific part of the attribute applies and should
+/// be initialized using [method`Pango.Attribute.init`]. By default, an attribute
+/// will have an all-inclusive range of [0,`G_MAXUINT`].
 public protocol AttributeProtocol {
         /// Untyped pointer to the underlying `PangoAttribute` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,6 +25,8 @@ public protocol AttributeProtocol {
     /// Typed pointer to the underlying `PangoAttribute` instance.
     var attribute_ptr: UnsafeMutablePointer<PangoAttribute>! { get }
 
+    /// Required Initialiser for types conforming to `AttributeProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AttributeRef` type acts as a lightweight Swift reference to an underlying `PangoAttribute` instance.
@@ -30,11 +34,13 @@ public protocol AttributeProtocol {
 /// Use `AttributeRef` only as an `unowned` reference to an existing `PangoAttribute` instance.
 ///
 /// The `PangoAttribute` structure represents the common portions of all
-/// attributes. Particular types of attributes include this structure
-/// as their initial portion. The common portion of the attribute holds
-/// the range to which the value in the type-specific part of the attribute
-/// applies and should be initialized using `pango_attribute_init()`.
-/// By default an attribute will have an all-inclusive range of [0,`G_MAXUINT`].
+/// attributes.
+/// 
+/// Particular types of attributes include this structure as their initial
+/// portion. The common portion of the attribute holds the range to which
+/// the value in the type-specific part of the attribute applies and should
+/// be initialized using [method`Pango.Attribute.init`]. By default, an attribute
+/// will have an all-inclusive range of [0,`G_MAXUINT`].
 public struct AttributeRef: AttributeProtocol {
         /// Untyped pointer to the underlying `PangoAttribute` instance.
     /// For type-safe access, use the generated, typed pointer `attribute_ptr` property instead.
@@ -118,11 +124,13 @@ public extension AttributeRef {
 /// Use `Attribute` as a strong reference or owner of a `PangoAttribute` instance.
 ///
 /// The `PangoAttribute` structure represents the common portions of all
-/// attributes. Particular types of attributes include this structure
-/// as their initial portion. The common portion of the attribute holds
-/// the range to which the value in the type-specific part of the attribute
-/// applies and should be initialized using `pango_attribute_init()`.
-/// By default an attribute will have an all-inclusive range of [0,`G_MAXUINT`].
+/// attributes.
+/// 
+/// Particular types of attributes include this structure as their initial
+/// portion. The common portion of the attribute holds the range to which
+/// the value in the type-specific part of the attribute applies and should
+/// be initialized using [method`Pango.Attribute.init`]. By default, an attribute
+/// will have an all-inclusive range of [0,`G_MAXUINT`].
 open class Attribute: AttributeProtocol {
         /// Untyped pointer to the underlying `PangoAttribute` instance.
     /// For type-safe access, use the generated, typed pointer `attribute_ptr` property instead.
@@ -236,7 +244,7 @@ open class Attribute: AttributeProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttributeProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -297,10 +305,9 @@ public extension AttributeProtocol {
         return rv
     }
 
-    /// Initializes `attr`'s klass to `klass`,
-    /// it's start_index to `PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING`
-    /// and end_index to `PANGO_ATTR_INDEX_TO_TEXT_END`
-    /// such that the attribute applies
+    /// Initializes `attr`'s klass to `klass`, it's start_index to
+    /// `PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING` and end_index to
+    /// `PANGO_ATTR_INDEX_TO_TEXT_END` such that the attribute applies
     /// to the entire text by default.
     @inlinable func init_<AttrClassT: AttrClassProtocol>(klass: AttrClassT) {
         pango_attribute_init(attribute_ptr, klass._ptr)

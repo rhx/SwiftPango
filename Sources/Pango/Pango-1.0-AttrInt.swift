@@ -19,6 +19,8 @@ public protocol AttrIntProtocol {
     /// Typed pointer to the underlying `PangoAttrInt` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrInt>! { get }
 
+    /// Required Initialiser for types conforming to `AttrIntProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AttrIntRef` type acts as a lightweight Swift reference to an underlying `PangoAttrInt` instance.
@@ -224,7 +226,7 @@ open class AttrInt: AttrIntProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrIntProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

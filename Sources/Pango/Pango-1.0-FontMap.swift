@@ -10,17 +10,11 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `FontMap`.
 /// Alternatively, use `FontMapRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoFontMap` represents the set of fonts available for a
-/// particular rendering system. This is a virtual object with
-/// implementations being specific to particular rendering systems.  To
-/// create an implementation of a `PangoFontMap`, the rendering-system
-/// specific code should allocate a larger structure that contains a nested
-/// `PangoFontMap`, fill in the <structfield>klass</structfield> member of the nested `PangoFontMap` with a
-/// pointer to a appropriate `PangoFontMapClass`, then call
-/// `pango_font_map_init()` on the structure.
+/// A `PangoFontMap` represents the set of fonts available for a
+/// particular rendering system.
 /// 
-/// The `PangoFontMap` structure contains one member which the implementation
-/// fills in.
+/// This is a virtual object with implementations being specific to
+/// particular rendering systems.
 public protocol FontMapProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontMap` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -28,23 +22,19 @@ public protocol FontMapProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `PangoFontMap` instance.
     var font_map_ptr: UnsafeMutablePointer<PangoFontMap>! { get }
 
+    /// Required Initialiser for types conforming to `FontMapProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontMapRef` type acts as a lightweight Swift reference to an underlying `PangoFontMap` instance.
 /// It exposes methods that can operate on this data type through `FontMapProtocol` conformance.
 /// Use `FontMapRef` only as an `unowned` reference to an existing `PangoFontMap` instance.
 ///
-/// The `PangoFontMap` represents the set of fonts available for a
-/// particular rendering system. This is a virtual object with
-/// implementations being specific to particular rendering systems.  To
-/// create an implementation of a `PangoFontMap`, the rendering-system
-/// specific code should allocate a larger structure that contains a nested
-/// `PangoFontMap`, fill in the <structfield>klass</structfield> member of the nested `PangoFontMap` with a
-/// pointer to a appropriate `PangoFontMapClass`, then call
-/// `pango_font_map_init()` on the structure.
+/// A `PangoFontMap` represents the set of fonts available for a
+/// particular rendering system.
 /// 
-/// The `PangoFontMap` structure contains one member which the implementation
-/// fills in.
+/// This is a virtual object with implementations being specific to
+/// particular rendering systems.
 public struct FontMapRef: FontMapProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFontMap` instance.
     /// For type-safe access, use the generated, typed pointer `font_map_ptr` property instead.
@@ -130,17 +120,11 @@ public extension FontMapRef {
 /// It provides the methods that can operate on this data type through `FontMapProtocol` conformance.
 /// Use `FontMap` as a strong reference or owner of a `PangoFontMap` instance.
 ///
-/// The `PangoFontMap` represents the set of fonts available for a
-/// particular rendering system. This is a virtual object with
-/// implementations being specific to particular rendering systems.  To
-/// create an implementation of a `PangoFontMap`, the rendering-system
-/// specific code should allocate a larger structure that contains a nested
-/// `PangoFontMap`, fill in the <structfield>klass</structfield> member of the nested `PangoFontMap` with a
-/// pointer to a appropriate `PangoFontMapClass`, then call
-/// `pango_font_map_init()` on the structure.
+/// A `PangoFontMap` represents the set of fonts available for a
+/// particular rendering system.
 /// 
-/// The `PangoFontMap` structure contains one member which the implementation
-/// fills in.
+/// This is a virtual object with implementations being specific to
+/// particular rendering systems.
 open class FontMap: GLibObject.Object, FontMapProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -241,14 +225,14 @@ open class FontMap: GLibObject.Object, FontMapProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMapProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -312,21 +296,22 @@ public extension FontMapProtocol {
     /// 
     /// This function is only useful when implementing a new backend
     /// for Pango, something applications won't do. Backends should
-    /// call this function if they have attached extra data to the context
-    /// and such data is changed.
+    /// call this function if they have attached extra data to the
+    /// context and such data is changed.
     @inlinable func changed() {
         pango_font_map_changed(font_map_ptr)
     
     }
 
-    /// Creates a `PangoContext` connected to `fontmap`.  This is equivalent
-    /// to `pango_context_new()` followed by `pango_context_set_font_map()`.
+    /// Creates a `PangoContext` connected to `fontmap`.
+    /// 
+    /// This is equivalent to [ctor`Pango.Context.new`] followed by
+    /// [method`Pango.Context.set_font_map`].
     /// 
     /// If you are using Pango as part of a higher-level system,
     /// that system may have it's own way of create a `PangoContext`.
-    /// For instance, the GTK+ toolkit has, among others,
-    /// `gdk_pango_context_get_for_screen()`, and
-    /// `gtk_widget_get_pango_context()`.  Use those instead.
+    /// For instance, the GTK toolkit has, among others,
+    /// `gtk_widget_get_pango_context()`. Use those instead.
     @inlinable func createContext() -> ContextRef! {
         let rv = ContextRef(gconstpointer: gconstpointer(pango_font_map_create_context(font_map_ptr)))
         return rv
@@ -338,17 +323,18 @@ public extension FontMapProtocol {
         return rv
     }
 
-    /// Returns the current serial number of `fontmap`.  The serial number is
-    /// initialized to an small number larger than zero when a new fontmap
-    /// is created and is increased whenever the fontmap is changed. It may
-    /// wrap, but will never have the value 0. Since it can wrap, never compare
-    /// it with "less than", always use "not equals".
+    /// Returns the current serial number of `fontmap`.
+    /// 
+    /// The serial number is initialized to an small number larger than zero
+    /// when a new fontmap is created and is increased whenever the fontmap
+    /// is changed. It may wrap, but will never have the value 0. Since it can
+    /// wrap, never compare it with "less than", always use "not equals".
     /// 
     /// The fontmap can only be changed using backend-specific API, like changing
     /// fontmap resolution.
     /// 
-    /// This can be used to automatically detect changes to a `PangoFontMap`, like
-    /// in `PangoContext`.
+    /// This can be used to automatically detect changes to a `PangoFontMap`,
+    /// like in `PangoContext`.
     @inlinable func getSerial() -> Int {
         let rv = Int(pango_font_map_get_serial(font_map_ptr))
         return rv
@@ -372,29 +358,31 @@ public extension FontMapProtocol {
         let rv = FontsetRef(gconstpointer: gconstpointer(pango_font_map_load_fontset(font_map_ptr, context.context_ptr, desc.font_description_ptr, language.language_ptr)))
         return rv
     }
-    /// Returns the current serial number of `fontmap`.  The serial number is
-    /// initialized to an small number larger than zero when a new fontmap
-    /// is created and is increased whenever the fontmap is changed. It may
-    /// wrap, but will never have the value 0. Since it can wrap, never compare
-    /// it with "less than", always use "not equals".
+    /// Returns the current serial number of `fontmap`.
+    /// 
+    /// The serial number is initialized to an small number larger than zero
+    /// when a new fontmap is created and is increased whenever the fontmap
+    /// is changed. It may wrap, but will never have the value 0. Since it can
+    /// wrap, never compare it with "less than", always use "not equals".
     /// 
     /// The fontmap can only be changed using backend-specific API, like changing
     /// fontmap resolution.
     /// 
-    /// This can be used to automatically detect changes to a `PangoFontMap`, like
-    /// in `PangoContext`.
+    /// This can be used to automatically detect changes to a `PangoFontMap`,
+    /// like in `PangoContext`.
     @inlinable var serial: Int {
-        /// Returns the current serial number of `fontmap`.  The serial number is
-        /// initialized to an small number larger than zero when a new fontmap
-        /// is created and is increased whenever the fontmap is changed. It may
-        /// wrap, but will never have the value 0. Since it can wrap, never compare
-        /// it with "less than", always use "not equals".
+        /// Returns the current serial number of `fontmap`.
+        /// 
+        /// The serial number is initialized to an small number larger than zero
+        /// when a new fontmap is created and is increased whenever the fontmap
+        /// is changed. It may wrap, but will never have the value 0. Since it can
+        /// wrap, never compare it with "less than", always use "not equals".
         /// 
         /// The fontmap can only be changed using backend-specific API, like changing
         /// fontmap resolution.
         /// 
-        /// This can be used to automatically detect changes to a `PangoFontMap`, like
-        /// in `PangoContext`.
+        /// This can be used to automatically detect changes to a `PangoFontMap`,
+        /// like in `PangoContext`.
         get {
             let rv = Int(pango_font_map_get_serial(font_map_ptr))
             return rv

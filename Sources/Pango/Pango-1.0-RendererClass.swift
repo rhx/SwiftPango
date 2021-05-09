@@ -48,6 +48,8 @@ public protocol RendererClassProtocol {
     /// Typed pointer to the underlying `PangoRendererClass` instance.
     var _ptr: UnsafeMutablePointer<PangoRendererClass>! { get }
 
+    /// Required Initialiser for types conforming to `RendererClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RendererClassRef` type acts as a lightweight Swift reference to an underlying `PangoRendererClass` instance.

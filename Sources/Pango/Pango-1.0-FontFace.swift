@@ -10,8 +10,8 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `FontFace`.
 /// Alternatively, use `FontFaceRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoFontFace` structure is used to represent a group of fonts with
-/// the same family, slant, weight, width, but varying sizes.
+/// A `PangoFontFace` is used to represent a group of fonts with
+/// the same family, slant, weight, and width, but varying sizes.
 public protocol FontFaceProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontFace` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -19,14 +19,16 @@ public protocol FontFaceProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `PangoFontFace` instance.
     var font_face_ptr: UnsafeMutablePointer<PangoFontFace>! { get }
 
+    /// Required Initialiser for types conforming to `FontFaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontFaceRef` type acts as a lightweight Swift reference to an underlying `PangoFontFace` instance.
 /// It exposes methods that can operate on this data type through `FontFaceProtocol` conformance.
 /// Use `FontFaceRef` only as an `unowned` reference to an existing `PangoFontFace` instance.
 ///
-/// The `PangoFontFace` structure is used to represent a group of fonts with
-/// the same family, slant, weight, width, but varying sizes.
+/// A `PangoFontFace` is used to represent a group of fonts with
+/// the same family, slant, weight, and width, but varying sizes.
 public struct FontFaceRef: FontFaceProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFontFace` instance.
     /// For type-safe access, use the generated, typed pointer `font_face_ptr` property instead.
@@ -112,8 +114,8 @@ public extension FontFaceRef {
 /// It provides the methods that can operate on this data type through `FontFaceProtocol` conformance.
 /// Use `FontFace` as a strong reference or owner of a `PangoFontFace` instance.
 ///
-/// The `PangoFontFace` structure is used to represent a group of fonts with
-/// the same family, slant, weight, width, but varying sizes.
+/// A `PangoFontFace` is used to represent a group of fonts with
+/// the same family, slant, weight, and width, but varying sizes.
 open class FontFace: GLibObject.Object, FontFaceProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -214,14 +216,14 @@ open class FontFace: GLibObject.Object, FontFaceProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFaceProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -289,49 +291,45 @@ public extension FontFaceProtocol {
     }
 
     /// Gets a name representing the style of this face among the
-    /// different faces in the `PangoFontFamily` for the face. This
-    /// name is unique among all faces in the family and is suitable
-    /// for displaying to users.
+    /// different faces in the `PangoFontFamily` for the face. The
+    /// name is suitable for displaying to users.
     @inlinable func getFaceName() -> String! {
         let rv = pango_font_face_get_face_name(font_face_ptr).map({ String(cString: $0) })
         return rv
     }
 
-    /// Gets the `PangoFontFamily` that `face`
-    /// belongs to.
+    /// Gets the `PangoFontFamily` that `face` belongs to.
     @inlinable func getFamily() -> FontFamilyRef! {
         let rv = FontFamilyRef(gconstpointer: gconstpointer(pango_font_face_get_family(font_face_ptr)))
         return rv
     }
 
-    /// List the available sizes for a font. This is only applicable to bitmap
-    /// fonts. For scalable fonts, stores `nil` at the location pointed to by
-    /// `sizes` and 0 at the location pointed to by `n_sizes`. The sizes returned
-    /// are in Pango units and are sorted in ascending order.
+    /// List the available sizes for a font.
+    /// 
+    /// This is only applicable to bitmap fonts. For scalable fonts, stores
+    /// `nil` at the location pointed to by `sizes` and 0 at the location pointed
+    /// to by `n_sizes`. The sizes returned are in Pango units and are sorted
+    /// in ascending order.
     @inlinable func list(sizes: UnsafeMutablePointer<UnsafeMutablePointer<CInt>?>! = nil, nSizes: UnsafeMutablePointer<gint>!) {
         pango_font_face_list_sizes(font_face_ptr, sizes, nSizes)
     
     }
     /// Gets a name representing the style of this face among the
-    /// different faces in the `PangoFontFamily` for the face. This
-    /// name is unique among all faces in the family and is suitable
-    /// for displaying to users.
+    /// different faces in the `PangoFontFamily` for the face. The
+    /// name is suitable for displaying to users.
     @inlinable var faceName: String! {
         /// Gets a name representing the style of this face among the
-        /// different faces in the `PangoFontFamily` for the face. This
-        /// name is unique among all faces in the family and is suitable
-        /// for displaying to users.
+        /// different faces in the `PangoFontFamily` for the face. The
+        /// name is suitable for displaying to users.
         get {
             let rv = pango_font_face_get_face_name(font_face_ptr).map({ String(cString: $0) })
             return rv
         }
     }
 
-    /// Gets the `PangoFontFamily` that `face`
-    /// belongs to.
+    /// Gets the `PangoFontFamily` that `face` belongs to.
     @inlinable var family: FontFamilyRef! {
-        /// Gets the `PangoFontFamily` that `face`
-        /// belongs to.
+        /// Gets the `PangoFontFamily` that `face` belongs to.
         get {
             let rv = FontFamilyRef(gconstpointer: gconstpointer(pango_font_face_get_family(font_face_ptr)))
             return rv

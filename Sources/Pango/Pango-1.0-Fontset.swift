@@ -10,12 +10,12 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `Fontset`.
 /// Alternatively, use `FontsetRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// A `PangoFontset` represents a set of `PangoFont` to use
-/// when rendering text. It is the result of resolving a
-/// `PangoFontDescription` against a particular `PangoContext`.
-/// It has operations for finding the component font for
-/// a particular Unicode character, and for finding a composite
-/// set of metrics for the entire fontset.
+/// A `PangoFontset` represents a set of `PangoFont` to use when rendering text.
+/// 
+/// A `PAngoFontset` is the result of resolving a `PangoFontDescription`
+/// against a particular `PangoContext`. It has operations for finding the
+/// component font for a particular Unicode character, and for finding a
+/// composite set of metrics for the entire fontset.
 public protocol FontsetProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontset` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,18 +23,20 @@ public protocol FontsetProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `PangoFontset` instance.
     var fontset_ptr: UnsafeMutablePointer<PangoFontset>! { get }
 
+    /// Required Initialiser for types conforming to `FontsetProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontsetRef` type acts as a lightweight Swift reference to an underlying `PangoFontset` instance.
 /// It exposes methods that can operate on this data type through `FontsetProtocol` conformance.
 /// Use `FontsetRef` only as an `unowned` reference to an existing `PangoFontset` instance.
 ///
-/// A `PangoFontset` represents a set of `PangoFont` to use
-/// when rendering text. It is the result of resolving a
-/// `PangoFontDescription` against a particular `PangoContext`.
-/// It has operations for finding the component font for
-/// a particular Unicode character, and for finding a composite
-/// set of metrics for the entire fontset.
+/// A `PangoFontset` represents a set of `PangoFont` to use when rendering text.
+/// 
+/// A `PAngoFontset` is the result of resolving a `PangoFontDescription`
+/// against a particular `PangoContext`. It has operations for finding the
+/// component font for a particular Unicode character, and for finding a
+/// composite set of metrics for the entire fontset.
 public struct FontsetRef: FontsetProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFontset` instance.
     /// For type-safe access, use the generated, typed pointer `fontset_ptr` property instead.
@@ -120,12 +122,12 @@ public extension FontsetRef {
 /// It provides the methods that can operate on this data type through `FontsetProtocol` conformance.
 /// Use `Fontset` as a strong reference or owner of a `PangoFontset` instance.
 ///
-/// A `PangoFontset` represents a set of `PangoFont` to use
-/// when rendering text. It is the result of resolving a
-/// `PangoFontDescription` against a particular `PangoContext`.
-/// It has operations for finding the component font for
-/// a particular Unicode character, and for finding a composite
-/// set of metrics for the entire fontset.
+/// A `PangoFontset` represents a set of `PangoFont` to use when rendering text.
+/// 
+/// A `PAngoFontset` is the result of resolving a `PangoFontDescription`
+/// against a particular `PangoContext`. It has operations for finding the
+/// component font for a particular Unicode character, and for finding a
+/// composite set of metrics for the entire fontset.
 open class Fontset: GLibObject.Object, FontsetProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -226,14 +228,14 @@ open class Fontset: GLibObject.Object, FontsetProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -293,14 +295,16 @@ public extension FontsetProtocol {
     @inlinable var fontset_ptr: UnsafeMutablePointer<PangoFontset>! { return ptr?.assumingMemoryBound(to: PangoFontset.self) }
 
     /// Iterates through all the fonts in a fontset, calling `func` for
-    /// each one. If `func` returns `true`, that stops the iteration.
+    /// each one.
+    /// 
+    /// If `func` returns `true`, that stops the iteration.
     @inlinable func foreach(`func`: PangoFontsetForeachFunc?, data: gpointer! = nil) {
         pango_fontset_foreach(fontset_ptr, `func`, data)
     
     }
 
-    /// Returns the font in the fontset that contains the best glyph for the
-    /// Unicode character `wc`.
+    /// Returns the font in the fontset that contains the best glyph for a
+    /// Unicode character.
     @inlinable func getFont(wc: Int) -> FontRef! {
         let rv = FontRef(gconstpointer: gconstpointer(pango_fontset_get_font(fontset_ptr, guint(wc))))
         return rv

@@ -10,13 +10,13 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `AttrIterator`.
 /// Alternatively, use `AttrIteratorRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAttrIterator` structure is used to represent an
-/// iterator through a `PangoAttrList`. A new iterator is created
-/// with `pango_attr_list_get_iterator()`. Once the iterator
-/// is created, it can be advanced through the style changes
-/// in the text using `pango_attr_iterator_next()`. At each
-/// style change, the range of the current style segment and the
-/// attributes currently in effect can be queried.
+/// A `PangoAttrIterator` is used to iterate through a `PangoAttrList`.
+/// 
+/// A new iterator is created with [method`Pango.AttrList.get_iterator`].
+/// Once the iterator is created, it can be advanced through the style
+/// changes in the text using [method`Pango.AttrIterator.next`]. At each
+/// style change, the range of the current style segment and the attributes
+/// currently in effect can be queried.
 public protocol AttrIteratorProtocol {
         /// Untyped pointer to the underlying `PangoAttrIterator` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -24,19 +24,21 @@ public protocol AttrIteratorProtocol {
     /// Typed pointer to the underlying `PangoAttrIterator` instance.
     var attr_iterator_ptr: UnsafeMutablePointer<PangoAttrIterator>! { get }
 
+    /// Required Initialiser for types conforming to `AttrIteratorProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AttrIteratorRef` type acts as a lightweight Swift reference to an underlying `PangoAttrIterator` instance.
 /// It exposes methods that can operate on this data type through `AttrIteratorProtocol` conformance.
 /// Use `AttrIteratorRef` only as an `unowned` reference to an existing `PangoAttrIterator` instance.
 ///
-/// The `PangoAttrIterator` structure is used to represent an
-/// iterator through a `PangoAttrList`. A new iterator is created
-/// with `pango_attr_list_get_iterator()`. Once the iterator
-/// is created, it can be advanced through the style changes
-/// in the text using `pango_attr_iterator_next()`. At each
-/// style change, the range of the current style segment and the
-/// attributes currently in effect can be queried.
+/// A `PangoAttrIterator` is used to iterate through a `PangoAttrList`.
+/// 
+/// A new iterator is created with [method`Pango.AttrList.get_iterator`].
+/// Once the iterator is created, it can be advanced through the style
+/// changes in the text using [method`Pango.AttrIterator.next`]. At each
+/// style change, the range of the current style segment and the attributes
+/// currently in effect can be queried.
 public struct AttrIteratorRef: AttrIteratorProtocol {
         /// Untyped pointer to the underlying `PangoAttrIterator` instance.
     /// For type-safe access, use the generated, typed pointer `attr_iterator_ptr` property instead.
@@ -119,13 +121,13 @@ public extension AttrIteratorRef {
 /// It provides the methods that can operate on this data type through `AttrIteratorProtocol` conformance.
 /// Use `AttrIterator` as a strong reference or owner of a `PangoAttrIterator` instance.
 ///
-/// The `PangoAttrIterator` structure is used to represent an
-/// iterator through a `PangoAttrList`. A new iterator is created
-/// with `pango_attr_list_get_iterator()`. Once the iterator
-/// is created, it can be advanced through the style changes
-/// in the text using `pango_attr_iterator_next()`. At each
-/// style change, the range of the current style segment and the
-/// attributes currently in effect can be queried.
+/// A `PangoAttrIterator` is used to iterate through a `PangoAttrList`.
+/// 
+/// A new iterator is created with [method`Pango.AttrList.get_iterator`].
+/// Once the iterator is created, it can be advanced through the style
+/// changes in the text using [method`Pango.AttrIterator.next`]. At each
+/// style change, the range of the current style segment and the attributes
+/// currently in effect can be queried.
 open class AttrIterator: AttrIteratorProtocol {
         /// Untyped pointer to the underlying `PangoAttrIterator` instance.
     /// For type-safe access, use the generated, typed pointer `attr_iterator_ptr` property instead.
@@ -239,7 +241,7 @@ open class AttrIterator: AttrIteratorProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrIteratorProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -280,7 +282,7 @@ public extension AttrIteratorProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAttrIterator` instance.
     @inlinable var attr_iterator_ptr: UnsafeMutablePointer<PangoAttrIterator>! { return ptr?.assumingMemoryBound(to: PangoAttrIterator.self) }
 
-    /// Copy a `PangoAttrIterator`
+    /// Copy a `PangoAttrIterator`.
     @inlinable func copy() -> AttrIteratorRef! {
         guard let rv = AttrIteratorRef(gconstpointer: gconstpointer(pango_attr_iterator_copy(attr_iterator_ptr))) else { return nil }
         return rv
@@ -330,24 +332,28 @@ public extension AttrIteratorProtocol {
     
     }
 
-    /// Breaks a piece of text into segments with consistent
-    /// directional level and shaping engine. Each byte of `text` will
-    /// be contained in exactly one of the items in the returned list;
-    /// the generated list of items will be in logical order (the start
-    /// offsets of the items are ascending).
+    /// Breaks a piece of text into segments with consistent directional
+    /// level and font.
     /// 
-    /// `cached_iter` should be an iterator over `attrs` currently positioned at a
-    /// range before or containing `start_index`; `cached_iter` will be advanced to
-    /// the range covering the position just after `start_index` + `length`.
-    /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
+    /// Each byte of `text` will be contained in exactly one of the items in the
+    /// returned list; the generated list of items will be in logical order (the
+    /// start offsets of the items are ascending).
+    /// 
+    /// `cached_iter` should be an iterator over `attrs` currently positioned
+    /// at a range before or containing `start_index`; `cached_iter` will be
+    /// advanced to the range covering the position just after
+    /// `start_index` + `length`. (i.e. if itemizing in a loop, just keep passing
+    /// in the same `cached_iter`).
     @inlinable func itemize<AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT) -> GLib.ListRef! {
         let rv = GLib.ListRef(pango_itemize(context.context_ptr, text, gint(startIndex), gint(length), attrs.attr_list_ptr, attr_iterator_ptr))
         return rv
     }
 
-    /// Like `pango_itemize()`, but the base direction to use when
-    /// computing bidirectional levels (see pango_context_set_base_dir ()),
-    /// is specified explicitly rather than gotten from the `PangoContext`.
+    /// Like ``pango_itemize()``, but with an explicitly specified base direction.
+    /// 
+    /// The base direction is used when computing bidirectional levels.
+    /// (see [method`Pango.Context.set_base_dir`]). [func`itemize`] gets the
+    /// base direction from the `PangoContext`.
     @inlinable func itemizeWithBaseDir<AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT) -> GLib.ListRef! {
         let rv = GLib.ListRef(pango_itemize_with_base_dir(context.context_ptr, baseDir, text, gint(startIndex), gint(length), attrs.attr_list_ptr, attr_iterator_ptr))
         return rv

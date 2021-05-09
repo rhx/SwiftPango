@@ -10,9 +10,11 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `Rectangle`.
 /// Alternatively, use `RectangleRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoRectangle` structure represents a rectangle. It is frequently
-/// used to represent the logical or ink extents of a single glyph or section
-/// of text. (See, for instance, `pango_font_get_glyph_extents()`)
+/// The `PangoRectangle` structure represents a rectangle.
+/// 
+/// `PangoRectangle` is frequently used to represent the logical or ink
+/// extents of a single glyph or section of text. (See, for instance,
+/// [method`Pango.Font.get_glyph_extents`].)
 public protocol RectangleProtocol {
         /// Untyped pointer to the underlying `PangoRectangle` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -20,15 +22,19 @@ public protocol RectangleProtocol {
     /// Typed pointer to the underlying `PangoRectangle` instance.
     var _ptr: UnsafeMutablePointer<PangoRectangle>! { get }
 
+    /// Required Initialiser for types conforming to `RectangleProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RectangleRef` type acts as a lightweight Swift reference to an underlying `PangoRectangle` instance.
 /// It exposes methods that can operate on this data type through `RectangleProtocol` conformance.
 /// Use `RectangleRef` only as an `unowned` reference to an existing `PangoRectangle` instance.
 ///
-/// The `PangoRectangle` structure represents a rectangle. It is frequently
-/// used to represent the logical or ink extents of a single glyph or section
-/// of text. (See, for instance, `pango_font_get_glyph_extents()`)
+/// The `PangoRectangle` structure represents a rectangle.
+/// 
+/// `PangoRectangle` is frequently used to represent the logical or ink
+/// extents of a single glyph or section of text. (See, for instance,
+/// [method`Pango.Font.get_glyph_extents`].)
 public struct RectangleRef: RectangleProtocol {
         /// Untyped pointer to the underlying `PangoRectangle` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -111,9 +117,11 @@ public extension RectangleRef {
 /// It provides the methods that can operate on this data type through `RectangleProtocol` conformance.
 /// Use `Rectangle` as a strong reference or owner of a `PangoRectangle` instance.
 ///
-/// The `PangoRectangle` structure represents a rectangle. It is frequently
-/// used to represent the logical or ink extents of a single glyph or section
-/// of text. (See, for instance, `pango_font_get_glyph_extents()`)
+/// The `PangoRectangle` structure represents a rectangle.
+/// 
+/// `PangoRectangle` is frequently used to represent the logical or ink
+/// extents of a single glyph or section of text. (See, for instance,
+/// [method`Pango.Font.get_glyph_extents`].)
 open class Rectangle: RectangleProtocol {
         /// Untyped pointer to the underlying `PangoRectangle` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -227,7 +235,7 @@ open class Rectangle: RectangleProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RectangleProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -268,55 +276,61 @@ public extension RectangleProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoRectangle` instance.
     @inlinable var _ptr: UnsafeMutablePointer<PangoRectangle>! { return ptr?.assumingMemoryBound(to: PangoRectangle.self) }
 
-    /// Create a new shape attribute. A shape is used to impose a
-    /// particular ink and logical rectangle on the result of shaping a
-    /// particular glyph. This might be used, for instance, for
-    /// embedding a picture or a widget inside a `PangoLayout`.
+    /// Create a new shape attribute.
+    /// 
+    /// A shape is used to impose a particular ink and logical rectangle
+    /// on the result of shaping a particular glyph. This might be used,
+    /// for instance, for embedding a picture or a widget inside a `PangoLayout`.
     @inlinable func attrShapeNew<RectangleT: RectangleProtocol>(logicalRect: RectangleT) -> AttributeRef! {
         let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new(_ptr, logicalRect._ptr)))
         return rv
     }
 
+    /// Creates a new shape attribute.
+    /// 
     /// Like `pango_attr_shape_new()`, but a user data pointer is also
-    /// provided; this pointer can be accessed when later
-    /// rendering the glyph.
+    /// provided; this pointer can be accessed when later rendering the glyph.
     @inlinable func attrShapeNewWithData<RectangleT: RectangleProtocol>(logicalRect: RectangleT, data: gpointer! = nil, copyFunc: PangoAttrDataCopyFunc? = nil, destroyFunc: GDestroyNotify? = nil) -> AttributeRef! {
         let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new_with_data(_ptr, logicalRect._ptr, data, copyFunc, destroyFunc)))
         return rv
     }
 
-    /// Converts extents from Pango units to device units, dividing by the
-    /// `PANGO_SCALE` factor and performing rounding.
+    /// Converts extents from Pango units to device units.
     /// 
-    /// The `inclusive` rectangle is converted by flooring the x/y coordinates and extending
-    /// width/height, such that the final rectangle completely includes the original
-    /// rectangle.
+    /// The conversion is done by dividing by the `PANGO_SCALE` factor and
+    /// performing rounding.
+    /// 
+    /// The `inclusive` rectangle is converted by flooring the x/y coordinates
+    /// and extending width/height, such that the final rectangle completely
+    /// includes the original rectangle.
     /// 
     /// The `nearest` rectangle is converted by rounding the coordinates
     /// of the rectangle to the nearest device unit (pixel).
     /// 
     /// The rule to which argument to use is: if you want the resulting device-space
-    /// rectangle to completely contain the original rectangle, pass it in as `inclusive`.
-    /// If you want two touching-but-not-overlapping rectangles stay
+    /// rectangle to completely contain the original rectangle, pass it in as
+    /// `inclusive`. If you want two touching-but-not-overlapping rectangles stay
     /// touching-but-not-overlapping after rounding to device units, pass them in
     /// as `nearest`.
     @inlinable func extentsToPixels(nearest: RectangleRef? = nil) {
         pango_extents_to_pixels(_ptr, nearest?._ptr)
     
     }
-    /// Converts extents from Pango units to device units, dividing by the
-    /// `PANGO_SCALE` factor and performing rounding.
+    /// Converts extents from Pango units to device units.
     /// 
-    /// The `inclusive` rectangle is converted by flooring the x/y coordinates and extending
-    /// width/height, such that the final rectangle completely includes the original
-    /// rectangle.
+    /// The conversion is done by dividing by the `PANGO_SCALE` factor and
+    /// performing rounding.
+    /// 
+    /// The `inclusive` rectangle is converted by flooring the x/y coordinates
+    /// and extending width/height, such that the final rectangle completely
+    /// includes the original rectangle.
     /// 
     /// The `nearest` rectangle is converted by rounding the coordinates
     /// of the rectangle to the nearest device unit (pixel).
     /// 
     /// The rule to which argument to use is: if you want the resulting device-space
-    /// rectangle to completely contain the original rectangle, pass it in as `inclusive`.
-    /// If you want two touching-but-not-overlapping rectangles stay
+    /// rectangle to completely contain the original rectangle, pass it in as
+    /// `inclusive`. If you want two touching-but-not-overlapping rectangles stay
     /// touching-but-not-overlapping after rounding to device units, pass them in
     /// as `nearest`.
     @inlinable func extentsToPixels<RectangleT: RectangleProtocol>(nearest: RectangleT?) {

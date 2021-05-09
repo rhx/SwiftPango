@@ -19,6 +19,8 @@ public protocol AttrFloatProtocol {
     /// Typed pointer to the underlying `PangoAttrFloat` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrFloat>! { get }
 
+    /// Required Initialiser for types conforming to `AttrFloatProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AttrFloatRef` type acts as a lightweight Swift reference to an underlying `PangoAttrFloat` instance.
@@ -224,7 +226,7 @@ open class AttrFloat: AttrFloatProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrFloatProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

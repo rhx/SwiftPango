@@ -11,9 +11,10 @@ import GLibObject
 /// Alternatively, use `AttrClassRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
 /// The `PangoAttrClass` structure stores the type and operations for
-/// a particular type of attribute. The functions in this structure should
-/// not be called directly. Instead, one should use the wrapper functions
-/// provided for `PangoAttribute`.
+/// a particular type of attribute.
+/// 
+/// The functions in this structure should not be called directly. Instead,
+/// one should use the wrapper functions provided for `PangoAttribute`.
 public protocol AttrClassProtocol {
         /// Untyped pointer to the underlying `PangoAttrClass` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -21,6 +22,8 @@ public protocol AttrClassProtocol {
     /// Typed pointer to the underlying `PangoAttrClass` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrClass>! { get }
 
+    /// Required Initialiser for types conforming to `AttrClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AttrClassRef` type acts as a lightweight Swift reference to an underlying `PangoAttrClass` instance.
@@ -28,9 +31,10 @@ public protocol AttrClassProtocol {
 /// Use `AttrClassRef` only as an `unowned` reference to an existing `PangoAttrClass` instance.
 ///
 /// The `PangoAttrClass` structure stores the type and operations for
-/// a particular type of attribute. The functions in this structure should
-/// not be called directly. Instead, one should use the wrapper functions
-/// provided for `PangoAttribute`.
+/// a particular type of attribute.
+/// 
+/// The functions in this structure should not be called directly. Instead,
+/// one should use the wrapper functions provided for `PangoAttribute`.
 public struct AttrClassRef: AttrClassProtocol {
         /// Untyped pointer to the underlying `PangoAttrClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -114,9 +118,10 @@ public extension AttrClassRef {
 /// Use `AttrClass` as a strong reference or owner of a `PangoAttrClass` instance.
 ///
 /// The `PangoAttrClass` structure stores the type and operations for
-/// a particular type of attribute. The functions in this structure should
-/// not be called directly. Instead, one should use the wrapper functions
-/// provided for `PangoAttribute`.
+/// a particular type of attribute.
+/// 
+/// The functions in this structure should not be called directly. Instead,
+/// one should use the wrapper functions provided for `PangoAttribute`.
 open class AttrClass: AttrClassProtocol {
         /// Untyped pointer to the underlying `PangoAttrClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -230,7 +235,7 @@ open class AttrClass: AttrClassProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrClassProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

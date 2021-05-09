@@ -19,6 +19,8 @@ public protocol AttrFontFeaturesProtocol {
     /// Typed pointer to the underlying `PangoAttrFontFeatures` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrFontFeatures>! { get }
 
+    /// Required Initialiser for types conforming to `AttrFontFeaturesProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AttrFontFeaturesRef` type acts as a lightweight Swift reference to an underlying `PangoAttrFontFeatures` instance.
@@ -224,7 +226,7 @@ open class AttrFontFeatures: AttrFontFeaturesProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrFontFeaturesProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

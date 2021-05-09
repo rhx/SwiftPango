@@ -33,6 +33,8 @@ public protocol FontFaceClassProtocol {
     /// Typed pointer to the underlying `PangoFontFaceClass` instance.
     var _ptr: UnsafeMutablePointer<PangoFontFaceClass>! { get }
 
+    /// Required Initialiser for types conforming to `FontFaceClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontFaceClassRef` type acts as a lightweight Swift reference to an underlying `PangoFontFaceClass` instance.

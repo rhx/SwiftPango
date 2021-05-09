@@ -19,6 +19,8 @@ public protocol AttrColorProtocol {
     /// Typed pointer to the underlying `PangoAttrColor` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrColor>! { get }
 
+    /// Required Initialiser for types conforming to `AttrColorProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AttrColorRef` type acts as a lightweight Swift reference to an underlying `PangoAttrColor` instance.
@@ -224,7 +226,7 @@ open class AttrColor: AttrColorProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrColorProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

@@ -11,6 +11,9 @@ import GLibObject
 /// Alternatively, use `ItemRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
 /// The `PangoItem` structure stores information about a segment of text.
+/// 
+/// You typically obtain `PangoItems` by itemizing a piece of text
+/// with [func`itemize`].
 public protocol ItemProtocol {
         /// Untyped pointer to the underlying `PangoItem` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -18,6 +21,8 @@ public protocol ItemProtocol {
     /// Typed pointer to the underlying `PangoItem` instance.
     var item_ptr: UnsafeMutablePointer<PangoItem>! { get }
 
+    /// Required Initialiser for types conforming to `ItemProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ItemRef` type acts as a lightweight Swift reference to an underlying `PangoItem` instance.
@@ -25,6 +30,9 @@ public protocol ItemProtocol {
 /// Use `ItemRef` only as an `unowned` reference to an existing `PangoItem` instance.
 ///
 /// The `PangoItem` structure stores information about a segment of text.
+/// 
+/// You typically obtain `PangoItems` by itemizing a piece of text
+/// with [func`itemize`].
 public struct ItemRef: ItemProtocol {
         /// Untyped pointer to the underlying `PangoItem` instance.
     /// For type-safe access, use the generated, typed pointer `item_ptr` property instead.
@@ -113,6 +121,9 @@ public extension ItemRef {
 /// Use `Item` as a strong reference or owner of a `PangoItem` instance.
 ///
 /// The `PangoItem` structure stores information about a segment of text.
+/// 
+/// You typically obtain `PangoItems` by itemizing a piece of text
+/// with [func`itemize`].
 open class Item: ItemProtocol {
         /// Untyped pointer to the underlying `PangoItem` instance.
     /// For type-safe access, use the generated, typed pointer `item_ptr` property instead.
@@ -226,7 +237,7 @@ open class Item: ItemProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ItemProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -272,11 +283,12 @@ public extension ItemProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoItem` instance.
     @inlinable var item_ptr: UnsafeMutablePointer<PangoItem>! { return ptr?.assumingMemoryBound(to: PangoItem.self) }
 
-    /// Add attributes to a PangoItem. The idea is that you have
-    /// attributes that don't affect itemization, such as font features,
-    /// so you filter them out using `pango_attr_list_filter()`, itemize
-    /// your text, then reapply the attributes to the resulting items
-    /// using this function.
+    /// Add attributes to a `PangoItem`.
+    /// 
+    /// The idea is that you have attributes that don't affect itemization,
+    /// such as font features, so you filter them out using
+    /// [method`Pango.AttrList.filter`], itemize your text, then reapply the
+    /// attributes to the resulting items using this function.
     /// 
     /// The `iter` should be positioned before the range of the item,
     /// and will be advanced past it. This function is meant to be called
@@ -301,14 +313,16 @@ public extension ItemProtocol {
 
     /// Modifies `orig` to cover only the text after `split_index`, and
     /// returns a new item that covers the text before `split_index` that
-    /// used to be in `orig`. You can think of `split_index` as the length of
-    /// the returned item. `split_index` may not be 0, and it may not be
-    /// greater than or equal to the length of `orig` (that is, there must
-    /// be at least one byte assigned to each item, you can't create a
-    /// zero-length item). `split_offset` is the length of the first item in
-    /// chars, and must be provided because the text used to generate the
-    /// item isn't available, so `pango_item_split()` can't count the char
-    /// length of the split items itself.
+    /// used to be in `orig`.
+    /// 
+    /// You can think of `split_index` as the length of the returned item.
+    /// `split_index` may not be 0, and it may not be greater than or equal
+    /// to the length of `orig` (that is, there must be at least one byte
+    /// assigned to each item, you can't create a zero-length item).
+    /// `split_offset` is the length of the first item in chars, and must be
+    /// provided because the text used to generate the item isn't available,
+    /// so ``pango_item_split()`` can't count the char length of the split items
+    /// itself.
     @inlinable func split(splitIndex: Int, splitOffset: Int) -> ItemRef! {
         guard let rv = ItemRef(gconstpointer: gconstpointer(pango_item_split(item_ptr, gint(splitIndex), gint(splitOffset)))) else { return nil }
         return rv

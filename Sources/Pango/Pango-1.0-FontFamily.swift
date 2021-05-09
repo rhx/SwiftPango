@@ -10,9 +10,11 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `FontFamily`.
 /// Alternatively, use `FontFamilyRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoFontFamily` structure is used to represent a family of related
-/// font faces. The faces in a family share a common design, but differ in
-/// slant, weight, width and other aspects.
+/// A `PangoFontFamily` is used to represent a family of related
+/// font faces.
+/// 
+/// The font faces in a family share a common design, but differ in
+/// slant, weight, width or other aspects.
 public protocol FontFamilyProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontFamily` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -20,15 +22,19 @@ public protocol FontFamilyProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `PangoFontFamily` instance.
     var font_family_ptr: UnsafeMutablePointer<PangoFontFamily>! { get }
 
+    /// Required Initialiser for types conforming to `FontFamilyProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontFamilyRef` type acts as a lightweight Swift reference to an underlying `PangoFontFamily` instance.
 /// It exposes methods that can operate on this data type through `FontFamilyProtocol` conformance.
 /// Use `FontFamilyRef` only as an `unowned` reference to an existing `PangoFontFamily` instance.
 ///
-/// The `PangoFontFamily` structure is used to represent a family of related
-/// font faces. The faces in a family share a common design, but differ in
-/// slant, weight, width and other aspects.
+/// A `PangoFontFamily` is used to represent a family of related
+/// font faces.
+/// 
+/// The font faces in a family share a common design, but differ in
+/// slant, weight, width or other aspects.
 public struct FontFamilyRef: FontFamilyProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFontFamily` instance.
     /// For type-safe access, use the generated, typed pointer `font_family_ptr` property instead.
@@ -114,9 +120,11 @@ public extension FontFamilyRef {
 /// It provides the methods that can operate on this data type through `FontFamilyProtocol` conformance.
 /// Use `FontFamily` as a strong reference or owner of a `PangoFontFamily` instance.
 ///
-/// The `PangoFontFamily` structure is used to represent a family of related
-/// font faces. The faces in a family share a common design, but differ in
-/// slant, weight, width and other aspects.
+/// A `PangoFontFamily` is used to represent a family of related
+/// font faces.
+/// 
+/// The font faces in a family share a common design, but differ in
+/// slant, weight, width or other aspects.
 open class FontFamily: GLibObject.Object, FontFamilyProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -217,14 +225,14 @@ open class FontFamily: GLibObject.Object, FontFamilyProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontFamilyProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -289,23 +297,28 @@ public extension FontFamilyProtocol {
         return rv
     }
 
-    /// Gets the name of the family. The name is unique among all
-    /// fonts for the font backend and can be used in a `PangoFontDescription`
-    /// to specify that a face from this family is desired.
+    /// Gets the name of the family.
+    /// 
+    /// The name is unique among all fonts for the font backend and can
+    /// be used in a `PangoFontDescription` to specify that a face from
+    /// this family is desired.
     @inlinable func getName() -> String! {
         let rv = pango_font_family_get_name(font_family_ptr).map({ String(cString: $0) })
         return rv
     }
 
-    /// Lists the different font faces that make up `family`. The faces
-    /// in a family share a common design, but differ in slant, weight,
+    /// Lists the different font faces that make up `family`.
+    /// 
+    /// The faces in a family share a common design, but differ in slant, weight,
     /// width and other aspects.
     @inlinable func list(faces: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<PangoFontFace>?>?>! = nil, nFaces: UnsafeMutablePointer<gint>!) {
         pango_font_family_list_faces(font_family_ptr, faces, nFaces)
     
     }
     /// A monospace font is a font designed for text display where the the
-    /// characters form a regular grid. For Western languages this would
+    /// characters form a regular grid.
+    /// 
+    /// For Western languages this would
     /// mean that the advance width of all characters are the same, but
     /// this categorization also includes Asian fonts which include
     /// double-width characters: characters that occupy two grid cells.
@@ -313,12 +326,14 @@ public extension FontFamilyProtocol {
     /// character is typically double-width in a monospace font.
     /// 
     /// The best way to find out the grid-cell size is to call
-    /// `pango_font_metrics_get_approximate_digit_width()`, since the results
-    /// of `pango_font_metrics_get_approximate_char_width()` may be affected
-    /// by double-width characters.
+    /// [method`Pango.FontMetrics.get_approximate_digit_width`], since the
+    /// results of [method`Pango.FontMetrics.get_approximate_char_width`] may
+    /// be affected by double-width characters.
     @inlinable var isMonospace: Bool {
         /// A monospace font is a font designed for text display where the the
-        /// characters form a regular grid. For Western languages this would
+        /// characters form a regular grid.
+        /// 
+        /// For Western languages this would
         /// mean that the advance width of all characters are the same, but
         /// this categorization also includes Asian fonts which include
         /// double-width characters: characters that occupy two grid cells.
@@ -326,9 +341,9 @@ public extension FontFamilyProtocol {
         /// character is typically double-width in a monospace font.
         /// 
         /// The best way to find out the grid-cell size is to call
-        /// `pango_font_metrics_get_approximate_digit_width()`, since the results
-        /// of `pango_font_metrics_get_approximate_char_width()` may be affected
-        /// by double-width characters.
+        /// [method`Pango.FontMetrics.get_approximate_digit_width`], since the
+        /// results of [method`Pango.FontMetrics.get_approximate_char_width`] may
+        /// be affected by double-width characters.
         get {
             let rv = ((pango_font_family_is_monospace(font_family_ptr)) != 0)
             return rv
@@ -346,13 +361,17 @@ public extension FontFamilyProtocol {
         }
     }
 
-    /// Gets the name of the family. The name is unique among all
-    /// fonts for the font backend and can be used in a `PangoFontDescription`
-    /// to specify that a face from this family is desired.
+    /// Gets the name of the family.
+    /// 
+    /// The name is unique among all fonts for the font backend and can
+    /// be used in a `PangoFontDescription` to specify that a face from
+    /// this family is desired.
     @inlinable var name: String! {
-        /// Gets the name of the family. The name is unique among all
-        /// fonts for the font backend and can be used in a `PangoFontDescription`
-        /// to specify that a face from this family is desired.
+        /// Gets the name of the family.
+        /// 
+        /// The name is unique among all fonts for the font backend and can
+        /// be used in a `PangoFontDescription` to specify that a face from
+        /// this family is desired.
         get {
             let rv = pango_font_family_get_name(font_family_ptr).map({ String(cString: $0) })
             return rv

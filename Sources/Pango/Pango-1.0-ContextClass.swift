@@ -33,6 +33,8 @@ public protocol ContextClassProtocol {
     /// Typed pointer to the underlying `PangoContextClass` instance.
     var _ptr: UnsafeMutablePointer<PangoContextClass>! { get }
 
+    /// Required Initialiser for types conforming to `ContextClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ContextClassRef` type acts as a lightweight Swift reference to an underlying `PangoContextClass` instance.

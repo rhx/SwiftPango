@@ -19,6 +19,8 @@ public protocol AttrSizeProtocol {
     /// Typed pointer to the underlying `PangoAttrSize` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrSize>! { get }
 
+    /// Required Initialiser for types conforming to `AttrSizeProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AttrSizeRef` type acts as a lightweight Swift reference to an underlying `PangoAttrSize` instance.
@@ -224,7 +226,7 @@ open class AttrSize: AttrSizeProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrSizeProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -280,38 +282,38 @@ public extension AttrSizeProtocol {
     }
 
     /// size of font, in units of 1/`PANGO_SCALE` of a point (for
-    /// `PANGO_ATTR_SIZE`) or of a device uni (for `PANGO_ATTR_ABSOLUTE_SIZE`)
+    ///   `PANGO_ATTR_SIZE`) or of a device unit (for `PANGO_ATTR_ABSOLUTE_SIZE`)
     @inlinable var size: gint {
         /// size of font, in units of 1/`PANGO_SCALE` of a point (for
-        /// `PANGO_ATTR_SIZE`) or of a device uni (for `PANGO_ATTR_ABSOLUTE_SIZE`)
+        ///   `PANGO_ATTR_SIZE`) or of a device unit (for `PANGO_ATTR_ABSOLUTE_SIZE`)
         get {
             let rv = _ptr.pointee.size
             return rv
         }
         /// size of font, in units of 1/`PANGO_SCALE` of a point (for
-        /// `PANGO_ATTR_SIZE`) or of a device uni (for `PANGO_ATTR_ABSOLUTE_SIZE`)
+        ///   `PANGO_ATTR_SIZE`) or of a device unit (for `PANGO_ATTR_ABSOLUTE_SIZE`)
          set {
             _ptr.pointee.size = newValue
         }
     }
 
     /// whether the font size is in device units or points.
-    /// This field is only present for compatibility with Pango-1.8.0
-    /// (`PANGO_ATTR_ABSOLUTE_SIZE` was added in 1.8.1); and always will
-    /// be `false` for `PANGO_ATTR_SIZE` and `true` for `PANGO_ATTR_ABSOLUTE_SIZE`.
+    ///   This field is only present for compatibility with Pango-1.8.0
+    ///   (`PANGO_ATTR_ABSOLUTE_SIZE` was added in 1.8.1); and always will
+    ///   be `false` for `PANGO_ATTR_SIZE` and `true` for `PANGO_ATTR_ABSOLUTE_SIZE`.
     @inlinable var absolute: guint {
         /// whether the font size is in device units or points.
-        /// This field is only present for compatibility with Pango-1.8.0
-        /// (`PANGO_ATTR_ABSOLUTE_SIZE` was added in 1.8.1); and always will
-        /// be `false` for `PANGO_ATTR_SIZE` and `true` for `PANGO_ATTR_ABSOLUTE_SIZE`.
+        ///   This field is only present for compatibility with Pango-1.8.0
+        ///   (`PANGO_ATTR_ABSOLUTE_SIZE` was added in 1.8.1); and always will
+        ///   be `false` for `PANGO_ATTR_SIZE` and `true` for `PANGO_ATTR_ABSOLUTE_SIZE`.
         get {
             let rv = _ptr.pointee.absolute
             return rv
         }
         /// whether the font size is in device units or points.
-        /// This field is only present for compatibility with Pango-1.8.0
-        /// (`PANGO_ATTR_ABSOLUTE_SIZE` was added in 1.8.1); and always will
-        /// be `false` for `PANGO_ATTR_SIZE` and `true` for `PANGO_ATTR_ABSOLUTE_SIZE`.
+        ///   This field is only present for compatibility with Pango-1.8.0
+        ///   (`PANGO_ATTR_ABSOLUTE_SIZE` was added in 1.8.1); and always will
+        ///   be `false` for `PANGO_ATTR_SIZE` and `true` for `PANGO_ATTR_ABSOLUTE_SIZE`.
          set {
             _ptr.pointee.absolute = newValue
         }

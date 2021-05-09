@@ -19,6 +19,8 @@ public protocol ColorProtocol {
     /// Typed pointer to the underlying `PangoColor` instance.
     var color_ptr: UnsafeMutablePointer<PangoColor>! { get }
 
+    /// Required Initialiser for types conforming to `ColorProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ColorRef` type acts as a lightweight Swift reference to an underlying `PangoColor` instance.
@@ -224,7 +226,7 @@ open class Color: ColorProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ColorProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -265,10 +267,11 @@ public extension ColorProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoColor` instance.
     @inlinable var color_ptr: UnsafeMutablePointer<PangoColor>! { return ptr?.assumingMemoryBound(to: PangoColor.self) }
 
-    /// Creates a copy of `src`, which should be freed with
-    /// `pango_color_free()`. Primarily used by language bindings,
-    /// not that useful otherwise (since colors can just be copied
-    /// by assignment in C).
+    /// Creates a copy of `src`.
+    /// 
+    /// The copy should be freed with `pango_color_free()`. Primarily
+    /// used by language bindings, not that useful otherwise (since
+    /// colors can just be copied by assignment in C).
     @inlinable func copy() -> ColorRef! {
         guard let rv = ColorRef(gconstpointer: gconstpointer(pango_color_copy(color_ptr))) else { return nil }
         return rv
@@ -280,42 +283,44 @@ public extension ColorProtocol {
     
     }
 
-    /// Fill in the fields of a color from a string specification. The
-    /// string can either one of a large set of standard names. (Taken
-    /// from the CSS <ulink url="http://dev.w3.org/csswg/css-color/`named`-colors">specification</ulink>), or it can be a hexadecimal
-    /// value in the
-    /// form '&num;rgb' '&num;rrggbb' '&num;rrrgggbbb' or '&num;rrrrggggbbbb' where
-    /// 'r', 'g' and 'b' are hex digits of the red, green, and blue
-    /// components of the color, respectively. (White in the four
-    /// forms is '&num;fff' '&num;ffffff' '&num;fffffffff' and '&num;ffffffffffff')
+    /// Fill in the fields of a color from a string specification.
+    /// 
+    /// The string can either
+    /// one of a large set of standard names. (Taken from the CSS Color
+    /// [specification](https://www.w3.org/TR/css-color-4/`named-colors`), or it can be
+    /// a value in the form ``rgb``, ``rrggbb``, ``rrrgggbbb`` or ``rrrrggggbbbb``, where
+    /// `r`, `g` and `b` are hex digits of the red, green, and blue components of the
+    /// color, respectively. (White in the four forms is ``fff``, ``ffffff``, ``fffffffff``
+    /// and ``ffffffffffff``.)
     @inlinable func parse(spec: UnsafePointer<CChar>!) -> Bool {
         let rv = ((pango_color_parse(color_ptr, spec)) != 0)
         return rv
     }
 
-    /// Fill in the fields of a color from a string specification. The
-    /// string can either one of a large set of standard names. (Taken
-    /// from the CSS <ulink url="http://dev.w3.org/csswg/css-color/`named`-colors">specification</ulink>), or it can be a hexadecimal
-    /// value in the
-    /// form '&num;rgb' '&num;rrggbb' '&num;rrrgggbbb' or '&num;rrrrggggbbbb' where
-    /// 'r', 'g' and 'b' are hex digits of the red, green, and blue
-    /// components of the color, respectively. (White in the four
-    /// forms is '&num;fff' '&num;ffffff' '&num;fffffffff' and '&num;ffffffffffff')
+    /// Fill in the fields of a color from a string specification.
     /// 
-    /// Additionally, parse strings of the form
-    /// '&num;rgba', '&num;rrggbbaa', '&num;rrrrggggbbbbaaaa',
-    /// if `alpha` is not `nil`, and set `alpha` to the value specified
-    /// by the hex digits for 'a'. If no alpha component is found
+    /// The string can
+    /// either one of a large set of standard names. (Taken from the CSS Color
+    /// [specification](https://www.w3.org/TR/css-color-4/`named-colors`),
+    /// or it can be a hexadecimal value in the form ``rgb``, ``rrggbb``, ``rrrgggbbb``
+    /// or ``rrrrggggbbbb`` where `r`, `g` and `b` are hex digits of the red, green,
+    /// and blue components of the color, respectively. (White in the four
+    /// forms is ``fff``, ``ffffff``, ``fffffffff`` and ``ffffffffffff``.)
+    /// 
+    /// Additionally, parse strings of the form ``rgba``, ``rrggbbaa``,
+    /// ``rrrrggggbbbbaaaa``, if `alpha` is not `nil`, and set `alpha` to the value
+    /// specified by the hex digits for `a`. If no alpha component is found
     /// in `spec`, `alpha` is set to 0xffff (for a solid color).
     @inlinable func parseWith(alpha: UnsafeMutablePointer<guint16>! = nil, spec: UnsafePointer<CChar>!) -> Bool {
         let rv = ((pango_color_parse_with_alpha(color_ptr, alpha, spec)) != 0)
         return rv
     }
 
-    /// Returns a textual specification of `color` in the hexadecimal form
-    /// <literal>&num;rrrrggggbbbb</literal>, where <literal>r</literal>,
-    /// <literal>g</literal> and <literal>b</literal> are hex digits representing
-    /// the red, green, and blue components respectively.
+    /// Returns a textual specification of `color`.
+    /// 
+    /// The string is in the hexadecimal form ``rrrrggggbbbb``, where
+    /// `r`, `g` and `b` are hex digits representing the red, green,
+    /// and blue components respectively.
     @inlinable func toString() -> String! {
         let rv = pango_color_to_string(color_ptr).map({ String(cString: $0) })
         return rv

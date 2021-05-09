@@ -10,18 +10,8 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `Font`.
 /// Alternatively, use `FontRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoFont` structure is used to represent
-/// a font in a rendering-system-independent matter.
-/// To create an implementation of a `PangoFont`,
-/// the rendering-system specific code should allocate
-/// a larger structure that contains a nested
-/// `PangoFont`, fill in the <structfield>klass</structfield> member of
-/// the nested `PangoFont` with a pointer to
-/// a appropriate `PangoFontClass`, then call
-/// `pango_font_init()` on the structure.
-/// 
-/// The `PangoFont` structure contains one member
-/// which the implementation fills in.
+/// A `PangoFont` is used to represent a font in a
+/// rendering-system-independent manner.
 public protocol FontProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFont` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -29,24 +19,16 @@ public protocol FontProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `PangoFont` instance.
     var font_ptr: UnsafeMutablePointer<PangoFont>! { get }
 
+    /// Required Initialiser for types conforming to `FontProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontRef` type acts as a lightweight Swift reference to an underlying `PangoFont` instance.
 /// It exposes methods that can operate on this data type through `FontProtocol` conformance.
 /// Use `FontRef` only as an `unowned` reference to an existing `PangoFont` instance.
 ///
-/// The `PangoFont` structure is used to represent
-/// a font in a rendering-system-independent matter.
-/// To create an implementation of a `PangoFont`,
-/// the rendering-system specific code should allocate
-/// a larger structure that contains a nested
-/// `PangoFont`, fill in the <structfield>klass</structfield> member of
-/// the nested `PangoFont` with a pointer to
-/// a appropriate `PangoFontClass`, then call
-/// `pango_font_init()` on the structure.
-/// 
-/// The `PangoFont` structure contains one member
-/// which the implementation fills in.
+/// A `PangoFont` is used to represent a font in a
+/// rendering-system-independent manner.
 public struct FontRef: FontProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFont` instance.
     /// For type-safe access, use the generated, typed pointer `font_ptr` property instead.
@@ -132,18 +114,8 @@ public extension FontRef {
 /// It provides the methods that can operate on this data type through `FontProtocol` conformance.
 /// Use `Font` as a strong reference or owner of a `PangoFont` instance.
 ///
-/// The `PangoFont` structure is used to represent
-/// a font in a rendering-system-independent matter.
-/// To create an implementation of a `PangoFont`,
-/// the rendering-system specific code should allocate
-/// a larger structure that contains a nested
-/// `PangoFont`, fill in the <structfield>klass</structfield> member of
-/// the nested `PangoFont` with a pointer to
-/// a appropriate `PangoFontClass`, then call
-/// `pango_font_init()` on the structure.
-/// 
-/// The `PangoFont` structure contains one member
-/// which the implementation fills in.
+/// A `PangoFont` is used to represent a font in a
+/// rendering-system-independent manner.
 open class Font: GLibObject.Object, FontProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -244,14 +216,14 @@ open class Font: GLibObject.Object, FontProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -311,28 +283,20 @@ public extension FontProtocol {
     @inlinable var font_ptr: UnsafeMutablePointer<PangoFont>! { return ptr?.assumingMemoryBound(to: PangoFont.self) }
 
     /// Returns a description of the font, with font size set in points.
-    /// Use `pango_font_describe_with_absolute_size()` if you want the font
-    /// size in device units.
+    /// 
+    /// Use [method`Pango.Font.describe_with_absolute_size`] if you want
+    /// the font size in device units.
     @inlinable func describe() -> FontDescriptionRef! {
         let rv = FontDescriptionRef(gconstpointer: gconstpointer(pango_font_describe(font_ptr)))
         return rv
     }
 
     /// Returns a description of the font, with absolute font size set
-    /// (in device units). Use `pango_font_describe()` if you want the font
-    /// size in points.
+    /// in device units.
+    /// 
+    /// Use [method`Pango.Font.describe`] if you want the font size in points.
     @inlinable func describeWithAbsoluteSize() -> FontDescriptionRef! {
         let rv = FontDescriptionRef(gconstpointer: gconstpointer(pango_font_describe_with_absolute_size(font_ptr)))
-        return rv
-    }
-
-    /// Finds the best matching shaper for a font for a particular
-    /// language tag and character point.
-    ///
-    /// **find_shaper is deprecated:**
-    /// Shape engines are no longer used
-    @available(*, deprecated) @inlinable func findShaper<LanguageT: LanguageProtocol>(language: LanguageT, ch: guint32) -> EngineShapeRef! {
-        let rv = EngineShapeRef(gconstpointer: gconstpointer(pango_font_find_shaper(font_ptr, language.language_ptr, ch)))
         return rv
     }
 
@@ -349,6 +313,7 @@ public extension FontProtocol {
     }
 
     /// Obtain the OpenType features that are provided by the font.
+    /// 
     /// These are passed to the rendering system, together with features
     /// that have been explicitly set via attributes.
     /// 
@@ -361,20 +326,22 @@ public extension FontProtocol {
 
     /// Gets the font map for which the font was created.
     /// 
-    /// Note that the font maintains a <firstterm>weak</firstterm> reference
-    /// to the font map, so if all references to font map are dropped, the font
-    /// map will be finalized even if there are fonts created with the font
-    /// map that are still alive.  In that case this function will return `nil`.
+    /// Note that the font maintains a *weak* reference to the font map, so if
+    /// all references to font map are dropped, the font map will be finalized
+    /// even if there are fonts created with the font map that are still alive.
+    /// In that case this function will return `nil`.
+    /// 
     /// It is the responsibility of the user to ensure that the font map is kept
-    /// alive.  In most uses this is not an issue as a `PangoContext` holds
+    /// alive. In most uses this is not an issue as a `PangoContext` holds
     /// a reference to the font map.
     @inlinable func getFontMap() -> FontMapRef! {
         let rv = FontMapRef(gconstpointer: gconstpointer(pango_font_get_font_map(font_ptr)))
         return rv
     }
 
-    /// Gets the logical and ink extents of a glyph within a font. The
-    /// coordinate system for each rectangle has its origin at the
+    /// Gets the logical and ink extents of a glyph within a font.
+    /// 
+    /// The coordinate system for each rectangle has its origin at the
     /// base line and horizontal origin of the character with increasing
     /// coordinates extending to the right and down. The macros `PANGO_ASCENT()`,
     /// `PANGO_DESCENT()`, `PANGO_LBEARING()`, and `PANGO_RBEARING()` can be used to convert
@@ -387,8 +354,9 @@ public extension FontProtocol {
         pango_font_get_glyph_extents(font_ptr, glyph, inkRect?._ptr, logicalRect?._ptr)
     
     }
-    /// Gets the logical and ink extents of a glyph within a font. The
-    /// coordinate system for each rectangle has its origin at the
+    /// Gets the logical and ink extents of a glyph within a font.
+    /// 
+    /// The coordinate system for each rectangle has its origin at the
     /// base line and horizontal origin of the character with increasing
     /// coordinates extending to the right and down. The macros `PANGO_ASCENT()`,
     /// `PANGO_DESCENT()`, `PANGO_LBEARING()`, and `PANGO_RBEARING()` can be used to convert
@@ -402,20 +370,20 @@ public extension FontProtocol {
     
     }
 
-    /// Get a hb_font_t object backing this font.
+    /// Get a `hb_font_t` object backing this font.
     /// 
-    /// Note that the objects returned by this function
-    /// are cached and immutable. If you need to make
-    /// changes to the hb_font_t, use `hb_font_create_sub_font()`.
+    /// Note that the objects returned by this function are cached and immutable.
+    /// If you need to make changes to the `hb_font_t`, use `hb_font_create_sub_font()`.
     @inlinable func getHbFont() -> UnsafeMutablePointer<hb_font_t>? {
         let rv = pango_font_get_hb_font(font_ptr)
         return rv
     }
 
-    /// Gets overall metric information for a font. Since the metrics may be
-    /// substantially different for different scripts, a language tag can
-    /// be provided to indicate that the metrics should be retrieved that
-    /// correspond to the `script(s)` used by that language.
+    /// Gets overall metric information for a font.
+    /// 
+    /// Since the metrics may be substantially different for different scripts,
+    /// a language tag can be provided to indicate that the metrics should be
+    /// retrieved that correspond to the `script(s)` used by that language.
     /// 
     /// If `font` is `nil`, this function gracefully sets some sane values in the
     /// output variables and returns.
@@ -423,10 +391,11 @@ public extension FontProtocol {
         let rv = FontMetricsRef(gconstpointer: gconstpointer(pango_font_get_metrics(font_ptr, language?.language_ptr)))
         return rv
     }
-    /// Gets overall metric information for a font. Since the metrics may be
-    /// substantially different for different scripts, a language tag can
-    /// be provided to indicate that the metrics should be retrieved that
-    /// correspond to the `script(s)` used by that language.
+    /// Gets overall metric information for a font.
+    /// 
+    /// Since the metrics may be substantially different for different scripts,
+    /// a language tag can be provided to indicate that the metrics should be
+    /// retrieved that correspond to the `script(s)` used by that language.
     /// 
     /// If `font` is `nil`, this function gracefully sets some sane values in the
     /// output variables and returns.
@@ -453,22 +422,24 @@ public extension FontProtocol {
 
     /// Gets the font map for which the font was created.
     /// 
-    /// Note that the font maintains a <firstterm>weak</firstterm> reference
-    /// to the font map, so if all references to font map are dropped, the font
-    /// map will be finalized even if there are fonts created with the font
-    /// map that are still alive.  In that case this function will return `nil`.
+    /// Note that the font maintains a *weak* reference to the font map, so if
+    /// all references to font map are dropped, the font map will be finalized
+    /// even if there are fonts created with the font map that are still alive.
+    /// In that case this function will return `nil`.
+    /// 
     /// It is the responsibility of the user to ensure that the font map is kept
-    /// alive.  In most uses this is not an issue as a `PangoContext` holds
+    /// alive. In most uses this is not an issue as a `PangoContext` holds
     /// a reference to the font map.
     @inlinable var fontMap: FontMapRef! {
         /// Gets the font map for which the font was created.
         /// 
-        /// Note that the font maintains a <firstterm>weak</firstterm> reference
-        /// to the font map, so if all references to font map are dropped, the font
-        /// map will be finalized even if there are fonts created with the font
-        /// map that are still alive.  In that case this function will return `nil`.
+        /// Note that the font maintains a *weak* reference to the font map, so if
+        /// all references to font map are dropped, the font map will be finalized
+        /// even if there are fonts created with the font map that are still alive.
+        /// In that case this function will return `nil`.
+        /// 
         /// It is the responsibility of the user to ensure that the font map is kept
-        /// alive.  In most uses this is not an issue as a `PangoContext` holds
+        /// alive. In most uses this is not an issue as a `PangoContext` holds
         /// a reference to the font map.
         get {
             let rv = FontMapRef(gconstpointer: gconstpointer(pango_font_get_font_map(font_ptr)))
@@ -476,17 +447,15 @@ public extension FontProtocol {
         }
     }
 
-    /// Get a hb_font_t object backing this font.
+    /// Get a `hb_font_t` object backing this font.
     /// 
-    /// Note that the objects returned by this function
-    /// are cached and immutable. If you need to make
-    /// changes to the hb_font_t, use `hb_font_create_sub_font()`.
+    /// Note that the objects returned by this function are cached and immutable.
+    /// If you need to make changes to the `hb_font_t`, use `hb_font_create_sub_font()`.
     @inlinable var hbFont: UnsafeMutablePointer<hb_font_t>? {
-        /// Get a hb_font_t object backing this font.
+        /// Get a `hb_font_t` object backing this font.
         /// 
-        /// Note that the objects returned by this function
-        /// are cached and immutable. If you need to make
-        /// changes to the hb_font_t, use `hb_font_create_sub_font()`.
+        /// Note that the objects returned by this function are cached and immutable.
+        /// If you need to make changes to the `hb_font_t`, use `hb_font_create_sub_font()`.
         get {
             let rv = pango_font_get_hb_font(font_ptr)
             return rv

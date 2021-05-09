@@ -56,9 +56,10 @@ import GLibObject
 
 
 
-/// Create a new font description attribute. This attribute
-/// allows setting family, style, weight, variant, stretch,
-/// and size simultaneously.
+/// Create a new font description attribute.
+/// 
+/// This attribute allows setting family, style, weight, variant,
+/// stretch, and size simultaneously.
 @inlinable public func attrFontDescNew<FontDescriptionT: FontDescriptionProtocol>(desc: FontDescriptionT) -> AttributeRef! {
     guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_font_desc_new(desc.font_description_ptr))) else { return nil }
     return rv
@@ -142,8 +143,9 @@ import GLibObject
 
 
 
-/// Create a new overline color attribute. This attribute
-/// modifies the color of overlines. If not set, overlines
+/// Create a new overline color attribute.
+/// 
+/// This attribute modifies the color of overlines. If not set, overlines
 /// will use the foreground color.
 @inlinable public func attrOverlineColorNew(red: guint16, green: guint16, blue: guint16) -> AttributeRef! {
     guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_overline_color_new(red, green, blue))) else { return nil }
@@ -171,8 +173,10 @@ import GLibObject
 
 
 
-/// Create a new font size scale attribute. The base font for the
-/// affected text will have its size multiplied by `scale_factor`.
+/// Create a new font size scale attribute.
+/// 
+/// The base font for the affected text will have its size multiplied
+/// by `scale_factor`.
 @inlinable public func attrScaleNew(scaleFactor: CDouble) -> AttributeRef! {
     guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_scale_new(scaleFactor))) else { return nil }
     return rv
@@ -181,10 +185,11 @@ import GLibObject
 
 
 
-/// Create a new shape attribute. A shape is used to impose a
-/// particular ink and logical rectangle on the result of shaping a
-/// particular glyph. This might be used, for instance, for
-/// embedding a picture or a widget inside a `PangoLayout`.
+/// Create a new shape attribute.
+/// 
+/// A shape is used to impose a particular ink and logical rectangle
+/// on the result of shaping a particular glyph. This might be used,
+/// for instance, for embedding a picture or a widget inside a `PangoLayout`.
 @inlinable public func attrShapeNew<RectangleT: RectangleProtocol>(inkRect: RectangleT, logicalRect: RectangleT) -> AttributeRef! {
     guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new(inkRect._ptr, logicalRect._ptr))) else { return nil }
     return rv
@@ -193,9 +198,10 @@ import GLibObject
 
 
 
+/// Creates a new shape attribute.
+/// 
 /// Like `pango_attr_shape_new()`, but a user data pointer is also
-/// provided; this pointer can be accessed when later
-/// rendering the glyph.
+/// provided; this pointer can be accessed when later rendering the glyph.
 @inlinable public func attrShapeNewWithData<RectangleT: RectangleProtocol>(inkRect: RectangleT, logicalRect: RectangleT, data: gpointer! = nil, copyFunc: PangoAttrDataCopyFunc? = nil, destroyFunc: GDestroyNotify? = nil) -> AttributeRef! {
     guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_shape_new_with_data(inkRect._ptr, logicalRect._ptr, data, copyFunc, destroyFunc))) else { return nil }
     return rv
@@ -232,7 +238,7 @@ import GLibObject
 
 
 
-/// Create a new font stretch attribute
+/// Create a new font stretch attribute.
 @inlinable public func attrStretchNew(stretch: PangoStretch) -> AttributeRef! {
     guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_stretch_new(stretch))) else { return nil }
     return rv
@@ -241,9 +247,10 @@ import GLibObject
 
 
 
-/// Create a new strikethrough color attribute. This attribute
-/// modifies the color of strikethrough lines. If not set, strikethrough
-/// lines will use the foreground color.
+/// Create a new strikethrough color attribute.
+/// 
+/// This attribute modifies the color of strikethrough lines. If not set,
+/// strikethrough lines will use the foreground color.
 @inlinable public func attrStrikethroughColorNew(red: guint16, green: guint16, blue: guint16) -> AttributeRef! {
     guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_strikethrough_color_new(red, green, blue))) else { return nil }
     return rv
@@ -270,8 +277,10 @@ import GLibObject
 
 
 
-/// Fetches the attribute type name passed in when registering the type using
-/// `pango_attr_type_register()`.
+/// Fetches the attribute type name.
+/// 
+/// The attribute type name is the string passed in when registering the type
+/// using [type_func`attr_type_register`].
 /// 
 /// The returned value is an interned string (see `g_intern_string()` for what
 /// that means) that should not be modified or freed.
@@ -283,8 +292,9 @@ import GLibObject
 
 
 
-/// Allocate a new attribute type ID.  The attribute type name can be accessed
-/// later by using `pango_attr_type_get_name()`.
+/// Allocate a new attribute type ID.
+/// 
+/// The attribute type name can be accessed later by using [type_func`Pango.AttrType.get_name`].
 @inlinable public func attrTypeRegister(name: UnsafePointer<gchar>!) -> PangoAttrType {
     let rv = pango_attr_type_register(name)
     return rv
@@ -293,8 +303,9 @@ import GLibObject
 
 
 
-/// Create a new underline color attribute. This attribute
-/// modifies the color of underlines. If not set, underlines
+/// Create a new underline color attribute.
+/// 
+/// This attribute modifies the color of underlines. If not set, underlines
 /// will use the foreground color.
 @inlinable public func attrUnderlineColorNew(red: guint16, green: guint16, blue: guint16) -> AttributeRef! {
     guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_underline_color_new(red, green, blue))) else { return nil }
@@ -313,7 +324,7 @@ import GLibObject
 
 
 
-/// Create a new font variant attribute (normal or small caps)
+/// Create a new font variant attribute (normal or small caps).
 @inlinable public func attrVariantNew(variant: PangoVariant) -> AttributeRef! {
     guard let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_variant_new(variant))) else { return nil }
     return rv
@@ -331,11 +342,11 @@ import GLibObject
 
 
 
-/// Determines the normative bidirectional character type of a
-/// character, as specified in the Unicode Character Database.
+/// Determines the bidirectional type of a character.
 /// 
-/// A simplified version of this function is available as
-/// `pango_unichar_direction()`.
+/// The bidirectional type is specified in the Unicode Character Database.
+/// 
+/// A simplified version of this function is available as [func`unichar_direction`].
 @inlinable @available(*, deprecated) public func bidiTypeForUnichar(ch: gunichar) -> PangoBidiType {
     let rv = pango_bidi_type_for_unichar(ch)
     return rv
@@ -344,8 +355,9 @@ import GLibObject
 
 
 
-/// Determines possible line, word, and character breaks
-/// for a string of Unicode text with a single analysis.
+/// Determines possible line, word, and character breaks for a string of
+/// Unicode text with a single analysis.
+/// 
 /// For most purposes you may want to use `pango_get_log_attrs()`.
 ///
 /// **break is deprecated:**
@@ -358,8 +370,9 @@ import GLibObject
 
 
 
-/// This is the default break algorithm. It applies Unicode
-/// rules without language-specific tailoring, therefore
+/// This is the default break algorithm.
+/// 
+/// It applies Unicode rules without language-specific tailoring, therefore
 /// the `analyis` argument is unused and can be `nil`.
 /// 
 /// See `pango_tailor_break()` for language-specific breaks.
@@ -367,8 +380,9 @@ import GLibObject
     pango_default_break(text, gint(length), analysis?._ptr, attrs._ptr, gint(attrsLen))
 
 }
-/// This is the default break algorithm. It applies Unicode
-/// rules without language-specific tailoring, therefore
+/// This is the default break algorithm.
+/// 
+/// It applies Unicode rules without language-specific tailoring, therefore
 /// the `analyis` argument is unused and can be `nil`.
 /// 
 /// See `pango_tailor_break()` for language-specific breaks.
@@ -380,38 +394,42 @@ import GLibObject
 
 
 
-/// Converts extents from Pango units to device units, dividing by the
-/// `PANGO_SCALE` factor and performing rounding.
+/// Converts extents from Pango units to device units.
 /// 
-/// The `inclusive` rectangle is converted by flooring the x/y coordinates and extending
-/// width/height, such that the final rectangle completely includes the original
-/// rectangle.
+/// The conversion is done by dividing by the `PANGO_SCALE` factor and
+/// performing rounding.
+/// 
+/// The `inclusive` rectangle is converted by flooring the x/y coordinates
+/// and extending width/height, such that the final rectangle completely
+/// includes the original rectangle.
 /// 
 /// The `nearest` rectangle is converted by rounding the coordinates
 /// of the rectangle to the nearest device unit (pixel).
 /// 
 /// The rule to which argument to use is: if you want the resulting device-space
-/// rectangle to completely contain the original rectangle, pass it in as `inclusive`.
-/// If you want two touching-but-not-overlapping rectangles stay
+/// rectangle to completely contain the original rectangle, pass it in as
+/// `inclusive`. If you want two touching-but-not-overlapping rectangles stay
 /// touching-but-not-overlapping after rounding to device units, pass them in
 /// as `nearest`.
 @inlinable public func extentsToPixels(inclusive: RectangleRef? = nil, nearest: RectangleRef? = nil) {
     pango_extents_to_pixels(inclusive?._ptr, nearest?._ptr)
 
 }
-/// Converts extents from Pango units to device units, dividing by the
-/// `PANGO_SCALE` factor and performing rounding.
+/// Converts extents from Pango units to device units.
 /// 
-/// The `inclusive` rectangle is converted by flooring the x/y coordinates and extending
-/// width/height, such that the final rectangle completely includes the original
-/// rectangle.
+/// The conversion is done by dividing by the `PANGO_SCALE` factor and
+/// performing rounding.
+/// 
+/// The `inclusive` rectangle is converted by flooring the x/y coordinates
+/// and extending width/height, such that the final rectangle completely
+/// includes the original rectangle.
 /// 
 /// The `nearest` rectangle is converted by rounding the coordinates
 /// of the rectangle to the nearest device unit (pixel).
 /// 
 /// The rule to which argument to use is: if you want the resulting device-space
-/// rectangle to completely contain the original rectangle, pass it in as `inclusive`.
-/// If you want two touching-but-not-overlapping rectangles stay
+/// rectangle to completely contain the original rectangle, pass it in as
+/// `inclusive`. If you want two touching-but-not-overlapping rectangles stay
 /// touching-but-not-overlapping after rounding to device units, pass them in
 /// as `nearest`.
 @inlinable public func extentsToPixels<RectangleT: RectangleProtocol>(inclusive: RectangleT?, nearest: RectangleT?) {
@@ -432,24 +450,13 @@ import GLibObject
 
 
 
-/// Do not use.  Does not do anything.
-///
-/// **find_map is deprecated:**
-/// This method is deprecated.
-@available(*, deprecated) @inlinable public func findMap<LanguageT: LanguageProtocol>(language: LanguageT, engineTypeId: Int, renderTypeId: Int) -> MapRef! {
-    guard let rv = MapRef(gconstpointer: gconstpointer(pango_find_map(language.language_ptr, guint(engineTypeId), guint(renderTypeId)))) else { return nil }
-    return rv
-}
-
-
-
-
-/// Locates a paragraph boundary in `text`. A boundary is caused by
-/// delimiter characters, such as a newline, carriage return, carriage
-/// return-newline pair, or Unicode paragraph separator character.  The
-/// index of the run of delimiters is returned in
-/// `paragraph_delimiter_index`. The index of the start of the paragraph
-/// (index after all delimiters) is stored in `next_paragraph_start`.
+/// Locates a paragraph boundary in `text`.
+/// 
+/// A boundary is caused by delimiter characters, such as a newline, carriage
+/// return, carriage return-newline pair, or Unicode paragraph separator character.
+/// The index of the run of delimiters is returned in `paragraph_delimiter_index`.
+/// The index of the start of the paragrap (index after all delimiters) is stored
+/// in `next_paragraph_start`.
 /// 
 /// If no delimiters are found, both `paragraph_delimiter_index` and
 /// `next_paragraph_start` are filled with the length of `text` (an index one
@@ -462,10 +469,11 @@ import GLibObject
 
 
 
-/// Creates a new font description from a string representation in the
-/// form
+/// Creates a new font description from a string representation.
 /// 
-/// "\[FAMILY-LIST] \[STYLE-OPTIONS] \[SIZE] \[VARIATIONS]",
+/// The string must have the form
+/// 
+///     "\[FAMILY-LIST] \[STYLE-OPTIONS] \[SIZE] \[VARIATIONS]",
 /// 
 /// where FAMILY-LIST is a comma-separated list of families optionally
 /// terminated by a comma, STYLE_OPTIONS is a whitespace-separated list
@@ -503,7 +511,7 @@ import GLibObject
 /// 
 /// A typical example:
 /// 
-/// "Cantarell Italic Light 15 \`wght`=200"
+///     "Cantarell Italic Light 15 \`wght`=200"
 @inlinable public func fontDescriptionFromString(str: UnsafePointer<CChar>!) -> FontDescriptionRef! {
     guard let rv = FontDescriptionRef(gconstpointer: gconstpointer(pango_font_description_from_string(str))) else { return nil }
     return rv
@@ -512,13 +520,13 @@ import GLibObject
 
 
 
-/// Computes a `PangoLogAttr` for each character in `text`. The `log_attrs`
-/// array must have one `PangoLogAttr` for each position in `text`; if
-/// `text` contains N characters, it has N+1 positions, including the
-/// last position at the end of the text. `text` should be an entire
-/// paragraph; logical attributes can't be computed without context
-/// (for example you need to see spaces on either side of a word to know
-/// the word is a word).
+/// Computes a `PangoLogAttr` for each character in `text`.
+/// 
+/// The `log_attrs` array must have one `PangoLogAttr` for each position in `text`;
+/// if `text` contains N characters, it has N+1 positions, including the last
+/// position at the end of the text. `text` should be an entire paragraph; logical
+/// attributes can't be computed without context (for example you need to see
+/// spaces on either side of a word to know the word is a word).
 @inlinable public func getLogAttrs<LanguageT: LanguageProtocol>(text: UnsafePointer<CChar>!, length: Int, level: Int, language: LanguageT, logAttrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
     pango_get_log_attrs(text, gint(length), gint(level), language.language_ptr, logAttrs, gint(attrsLen))
 
@@ -527,9 +535,9 @@ import GLibObject
 
 
 
-/// If `ch` has the Unicode mirrored property and there is another Unicode
-/// character that typically has a glyph that is the mirror image of `ch`'s
-/// glyph, puts that character in the address pointed to by `mirrored_ch`.
+/// Returns the mirrored character of a Unicode character.
+/// 
+/// Mirror characters are determined by the Unicode mirrored property.
 /// 
 /// Use `g_unichar_get_mirror_char()` instead; the docs for that function
 /// provide full details.
@@ -557,8 +565,9 @@ import GLibObject
 
 
 
-/// Based on the script, base gravity, and hint, returns actual gravity
-/// to use in laying out a single `PangoItem`.
+/// Returns the gravity to use in laying out a `PangoItem`.
+/// 
+/// The gravity is determined based on the script, base gravity, and hint.
 /// 
 /// If `base_gravity` is `PANGO_GRAVITY_AUTO`, it is first replaced with the
 /// preferred gravity of `script`.  To get the preferred gravity of a script,
@@ -571,14 +580,16 @@ import GLibObject
 
 
 
-/// Based on the script, East Asian width, base gravity, and hint,
-/// returns actual gravity to use in laying out a single character
+/// Returns the gravity to use in laying out a single character
 /// or `PangoItem`.
 /// 
-/// This function is similar to `pango_gravity_get_for_script()` except
+/// The gravity is determined based on the script, East Asian width,
+/// base gravity, and hint,
+/// 
+/// This function is similar to [type_func`Pango.Gravity.get_for_script`] except
 /// that this function makes a distinction between narrow/half-width and
-/// wide/full-width characters also.  Wide/full-width characters always
-/// stand <emphasis>upright</emphasis>, that is, they always take the base gravity,
+/// wide/full-width characters also. Wide/full-width characters always
+/// stand *upright*, that is, they always take the base gravity,
 /// whereas narrow/full-width characters are always rotated in vertical
 /// context.
 /// 
@@ -593,10 +604,9 @@ import GLibObject
 
 
 /// Converts a `PangoGravity` value to its natural rotation in radians.
-/// `gravity` should not be `PANGO_GRAVITY_AUTO`.
 /// 
-/// Note that `pango_matrix_rotate()` takes angle in degrees, not radians.
-/// So, to call `pango_matrix_rotate()` with the output of this function
+/// Note that [method`Pango.Matrix.rotate`] takes angle in degrees, not radians.
+/// So, to call [method`Pango.Matrix`,rotate] with the output of this function
 /// you should multiply it by (180. / G_PI).
 @inlinable public func gravityToRotation(gravity: PangoGravity) -> CDouble {
     let rv = pango_gravity_to_rotation(gravity)
@@ -606,11 +616,11 @@ import GLibObject
 
 
 
-/// Checks `ch` to see if it is a character that should not be
-/// normally rendered on the screen.  This includes all Unicode characters
-/// with "ZERO WIDTH" in their name, as well as <firstterm>bidi</firstterm> formatting characters, and
-/// a few other ones.  This is totally different from `g_unichar_iszerowidth()`
-/// and is at best misnamed.
+/// Checks if a character that should not be normally rendered.
+/// 
+/// This includes all Unicode characters with "ZERO WIDTH" in their name,
+/// as well as *bidi* formatting characters, and a few other ones.  This is
+/// totally different from `g_unichar_iszerowidth()` and is at best misnamed.
 @inlinable public func isZeroWidth(ch: gunichar) -> Bool {
     let rv = ((pango_is_zero_width(ch)) != 0)
     return rv
@@ -619,30 +629,34 @@ import GLibObject
 
 
 
-/// Breaks a piece of text into segments with consistent
-/// directional level and shaping engine. Each byte of `text` will
-/// be contained in exactly one of the items in the returned list;
-/// the generated list of items will be in logical order (the start
-/// offsets of the items are ascending).
+/// Breaks a piece of text into segments with consistent directional
+/// level and font.
 /// 
-/// `cached_iter` should be an iterator over `attrs` currently positioned at a
-/// range before or containing `start_index`; `cached_iter` will be advanced to
-/// the range covering the position just after `start_index` + `length`.
-/// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
+/// Each byte of `text` will be contained in exactly one of the items in the
+/// returned list; the generated list of items will be in logical order (the
+/// start offsets of the items are ascending).
+/// 
+/// `cached_iter` should be an iterator over `attrs` currently positioned
+/// at a range before or containing `start_index`; `cached_iter` will be
+/// advanced to the range covering the position just after
+/// `start_index` + `length`. (i.e. if itemizing in a loop, just keep passing
+/// in the same `cached_iter`).
 @inlinable public func itemize<AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
     guard let rv = GLib.ListRef(pango_itemize(context.context_ptr, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr)) else { return nil }
     return rv
 }
-/// Breaks a piece of text into segments with consistent
-/// directional level and shaping engine. Each byte of `text` will
-/// be contained in exactly one of the items in the returned list;
-/// the generated list of items will be in logical order (the start
-/// offsets of the items are ascending).
+/// Breaks a piece of text into segments with consistent directional
+/// level and font.
 /// 
-/// `cached_iter` should be an iterator over `attrs` currently positioned at a
-/// range before or containing `start_index`; `cached_iter` will be advanced to
-/// the range covering the position just after `start_index` + `length`.
-/// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
+/// Each byte of `text` will be contained in exactly one of the items in the
+/// returned list; the generated list of items will be in logical order (the
+/// start offsets of the items are ascending).
+/// 
+/// `cached_iter` should be an iterator over `attrs` currently positioned
+/// at a range before or containing `start_index`; `cached_iter` will be
+/// advanced to the range covering the position just after
+/// `start_index` + `length`. (i.e. if itemizing in a loop, just keep passing
+/// in the same `cached_iter`).
 @inlinable public func itemize<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
     guard let rv = GLib.ListRef(pango_itemize(context.context_ptr, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr)) else { return nil }
     return rv
@@ -651,16 +665,20 @@ import GLibObject
 
 
 
-/// Like `pango_itemize()`, but the base direction to use when
-/// computing bidirectional levels (see pango_context_set_base_dir ()),
-/// is specified explicitly rather than gotten from the `PangoContext`.
+/// Like ``pango_itemize()``, but with an explicitly specified base direction.
+/// 
+/// The base direction is used when computing bidirectional levels.
+/// (see [method`Pango.Context.set_base_dir`]). [func`itemize`] gets the
+/// base direction from the `PangoContext`.
 @inlinable public func itemizeWithBaseDir<AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
     guard let rv = GLib.ListRef(pango_itemize_with_base_dir(context.context_ptr, baseDir, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr)) else { return nil }
     return rv
 }
-/// Like `pango_itemize()`, but the base direction to use when
-/// computing bidirectional levels (see pango_context_set_base_dir ()),
-/// is specified explicitly rather than gotten from the `PangoContext`.
+/// Like ``pango_itemize()``, but with an explicitly specified base direction.
+/// 
+/// The base direction is used when computing bidirectional levels.
+/// (see [method`Pango.Context.set_base_dir`]). [func`itemize`] gets the
+/// base direction from the `PangoContext`.
 @inlinable public func itemizeWithBaseDir<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol, ContextT: ContextProtocol>(context: ContextT, baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
     guard let rv = GLib.ListRef(pango_itemize_with_base_dir(context.context_ptr, baseDir, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr)) else { return nil }
     return rv
@@ -669,17 +687,18 @@ import GLibObject
 
 
 
-/// Take a RFC-3066 format language tag as a string and convert it to a
-/// `PangoLanguage` pointer that can be efficiently copied (copy the
-/// pointer) and compared with other language tags (compare the
-/// pointer.)
+/// Convert a language tag to a `PangoLanguage`.
+/// 
+/// The language tag must be in a RFC-3066 format. `PangoLanguage` pointers
+/// can be efficiently copied (copy the pointer) and compared with other
+/// language tags (compare the pointer.)
 /// 
 /// This function first canonicalizes the string by converting it to
 /// lowercase, mapping '_' to '-', and stripping all characters other
 /// than letters and '-'.
 /// 
-/// Use `pango_language_get_default()` if you want to get the `PangoLanguage` for
-/// the current locale of the process.
+/// Use [type_func`Pango.Language.get_default`] if you want to get the `PangoLanguage`
+/// for the current locale of the process.
 @inlinable public func languageFromString(language: UnsafePointer<CChar>? = nil) -> LanguageRef! {
     guard let rv = LanguageRef(gconstpointer: gconstpointer(pango_language_from_string(language))) else { return nil }
     return rv
@@ -689,10 +708,9 @@ import GLibObject
 
 
 /// Returns the `PangoLanguage` for the current locale of the process.
-/// Note that this can change over the life of an application.
 /// 
 /// On Unix systems, this is the return value is derived from
-/// `<literal>setlocale(LC_CTYPE, NULL)`</literal>, and the user can
+/// `setlocale (LC_CTYPE, NULL)`, and the user can
 /// affect this through the environment variables LC_ALL, LC_CTYPE or
 /// LANG (checked in that order). The locale string typically is in
 /// the form lang_COUNTRY, where lang is an ISO-639 language code, and
@@ -710,10 +728,12 @@ import GLibObject
 /// variables, and does return a Unix-style locale string based on
 /// either said environment variables or the thread's current locale.
 /// 
-/// Your application should call `<literal>setlocale(LC_ALL, "")`;</literal>
-/// for the user settings to take effect.  Gtk+ does this in its initialization
+/// Your application should call ``setlocale(LC_ALL, "")`` for the user
+/// settings to take effect. GTK does this in its initialization
 /// functions automatically (by calling `gtk_set_locale()`).
-/// See <literal>man setlocale</literal> for more details.
+/// See the `setlocale()` manpage for more details.
+/// 
+/// Note that the default language can change over the life of an application.
 @inlinable public func languageGetDefault() -> LanguageRef! {
     guard let rv = LanguageRef(gconstpointer: gconstpointer(pango_language_get_default())) else { return nil }
     return rv
@@ -722,13 +742,14 @@ import GLibObject
 
 
 
-/// Returns the list of languages that the user prefers, as specified
-/// by the PANGO_LANGUAGE or LANGUAGE environment variables, in order
-/// of preference. Note that this list does not necessarily include
-/// the language returned by `pango_language_get_default()`.
+/// Returns the list of languages that the user prefers.
+/// 
+/// The list is specified by the `PANGO_LANGUAGE` or `LANGUAGE` environment
+/// variables, in order of preference. Note that this list does not necessarily
+/// include the language returned by [type_func`Pango.Language.get_default`].
 /// 
 /// When choosing language-specific resources, such as the sample
-/// text returned by `pango_language_get_sample_string()`, you should
+/// text returned by [method`Pango.Language.get_sample_string`], you should
 /// first try the default language, followed by the languages returned
 /// by this function.
 @inlinable public func languageGetPreferred() -> UnsafeMutablePointer<UnsafeMutablePointer<PangoLanguage>?>? {
@@ -739,8 +760,10 @@ import GLibObject
 
 
 
-/// This will return the bidirectional embedding levels of the input paragraph
-/// as defined by the Unicode Bidirectional Algorithm available at:
+/// Return the bidirectional embedding levels of the input paragraph.
+/// 
+/// The bidirectional embedding levels are defined by the Unicode Bidirectional
+/// Algorithm available at:
 /// 
 ///   http://www.unicode.org/reports/tr9/
 /// 
@@ -754,8 +777,10 @@ import GLibObject
 
 
 
-/// After feeding a pango markup parser some data with `g_markup_parse_context_parse()`,
-/// use this function to get the list of pango attributes and text out of the
+/// Finishes parsing markup.
+/// 
+/// After feeding a Pango markup parser some data with `g_markup_parse_context_parse()`,
+/// use this function to get the list of attributes and text out of the
 /// markup. This function will not free `context`, use `g_markup_parse_context_free()`
 /// to do so.
 @inlinable public func markupParserFinish<MarkupParseContextT: GLib.MarkupParseContextProtocol>(context: MarkupParseContextT, attrList: UnsafeMutablePointer<UnsafeMutablePointer<PangoAttrList>?>! = nil, text: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>! = nil, accelChar: UnsafeMutablePointer<gunichar>! = nil) throws -> Bool {
@@ -768,41 +793,31 @@ import GLibObject
 
 
 
-/// Parses marked-up text (see
-/// <link linkend="PangoMarkupFormat">markup format</link>) to create
-/// a plain-text string and an attribute list.
+/// Incrementally parses marked-up text to create a plain-text string
+/// and an attribute list.
+/// 
+/// See the [Pango Markup](pango_markup.html) docs for details about the
+/// supported markup.
 /// 
 /// If `accel_marker` is nonzero, the given character will mark the
 /// character following it as an accelerator. For example, `accel_marker`
 /// might be an ampersand or underscore. All characters marked
 /// as an accelerator will receive a `PANGO_UNDERLINE_LOW` attribute,
 /// and the first character so marked will be returned in `accel_char`,
-/// when calling `finish()`. Two `accel_marker` characters following each
-/// other produce a single literal `accel_marker` character.
+/// when calling [func`markup_parser_finish`]. Two `accel_marker` characters
+/// following each other produce a single literal `accel_marker` character.
 /// 
 /// To feed markup to the parser, use `g_markup_parse_context_parse()`
 /// on the returned `GMarkupParseContext`. When done with feeding markup
-/// to the parser, use `pango_markup_parser_finish()` to get the data out
+/// to the parser, use [func`markup_parser_finish`] to get the data out
 /// of it, and then use `g_markup_parse_context_free()` to free it.
 /// 
-/// This function is designed for applications that read pango markup
-/// from streams. To simply parse a string containing pango markup,
-/// the simpler `pango_parse_markup()` API is recommended instead.
+/// This function is designed for applications that read Pango markup
+/// from streams. To simply parse a string containing Pango markup,
+/// the [func`parse_markup`] API is recommended instead.
 @inlinable public func markupParserNew(accelMarker: gunichar) -> GLib.MarkupParseContextRef! {
     guard let rv = GLib.MarkupParseContextRef(pango_markup_parser_new(accelMarker)) else { return nil }
     return rv
-}
-
-
-
-
-/// Do not use.  Does not do anything.
-///
-/// **module_register is deprecated:**
-/// This method is deprecated.
-@available(*, deprecated) @inlinable public func moduleRegister<IncludedModuleT: IncludedModuleProtocol>(module: IncludedModuleT) {
-    pango_module_register(module._ptr)
-
 }
 
 
@@ -828,9 +843,10 @@ import GLibObject
 
 
 
-/// Parses marked-up text (see
-/// <link linkend="PangoMarkupFormat">markup format</link>) to create
-/// a plain-text string and an attribute list.
+/// Parses marked-up text to create a plain-text string and an attribute list.
+/// 
+/// See the [Pango Markup](pango_markup.html) docs for details about the
+/// supported markup.
 /// 
 /// If `accel_marker` is nonzero, the given character will mark the
 /// character following it as an accelerator. For example, `accel_marker`
@@ -840,7 +856,7 @@ import GLibObject
 /// Two `accel_marker` characters following each other produce a single
 /// literal `accel_marker` character.
 /// 
-/// To parse a stream of pango markup incrementally, use `pango_markup_parser_new()`.
+/// To parse a stream of pango markup incrementally, use [func`markup_parser_new`].
 /// 
 /// If any error happens, none of the output arguments are touched except
 /// for `error`.
@@ -854,7 +870,9 @@ import GLibObject
 
 
 
-/// Parses a font stretch. The allowed values are
+/// Parses a font stretch.
+/// 
+/// The allowed values are
 /// "ultra_condensed", "extra_condensed", "condensed",
 /// "semi_condensed", "normal", "semi_expanded", "expanded",
 /// "extra_expanded" and "ultra_expanded". Case variations are
@@ -867,8 +885,10 @@ import GLibObject
 
 
 
-/// Parses a font style. The allowed values are "normal",
-/// "italic" and "oblique", case variations being
+/// Parses a font style.
+/// 
+/// The allowed values are "normal", "italic" and "oblique", case
+/// variations being
 /// ignored.
 @inlinable public func parseStyle(str: UnsafePointer<CChar>!, style: UnsafeMutablePointer<PangoStyle>!, warn: Bool) -> Bool {
     let rv = ((pango_parse_style(str, style, gboolean((warn) ? 1 : 0))) != 0)
@@ -878,9 +898,10 @@ import GLibObject
 
 
 
-/// Parses a font variant. The allowed values are "normal"
-/// and "smallcaps" or "small_caps", case variations being
-/// ignored.
+/// Parses a font variant.
+/// 
+/// The allowed values are "normal" and "smallcaps" or "small_caps",
+/// case variations being ignored.
 @inlinable public func parseVariant(str: UnsafePointer<CChar>!, variant: UnsafeMutablePointer<PangoVariant>!, warn: Bool) -> Bool {
     let rv = ((pango_parse_variant(str, variant, gboolean((warn) ? 1 : 0))) != 0)
     return rv
@@ -889,7 +910,9 @@ import GLibObject
 
 
 
-/// Parses a font weight. The allowed values are "heavy",
+/// Parses a font weight.
+/// 
+/// The allowed values are "heavy",
 /// "ultrabold", "bold", "normal", "light", "ultraleight"
 /// and integers. Case variations are ignored.
 @inlinable public func parseWeight(str: UnsafePointer<CChar>!, weight: UnsafeMutablePointer<PangoWeight>!, warn: Bool) -> Bool {
@@ -900,10 +923,10 @@ import GLibObject
 
 
 
-/// Quantizes the thickness and position of a line, typically an
-/// underline or strikethrough, to whole device pixels, that is integer
-/// multiples of `PANGO_SCALE`. The purpose of this function is to avoid
-/// such lines looking blurry.
+/// Quantizes the thickness and position of a line to whole device pixels.
+/// 
+/// This is typically used for underline or strikethrough. The purpose of
+/// this function is to avoid such lines looking blurry.
 /// 
 /// Care is taken to make sure `thickness` is at least one pixel when this
 /// function returns, but returned `position` may become zero as a result
@@ -916,8 +939,9 @@ import GLibObject
 
 
 
-/// Reads an entire line from a file into a buffer. Lines may
-/// be delimited with '\n', '\r', '\n\r', or '\r\n'. The delimiter
+/// Reads an entire line from a file into a buffer.
+/// 
+/// Lines may be delimited with '\n', '\r', '\n\r', or '\r\n'. The delimiter
 /// is not written into the buffer. Text after a '#' character is treated as
 /// a comment and skipped. '\' can be used to escape a # character.
 /// '\' proceeding a line delimiter combines adjacent lines. A '\' proceeding
@@ -934,9 +958,10 @@ import GLibObject
 
 
 
-/// From a list of items in logical order and the associated
-/// directional levels, produce a list in visual order.
-/// The original list is unmodified.
+/// Reorder items from logical order to visual order.
+/// 
+/// The visual order is determined from the associated directional
+/// levels of the items. The original list is unmodified.
 @inlinable public func reorderItems<ListT: GLib.ListProtocol>(logicalItems: ListT) -> GLib.ListRef! {
     guard let rv = GLib.ListRef(pango_reorder_items(logicalItems._ptr)) else { return nil }
     return rv
@@ -946,6 +971,7 @@ import GLibObject
 
 
 /// Scans an integer.
+/// 
 /// Leading white space is skipped.
 ///
 /// **scan_int is deprecated:**
@@ -958,9 +984,10 @@ import GLibObject
 
 
 
-/// Scans a string into a `GString` buffer. The string may either
-/// be a sequence of non-white-space characters, or a quoted
-/// string with '"'. Instead a quoted string, '\"' represents
+/// Scans a string into a `GString` buffer.
+/// 
+/// The string may either be a sequence of non-white-space characters,
+/// or a quoted string with '"'. Instead a quoted string, '\"' represents
 /// a literal quote. Leading white space outside of quotes is skipped.
 ///
 /// **scan_string is deprecated:**
@@ -973,9 +1000,10 @@ import GLibObject
 
 
 
-/// Scans a word into a `GString` buffer. A word consists
-/// of [A-Za-z_] followed by zero or more [A-Za-z_0-9]
-/// Leading white space is skipped.
+/// Scans a word into a `GString` buffer.
+/// 
+/// A word consists of [A-Za-z_] followed by zero or more
+/// [A-Za-z_0-9]. Leading white space is skipped.
 ///
 /// **scan_word is deprecated:**
 /// This method is deprecated.
@@ -987,13 +1015,14 @@ import GLibObject
 
 
 
-/// Looks up the script for a particular character (as defined by
-/// Unicode Standard Annex \`24`). No check is made for `ch` being a
-/// valid Unicode character; if you pass in invalid character, the
-/// result is undefined.
+/// Looks up the script for a particular character.
+/// 
+/// The script of a character is defined by Unicode Standard Annex \`24`.
+/// No check is made for `ch` being a valid Unicode character; if you pass
+/// in invalid character, the result is undefined.
 /// 
 /// Note that while the return type of this function is declared
-/// as PangoScript, as of Pango 1.18, this function simply returns
+/// as `PangoScript`, as of Pango 1.18, this function simply returns
 /// the return value of `g_unichar_get_script()`. Callers must be
 /// prepared to handle unknown values.
 ///
@@ -1007,34 +1036,32 @@ import GLibObject
 
 
 
-/// Given a script, finds a language tag that is reasonably
-/// representative of that script. This will usually be the
-/// most widely spoken or used language written in that script:
-/// for instance, the sample language for `PANGO_SCRIPT_CYRILLIC`
-/// is <literal>ru</literal> (Russian), the sample language
-/// for `PANGO_SCRIPT_ARABIC` is <literal>ar</literal>.
+/// Finds a language tag that is reasonably representative of `script`.
 /// 
-/// For some
-/// scripts, no sample language will be returned because there
-/// is no language that is sufficiently representative. The best
-/// example of this is `PANGO_SCRIPT_HAN`, where various different
+/// The language will usually be the most widely spoken or used language written
+/// in that script: for instance, the sample language for `PANGO_SCRIPT_CYRILLIC`
+/// is ru (Russian), the sample language for `PANGO_SCRIPT_ARABIC` is ar.
+/// 
+/// For some scripts, no sample language will be returned because
+/// there is no language that is sufficiently representative. The
+/// best example of this is `PANGO_SCRIPT_HAN`, where various different
 /// variants of written Chinese, Japanese, and Korean all use
 /// significantly different sets of Han characters and forms
 /// of shared characters. No sample language can be provided
 /// for many historical scripts as well.
 /// 
 /// As of 1.18, this function checks the environment variables
-/// PANGO_LANGUAGE and LANGUAGE (checked in that order) first.
+/// `PANGO_LANGUAGE` and `LANGUAGE` (checked in that order) first.
 /// If one of them is set, it is parsed as a list of language tags
-/// separated by colons or other separators.  This function
+/// separated by colons or other separators. This function
 /// will return the first language in the parsed list that Pango
-/// believes may use `script` for writing.  This last predicate
-/// is tested using `pango_language_includes_script()`.  This can
+/// believes may use `script` for writing. This last predicate
+/// is tested using [method`Pango.Language.includes_script`]. This can
 /// be used to control Pango's font selection for non-primary
-/// languages.  For example, a PANGO_LANGUAGE enviroment variable
+/// languages. For example, a `PANGO_LANGUAGE` enviroment variable
 /// set to "en:fa" makes Pango choose fonts suitable for Persian (fa)
 /// instead of Arabic (ar) when a segment of Arabic text is found
-/// in an otherwise non-Arabic text.  The same trick can be used to
+/// in an otherwise non-Arabic text. The same trick can be used to
 /// choose a default language for `PANGO_SCRIPT_HAN` when setting
 /// context language is not feasible.
 @inlinable public func scriptGetSampleLanguage(script: PangoScript) -> LanguageRef! {
@@ -1045,18 +1072,20 @@ import GLibObject
 
 
 
-/// Given a segment of text and the corresponding `PangoAnalysis` structure
-/// returned from `pango_itemize()`, convert the characters into glyphs. You
-/// may also pass in only a substring of the item from `pango_itemize()`.
+/// Convert the characters in `text` into glyphs.
 /// 
-/// It is recommended that you use `pango_shape_full()` instead, since
+/// Given a segment of text and the corresponding `PangoAnalysis` structure
+/// returned from [func`itemize`], convert the characters into glyphs. You
+/// may also pass in only a substring of the item from [func`itemize`].
+/// 
+/// It is recommended that you use [func`shape_full`] instead, since
 /// that API allows for shaping interaction happening across text item
 /// boundaries.
 /// 
 /// Note that the extra attributes in the `analyis` that is returned from
-/// `pango_itemize()` have indices that are relative to the entire paragraph,
+/// [func`itemize`] have indices that are relative to the entire paragraph,
 /// so you need to subtract the item offset from their indices before
-/// calling `pango_shape()`.
+/// calling [func`shape`].
 @inlinable public func shape<AnalysisT: AnalysisProtocol, GlyphStringT: GlyphStringProtocol>(text: UnsafePointer<CChar>!, length: Int, analysis: AnalysisT, glyphs: GlyphStringT) {
     pango_shape(text, gint(length), analysis._ptr, glyphs.glyph_string_ptr)
 
@@ -1065,21 +1094,22 @@ import GLibObject
 
 
 
-/// Given a segment of text and the corresponding
-/// `PangoAnalysis` structure returned from `pango_itemize()`,
-/// convert the characters into glyphs. You may also pass
-/// in only a substring of the item from `pango_itemize()`.
+/// Convert the characters in `text` into glyphs.
 /// 
-/// This is similar to `pango_shape()`, except it also can optionally take
+/// Given a segment of text and the corresponding `PangoAnalysis` structure
+/// returned from [func`itemize`], convert the characters into glyphs. You may
+/// also pass in only a substring of the item from [func`itemize`].
+/// 
+/// This is similar to [func`shape`], except it also can optionally take
 /// the full paragraph text as input, which will then be used to perform
-/// certain cross-item shaping interactions.  If you have access to the broader
+/// certain cross-item shaping interactions. If you have access to the broader
 /// text of which `item_text` is part of, provide the broader text as
-/// `paragraph_text`.  If `paragraph_text` is `nil`, item text is used instead.
+/// `paragraph_text`. If `paragraph_text` is `nil`, item text is used instead.
 /// 
 /// Note that the extra attributes in the `analyis` that is returned from
-/// `pango_itemize()` have indices that are relative to the entire paragraph,
+/// [func`itemize`] have indices that are relative to the entire paragraph,
 /// so you do not pass the full paragraph text as `paragraph_text`, you need
-/// to subtract the item offset from their indices before calling `pango_shape_full()`.
+/// to subtract the item offset from their indices before calling [func`shape_full`].
 @inlinable public func shapeFull<AnalysisT: AnalysisProtocol, GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, analysis: AnalysisT, glyphs: GlyphStringT) {
     pango_shape_full(itemText, gint(itemLength), paragraphText, gint(paragraphLength), analysis._ptr, glyphs.glyph_string_ptr)
 
@@ -1088,19 +1118,20 @@ import GLibObject
 
 
 
-/// Given a segment of text and the corresponding
-/// `PangoAnalysis` structure returned from `pango_itemize()`,
-/// convert the characters into glyphs. You may also pass
-/// in only a substring of the item from `pango_itemize()`.
+/// Convert the characters in `text` into glyphs.
 /// 
-/// This is similar to `pango_shape_full()`, except it also takes
-/// flags that can influence the shaping process.
+/// Given a segment of text and the corresponding `PangoAnalysis` structure
+/// returned from [func`itemize`], convert the characters into glyphs. You may
+/// also pass in only a substring of the item from [func`itemize`].
+/// 
+/// This is similar to [func`shape_full`], except it also takes flags that can
+/// influence the shaping process.
 /// 
 /// Note that the extra attributes in the `analyis` that is returned from
-/// `pango_itemize()` have indices that are relative to the entire paragraph,
+/// [func`itemize`] have indices that are relative to the entire paragraph,
 /// so you do not pass the full paragraph text as `paragraph_text`, you need
 /// to subtract the item offset from their indices before calling
-/// `pango_shape_with_flags()`.
+/// [func`shape_with_flags`].
 @inlinable public func shapeWithFlags<AnalysisT: AnalysisProtocol, GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, analysis: AnalysisT, glyphs: GlyphStringT, flags: ShapeFlags) {
     pango_shape_with_flags(itemText, gint(itemLength), paragraphText, gint(paragraphLength), analysis._ptr, glyphs.glyph_string_ptr, flags.value)
 
@@ -1121,7 +1152,7 @@ import GLibObject
 
 
 
-/// Splits a `G_SEARCHPATH_SEPARATOR`-separated list of files, stripping
+/// Splits a `G_SEARCHPATH_SEPARATOR-separated` list of files, stripping
 /// white space and substituting ~/ with $HOME/.
 ///
 /// **split_file_list is deprecated:**
@@ -1134,9 +1165,9 @@ import GLibObject
 
 
 
-/// Apply language-specific tailoring to the breaks in
-/// `log_attrs`, which are assumed to have been produced
-/// by `pango_default_break()`.
+/// Apply language-specific tailoring to the breaks in `log_attrs`.
+/// 
+/// The line breaks are assumed to have been produced by [func`default_break`].
 /// 
 /// If `offset` is not -1, it is used to apply attributes
 /// from `analysis` that are relevant to line breaking.
@@ -1160,14 +1191,15 @@ import GLibObject
 
 
 
-/// Determines the inherent direction of a character; either
-/// `PANGO_DIRECTION_LTR`, `PANGO_DIRECTION_RTL`, or
-/// `PANGO_DIRECTION_NEUTRAL`.
+/// Determines the inherent direction of a character.
+/// 
+/// The inherent direction is either `PANGO_DIRECTION_LTR`, `PANGO_DIRECTION_RTL`,
+/// or `PANGO_DIRECTION_NEUTRAL`.
 /// 
 /// This function is useful to categorize characters into left-to-right
-/// letters, right-to-left letters, and everything else.  If full
-/// Unicode bidirectional type of a character is needed,
-/// `pango_bidi_type_for_unichar()` can be used instead.
+/// letters, right-to-left letters, and everything else. If full Unicode
+/// bidirectional type of a character is needed, [type_func`Pango.BidiType.for_unichar`]
+/// can be used instead.
 @inlinable @available(*, deprecated) public func unicharDirection(ch: gunichar) -> PangoDirection {
     let rv = pango_unichar_direction(ch)
     return rv
@@ -1176,8 +1208,10 @@ import GLibObject
 
 
 
-/// Converts a floating-point number to Pango units: multiplies
-/// it by `PANGO_SCALE` and rounds to nearest integer.
+/// Converts a floating-point number to Pango units.
+/// 
+/// The conversion is done by multiplying `d` by `PANGO_SCALE` and
+/// rounding the result to nearest integer.
 @inlinable public func unitsFromDouble(d: CDouble) -> Int {
     let rv = Int(pango_units_from_double(d))
     return rv
@@ -1186,8 +1220,9 @@ import GLibObject
 
 
 
-/// Converts a number in Pango units to floating-point: divides
-/// it by `PANGO_SCALE`.
+/// Converts a number in Pango units to floating-point.
+/// 
+/// The conversion is done by dividing `i` by `PANGO_SCALE`.
 @inlinable public func unitsToDouble(i: Int) -> CDouble {
     let rv = pango_units_to_double(gint(i))
     return rv
@@ -1196,12 +1231,11 @@ import GLibObject
 
 
 
-/// This is similar to the macro `PANGO_VERSION` except that
-/// it returns the encoded version of Pango available at run-time,
-/// as opposed to the version available at compile-time.
+/// Returns the encoded version of Pango available at run-time.
 /// 
-/// A version number can be encoded into an integer using
-/// `PANGO_VERSION_ENCODE()`.
+/// This is similar to the macro `PANGO_VERSION` except that the macro
+/// returns the encoded version available at compile-time. A version
+/// number can be encoded into an integer using `PANGO_VERSION_ENCODE()`.
 @inlinable public func version() -> Int {
     let rv = Int(pango_version())
     return rv
@@ -1211,11 +1245,13 @@ import GLibObject
 
 
 /// Checks that the Pango library in use is compatible with the
-/// given version. Generally you would pass in the constants
-/// `PANGO_VERSION_MAJOR`, `PANGO_VERSION_MINOR`, `PANGO_VERSION_MICRO`
-/// as the three arguments to this function; that produces
-/// a check that the library in use at run-time is compatible with
-/// the version of Pango the application or module was compiled against.
+/// given version.
+/// 
+/// Generally you would pass in the constants `PANGO_VERSION_MAJOR`,
+/// `PANGO_VERSION_MINOR`, `PANGO_VERSION_MICRO` as the three arguments
+/// to this function; that produces a check that the library in use at
+/// run-time is compatible with the version of Pango the application or
+/// module was compiled against.
 /// 
 /// Compatibility is defined by two things: first the version
 /// of the running library is newer than the version
@@ -1233,9 +1269,10 @@ import GLibObject
 
 
 
-/// This is similar to the macro `PANGO_VERSION_STRING` except that
-/// it returns the version of Pango available at run-time, as opposed to
-/// the version available at compile-time.
+/// Returns the version of Pango available at run-time.
+/// 
+/// This is similar to the macro `PANGO_VERSION_STRING` except that the
+/// macro returns the version available at compile-time.
 @inlinable public func versionString() -> String! {
     guard let rv = pango_version_string().map({ String(cString: $0) }) else { return nil }
     return rv

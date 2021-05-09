@@ -10,8 +10,8 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `LogAttr`.
 /// Alternatively, use `LogAttrRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoLogAttr` structure stores information
-/// about the attributes of a single character.
+/// The `PangoLogAttr` structure stores information about the attributes of a
+/// single character.
 public protocol LogAttrProtocol {
         /// Untyped pointer to the underlying `PangoLogAttr` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -19,14 +19,16 @@ public protocol LogAttrProtocol {
     /// Typed pointer to the underlying `PangoLogAttr` instance.
     var _ptr: UnsafeMutablePointer<PangoLogAttr>! { get }
 
+    /// Required Initialiser for types conforming to `LogAttrProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `LogAttrRef` type acts as a lightweight Swift reference to an underlying `PangoLogAttr` instance.
 /// It exposes methods that can operate on this data type through `LogAttrProtocol` conformance.
 /// Use `LogAttrRef` only as an `unowned` reference to an existing `PangoLogAttr` instance.
 ///
-/// The `PangoLogAttr` structure stores information
-/// about the attributes of a single character.
+/// The `PangoLogAttr` structure stores information about the attributes of a
+/// single character.
 public struct LogAttrRef: LogAttrProtocol {
         /// Untyped pointer to the underlying `PangoLogAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -109,8 +111,8 @@ public extension LogAttrRef {
 /// It provides the methods that can operate on this data type through `LogAttrProtocol` conformance.
 /// Use `LogAttr` as a strong reference or owner of a `PangoLogAttr` instance.
 ///
-/// The `PangoLogAttr` structure stores information
-/// about the attributes of a single character.
+/// The `PangoLogAttr` structure stores information about the attributes of a
+/// single character.
 open class LogAttr: LogAttrProtocol {
         /// Untyped pointer to the underlying `PangoLogAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -224,7 +226,7 @@ open class LogAttr: LogAttrProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LogAttrProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -265,8 +267,9 @@ public extension LogAttrProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLogAttr` instance.
     @inlinable var _ptr: UnsafeMutablePointer<PangoLogAttr>! { return ptr?.assumingMemoryBound(to: PangoLogAttr.self) }
 
-    /// This is the default break algorithm. It applies Unicode
-    /// rules without language-specific tailoring, therefore
+    /// This is the default break algorithm.
+    /// 
+    /// It applies Unicode rules without language-specific tailoring, therefore
     /// the `analyis` argument is unused and can be `nil`.
     /// 
     /// See `pango_tailor_break()` for language-specific breaks.
@@ -274,8 +277,9 @@ public extension LogAttrProtocol {
         pango_default_break(text, gint(length), analysis?._ptr, _ptr, gint(attrsLen))
     
     }
-    /// This is the default break algorithm. It applies Unicode
-    /// rules without language-specific tailoring, therefore
+    /// This is the default break algorithm.
+    /// 
+    /// It applies Unicode rules without language-specific tailoring, therefore
     /// the `analyis` argument is unused and can be `nil`.
     /// 
     /// See `pango_tailor_break()` for language-specific breaks.
@@ -337,28 +341,25 @@ public extension LogAttrProtocol {
     }
 
     /// if set, cursor can appear in front of character.
-    /// i.e. this is a grapheme boundary, or the first character
-    /// in the text.
-    /// This flag implements Unicode's
-    /// <ulink url="http://www.unicode.org/reports/tr29/">Grapheme
-    /// Cluster Boundaries</ulink> semantics.
+    ///   i.e. this is a grapheme boundary, or the first character in the text.
+    ///   This flag implements Unicode's
+    ///   [Grapheme Cluster Boundaries](http://www.unicode.org/reports/tr29/)
+    ///   semantics.
     @inlinable var isCursorPosition: guint {
         /// if set, cursor can appear in front of character.
-        /// i.e. this is a grapheme boundary, or the first character
-        /// in the text.
-        /// This flag implements Unicode's
-        /// <ulink url="http://www.unicode.org/reports/tr29/">Grapheme
-        /// Cluster Boundaries</ulink> semantics.
+        ///   i.e. this is a grapheme boundary, or the first character in the text.
+        ///   This flag implements Unicode's
+        ///   [Grapheme Cluster Boundaries](http://www.unicode.org/reports/tr29/)
+        ///   semantics.
         get {
             let rv = _ptr.pointee.is_cursor_position
             return rv
         }
         /// if set, cursor can appear in front of character.
-        /// i.e. this is a grapheme boundary, or the first character
-        /// in the text.
-        /// This flag implements Unicode's
-        /// <ulink url="http://www.unicode.org/reports/tr29/">Grapheme
-        /// Cluster Boundaries</ulink> semantics.
+        ///   i.e. this is a grapheme boundary, or the first character in the text.
+        ///   This flag implements Unicode's
+        ///   [Grapheme Cluster Boundaries](http://www.unicode.org/reports/tr29/)
+        ///   semantics.
          set {
             _ptr.pointee.is_cursor_position = newValue
         }
@@ -378,49 +379,49 @@ public extension LogAttrProtocol {
     }
 
     /// is first non-word char after a word
-    /// Note that in degenerate cases, you could have both `is_word_start`
-    /// and `is_word_end` set for some character.
+    ///   Note that in degenerate cases, you could have both `is_word_start`
+    ///   and `is_word_end` set for some character.
     @inlinable var isWordEnd: guint {
         /// is first non-word char after a word
-        /// Note that in degenerate cases, you could have both `is_word_start`
-        /// and `is_word_end` set for some character.
+        ///   Note that in degenerate cases, you could have both `is_word_start`
+        ///   and `is_word_end` set for some character.
         get {
             let rv = _ptr.pointee.is_word_end
             return rv
         }
         /// is first non-word char after a word
-        /// Note that in degenerate cases, you could have both `is_word_start`
-        /// and `is_word_end` set for some character.
+        ///   Note that in degenerate cases, you could have both `is_word_start`
+        ///   and `is_word_end` set for some character.
          set {
             _ptr.pointee.is_word_end = newValue
         }
     }
 
     /// is a sentence boundary.
-    /// There are two ways to divide sentences. The first assigns all
-    /// inter-sentence whitespace/control/format chars to some sentence,
-    /// so all chars are in some sentence; `is_sentence_boundary` denotes
-    /// the boundaries there. The second way doesn't assign
-    /// between-sentence spaces, etc. to any sentence, so
+    ///   There are two ways to divide sentences. The first assigns all
+    ///   inter-sentence whitespace/control/format chars to some sentence,
+    ///   so all chars are in some sentence; `is_sentence_boundary` denotes
+    ///   the boundaries there. The second way doesn't assign
+    ///   between-sentence spaces, etc. to any sentence, so
     /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
     @inlinable var isSentenceBoundary: guint {
         /// is a sentence boundary.
-        /// There are two ways to divide sentences. The first assigns all
-        /// inter-sentence whitespace/control/format chars to some sentence,
-        /// so all chars are in some sentence; `is_sentence_boundary` denotes
-        /// the boundaries there. The second way doesn't assign
-        /// between-sentence spaces, etc. to any sentence, so
+        ///   There are two ways to divide sentences. The first assigns all
+        ///   inter-sentence whitespace/control/format chars to some sentence,
+        ///   so all chars are in some sentence; `is_sentence_boundary` denotes
+        ///   the boundaries there. The second way doesn't assign
+        ///   between-sentence spaces, etc. to any sentence, so
         /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
         get {
             let rv = _ptr.pointee.is_sentence_boundary
             return rv
         }
         /// is a sentence boundary.
-        /// There are two ways to divide sentences. The first assigns all
-        /// inter-sentence whitespace/control/format chars to some sentence,
-        /// so all chars are in some sentence; `is_sentence_boundary` denotes
-        /// the boundaries there. The second way doesn't assign
-        /// between-sentence spaces, etc. to any sentence, so
+        ///   There are two ways to divide sentences. The first assigns all
+        ///   inter-sentence whitespace/control/format chars to some sentence,
+        ///   so all chars are in some sentence; `is_sentence_boundary` denotes
+        ///   the boundaries there. The second way doesn't assign
+        ///   between-sentence spaces, etc. to any sentence, so
         /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
          set {
             _ptr.pointee.is_sentence_boundary = newValue
@@ -441,115 +442,97 @@ public extension LogAttrProtocol {
     }
 
     /// is first char after a sentence.
-    /// Note that in degenerate cases, you could have both `is_sentence_start`
-    /// and `is_sentence_end` set for some character. (e.g. no space after a
-    /// period, so the next sentence starts right away)
+    ///   Note that in degenerate cases, you could have both `is_sentence_start`
+    ///   and `is_sentence_end` set for some character. (e.g. no space after a
+    ///   period, so the next sentence starts right away)
     @inlinable var isSentenceEnd: guint {
         /// is first char after a sentence.
-        /// Note that in degenerate cases, you could have both `is_sentence_start`
-        /// and `is_sentence_end` set for some character. (e.g. no space after a
-        /// period, so the next sentence starts right away)
+        ///   Note that in degenerate cases, you could have both `is_sentence_start`
+        ///   and `is_sentence_end` set for some character. (e.g. no space after a
+        ///   period, so the next sentence starts right away)
         get {
             let rv = _ptr.pointee.is_sentence_end
             return rv
         }
         /// is first char after a sentence.
-        /// Note that in degenerate cases, you could have both `is_sentence_start`
-        /// and `is_sentence_end` set for some character. (e.g. no space after a
-        /// period, so the next sentence starts right away)
+        ///   Note that in degenerate cases, you could have both `is_sentence_start`
+        ///   and `is_sentence_end` set for some character. (e.g. no space after a
+        ///   period, so the next sentence starts right away)
          set {
             _ptr.pointee.is_sentence_end = newValue
         }
     }
 
     /// if set, backspace deletes one character
-    /// rather than the entire grapheme cluster. This
-    /// field is only meaningful on grapheme
-    /// boundaries (where `is_cursor_position` is
-    /// set).  In some languages, the full grapheme
-    /// (e.g.  letter + diacritics) is considered a
-    /// unit, while in others, each decomposed
-    /// character in the grapheme is a unit. In the
-    /// default implementation of `pango_break()`, this
-    /// bit is set on all grapheme boundaries except
-    /// those following Latin, Cyrillic or Greek base characters.
+    ///   rather than the entire grapheme cluster. This field is only meaningful
+    ///   on grapheme boundaries (where `is_cursor_position` is set). In some languages,
+    ///   the full grapheme (e.g. letter + diacritics) is considered a unit, while in
+    ///   others, each decomposed character in the grapheme is a unit. In the default
+    ///   implementation of [func`break`], this bit is set on all grapheme boundaries
+    ///   except those following Latin, Cyrillic or Greek base characters.
     @inlinable var backspaceDeletesCharacter: guint {
         /// if set, backspace deletes one character
-        /// rather than the entire grapheme cluster. This
-        /// field is only meaningful on grapheme
-        /// boundaries (where `is_cursor_position` is
-        /// set).  In some languages, the full grapheme
-        /// (e.g.  letter + diacritics) is considered a
-        /// unit, while in others, each decomposed
-        /// character in the grapheme is a unit. In the
-        /// default implementation of `pango_break()`, this
-        /// bit is set on all grapheme boundaries except
-        /// those following Latin, Cyrillic or Greek base characters.
+        ///   rather than the entire grapheme cluster. This field is only meaningful
+        ///   on grapheme boundaries (where `is_cursor_position` is set). In some languages,
+        ///   the full grapheme (e.g. letter + diacritics) is considered a unit, while in
+        ///   others, each decomposed character in the grapheme is a unit. In the default
+        ///   implementation of [func`break`], this bit is set on all grapheme boundaries
+        ///   except those following Latin, Cyrillic or Greek base characters.
         get {
             let rv = _ptr.pointee.backspace_deletes_character
             return rv
         }
         /// if set, backspace deletes one character
-        /// rather than the entire grapheme cluster. This
-        /// field is only meaningful on grapheme
-        /// boundaries (where `is_cursor_position` is
-        /// set).  In some languages, the full grapheme
-        /// (e.g.  letter + diacritics) is considered a
-        /// unit, while in others, each decomposed
-        /// character in the grapheme is a unit. In the
-        /// default implementation of `pango_break()`, this
-        /// bit is set on all grapheme boundaries except
-        /// those following Latin, Cyrillic or Greek base characters.
+        ///   rather than the entire grapheme cluster. This field is only meaningful
+        ///   on grapheme boundaries (where `is_cursor_position` is set). In some languages,
+        ///   the full grapheme (e.g. letter + diacritics) is considered a unit, while in
+        ///   others, each decomposed character in the grapheme is a unit. In the default
+        ///   implementation of [func`break`], this bit is set on all grapheme boundaries
+        ///   except those following Latin, Cyrillic or Greek base characters.
          set {
             _ptr.pointee.backspace_deletes_character = newValue
         }
     }
 
     /// is a whitespace character that can possibly be
-    /// expanded for justification purposes. (Since: 1.18)
+    ///   expanded for justification purposes. (Since: 1.18)
     @inlinable var isExpandableSpace: guint {
         /// is a whitespace character that can possibly be
-        /// expanded for justification purposes. (Since: 1.18)
+        ///   expanded for justification purposes. (Since: 1.18)
         get {
             let rv = _ptr.pointee.is_expandable_space
             return rv
         }
         /// is a whitespace character that can possibly be
-        /// expanded for justification purposes. (Since: 1.18)
+        ///   expanded for justification purposes. (Since: 1.18)
          set {
             _ptr.pointee.is_expandable_space = newValue
         }
     }
 
     /// is a word boundary, as defined by UAX`29`.
-    /// More specifically, means that this is not a position in the middle
-    /// of a word.  For example, both sides of a punctuation mark are
-    /// considered word boundaries.  This flag is particularly useful when
-    /// selecting text word-by-word.
-    /// This flag implements Unicode's
-    /// <ulink url="http://www.unicode.org/reports/tr29/">Word
-    /// Boundaries</ulink> semantics. (Since: 1.22)
+    ///   More specifically, means that this is not a position in the middle of a word.
+    ///   For example, both sides of a punctuation mark are considered word boundaries.
+    ///   This flag is particularly useful when selecting text word-by-word. This flag
+    ///   implements Unicode's [Word Boundaries](http://www.unicode.org/reports/tr29/)
+    ///   semantics. (Since: 1.22)
     @inlinable var isWordBoundary: guint {
         /// is a word boundary, as defined by UAX`29`.
-        /// More specifically, means that this is not a position in the middle
-        /// of a word.  For example, both sides of a punctuation mark are
-        /// considered word boundaries.  This flag is particularly useful when
-        /// selecting text word-by-word.
-        /// This flag implements Unicode's
-        /// <ulink url="http://www.unicode.org/reports/tr29/">Word
-        /// Boundaries</ulink> semantics. (Since: 1.22)
+        ///   More specifically, means that this is not a position in the middle of a word.
+        ///   For example, both sides of a punctuation mark are considered word boundaries.
+        ///   This flag is particularly useful when selecting text word-by-word. This flag
+        ///   implements Unicode's [Word Boundaries](http://www.unicode.org/reports/tr29/)
+        ///   semantics. (Since: 1.22)
         get {
             let rv = _ptr.pointee.is_word_boundary
             return rv
         }
         /// is a word boundary, as defined by UAX`29`.
-        /// More specifically, means that this is not a position in the middle
-        /// of a word.  For example, both sides of a punctuation mark are
-        /// considered word boundaries.  This flag is particularly useful when
-        /// selecting text word-by-word.
-        /// This flag implements Unicode's
-        /// <ulink url="http://www.unicode.org/reports/tr29/">Word
-        /// Boundaries</ulink> semantics. (Since: 1.22)
+        ///   More specifically, means that this is not a position in the middle of a word.
+        ///   For example, both sides of a punctuation mark are considered word boundaries.
+        ///   This flag is particularly useful when selecting text word-by-word. This flag
+        ///   implements Unicode's [Word Boundaries](http://www.unicode.org/reports/tr29/)
+        ///   semantics. (Since: 1.22)
          set {
             _ptr.pointee.is_word_boundary = newValue
         }

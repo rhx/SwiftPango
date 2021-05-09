@@ -10,8 +10,14 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `Context`.
 /// Alternatively, use `ContextRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoContext` structure stores global information
-/// used to control the itemization process.
+/// A `PangoContext` stores global information used to control the
+/// itemization process.
+/// 
+/// The information stored by `PangoContext includes the fontmap used
+/// to look up fonts, and default values such as the default language,
+/// default gravity, or default font.
+/// 
+/// To obtain a `PangoContext`, use [method`Pango.FontMap.create_context`].
 public protocol ContextProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoContext` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -19,14 +25,22 @@ public protocol ContextProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `PangoContext` instance.
     var context_ptr: UnsafeMutablePointer<PangoContext>! { get }
 
+    /// Required Initialiser for types conforming to `ContextProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ContextRef` type acts as a lightweight Swift reference to an underlying `PangoContext` instance.
 /// It exposes methods that can operate on this data type through `ContextProtocol` conformance.
 /// Use `ContextRef` only as an `unowned` reference to an existing `PangoContext` instance.
 ///
-/// The `PangoContext` structure stores global information
-/// used to control the itemization process.
+/// A `PangoContext` stores global information used to control the
+/// itemization process.
+/// 
+/// The information stored by `PangoContext includes the fontmap used
+/// to look up fonts, and default values such as the default language,
+/// default gravity, or default font.
+/// 
+/// To obtain a `PangoContext`, use [method`Pango.FontMap.create_context`].
 public struct ContextRef: ContextProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoContext` instance.
     /// For type-safe access, use the generated, typed pointer `context_ptr` property instead.
@@ -109,15 +123,14 @@ public extension ContextRef {
         /// Creates a new `PangoContext` initialized to default values.
     /// 
     /// This function is not particularly useful as it should always
-    /// be followed by a `pango_context_set_font_map()` call, and the
-    /// function `pango_font_map_create_context()` does these two steps
+    /// be followed by a [method`Pango.Context.set_font_map`] call, and the
+    /// function [method`Pango.FontMap.create_context`] does these two steps
     /// together and hence users are recommended to use that.
     /// 
     /// If you are using Pango as part of a higher-level system,
     /// that system may have it's own way of create a `PangoContext`.
-    /// For instance, the GTK+ toolkit has, among others,
-    /// `gdk_pango_context_get_for_screen()`, and
-    /// `gtk_widget_get_pango_context()`.  Use those instead.
+    /// For instance, the GTK toolkit has, among others,
+    /// ``gtk_widget_get_pango_context()``. Use those instead.
     @inlinable init() {
         let rv = pango_context_new()
         ptr = UnsafeMutableRawPointer(rv)
@@ -128,8 +141,14 @@ public extension ContextRef {
 /// It provides the methods that can operate on this data type through `ContextProtocol` conformance.
 /// Use `Context` as a strong reference or owner of a `PangoContext` instance.
 ///
-/// The `PangoContext` structure stores global information
-/// used to control the itemization process.
+/// A `PangoContext` stores global information used to control the
+/// itemization process.
+/// 
+/// The information stored by `PangoContext includes the fontmap used
+/// to look up fonts, and default values such as the default language,
+/// default gravity, or default font.
+/// 
+/// To obtain a `PangoContext`, use [method`Pango.FontMap.create_context`].
 open class Context: GLibObject.Object, ContextProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -230,14 +249,14 @@ open class Context: GLibObject.Object, ContextProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ContextProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ContextProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -258,15 +277,14 @@ open class Context: GLibObject.Object, ContextProtocol {
     /// Creates a new `PangoContext` initialized to default values.
     /// 
     /// This function is not particularly useful as it should always
-    /// be followed by a `pango_context_set_font_map()` call, and the
-    /// function `pango_font_map_create_context()` does these two steps
+    /// be followed by a [method`Pango.Context.set_font_map`] call, and the
+    /// function [method`Pango.FontMap.create_context`] does these two steps
     /// together and hence users are recommended to use that.
     /// 
     /// If you are using Pango as part of a higher-level system,
     /// that system may have it's own way of create a `PangoContext`.
-    /// For instance, the GTK+ toolkit has, among others,
-    /// `gdk_pango_context_get_for_screen()`, and
-    /// `gtk_widget_get_pango_context()`.  Use those instead.
+    /// For instance, the GTK toolkit has, among others,
+    /// ``gtk_widget_get_pango_context()``. Use those instead.
     @inlinable public init() {
         let rv = pango_context_new()
         super.init(gpointer: (rv))
@@ -325,15 +343,17 @@ public extension ContextProtocol {
     
     }
 
-    /// Retrieves the base direction for the context. See
-    /// `pango_context_set_base_dir()`.
+    /// Retrieves the base direction for the context.
+    /// 
+    /// See [method`Pango.Context.set_base_dir`].
     @inlinable func getBaseDir() -> PangoDirection {
         let rv = pango_context_get_base_dir(context_ptr)
         return rv
     }
 
-    /// Retrieves the base gravity for the context. See
-    /// `pango_context_set_base_gravity()`.
+    /// Retrieves the base gravity for the context.
+    /// 
+    /// See [method`Pango.Context.set_base_gravity`].
     @inlinable func getBaseGravity() -> PangoGravity {
         let rv = pango_context_get_base_gravity(context_ptr)
         return rv
@@ -351,17 +371,20 @@ public extension ContextProtocol {
         return rv
     }
 
-    /// Retrieves the gravity for the context. This is similar to
-    /// `pango_context_get_base_gravity()`, except for when the base gravity
-    /// is `PANGO_GRAVITY_AUTO` for which `pango_gravity_get_for_matrix()` is used
-    /// to return the gravity from the current context matrix.
+    /// Retrieves the gravity for the context.
+    /// 
+    /// This is similar to [method`Pango.Context.get_base_gravity`],
+    /// except for when the base gravity is `PANGO_GRAVITY_AUTO` for
+    /// which [type_func`Pango.Gravity.get_for_matrix`] is used to return the
+    /// gravity from the current context matrix.
     @inlinable func getGravity() -> PangoGravity {
         let rv = pango_context_get_gravity(context_ptr)
         return rv
     }
 
-    /// Retrieves the gravity hint for the context. See
-    /// `pango_context_set_gravity_hint()` for details.
+    /// Retrieves the gravity hint for the context.
+    /// 
+    /// See [method`Pango.Context.set_gravity_hint`] for details.
     @inlinable func getGravityHint() -> PangoGravityHint {
         let rv = pango_context_get_gravity_hint(context_ptr)
         return rv
@@ -374,40 +397,40 @@ public extension ContextProtocol {
     }
 
     /// Gets the transformation matrix that will be applied when
-    /// rendering with this context. See `pango_context_set_matrix()`.
+    /// rendering with this context.
+    /// 
+    /// See [method`Pango.Context.set_matrix`].
     @inlinable func getMatrix() -> MatrixRef! {
         let rv = MatrixRef(gconstpointer: gconstpointer(pango_context_get_matrix(context_ptr)))
         return rv
     }
 
-    /// Get overall metric information for a particular font
-    /// description.  Since the metrics may be substantially different for
-    /// different scripts, a language tag can be provided to indicate that
-    /// the metrics should be retrieved that correspond to the `script(s)`
-    /// used by that language.
+    /// Get overall metric information for a particular font description.
     /// 
-    /// The `PangoFontDescription` is interpreted in the same way as
-    /// by `pango_itemize()`, and the family name may be a comma separated
-    /// list of figures. If characters from multiple of these families
-    /// would be used to render the string, then the returned fonts would
-    /// be a composite of the metrics for the fonts loaded for the
-    /// individual families.
+    /// Since the metrics may be substantially different for different scripts,
+    /// a language tag can be provided to indicate that the metrics should be
+    /// retrieved that correspond to the `script(s)` used by that language.
+    /// 
+    /// The `PangoFontDescription` is interpreted in the same way as by [func`itemize`],
+    /// and the family name may be a comma separated list of names. If characters
+    /// from multiple of these families would be used to render the string, then
+    /// the returned fonts would be a composite of the metrics for the fonts loaded
+    /// for the individual families.
     @inlinable func getMetrics(desc: FontDescriptionRef? = nil, language: LanguageRef? = nil) -> FontMetricsRef! {
         let rv = FontMetricsRef(gconstpointer: gconstpointer(pango_context_get_metrics(context_ptr, desc?.font_description_ptr, language?.language_ptr)))
         return rv
     }
-    /// Get overall metric information for a particular font
-    /// description.  Since the metrics may be substantially different for
-    /// different scripts, a language tag can be provided to indicate that
-    /// the metrics should be retrieved that correspond to the `script(s)`
-    /// used by that language.
+    /// Get overall metric information for a particular font description.
     /// 
-    /// The `PangoFontDescription` is interpreted in the same way as
-    /// by `pango_itemize()`, and the family name may be a comma separated
-    /// list of figures. If characters from multiple of these families
-    /// would be used to render the string, then the returned fonts would
-    /// be a composite of the metrics for the fonts loaded for the
-    /// individual families.
+    /// Since the metrics may be substantially different for different scripts,
+    /// a language tag can be provided to indicate that the metrics should be
+    /// retrieved that correspond to the `script(s)` used by that language.
+    /// 
+    /// The `PangoFontDescription` is interpreted in the same way as by [func`itemize`],
+    /// and the family name may be a comma separated list of names. If characters
+    /// from multiple of these families would be used to render the string, then
+    /// the returned fonts would be a composite of the metrics for the fonts loaded
+    /// for the individual families.
     @inlinable func getMetrics<FontDescriptionT: FontDescriptionProtocol, LanguageT: LanguageProtocol>(desc: FontDescriptionT?, language: LanguageT?) -> FontMetricsRef! {
         let rv = FontMetricsRef(gconstpointer: gconstpointer(pango_context_get_metrics(context_ptr, desc?.font_description_ptr, language?.language_ptr)))
         return rv
@@ -420,15 +443,17 @@ public extension ContextProtocol {
         return rv
     }
 
-    /// Returns the current serial number of `context`.  The serial number is
-    /// initialized to an small number larger than zero when a new context
-    /// is created and is increased whenever the context is changed using any
-    /// of the setter functions, or the `PangoFontMap` it uses to find fonts has
-    /// changed. The serial may wrap, but will never have the value 0. Since it
-    /// can wrap, never compare it with "less than", always use "not equals".
+    /// Returns the current serial number of `context`.
     /// 
-    /// This can be used to automatically detect changes to a `PangoContext`, and
-    /// is only useful when implementing objects that need update when their
+    /// The serial number is initialized to an small number larger than zero
+    /// when a new context is created and is increased whenever the context
+    /// is changed using any of the setter functions, or the `PangoFontMap` it
+    /// uses to find fonts has changed. The serial may wrap, but will never
+    /// have the value 0. Since it can wrap, never compare it with "less than",
+    /// always use "not equals".
+    /// 
+    /// This can be used to automatically detect changes to a `PangoContext`,
+    /// and is only useful when implementing objects that need update when their
     /// `PangoContext` changes, like `PangoLayout`.
     @inlinable func getSerial() -> Int {
         let rv = Int(pango_context_get_serial(context_ptr))
@@ -460,7 +485,7 @@ public extension ContextProtocol {
     /// The base direction is used in applying the Unicode bidirectional
     /// algorithm; if the `direction` is `PANGO_DIRECTION_LTR` or
     /// `PANGO_DIRECTION_RTL`, then the value will be used as the paragraph
-    /// direction in the Unicode bidirectional algorithm.  A value of
+    /// direction in the Unicode bidirectional algorithm. A value of
     /// `PANGO_DIRECTION_WEAK_LTR` or `PANGO_DIRECTION_WEAK_RTL` is used only
     /// for paragraphs that do not contain any strong characters themselves.
     @inlinable func setBaseDir(direction: PangoDirection) {
@@ -482,9 +507,12 @@ public extension ContextProtocol {
     
     }
 
-    /// Sets the font map to be searched when fonts are looked-up in this context.
-    /// This is only for internal use by Pango backends, a `PangoContext` obtained
-    /// via one of the recommended methods should already have a suitable font map.
+    /// Sets the font map to be searched when fonts are looked-up
+    /// in this context.
+    /// 
+    /// This is only for internal use by Pango backends, a `PangoContext`
+    /// obtained via one of the recommended methods should already have a
+    /// suitable font map.
     @inlinable func set<FontMapT: FontMapProtocol>(fontMap: FontMapT) {
         pango_context_set_font_map(context_ptr, fontMap.font_map_ptr)
     
@@ -492,38 +520,44 @@ public extension ContextProtocol {
 
     /// Sets the gravity hint for the context.
     /// 
-    /// The gravity hint is used in laying vertical text out, and is only relevant
-    /// if gravity of the context as returned by `pango_context_get_gravity()`
-    /// is set `PANGO_GRAVITY_EAST` or `PANGO_GRAVITY_WEST`.
+    /// The gravity hint is used in laying vertical text out, and
+    /// is only relevant if gravity of the context as returned by
+    /// [method`Pango.Context.get_gravity`] is set to `PANGO_GRAVITY_EAST`
+    /// or `PANGO_GRAVITY_WEST`.
     @inlinable func setGravity(hint: PangoGravityHint) {
         pango_context_set_gravity_hint(context_ptr, hint)
     
     }
 
-    /// Sets the global language tag for the context.  The default language
-    /// for the locale of the running process can be found using
-    /// `pango_language_get_default()`.
+    /// Sets the global language tag for the context.
+    /// 
+    /// The default language for the locale of the running process
+    /// can be found using [type_func`Pango.Language.get_default`].
     @inlinable func set<LanguageT: LanguageProtocol>(language: LanguageT) {
         pango_context_set_language(context_ptr, language.language_ptr)
     
     }
 
     /// Sets the transformation matrix that will be applied when rendering
-    /// with this context. Note that reported metrics are in the user space
-    /// coordinates before the application of the matrix, not device-space
-    /// coordinates after the application of the matrix. So, they don't scale
-    /// with the matrix, though they may change slightly for different
-    /// matrices, depending on how the text is fit to the pixel grid.
+    /// with this context.
+    /// 
+    /// Note that reported metrics are in the user space coordinates before
+    /// the application of the matrix, not device-space coordinates after the
+    /// application of the matrix. So, they don't scale with the matrix, though
+    /// they may change slightly for different matrices, depending on how the
+    /// text is fit to the pixel grid.
     @inlinable func set(matrix: MatrixRef? = nil) {
         pango_context_set_matrix(context_ptr, matrix?.matrix_ptr)
     
     }
     /// Sets the transformation matrix that will be applied when rendering
-    /// with this context. Note that reported metrics are in the user space
-    /// coordinates before the application of the matrix, not device-space
-    /// coordinates after the application of the matrix. So, they don't scale
-    /// with the matrix, though they may change slightly for different
-    /// matrices, depending on how the text is fit to the pixel grid.
+    /// with this context.
+    /// 
+    /// Note that reported metrics are in the user space coordinates before
+    /// the application of the matrix, not device-space coordinates after the
+    /// application of the matrix. So, they don't scale with the matrix, though
+    /// they may change slightly for different matrices, depending on how the
+    /// text is fit to the pixel grid.
     @inlinable func set<MatrixT: MatrixProtocol>(matrix: MatrixT?) {
         pango_context_set_matrix(context_ptr, matrix?.matrix_ptr)
     
@@ -543,54 +577,64 @@ public extension ContextProtocol {
     
     }
 
-    /// Breaks a piece of text into segments with consistent
-    /// directional level and shaping engine. Each byte of `text` will
-    /// be contained in exactly one of the items in the returned list;
-    /// the generated list of items will be in logical order (the start
-    /// offsets of the items are ascending).
+    /// Breaks a piece of text into segments with consistent directional
+    /// level and font.
     /// 
-    /// `cached_iter` should be an iterator over `attrs` currently positioned at a
-    /// range before or containing `start_index`; `cached_iter` will be advanced to
-    /// the range covering the position just after `start_index` + `length`.
-    /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
+    /// Each byte of `text` will be contained in exactly one of the items in the
+    /// returned list; the generated list of items will be in logical order (the
+    /// start offsets of the items are ascending).
+    /// 
+    /// `cached_iter` should be an iterator over `attrs` currently positioned
+    /// at a range before or containing `start_index`; `cached_iter` will be
+    /// advanced to the range covering the position just after
+    /// `start_index` + `length`. (i.e. if itemizing in a loop, just keep passing
+    /// in the same `cached_iter`).
     @inlinable func itemize<AttrListT: AttrListProtocol>(text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
         let rv = GLib.ListRef(pango_itemize(context_ptr, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv
     }
-    /// Breaks a piece of text into segments with consistent
-    /// directional level and shaping engine. Each byte of `text` will
-    /// be contained in exactly one of the items in the returned list;
-    /// the generated list of items will be in logical order (the start
-    /// offsets of the items are ascending).
+    /// Breaks a piece of text into segments with consistent directional
+    /// level and font.
     /// 
-    /// `cached_iter` should be an iterator over `attrs` currently positioned at a
-    /// range before or containing `start_index`; `cached_iter` will be advanced to
-    /// the range covering the position just after `start_index` + `length`.
-    /// (i.e. if itemizing in a loop, just keep passing in the same `cached_iter`).
+    /// Each byte of `text` will be contained in exactly one of the items in the
+    /// returned list; the generated list of items will be in logical order (the
+    /// start offsets of the items are ascending).
+    /// 
+    /// `cached_iter` should be an iterator over `attrs` currently positioned
+    /// at a range before or containing `start_index`; `cached_iter` will be
+    /// advanced to the range covering the position just after
+    /// `start_index` + `length`. (i.e. if itemizing in a loop, just keep passing
+    /// in the same `cached_iter`).
     @inlinable func itemize<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol>(text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
         let rv = GLib.ListRef(pango_itemize(context_ptr, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv
     }
 
-    /// Like `pango_itemize()`, but the base direction to use when
-    /// computing bidirectional levels (see pango_context_set_base_dir ()),
-    /// is specified explicitly rather than gotten from the `PangoContext`.
+    /// Like ``pango_itemize()``, but with an explicitly specified base direction.
+    /// 
+    /// The base direction is used when computing bidirectional levels.
+    /// (see [method`Pango.Context.set_base_dir`]). [func`itemize`] gets the
+    /// base direction from the `PangoContext`.
     @inlinable func itemizeWith<AttrListT: AttrListProtocol>(baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorRef? = nil) -> GLib.ListRef! {
         let rv = GLib.ListRef(pango_itemize_with_base_dir(context_ptr, baseDir, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv
     }
-    /// Like `pango_itemize()`, but the base direction to use when
-    /// computing bidirectional levels (see pango_context_set_base_dir ()),
-    /// is specified explicitly rather than gotten from the `PangoContext`.
+    /// Like ``pango_itemize()``, but with an explicitly specified base direction.
+    /// 
+    /// The base direction is used when computing bidirectional levels.
+    /// (see [method`Pango.Context.set_base_dir`]). [func`itemize`] gets the
+    /// base direction from the `PangoContext`.
     @inlinable func itemizeWith<AttrIteratorT: AttrIteratorProtocol, AttrListT: AttrListProtocol>(baseDir: PangoDirection, text: UnsafePointer<CChar>!, startIndex: Int, length: Int, attrs: AttrListT, cachedIter: AttrIteratorT?) -> GLib.ListRef! {
         let rv = GLib.ListRef(pango_itemize_with_base_dir(context_ptr, baseDir, text, gint(startIndex), gint(length), attrs.attr_list_ptr, cachedIter?.attr_iterator_ptr))
         return rv
     }
-    /// Retrieves the base direction for the context. See
-    /// `pango_context_set_base_dir()`.
+    /// Retrieves the base direction for the context.
+    /// 
+    /// See [method`Pango.Context.set_base_dir`].
     @inlinable var baseDir: PangoDirection {
-        /// Retrieves the base direction for the context. See
-        /// `pango_context_set_base_dir()`.
+        /// Retrieves the base direction for the context.
+        /// 
+        /// See [method`Pango.Context.set_base_dir`].
         get {
             let rv = pango_context_get_base_dir(context_ptr)
             return rv
@@ -600,7 +644,7 @@ public extension ContextProtocol {
         /// The base direction is used in applying the Unicode bidirectional
         /// algorithm; if the `direction` is `PANGO_DIRECTION_LTR` or
         /// `PANGO_DIRECTION_RTL`, then the value will be used as the paragraph
-        /// direction in the Unicode bidirectional algorithm.  A value of
+        /// direction in the Unicode bidirectional algorithm. A value of
         /// `PANGO_DIRECTION_WEAK_LTR` or `PANGO_DIRECTION_WEAK_RTL` is used only
         /// for paragraphs that do not contain any strong characters themselves.
         nonmutating set {
@@ -608,11 +652,13 @@ public extension ContextProtocol {
         }
     }
 
-    /// Retrieves the base gravity for the context. See
-    /// `pango_context_set_base_gravity()`.
+    /// Retrieves the base gravity for the context.
+    /// 
+    /// See [method`Pango.Context.set_base_gravity`].
     @inlinable var baseGravity: PangoGravity {
-        /// Retrieves the base gravity for the context. See
-        /// `pango_context_set_base_gravity()`.
+        /// Retrieves the base gravity for the context.
+        /// 
+        /// See [method`Pango.Context.set_base_gravity`].
         get {
             let rv = pango_context_get_base_gravity(context_ptr)
             return rv
@@ -645,43 +691,53 @@ public extension ContextProtocol {
             let rv = FontMapRef(gconstpointer: gconstpointer(pango_context_get_font_map(context_ptr)))
             return rv
         }
-        /// Sets the font map to be searched when fonts are looked-up in this context.
-        /// This is only for internal use by Pango backends, a `PangoContext` obtained
-        /// via one of the recommended methods should already have a suitable font map.
+        /// Sets the font map to be searched when fonts are looked-up
+        /// in this context.
+        /// 
+        /// This is only for internal use by Pango backends, a `PangoContext`
+        /// obtained via one of the recommended methods should already have a
+        /// suitable font map.
         nonmutating set {
             pango_context_set_font_map(context_ptr, UnsafeMutablePointer<PangoFontMap>(newValue?.font_map_ptr))
         }
     }
 
-    /// Retrieves the gravity for the context. This is similar to
-    /// `pango_context_get_base_gravity()`, except for when the base gravity
-    /// is `PANGO_GRAVITY_AUTO` for which `pango_gravity_get_for_matrix()` is used
-    /// to return the gravity from the current context matrix.
+    /// Retrieves the gravity for the context.
+    /// 
+    /// This is similar to [method`Pango.Context.get_base_gravity`],
+    /// except for when the base gravity is `PANGO_GRAVITY_AUTO` for
+    /// which [type_func`Pango.Gravity.get_for_matrix`] is used to return the
+    /// gravity from the current context matrix.
     @inlinable var gravity: PangoGravity {
-        /// Retrieves the gravity for the context. This is similar to
-        /// `pango_context_get_base_gravity()`, except for when the base gravity
-        /// is `PANGO_GRAVITY_AUTO` for which `pango_gravity_get_for_matrix()` is used
-        /// to return the gravity from the current context matrix.
+        /// Retrieves the gravity for the context.
+        /// 
+        /// This is similar to [method`Pango.Context.get_base_gravity`],
+        /// except for when the base gravity is `PANGO_GRAVITY_AUTO` for
+        /// which [type_func`Pango.Gravity.get_for_matrix`] is used to return the
+        /// gravity from the current context matrix.
         get {
             let rv = pango_context_get_gravity(context_ptr)
             return rv
         }
     }
 
-    /// Retrieves the gravity hint for the context. See
-    /// `pango_context_set_gravity_hint()` for details.
+    /// Retrieves the gravity hint for the context.
+    /// 
+    /// See [method`Pango.Context.set_gravity_hint`] for details.
     @inlinable var gravityHint: PangoGravityHint {
-        /// Retrieves the gravity hint for the context. See
-        /// `pango_context_set_gravity_hint()` for details.
+        /// Retrieves the gravity hint for the context.
+        /// 
+        /// See [method`Pango.Context.set_gravity_hint`] for details.
         get {
             let rv = pango_context_get_gravity_hint(context_ptr)
             return rv
         }
         /// Sets the gravity hint for the context.
         /// 
-        /// The gravity hint is used in laying vertical text out, and is only relevant
-        /// if gravity of the context as returned by `pango_context_get_gravity()`
-        /// is set `PANGO_GRAVITY_EAST` or `PANGO_GRAVITY_WEST`.
+        /// The gravity hint is used in laying vertical text out, and
+        /// is only relevant if gravity of the context as returned by
+        /// [method`Pango.Context.get_gravity`] is set to `PANGO_GRAVITY_EAST`
+        /// or `PANGO_GRAVITY_WEST`.
         nonmutating set {
             pango_context_set_gravity_hint(context_ptr, newValue)
         }
@@ -694,29 +750,36 @@ public extension ContextProtocol {
             let rv = LanguageRef(gconstpointer: gconstpointer(pango_context_get_language(context_ptr)))
             return rv
         }
-        /// Sets the global language tag for the context.  The default language
-        /// for the locale of the running process can be found using
-        /// `pango_language_get_default()`.
+        /// Sets the global language tag for the context.
+        /// 
+        /// The default language for the locale of the running process
+        /// can be found using [type_func`Pango.Language.get_default`].
         nonmutating set {
             pango_context_set_language(context_ptr, UnsafeMutablePointer<PangoLanguage>(newValue?.language_ptr))
         }
     }
 
     /// Gets the transformation matrix that will be applied when
-    /// rendering with this context. See `pango_context_set_matrix()`.
+    /// rendering with this context.
+    /// 
+    /// See [method`Pango.Context.set_matrix`].
     @inlinable var matrix: MatrixRef! {
         /// Gets the transformation matrix that will be applied when
-        /// rendering with this context. See `pango_context_set_matrix()`.
+        /// rendering with this context.
+        /// 
+        /// See [method`Pango.Context.set_matrix`].
         get {
             let rv = MatrixRef(gconstpointer: gconstpointer(pango_context_get_matrix(context_ptr)))
             return rv
         }
         /// Sets the transformation matrix that will be applied when rendering
-        /// with this context. Note that reported metrics are in the user space
-        /// coordinates before the application of the matrix, not device-space
-        /// coordinates after the application of the matrix. So, they don't scale
-        /// with the matrix, though they may change slightly for different
-        /// matrices, depending on how the text is fit to the pixel grid.
+        /// with this context.
+        /// 
+        /// Note that reported metrics are in the user space coordinates before
+        /// the application of the matrix, not device-space coordinates after the
+        /// application of the matrix. So, they don't scale with the matrix, though
+        /// they may change slightly for different matrices, depending on how the
+        /// text is fit to the pixel grid.
         nonmutating set {
             pango_context_set_matrix(context_ptr, UnsafePointer<PangoMatrix>(newValue?.matrix_ptr))
         }
@@ -745,26 +808,30 @@ public extension ContextProtocol {
         }
     }
 
-    /// Returns the current serial number of `context`.  The serial number is
-    /// initialized to an small number larger than zero when a new context
-    /// is created and is increased whenever the context is changed using any
-    /// of the setter functions, or the `PangoFontMap` it uses to find fonts has
-    /// changed. The serial may wrap, but will never have the value 0. Since it
-    /// can wrap, never compare it with "less than", always use "not equals".
+    /// Returns the current serial number of `context`.
     /// 
-    /// This can be used to automatically detect changes to a `PangoContext`, and
-    /// is only useful when implementing objects that need update when their
+    /// The serial number is initialized to an small number larger than zero
+    /// when a new context is created and is increased whenever the context
+    /// is changed using any of the setter functions, or the `PangoFontMap` it
+    /// uses to find fonts has changed. The serial may wrap, but will never
+    /// have the value 0. Since it can wrap, never compare it with "less than",
+    /// always use "not equals".
+    /// 
+    /// This can be used to automatically detect changes to a `PangoContext`,
+    /// and is only useful when implementing objects that need update when their
     /// `PangoContext` changes, like `PangoLayout`.
     @inlinable var serial: Int {
-        /// Returns the current serial number of `context`.  The serial number is
-        /// initialized to an small number larger than zero when a new context
-        /// is created and is increased whenever the context is changed using any
-        /// of the setter functions, or the `PangoFontMap` it uses to find fonts has
-        /// changed. The serial may wrap, but will never have the value 0. Since it
-        /// can wrap, never compare it with "less than", always use "not equals".
+        /// Returns the current serial number of `context`.
         /// 
-        /// This can be used to automatically detect changes to a `PangoContext`, and
-        /// is only useful when implementing objects that need update when their
+        /// The serial number is initialized to an small number larger than zero
+        /// when a new context is created and is increased whenever the context
+        /// is changed using any of the setter functions, or the `PangoFontMap` it
+        /// uses to find fonts has changed. The serial may wrap, but will never
+        /// have the value 0. Since it can wrap, never compare it with "less than",
+        /// always use "not equals".
+        /// 
+        /// This can be used to automatically detect changes to a `PangoContext`,
+        /// and is only useful when implementing objects that need update when their
         /// `PangoContext` changes, like `PangoLayout`.
         get {
             let rv = Int(pango_context_get_serial(context_ptr))

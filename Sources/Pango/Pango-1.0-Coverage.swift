@@ -10,8 +10,13 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `Coverage`.
 /// Alternatively, use `CoverageRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoCoverage` structure represents a map from Unicode characters
-/// to `PangoCoverageLevel`. It is an opaque structure with no public fields.
+/// A `PangoCoverage` structure is a map from Unicode characters
+/// to `PangoCoverageLevel` values.
+/// 
+/// It is often necessary in Pango to determine if a particular font can
+/// represent a particular character, and also how well it can represent
+/// that character. The `PangoCoverage` is a data structure that is used to
+/// represent that information. It is an opaque structure with no public fields.
 public protocol CoverageProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoCoverage` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -19,14 +24,21 @@ public protocol CoverageProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `PangoCoverage` instance.
     var coverage_ptr: UnsafeMutablePointer<PangoCoverage>! { get }
 
+    /// Required Initialiser for types conforming to `CoverageProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `CoverageRef` type acts as a lightweight Swift reference to an underlying `PangoCoverage` instance.
 /// It exposes methods that can operate on this data type through `CoverageProtocol` conformance.
 /// Use `CoverageRef` only as an `unowned` reference to an existing `PangoCoverage` instance.
 ///
-/// The `PangoCoverage` structure represents a map from Unicode characters
-/// to `PangoCoverageLevel`. It is an opaque structure with no public fields.
+/// A `PangoCoverage` structure is a map from Unicode characters
+/// to `PangoCoverageLevel` values.
+/// 
+/// It is often necessary in Pango to determine if a particular font can
+/// represent a particular character, and also how well it can represent
+/// that character. The `PangoCoverage` is a data structure that is used to
+/// represent that information. It is an opaque structure with no public fields.
 public struct CoverageRef: CoverageProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoCoverage` instance.
     /// For type-safe access, use the generated, typed pointer `coverage_ptr` property instead.
@@ -112,7 +124,7 @@ public extension CoverageRef {
         ptr = UnsafeMutableRawPointer(rv)
     }
     /// Convert data generated from `pango_coverage_to_bytes()` back
-    /// to a `PangoCoverage`
+    /// to a `PangoCoverage`.
     ///
     /// **from_bytes is deprecated:**
     /// This returns %NULL
@@ -126,8 +138,13 @@ public extension CoverageRef {
 /// It provides the methods that can operate on this data type through `CoverageProtocol` conformance.
 /// Use `Coverage` as a strong reference or owner of a `PangoCoverage` instance.
 ///
-/// The `PangoCoverage` structure represents a map from Unicode characters
-/// to `PangoCoverageLevel`. It is an opaque structure with no public fields.
+/// A `PangoCoverage` structure is a map from Unicode characters
+/// to `PangoCoverageLevel` values.
+/// 
+/// It is often necessary in Pango to determine if a particular font can
+/// represent a particular character, and also how well it can represent
+/// that character. The `PangoCoverage` is a data structure that is used to
+/// represent that information. It is an opaque structure with no public fields.
 open class Coverage: GLibObject.Object, CoverageProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -228,14 +245,14 @@ open class Coverage: GLibObject.Object, CoverageProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `CoverageProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `CoverageProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -261,7 +278,7 @@ open class Coverage: GLibObject.Object, CoverageProtocol {
     }
 
     /// Convert data generated from `pango_coverage_to_bytes()` back
-    /// to a `PangoCoverage`
+    /// to a `PangoCoverage`.
     ///
     /// **from_bytes is deprecated:**
     /// This returns %NULL
@@ -310,14 +327,13 @@ public extension CoverageProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoCoverage` instance.
     @inlinable var coverage_ptr: UnsafeMutablePointer<PangoCoverage>! { return ptr?.assumingMemoryBound(to: PangoCoverage.self) }
 
-    /// Copy an existing `PangoCoverage`. (This function may now be unnecessary
-    /// since we refcount the structure. File a bug if you use it.)
+    /// Copy an existing `PangoCoverage`.
     @inlinable func copy() -> CoverageRef! {
         guard let rv = CoverageRef(gconstpointer: gconstpointer(pango_coverage_copy(coverage_ptr))) else { return nil }
         return rv
     }
 
-    /// Determine whether a particular index is covered by `coverage`
+    /// Determine whether a particular index is covered by `coverage`.
     @inlinable func get(index_: Int) -> PangoCoverageLevel {
         let rv = pango_coverage_get(coverage_ptr, gint(index_))
         return rv
@@ -334,7 +350,7 @@ public extension CoverageProtocol {
     
     }
 
-    /// Increase the reference count on the `PangoCoverage` by one
+    /// Increase the reference count on the `PangoCoverage` by one.
     @discardableResult @inlinable func ref() -> CoverageRef! {
         guard let rv = CoverageRef(gconstpointer: gconstpointer(pango_coverage_ref(coverage_ptr))) else { return nil }
         return rv
@@ -346,7 +362,7 @@ public extension CoverageProtocol {
     
     }
 
-    /// Convert a `PangoCoverage` structure into a flat binary format
+    /// Convert a `PangoCoverage` structure into a flat binary format.
     ///
     /// **to_bytes is deprecated:**
     /// This returns %NULL
@@ -356,6 +372,7 @@ public extension CoverageProtocol {
     }
 
     /// Decrease the reference count on the `PangoCoverage` by one.
+    /// 
     /// If the result is zero, free the coverage and all associated memory.
     @inlinable func unref() {
         pango_coverage_unref(coverage_ptr)

@@ -3,8 +3,8 @@ import CPango
 import GLib
 import GLibObject
 
-/// The bits in a `PangoFontMask` correspond to fields in a
-/// `PangoFontDescription` that have been set.
+/// The bits in a `PangoFontMask` correspond to the set fields in a
+/// `PangoFontDescription`.
 public struct FontMask: OptionSet {
     /// The corresponding value of the raw type
     public var rawValue: UInt32 = 0
@@ -49,7 +49,8 @@ public struct FontMask: OptionSet {
 
 
 /// Flags influencing the shaping process.
-/// These can be passed to `pango_shape_with_flags()`.
+/// 
+/// `PangoShapeFlags` can be passed to `pango_shape_with_flags()`.
 public struct ShapeFlags: OptionSet {
     /// The corresponding value of the raw type
     public var rawValue: UInt32 = 0

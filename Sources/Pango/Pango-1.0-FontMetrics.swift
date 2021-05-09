@@ -11,10 +11,12 @@ import GLibObject
 /// Alternatively, use `FontMetricsRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
 /// A `PangoFontMetrics` structure holds the overall metric information
-/// for a font (possibly restricted to a script). The fields of this
-/// structure are private to implementations of a font backend. See
-/// the documentation of the corresponding getters for documentation
-/// of their meaning.
+/// for a font.
+/// 
+/// The information in a `PangoFontMetrics` structure may be restricted
+/// to a script. The fields of this structure are private to implementations
+/// of a font backend. See the documentation of the corresponding getters
+/// for documentation of their meaning.
 public protocol FontMetricsProtocol {
         /// Untyped pointer to the underlying `PangoFontMetrics` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -22,6 +24,8 @@ public protocol FontMetricsProtocol {
     /// Typed pointer to the underlying `PangoFontMetrics` instance.
     var font_metrics_ptr: UnsafeMutablePointer<PangoFontMetrics>! { get }
 
+    /// Required Initialiser for types conforming to `FontMetricsProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontMetricsRef` type acts as a lightweight Swift reference to an underlying `PangoFontMetrics` instance.
@@ -29,10 +33,12 @@ public protocol FontMetricsProtocol {
 /// Use `FontMetricsRef` only as an `unowned` reference to an existing `PangoFontMetrics` instance.
 ///
 /// A `PangoFontMetrics` structure holds the overall metric information
-/// for a font (possibly restricted to a script). The fields of this
-/// structure are private to implementations of a font backend. See
-/// the documentation of the corresponding getters for documentation
-/// of their meaning.
+/// for a font.
+/// 
+/// The information in a `PangoFontMetrics` structure may be restricted
+/// to a script. The fields of this structure are private to implementations
+/// of a font backend. See the documentation of the corresponding getters
+/// for documentation of their meaning.
 public struct FontMetricsRef: FontMetricsProtocol {
         /// Untyped pointer to the underlying `PangoFontMetrics` instance.
     /// For type-safe access, use the generated, typed pointer `font_metrics_ptr` property instead.
@@ -116,10 +122,12 @@ public extension FontMetricsRef {
 /// Use `FontMetrics` as a strong reference or owner of a `PangoFontMetrics` instance.
 ///
 /// A `PangoFontMetrics` structure holds the overall metric information
-/// for a font (possibly restricted to a script). The fields of this
-/// structure are private to implementations of a font backend. See
-/// the documentation of the corresponding getters for documentation
-/// of their meaning.
+/// for a font.
+/// 
+/// The information in a `PangoFontMetrics` structure may be restricted
+/// to a script. The fields of this structure are private to implementations
+/// of a font backend. See the documentation of the corresponding getters
+/// for documentation of their meaning.
 open class FontMetrics: FontMetricsProtocol {
         /// Untyped pointer to the underlying `PangoFontMetrics` instance.
     /// For type-safe access, use the generated, typed pointer `font_metrics_ptr` property instead.
@@ -233,7 +241,7 @@ open class FontMetrics: FontMetricsProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontMetricsProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -275,6 +283,7 @@ public extension FontMetricsProtocol {
     @inlinable var font_metrics_ptr: UnsafeMutablePointer<PangoFontMetrics>! { return ptr?.assumingMemoryBound(to: PangoFontMetrics.self) }
 
     /// Gets the approximate character width for a font metrics structure.
+    /// 
     /// This is merely a representative value useful, for example, for
     /// determining the initial size for a window. Actual characters in
     /// text will be wider and narrower than this.
@@ -284,6 +293,7 @@ public extension FontMetricsProtocol {
     }
 
     /// Gets the approximate digit width for a font metrics structure.
+    /// 
     /// This is merely a representative value useful, for example, for
     /// determining the initial size for a window. Actual digits in
     /// text can be wider or narrower than this, though this value
@@ -294,28 +304,31 @@ public extension FontMetricsProtocol {
         return rv
     }
 
-    /// Gets the ascent from a font metrics structure. The ascent is
-    /// the distance from the baseline to the logical top of a line
-    /// of text. (The logical top may be above or below the top of the
-    /// actual drawn ink. It is necessary to lay out the text to figure
-    /// where the ink will be.)
+    /// Gets the ascent from a font metrics structure.
+    /// 
+    /// The ascent is the distance from the baseline to the logical top
+    /// of a line of text. (The logical top may be above or below the top
+    /// of the actual drawn ink. It is necessary to lay out the text to
+    /// figure where the ink will be.)
     @inlinable func getAscent() -> Int {
         let rv = Int(pango_font_metrics_get_ascent(font_metrics_ptr))
         return rv
     }
 
-    /// Gets the descent from a font metrics structure. The descent is
-    /// the distance from the baseline to the logical bottom of a line
-    /// of text. (The logical bottom may be above or below the bottom of the
-    /// actual drawn ink. It is necessary to lay out the text to figure
-    /// where the ink will be.)
+    /// Gets the descent from a font metrics structure.
+    /// 
+    /// The descent is the distance from the baseline to the logical bottom
+    /// of a line of text. (The logical bottom may be above or below the
+    /// bottom of the actual drawn ink. It is necessary to lay out the text
+    /// to figure where the ink will be.)
     @inlinable func getDescent() -> Int {
         let rv = Int(pango_font_metrics_get_descent(font_metrics_ptr))
         return rv
     }
 
-    /// Gets the line height from a font metrics structure. The
-    /// line height is the distance between successive baselines
+    /// Gets the line height from a font metrics structure.
+    /// 
+    /// The line height is the distance between successive baselines
     /// in wrapped text.
     /// 
     /// If the line height is not available, 0 is returned.
@@ -325,7 +338,8 @@ public extension FontMetricsProtocol {
     }
 
     /// Gets the suggested position to draw the strikethrough.
-    /// The value returned is the distance <emphasis>above</emphasis> the
+    /// 
+    /// The value returned is the distance *above* the
     /// baseline of the top of the strikethrough.
     @inlinable func getStrikethroughPosition() -> Int {
         let rv = Int(pango_font_metrics_get_strikethrough_position(font_metrics_ptr))
@@ -339,10 +353,10 @@ public extension FontMetricsProtocol {
     }
 
     /// Gets the suggested position to draw the underline.
-    /// The value returned is the distance <emphasis>above</emphasis> the
-    /// baseline of the top of the underline. Since most fonts have
-    /// underline positions beneath the baseline, this value is typically
-    /// negative.
+    /// 
+    /// The value returned is the distance *above* the baseline of the top
+    /// of the underline. Since most fonts have underline positions beneath
+    /// the baseline, this value is typically negative.
     @inlinable func getUnderlinePosition() -> Int {
         let rv = Int(pango_font_metrics_get_underline_position(font_metrics_ptr))
         return rv
@@ -360,19 +374,20 @@ public extension FontMetricsProtocol {
         return rv
     }
 
-    /// Decrease the reference count of a font metrics structure by one. If
-    /// the result is zero, frees the structure and any associated
-    /// memory.
+    /// Decrease the reference count of a font metrics structure by one.
+    /// If the result is zero, frees the structure and any associated memory.
     @inlinable func unref() {
         pango_font_metrics_unref(font_metrics_ptr)
     
     }
     /// Gets the approximate character width for a font metrics structure.
+    /// 
     /// This is merely a representative value useful, for example, for
     /// determining the initial size for a window. Actual characters in
     /// text will be wider and narrower than this.
     @inlinable var approximateCharWidth: Int {
         /// Gets the approximate character width for a font metrics structure.
+        /// 
         /// This is merely a representative value useful, for example, for
         /// determining the initial size for a window. Actual characters in
         /// text will be wider and narrower than this.
@@ -383,6 +398,7 @@ public extension FontMetricsProtocol {
     }
 
     /// Gets the approximate digit width for a font metrics structure.
+    /// 
     /// This is merely a representative value useful, for example, for
     /// determining the initial size for a window. Actual digits in
     /// text can be wider or narrower than this, though this value
@@ -390,6 +406,7 @@ public extension FontMetricsProtocol {
     /// `pango_font_metrics_get_approximate_char_width()` for digits.
     @inlinable var approximateDigitWidth: Int {
         /// Gets the approximate digit width for a font metrics structure.
+        /// 
         /// This is merely a representative value useful, for example, for
         /// determining the initial size for a window. Actual digits in
         /// text can be wider or narrower than this, though this value
@@ -401,48 +418,54 @@ public extension FontMetricsProtocol {
         }
     }
 
-    /// Gets the ascent from a font metrics structure. The ascent is
-    /// the distance from the baseline to the logical top of a line
-    /// of text. (The logical top may be above or below the top of the
-    /// actual drawn ink. It is necessary to lay out the text to figure
-    /// where the ink will be.)
+    /// Gets the ascent from a font metrics structure.
+    /// 
+    /// The ascent is the distance from the baseline to the logical top
+    /// of a line of text. (The logical top may be above or below the top
+    /// of the actual drawn ink. It is necessary to lay out the text to
+    /// figure where the ink will be.)
     @inlinable var ascent: Int {
-        /// Gets the ascent from a font metrics structure. The ascent is
-        /// the distance from the baseline to the logical top of a line
-        /// of text. (The logical top may be above or below the top of the
-        /// actual drawn ink. It is necessary to lay out the text to figure
-        /// where the ink will be.)
+        /// Gets the ascent from a font metrics structure.
+        /// 
+        /// The ascent is the distance from the baseline to the logical top
+        /// of a line of text. (The logical top may be above or below the top
+        /// of the actual drawn ink. It is necessary to lay out the text to
+        /// figure where the ink will be.)
         get {
             let rv = Int(pango_font_metrics_get_ascent(font_metrics_ptr))
             return rv
         }
     }
 
-    /// Gets the descent from a font metrics structure. The descent is
-    /// the distance from the baseline to the logical bottom of a line
-    /// of text. (The logical bottom may be above or below the bottom of the
-    /// actual drawn ink. It is necessary to lay out the text to figure
-    /// where the ink will be.)
+    /// Gets the descent from a font metrics structure.
+    /// 
+    /// The descent is the distance from the baseline to the logical bottom
+    /// of a line of text. (The logical bottom may be above or below the
+    /// bottom of the actual drawn ink. It is necessary to lay out the text
+    /// to figure where the ink will be.)
     @inlinable var descent: Int {
-        /// Gets the descent from a font metrics structure. The descent is
-        /// the distance from the baseline to the logical bottom of a line
-        /// of text. (The logical bottom may be above or below the bottom of the
-        /// actual drawn ink. It is necessary to lay out the text to figure
-        /// where the ink will be.)
+        /// Gets the descent from a font metrics structure.
+        /// 
+        /// The descent is the distance from the baseline to the logical bottom
+        /// of a line of text. (The logical bottom may be above or below the
+        /// bottom of the actual drawn ink. It is necessary to lay out the text
+        /// to figure where the ink will be.)
         get {
             let rv = Int(pango_font_metrics_get_descent(font_metrics_ptr))
             return rv
         }
     }
 
-    /// Gets the line height from a font metrics structure. The
-    /// line height is the distance between successive baselines
+    /// Gets the line height from a font metrics structure.
+    /// 
+    /// The line height is the distance between successive baselines
     /// in wrapped text.
     /// 
     /// If the line height is not available, 0 is returned.
     @inlinable var height: Int {
-        /// Gets the line height from a font metrics structure. The
-        /// line height is the distance between successive baselines
+        /// Gets the line height from a font metrics structure.
+        /// 
+        /// The line height is the distance between successive baselines
         /// in wrapped text.
         /// 
         /// If the line height is not available, 0 is returned.
@@ -453,11 +476,13 @@ public extension FontMetricsProtocol {
     }
 
     /// Gets the suggested position to draw the strikethrough.
-    /// The value returned is the distance <emphasis>above</emphasis> the
+    /// 
+    /// The value returned is the distance *above* the
     /// baseline of the top of the strikethrough.
     @inlinable var strikethroughPosition: Int {
         /// Gets the suggested position to draw the strikethrough.
-        /// The value returned is the distance <emphasis>above</emphasis> the
+        /// 
+        /// The value returned is the distance *above* the
         /// baseline of the top of the strikethrough.
         get {
             let rv = Int(pango_font_metrics_get_strikethrough_position(font_metrics_ptr))
@@ -475,16 +500,16 @@ public extension FontMetricsProtocol {
     }
 
     /// Gets the suggested position to draw the underline.
-    /// The value returned is the distance <emphasis>above</emphasis> the
-    /// baseline of the top of the underline. Since most fonts have
-    /// underline positions beneath the baseline, this value is typically
-    /// negative.
+    /// 
+    /// The value returned is the distance *above* the baseline of the top
+    /// of the underline. Since most fonts have underline positions beneath
+    /// the baseline, this value is typically negative.
     @inlinable var underlinePosition: Int {
         /// Gets the suggested position to draw the underline.
-        /// The value returned is the distance <emphasis>above</emphasis> the
-        /// baseline of the top of the underline. Since most fonts have
-        /// underline positions beneath the baseline, this value is typically
-        /// negative.
+        /// 
+        /// The value returned is the distance *above* the baseline of the top
+        /// of the underline. Since most fonts have underline positions beneath
+        /// the baseline, this value is typically negative.
         get {
             let rv = Int(pango_font_metrics_get_underline_position(font_metrics_ptr))
             return rv

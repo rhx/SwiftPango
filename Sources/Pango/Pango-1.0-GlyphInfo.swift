@@ -10,9 +10,8 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `GlyphInfo`.
 /// Alternatively, use `GlyphInfoRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoGlyphInfo` structure represents a single glyph together with
+/// A `PangoGlyphInfo` structure represents a single glyph with
 /// positioning information and visual attributes.
-/// It contains the following fields.
 public protocol GlyphInfoProtocol {
         /// Untyped pointer to the underlying `PangoGlyphInfo` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -20,15 +19,16 @@ public protocol GlyphInfoProtocol {
     /// Typed pointer to the underlying `PangoGlyphInfo` instance.
     var _ptr: UnsafeMutablePointer<PangoGlyphInfo>! { get }
 
+    /// Required Initialiser for types conforming to `GlyphInfoProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `GlyphInfoRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphInfo` instance.
 /// It exposes methods that can operate on this data type through `GlyphInfoProtocol` conformance.
 /// Use `GlyphInfoRef` only as an `unowned` reference to an existing `PangoGlyphInfo` instance.
 ///
-/// The `PangoGlyphInfo` structure represents a single glyph together with
+/// A `PangoGlyphInfo` structure represents a single glyph with
 /// positioning information and visual attributes.
-/// It contains the following fields.
 public struct GlyphInfoRef: GlyphInfoProtocol {
         /// Untyped pointer to the underlying `PangoGlyphInfo` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -111,9 +111,8 @@ public extension GlyphInfoRef {
 /// It provides the methods that can operate on this data type through `GlyphInfoProtocol` conformance.
 /// Use `GlyphInfo` as a strong reference or owner of a `PangoGlyphInfo` instance.
 ///
-/// The `PangoGlyphInfo` structure represents a single glyph together with
+/// A `PangoGlyphInfo` structure represents a single glyph with
 /// positioning information and visual attributes.
-/// It contains the following fields.
 open class GlyphInfo: GlyphInfoProtocol {
         /// Untyped pointer to the underlying `PangoGlyphInfo` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -227,7 +226,7 @@ open class GlyphInfo: GlyphInfoProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GlyphInfoProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

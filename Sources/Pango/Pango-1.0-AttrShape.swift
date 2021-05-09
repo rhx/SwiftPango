@@ -19,6 +19,8 @@ public protocol AttrShapeProtocol {
     /// Typed pointer to the underlying `PangoAttrShape` instance.
     var _ptr: UnsafeMutablePointer<PangoAttrShape>! { get }
 
+    /// Required Initialiser for types conforming to `AttrShapeProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AttrShapeRef` type acts as a lightweight Swift reference to an underlying `PangoAttrShape` instance.
@@ -224,7 +226,7 @@ open class AttrShape: AttrShapeProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttrShapeProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -305,14 +307,14 @@ public extension AttrShapeProtocol {
         }
     }
 
-    /// user data set (see `pango_attr_shape_new_with_data()`)
+    /// user data set (see [type_func`Pango.AttrShape.new_with_data`])
     @inlinable var data: gpointer! {
-        /// user data set (see `pango_attr_shape_new_with_data()`)
+        /// user data set (see [type_func`Pango.AttrShape.new_with_data`])
         get {
             let rv = _ptr.pointee.data
             return rv
         }
-        /// user data set (see `pango_attr_shape_new_with_data()`)
+        /// user data set (see [type_func`Pango.AttrShape.new_with_data`])
          set {
             _ptr.pointee.data = newValue
         }

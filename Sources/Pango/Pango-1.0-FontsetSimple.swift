@@ -11,9 +11,10 @@ import GLibObject
 /// Alternatively, use `FontsetSimpleRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
 /// `PangoFontsetSimple` is a implementation of the abstract
-/// `PangoFontset` base class in terms of an array of fonts,
-/// which the creator provides when constructing the
-/// `PangoFontsetSimple`.
+/// `PangoFontset` base class as an array of fonts.
+/// 
+/// When creating a `PangoFontsetSimple`, you have to provide
+/// the array of fonts that make up the fontset.
 public protocol FontsetSimpleProtocol: FontsetProtocol {
         /// Untyped pointer to the underlying `PangoFontsetSimple` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -21,6 +22,8 @@ public protocol FontsetSimpleProtocol: FontsetProtocol {
     /// Typed pointer to the underlying `PangoFontsetSimple` instance.
     var fontset_simple_ptr: UnsafeMutablePointer<PangoFontsetSimple>! { get }
 
+    /// Required Initialiser for types conforming to `FontsetSimpleProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontsetSimpleRef` type acts as a lightweight Swift reference to an underlying `PangoFontsetSimple` instance.
@@ -28,9 +31,10 @@ public protocol FontsetSimpleProtocol: FontsetProtocol {
 /// Use `FontsetSimpleRef` only as an `unowned` reference to an existing `PangoFontsetSimple` instance.
 ///
 /// `PangoFontsetSimple` is a implementation of the abstract
-/// `PangoFontset` base class in terms of an array of fonts,
-/// which the creator provides when constructing the
-/// `PangoFontsetSimple`.
+/// `PangoFontset` base class as an array of fonts.
+/// 
+/// When creating a `PangoFontsetSimple`, you have to provide
+/// the array of fonts that make up the fontset.
 public struct FontsetSimpleRef: FontsetSimpleProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFontsetSimple` instance.
     /// For type-safe access, use the generated, typed pointer `fontset_simple_ptr` property instead.
@@ -122,9 +126,10 @@ public extension FontsetSimpleRef {
 /// Use `FontsetSimple` as a strong reference or owner of a `PangoFontsetSimple` instance.
 ///
 /// `PangoFontsetSimple` is a implementation of the abstract
-/// `PangoFontset` base class in terms of an array of fonts,
-/// which the creator provides when constructing the
-/// `PangoFontsetSimple`.
+/// `PangoFontset` base class as an array of fonts.
+/// 
+/// When creating a `PangoFontsetSimple`, you have to provide
+/// the array of fonts that make up the fontset.
 open class FontsetSimple: Fontset, FontsetSimpleProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -225,14 +230,14 @@ open class FontsetSimple: Fontset, FontsetSimpleProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `FontsetSimpleProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 

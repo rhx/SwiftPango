@@ -19,6 +19,8 @@ public protocol ScriptIterProtocol {
     /// Typed pointer to the underlying `PangoScriptIter` instance.
     var script_iter_ptr: UnsafeMutablePointer<PangoScriptIter>! { get }
 
+    /// Required Initialiser for types conforming to `ScriptIterProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ScriptIterRef` type acts as a lightweight Swift reference to an underlying `PangoScriptIter` instance.
@@ -232,7 +234,7 @@ open class ScriptIter: ScriptIterProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ScriptIterProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -288,7 +290,7 @@ public extension ScriptIterProtocol {
     }
 
     /// Gets information about the range to which `iter` currently points.
-    /// The range is the set of locations p where *start <= p < *end.
+    /// The range is the set of locations p where *start &lt;= p &lt; *end.
     /// (That is, it doesn't include the character stored at *end)
     /// 
     /// Note that while the type of the `script` argument is declared

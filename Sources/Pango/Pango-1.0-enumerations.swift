@@ -3,9 +3,11 @@ import CPango
 import GLib
 import GLibObject
 
-/// A `PangoAlignment` describes how to align the lines of a `PangoLayout` within the
-/// available space. If the `PangoLayout` is set to justify
-/// using `pango_layout_set_justify()`, this only has effect for partial lines.
+/// `PangoAlignment` describes how to align the lines of a `PangoLayout`
+/// within the available space.
+/// 
+/// If the `PangoLayout` is set to justify using [method`Pango.Layout.set_justify`],
+/// this only has effect for partial lines.
 public typealias Alignment = PangoAlignment
 
 public extension Alignment {
@@ -26,12 +28,12 @@ public extension Alignment {
 
 
 
-/// The `PangoAttrType`
-/// distinguishes between different types of attributes. Along with the
-/// predefined values, it is possible to allocate additional values
-/// for custom attributes using `pango_attr_type_register()`. The predefined
-/// values are given below. The type of structure used to store the
-/// attribute is listed in parentheses after the description.
+/// The `PangoAttrType` distinguishes between different types of attributes.
+/// 
+/// Along with the predefined values, it is possible to allocate additional
+/// values for custom attributes using [type_func`attr_type_register`]. The predefined
+/// values are given below. The type of structure used to store the attribute is
+/// listed in parentheses after the description.
 public typealias AttrType = PangoAttrType
 
 public extension AttrType {
@@ -44,73 +46,73 @@ public extension AttrType {
     }
     /// does not happen
     static let invalid = PANGO_ATTR_INVALID // 0
-    /// language (`PangoAttrLanguage`)
+    /// language ([struct`Pango.AttrLanguage`])
     static let language = PANGO_ATTR_LANGUAGE // 1
-    /// font family name list (`PangoAttrString`)
+    /// font family name list ([struct`Pango.AttrString`])
     static let family = PANGO_ATTR_FAMILY // 2
-    /// font slant style (`PangoAttrInt`)
+    /// font slant style ([struct`Pango.AttrInt`])
     static let style = PANGO_ATTR_STYLE // 3
-    /// font weight (`PangoAttrInt`)
+    /// font weight ([struct`Pango.AttrInt`])
     static let weight = PANGO_ATTR_WEIGHT // 4
-    /// font variant (normal or small caps) (`PangoAttrInt`)
+    /// font variant (normal or small caps) ([struct`Pango.AttrInt`])
     static let variant = PANGO_ATTR_VARIANT // 5
-    /// font stretch (`PangoAttrInt`)
+    /// font stretch ([struct`Pango.AttrInt`])
     static let stretch = PANGO_ATTR_STRETCH // 6
-    /// font size in points scaled by `PANGO_SCALE` (`PangoAttrInt`)
+    /// font size in points scaled by `PANGO_SCALE` ([struct`Pango.AttrInt`])
     static let size = PANGO_ATTR_SIZE // 7
-    /// font description (`PangoAttrFontDesc`)
+    /// font description ([struct`Pango.AttrFontDesc`])
     static let fontDesc = PANGO_ATTR_FONT_DESC // 8
-    /// foreground color (`PangoAttrColor`)
+    /// foreground color ([struct`Pango.AttrColor`])
     static let foreground = PANGO_ATTR_FOREGROUND // 9
-    /// background color (`PangoAttrColor`)
+    /// background color ([struct`Pango.AttrColor`])
     static let background = PANGO_ATTR_BACKGROUND // 10
-    /// whether the text has an underline (`PangoAttrInt`)
+    /// whether the text has an underline ([struct`Pango.AttrInt`])
     static let underline = PANGO_ATTR_UNDERLINE // 11
-    /// whether the text is struck-through (`PangoAttrInt`)
+    /// whether the text is struck-through ([struct`Pango.AttrInt`])
     static let strikethrough = PANGO_ATTR_STRIKETHROUGH // 12
-    /// baseline displacement (`PangoAttrInt`)
+    /// baseline displacement ([struct`Pango.AttrInt`])
     static let rise = PANGO_ATTR_RISE // 13
-    /// shape (`PangoAttrShape`)
+    /// shape ([struct`Pango.AttrShape`])
     static let shape = PANGO_ATTR_SHAPE // 14
-    /// font size scale factor (`PangoAttrFloat`)
+    /// font size scale factor ([struct`Pango.AttrFloat`])
     static let scale = PANGO_ATTR_SCALE // 15
-    /// whether fallback is enabled (`PangoAttrInt`)
+    /// whether fallback is enabled ([struct`Pango.AttrInt`])
     static let fallback = PANGO_ATTR_FALLBACK // 16
-    /// letter spacing (`PangoAttrInt`)
+    /// letter spacing ([struct`PangoAttrInt`])
     static let letterSpacing = PANGO_ATTR_LETTER_SPACING // 17
-    /// underline color (`PangoAttrColor`)
+    /// underline color ([struct`Pango.AttrColor`])
     static let underlineColor = PANGO_ATTR_UNDERLINE_COLOR // 18
-    /// strikethrough color (`PangoAttrColor`)
+    /// strikethrough color ([struct`Pango.AttrColor`])
     static let strikethroughColor = PANGO_ATTR_STRIKETHROUGH_COLOR // 19
-    /// font size in pixels scaled by `PANGO_SCALE` (`PangoAttrInt`)
+    /// font size in pixels scaled by `PANGO_SCALE` ([struct`Pango.AttrInt`])
     static let absoluteSize = PANGO_ATTR_ABSOLUTE_SIZE // 20
-    /// base text gravity (`PangoAttrInt`)
+    /// base text gravity ([struct`Pango.AttrInt`])
     static let gravity = PANGO_ATTR_GRAVITY // 21
-    /// gravity hint (`PangoAttrInt`)
+    /// gravity hint ([struct`Pango.AttrInt`])
     static let gravityHint = PANGO_ATTR_GRAVITY_HINT // 22
-    /// OpenType font features (`PangoAttrString`). Since 1.38
+    /// OpenType font features ([struct`Pango.AttrString`]). Since 1.38
     static let fontFeatures = PANGO_ATTR_FONT_FEATURES // 23
-    /// foreground alpha (`PangoAttrInt`). Since 1.38
+    /// foreground alpha ([struct`Pango.AttrInt`]). Since 1.38
     static let foregroundAlpha = PANGO_ATTR_FOREGROUND_ALPHA // 24
-    /// background alpha (`PangoAttrInt`). Since 1.38
+    /// background alpha ([struct`Pango.AttrInt`]). Since 1.38
     static let backgroundAlpha = PANGO_ATTR_BACKGROUND_ALPHA // 25
-    /// whether breaks are allowed (`PangoAttrInt`). Since 1.44
+    /// whether breaks are allowed ([struct`Pango.AttrInt`]). Since 1.44
     static let allowBreaks = PANGO_ATTR_ALLOW_BREAKS // 26
-    /// how to render invisible characters (`PangoAttrInt`). Since 1.44
+    /// how to render invisible characters ([struct`Pango.AttrInt`]). Since 1.44
     static let show = PANGO_ATTR_SHOW // 27
-    /// whether to insert hyphens at intra-word line breaks (`PangoAttrInt`). Since 1.44
+    /// whether to insert hyphens at intra-word line breaks ([struct`Pango.AttrInt`]). Since 1.44
     static let insertHyphens = PANGO_ATTR_INSERT_HYPHENS // 28
-    /// whether the text has an overline (`PangoAttrInt`). Since 1.46
+    /// whether the text has an overline ([struct`Pango.AttrInt`]). Since 1.46
     static let overline = PANGO_ATTR_OVERLINE // 29
-    /// overline color (`PangoAttrColor`). Since 1.46
+    /// overline color ([struct`Pango.AttrColor`]). Since 1.46
     static let overlineColor = PANGO_ATTR_OVERLINE_COLOR // 30
 }
 
 
 
-/// The `PangoBidiType` type represents the bidirectional character
+/// `PangoBidiType` represents the bidirectional character
 /// type of a Unicode character as specified by the
-/// <ulink url="http://www.unicode.org/reports/tr9/">Unicode bidirectional algorithm</ulink>.
+/// &lt;ulink url="http://www.unicode.org/reports/tr9/"&gt;Unicode bidirectional algorithm&lt;/ulink&gt;.
 ///
 /// **BidiType is deprecated:**
 /// Use fribidi for this information
@@ -166,8 +168,8 @@ public extension BidiType {
 
 
 
-/// Used to indicate how well a font can represent a particular Unicode
-/// character point for a particular script.
+/// `PangoCoverageLevel` is used to indicate how well a font can represent
+/// a particular Unicode character for a particular script.
 /// 
 /// Since 1.44, only `PANGO_COVERAGE_NONE` and `PANGO_COVERAGE_EXACT`
 /// will be returned.
@@ -198,25 +200,24 @@ public extension CoverageLevel {
 
 
 
-/// The `PangoDirection` type represents a direction in the
-/// Unicode bidirectional algorithm; not every value in this
-/// enumeration makes sense for every usage of `PangoDirection`;
-/// for example, the return value of `pango_unichar_direction()`
-/// and `pango_find_base_dir()` cannot be `PANGO_DIRECTION_WEAK_LTR`
-/// or `PANGO_DIRECTION_WEAK_RTL`, since every character is either
-/// neutral or has a strong direction; on the other hand
-/// `PANGO_DIRECTION_NEUTRAL` doesn't make sense to pass
-/// to `pango_itemize_with_base_dir()`.
+/// `PangoDirection` represents a direction in the Unicode bidirectional
+/// algorithm.
 /// 
-/// The `PANGO_DIRECTION_TTB_LTR`, `PANGO_DIRECTION_TTB_RTL`
-/// values come from an earlier interpretation of this
-/// enumeration as the writing direction of a block of
-/// text and are no longer used; See `PangoGravity` for how
+/// Not every value in this enumeration makes sense for every usage of
+/// `PangoDirection`; for example, the return value of [func`unichar_direction`]
+/// and [func`find_base_dir`] cannot be `PANGO_DIRECTION_WEAK_LTR` or
+/// `PANGO_DIRECTION_WEAK_RTL`, since every character is either neutral
+/// or has a strong direction; on the other hand `PANGO_DIRECTION_NEUTRAL`
+/// doesn't make sense to pass to [func`itemize_with_base_dir`].
+/// 
+/// The `PANGO_DIRECTION_TTB_LTR`, `PANGO_DIRECTION_TTB_RTL` values come from
+/// an earlier interpretation of this enumeration as the writing direction
+/// of a block of text and are no longer used; See `PangoGravity` for how
 /// vertical text is handled in Pango.
 /// 
-/// If you are interested in text direction, you should
-/// really use fribidi directly. PangoDirection is only
-/// retained because it is used in some public apis.
+/// If you are interested in text direction, you should really use fribidi
+/// directly. `PangoDirection` is only retained because it is used in some
+/// public apis.
 public typealias Direction = PangoDirection
 
 public extension Direction {
@@ -247,9 +248,10 @@ public extension Direction {
 
 
 
-/// The `PangoEllipsizeMode` type describes what sort of (if any)
-/// ellipsization should be applied to a line of text. In
-/// the ellipsization process characters are removed from the
+/// `PangoEllipsizeMode` describes what sort of ellipsization
+/// should be applied to text.
+/// 
+/// In the ellipsization process characters are removed from the
 /// text in order to make it fit to a given width and replaced
 /// with an ellipsis.
 public typealias EllipsizeMode = PangoEllipsizeMode
@@ -274,16 +276,19 @@ public extension EllipsizeMode {
 
 
 
-/// The `PangoGravity` type represents the orientation of glyphs in a segment
-/// of text.  This is useful when rendering vertical text layouts.  In
-/// those situations, the layout is rotated using a non-identity PangoMatrix,
-/// and then glyph orientation is controlled using `PangoGravity`.
+/// `PangoGravity` represents the orientation of glyphs in a segment
+/// of text.
+/// 
+/// This is useful when rendering vertical text layouts. In those situations,
+/// the layout is rotated using a non-identity [struct`Pango.Matrix`], and then
+/// glyph orientation is controlled using `PangoGravity`.
+/// 
 /// Not every value in this enumeration makes sense for every usage of
 /// `PangoGravity`; for example, `PANGO_GRAVITY_AUTO` only can be passed to
-/// `pango_context_set_base_gravity()` and can only be returned by
-/// `pango_context_get_base_gravity()`.
+/// [method`Pango.Context.set_base_gravity`] and can only be returned by
+/// [method`Pango.Context.get_base_gravity`].
 /// 
-/// See also: `PangoGravityHint`
+/// See also: [enum`Pango.GravityHint`]
 public typealias Gravity = PangoGravity
 
 public extension Gravity {
@@ -308,11 +313,12 @@ public extension Gravity {
 
 
 
-/// The `PangoGravityHint` defines how horizontal scripts should behave in a
-/// vertical context.  That is, English excerpt in a vertical paragraph for
-/// example.
+/// `PangoGravityHint` defines how horizontal scripts should behave in a
+/// vertical context.
 /// 
-/// See `PangoGravity`.
+/// That is, English excerpts in a vertical paragraph for example.
+/// 
+/// See also [enum`Pango.Gravity`]
 public typealias GravityHint = PangoGravityHint
 
 public extension GravityHint {
@@ -338,9 +344,8 @@ public extension GravityHint {
 
 
 
-/// The `PangoOverline` enumeration is used to specify
-/// whether text should be overlined, and if so, the type
-/// of line.
+/// The `PangoOverline` enumeration is used to specify whether text
+/// should be overlined, and if so, the type of line.
 public typealias Overline = PangoOverline
 
 public extension Overline {
@@ -387,15 +392,15 @@ public extension RenderPart {
 
 
 /// The `PangoScript` enumeration identifies different writing
-/// systems. The values correspond to the names as defined in the
-/// Unicode standard. See <ulink
-/// url="http://www.unicode.org/reports/tr24/">Unicode Standard Annex
-/// `24:` Script names</ulink>.
+/// systems.
+/// 
+/// The values correspond to the names as defined in the Unicode standard. See
+/// [Unicode Standard Annex 24: Script names](http://www.unicode.org/reports/tr24/)
 /// 
 /// Note that this enumeration is deprecated and will not be updated
 /// to include values in newer versions of the Unicode standard.
-/// Applications should use the GUnicodeScript enumeration instead,
-/// whose values are interchangeable with PangoScript.
+/// Applications should use the `GUnicodeScript` enumeration instead,
+/// whose values are interchangeable with `PangoScript`.
 public typealias Script = PangoScript
 
 public extension Script {
@@ -702,7 +707,7 @@ public extension Style {
 
 
 
-/// A `PangoTabAlign` specifies where a tab stop appears relative to the text.
+/// `PangoTabAlign` specifies where a tab stop appears relative to the text.
 public typealias TabAlign = PangoTabAlign
 
 public extension TabAlign {
@@ -719,9 +724,8 @@ public extension TabAlign {
 
 
 
-/// The `PangoUnderline` enumeration is used to specify
-/// whether text should be underlined, and if so, the type
-/// of underlining.
+/// The `PangoUnderline` enumeration is used to specify whether text
+/// should be underlined, and if so, the type of underlining.
 public typealias Underline = PangoUnderline
 
 public extension Underline {
@@ -787,8 +791,10 @@ public extension Variant {
 
 
 
-/// An enumeration specifying the weight (boldness) of a font. This is a numerical
-/// value ranging from 100 to 1000, but there are some predefined values:
+/// An enumeration specifying the weight (boldness) of a font.
+/// 
+/// This is a numerical value ranging from 100 to 1000, but there
+/// are some predefined values.
 public typealias Weight = PangoWeight
 
 public extension Weight {
@@ -827,7 +833,8 @@ public extension Weight {
 
 
 
-/// A `PangoWrapMode` describes how to wrap the lines of a `PangoLayout` to the desired width.
+/// `PangoWrapMode` describes how to wrap the lines of a `PangoLayout`
+/// to the desired width.
 public typealias WrapMode = PangoWrapMode
 
 public extension WrapMode {
@@ -842,8 +849,8 @@ public extension WrapMode {
     static let word = PANGO_WRAP_WORD // 0
     /// wrap lines at character boundaries.
     static let char = PANGO_WRAP_CHAR // 1
-    /// wrap lines at word boundaries, but fall back to character boundaries if there is not
-    /// enough space for a full word.
+    /// wrap lines at word boundaries, but fall back to
+    ///   character boundaries if there is not enough space for a full word.
     static let wordChar = PANGO_WRAP_WORD_CHAR // 2
 }
 

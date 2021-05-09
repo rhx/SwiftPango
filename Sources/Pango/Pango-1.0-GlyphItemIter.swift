@@ -11,40 +11,43 @@ import GLibObject
 /// Alternatively, use `GlyphItemIterRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
 /// A `PangoGlyphItemIter` is an iterator over the clusters in a
-/// `PangoGlyphItem`.  The <firstterm>forward direction</firstterm> of the
-/// iterator is the logical direction of text.  That is, with increasing
-/// `start_index` and `start_char` values.  If `glyph_item` is right-to-left
-/// (that is, if <literal>`glyph_item`->item->analysis.level</literal> is odd),
+/// `PangoGlyphItem`.
+/// 
+/// The *forward direction* of the iterator is the logical direction of text.
+/// That is, with increasing `start_index` and `start_char` values. If `glyph_item`
+/// is right-to-left (that is, if `glyph_item-&gt;item-&gt;analysis.level` is odd),
 /// then `start_glyph` decreases as the iterator moves forward.  Moreover,
 /// in right-to-left cases, `start_glyph` is greater than `end_glyph`.
 /// 
-/// An iterator should be initialized using either of
-/// `pango_glyph_item_iter_init_start()` and
+/// An iterator should be initialized using either
+/// `pango_glyph_item_iter_init_start()` or
 /// `pango_glyph_item_iter_init_end()`, for forward and backward iteration
 /// respectively, and walked over using any desired mixture of
 /// `pango_glyph_item_iter_next_cluster()` and
-/// `pango_glyph_item_iter_prev_cluster()`.  A common idiom for doing a
-/// forward iteration over the clusters is:
-/// <programlisting>
+/// `pango_glyph_item_iter_prev_cluster()`.
+/// 
+/// A common idiom for doing a forward iteration over the clusters is:
+/// 
+/// ```
 /// PangoGlyphItemIter cluster_iter;
 /// gboolean have_cluster;
 /// 
-/// for (have_cluster = pango_glyph_item_iter_init_start (&amp;cluster_iter,
+/// for (have_cluster = pango_glyph_item_iter_init_start (&cluster_iter,
 ///                                                       glyph_item, text);
 ///      have_cluster;
-///      have_cluster = pango_glyph_item_iter_next_cluster (&amp;cluster_iter))
+///      have_cluster = pango_glyph_item_iter_next_cluster (&cluster_iter))
 /// {
 ///   ...
 /// }
-/// </programlisting>
+/// ```
 /// 
 /// Note that `text` is the start of the text for layout, which is then
-/// indexed by <literal>`glyph_item`->item->offset</literal> to get to the
-/// text of `glyph_item`.  The `start_index` and `end_index` values can directly
-/// index into `text`.  The `start_glyph`, `end_glyph`, `start_char`, and `end_char`
-/// values however are zero-based for the `glyph_item`.  For each cluster, the
-/// item pointed at by the start variables is included in the cluster while
-/// the one pointed at by end variables is not.
+/// indexed by `glyph_item-&gt;item-&gt;offset` to get to the text of `glyph_item`.
+/// The `start_index` and `end_index` values can directly index into `text`. The
+/// `start_glyph`, `end_glyph`, `start_char`, and `end_char` values however are
+/// zero-based for the `glyph_item`.  For each cluster, the item pointed at by
+/// the start variables is included in the cluster while the one pointed at by
+/// end variables is not.
 /// 
 /// None of the members of a `PangoGlyphItemIter` should be modified manually.
 public protocol GlyphItemIterProtocol {
@@ -54,6 +57,8 @@ public protocol GlyphItemIterProtocol {
     /// Typed pointer to the underlying `PangoGlyphItemIter` instance.
     var glyph_item_iter_ptr: UnsafeMutablePointer<PangoGlyphItemIter>! { get }
 
+    /// Required Initialiser for types conforming to `GlyphItemIterProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `GlyphItemIterRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphItemIter` instance.
@@ -61,40 +66,43 @@ public protocol GlyphItemIterProtocol {
 /// Use `GlyphItemIterRef` only as an `unowned` reference to an existing `PangoGlyphItemIter` instance.
 ///
 /// A `PangoGlyphItemIter` is an iterator over the clusters in a
-/// `PangoGlyphItem`.  The <firstterm>forward direction</firstterm> of the
-/// iterator is the logical direction of text.  That is, with increasing
-/// `start_index` and `start_char` values.  If `glyph_item` is right-to-left
-/// (that is, if <literal>`glyph_item`->item->analysis.level</literal> is odd),
+/// `PangoGlyphItem`.
+/// 
+/// The *forward direction* of the iterator is the logical direction of text.
+/// That is, with increasing `start_index` and `start_char` values. If `glyph_item`
+/// is right-to-left (that is, if `glyph_item-&gt;item-&gt;analysis.level` is odd),
 /// then `start_glyph` decreases as the iterator moves forward.  Moreover,
 /// in right-to-left cases, `start_glyph` is greater than `end_glyph`.
 /// 
-/// An iterator should be initialized using either of
-/// `pango_glyph_item_iter_init_start()` and
+/// An iterator should be initialized using either
+/// `pango_glyph_item_iter_init_start()` or
 /// `pango_glyph_item_iter_init_end()`, for forward and backward iteration
 /// respectively, and walked over using any desired mixture of
 /// `pango_glyph_item_iter_next_cluster()` and
-/// `pango_glyph_item_iter_prev_cluster()`.  A common idiom for doing a
-/// forward iteration over the clusters is:
-/// <programlisting>
+/// `pango_glyph_item_iter_prev_cluster()`.
+/// 
+/// A common idiom for doing a forward iteration over the clusters is:
+/// 
+/// ```
 /// PangoGlyphItemIter cluster_iter;
 /// gboolean have_cluster;
 /// 
-/// for (have_cluster = pango_glyph_item_iter_init_start (&amp;cluster_iter,
+/// for (have_cluster = pango_glyph_item_iter_init_start (&cluster_iter,
 ///                                                       glyph_item, text);
 ///      have_cluster;
-///      have_cluster = pango_glyph_item_iter_next_cluster (&amp;cluster_iter))
+///      have_cluster = pango_glyph_item_iter_next_cluster (&cluster_iter))
 /// {
 ///   ...
 /// }
-/// </programlisting>
+/// ```
 /// 
 /// Note that `text` is the start of the text for layout, which is then
-/// indexed by <literal>`glyph_item`->item->offset</literal> to get to the
-/// text of `glyph_item`.  The `start_index` and `end_index` values can directly
-/// index into `text`.  The `start_glyph`, `end_glyph`, `start_char`, and `end_char`
-/// values however are zero-based for the `glyph_item`.  For each cluster, the
-/// item pointed at by the start variables is included in the cluster while
-/// the one pointed at by end variables is not.
+/// indexed by `glyph_item-&gt;item-&gt;offset` to get to the text of `glyph_item`.
+/// The `start_index` and `end_index` values can directly index into `text`. The
+/// `start_glyph`, `end_glyph`, `start_char`, and `end_char` values however are
+/// zero-based for the `glyph_item`.  For each cluster, the item pointed at by
+/// the start variables is included in the cluster while the one pointed at by
+/// end variables is not.
 /// 
 /// None of the members of a `PangoGlyphItemIter` should be modified manually.
 public struct GlyphItemIterRef: GlyphItemIterProtocol {
@@ -180,40 +188,43 @@ public extension GlyphItemIterRef {
 /// Use `GlyphItemIter` as a strong reference or owner of a `PangoGlyphItemIter` instance.
 ///
 /// A `PangoGlyphItemIter` is an iterator over the clusters in a
-/// `PangoGlyphItem`.  The <firstterm>forward direction</firstterm> of the
-/// iterator is the logical direction of text.  That is, with increasing
-/// `start_index` and `start_char` values.  If `glyph_item` is right-to-left
-/// (that is, if <literal>`glyph_item`->item->analysis.level</literal> is odd),
+/// `PangoGlyphItem`.
+/// 
+/// The *forward direction* of the iterator is the logical direction of text.
+/// That is, with increasing `start_index` and `start_char` values. If `glyph_item`
+/// is right-to-left (that is, if `glyph_item-&gt;item-&gt;analysis.level` is odd),
 /// then `start_glyph` decreases as the iterator moves forward.  Moreover,
 /// in right-to-left cases, `start_glyph` is greater than `end_glyph`.
 /// 
-/// An iterator should be initialized using either of
-/// `pango_glyph_item_iter_init_start()` and
+/// An iterator should be initialized using either
+/// `pango_glyph_item_iter_init_start()` or
 /// `pango_glyph_item_iter_init_end()`, for forward and backward iteration
 /// respectively, and walked over using any desired mixture of
 /// `pango_glyph_item_iter_next_cluster()` and
-/// `pango_glyph_item_iter_prev_cluster()`.  A common idiom for doing a
-/// forward iteration over the clusters is:
-/// <programlisting>
+/// `pango_glyph_item_iter_prev_cluster()`.
+/// 
+/// A common idiom for doing a forward iteration over the clusters is:
+/// 
+/// ```
 /// PangoGlyphItemIter cluster_iter;
 /// gboolean have_cluster;
 /// 
-/// for (have_cluster = pango_glyph_item_iter_init_start (&amp;cluster_iter,
+/// for (have_cluster = pango_glyph_item_iter_init_start (&cluster_iter,
 ///                                                       glyph_item, text);
 ///      have_cluster;
-///      have_cluster = pango_glyph_item_iter_next_cluster (&amp;cluster_iter))
+///      have_cluster = pango_glyph_item_iter_next_cluster (&cluster_iter))
 /// {
 ///   ...
 /// }
-/// </programlisting>
+/// ```
 /// 
 /// Note that `text` is the start of the text for layout, which is then
-/// indexed by <literal>`glyph_item`->item->offset</literal> to get to the
-/// text of `glyph_item`.  The `start_index` and `end_index` values can directly
-/// index into `text`.  The `start_glyph`, `end_glyph`, `start_char`, and `end_char`
-/// values however are zero-based for the `glyph_item`.  For each cluster, the
-/// item pointed at by the start variables is included in the cluster while
-/// the one pointed at by end variables is not.
+/// indexed by `glyph_item-&gt;item-&gt;offset` to get to the text of `glyph_item`.
+/// The `start_index` and `end_index` values can directly index into `text`. The
+/// `start_glyph`, `end_glyph`, `start_char`, and `end_char` values however are
+/// zero-based for the `glyph_item`.  For each cluster, the item pointed at by
+/// the start variables is included in the cluster while the one pointed at by
+/// end variables is not.
 /// 
 /// None of the members of a `PangoGlyphItemIter` should be modified manually.
 open class GlyphItemIter: GlyphItemIterProtocol {
@@ -329,7 +340,7 @@ open class GlyphItemIter: GlyphItemIterProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GlyphItemIterProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -376,7 +387,7 @@ public extension GlyphItemIterProtocol {
         return rv
     }
 
-    /// Frees a `PangoGlyphItemIter` created by `pango_glyph_item_iter_copy()`.
+    /// Frees a `PangoGlyphItem`Iter.
     @inlinable func free() {
         pango_glyph_item_iter_free(glyph_item_iter_ptr)
     
@@ -384,6 +395,7 @@ public extension GlyphItemIterProtocol {
 
     /// Initializes a `PangoGlyphItemIter` structure to point to the
     /// last cluster in a glyph item.
+    /// 
     /// See `PangoGlyphItemIter` for details of cluster orders.
     @inlinable func initEnd<GlyphItemT: GlyphItemProtocol>(glyphItem: GlyphItemT, text: UnsafePointer<CChar>!) -> Bool {
         let rv = ((pango_glyph_item_iter_init_end(glyph_item_iter_ptr, glyphItem.glyph_item_ptr, text)) != 0)
@@ -392,6 +404,7 @@ public extension GlyphItemIterProtocol {
 
     /// Initializes a `PangoGlyphItemIter` structure to point to the
     /// first cluster in a glyph item.
+    /// 
     /// See `PangoGlyphItemIter` for details of cluster orders.
     @inlinable func initStart<GlyphItemT: GlyphItemProtocol>(glyphItem: GlyphItemT, text: UnsafePointer<CChar>!) -> Bool {
         let rv = ((pango_glyph_item_iter_init_start(glyph_item_iter_ptr, glyphItem.glyph_item_ptr, text)) != 0)
@@ -399,6 +412,7 @@ public extension GlyphItemIterProtocol {
     }
 
     /// Advances the iterator to the next cluster in the glyph item.
+    /// 
     /// See `PangoGlyphItemIter` for details of cluster orders.
     @inlinable func nextCluster() -> Bool {
         let rv = ((pango_glyph_item_iter_next_cluster(glyph_item_iter_ptr)) != 0)

@@ -22,6 +22,8 @@ public protocol LanguageProtocol {
     /// Typed pointer to the underlying `PangoLanguage` instance.
     var language_ptr: UnsafeMutablePointer<PangoLanguage>! { get }
 
+    /// Required Initialiser for types conforming to `LanguageProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `LanguageRef` type acts as a lightweight Swift reference to an underlying `PangoLanguage` instance.
@@ -109,27 +111,27 @@ public extension LanguageRef {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
-        /// Take a RFC-3066 format language tag as a string and convert it to a
-    /// `PangoLanguage` pointer that can be efficiently copied (copy the
-    /// pointer) and compared with other language tags (compare the
-    /// pointer.)
+        /// Convert a language tag to a `PangoLanguage`.
+    /// 
+    /// The language tag must be in a RFC-3066 format. `PangoLanguage` pointers
+    /// can be efficiently copied (copy the pointer) and compared with other
+    /// language tags (compare the pointer.)
     /// 
     /// This function first canonicalizes the string by converting it to
     /// lowercase, mapping '_' to '-', and stripping all characters other
     /// than letters and '-'.
     /// 
-    /// Use `pango_language_get_default()` if you want to get the `PangoLanguage` for
-    /// the current locale of the process.
+    /// Use [type_func`Pango.Language.get_default`] if you want to get the `PangoLanguage`
+    /// for the current locale of the process.
     @inlinable static func from(string language: UnsafePointer<CChar>? = nil) -> LanguageRef! {
         guard let rv = LanguageRef(gconstpointer: gconstpointer(pango_language_from_string(language))) else { return nil }
         return rv
     }
 
     /// Returns the `PangoLanguage` for the current locale of the process.
-    /// Note that this can change over the life of an application.
     /// 
     /// On Unix systems, this is the return value is derived from
-    /// `<literal>setlocale(LC_CTYPE, NULL)`</literal>, and the user can
+    /// `setlocale (LC_CTYPE, NULL)`, and the user can
     /// affect this through the environment variables LC_ALL, LC_CTYPE or
     /// LANG (checked in that order). The locale string typically is in
     /// the form lang_COUNTRY, where lang is an ISO-639 language code, and
@@ -147,10 +149,12 @@ public extension LanguageRef {
     /// variables, and does return a Unix-style locale string based on
     /// either said environment variables or the thread's current locale.
     /// 
-    /// Your application should call `<literal>setlocale(LC_ALL, "")`;</literal>
-    /// for the user settings to take effect.  Gtk+ does this in its initialization
+    /// Your application should call ``setlocale(LC_ALL, "")`` for the user
+    /// settings to take effect. GTK does this in its initialization
     /// functions automatically (by calling `gtk_set_locale()`).
-    /// See <literal>man setlocale</literal> for more details.
+    /// See the `setlocale()` manpage for more details.
+    /// 
+    /// Note that the default language can change over the life of an application.
     @inlinable static func getDefault() -> LanguageRef! {
         guard let rv = LanguageRef(gconstpointer: gconstpointer(pango_language_get_default())) else { return nil }
         return rv
@@ -279,7 +283,7 @@ open class Language: LanguageProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LanguageProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -307,27 +311,27 @@ open class Language: LanguageProtocol {
     }
 
 
-    /// Take a RFC-3066 format language tag as a string and convert it to a
-    /// `PangoLanguage` pointer that can be efficiently copied (copy the
-    /// pointer) and compared with other language tags (compare the
-    /// pointer.)
+    /// Convert a language tag to a `PangoLanguage`.
+    /// 
+    /// The language tag must be in a RFC-3066 format. `PangoLanguage` pointers
+    /// can be efficiently copied (copy the pointer) and compared with other
+    /// language tags (compare the pointer.)
     /// 
     /// This function first canonicalizes the string by converting it to
     /// lowercase, mapping '_' to '-', and stripping all characters other
     /// than letters and '-'.
     /// 
-    /// Use `pango_language_get_default()` if you want to get the `PangoLanguage` for
-    /// the current locale of the process.
+    /// Use [type_func`Pango.Language.get_default`] if you want to get the `PangoLanguage`
+    /// for the current locale of the process.
     @inlinable public static func from(string language: UnsafePointer<CChar>? = nil) -> Language! {
         guard let rv = Language(gconstpointer: gconstpointer(pango_language_from_string(language))) else { return nil }
         return rv
     }
 
     /// Returns the `PangoLanguage` for the current locale of the process.
-    /// Note that this can change over the life of an application.
     /// 
     /// On Unix systems, this is the return value is derived from
-    /// `<literal>setlocale(LC_CTYPE, NULL)`</literal>, and the user can
+    /// `setlocale (LC_CTYPE, NULL)`, and the user can
     /// affect this through the environment variables LC_ALL, LC_CTYPE or
     /// LANG (checked in that order). The locale string typically is in
     /// the form lang_COUNTRY, where lang is an ISO-639 language code, and
@@ -345,10 +349,12 @@ open class Language: LanguageProtocol {
     /// variables, and does return a Unix-style locale string based on
     /// either said environment variables or the thread's current locale.
     /// 
-    /// Your application should call `<literal>setlocale(LC_ALL, "")`;</literal>
-    /// for the user settings to take effect.  Gtk+ does this in its initialization
+    /// Your application should call ``setlocale(LC_ALL, "")`` for the user
+    /// settings to take effect. GTK does this in its initialization
     /// functions automatically (by calling `gtk_set_locale()`).
-    /// See <literal>man setlocale</literal> for more details.
+    /// See the `setlocale()` manpage for more details.
+    /// 
+    /// Note that the default language can change over the life of an application.
     @inlinable public static func getDefault() -> Language! {
         guard let rv = Language(gconstpointer: gconstpointer(pango_language_get_default())) else { return nil }
         return rv
@@ -369,27 +375,29 @@ public extension LanguageProtocol {
     /// Get a string that is representative of the characters needed to
     /// render a particular language.
     /// 
-    /// The sample text may be a pangram, but is not necessarily.  It is chosen to
-    /// be demonstrative of normal text in the language, as well as exposing font
-    /// feature requirements unique to the language.  It is suitable for use
+    /// The sample text may be a pangram, but is not necessarily. It is chosen
+    /// to be demonstrative of normal text in the language, as well as exposing
+    /// font feature requirements unique to the language. It is suitable for use
     /// as sample text in a font selection dialog.
     /// 
     /// If `language` is `nil`, the default language as found by
-    /// `pango_language_get_default()` is used.
+    /// [type_func`Pango.Language.get_default`] is used.
     /// 
     /// If Pango does not have a sample string for `language`, the classic
     /// "The quick brown fox..." is returned.  This can be detected by
     /// comparing the returned pointer value to that returned for (non-existent)
     /// language code "xx".  That is, compare to:
-    /// <informalexample><programlisting>
+    /// 
+    /// ```
     /// pango_language_get_sample_string (pango_language_from_string ("xx"))
-    /// </programlisting></informalexample>
+    /// ```
     @inlinable func getSampleString() -> String! {
         let rv = pango_language_get_sample_string(language_ptr).map({ String(cString: $0) })
         return rv
     }
 
     /// Determines the scripts used to to write `language`.
+    /// 
     /// If nothing is known about the language tag `language`,
     /// or if `language` is `nil`, then `nil` is returned.
     /// The list of scripts returned starts with the script that the
@@ -400,16 +408,16 @@ public extension LanguageProtocol {
     /// 
     /// Most languages use only one script for writing, but there are
     /// some that use two (Latin and Cyrillic for example), and a few
-    /// use three (Japanese for example).  Applications should not make
+    /// use three (Japanese for example). Applications should not make
     /// any assumptions on the maximum number of scripts returned
     /// though, except that it is positive if the return value is not
     /// `nil`, and it is a small number.
     /// 
-    /// The `pango_language_includes_script()` function uses this function
+    /// The [method`Pango.Language.includes_script`] function uses this function
     /// internally.
     /// 
-    /// Note: while the return value is declared as PangoScript, the
-    /// returned values are from the GUnicodeScript enumeration, which
+    /// Note: while the return value is declared as `PangoScript`, the
+    /// returned values are from the `GUnicodeScript` enumeration, which
     /// may have more values. Callers need to handle unknown values.
     @inlinable func getScripts(numScripts: UnsafeMutablePointer<gint>! = nil) -> UnsafePointer<PangoScript>! {
         let rv = pango_language_get_scripts(language_ptr, numScripts)
@@ -424,17 +432,19 @@ public extension LanguageProtocol {
     /// 
     /// This routine is used in Pango's itemization process when
     /// determining if a supplied language tag is relevant to
-    /// a particular section of text. It probably is not useful for
-    /// applications in most circumstances.
+    /// a particular section of text. It probably is not useful
+    /// for applications in most circumstances.
     /// 
-    /// This function uses `pango_language_get_scripts()` internally.
+    /// This function uses [method`Pango.Language.get_scripts`] internally.
     @inlinable func includes(script: PangoScript) -> Bool {
         let rv = ((pango_language_includes_script(language_ptr, script)) != 0)
         return rv
     }
 
     /// Checks if a language tag matches one of the elements in a list of
-    /// language ranges. A language tag is considered to match a range
+    /// language ranges.
+    /// 
+    /// A language tag is considered to match a range
     /// in the list if the range is '*', the range is exactly the tag,
     /// or the range is a prefix of the tag, and the character after it
     /// in the tag is '-'.
@@ -455,22 +465,13 @@ public extension LanguageProtocol {
         return rv
     }
 
-    /// Do not use.  Does not do anything.
-    ///
-    /// **find_map is deprecated:**
-    /// This method is deprecated.
-    @available(*, deprecated) @inlinable func findMap(engineTypeId: Int, renderTypeId: Int) -> MapRef! {
-        let rv = MapRef(gconstpointer: gconstpointer(pango_find_map(language_ptr, guint(engineTypeId), guint(renderTypeId))))
-        return rv
-    }
-
-    /// Computes a `PangoLogAttr` for each character in `text`. The `log_attrs`
-    /// array must have one `PangoLogAttr` for each position in `text`; if
-    /// `text` contains N characters, it has N+1 positions, including the
-    /// last position at the end of the text. `text` should be an entire
-    /// paragraph; logical attributes can't be computed without context
-    /// (for example you need to see spaces on either side of a word to know
-    /// the word is a word).
+    /// Computes a `PangoLogAttr` for each character in `text`.
+    /// 
+    /// The `log_attrs` array must have one `PangoLogAttr` for each position in `text`;
+    /// if `text` contains N characters, it has N+1 positions, including the last
+    /// position at the end of the text. `text` should be an entire paragraph; logical
+    /// attributes can't be computed without context (for example you need to see
+    /// spaces on either side of a word to know the word is a word).
     @inlinable func getLogAttrs(text: UnsafePointer<CChar>!, length: Int, level: Int, logAttrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
         pango_get_log_attrs(text, gint(length), gint(level), language_ptr, logAttrs, gint(attrsLen))
     
@@ -478,40 +479,42 @@ public extension LanguageProtocol {
     /// Get a string that is representative of the characters needed to
     /// render a particular language.
     /// 
-    /// The sample text may be a pangram, but is not necessarily.  It is chosen to
-    /// be demonstrative of normal text in the language, as well as exposing font
-    /// feature requirements unique to the language.  It is suitable for use
+    /// The sample text may be a pangram, but is not necessarily. It is chosen
+    /// to be demonstrative of normal text in the language, as well as exposing
+    /// font feature requirements unique to the language. It is suitable for use
     /// as sample text in a font selection dialog.
     /// 
     /// If `language` is `nil`, the default language as found by
-    /// `pango_language_get_default()` is used.
+    /// [type_func`Pango.Language.get_default`] is used.
     /// 
     /// If Pango does not have a sample string for `language`, the classic
     /// "The quick brown fox..." is returned.  This can be detected by
     /// comparing the returned pointer value to that returned for (non-existent)
     /// language code "xx".  That is, compare to:
-    /// <informalexample><programlisting>
+    /// 
+    /// ```
     /// pango_language_get_sample_string (pango_language_from_string ("xx"))
-    /// </programlisting></informalexample>
+    /// ```
     @inlinable var sampleString: String! {
         /// Get a string that is representative of the characters needed to
         /// render a particular language.
         /// 
-        /// The sample text may be a pangram, but is not necessarily.  It is chosen to
-        /// be demonstrative of normal text in the language, as well as exposing font
-        /// feature requirements unique to the language.  It is suitable for use
+        /// The sample text may be a pangram, but is not necessarily. It is chosen
+        /// to be demonstrative of normal text in the language, as well as exposing
+        /// font feature requirements unique to the language. It is suitable for use
         /// as sample text in a font selection dialog.
         /// 
         /// If `language` is `nil`, the default language as found by
-        /// `pango_language_get_default()` is used.
+        /// [type_func`Pango.Language.get_default`] is used.
         /// 
         /// If Pango does not have a sample string for `language`, the classic
         /// "The quick brown fox..." is returned.  This can be detected by
         /// comparing the returned pointer value to that returned for (non-existent)
         /// language code "xx".  That is, compare to:
-        /// <informalexample><programlisting>
+        /// 
+        /// ```
         /// pango_language_get_sample_string (pango_language_from_string ("xx"))
-        /// </programlisting></informalexample>
+        /// ```
         get {
             let rv = pango_language_get_sample_string(language_ptr).map({ String(cString: $0) })
             return rv

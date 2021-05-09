@@ -33,6 +33,8 @@ public protocol LayoutClassProtocol {
     /// Typed pointer to the underlying `PangoLayoutClass` instance.
     var _ptr: UnsafeMutablePointer<PangoLayoutClass>! { get }
 
+    /// Required Initialiser for types conforming to `LayoutClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `LayoutClassRef` type acts as a lightweight Swift reference to an underlying `PangoLayoutClass` instance.

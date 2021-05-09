@@ -11,7 +11,8 @@ import GLibObject
 /// Alternatively, use `GlyphItemRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
 /// A `PangoGlyphItem` is a pair of a `PangoItem` and the glyphs
-/// resulting from shaping the text corresponding to an item.
+/// resulting from shaping the items text.
+/// 
 /// As an example of the usage of `PangoGlyphItem`, the results
 /// of shaping text with `PangoLayout` is a list of `PangoLayoutLine`,
 /// each of which contains a list of `PangoGlyphItem`.
@@ -22,6 +23,8 @@ public protocol GlyphItemProtocol {
     /// Typed pointer to the underlying `PangoGlyphItem` instance.
     var glyph_item_ptr: UnsafeMutablePointer<PangoGlyphItem>! { get }
 
+    /// Required Initialiser for types conforming to `GlyphItemProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `GlyphItemRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphItem` instance.
@@ -29,7 +32,8 @@ public protocol GlyphItemProtocol {
 /// Use `GlyphItemRef` only as an `unowned` reference to an existing `PangoGlyphItem` instance.
 ///
 /// A `PangoGlyphItem` is a pair of a `PangoItem` and the glyphs
-/// resulting from shaping the text corresponding to an item.
+/// resulting from shaping the items text.
+/// 
 /// As an example of the usage of `PangoGlyphItem`, the results
 /// of shaping text with `PangoLayout` is a list of `PangoLayoutLine`,
 /// each of which contains a list of `PangoGlyphItem`.
@@ -116,7 +120,8 @@ public extension GlyphItemRef {
 /// Use `GlyphItem` as a strong reference or owner of a `PangoGlyphItem` instance.
 ///
 /// A `PangoGlyphItem` is a pair of a `PangoItem` and the glyphs
-/// resulting from shaping the text corresponding to an item.
+/// resulting from shaping the items text.
+/// 
 /// As an example of the usage of `PangoGlyphItem`, the results
 /// of shaping text with `PangoLayout` is a list of `PangoLayoutLine`,
 /// each of which contains a list of `PangoGlyphItem`.
@@ -233,7 +238,7 @@ open class GlyphItem: GlyphItemProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GlyphItemProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -274,10 +279,12 @@ public extension GlyphItemProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoGlyphItem` instance.
     @inlinable var glyph_item_ptr: UnsafeMutablePointer<PangoGlyphItem>! { return ptr?.assumingMemoryBound(to: PangoGlyphItem.self) }
 
-    /// Splits a shaped item (PangoGlyphItem) into multiple items based
-    /// on an attribute list. The idea is that if you have attributes
+    /// Splits a shaped item (`PangoGlyphItem`) into multiple items based
+    /// on an attribute list.
+    /// 
+    /// The idea is that if you have attributes
     /// that don't affect shaping, such as color or underline, to avoid
-    /// affecting shaping, you filter them out (`pango_attr_list_filter()`),
+    /// affecting shaping, you filter them out ([method`Pango.AttrList.filter`]),
     /// apply the shaping process and then reapply them to the result using
     /// this function.
     /// 
@@ -285,7 +292,7 @@ public extension GlyphItemProtocol {
     /// to that cluster; for instance, if half of a cluster is underlined
     /// and the other-half strikethrough, then the cluster will end
     /// up with both underline and strikethrough attributes. In these
-    /// cases, it may happen that item->extra_attrs for some of the
+    /// cases, it may happen that `item-`&gt;extra_attrs for some of the
     /// result items can have multiple attributes of the same type.
     /// 
     /// This function takes ownership of `glyph_item`; it will be reused
@@ -307,12 +314,13 @@ public extension GlyphItemProtocol {
     
     }
 
-    /// Given a `PangoGlyphItem` and the corresponding
-    /// text, determine the screen width corresponding to each character. When
-    /// multiple characters compose a single cluster, the width of the entire
+    /// Given a `PangoGlyphItem` and the corresponding text, determine the width
+    /// corresponding to each character.
+    /// 
+    /// When multiple characters compose a single cluster, the width of the entire
     /// cluster is divided equally among the characters.
     /// 
-    /// See also `pango_glyph_string_get_logical_widths()`.
+    /// See also [method`Pango.GlyphString.get_logical_widths`].
     @inlinable func getLogicalWidths(text: UnsafePointer<CChar>!, logicalWidths: UnsafeMutablePointer<CInt>!) {
         pango_glyph_item_get_logical_widths(glyph_item_ptr, text, logicalWidths)
     
@@ -327,7 +335,9 @@ public extension GlyphItemProtocol {
 
     /// Modifies `orig` to cover only the text after `split_index`, and
     /// returns a new item that covers the text before `split_index` that
-    /// used to be in `orig`. You can think of `split_index` as the length of
+    /// used to be in `orig`.
+    /// 
+    /// You can think of `split_index` as the length of
     /// the returned item. `split_index` may not be 0, and it may not be
     /// greater than or equal to the length of `orig` (that is, there must
     /// be at least one byte assigned to each item, you can't create a
@@ -340,27 +350,27 @@ public extension GlyphItemProtocol {
         return rv
     }
 
-    /// corresponding `PangoItem`.
+    /// corresponding `PangoItem`
     @inlinable var item: ItemRef! {
-        /// corresponding `PangoItem`.
+        /// corresponding `PangoItem`
         get {
             let rv = ItemRef(gconstpointer: gconstpointer(glyph_item_ptr.pointee.item))
             return rv
         }
-        /// corresponding `PangoItem`.
+        /// corresponding `PangoItem`
          set {
             glyph_item_ptr.pointee.item = UnsafeMutablePointer<PangoItem>(newValue.item_ptr)
         }
     }
 
-    /// corresponding `PangoGlyphString`.
+    /// corresponding `PangoGlyphString`
     @inlinable var glyphs: GlyphStringRef! {
-        /// corresponding `PangoGlyphString`.
+        /// corresponding `PangoGlyphString`
         get {
             let rv = GlyphStringRef(gconstpointer: gconstpointer(glyph_item_ptr.pointee.glyphs))
             return rv
         }
-        /// corresponding `PangoGlyphString`.
+        /// corresponding `PangoGlyphString`
          set {
             glyph_item_ptr.pointee.glyphs = UnsafeMutablePointer<PangoGlyphString>(newValue.glyph_string_ptr)
         }

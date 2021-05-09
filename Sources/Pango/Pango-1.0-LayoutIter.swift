@@ -10,11 +10,12 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `LayoutIter`.
 /// Alternatively, use `LayoutIterRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// A `PangoLayoutIter` structure can be used to
-/// iterate over the visual extents of a `PangoLayout`.
+/// A `PangoLayoutIter` can be used to iterate over the visual
+/// extents of a `PangoLayout`.
 /// 
-/// The `PangoLayoutIter` structure is opaque, and
-/// has no user-visible fields.
+/// To obtain a `PangoLayoutIter`, use [method`Pango.Layout.get_iter`].
+/// 
+/// The `PangoLayoutIter` structure is opaque, and has no user-visible fields.
 public protocol LayoutIterProtocol {
         /// Untyped pointer to the underlying `PangoLayoutIter` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -22,17 +23,20 @@ public protocol LayoutIterProtocol {
     /// Typed pointer to the underlying `PangoLayoutIter` instance.
     var layout_iter_ptr: UnsafeMutablePointer<PangoLayoutIter>! { get }
 
+    /// Required Initialiser for types conforming to `LayoutIterProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `LayoutIterRef` type acts as a lightweight Swift reference to an underlying `PangoLayoutIter` instance.
 /// It exposes methods that can operate on this data type through `LayoutIterProtocol` conformance.
 /// Use `LayoutIterRef` only as an `unowned` reference to an existing `PangoLayoutIter` instance.
 ///
-/// A `PangoLayoutIter` structure can be used to
-/// iterate over the visual extents of a `PangoLayout`.
+/// A `PangoLayoutIter` can be used to iterate over the visual
+/// extents of a `PangoLayout`.
 /// 
-/// The `PangoLayoutIter` structure is opaque, and
-/// has no user-visible fields.
+/// To obtain a `PangoLayoutIter`, use [method`Pango.Layout.get_iter`].
+/// 
+/// The `PangoLayoutIter` structure is opaque, and has no user-visible fields.
 public struct LayoutIterRef: LayoutIterProtocol {
         /// Untyped pointer to the underlying `PangoLayoutIter` instance.
     /// For type-safe access, use the generated, typed pointer `layout_iter_ptr` property instead.
@@ -115,11 +119,12 @@ public extension LayoutIterRef {
 /// It provides the methods that can operate on this data type through `LayoutIterProtocol` conformance.
 /// Use `LayoutIter` as a strong reference or owner of a `PangoLayoutIter` instance.
 ///
-/// A `PangoLayoutIter` structure can be used to
-/// iterate over the visual extents of a `PangoLayout`.
+/// A `PangoLayoutIter` can be used to iterate over the visual
+/// extents of a `PangoLayout`.
 /// 
-/// The `PangoLayoutIter` structure is opaque, and
-/// has no user-visible fields.
+/// To obtain a `PangoLayoutIter`, use [method`Pango.Layout.get_iter`].
+/// 
+/// The `PangoLayoutIter` structure is opaque, and has no user-visible fields.
 open class LayoutIter: LayoutIterProtocol {
         /// Untyped pointer to the underlying `PangoLayoutIter` instance.
     /// For type-safe access, use the generated, typed pointer `layout_iter_ptr` property instead.
@@ -233,7 +238,7 @@ open class LayoutIter: LayoutIterProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `LayoutIterProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -324,7 +329,7 @@ public extension LayoutIterProtocol {
     /// Gets the current byte index. Note that iterating forward by char
     /// moves in visual order, not logical order, so indexes may not be
     /// sequential. Also, the index may be equal to the length of the text
-    /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
+    /// in the layout, if on the `nil` run (see [method`Pango.LayoutIter.get_run`]).
     @inlinable func getIndex() -> Int {
         let rv = Int(pango_layout_iter_get_index(layout_iter_ptr))
         return rv
@@ -336,16 +341,14 @@ public extension LayoutIterProtocol {
         return rv
     }
 
-    /// Obtains the extents of the `PangoLayout` being iterated
-    /// over. `ink_rect` or `logical_rect` can be `nil` if you
-    /// aren't interested in them.
+    /// Obtains the extents of the `PangoLayout` being iterated over.
+    /// `ink_rect` or `logical_rect` can be `nil` if you aren't interested in them.
     @inlinable func getLayoutExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
         pango_layout_iter_get_layout_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
-    /// Obtains the extents of the `PangoLayout` being iterated
-    /// over. `ink_rect` or `logical_rect` can be `nil` if you
-    /// aren't interested in them.
+    /// Obtains the extents of the `PangoLayout` being iterated over.
+    /// `ink_rect` or `logical_rect` can be `nil` if you aren't interested in them.
     @inlinable func getLayoutExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
         pango_layout_iter_get_layout_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
     
@@ -353,8 +356,9 @@ public extension LayoutIterProtocol {
 
     /// Gets the current line.
     /// 
-    /// Use the faster `pango_layout_iter_get_line_readonly()` if you do not plan
-    /// to modify the contents of the line (glyphs, glyph widths, etc.).
+    /// Use the faster [method`Pango.LayoutIter.get_line_readonly`] if
+    /// you do not plan to modify the contents of the line (glyphs,
+    /// glyph widths, etc.).
     @inlinable func getLine() -> LayoutLineRef! {
         let rv = LayoutLineRef(gconstpointer: gconstpointer(pango_layout_iter_get_line(layout_iter_ptr)))
         return rv
@@ -363,9 +367,9 @@ public extension LayoutIterProtocol {
     /// Obtains the extents of the current line. `ink_rect` or `logical_rect`
     /// can be `nil` if you aren't interested in them. Extents are in layout
     /// coordinates (origin is the top-left corner of the entire
-    /// `PangoLayout`).  Thus the extents returned by this function will be
+    /// `PangoLayout`). Thus the extents returned by this function will be
     /// the same width/height but not at the same x/y as the extents
-    /// returned from `pango_layout_line_get_extents()`.
+    /// returned from [method`Pango.LayoutLine.get_extents`].
     @inlinable func getLineExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
         pango_layout_iter_get_line_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
     
@@ -373,9 +377,9 @@ public extension LayoutIterProtocol {
     /// Obtains the extents of the current line. `ink_rect` or `logical_rect`
     /// can be `nil` if you aren't interested in them. Extents are in layout
     /// coordinates (origin is the top-left corner of the entire
-    /// `PangoLayout`).  Thus the extents returned by this function will be
+    /// `PangoLayout`). Thus the extents returned by this function will be
     /// the same width/height but not at the same x/y as the extents
-    /// returned from `pango_layout_line_get_extents()`.
+    /// returned from [method`Pango.LayoutLine.get_extents`].
     @inlinable func getLineExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
         pango_layout_iter_get_line_extents(layout_iter_ptr, inkRect?._ptr, logicalRect?._ptr)
     
@@ -383,9 +387,9 @@ public extension LayoutIterProtocol {
 
     /// Gets the current line for read-only access.
     /// 
-    /// This is a faster alternative to `pango_layout_iter_get_line()`,
-    /// but the user is not expected
-    /// to modify the contents of the line (glyphs, glyph widths, etc.).
+    /// This is a faster alternative to [method`Pango.LayoutIter.get_line`],
+    /// but the user is not expected to modify the contents of the line
+    /// (glyphs, glyph widths, etc.).
     @inlinable func getLineReadonly() -> LayoutLineRef! {
         let rv = LayoutLineRef(gconstpointer: gconstpointer(pango_layout_iter_get_line_readonly(layout_iter_ptr)))
         return rv
@@ -393,15 +397,14 @@ public extension LayoutIterProtocol {
 
     /// Divides the vertical space in the `PangoLayout` being iterated over
     /// between the lines in the layout, and returns the space belonging to
-    /// the current line.  A line's range includes the line's logical
-    /// extents, plus half of the spacing above and below the line, if
-    /// `pango_layout_set_spacing()` has been called to set layout spacing.
+    /// the current line. A line's range includes the line's logical extents,
+    /// plus half of the spacing above and below the line, if
+    /// [method`Pango.Layout.set_spacing`] has been called to set layout spacing.
     /// The Y positions are in layout coordinates (origin at top left of the
     /// entire layout).
     /// 
-    /// Note: Since 1.44, Pango uses line heights for placing lines,
-    /// and there may be gaps between the ranges returned by this
-    /// function.
+    /// Note: Since 1.44, Pango uses line heights for placing lines, and there
+    /// may be gaps between the ranges returned by this function.
     @inlinable func getLineYrange(y0_: UnsafeMutablePointer<gint>! = nil, y1_: UnsafeMutablePointer<gint>! = nil) {
         pango_layout_iter_get_line_yrange(layout_iter_ptr, y0_, y1_)
     
@@ -412,8 +415,8 @@ public extension LayoutIterProtocol {
     /// `nil`. The `nil` run at the end of each line ensures that all lines have
     /// at least one run, even lines consisting of only a newline.
     /// 
-    /// Use the faster `pango_layout_iter_get_run_readonly()` if you do not plan
-    /// to modify the contents of the run (glyphs, glyph widths, etc.).
+    /// Use the faster [method`Pango.LayoutIter.get_run_readonly`] if you do not
+    /// plan to modify the contents of the run (glyphs, glyph widths, etc.).
     @inlinable func getRun() -> UnsafeMutablePointer<PangoLayoutRun>? {
         let rv = pango_layout_iter_get_run(layout_iter_ptr)
         return rv
@@ -437,37 +440,37 @@ public extension LayoutIterProtocol {
     /// `nil`. The `nil` run at the end of each line ensures that all lines have
     /// at least one run, even lines consisting of only a newline.
     /// 
-    /// This is a faster alternative to `pango_layout_iter_get_run()`,
-    /// but the user is not expected
-    /// to modify the contents of the run (glyphs, glyph widths, etc.).
+    /// This is a faster alternative to [method`Pango.LayoutIter.get_run`],
+    /// but the user is not expected to modify the contents of the run (glyphs,
+    /// glyph widths, etc.).
     @inlinable func getRunReadonly() -> UnsafeMutablePointer<PangoLayoutRun>? {
         let rv = pango_layout_iter_get_run_readonly(layout_iter_ptr)
         return rv
     }
 
-    /// Moves `iter` forward to the next character in visual order. If `iter` was already at
-    /// the end of the layout, returns `false`.
+    /// Moves `iter` forward to the next character in visual order.
+    /// If `iter` was already at the end of the layout, returns `false`.
     @inlinable func nextChar() -> Bool {
         let rv = ((pango_layout_iter_next_char(layout_iter_ptr)) != 0)
         return rv
     }
 
-    /// Moves `iter` forward to the next cluster in visual order. If `iter`
-    /// was already at the end of the layout, returns `false`.
+    /// Moves `iter` forward to the next cluster in visual order.
+    /// If `iter` was already at the end of the layout, returns `false`.
     @inlinable func nextCluster() -> Bool {
         let rv = ((pango_layout_iter_next_cluster(layout_iter_ptr)) != 0)
         return rv
     }
 
-    /// Moves `iter` forward to the start of the next line. If `iter` is
-    /// already on the last line, returns `false`.
+    /// Moves `iter` forward to the start of the next line.
+    /// If `iter` is already on the last line, returns `false`.
     @inlinable func nextLine() -> Bool {
         let rv = ((pango_layout_iter_next_line(layout_iter_ptr)) != 0)
         return rv
     }
 
-    /// Moves `iter` forward to the next run in visual order. If `iter` was
-    /// already at the end of the layout, returns `false`.
+    /// Moves `iter` forward to the next run in visual order.
+    /// If `iter` was already at the end of the layout, returns `false`.
     @inlinable func nextRun() -> Bool {
         let rv = ((pango_layout_iter_next_run(layout_iter_ptr)) != 0)
         return rv
@@ -486,12 +489,12 @@ public extension LayoutIterProtocol {
     /// Gets the current byte index. Note that iterating forward by char
     /// moves in visual order, not logical order, so indexes may not be
     /// sequential. Also, the index may be equal to the length of the text
-    /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
+    /// in the layout, if on the `nil` run (see [method`Pango.LayoutIter.get_run`]).
     @inlinable var index: Int {
         /// Gets the current byte index. Note that iterating forward by char
         /// moves in visual order, not logical order, so indexes may not be
         /// sequential. Also, the index may be equal to the length of the text
-        /// in the layout, if on the `nil` run (see `pango_layout_iter_get_run()`).
+        /// in the layout, if on the `nil` run (see [method`Pango.LayoutIter.get_run`]).
         get {
             let rv = Int(pango_layout_iter_get_index(layout_iter_ptr))
             return rv
@@ -509,13 +512,15 @@ public extension LayoutIterProtocol {
 
     /// Gets the current line.
     /// 
-    /// Use the faster `pango_layout_iter_get_line_readonly()` if you do not plan
-    /// to modify the contents of the line (glyphs, glyph widths, etc.).
+    /// Use the faster [method`Pango.LayoutIter.get_line_readonly`] if
+    /// you do not plan to modify the contents of the line (glyphs,
+    /// glyph widths, etc.).
     @inlinable var line: LayoutLineRef! {
         /// Gets the current line.
         /// 
-        /// Use the faster `pango_layout_iter_get_line_readonly()` if you do not plan
-        /// to modify the contents of the line (glyphs, glyph widths, etc.).
+        /// Use the faster [method`Pango.LayoutIter.get_line_readonly`] if
+        /// you do not plan to modify the contents of the line (glyphs,
+        /// glyph widths, etc.).
         get {
             let rv = LayoutLineRef(gconstpointer: gconstpointer(pango_layout_iter_get_line(layout_iter_ptr)))
             return rv
@@ -524,15 +529,15 @@ public extension LayoutIterProtocol {
 
     /// Gets the current line for read-only access.
     /// 
-    /// This is a faster alternative to `pango_layout_iter_get_line()`,
-    /// but the user is not expected
-    /// to modify the contents of the line (glyphs, glyph widths, etc.).
+    /// This is a faster alternative to [method`Pango.LayoutIter.get_line`],
+    /// but the user is not expected to modify the contents of the line
+    /// (glyphs, glyph widths, etc.).
     @inlinable var lineReadonly: LayoutLineRef! {
         /// Gets the current line for read-only access.
         /// 
-        /// This is a faster alternative to `pango_layout_iter_get_line()`,
-        /// but the user is not expected
-        /// to modify the contents of the line (glyphs, glyph widths, etc.).
+        /// This is a faster alternative to [method`Pango.LayoutIter.get_line`],
+        /// but the user is not expected to modify the contents of the line
+        /// (glyphs, glyph widths, etc.).
         get {
             let rv = LayoutLineRef(gconstpointer: gconstpointer(pango_layout_iter_get_line_readonly(layout_iter_ptr)))
             return rv
@@ -544,16 +549,16 @@ public extension LayoutIterProtocol {
     /// `nil`. The `nil` run at the end of each line ensures that all lines have
     /// at least one run, even lines consisting of only a newline.
     /// 
-    /// Use the faster `pango_layout_iter_get_run_readonly()` if you do not plan
-    /// to modify the contents of the run (glyphs, glyph widths, etc.).
+    /// Use the faster [method`Pango.LayoutIter.get_run_readonly`] if you do not
+    /// plan to modify the contents of the run (glyphs, glyph widths, etc.).
     @inlinable var run: UnsafeMutablePointer<PangoLayoutRun>? {
         /// Gets the current run. When iterating by run, at the end of each
         /// line, there's a position with a `nil` run, so this function can return
         /// `nil`. The `nil` run at the end of each line ensures that all lines have
         /// at least one run, even lines consisting of only a newline.
         /// 
-        /// Use the faster `pango_layout_iter_get_run_readonly()` if you do not plan
-        /// to modify the contents of the run (glyphs, glyph widths, etc.).
+        /// Use the faster [method`Pango.LayoutIter.get_run_readonly`] if you do not
+        /// plan to modify the contents of the run (glyphs, glyph widths, etc.).
         get {
             let rv = pango_layout_iter_get_run(layout_iter_ptr)
             return rv
@@ -565,18 +570,18 @@ public extension LayoutIterProtocol {
     /// `nil`. The `nil` run at the end of each line ensures that all lines have
     /// at least one run, even lines consisting of only a newline.
     /// 
-    /// This is a faster alternative to `pango_layout_iter_get_run()`,
-    /// but the user is not expected
-    /// to modify the contents of the run (glyphs, glyph widths, etc.).
+    /// This is a faster alternative to [method`Pango.LayoutIter.get_run`],
+    /// but the user is not expected to modify the contents of the run (glyphs,
+    /// glyph widths, etc.).
     @inlinable var runReadonly: UnsafeMutablePointer<PangoLayoutRun>? {
         /// Gets the current run. When iterating by run, at the end of each
         /// line, there's a position with a `nil` run, so this function can return
         /// `nil`. The `nil` run at the end of each line ensures that all lines have
         /// at least one run, even lines consisting of only a newline.
         /// 
-        /// This is a faster alternative to `pango_layout_iter_get_run()`,
-        /// but the user is not expected
-        /// to modify the contents of the run (glyphs, glyph widths, etc.).
+        /// This is a faster alternative to [method`Pango.LayoutIter.get_run`],
+        /// but the user is not expected to modify the contents of the run (glyphs,
+        /// glyph widths, etc.).
         get {
             let rv = pango_layout_iter_get_run_readonly(layout_iter_ptr)
             return rv

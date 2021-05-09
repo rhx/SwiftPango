@@ -9,6 +9,6 @@ public typealias AttrDataCopyFunc = PangoAttrDataCopyFunc
 /// Type of a function filtering a list of attributes.
 public typealias AttrFilterFunc = PangoAttrFilterFunc
 
-/// A callback function used by `pango_fontset_foreach()` when enumerating
-/// the fonts in a fontset.
+/// Callback used by `pango_fontset_foreach()` when enumerating
+/// fonts in a fontset.
 public typealias FontsetForeachFunc = PangoFontsetForeachFunc

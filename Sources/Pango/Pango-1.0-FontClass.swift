@@ -33,6 +33,8 @@ public protocol FontClassProtocol {
     /// Typed pointer to the underlying `PangoFontClass` instance.
     var _ptr: UnsafeMutablePointer<PangoFontClass>! { get }
 
+    /// Required Initialiser for types conforming to `FontClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontClassRef` type acts as a lightweight Swift reference to an underlying `PangoFontClass` instance.

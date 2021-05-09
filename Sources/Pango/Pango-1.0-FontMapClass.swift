@@ -34,6 +34,8 @@ public protocol FontMapClassProtocol {
     /// Typed pointer to the underlying `PangoFontMapClass` instance.
     var _ptr: UnsafeMutablePointer<PangoFontMapClass>! { get }
 
+    /// Required Initialiser for types conforming to `FontMapClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `FontMapClassRef` type acts as a lightweight Swift reference to an underlying `PangoFontMapClass` instance.

@@ -10,9 +10,12 @@ import GLibObject
 /// For a concrete class that implements these methods and properties, see `Renderer`.
 /// Alternatively, use `RendererRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// `PangoRenderer` is a base class for objects that are used to
-/// render Pango objects such as `PangoGlyphString` and
-/// `PangoLayout`.
+/// `PangoRenderer` is a base class for objects that can render text
+/// provided as `PangoGlyphString` or `PangoLayout`.
+/// 
+/// By subclassing `PangoRenderer` and overriding operations such as
+/// `draw_glyphs` and `draw_rectangle`, renderers for particular font
+/// backends and destinations can be created.
 public protocol RendererProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoRenderer` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -20,15 +23,20 @@ public protocol RendererProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `PangoRenderer` instance.
     var renderer_ptr: UnsafeMutablePointer<PangoRenderer>! { get }
 
+    /// Required Initialiser for types conforming to `RendererProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RendererRef` type acts as a lightweight Swift reference to an underlying `PangoRenderer` instance.
 /// It exposes methods that can operate on this data type through `RendererProtocol` conformance.
 /// Use `RendererRef` only as an `unowned` reference to an existing `PangoRenderer` instance.
 ///
-/// `PangoRenderer` is a base class for objects that are used to
-/// render Pango objects such as `PangoGlyphString` and
-/// `PangoLayout`.
+/// `PangoRenderer` is a base class for objects that can render text
+/// provided as `PangoGlyphString` or `PangoLayout`.
+/// 
+/// By subclassing `PangoRenderer` and overriding operations such as
+/// `draw_glyphs` and `draw_rectangle`, renderers for particular font
+/// backends and destinations can be created.
 public struct RendererRef: RendererProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoRenderer` instance.
     /// For type-safe access, use the generated, typed pointer `renderer_ptr` property instead.
@@ -114,9 +122,12 @@ public extension RendererRef {
 /// It provides the methods that can operate on this data type through `RendererProtocol` conformance.
 /// Use `Renderer` as a strong reference or owner of a `PangoRenderer` instance.
 ///
-/// `PangoRenderer` is a base class for objects that are used to
-/// render Pango objects such as `PangoGlyphString` and
-/// `PangoLayout`.
+/// `PangoRenderer` is a base class for objects that can render text
+/// provided as `PangoGlyphString` or `PangoLayout`.
+/// 
+/// By subclassing `PangoRenderer` and overriding operations such as
+/// `draw_glyphs` and `draw_rectangle`, renderers for particular font
+/// backends and destinations can be created.
 open class Renderer: GLibObject.Object, RendererProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -217,14 +228,14 @@ open class Renderer: GLibObject.Object, RendererProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RendererProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -284,19 +295,21 @@ public extension RendererProtocol {
     @inlinable var renderer_ptr: UnsafeMutablePointer<PangoRenderer>! { return ptr?.assumingMemoryBound(to: PangoRenderer.self) }
 
     /// Does initial setup before rendering operations on `renderer`.
-    /// `pango_renderer_deactivate()` should be called when done drawing.
-    /// Calls such as `pango_renderer_draw_layout()` automatically
+    /// 
+    /// [method`Pango.Renderer.deactivate`] should be called when done drawing.
+    /// Calls such as [method`Pango.Renderer.draw_layout`] automatically
     /// activate the layout before drawing on it. Calls to
-    /// `pango_renderer_activate()` and `pango_renderer_deactivate()` can
-    /// be nested and the renderer will only be initialized and
+    /// ``pango_renderer_activate()`` and ``pango_renderer_deactivate()``
+    /// can be nested and the renderer will only be initialized and
     /// deinitialized once.
     @inlinable func activate() {
         pango_renderer_activate(renderer_ptr)
     
     }
 
-    /// Cleans up after rendering operations on `renderer`. See
-    /// docs for `pango_renderer_activate()`.
+    /// Cleans up after rendering operations on `renderer`.
+    /// 
+    /// See docs for [method`Pango.Renderer.activate`].
     @inlinable func deactivate() {
         pango_renderer_deactivate(renderer_ptr)
     
@@ -304,12 +317,13 @@ public extension RendererProtocol {
 
     /// Draw a squiggly line that approximately covers the given rectangle
     /// in the style of an underline used to indicate a spelling error.
-    /// (The width of the underline is rounded to an integer number
-    /// of up/down segments and the resulting rectangle is centered
-    /// in the original rectangle)
     /// 
-    /// This should be called while `renderer` is already active.  Use
-    /// `pango_renderer_activate()` to activate a renderer.
+    /// The width of the underline is rounded to an integer number
+    /// of up/down segments and the resulting rectangle is centered
+    /// in the original rectangle.
+    /// 
+    /// This should be called while `renderer` is already active.
+    /// Use [method`Pango.Renderer.activate`] to activate a renderer.
     @inlinable func drawErrorUnderline(x: Int, y: Int, width: Int, height: Int) {
         pango_renderer_draw_error_underline(renderer_ptr, gint(x), gint(y), gint(width), gint(height))
     
@@ -323,15 +337,17 @@ public extension RendererProtocol {
 
     /// Draws the glyphs in `glyph_item` with the specified `PangoRenderer`,
     /// embedding the text associated with the glyphs in the output if the
-    /// output format supports it (PDF for example).
+    /// output format supports it.
+    /// 
+    /// This is useful for rendering text in PDF.
     /// 
     /// Note that `text` is the start of the text for layout, which is then
-    /// indexed by <literal>`glyph_item`->item->offset</literal>.
+    /// indexed by `glyph_item-&gt;item-&gt;offset`.
     /// 
-    /// If `text` is `nil`, this simply calls `pango_renderer_draw_glyphs()`.
+    /// If `text` is `nil`, this simply calls [method`Pango.Renderer.draw_glyphs`].
     /// 
     /// The default implementation of this method simply falls back to
-    /// `pango_renderer_draw_glyphs()`.
+    /// [method`Pango.Renderer.draw_glyphs`].
     @inlinable func drawGlyphItem<GlyphItemT: GlyphItemProtocol>(text: UnsafePointer<CChar>? = nil, glyphItem: GlyphItemT, x: Int, y: Int) {
         pango_renderer_draw_glyph_item(renderer_ptr, text, glyphItem.glyph_item_ptr, gint(x), gint(y))
     
@@ -358,8 +374,8 @@ public extension RendererProtocol {
     /// Draws an axis-aligned rectangle in user space coordinates with the
     /// specified `PangoRenderer`.
     /// 
-    /// This should be called while `renderer` is already active.  Use
-    /// `pango_renderer_activate()` to activate a renderer.
+    /// This should be called while `renderer` is already active.
+    /// Use [method`Pango.Renderer.activate`] to activate a renderer.
     @inlinable func drawRectangle(part: PangoRenderPart, x: Int, y: Int, width: Int, height: Int) {
         pango_renderer_draw_rectangle(renderer_ptr, part, gint(x), gint(y), gint(width), gint(height))
     
@@ -385,6 +401,7 @@ public extension RendererProtocol {
     }
 
     /// Gets the layout currently being rendered using `renderer`.
+    /// 
     /// Calling this function only makes sense from inside a subclass's
     /// methods, like in its draw_shape vfunc, for example.
     /// 
@@ -396,6 +413,7 @@ public extension RendererProtocol {
     }
 
     /// Gets the layout line currently being rendered using `renderer`.
+    /// 
     /// Calling this function only makes sense from inside a subclass's
     /// methods, like in its draw_shape vfunc, for example.
     /// 
@@ -407,31 +425,36 @@ public extension RendererProtocol {
     }
 
     /// Gets the transformation matrix that will be applied when
-    /// rendering. See `pango_renderer_set_matrix()`.
+    /// rendering.
+    /// 
+    /// See [method`Pango.Renderer.set_matrix`].
     @inlinable func getMatrix() -> MatrixRef! {
         let rv = MatrixRef(gconstpointer: gconstpointer(pango_renderer_get_matrix(renderer_ptr)))
         return rv
     }
 
     /// Informs Pango that the way that the rendering is done
-    /// for `part` has changed in a way that would prevent multiple
-    /// pieces being joined together into one drawing call. For
-    /// instance, if a subclass of `PangoRenderer` was to add a stipple
+    /// for `part` has changed.
+    /// 
+    /// This should be called if the rendering changes in a way that would
+    /// prevent multiple pieces being joined together into one drawing call.
+    /// For instance, if a subclass of `PangoRenderer` was to add a stipple
     /// option for drawing underlines, it needs to call
     /// 
-    /// <informalexample><programlisting>
+    /// ```
     /// pango_renderer_part_changed (render, PANGO_RENDER_PART_UNDERLINE);
-    /// </programlisting></informalexample>
+    /// ```
     /// 
     /// When the stipple changes or underlines with different stipples
     /// might be joined together. Pango automatically calls this for
-    /// changes to colors. (See `pango_renderer_set_color()`)
+    /// changes to colors. (See [method`Pango.Renderer.set_color`])
     @inlinable func partChanged(part: PangoRenderPart) {
         pango_renderer_part_changed(renderer_ptr, part)
     
     }
 
     /// Sets the alpha for part of the rendering.
+    /// 
     /// Note that the alpha may only be used if a color is
     /// specified for `part` as well.
     @inlinable func setAlpha(part: PangoRenderPart, alpha: guint16) {
@@ -440,13 +463,15 @@ public extension RendererProtocol {
     }
 
     /// Sets the color for part of the rendering.
-    /// Also see `pango_renderer_set_alpha()`.
+    /// 
+    /// Also see [method`Pango.Renderer.set_alpha`].
     @inlinable func setColor(part: PangoRenderPart, color: ColorRef? = nil) {
         pango_renderer_set_color(renderer_ptr, part, color?.color_ptr)
     
     }
     /// Sets the color for part of the rendering.
-    /// Also see `pango_renderer_set_alpha()`.
+    /// 
+    /// Also see [method`Pango.Renderer.set_alpha`].
     @inlinable func setColor<ColorT: ColorProtocol>(part: PangoRenderPart, color: ColorT?) {
         pango_renderer_set_color(renderer_ptr, part, color?.color_ptr)
     
@@ -463,6 +488,7 @@ public extension RendererProtocol {
     
     }
     /// Gets the layout currently being rendered using `renderer`.
+    /// 
     /// Calling this function only makes sense from inside a subclass's
     /// methods, like in its draw_shape vfunc, for example.
     /// 
@@ -470,6 +496,7 @@ public extension RendererProtocol {
     /// rendered.
     @inlinable var layout: LayoutRef! {
         /// Gets the layout currently being rendered using `renderer`.
+        /// 
         /// Calling this function only makes sense from inside a subclass's
         /// methods, like in its draw_shape vfunc, for example.
         /// 
@@ -482,6 +509,7 @@ public extension RendererProtocol {
     }
 
     /// Gets the layout line currently being rendered using `renderer`.
+    /// 
     /// Calling this function only makes sense from inside a subclass's
     /// methods, like in its draw_shape vfunc, for example.
     /// 
@@ -489,6 +517,7 @@ public extension RendererProtocol {
     /// rendered.
     @inlinable var layoutLine: LayoutLineRef! {
         /// Gets the layout line currently being rendered using `renderer`.
+        /// 
         /// Calling this function only makes sense from inside a subclass's
         /// methods, like in its draw_shape vfunc, for example.
         /// 
@@ -501,10 +530,14 @@ public extension RendererProtocol {
     }
 
     /// Gets the transformation matrix that will be applied when
-    /// rendering. See `pango_renderer_set_matrix()`.
+    /// rendering.
+    /// 
+    /// See [method`Pango.Renderer.set_matrix`].
     @inlinable var matrix: MatrixRef! {
         /// Gets the transformation matrix that will be applied when
-        /// rendering. See `pango_renderer_set_matrix()`.
+        /// rendering.
+        /// 
+        /// See [method`Pango.Renderer.set_matrix`].
         get {
             let rv = MatrixRef(gconstpointer: gconstpointer(pango_renderer_get_matrix(renderer_ptr)))
             return rv
