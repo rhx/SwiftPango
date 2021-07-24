@@ -61,5 +61,5 @@ jobs:
         with:
           name: build-artefact-20.04-5.3
           path: |
-            SwiftPango/
+            SwiftPango/Sources/
           retention-days: 1
