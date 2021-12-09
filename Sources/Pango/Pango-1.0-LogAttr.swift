@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - LogAttr Record
 
+/// The `PangoLogAttr` structure stores information about the attributes of a
+/// single character.
+///
 /// The `LogAttrProtocol` protocol exposes the methods and properties of an underlying `PangoLogAttr` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `LogAttr`.
 /// Alternatively, use `LogAttrRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoLogAttr` structure stores information about the attributes of a
-/// single character.
 public protocol LogAttrProtocol {
         /// Untyped pointer to the underlying `PangoLogAttr` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol LogAttrProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoLogAttr` structure stores information about the attributes of a
+/// single character.
+///
 /// The `LogAttrRef` type acts as a lightweight Swift reference to an underlying `PangoLogAttr` instance.
 /// It exposes methods that can operate on this data type through `LogAttrProtocol` conformance.
 /// Use `LogAttrRef` only as an `unowned` reference to an existing `PangoLogAttr` instance.
 ///
-/// The `PangoLogAttr` structure stores information about the attributes of a
-/// single character.
 public struct LogAttrRef: LogAttrProtocol {
         /// Untyped pointer to the underlying `PangoLogAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +109,13 @@ public extension LogAttrRef {
 
     }
 
+/// The `PangoLogAttr` structure stores information about the attributes of a
+/// single character.
+///
 /// The `LogAttr` type acts as an owner of an underlying `PangoLogAttr` instance.
 /// It provides the methods that can operate on this data type through `LogAttrProtocol` conformance.
 /// Use `LogAttr` as a strong reference or owner of a `PangoLogAttr` instance.
 ///
-/// The `PangoLogAttr` structure stores information about the attributes of a
-/// single character.
 open class LogAttr: LogAttrProtocol {
         /// Untyped pointer to the underlying `PangoLogAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -269,22 +272,45 @@ public extension LogAttrProtocol {
 
     /// This is the default break algorithm.
     /// 
-    /// It applies Unicode rules without language-specific tailoring, therefore
-    /// the `analyis` argument is unused and can be `nil`.
+    /// It applies Unicode rules without language-specific
+    /// tailoring, therefore the `analyis` argument is unused
+    /// and can be `nil`.
     /// 
-    /// See `pango_tailor_break()` for language-specific breaks.
-    @inlinable func defaultBreak(text: UnsafePointer<gchar>!, length: Int, analysis: AnalysisRef? = nil, attrsLen: Int) {
+    /// See [func`Pango.tailor_break`] for language-specific breaks.
+    /// 
+    /// See [func`Pango.attr_break`] for attribute-based customization.
+    @inlinable func defaultBreak(text: UnsafePointer<CChar>!, length: Int, analysis: AnalysisRef? = nil, attrsLen: Int) {
         pango_default_break(text, gint(length), analysis?._ptr, _ptr, gint(attrsLen))
     
     }
     /// This is the default break algorithm.
     /// 
-    /// It applies Unicode rules without language-specific tailoring, therefore
-    /// the `analyis` argument is unused and can be `nil`.
+    /// It applies Unicode rules without language-specific
+    /// tailoring, therefore the `analyis` argument is unused
+    /// and can be `nil`.
     /// 
-    /// See `pango_tailor_break()` for language-specific breaks.
-    @inlinable func defaultBreak<AnalysisT: AnalysisProtocol>(text: UnsafePointer<gchar>!, length: Int, analysis: AnalysisT?, attrsLen: Int) {
+    /// See [func`Pango.tailor_break`] for language-specific breaks.
+    /// 
+    /// See [func`Pango.attr_break`] for attribute-based customization.
+    @inlinable func defaultBreak<AnalysisT: AnalysisProtocol>(text: UnsafePointer<CChar>!, length: Int, analysis: AnalysisT?, attrsLen: Int) {
         pango_default_break(text, gint(length), analysis?._ptr, _ptr, gint(attrsLen))
+    
+    }
+
+    /// Convert the characters in `item` into glyphs.
+    /// 
+    /// This is similar to [func`Pango.shape_with_flags`], except it takes a
+    /// `PangoItem` instead of separate `item_text` and `analysis` arguments.
+    /// It also takes `log_attrs`, which may be used in implementing text
+    /// transforms.
+    /// 
+    /// Note that the extra attributes in the `analyis` that is returned from
+    /// [func`Pango.itemize`] have indices that are relative to the entire paragraph,
+    /// so you do not pass the full paragraph text as `paragraph_text`, you need
+    /// to subtract the item offset from their indices before calling
+    /// [func`Pango.shape_with_flags`].
+    @inlinable func shape<GlyphStringT: GlyphStringProtocol, ItemT: ItemProtocol>(item: ItemT, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, glyphs: GlyphStringT, flags: ShapeFlags) {
+        pango_shape_item(item.item_ptr, paragraphText, gint(paragraphLength), _ptr, glyphs.glyph_string_ptr, flags.value)
     
     }
 
@@ -403,7 +429,7 @@ public extension LogAttrProtocol {
     ///   so all chars are in some sentence; `is_sentence_boundary` denotes
     ///   the boundaries there. The second way doesn't assign
     ///   between-sentence spaces, etc. to any sentence, so
-    /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
+    ///   `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
     @inlinable var isSentenceBoundary: guint {
         /// is a sentence boundary.
         ///   There are two ways to divide sentences. The first assigns all
@@ -411,7 +437,7 @@ public extension LogAttrProtocol {
         ///   so all chars are in some sentence; `is_sentence_boundary` denotes
         ///   the boundaries there. The second way doesn't assign
         ///   between-sentence spaces, etc. to any sentence, so
-        /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
+        ///   `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
         get {
             let rv = _ptr.pointee.is_sentence_boundary
             return rv
@@ -422,7 +448,7 @@ public extension LogAttrProtocol {
         ///   so all chars are in some sentence; `is_sentence_boundary` denotes
         ///   the boundaries there. The second way doesn't assign
         ///   between-sentence spaces, etc. to any sentence, so
-        /// `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
+        ///   `is_sentence_start`/`is_sentence_end` mark the boundaries of those sentences.
          set {
             _ptr.pointee.is_sentence_boundary = newValue
         }
@@ -535,6 +561,48 @@ public extension LogAttrProtocol {
         ///   semantics. (Since: 1.22)
          set {
             _ptr.pointee.is_word_boundary = newValue
+        }
+    }
+
+    /// when breaking lines before this char, insert a hyphen.
+    ///   Since: 1.50
+    @inlinable var breakInsertsHyphen: guint {
+        /// when breaking lines before this char, insert a hyphen.
+        ///   Since: 1.50
+        get {
+            let rv = _ptr.pointee.break_inserts_hyphen
+            return rv
+        }
+        /// when breaking lines before this char, insert a hyphen.
+        ///   Since: 1.50
+         set {
+            _ptr.pointee.break_inserts_hyphen = newValue
+        }
+    }
+
+    /// when breaking lines before this char, remove the
+    ///   preceding char. Since 1.50
+    @inlinable var breakRemovesPreceding: guint {
+        /// when breaking lines before this char, remove the
+        ///   preceding char. Since 1.50
+        get {
+            let rv = _ptr.pointee.break_removes_preceding
+            return rv
+        }
+        /// when breaking lines before this char, remove the
+        ///   preceding char. Since 1.50
+         set {
+            _ptr.pointee.break_removes_preceding = newValue
+        }
+    }
+
+    @inlinable var reserved: guint {
+        get {
+            let rv = _ptr.pointee.reserved
+            return rv
+        }
+         set {
+            _ptr.pointee.reserved = newValue
         }
     }
 

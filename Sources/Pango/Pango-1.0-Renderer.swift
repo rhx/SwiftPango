@@ -5,17 +5,18 @@ import GLibObject
 
 // MARK: - Renderer Class
 
-/// The `RendererProtocol` protocol exposes the methods and properties of an underlying `PangoRenderer` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `Renderer`.
-/// Alternatively, use `RendererRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// `PangoRenderer` is a base class for objects that can render text
 /// provided as `PangoGlyphString` or `PangoLayout`.
 /// 
 /// By subclassing `PangoRenderer` and overriding operations such as
 /// `draw_glyphs` and `draw_rectangle`, renderers for particular font
 /// backends and destinations can be created.
+///
+/// The `RendererProtocol` protocol exposes the methods and properties of an underlying `PangoRenderer` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `Renderer`.
+/// Alternatively, use `RendererRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol RendererProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoRenderer` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -27,16 +28,17 @@ public protocol RendererProtocol: GLibObject.ObjectProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `RendererRef` type acts as a lightweight Swift reference to an underlying `PangoRenderer` instance.
-/// It exposes methods that can operate on this data type through `RendererProtocol` conformance.
-/// Use `RendererRef` only as an `unowned` reference to an existing `PangoRenderer` instance.
-///
 /// `PangoRenderer` is a base class for objects that can render text
 /// provided as `PangoGlyphString` or `PangoLayout`.
 /// 
 /// By subclassing `PangoRenderer` and overriding operations such as
 /// `draw_glyphs` and `draw_rectangle`, renderers for particular font
 /// backends and destinations can be created.
+///
+/// The `RendererRef` type acts as a lightweight Swift reference to an underlying `PangoRenderer` instance.
+/// It exposes methods that can operate on this data type through `RendererProtocol` conformance.
+/// Use `RendererRef` only as an `unowned` reference to an existing `PangoRenderer` instance.
+///
 public struct RendererRef: RendererProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoRenderer` instance.
     /// For type-safe access, use the generated, typed pointer `renderer_ptr` property instead.
@@ -118,16 +120,17 @@ public extension RendererRef {
 
     }
 
-/// The `Renderer` type acts as a reference-counted owner of an underlying `PangoRenderer` instance.
-/// It provides the methods that can operate on this data type through `RendererProtocol` conformance.
-/// Use `Renderer` as a strong reference or owner of a `PangoRenderer` instance.
-///
 /// `PangoRenderer` is a base class for objects that can render text
 /// provided as `PangoGlyphString` or `PangoLayout`.
 /// 
 /// By subclassing `PangoRenderer` and overriding operations such as
 /// `draw_glyphs` and `draw_rectangle`, renderers for particular font
 /// backends and destinations can be created.
+///
+/// The `Renderer` type acts as a reference-counted owner of an underlying `PangoRenderer` instance.
+/// It provides the methods that can operate on this data type through `RendererProtocol` conformance.
+/// Use `Renderer` as a strong reference or owner of a `PangoRenderer` instance.
+///
 open class Renderer: GLibObject.Object, RendererProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -275,12 +278,14 @@ public enum RendererSignalName: String, SignalNameProtocol {
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
     /// `g_signal_connect()` call, like this:
+    /// 
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
+    /// 
     /// It is important to note that you must use
     /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
@@ -298,10 +303,11 @@ public extension RendererProtocol {
     /// 
     /// [method`Pango.Renderer.deactivate`] should be called when done drawing.
     /// Calls such as [method`Pango.Renderer.draw_layout`] automatically
-    /// activate the layout before drawing on it. Calls to
-    /// ``pango_renderer_activate()`` and ``pango_renderer_deactivate()``
-    /// can be nested and the renderer will only be initialized and
-    /// deinitialized once.
+    /// activate the layout before drawing on it.
+    /// 
+    /// Calls to [method`Pango.Renderer.activate`] and
+    /// [method`Pango.Renderer.deactivate`] can be nested and the
+    /// renderer will only be initialized and deinitialized once.
     @inlinable func activate() {
         pango_renderer_activate(renderer_ptr)
     
@@ -341,6 +347,11 @@ public extension RendererProtocol {
     /// 
     /// This is useful for rendering text in PDF.
     /// 
+    /// Note that this method does not handle attributes in `glyph_item`.
+    /// If you want colors, shapes and lines handled automatically according
+    /// to those attributes, you need to use `pango_renderer_draw_layout_line()`
+    /// or `pango_renderer_draw_layout()`.
+    /// 
     /// Note that `text` is the start of the text for layout, which is then
     /// indexed by `glyph_item-&gt;item-&gt;offset`.
     /// 
@@ -360,12 +371,19 @@ public extension RendererProtocol {
     }
 
     /// Draws `layout` with the specified `PangoRenderer`.
+    /// 
+    /// This is equivalent to drawing the lines of the layout, at their
+    /// respective positions relative to `x`, `y`.
     @inlinable func draw<LayoutT: LayoutProtocol>(layout: LayoutT, x: Int, y: Int) {
         pango_renderer_draw_layout(renderer_ptr, layout.layout_ptr, gint(x), gint(y))
     
     }
 
     /// Draws `line` with the specified `PangoRenderer`.
+    /// 
+    /// This draws the glyph items that make up the line, as well as
+    /// shapes, backgrounds and lines that are specified by the attributes
+    /// of those items.
     @inlinable func drawLayout<LayoutLineT: LayoutLineProtocol>(line: LayoutLineT, x: Int, y: Int) {
         pango_renderer_draw_layout_line(renderer_ptr, line.layout_line_ptr, gint(x), gint(y))
     
@@ -383,8 +401,8 @@ public extension RendererProtocol {
 
     /// Draws a trapezoid with the parallel sides aligned with the X axis
     /// using the given `PangoRenderer`; coordinates are in device space.
-    @inlinable func drawTrapezoid(part: PangoRenderPart, y1_: CDouble, x11: CDouble, x21: CDouble, y2: CDouble, x12: CDouble, x22: CDouble) {
-        pango_renderer_draw_trapezoid(renderer_ptr, part, y1_, x11, x21, y2, x12, x22)
+    @inlinable func drawTrapezoid(part: PangoRenderPart, y1: CDouble, x11: CDouble, x21: CDouble, y2: CDouble, x12: CDouble, x22: CDouble) {
+        pango_renderer_draw_trapezoid(renderer_ptr, part, y1, x11, x21, y2, x12, x22)
     
     }
 
@@ -557,12 +575,12 @@ public extension RendererProtocol {
     // var activeCount is unavailable because active_count is private
 
     /// the current transformation matrix for
-    ///    the Renderer; may be `nil`, which should be treated the
-    ///    same as the identity matrix.
+    ///   the Renderer; may be `nil`, which should be treated the
+    ///   same as the identity matrix.
     @inlinable var _matrix: MatrixRef! {
         /// the current transformation matrix for
-        ///    the Renderer; may be `nil`, which should be treated the
-        ///    same as the identity matrix.
+        ///   the Renderer; may be `nil`, which should be treated the
+        ///   same as the identity matrix.
         get {
             let rv = MatrixRef(gconstpointer: gconstpointer(renderer_ptr.pointee.matrix))
             return rv

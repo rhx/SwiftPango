@@ -5,17 +5,18 @@ import GLibObject
 
 // MARK: - Fontset Class
 
-/// The `FontsetProtocol` protocol exposes the methods and properties of an underlying `PangoFontset` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `Fontset`.
-/// Alternatively, use `FontsetRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoFontset` represents a set of `PangoFont` to use when rendering text.
 /// 
 /// A `PAngoFontset` is the result of resolving a `PangoFontDescription`
 /// against a particular `PangoContext`. It has operations for finding the
 /// component font for a particular Unicode character, and for finding a
 /// composite set of metrics for the entire fontset.
+///
+/// The `FontsetProtocol` protocol exposes the methods and properties of an underlying `PangoFontset` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `Fontset`.
+/// Alternatively, use `FontsetRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol FontsetProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontset` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -27,16 +28,17 @@ public protocol FontsetProtocol: GLibObject.ObjectProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `FontsetRef` type acts as a lightweight Swift reference to an underlying `PangoFontset` instance.
-/// It exposes methods that can operate on this data type through `FontsetProtocol` conformance.
-/// Use `FontsetRef` only as an `unowned` reference to an existing `PangoFontset` instance.
-///
 /// A `PangoFontset` represents a set of `PangoFont` to use when rendering text.
 /// 
 /// A `PAngoFontset` is the result of resolving a `PangoFontDescription`
 /// against a particular `PangoContext`. It has operations for finding the
 /// component font for a particular Unicode character, and for finding a
 /// composite set of metrics for the entire fontset.
+///
+/// The `FontsetRef` type acts as a lightweight Swift reference to an underlying `PangoFontset` instance.
+/// It exposes methods that can operate on this data type through `FontsetProtocol` conformance.
+/// Use `FontsetRef` only as an `unowned` reference to an existing `PangoFontset` instance.
+///
 public struct FontsetRef: FontsetProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFontset` instance.
     /// For type-safe access, use the generated, typed pointer `fontset_ptr` property instead.
@@ -118,16 +120,17 @@ public extension FontsetRef {
 
     }
 
-/// The `Fontset` type acts as a reference-counted owner of an underlying `PangoFontset` instance.
-/// It provides the methods that can operate on this data type through `FontsetProtocol` conformance.
-/// Use `Fontset` as a strong reference or owner of a `PangoFontset` instance.
-///
 /// A `PangoFontset` represents a set of `PangoFont` to use when rendering text.
 /// 
 /// A `PAngoFontset` is the result of resolving a `PangoFontDescription`
 /// against a particular `PangoContext`. It has operations for finding the
 /// component font for a particular Unicode character, and for finding a
 /// composite set of metrics for the entire fontset.
+///
+/// The `Fontset` type acts as a reference-counted owner of an underlying `PangoFontset` instance.
+/// It provides the methods that can operate on this data type through `FontsetProtocol` conformance.
+/// Use `Fontset` as a strong reference or owner of a `PangoFontset` instance.
+///
 open class Fontset: GLibObject.Object, FontsetProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -275,12 +278,14 @@ public enum FontsetSignalName: String, SignalNameProtocol {
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
     /// `g_signal_connect()` call, like this:
+    /// 
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
+    /// 
     /// It is important to note that you must use
     /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.

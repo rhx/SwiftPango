@@ -20,12 +20,13 @@ public extension FontsetSimpleClassRef {
 
 // MARK: - FontsetSimpleClass Record
 
+
+///
 /// The `FontsetSimpleClassProtocol` protocol exposes the methods and properties of an underlying `PangoFontsetSimpleClass` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `FontsetSimpleClass`.
 /// Alternatively, use `FontsetSimpleClassRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-
 public protocol FontsetSimpleClassProtocol {
         /// Untyped pointer to the underlying `PangoFontsetSimpleClass` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -37,11 +38,12 @@ public protocol FontsetSimpleClassProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+
+///
 /// The `FontsetSimpleClassRef` type acts as a lightweight Swift reference to an underlying `PangoFontsetSimpleClass` instance.
 /// It exposes methods that can operate on this data type through `FontsetSimpleClassProtocol` conformance.
 /// Use `FontsetSimpleClassRef` only as an `unowned` reference to an existing `PangoFontsetSimpleClass` instance.
 ///
-
 public struct FontsetSimpleClassRef: FontsetSimpleClassProtocol {
         /// Untyped pointer to the underlying `PangoFontsetSimpleClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - AttrSize Record
 
+/// The `PangoAttrSize` structure is used to represent attributes which
+/// set font size.
+///
 /// The `AttrSizeProtocol` protocol exposes the methods and properties of an underlying `PangoAttrSize` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `AttrSize`.
 /// Alternatively, use `AttrSizeRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAttrSize` structure is used to represent attributes which
-/// set font size.
 public protocol AttrSizeProtocol {
         /// Untyped pointer to the underlying `PangoAttrSize` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol AttrSizeProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoAttrSize` structure is used to represent attributes which
+/// set font size.
+///
 /// The `AttrSizeRef` type acts as a lightweight Swift reference to an underlying `PangoAttrSize` instance.
 /// It exposes methods that can operate on this data type through `AttrSizeProtocol` conformance.
 /// Use `AttrSizeRef` only as an `unowned` reference to an existing `PangoAttrSize` instance.
 ///
-/// The `PangoAttrSize` structure is used to represent attributes which
-/// set font size.
 public struct AttrSizeRef: AttrSizeProtocol {
         /// Untyped pointer to the underlying `PangoAttrSize` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +109,13 @@ public extension AttrSizeRef {
 
     }
 
+/// The `PangoAttrSize` structure is used to represent attributes which
+/// set font size.
+///
 /// The `AttrSize` type acts as an owner of an underlying `PangoAttrSize` instance.
 /// It provides the methods that can operate on this data type through `AttrSizeProtocol` conformance.
 /// Use `AttrSize` as a strong reference or owner of a `PangoAttrSize` instance.
 ///
-/// The `PangoAttrSize` structure is used to represent attributes which
-/// set font size.
 open class AttrSize: AttrSizeProtocol {
         /// Untyped pointer to the underlying `PangoAttrSize` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - AttrString Record
 
+/// The `PangoAttrString` structure is used to represent attributes with
+/// a string value.
+///
 /// The `AttrStringProtocol` protocol exposes the methods and properties of an underlying `PangoAttrString` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `AttrString`.
 /// Alternatively, use `AttrStringRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAttrString` structure is used to represent attributes with
-/// a string value.
 public protocol AttrStringProtocol {
         /// Untyped pointer to the underlying `PangoAttrString` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol AttrStringProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoAttrString` structure is used to represent attributes with
+/// a string value.
+///
 /// The `AttrStringRef` type acts as a lightweight Swift reference to an underlying `PangoAttrString` instance.
 /// It exposes methods that can operate on this data type through `AttrStringProtocol` conformance.
 /// Use `AttrStringRef` only as an `unowned` reference to an existing `PangoAttrString` instance.
 ///
-/// The `PangoAttrString` structure is used to represent attributes with
-/// a string value.
 public struct AttrStringRef: AttrStringProtocol {
         /// Untyped pointer to the underlying `PangoAttrString` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +109,13 @@ public extension AttrStringRef {
 
     }
 
+/// The `PangoAttrString` structure is used to represent attributes with
+/// a string value.
+///
 /// The `AttrString` type acts as an owner of an underlying `PangoAttrString` instance.
 /// It provides the methods that can operate on this data type through `AttrStringProtocol` conformance.
 /// Use `AttrString` as a strong reference or owner of a `PangoAttrString` instance.
 ///
-/// The `PangoAttrString` structure is used to represent attributes with
-/// a string value.
 open class AttrString: AttrStringProtocol {
         /// Untyped pointer to the underlying `PangoAttrString` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

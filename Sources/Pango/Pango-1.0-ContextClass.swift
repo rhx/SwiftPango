@@ -20,12 +20,13 @@ public extension ContextClassRef {
 
 // MARK: - ContextClass Record
 
+
+///
 /// The `ContextClassProtocol` protocol exposes the methods and properties of an underlying `PangoContextClass` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `ContextClass`.
 /// Alternatively, use `ContextClassRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-
 public protocol ContextClassProtocol {
         /// Untyped pointer to the underlying `PangoContextClass` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -37,11 +38,12 @@ public protocol ContextClassProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+
+///
 /// The `ContextClassRef` type acts as a lightweight Swift reference to an underlying `PangoContextClass` instance.
 /// It exposes methods that can operate on this data type through `ContextClassProtocol` conformance.
 /// Use `ContextClassRef` only as an `unowned` reference to an existing `PangoContextClass` instance.
 ///
-
 public struct ContextClassRef: ContextClassProtocol {
         /// Untyped pointer to the underlying `PangoContextClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

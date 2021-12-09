@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - AttrLanguage Record
 
+/// The `PangoAttrLanguage` structure is used to represent attributes that
+/// are languages.
+///
 /// The `AttrLanguageProtocol` protocol exposes the methods and properties of an underlying `PangoAttrLanguage` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `AttrLanguage`.
 /// Alternatively, use `AttrLanguageRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAttrLanguage` structure is used to represent attributes that
-/// are languages.
 public protocol AttrLanguageProtocol {
         /// Untyped pointer to the underlying `PangoAttrLanguage` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol AttrLanguageProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoAttrLanguage` structure is used to represent attributes that
+/// are languages.
+///
 /// The `AttrLanguageRef` type acts as a lightweight Swift reference to an underlying `PangoAttrLanguage` instance.
 /// It exposes methods that can operate on this data type through `AttrLanguageProtocol` conformance.
 /// Use `AttrLanguageRef` only as an `unowned` reference to an existing `PangoAttrLanguage` instance.
 ///
-/// The `PangoAttrLanguage` structure is used to represent attributes that
-/// are languages.
 public struct AttrLanguageRef: AttrLanguageProtocol {
         /// Untyped pointer to the underlying `PangoAttrLanguage` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +109,13 @@ public extension AttrLanguageRef {
 
     }
 
+/// The `PangoAttrLanguage` structure is used to represent attributes that
+/// are languages.
+///
 /// The `AttrLanguage` type acts as an owner of an underlying `PangoAttrLanguage` instance.
 /// It provides the methods that can operate on this data type through `AttrLanguageProtocol` conformance.
 /// Use `AttrLanguage` as a strong reference or owner of a `PangoAttrLanguage` instance.
 ///
-/// The `PangoAttrLanguage` structure is used to represent attributes that
-/// are languages.
 open class AttrLanguage: AttrLanguageProtocol {
         /// Untyped pointer to the underlying `PangoAttrLanguage` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

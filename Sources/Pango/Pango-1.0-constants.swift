@@ -8,15 +8,19 @@ import GLibObject
 /// This is mainly used in vertical writing directions.
 public let ANALYSIS_FLAG_CENTERED_BASELINE = PANGO_ANALYSIS_FLAG_CENTERED_BASELINE // 1
 
+
 /// Whether this run holds ellipsized text.
 public let ANALYSIS_FLAG_IS_ELLIPSIS = PANGO_ANALYSIS_FLAG_IS_ELLIPSIS // 2
+
 
 /// Whether to add a hyphen at the end of the run during shaping.
 public let ANALYSIS_FLAG_NEED_HYPHEN = PANGO_ANALYSIS_FLAG_NEED_HYPHEN // 4
 
+
 /// Value for `start_index` in `PangoAttribute` that indicates
 /// the beginning of the text.
 public let ATTR_INDEX_FROM_TEXT_BEGINNING = PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING // 0
+
 
 /// Value for `end_index` in `PangoAttribute` that indicates
 /// the end of the text.
@@ -53,14 +57,18 @@ public let GLYPH_UNKNOWN_FLAG = 268435456 // PANGO_GLYPH_UNKNOWN_FLAG
 /// points (as in "12 point font"), rather than pixels.
 public let SCALE = PANGO_SCALE // 1024
 
+
 /// The major component of the version of Pango available at compile-time.
 public let VERSION_MAJOR = PANGO_VERSION_MAJOR // 1
 
+
 /// The micro component of the version of Pango available at compile-time.
-public let VERSION_MICRO = PANGO_VERSION_MICRO // 4
+public let VERSION_MICRO = PANGO_VERSION_MICRO // 0
+
 
 /// The minor component of the version of Pango available at compile-time.
-public let VERSION_MINOR = PANGO_VERSION_MINOR // 48
+public let VERSION_MINOR = PANGO_VERSION_MINOR // 50
+
 
 /// A string literal containing the version of Pango available at compile-time.
 public let VERSION_STRING = PANGO_VERSION_STRING // 12

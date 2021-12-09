@@ -5,16 +5,17 @@ import GLibObject
 
 // MARK: - Language Record
 
-/// The `LanguageProtocol` protocol exposes the methods and properties of an underlying `PangoLanguage` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `Language`.
-/// Alternatively, use `LanguageRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// The `PangoLanguage` structure is used to
 /// represent a language.
 /// 
 /// `PangoLanguage` pointers can be efficiently
 /// copied and compared with each other.
+///
+/// The `LanguageProtocol` protocol exposes the methods and properties of an underlying `PangoLanguage` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `Language`.
+/// Alternatively, use `LanguageRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol LanguageProtocol {
         /// Untyped pointer to the underlying `PangoLanguage` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -26,15 +27,16 @@ public protocol LanguageProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `LanguageRef` type acts as a lightweight Swift reference to an underlying `PangoLanguage` instance.
-/// It exposes methods that can operate on this data type through `LanguageProtocol` conformance.
-/// Use `LanguageRef` only as an `unowned` reference to an existing `PangoLanguage` instance.
-///
 /// The `PangoLanguage` structure is used to
 /// represent a language.
 /// 
 /// `PangoLanguage` pointers can be efficiently
 /// copied and compared with each other.
+///
+/// The `LanguageRef` type acts as a lightweight Swift reference to an underlying `PangoLanguage` instance.
+/// It exposes methods that can operate on this data type through `LanguageProtocol` conformance.
+/// Use `LanguageRef` only as an `unowned` reference to an existing `PangoLanguage` instance.
+///
 public struct LanguageRef: LanguageProtocol {
         /// Untyped pointer to the underlying `PangoLanguage` instance.
     /// For type-safe access, use the generated, typed pointer `language_ptr` property instead.
@@ -121,8 +123,8 @@ public extension LanguageRef {
     /// lowercase, mapping '_' to '-', and stripping all characters other
     /// than letters and '-'.
     /// 
-    /// Use [type_func`Pango.Language.get_default`] if you want to get the `PangoLanguage`
-    /// for the current locale of the process.
+    /// Use [func`Pango.Language.get_default`] if you want to get the
+    /// `PangoLanguage` for the current locale of the process.
     @inlinable static func from(string language: UnsafePointer<CChar>? = nil) -> LanguageRef! {
         guard let rv = LanguageRef(gconstpointer: gconstpointer(pango_language_from_string(language))) else { return nil }
         return rv
@@ -155,21 +157,26 @@ public extension LanguageRef {
     /// See the `setlocale()` manpage for more details.
     /// 
     /// Note that the default language can change over the life of an application.
+    /// 
+    /// Also note that this function will not do the right thing if you
+    /// use per-thread locales with `uselocale()`. In that case, you should
+    /// just call `pango_language_from_string()` yourself.
     @inlinable static func getDefault() -> LanguageRef! {
         guard let rv = LanguageRef(gconstpointer: gconstpointer(pango_language_get_default())) else { return nil }
         return rv
     }
 }
 
-/// The `Language` type acts as an owner of an underlying `PangoLanguage` instance.
-/// It provides the methods that can operate on this data type through `LanguageProtocol` conformance.
-/// Use `Language` as a strong reference or owner of a `PangoLanguage` instance.
-///
 /// The `PangoLanguage` structure is used to
 /// represent a language.
 /// 
 /// `PangoLanguage` pointers can be efficiently
 /// copied and compared with each other.
+///
+/// The `Language` type acts as an owner of an underlying `PangoLanguage` instance.
+/// It provides the methods that can operate on this data type through `LanguageProtocol` conformance.
+/// Use `Language` as a strong reference or owner of a `PangoLanguage` instance.
+///
 open class Language: LanguageProtocol {
         /// Untyped pointer to the underlying `PangoLanguage` instance.
     /// For type-safe access, use the generated, typed pointer `language_ptr` property instead.
@@ -321,8 +328,8 @@ open class Language: LanguageProtocol {
     /// lowercase, mapping '_' to '-', and stripping all characters other
     /// than letters and '-'.
     /// 
-    /// Use [type_func`Pango.Language.get_default`] if you want to get the `PangoLanguage`
-    /// for the current locale of the process.
+    /// Use [func`Pango.Language.get_default`] if you want to get the
+    /// `PangoLanguage` for the current locale of the process.
     @inlinable public static func from(string language: UnsafePointer<CChar>? = nil) -> Language! {
         guard let rv = Language(gconstpointer: gconstpointer(pango_language_from_string(language))) else { return nil }
         return rv
@@ -355,6 +362,10 @@ open class Language: LanguageProtocol {
     /// See the `setlocale()` manpage for more details.
     /// 
     /// Note that the default language can change over the life of an application.
+    /// 
+    /// Also note that this function will not do the right thing if you
+    /// use per-thread locales with `uselocale()`. In that case, you should
+    /// just call `pango_language_from_string()` yourself.
     @inlinable public static func getDefault() -> Language! {
         guard let rv = Language(gconstpointer: gconstpointer(pango_language_get_default())) else { return nil }
         return rv
@@ -381,7 +392,7 @@ public extension LanguageProtocol {
     /// as sample text in a font selection dialog.
     /// 
     /// If `language` is `nil`, the default language as found by
-    /// [type_func`Pango.Language.get_default`] is used.
+    /// [func`Pango.Language.get_default`] is used.
     /// 
     /// If Pango does not have a sample string for `language`, the classic
     /// "The quick brown fox..." is returned.  This can be detected by
@@ -413,8 +424,8 @@ public extension LanguageProtocol {
     /// though, except that it is positive if the return value is not
     /// `nil`, and it is a small number.
     /// 
-    /// The [method`Pango.Language.includes_script`] function uses this function
-    /// internally.
+    /// The [method`Pango.Language.includes_script`] function uses this
+    /// function internally.
     /// 
     /// Note: while the return value is declared as `PangoScript`, the
     /// returned values are from the `GUnicodeScript` enumeration, which
@@ -425,10 +436,11 @@ public extension LanguageProtocol {
     }
 
     /// Determines if `script` is one of the scripts used to
-    /// write `language`. The returned value is conservative;
-    /// if nothing is known about the language tag `language`,
-    /// `true` will be returned, since, as far as Pango knows,
-    /// `script` might be used to write `language`.
+    /// write `language`.
+    /// 
+    /// The returned value is conservative; if nothing is known about
+    /// the language tag `language`, `true` will be returned, since, as
+    /// far as Pango knows, `script` might be used to write `language`.
     /// 
     /// This routine is used in Pango's itemization process when
     /// determining if a supplied language tag is relevant to
@@ -444,16 +456,17 @@ public extension LanguageProtocol {
     /// Checks if a language tag matches one of the elements in a list of
     /// language ranges.
     /// 
-    /// A language tag is considered to match a range
-    /// in the list if the range is '*', the range is exactly the tag,
-    /// or the range is a prefix of the tag, and the character after it
-    /// in the tag is '-'.
+    /// A language tag is considered to match a range in the list if the
+    /// range is '*', the range is exactly the tag, or the range is a prefix
+    /// of the tag, and the character after it in the tag is '-'.
     @inlinable func matches(rangeList: UnsafePointer<CChar>!) -> Bool {
         let rv = ((pango_language_matches(language_ptr, rangeList)) != 0)
         return rv
     }
 
     /// Gets the RFC-3066 format string representing the given language tag.
+    /// 
+    /// Returns (transfer none): a string representing the language tag
     @inlinable func toString() -> String! {
         let rv = pango_language_to_string(language_ptr).map({ String(cString: $0) })
         return rv
@@ -467,13 +480,15 @@ public extension LanguageProtocol {
 
     /// Computes a `PangoLogAttr` for each character in `text`.
     /// 
-    /// The `log_attrs` array must have one `PangoLogAttr` for each position in `text`;
-    /// if `text` contains N characters, it has N+1 positions, including the last
-    /// position at the end of the text. `text` should be an entire paragraph; logical
-    /// attributes can't be computed without context (for example you need to see
-    /// spaces on either side of a word to know the word is a word).
-    @inlinable func getLogAttrs(text: UnsafePointer<CChar>!, length: Int, level: Int, logAttrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
-        pango_get_log_attrs(text, gint(length), gint(level), language_ptr, logAttrs, gint(attrsLen))
+    /// The `attrs` array must have one `PangoLogAttr` for
+    /// each position in `text`; if `text` contains N characters,
+    /// it has N+1 positions, including the last position at the
+    /// end of the text. `text` should be an entire paragraph;
+    /// logical attributes can't be computed without context
+    /// (for example you need to see spaces on either side of
+    /// a word to know the word is a word).
+    @inlinable func getLogAttrs(text: UnsafePointer<CChar>!, length: Int, level: Int, attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
+        pango_get_log_attrs(text, gint(length), gint(level), language_ptr, attrs, gint(attrsLen))
     
     }
     /// Get a string that is representative of the characters needed to
@@ -485,7 +500,7 @@ public extension LanguageProtocol {
     /// as sample text in a font selection dialog.
     /// 
     /// If `language` is `nil`, the default language as found by
-    /// [type_func`Pango.Language.get_default`] is used.
+    /// [func`Pango.Language.get_default`] is used.
     /// 
     /// If Pango does not have a sample string for `language`, the classic
     /// "The quick brown fox..." is returned.  This can be detected by
@@ -505,7 +520,7 @@ public extension LanguageProtocol {
         /// as sample text in a font selection dialog.
         /// 
         /// If `language` is `nil`, the default language as found by
-        /// [type_func`Pango.Language.get_default`] is used.
+        /// [func`Pango.Language.get_default`] is used.
         /// 
         /// If Pango does not have a sample string for `language`, the classic
         /// "The quick brown fox..." is returned.  This can be detected by

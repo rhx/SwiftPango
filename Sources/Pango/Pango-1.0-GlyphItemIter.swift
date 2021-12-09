@@ -5,11 +5,6 @@ import GLibObject
 
 // MARK: - GlyphItemIter Record
 
-/// The `GlyphItemIterProtocol` protocol exposes the methods and properties of an underlying `PangoGlyphItemIter` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `GlyphItemIter`.
-/// Alternatively, use `GlyphItemIterRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoGlyphItemIter` is an iterator over the clusters in a
 /// `PangoGlyphItem`.
 /// 
@@ -50,6 +45,12 @@ import GLibObject
 /// end variables is not.
 /// 
 /// None of the members of a `PangoGlyphItemIter` should be modified manually.
+///
+/// The `GlyphItemIterProtocol` protocol exposes the methods and properties of an underlying `PangoGlyphItemIter` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `GlyphItemIter`.
+/// Alternatively, use `GlyphItemIterRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol GlyphItemIterProtocol {
         /// Untyped pointer to the underlying `PangoGlyphItemIter` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -61,10 +62,6 @@ public protocol GlyphItemIterProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `GlyphItemIterRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphItemIter` instance.
-/// It exposes methods that can operate on this data type through `GlyphItemIterProtocol` conformance.
-/// Use `GlyphItemIterRef` only as an `unowned` reference to an existing `PangoGlyphItemIter` instance.
-///
 /// A `PangoGlyphItemIter` is an iterator over the clusters in a
 /// `PangoGlyphItem`.
 /// 
@@ -105,6 +102,11 @@ public protocol GlyphItemIterProtocol {
 /// end variables is not.
 /// 
 /// None of the members of a `PangoGlyphItemIter` should be modified manually.
+///
+/// The `GlyphItemIterRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphItemIter` instance.
+/// It exposes methods that can operate on this data type through `GlyphItemIterProtocol` conformance.
+/// Use `GlyphItemIterRef` only as an `unowned` reference to an existing `PangoGlyphItemIter` instance.
+///
 public struct GlyphItemIterRef: GlyphItemIterProtocol {
         /// Untyped pointer to the underlying `PangoGlyphItemIter` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_item_iter_ptr` property instead.
@@ -183,10 +185,6 @@ public extension GlyphItemIterRef {
 
     }
 
-/// The `GlyphItemIter` type acts as an owner of an underlying `PangoGlyphItemIter` instance.
-/// It provides the methods that can operate on this data type through `GlyphItemIterProtocol` conformance.
-/// Use `GlyphItemIter` as a strong reference or owner of a `PangoGlyphItemIter` instance.
-///
 /// A `PangoGlyphItemIter` is an iterator over the clusters in a
 /// `PangoGlyphItem`.
 /// 
@@ -227,6 +225,11 @@ public extension GlyphItemIterRef {
 /// end variables is not.
 /// 
 /// None of the members of a `PangoGlyphItemIter` should be modified manually.
+///
+/// The `GlyphItemIter` type acts as an owner of an underlying `PangoGlyphItemIter` instance.
+/// It provides the methods that can operate on this data type through `GlyphItemIterProtocol` conformance.
+/// Use `GlyphItemIter` as a strong reference or owner of a `PangoGlyphItemIter` instance.
+///
 open class GlyphItemIter: GlyphItemIterProtocol {
         /// Untyped pointer to the underlying `PangoGlyphItemIter` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_item_iter_ptr` property instead.

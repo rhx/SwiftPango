@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - AttrFontDesc Record
 
+/// The `PangoAttrFontDesc` structure is used to store an attribute that
+/// sets all aspects of the font description at once.
+///
 /// The `AttrFontDescProtocol` protocol exposes the methods and properties of an underlying `PangoAttrFontDesc` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `AttrFontDesc`.
 /// Alternatively, use `AttrFontDescRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAttrFontDesc` structure is used to store an attribute that
-/// sets all aspects of the font description at once.
 public protocol AttrFontDescProtocol {
         /// Untyped pointer to the underlying `PangoAttrFontDesc` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol AttrFontDescProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoAttrFontDesc` structure is used to store an attribute that
+/// sets all aspects of the font description at once.
+///
 /// The `AttrFontDescRef` type acts as a lightweight Swift reference to an underlying `PangoAttrFontDesc` instance.
 /// It exposes methods that can operate on this data type through `AttrFontDescProtocol` conformance.
 /// Use `AttrFontDescRef` only as an `unowned` reference to an existing `PangoAttrFontDesc` instance.
 ///
-/// The `PangoAttrFontDesc` structure is used to store an attribute that
-/// sets all aspects of the font description at once.
 public struct AttrFontDescRef: AttrFontDescProtocol {
         /// Untyped pointer to the underlying `PangoAttrFontDesc` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +109,13 @@ public extension AttrFontDescRef {
 
     }
 
+/// The `PangoAttrFontDesc` structure is used to store an attribute that
+/// sets all aspects of the font description at once.
+///
 /// The `AttrFontDesc` type acts as an owner of an underlying `PangoAttrFontDesc` instance.
 /// It provides the methods that can operate on this data type through `AttrFontDescProtocol` conformance.
 /// Use `AttrFontDesc` as a strong reference or owner of a `PangoAttrFontDesc` instance.
 ///
-/// The `PangoAttrFontDesc` structure is used to store an attribute that
-/// sets all aspects of the font description at once.
 open class AttrFontDesc: AttrFontDescProtocol {
         /// Untyped pointer to the underlying `PangoAttrFontDesc` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

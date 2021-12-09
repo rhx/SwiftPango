@@ -5,11 +5,6 @@ import GLibObject
 
 // MARK: - FontMetrics Record
 
-/// The `FontMetricsProtocol` protocol exposes the methods and properties of an underlying `PangoFontMetrics` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `FontMetrics`.
-/// Alternatively, use `FontMetricsRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoFontMetrics` structure holds the overall metric information
 /// for a font.
 /// 
@@ -17,6 +12,19 @@ import GLibObject
 /// to a script. The fields of this structure are private to implementations
 /// of a font backend. See the documentation of the corresponding getters
 /// for documentation of their meaning.
+/// 
+/// For an overview of the most important metrics, see:
+/// 
+/// &lt;picture&gt;
+///   &lt;source srcset="fontmetrics-dark.png" media="(prefers-color-scheme: dark)"&gt;
+///   &lt;img alt="Font metrics" src="fontmetrics-light.png"&gt;
+/// &lt;/picture&gt;
+///
+/// The `FontMetricsProtocol` protocol exposes the methods and properties of an underlying `PangoFontMetrics` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `FontMetrics`.
+/// Alternatively, use `FontMetricsRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol FontMetricsProtocol {
         /// Untyped pointer to the underlying `PangoFontMetrics` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -28,10 +36,6 @@ public protocol FontMetricsProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `FontMetricsRef` type acts as a lightweight Swift reference to an underlying `PangoFontMetrics` instance.
-/// It exposes methods that can operate on this data type through `FontMetricsProtocol` conformance.
-/// Use `FontMetricsRef` only as an `unowned` reference to an existing `PangoFontMetrics` instance.
-///
 /// A `PangoFontMetrics` structure holds the overall metric information
 /// for a font.
 /// 
@@ -39,6 +43,18 @@ public protocol FontMetricsProtocol {
 /// to a script. The fields of this structure are private to implementations
 /// of a font backend. See the documentation of the corresponding getters
 /// for documentation of their meaning.
+/// 
+/// For an overview of the most important metrics, see:
+/// 
+/// &lt;picture&gt;
+///   &lt;source srcset="fontmetrics-dark.png" media="(prefers-color-scheme: dark)"&gt;
+///   &lt;img alt="Font metrics" src="fontmetrics-light.png"&gt;
+/// &lt;/picture&gt;
+///
+/// The `FontMetricsRef` type acts as a lightweight Swift reference to an underlying `PangoFontMetrics` instance.
+/// It exposes methods that can operate on this data type through `FontMetricsProtocol` conformance.
+/// Use `FontMetricsRef` only as an `unowned` reference to an existing `PangoFontMetrics` instance.
+///
 public struct FontMetricsRef: FontMetricsProtocol {
         /// Untyped pointer to the underlying `PangoFontMetrics` instance.
     /// For type-safe access, use the generated, typed pointer `font_metrics_ptr` property instead.
@@ -117,10 +133,6 @@ public extension FontMetricsRef {
 
     }
 
-/// The `FontMetrics` type acts as a reference-counted owner of an underlying `PangoFontMetrics` instance.
-/// It provides the methods that can operate on this data type through `FontMetricsProtocol` conformance.
-/// Use `FontMetrics` as a strong reference or owner of a `PangoFontMetrics` instance.
-///
 /// A `PangoFontMetrics` structure holds the overall metric information
 /// for a font.
 /// 
@@ -128,6 +140,18 @@ public extension FontMetricsRef {
 /// to a script. The fields of this structure are private to implementations
 /// of a font backend. See the documentation of the corresponding getters
 /// for documentation of their meaning.
+/// 
+/// For an overview of the most important metrics, see:
+/// 
+/// &lt;picture&gt;
+///   &lt;source srcset="fontmetrics-dark.png" media="(prefers-color-scheme: dark)"&gt;
+///   &lt;img alt="Font metrics" src="fontmetrics-light.png"&gt;
+/// &lt;/picture&gt;
+///
+/// The `FontMetrics` type acts as a reference-counted owner of an underlying `PangoFontMetrics` instance.
+/// It provides the methods that can operate on this data type through `FontMetricsProtocol` conformance.
+/// Use `FontMetrics` as a strong reference or owner of a `PangoFontMetrics` instance.
+///
 open class FontMetrics: FontMetricsProtocol {
         /// Untyped pointer to the underlying `PangoFontMetrics` instance.
     /// For type-safe access, use the generated, typed pointer `font_metrics_ptr` property instead.
@@ -328,8 +352,8 @@ public extension FontMetricsProtocol {
 
     /// Gets the line height from a font metrics structure.
     /// 
-    /// The line height is the distance between successive baselines
-    /// in wrapped text.
+    /// The line height is the recommended distance between successive
+    /// baselines in wrapped text using this font.
     /// 
     /// If the line height is not available, 0 is returned.
     @inlinable func getHeight() -> Int {
@@ -458,15 +482,15 @@ public extension FontMetricsProtocol {
 
     /// Gets the line height from a font metrics structure.
     /// 
-    /// The line height is the distance between successive baselines
-    /// in wrapped text.
+    /// The line height is the recommended distance between successive
+    /// baselines in wrapped text using this font.
     /// 
     /// If the line height is not available, 0 is returned.
     @inlinable var height: Int {
         /// Gets the line height from a font metrics structure.
         /// 
-        /// The line height is the distance between successive baselines
-        /// in wrapped text.
+        /// The line height is the recommended distance between successive
+        /// baselines in wrapped text using this font.
         /// 
         /// If the line height is not available, 0 is returned.
         get {

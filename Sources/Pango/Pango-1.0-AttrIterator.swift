@@ -5,11 +5,6 @@ import GLibObject
 
 // MARK: - AttrIterator Record
 
-/// The `AttrIteratorProtocol` protocol exposes the methods and properties of an underlying `PangoAttrIterator` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `AttrIterator`.
-/// Alternatively, use `AttrIteratorRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoAttrIterator` is used to iterate through a `PangoAttrList`.
 /// 
 /// A new iterator is created with [method`Pango.AttrList.get_iterator`].
@@ -17,6 +12,12 @@ import GLibObject
 /// changes in the text using [method`Pango.AttrIterator.next`]. At each
 /// style change, the range of the current style segment and the attributes
 /// currently in effect can be queried.
+///
+/// The `AttrIteratorProtocol` protocol exposes the methods and properties of an underlying `PangoAttrIterator` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `AttrIterator`.
+/// Alternatively, use `AttrIteratorRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol AttrIteratorProtocol {
         /// Untyped pointer to the underlying `PangoAttrIterator` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -28,10 +29,6 @@ public protocol AttrIteratorProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `AttrIteratorRef` type acts as a lightweight Swift reference to an underlying `PangoAttrIterator` instance.
-/// It exposes methods that can operate on this data type through `AttrIteratorProtocol` conformance.
-/// Use `AttrIteratorRef` only as an `unowned` reference to an existing `PangoAttrIterator` instance.
-///
 /// A `PangoAttrIterator` is used to iterate through a `PangoAttrList`.
 /// 
 /// A new iterator is created with [method`Pango.AttrList.get_iterator`].
@@ -39,6 +36,11 @@ public protocol AttrIteratorProtocol {
 /// changes in the text using [method`Pango.AttrIterator.next`]. At each
 /// style change, the range of the current style segment and the attributes
 /// currently in effect can be queried.
+///
+/// The `AttrIteratorRef` type acts as a lightweight Swift reference to an underlying `PangoAttrIterator` instance.
+/// It exposes methods that can operate on this data type through `AttrIteratorProtocol` conformance.
+/// Use `AttrIteratorRef` only as an `unowned` reference to an existing `PangoAttrIterator` instance.
+///
 public struct AttrIteratorRef: AttrIteratorProtocol {
         /// Untyped pointer to the underlying `PangoAttrIterator` instance.
     /// For type-safe access, use the generated, typed pointer `attr_iterator_ptr` property instead.
@@ -117,10 +119,6 @@ public extension AttrIteratorRef {
 
     }
 
-/// The `AttrIterator` type acts as an owner of an underlying `PangoAttrIterator` instance.
-/// It provides the methods that can operate on this data type through `AttrIteratorProtocol` conformance.
-/// Use `AttrIterator` as a strong reference or owner of a `PangoAttrIterator` instance.
-///
 /// A `PangoAttrIterator` is used to iterate through a `PangoAttrList`.
 /// 
 /// A new iterator is created with [method`Pango.AttrList.get_iterator`].
@@ -128,6 +126,11 @@ public extension AttrIteratorRef {
 /// changes in the text using [method`Pango.AttrIterator.next`]. At each
 /// style change, the range of the current style segment and the attributes
 /// currently in effect can be queried.
+///
+/// The `AttrIterator` type acts as an owner of an underlying `PangoAttrIterator` instance.
+/// It provides the methods that can operate on this data type through `AttrIteratorProtocol` conformance.
+/// Use `AttrIterator` as a strong reference or owner of a `PangoAttrIterator` instance.
+///
 open class AttrIterator: AttrIteratorProtocol {
         /// Untyped pointer to the underlying `PangoAttrIterator` instance.
     /// For type-safe access, use the generated, typed pointer `attr_iterator_ptr` property instead.
@@ -294,10 +297,12 @@ public extension AttrIteratorProtocol {
     
     }
 
-    /// Find the current attribute of a particular type at the iterator
-    /// location. When multiple attributes of the same type overlap,
-    /// the attribute whose range starts closest to the current location
-    /// is used.
+    /// Find the current attribute of a particular type
+    /// at the iterator location.
+    /// 
+    /// When multiple attributes of the same type overlap,
+    /// the attribute whose range starts closest to the
+    /// current location is used.
     @inlinable func get(type: PangoAttrType) -> AttributeRef! {
         let rv = AttributeRef(gconstpointer: gconstpointer(pango_attr_iterator_get(attr_iterator_ptr, type)))
         return rv
@@ -310,8 +315,9 @@ public extension AttrIteratorProtocol {
         return rv
     }
 
-    /// Get the font and other attributes at the current iterator position.
-    @inlinable func getFont<FontDescriptionT: FontDescriptionProtocol>(desc: FontDescriptionT, language: UnsafeMutablePointer<UnsafeMutablePointer<PangoLanguage>?>? = nil, extraAttrs: UnsafeMutablePointer<UnsafeMutablePointer<GSList>?>? = nil) {
+    /// Get the font and other attributes at the current
+    /// iterator position.
+    @inlinable func getFont<FontDescriptionT: FontDescriptionProtocol>(desc: FontDescriptionT, language: UnsafeMutablePointer<UnsafeMutablePointer<PangoLanguage>?>! = nil, extraAttrs: UnsafeMutablePointer<UnsafeMutablePointer<GSList>?>! = nil) {
         pango_attr_iterator_get_font(attr_iterator_ptr, desc.font_description_ptr, language, extraAttrs)
     
     }
@@ -322,9 +328,10 @@ public extension AttrIteratorProtocol {
         return rv
     }
 
-    /// Get the range of the current segment. Note that the
-    /// stored return values are signed, not unsigned like
-    /// the values in `PangoAttribute`. To deal with this API
+    /// Get the range of the current segment.
+    /// 
+    /// Note that the stored return values are signed, not unsigned
+    /// like the values in `PangoAttribute`. To deal with this API
     /// oversight, stored return values that wouldn't fit into
     /// a signed integer are clamped to `G_MAXINT`.
     @inlinable func range(start: UnsafeMutablePointer<gint>!, end: UnsafeMutablePointer<gint>!) {

@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - AttrInt Record
 
+/// The `PangoAttrInt` structure is used to represent attributes with
+/// an integer or enumeration value.
+///
 /// The `AttrIntProtocol` protocol exposes the methods and properties of an underlying `PangoAttrInt` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `AttrInt`.
 /// Alternatively, use `AttrIntRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAttrInt` structure is used to represent attributes with
-/// an integer or enumeration value.
 public protocol AttrIntProtocol {
         /// Untyped pointer to the underlying `PangoAttrInt` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol AttrIntProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoAttrInt` structure is used to represent attributes with
+/// an integer or enumeration value.
+///
 /// The `AttrIntRef` type acts as a lightweight Swift reference to an underlying `PangoAttrInt` instance.
 /// It exposes methods that can operate on this data type through `AttrIntProtocol` conformance.
 /// Use `AttrIntRef` only as an `unowned` reference to an existing `PangoAttrInt` instance.
 ///
-/// The `PangoAttrInt` structure is used to represent attributes with
-/// an integer or enumeration value.
 public struct AttrIntRef: AttrIntProtocol {
         /// Untyped pointer to the underlying `PangoAttrInt` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +109,13 @@ public extension AttrIntRef {
 
     }
 
+/// The `PangoAttrInt` structure is used to represent attributes with
+/// an integer or enumeration value.
+///
 /// The `AttrInt` type acts as an owner of an underlying `PangoAttrInt` instance.
 /// It provides the methods that can operate on this data type through `AttrIntProtocol` conformance.
 /// Use `AttrInt` as a strong reference or owner of a `PangoAttrInt` instance.
 ///
-/// The `PangoAttrInt` structure is used to represent attributes with
-/// an integer or enumeration value.
 open class AttrInt: AttrIntProtocol {
         /// Untyped pointer to the underlying `PangoAttrInt` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

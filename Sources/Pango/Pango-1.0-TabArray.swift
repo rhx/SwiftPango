@@ -5,15 +5,17 @@ import GLibObject
 
 // MARK: - TabArray Record
 
+/// A `PangoTabArray` contains an array of tab stops.
+/// 
+/// `PangoTabArray` can be used to set tab stops in a `PangoLayout`.
+/// Each tab stop has an alignment, a position, and optionally
+/// a character to use as decimal point.
+///
 /// The `TabArrayProtocol` protocol exposes the methods and properties of an underlying `PangoTabArray` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `TabArray`.
 /// Alternatively, use `TabArrayRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// A `PangoTabArray` contains an array of tab stops.
-/// 
-/// `PangoTabArray` can be used to set tab stops in a `PangoLayout`.
-/// Each tab stop has an alignment and a position.
 public protocol TabArrayProtocol {
         /// Untyped pointer to the underlying `PangoTabArray` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -25,14 +27,16 @@ public protocol TabArrayProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// A `PangoTabArray` contains an array of tab stops.
+/// 
+/// `PangoTabArray` can be used to set tab stops in a `PangoLayout`.
+/// Each tab stop has an alignment, a position, and optionally
+/// a character to use as decimal point.
+///
 /// The `TabArrayRef` type acts as a lightweight Swift reference to an underlying `PangoTabArray` instance.
 /// It exposes methods that can operate on this data type through `TabArrayProtocol` conformance.
 /// Use `TabArrayRef` only as an `unowned` reference to an existing `PangoTabArray` instance.
 ///
-/// A `PangoTabArray` contains an array of tab stops.
-/// 
-/// `PangoTabArray` can be used to set tab stops in a `PangoLayout`.
-/// Each tab stop has an alignment and a position.
 public struct TabArrayRef: TabArrayProtocol {
         /// Untyped pointer to the underlying `PangoTabArray` instance.
     /// For type-safe access, use the generated, typed pointer `tab_array_ptr` property instead.
@@ -124,16 +128,27 @@ public extension TabArrayRef {
 
     // *** newWithPositions() is not available because it has a varargs (...) parameter!
 
+
+    /// Deserializes a `PangoTabArray` from a string.
+    /// 
+    /// This is the counterpart to [method`Pango.TabArray.to_string`].
+    /// See that functions for details about the format.
+    @inlinable static func from(string text: UnsafePointer<CChar>!) -> TabArrayRef! {
+        guard let rv = TabArrayRef(gconstpointer: gconstpointer(pango_tab_array_from_string(text))) else { return nil }
+        return rv
+    }
 }
 
+/// A `PangoTabArray` contains an array of tab stops.
+/// 
+/// `PangoTabArray` can be used to set tab stops in a `PangoLayout`.
+/// Each tab stop has an alignment, a position, and optionally
+/// a character to use as decimal point.
+///
 /// The `TabArray` type acts as an owner of an underlying `PangoTabArray` instance.
 /// It provides the methods that can operate on this data type through `TabArrayProtocol` conformance.
 /// Use `TabArray` as a strong reference or owner of a `PangoTabArray` instance.
 ///
-/// A `PangoTabArray` contains an array of tab stops.
-/// 
-/// `PangoTabArray` can be used to set tab stops in a `PangoLayout`.
-/// Each tab stop has an alignment and a position.
 open class TabArray: TabArrayProtocol {
         /// Untyped pointer to the underlying `PangoTabArray` instance.
     /// For type-safe access, use the generated, typed pointer `tab_array_ptr` property instead.
@@ -291,6 +306,15 @@ open class TabArray: TabArrayProtocol {
     // *** newWithPositions() is not available because it has a varargs (...) parameter!
 
 
+    /// Deserializes a `PangoTabArray` from a string.
+    /// 
+    /// This is the counterpart to [method`Pango.TabArray.to_string`].
+    /// See that functions for details about the format.
+    @inlinable public static func from(string text: UnsafePointer<CChar>!) -> TabArray! {
+        guard let rv = TabArray(gconstpointer: gconstpointer(pango_tab_array_from_string(text))) else { return nil }
+        return rv
+    }
+
 }
 
 // MARK: no TabArray properties
@@ -313,6 +337,17 @@ public extension TabArrayProtocol {
     @inlinable func free() {
         pango_tab_array_free(tab_array_ptr)
     
+    }
+
+    /// Gets the decimal point to use.
+    /// 
+    /// This is only relevant for `PANGO_TAB_DECIMAL`.
+    /// 
+    /// The default value of 0 means that Pango will use the
+    /// decimal point according to the current locale.
+    @inlinable func getDecimalPoint(tabIndex: Int) -> gunichar {
+        let rv = pango_tab_array_get_decimal_point(tab_array_ptr, gint(tabIndex))
+        return rv
     }
 
     /// Returns `true` if the tab positions are in pixels,
@@ -353,13 +388,47 @@ public extension TabArrayProtocol {
     
     }
 
-    /// Sets the alignment and location of a tab stop.
+    /// Sets the decimal point to use.
     /// 
-    /// `alignment` must always be `PANGO_TAB_LEFT` in the current
-    /// implementation.
+    /// This is only relevant for `PANGO_TAB_DECIMAL`.
+    /// 
+    /// By default, Pango uses the decimal point according
+    /// to the current locale.
+    @inlinable func setDecimalPoint(tabIndex: Int, decimalPoint: gunichar) {
+        pango_tab_array_set_decimal_point(tab_array_ptr, gint(tabIndex), decimalPoint)
+    
+    }
+
+    /// Sets whether positions in this array are specified in
+    /// pixels.
+    @inlinable func set(positionsInPixels: Bool) {
+        pango_tab_array_set_positions_in_pixels(tab_array_ptr, gboolean((positionsInPixels) ? 1 : 0))
+    
+    }
+
+    /// Sets the alignment and location of a tab stop.
     @inlinable func setTab(tabIndex: Int, alignment: PangoTabAlign, location: Int) {
         pango_tab_array_set_tab(tab_array_ptr, gint(tabIndex), alignment, gint(location))
     
+    }
+
+    /// Utility function to ensure that the tab stops are in increasing order.
+    @inlinable func sort() {
+        pango_tab_array_sort(tab_array_ptr)
+    
+    }
+
+    /// Serializes a `PangoTabArray` to a string.
+    /// 
+    /// No guarantees are made about the format of the string,
+    /// it may change between Pango versions.
+    /// 
+    /// The intended use of this function is testing and
+    /// debugging. The format is not meant as a permanent
+    /// storage format.
+    @inlinable func toString() -> String! {
+        let rv = pango_tab_array_to_string(tab_array_ptr).map({ String(cString: $0) })
+        return rv
     }
     /// Returns `true` if the tab positions are in pixels,
     /// `false` if they are in Pango units.
@@ -369,6 +438,11 @@ public extension TabArrayProtocol {
         get {
             let rv = ((pango_tab_array_get_positions_in_pixels(tab_array_ptr)) != 0)
             return rv
+        }
+        /// Sets whether positions in this array are specified in
+        /// pixels.
+        nonmutating set {
+            pango_tab_array_set_positions_in_pixels(tab_array_ptr, gboolean((newValue) ? 1 : 0))
         }
     }
 

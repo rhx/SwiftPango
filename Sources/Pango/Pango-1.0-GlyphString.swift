@@ -5,16 +5,17 @@ import GLibObject
 
 // MARK: - GlyphString Record
 
-/// The `GlyphStringProtocol` protocol exposes the methods and properties of an underlying `PangoGlyphString` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `GlyphString`.
-/// Alternatively, use `GlyphStringRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoGlyphString` is used to store strings of glyphs with geometry
 /// and visual attribute information.
 /// 
 /// The storage for the glyph information is owned by the structure
 /// which simplifies memory management.
+///
+/// The `GlyphStringProtocol` protocol exposes the methods and properties of an underlying `PangoGlyphString` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `GlyphString`.
+/// Alternatively, use `GlyphStringRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol GlyphStringProtocol {
         /// Untyped pointer to the underlying `PangoGlyphString` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -26,15 +27,16 @@ public protocol GlyphStringProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `GlyphStringRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphString` instance.
-/// It exposes methods that can operate on this data type through `GlyphStringProtocol` conformance.
-/// Use `GlyphStringRef` only as an `unowned` reference to an existing `PangoGlyphString` instance.
-///
 /// A `PangoGlyphString` is used to store strings of glyphs with geometry
 /// and visual attribute information.
 /// 
 /// The storage for the glyph information is owned by the structure
 /// which simplifies memory management.
+///
+/// The `GlyphStringRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphString` instance.
+/// It exposes methods that can operate on this data type through `GlyphStringProtocol` conformance.
+/// Use `GlyphStringRef` only as an `unowned` reference to an existing `PangoGlyphString` instance.
+///
 public struct GlyphStringRef: GlyphStringProtocol {
         /// Untyped pointer to the underlying `PangoGlyphString` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_string_ptr` property instead.
@@ -118,15 +120,16 @@ public extension GlyphStringRef {
     }
 }
 
-/// The `GlyphString` type acts as an owner of an underlying `PangoGlyphString` instance.
-/// It provides the methods that can operate on this data type through `GlyphStringProtocol` conformance.
-/// Use `GlyphString` as a strong reference or owner of a `PangoGlyphString` instance.
-///
 /// A `PangoGlyphString` is used to store strings of glyphs with geometry
 /// and visual attribute information.
 /// 
 /// The storage for the glyph information is owned by the structure
 /// which simplifies memory management.
+///
+/// The `GlyphString` type acts as an owner of an underlying `PangoGlyphString` instance.
+/// It provides the methods that can operate on this data type through `GlyphStringProtocol` conformance.
+/// Use `GlyphString` as a strong reference or owner of a `PangoGlyphString` instance.
+///
 open class GlyphString: GlyphStringProtocol {
         /// Untyped pointer to the underlying `PangoGlyphString` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_string_ptr` property instead.
@@ -368,10 +371,37 @@ public extension GlyphStringProtocol {
     /// Converts from character position to x position.
     /// 
     /// The X position is measured from the left edge of the run.
-    /// Character positions are computed by dividing up each cluster
-    /// into equal portions.
-    @inlinable func indexToX<AnalysisT: AnalysisProtocol>(text: UnsafeMutablePointer<CChar>!, length: Int, analysis: AnalysisT, index_: Int, trailing: Bool, xPos: UnsafeMutablePointer<gint>!) {
-        pango_glyph_string_index_to_x(glyph_string_ptr, text, gint(length), analysis._ptr, gint(index_), gboolean((trailing) ? 1 : 0), xPos)
+    /// Character positions are obtained using font metrics for ligatures
+    /// where available, and computed by dividing up each cluster
+    /// into equal portions, otherwise.
+    /// 
+    /// &lt;picture&gt;
+    ///   &lt;source srcset="glyphstring-positions-dark.png" media="(prefers-color-scheme: dark)"&gt;
+    ///   &lt;img alt="Glyph positions" src="glyphstring-positions-light.png"&gt;
+    /// &lt;/picture&gt;
+    @inlinable func indexToX<AnalysisT: AnalysisProtocol>(text: UnsafePointer<CChar>!, length: Int, analysis: AnalysisT, index: Int, trailing: Bool, xPos: UnsafeMutablePointer<gint>!) {
+        pango_glyph_string_index_to_x(glyph_string_ptr, text, gint(length), analysis._ptr, gint(index), gboolean((trailing) ? 1 : 0), xPos)
+    
+    }
+
+    /// Converts from character position to x position.
+    /// 
+    /// This variant of [method`Pango.GlyphString.index_to_x`] additionally
+    /// accepts a `PangoLogAttr` array. The grapheme boundary information
+    /// in it can be used to disambiguate positioning inside some complex
+    /// clusters.
+    @inlinable func indexToXFull<AnalysisT: AnalysisProtocol>(text: UnsafePointer<CChar>!, length: Int, analysis: AnalysisT, attrs: LogAttrRef? = nil, index: Int, trailing: Bool, xPos: UnsafeMutablePointer<gint>!) {
+        pango_glyph_string_index_to_x_full(glyph_string_ptr, text, gint(length), analysis._ptr, attrs?._ptr, gint(index), gboolean((trailing) ? 1 : 0), xPos)
+    
+    }
+    /// Converts from character position to x position.
+    /// 
+    /// This variant of [method`Pango.GlyphString.index_to_x`] additionally
+    /// accepts a `PangoLogAttr` array. The grapheme boundary information
+    /// in it can be used to disambiguate positioning inside some complex
+    /// clusters.
+    @inlinable func indexToXFull<AnalysisT: AnalysisProtocol, LogAttrT: LogAttrProtocol>(text: UnsafePointer<CChar>!, length: Int, analysis: AnalysisT, attrs: LogAttrT?, index: Int, trailing: Bool, xPos: UnsafeMutablePointer<gint>!) {
+        pango_glyph_string_index_to_x_full(glyph_string_ptr, text, gint(length), analysis._ptr, attrs?._ptr, gint(index), gboolean((trailing) ? 1 : 0), xPos)
     
     }
 
@@ -388,25 +418,25 @@ public extension GlyphStringProtocol {
     /// not allowed (such as Thai), the returned value may not be a valid
     /// cursor position; the caller must combine the result with the logical
     /// attributes for the text to compute the valid cursor position.
-    @inlinable func xToIndex<AnalysisT: AnalysisProtocol>(text: UnsafeMutablePointer<CChar>!, length: Int, analysis: AnalysisT, xPos: Int, index_: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) {
-        pango_glyph_string_x_to_index(glyph_string_ptr, text, gint(length), analysis._ptr, gint(xPos), index_, trailing)
+    @inlinable func xToIndex<AnalysisT: AnalysisProtocol>(text: UnsafePointer<CChar>!, length: Int, analysis: AnalysisT, xPos: Int, index: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) {
+        pango_glyph_string_x_to_index(glyph_string_ptr, text, gint(length), analysis._ptr, gint(xPos), index, trailing)
     
     }
 
     /// Convert the characters in `text` into glyphs.
     /// 
     /// Given a segment of text and the corresponding `PangoAnalysis` structure
-    /// returned from [func`itemize`], convert the characters into glyphs. You
-    /// may also pass in only a substring of the item from [func`itemize`].
+    /// returned from [func`Pango.itemize`], convert the characters into glyphs. You
+    /// may also pass in only a substring of the item from [func`Pango.itemize`].
     /// 
-    /// It is recommended that you use [func`shape_full`] instead, since
+    /// It is recommended that you use [func`Pango.shape_full`] instead, since
     /// that API allows for shaping interaction happening across text item
     /// boundaries.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// [func`itemize`] have indices that are relative to the entire paragraph,
+    /// [func`Pango.itemize`] have indices that are relative to the entire paragraph,
     /// so you need to subtract the item offset from their indices before
-    /// calling [func`shape`].
+    /// calling [func`Pango.shape`].
     @inlinable func shape<AnalysisT: AnalysisProtocol>(text: UnsafePointer<CChar>!, length: Int, analysis: AnalysisT) {
         pango_shape(text, gint(length), analysis._ptr, glyph_string_ptr)
     
@@ -415,38 +445,72 @@ public extension GlyphStringProtocol {
     /// Convert the characters in `text` into glyphs.
     /// 
     /// Given a segment of text and the corresponding `PangoAnalysis` structure
-    /// returned from [func`itemize`], convert the characters into glyphs. You may
-    /// also pass in only a substring of the item from [func`itemize`].
+    /// returned from [func`Pango.itemize`], convert the characters into glyphs.
+    /// You may also pass in only a substring of the item from [func`Pango.itemize`].
     /// 
-    /// This is similar to [func`shape`], except it also can optionally take
+    /// This is similar to [func`Pango.shape`], except it also can optionally take
     /// the full paragraph text as input, which will then be used to perform
     /// certain cross-item shaping interactions. If you have access to the broader
     /// text of which `item_text` is part of, provide the broader text as
     /// `paragraph_text`. If `paragraph_text` is `nil`, item text is used instead.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// [func`itemize`] have indices that are relative to the entire paragraph,
+    /// [func`Pango.itemize`] have indices that are relative to the entire paragraph,
     /// so you do not pass the full paragraph text as `paragraph_text`, you need
-    /// to subtract the item offset from their indices before calling [func`shape_full`].
+    /// to subtract the item offset from their indices before calling
+    /// [func`Pango.shape_full`].
     @inlinable func shapeFull<AnalysisT: AnalysisProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, analysis: AnalysisT) {
         pango_shape_full(itemText, gint(itemLength), paragraphText, gint(paragraphLength), analysis._ptr, glyph_string_ptr)
+    
+    }
+
+    /// Convert the characters in `item` into glyphs.
+    /// 
+    /// This is similar to [func`Pango.shape_with_flags`], except it takes a
+    /// `PangoItem` instead of separate `item_text` and `analysis` arguments.
+    /// It also takes `log_attrs`, which may be used in implementing text
+    /// transforms.
+    /// 
+    /// Note that the extra attributes in the `analyis` that is returned from
+    /// [func`Pango.itemize`] have indices that are relative to the entire paragraph,
+    /// so you do not pass the full paragraph text as `paragraph_text`, you need
+    /// to subtract the item offset from their indices before calling
+    /// [func`Pango.shape_with_flags`].
+    @inlinable func shape<ItemT: ItemProtocol>(item: ItemT, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, logAttrs: LogAttrRef? = nil, flags: ShapeFlags) {
+        pango_shape_item(item.item_ptr, paragraphText, gint(paragraphLength), logAttrs?._ptr, glyph_string_ptr, flags.value)
+    
+    }
+    /// Convert the characters in `item` into glyphs.
+    /// 
+    /// This is similar to [func`Pango.shape_with_flags`], except it takes a
+    /// `PangoItem` instead of separate `item_text` and `analysis` arguments.
+    /// It also takes `log_attrs`, which may be used in implementing text
+    /// transforms.
+    /// 
+    /// Note that the extra attributes in the `analyis` that is returned from
+    /// [func`Pango.itemize`] have indices that are relative to the entire paragraph,
+    /// so you do not pass the full paragraph text as `paragraph_text`, you need
+    /// to subtract the item offset from their indices before calling
+    /// [func`Pango.shape_with_flags`].
+    @inlinable func shape<ItemT: ItemProtocol, LogAttrT: LogAttrProtocol>(item: ItemT, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, logAttrs: LogAttrT?, flags: ShapeFlags) {
+        pango_shape_item(item.item_ptr, paragraphText, gint(paragraphLength), logAttrs?._ptr, glyph_string_ptr, flags.value)
     
     }
 
     /// Convert the characters in `text` into glyphs.
     /// 
     /// Given a segment of text and the corresponding `PangoAnalysis` structure
-    /// returned from [func`itemize`], convert the characters into glyphs. You may
-    /// also pass in only a substring of the item from [func`itemize`].
+    /// returned from [func`Pango.itemize`], convert the characters into glyphs.
+    /// You may also pass in only a substring of the item from [func`Pango.itemize`].
     /// 
-    /// This is similar to [func`shape_full`], except it also takes flags that can
-    /// influence the shaping process.
+    /// This is similar to [func`Pango.shape_full`], except it also takes flags
+    /// that can influence the shaping process.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// [func`itemize`] have indices that are relative to the entire paragraph,
+    /// [func`Pango.itemize`] have indices that are relative to the entire paragraph,
     /// so you do not pass the full paragraph text as `paragraph_text`, you need
     /// to subtract the item offset from their indices before calling
-    /// [func`shape_with_flags`].
+    /// [func`Pango.shape_with_flags`].
     @inlinable func shapeWithFlags<AnalysisT: AnalysisProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, analysis: AnalysisT, flags: ShapeFlags) {
         pango_shape_with_flags(itemText, gint(itemLength), paragraphText, gint(paragraphLength), analysis._ptr, glyph_string_ptr, flags.value)
     
@@ -484,32 +548,32 @@ public extension GlyphStringProtocol {
     }
 
     /// array of glyph information
-    ///          for the glyph string.
+    ///   for the glyph string.
     @inlinable var glyphs: UnsafeMutablePointer<PangoGlyphInfo>! {
         /// array of glyph information
-        ///          for the glyph string.
+        ///   for the glyph string.
         get {
             let rv = glyph_string_ptr.pointee.glyphs
             return rv
         }
         /// array of glyph information
-        ///          for the glyph string.
+        ///   for the glyph string.
          set {
             glyph_string_ptr.pointee.glyphs = newValue
         }
     }
 
     /// logical cluster info, indexed by the byte index
-    ///                within the text corresponding to the glyph string.
+    ///   within the text corresponding to the glyph string.
     @inlinable var logClusters: UnsafeMutablePointer<gint>! {
         /// logical cluster info, indexed by the byte index
-        ///                within the text corresponding to the glyph string.
+        ///   within the text corresponding to the glyph string.
         get {
             let rv = glyph_string_ptr.pointee.log_clusters
             return rv
         }
         /// logical cluster info, indexed by the byte index
-        ///                within the text corresponding to the glyph string.
+        ///   within the text corresponding to the glyph string.
          set {
             glyph_string_ptr.pointee.log_clusters = newValue
         }

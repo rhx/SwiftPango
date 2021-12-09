@@ -5,16 +5,17 @@ import GLibObject
 
 // MARK: - AttrClass Record
 
-/// The `AttrClassProtocol` protocol exposes the methods and properties of an underlying `PangoAttrClass` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `AttrClass`.
-/// Alternatively, use `AttrClassRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// The `PangoAttrClass` structure stores the type and operations for
 /// a particular type of attribute.
 /// 
 /// The functions in this structure should not be called directly. Instead,
 /// one should use the wrapper functions provided for `PangoAttribute`.
+///
+/// The `AttrClassProtocol` protocol exposes the methods and properties of an underlying `PangoAttrClass` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `AttrClass`.
+/// Alternatively, use `AttrClassRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol AttrClassProtocol {
         /// Untyped pointer to the underlying `PangoAttrClass` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -26,15 +27,16 @@ public protocol AttrClassProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `AttrClassRef` type acts as a lightweight Swift reference to an underlying `PangoAttrClass` instance.
-/// It exposes methods that can operate on this data type through `AttrClassProtocol` conformance.
-/// Use `AttrClassRef` only as an `unowned` reference to an existing `PangoAttrClass` instance.
-///
 /// The `PangoAttrClass` structure stores the type and operations for
 /// a particular type of attribute.
 /// 
 /// The functions in this structure should not be called directly. Instead,
 /// one should use the wrapper functions provided for `PangoAttribute`.
+///
+/// The `AttrClassRef` type acts as a lightweight Swift reference to an underlying `PangoAttrClass` instance.
+/// It exposes methods that can operate on this data type through `AttrClassProtocol` conformance.
+/// Use `AttrClassRef` only as an `unowned` reference to an existing `PangoAttrClass` instance.
+///
 public struct AttrClassRef: AttrClassProtocol {
         /// Untyped pointer to the underlying `PangoAttrClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -113,15 +115,16 @@ public extension AttrClassRef {
 
     }
 
-/// The `AttrClass` type acts as an owner of an underlying `PangoAttrClass` instance.
-/// It provides the methods that can operate on this data type through `AttrClassProtocol` conformance.
-/// Use `AttrClass` as a strong reference or owner of a `PangoAttrClass` instance.
-///
 /// The `PangoAttrClass` structure stores the type and operations for
 /// a particular type of attribute.
 /// 
 /// The functions in this structure should not be called directly. Instead,
 /// one should use the wrapper functions provided for `PangoAttribute`.
+///
+/// The `AttrClass` type acts as an owner of an underlying `PangoAttrClass` instance.
+/// It provides the methods that can operate on this data type through `AttrClassProtocol` conformance.
+/// Use `AttrClass` as a strong reference or owner of a `PangoAttrClass` instance.
+///
 open class AttrClass: AttrClassProtocol {
         /// Untyped pointer to the underlying `PangoAttrClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

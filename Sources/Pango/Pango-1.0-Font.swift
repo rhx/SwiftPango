@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - Font Class
 
+/// A `PangoFont` is used to represent a font in a
+/// rendering-system-independent manner.
+///
 /// The `FontProtocol` protocol exposes the methods and properties of an underlying `PangoFont` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `Font`.
 /// Alternatively, use `FontRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// A `PangoFont` is used to represent a font in a
-/// rendering-system-independent manner.
 public protocol FontProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFont` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol FontProtocol: GLibObject.ObjectProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// A `PangoFont` is used to represent a font in a
+/// rendering-system-independent manner.
+///
 /// The `FontRef` type acts as a lightweight Swift reference to an underlying `PangoFont` instance.
 /// It exposes methods that can operate on this data type through `FontProtocol` conformance.
 /// Use `FontRef` only as an `unowned` reference to an existing `PangoFont` instance.
 ///
-/// A `PangoFont` is used to represent a font in a
-/// rendering-system-independent manner.
 public struct FontRef: FontProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFont` instance.
     /// For type-safe access, use the generated, typed pointer `font_ptr` property instead.
@@ -108,14 +110,29 @@ public extension FontRef {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
+        /// Loads data previously created via [method`Pango.Font.serialize`].
+    /// 
+    /// For a discussion of the supported format, see that function.
+    /// 
+    /// Note: to verify that the returned font is identical to
+    /// the one that was serialized, you can compare `bytes` to the
+    /// result of serializing the font again.
+    @inlinable static func deserialize<BytesT: GLib.BytesProtocol, ContextT: ContextProtocol>(context: ContextT, bytes: BytesT) throws -> FontRef! {
+        var error: UnsafeMutablePointer<GError>?
+        let maybeRV = FontRef(gconstpointer: gconstpointer(pango_font_deserialize(context.context_ptr, bytes.bytes_ptr, &error)))
+        if let error = error { throw GLibError(error) }
+        guard let rv = maybeRV else { return nil }
+        return rv
     }
+}
 
+/// A `PangoFont` is used to represent a font in a
+/// rendering-system-independent manner.
+///
 /// The `Font` type acts as a reference-counted owner of an underlying `PangoFont` instance.
 /// It provides the methods that can operate on this data type through `FontProtocol` conformance.
 /// Use `Font` as a strong reference or owner of a `PangoFont` instance.
 ///
-/// A `PangoFont` is used to represent a font in a
-/// rendering-system-independent manner.
 open class Font: GLibObject.Object, FontProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -242,6 +259,21 @@ open class Font: GLibObject.Object, FontProtocol {
     }
 
 
+    /// Loads data previously created via [method`Pango.Font.serialize`].
+    /// 
+    /// For a discussion of the supported format, see that function.
+    /// 
+    /// Note: to verify that the returned font is identical to
+    /// the one that was serialized, you can compare `bytes` to the
+    /// result of serializing the font again.
+    @inlinable public static func deserialize<BytesT: GLib.BytesProtocol, ContextT: ContextProtocol>(context: ContextT, bytes: BytesT) throws -> Font! {
+        var error: UnsafeMutablePointer<GError>?
+        let maybeRV = Font(gconstpointer: gconstpointer(pango_font_deserialize(context.context_ptr, bytes.bytes_ptr, &error)))
+        if let error = error { throw GLibError(error) }
+        guard let rv = maybeRV else { return nil }
+        if typeIsA(type: rv.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = rv.refSink() } 
+        return rv
+    }
 
 }
 
@@ -263,12 +295,14 @@ public enum FontSignalName: String, SignalNameProtocol {
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
     /// `g_signal_connect()` call, like this:
+    /// 
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
+    /// 
     /// It is important to note that you must use
     /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
@@ -326,14 +360,15 @@ public extension FontProtocol {
 
     /// Gets the font map for which the font was created.
     /// 
-    /// Note that the font maintains a *weak* reference to the font map, so if
-    /// all references to font map are dropped, the font map will be finalized
-    /// even if there are fonts created with the font map that are still alive.
+    /// Note that the font maintains a *weak* reference to
+    /// the font map, so if all references to font map are
+    /// dropped, the font map will be finalized even if there
+    /// are fonts created with the font map that are still alive.
     /// In that case this function will return `nil`.
     /// 
-    /// It is the responsibility of the user to ensure that the font map is kept
-    /// alive. In most uses this is not an issue as a `PangoContext` holds
-    /// a reference to the font map.
+    /// It is the responsibility of the user to ensure that the
+    /// font map is kept alive. In most uses this is not an issue
+    /// as a `PangoContext` holds a reference to the font map.
     @inlinable func getFontMap() -> FontMapRef! {
         let rv = FontMapRef(gconstpointer: gconstpointer(pango_font_get_font_map(font_ptr)))
         return rv
@@ -372,10 +407,24 @@ public extension FontProtocol {
 
     /// Get a `hb_font_t` object backing this font.
     /// 
-    /// Note that the objects returned by this function are cached and immutable.
-    /// If you need to make changes to the `hb_font_t`, use `hb_font_create_sub_font()`.
+    /// Note that the objects returned by this function are cached
+    /// and immutable. If you need to make changes to the `hb_font_t`,
+    /// use `hb_font_create_sub_font()`.
     @inlinable func getHbFont() -> UnsafeMutablePointer<hb_font_t>? {
         let rv = pango_font_get_hb_font(font_ptr)
+        return rv
+    }
+
+    /// Returns the languages that are supported by `font`.
+    /// 
+    /// If the font backend does not provide this information,
+    /// `nil` is returned. For the fontconfig backend, this
+    /// corresponds to the FC_LANG member of the FcPattern.
+    /// 
+    /// The returned array is only valid as long as the font
+    /// and its fontmap are valid.
+    @inlinable func getLanguages() -> UnsafeMutablePointer<UnsafeMutablePointer<PangoLanguage>?>! {
+        let rv = pango_font_get_languages(font_ptr)
         return rv
     }
 
@@ -411,6 +460,18 @@ public extension FontProtocol {
         let rv = ((pango_font_has_char(font_ptr, wc)) != 0)
         return rv
     }
+
+    /// Serializes the `font` in a way that can be uniquely identified.
+    /// 
+    /// There are no guarantees about the format of the output across different
+    /// versions of Pango.
+    /// 
+    /// The intended use of this function is testing, benchmarking and debugging.
+    /// The format is not meant as a permanent storage format.
+    @inlinable func serialize() -> GLib.BytesRef! {
+        let rv = GLib.BytesRef(pango_font_serialize(font_ptr))
+        return rv
+    }
     /// Gets the `PangoFontFace` to which `font` belongs.
     @inlinable var face: FontFaceRef! {
         /// Gets the `PangoFontFace` to which `font` belongs.
@@ -422,25 +483,27 @@ public extension FontProtocol {
 
     /// Gets the font map for which the font was created.
     /// 
-    /// Note that the font maintains a *weak* reference to the font map, so if
-    /// all references to font map are dropped, the font map will be finalized
-    /// even if there are fonts created with the font map that are still alive.
+    /// Note that the font maintains a *weak* reference to
+    /// the font map, so if all references to font map are
+    /// dropped, the font map will be finalized even if there
+    /// are fonts created with the font map that are still alive.
     /// In that case this function will return `nil`.
     /// 
-    /// It is the responsibility of the user to ensure that the font map is kept
-    /// alive. In most uses this is not an issue as a `PangoContext` holds
-    /// a reference to the font map.
+    /// It is the responsibility of the user to ensure that the
+    /// font map is kept alive. In most uses this is not an issue
+    /// as a `PangoContext` holds a reference to the font map.
     @inlinable var fontMap: FontMapRef! {
         /// Gets the font map for which the font was created.
         /// 
-        /// Note that the font maintains a *weak* reference to the font map, so if
-        /// all references to font map are dropped, the font map will be finalized
-        /// even if there are fonts created with the font map that are still alive.
+        /// Note that the font maintains a *weak* reference to
+        /// the font map, so if all references to font map are
+        /// dropped, the font map will be finalized even if there
+        /// are fonts created with the font map that are still alive.
         /// In that case this function will return `nil`.
         /// 
-        /// It is the responsibility of the user to ensure that the font map is kept
-        /// alive. In most uses this is not an issue as a `PangoContext` holds
-        /// a reference to the font map.
+        /// It is the responsibility of the user to ensure that the
+        /// font map is kept alive. In most uses this is not an issue
+        /// as a `PangoContext` holds a reference to the font map.
         get {
             let rv = FontMapRef(gconstpointer: gconstpointer(pango_font_get_font_map(font_ptr)))
             return rv
@@ -449,15 +512,40 @@ public extension FontProtocol {
 
     /// Get a `hb_font_t` object backing this font.
     /// 
-    /// Note that the objects returned by this function are cached and immutable.
-    /// If you need to make changes to the `hb_font_t`, use `hb_font_create_sub_font()`.
+    /// Note that the objects returned by this function are cached
+    /// and immutable. If you need to make changes to the `hb_font_t`,
+    /// use `hb_font_create_sub_font()`.
     @inlinable var hbFont: UnsafeMutablePointer<hb_font_t>? {
         /// Get a `hb_font_t` object backing this font.
         /// 
-        /// Note that the objects returned by this function are cached and immutable.
-        /// If you need to make changes to the `hb_font_t`, use `hb_font_create_sub_font()`.
+        /// Note that the objects returned by this function are cached
+        /// and immutable. If you need to make changes to the `hb_font_t`,
+        /// use `hb_font_create_sub_font()`.
         get {
             let rv = pango_font_get_hb_font(font_ptr)
+            return rv
+        }
+    }
+
+    /// Returns the languages that are supported by `font`.
+    /// 
+    /// If the font backend does not provide this information,
+    /// `nil` is returned. For the fontconfig backend, this
+    /// corresponds to the FC_LANG member of the FcPattern.
+    /// 
+    /// The returned array is only valid as long as the font
+    /// and its fontmap are valid.
+    @inlinable var languages: UnsafeMutablePointer<UnsafeMutablePointer<PangoLanguage>?>! {
+        /// Returns the languages that are supported by `font`.
+        /// 
+        /// If the font backend does not provide this information,
+        /// `nil` is returned. For the fontconfig backend, this
+        /// corresponds to the FC_LANG member of the FcPattern.
+        /// 
+        /// The returned array is only valid as long as the font
+        /// and its fontmap are valid.
+        get {
+            let rv = pango_font_get_languages(font_ptr)
             return rv
         }
     }

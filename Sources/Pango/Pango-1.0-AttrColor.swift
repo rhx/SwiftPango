@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - AttrColor Record
 
+/// The `PangoAttrColor` structure is used to represent attributes that
+/// are colors.
+///
 /// The `AttrColorProtocol` protocol exposes the methods and properties of an underlying `PangoAttrColor` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `AttrColor`.
 /// Alternatively, use `AttrColorRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAttrColor` structure is used to represent attributes that
-/// are colors.
 public protocol AttrColorProtocol {
         /// Untyped pointer to the underlying `PangoAttrColor` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol AttrColorProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoAttrColor` structure is used to represent attributes that
+/// are colors.
+///
 /// The `AttrColorRef` type acts as a lightweight Swift reference to an underlying `PangoAttrColor` instance.
 /// It exposes methods that can operate on this data type through `AttrColorProtocol` conformance.
 /// Use `AttrColorRef` only as an `unowned` reference to an existing `PangoAttrColor` instance.
 ///
-/// The `PangoAttrColor` structure is used to represent attributes that
-/// are colors.
 public struct AttrColorRef: AttrColorProtocol {
         /// Untyped pointer to the underlying `PangoAttrColor` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +109,13 @@ public extension AttrColorRef {
 
     }
 
+/// The `PangoAttrColor` structure is used to represent attributes that
+/// are colors.
+///
 /// The `AttrColor` type acts as an owner of an underlying `PangoAttrColor` instance.
 /// It provides the methods that can operate on this data type through `AttrColorProtocol` conformance.
 /// Use `AttrColor` as a strong reference or owner of a `PangoAttrColor` instance.
 ///
-/// The `PangoAttrColor` structure is used to represent attributes that
-/// are colors.
 open class AttrColor: AttrColorProtocol {
         /// Untyped pointer to the underlying `PangoAttrColor` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

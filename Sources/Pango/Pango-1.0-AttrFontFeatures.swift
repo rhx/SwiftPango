@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - AttrFontFeatures Record
 
+/// The `PangoAttrFontFeatures` structure is used to represent OpenType
+/// font features as an attribute.
+///
 /// The `AttrFontFeaturesProtocol` protocol exposes the methods and properties of an underlying `PangoAttrFontFeatures` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `AttrFontFeatures`.
 /// Alternatively, use `AttrFontFeaturesRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAttrFontFeatures` structure is used to represent OpenType
-/// font features as an attribute.
 public protocol AttrFontFeaturesProtocol {
         /// Untyped pointer to the underlying `PangoAttrFontFeatures` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol AttrFontFeaturesProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoAttrFontFeatures` structure is used to represent OpenType
+/// font features as an attribute.
+///
 /// The `AttrFontFeaturesRef` type acts as a lightweight Swift reference to an underlying `PangoAttrFontFeatures` instance.
 /// It exposes methods that can operate on this data type through `AttrFontFeaturesProtocol` conformance.
 /// Use `AttrFontFeaturesRef` only as an `unowned` reference to an existing `PangoAttrFontFeatures` instance.
 ///
-/// The `PangoAttrFontFeatures` structure is used to represent OpenType
-/// font features as an attribute.
 public struct AttrFontFeaturesRef: AttrFontFeaturesProtocol {
         /// Untyped pointer to the underlying `PangoAttrFontFeatures` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +109,13 @@ public extension AttrFontFeaturesRef {
 
     }
 
+/// The `PangoAttrFontFeatures` structure is used to represent OpenType
+/// font features as an attribute.
+///
 /// The `AttrFontFeatures` type acts as an owner of an underlying `PangoAttrFontFeatures` instance.
 /// It provides the methods that can operate on this data type through `AttrFontFeaturesProtocol` conformance.
 /// Use `AttrFontFeatures` as a strong reference or owner of a `PangoAttrFontFeatures` instance.
 ///
-/// The `PangoAttrFontFeatures` structure is used to represent OpenType
-/// font features as an attribute.
 open class AttrFontFeatures: AttrFontFeaturesProtocol {
         /// Untyped pointer to the underlying `PangoAttrFontFeatures` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

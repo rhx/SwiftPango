@@ -5,16 +5,17 @@ import GLibObject
 
 // MARK: - FontFamily Class
 
-/// The `FontFamilyProtocol` protocol exposes the methods and properties of an underlying `PangoFontFamily` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `FontFamily`.
-/// Alternatively, use `FontFamilyRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoFontFamily` is used to represent a family of related
 /// font faces.
 /// 
 /// The font faces in a family share a common design, but differ in
 /// slant, weight, width or other aspects.
+///
+/// The `FontFamilyProtocol` protocol exposes the methods and properties of an underlying `PangoFontFamily` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `FontFamily`.
+/// Alternatively, use `FontFamilyRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol FontFamilyProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontFamily` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -26,15 +27,16 @@ public protocol FontFamilyProtocol: GLibObject.ObjectProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `FontFamilyRef` type acts as a lightweight Swift reference to an underlying `PangoFontFamily` instance.
-/// It exposes methods that can operate on this data type through `FontFamilyProtocol` conformance.
-/// Use `FontFamilyRef` only as an `unowned` reference to an existing `PangoFontFamily` instance.
-///
 /// A `PangoFontFamily` is used to represent a family of related
 /// font faces.
 /// 
 /// The font faces in a family share a common design, but differ in
 /// slant, weight, width or other aspects.
+///
+/// The `FontFamilyRef` type acts as a lightweight Swift reference to an underlying `PangoFontFamily` instance.
+/// It exposes methods that can operate on this data type through `FontFamilyProtocol` conformance.
+/// Use `FontFamilyRef` only as an `unowned` reference to an existing `PangoFontFamily` instance.
+///
 public struct FontFamilyRef: FontFamilyProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFontFamily` instance.
     /// For type-safe access, use the generated, typed pointer `font_family_ptr` property instead.
@@ -116,15 +118,16 @@ public extension FontFamilyRef {
 
     }
 
-/// The `FontFamily` type acts as a reference-counted owner of an underlying `PangoFontFamily` instance.
-/// It provides the methods that can operate on this data type through `FontFamilyProtocol` conformance.
-/// Use `FontFamily` as a strong reference or owner of a `PangoFontFamily` instance.
-///
 /// A `PangoFontFamily` is used to represent a family of related
 /// font faces.
 /// 
 /// The font faces in a family share a common design, but differ in
 /// slant, weight, width or other aspects.
+///
+/// The `FontFamily` type acts as a reference-counted owner of an underlying `PangoFontFamily` instance.
+/// It provides the methods that can operate on this data type through `FontFamilyProtocol` conformance.
+/// Use `FontFamily` as a strong reference or owner of a `PangoFontFamily` instance.
+///
 open class FontFamily: GLibObject.Object, FontFamilyProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -272,12 +275,14 @@ public enum FontFamilySignalName: String, SignalNameProtocol {
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
     /// `g_signal_connect()` call, like this:
+    /// 
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
+    /// 
     /// It is important to note that you must use
     /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.

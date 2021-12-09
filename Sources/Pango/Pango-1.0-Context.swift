@@ -5,19 +5,20 @@ import GLibObject
 
 // MARK: - Context Class
 
+/// A `PangoContext` stores global information used to control the
+/// itemization process.
+/// 
+/// The information stored by `PangoContext` includes the fontmap used
+/// to look up fonts, and default values such as the default language,
+/// default gravity, or default font.
+/// 
+/// To obtain a `PangoContext`, use [method`Pango.FontMap.create_context`].
+///
 /// The `ContextProtocol` protocol exposes the methods and properties of an underlying `PangoContext` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `Context`.
 /// Alternatively, use `ContextRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// A `PangoContext` stores global information used to control the
-/// itemization process.
-/// 
-/// The information stored by `PangoContext includes the fontmap used
-/// to look up fonts, and default values such as the default language,
-/// default gravity, or default font.
-/// 
-/// To obtain a `PangoContext`, use [method`Pango.FontMap.create_context`].
 public protocol ContextProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoContext` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -29,18 +30,19 @@ public protocol ContextProtocol: GLibObject.ObjectProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `ContextRef` type acts as a lightweight Swift reference to an underlying `PangoContext` instance.
-/// It exposes methods that can operate on this data type through `ContextProtocol` conformance.
-/// Use `ContextRef` only as an `unowned` reference to an existing `PangoContext` instance.
-///
 /// A `PangoContext` stores global information used to control the
 /// itemization process.
 /// 
-/// The information stored by `PangoContext includes the fontmap used
+/// The information stored by `PangoContext` includes the fontmap used
 /// to look up fonts, and default values such as the default language,
 /// default gravity, or default font.
 /// 
 /// To obtain a `PangoContext`, use [method`Pango.FontMap.create_context`].
+///
+/// The `ContextRef` type acts as a lightweight Swift reference to an underlying `PangoContext` instance.
+/// It exposes methods that can operate on this data type through `ContextProtocol` conformance.
+/// Use `ContextRef` only as an `unowned` reference to an existing `PangoContext` instance.
+///
 public struct ContextRef: ContextProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoContext` instance.
     /// For type-safe access, use the generated, typed pointer `context_ptr` property instead.
@@ -137,18 +139,19 @@ public extension ContextRef {
     }
 }
 
-/// The `Context` type acts as a reference-counted owner of an underlying `PangoContext` instance.
-/// It provides the methods that can operate on this data type through `ContextProtocol` conformance.
-/// Use `Context` as a strong reference or owner of a `PangoContext` instance.
-///
 /// A `PangoContext` stores global information used to control the
 /// itemization process.
 /// 
-/// The information stored by `PangoContext includes the fontmap used
+/// The information stored by `PangoContext` includes the fontmap used
 /// to look up fonts, and default values such as the default language,
 /// default gravity, or default font.
 /// 
 /// To obtain a `PangoContext`, use [method`Pango.FontMap.create_context`].
+///
+/// The `Context` type acts as a reference-counted owner of an underlying `PangoContext` instance.
+/// It provides the methods that can operate on this data type through `ContextProtocol` conformance.
+/// Use `Context` as a strong reference or owner of a `PangoContext` instance.
+///
 open class Context: GLibObject.Object, ContextProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -312,12 +315,14 @@ public enum ContextSignalName: String, SignalNameProtocol {
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
     /// `g_signal_connect()` call, like this:
+    /// 
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
+    /// 
     /// It is important to note that you must use
     /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
@@ -375,7 +380,7 @@ public extension ContextProtocol {
     /// 
     /// This is similar to [method`Pango.Context.get_base_gravity`],
     /// except for when the base gravity is `PANGO_GRAVITY_AUTO` for
-    /// which [type_func`Pango.Gravity.get_for_matrix`] is used to return the
+    /// which [func`Pango.Gravity.get_for_matrix`] is used to return the
     /// gravity from the current context matrix.
     @inlinable func getGravity() -> PangoGravity {
         let rv = pango_context_get_gravity(context_ptr)
@@ -532,7 +537,7 @@ public extension ContextProtocol {
     /// Sets the global language tag for the context.
     /// 
     /// The default language for the locale of the running process
-    /// can be found using [type_func`Pango.Language.get_default`].
+    /// can be found using [func`Pango.Language.get_default`].
     @inlinable func set<LanguageT: LanguageProtocol>(language: LanguageT) {
         pango_context_set_language(context_ptr, language.language_ptr)
     
@@ -706,14 +711,14 @@ public extension ContextProtocol {
     /// 
     /// This is similar to [method`Pango.Context.get_base_gravity`],
     /// except for when the base gravity is `PANGO_GRAVITY_AUTO` for
-    /// which [type_func`Pango.Gravity.get_for_matrix`] is used to return the
+    /// which [func`Pango.Gravity.get_for_matrix`] is used to return the
     /// gravity from the current context matrix.
     @inlinable var gravity: PangoGravity {
         /// Retrieves the gravity for the context.
         /// 
         /// This is similar to [method`Pango.Context.get_base_gravity`],
         /// except for when the base gravity is `PANGO_GRAVITY_AUTO` for
-        /// which [type_func`Pango.Gravity.get_for_matrix`] is used to return the
+        /// which [func`Pango.Gravity.get_for_matrix`] is used to return the
         /// gravity from the current context matrix.
         get {
             let rv = pango_context_get_gravity(context_ptr)
@@ -753,7 +758,7 @@ public extension ContextProtocol {
         /// Sets the global language tag for the context.
         /// 
         /// The default language for the locale of the running process
-        /// can be found using [type_func`Pango.Language.get_default`].
+        /// can be found using [func`Pango.Language.get_default`].
         nonmutating set {
             pango_context_set_language(context_ptr, UnsafeMutablePointer<PangoLanguage>(newValue?.language_ptr))
         }

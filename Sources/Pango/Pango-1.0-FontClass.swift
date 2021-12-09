@@ -20,12 +20,13 @@ public extension FontClassRef {
 
 // MARK: - FontClass Record
 
+
+///
 /// The `FontClassProtocol` protocol exposes the methods and properties of an underlying `PangoFontClass` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `FontClass`.
 /// Alternatively, use `FontClassRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-
 public protocol FontClassProtocol {
         /// Untyped pointer to the underlying `PangoFontClass` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -37,11 +38,12 @@ public protocol FontClassProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+
+///
 /// The `FontClassRef` type acts as a lightweight Swift reference to an underlying `PangoFontClass` instance.
 /// It exposes methods that can operate on this data type through `FontClassProtocol` conformance.
 /// Use `FontClassRef` only as an `unowned` reference to an existing `PangoFontClass` instance.
 ///
-
 public struct FontClassRef: FontClassProtocol {
         /// Untyped pointer to the underlying `PangoFontClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

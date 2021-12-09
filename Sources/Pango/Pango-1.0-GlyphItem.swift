@@ -5,17 +5,18 @@ import GLibObject
 
 // MARK: - GlyphItem Record
 
-/// The `GlyphItemProtocol` protocol exposes the methods and properties of an underlying `PangoGlyphItem` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `GlyphItem`.
-/// Alternatively, use `GlyphItemRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoGlyphItem` is a pair of a `PangoItem` and the glyphs
 /// resulting from shaping the items text.
 /// 
 /// As an example of the usage of `PangoGlyphItem`, the results
 /// of shaping text with `PangoLayout` is a list of `PangoLayoutLine`,
 /// each of which contains a list of `PangoGlyphItem`.
+///
+/// The `GlyphItemProtocol` protocol exposes the methods and properties of an underlying `PangoGlyphItem` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `GlyphItem`.
+/// Alternatively, use `GlyphItemRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol GlyphItemProtocol {
         /// Untyped pointer to the underlying `PangoGlyphItem` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -27,16 +28,17 @@ public protocol GlyphItemProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `GlyphItemRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphItem` instance.
-/// It exposes methods that can operate on this data type through `GlyphItemProtocol` conformance.
-/// Use `GlyphItemRef` only as an `unowned` reference to an existing `PangoGlyphItem` instance.
-///
 /// A `PangoGlyphItem` is a pair of a `PangoItem` and the glyphs
 /// resulting from shaping the items text.
 /// 
 /// As an example of the usage of `PangoGlyphItem`, the results
 /// of shaping text with `PangoLayout` is a list of `PangoLayoutLine`,
 /// each of which contains a list of `PangoGlyphItem`.
+///
+/// The `GlyphItemRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphItem` instance.
+/// It exposes methods that can operate on this data type through `GlyphItemProtocol` conformance.
+/// Use `GlyphItemRef` only as an `unowned` reference to an existing `PangoGlyphItem` instance.
+///
 public struct GlyphItemRef: GlyphItemProtocol {
         /// Untyped pointer to the underlying `PangoGlyphItem` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_item_ptr` property instead.
@@ -115,16 +117,17 @@ public extension GlyphItemRef {
 
     }
 
-/// The `GlyphItem` type acts as an owner of an underlying `PangoGlyphItem` instance.
-/// It provides the methods that can operate on this data type through `GlyphItemProtocol` conformance.
-/// Use `GlyphItem` as a strong reference or owner of a `PangoGlyphItem` instance.
-///
 /// A `PangoGlyphItem` is a pair of a `PangoItem` and the glyphs
 /// resulting from shaping the items text.
 /// 
 /// As an example of the usage of `PangoGlyphItem`, the results
 /// of shaping text with `PangoLayout` is a list of `PangoLayoutLine`,
 /// each of which contains a list of `PangoGlyphItem`.
+///
+/// The `GlyphItem` type acts as an owner of an underlying `PangoGlyphItem` instance.
+/// It provides the methods that can operate on this data type through `GlyphItemProtocol` conformance.
+/// Use `GlyphItem` as a strong reference or owner of a `PangoGlyphItem` instance.
+///
 open class GlyphItem: GlyphItemProtocol {
         /// Untyped pointer to the underlying `PangoGlyphItem` instance.
     /// For type-safe access, use the generated, typed pointer `glyph_item_ptr` property instead.
@@ -282,11 +285,10 @@ public extension GlyphItemProtocol {
     /// Splits a shaped item (`PangoGlyphItem`) into multiple items based
     /// on an attribute list.
     /// 
-    /// The idea is that if you have attributes
-    /// that don't affect shaping, such as color or underline, to avoid
-    /// affecting shaping, you filter them out ([method`Pango.AttrList.filter`]),
-    /// apply the shaping process and then reapply them to the result using
-    /// this function.
+    /// The idea is that if you have attributes that don't affect shaping,
+    /// such as color or underline, to avoid affecting shaping, you filter
+    /// them out ([method`Pango.AttrList.filter`]), apply the shaping process
+    /// and then reapply them to the result using this function.
     /// 
     /// All attributes that start or end inside a cluster are applied
     /// to that cluster; for instance, if half of a cluster is underlined
@@ -314,11 +316,11 @@ public extension GlyphItemProtocol {
     
     }
 
-    /// Given a `PangoGlyphItem` and the corresponding text, determine the width
-    /// corresponding to each character.
+    /// Given a `PangoGlyphItem` and the corresponding text, determine the
+    /// width corresponding to each character.
     /// 
-    /// When multiple characters compose a single cluster, the width of the entire
-    /// cluster is divided equally among the characters.
+    /// When multiple characters compose a single cluster, the width of the
+    /// entire cluster is divided equally among the characters.
     /// 
     /// See also [method`Pango.GlyphString.get_logical_widths`].
     @inlinable func getLogicalWidths(text: UnsafePointer<CChar>!, logicalWidths: UnsafeMutablePointer<CInt>!) {
@@ -337,11 +339,10 @@ public extension GlyphItemProtocol {
     /// returns a new item that covers the text before `split_index` that
     /// used to be in `orig`.
     /// 
-    /// You can think of `split_index` as the length of
-    /// the returned item. `split_index` may not be 0, and it may not be
-    /// greater than or equal to the length of `orig` (that is, there must
-    /// be at least one byte assigned to each item, you can't create a
-    /// zero-length item).
+    /// You can think of `split_index` as the length of the returned item.
+    /// `split_index` may not be 0, and it may not be greater than or equal
+    /// to the length of `orig` (that is, there must be at least one byte
+    /// assigned to each item, you can't create a zero-length item).
     /// 
     /// This function is similar in function to `pango_item_split()` (and uses
     /// it internally.)
@@ -373,6 +374,54 @@ public extension GlyphItemProtocol {
         /// corresponding `PangoGlyphString`
          set {
             glyph_item_ptr.pointee.glyphs = UnsafeMutablePointer<PangoGlyphString>(newValue.glyph_string_ptr)
+        }
+    }
+
+    /// shift of the baseline, relative to the baseline
+    ///   of the containing line. Positive values shift upwards
+    @inlinable var yOffset: gint {
+        /// shift of the baseline, relative to the baseline
+        ///   of the containing line. Positive values shift upwards
+        get {
+            let rv = glyph_item_ptr.pointee.y_offset
+            return rv
+        }
+        /// shift of the baseline, relative to the baseline
+        ///   of the containing line. Positive values shift upwards
+         set {
+            glyph_item_ptr.pointee.y_offset = newValue
+        }
+    }
+
+    /// horizontal displacement to apply before the
+    ///   glyph item. Positive values shift right
+    @inlinable var startXOffset: gint {
+        /// horizontal displacement to apply before the
+        ///   glyph item. Positive values shift right
+        get {
+            let rv = glyph_item_ptr.pointee.start_x_offset
+            return rv
+        }
+        /// horizontal displacement to apply before the
+        ///   glyph item. Positive values shift right
+         set {
+            glyph_item_ptr.pointee.start_x_offset = newValue
+        }
+    }
+
+    /// horizontal displacement to apply after th
+    ///   glyph item. Positive values shift right
+    @inlinable var endXOffset: gint {
+        /// horizontal displacement to apply after th
+        ///   glyph item. Positive values shift right
+        get {
+            let rv = glyph_item_ptr.pointee.end_x_offset
+            return rv
+        }
+        /// horizontal displacement to apply after th
+        ///   glyph item. Positive values shift right
+         set {
+            glyph_item_ptr.pointee.end_x_offset = newValue
         }
     }
 

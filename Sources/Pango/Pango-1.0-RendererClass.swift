@@ -20,11 +20,6 @@ public extension RendererClassRef {
 
 // MARK: - RendererClass Record
 
-/// The `RendererClassProtocol` protocol exposes the methods and properties of an underlying `PangoRendererClass` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `RendererClass`.
-/// Alternatively, use `RendererClassRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// Class structure for `PangoRenderer`.
 /// 
 /// The following vfuncs take user space coordinates in Pango units
@@ -41,6 +36,12 @@ public extension RendererClassRef {
 /// and must be implemented:
 /// - draw_trapezoid
 /// - draw_glyph
+///
+/// The `RendererClassProtocol` protocol exposes the methods and properties of an underlying `PangoRendererClass` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `RendererClass`.
+/// Alternatively, use `RendererClassRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol RendererClassProtocol {
         /// Untyped pointer to the underlying `PangoRendererClass` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -52,10 +53,6 @@ public protocol RendererClassProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `RendererClassRef` type acts as a lightweight Swift reference to an underlying `PangoRendererClass` instance.
-/// It exposes methods that can operate on this data type through `RendererClassProtocol` conformance.
-/// Use `RendererClassRef` only as an `unowned` reference to an existing `PangoRendererClass` instance.
-///
 /// Class structure for `PangoRenderer`.
 /// 
 /// The following vfuncs take user space coordinates in Pango units
@@ -72,6 +69,11 @@ public protocol RendererClassProtocol {
 /// and must be implemented:
 /// - draw_trapezoid
 /// - draw_glyph
+///
+/// The `RendererClassRef` type acts as a lightweight Swift reference to an underlying `PangoRendererClass` instance.
+/// It exposes methods that can operate on this data type through `RendererClassProtocol` conformance.
+/// Use `RendererClassRef` only as an `unowned` reference to an existing `PangoRendererClass` instance.
+///
 public struct RendererClassRef: RendererClassProtocol {
         /// Untyped pointer to the underlying `PangoRendererClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

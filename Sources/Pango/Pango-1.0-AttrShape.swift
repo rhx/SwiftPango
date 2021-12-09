@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - AttrShape Record
 
+/// The `PangoAttrShape` structure is used to represent attributes which
+/// impose shape restrictions.
+///
 /// The `AttrShapeProtocol` protocol exposes the methods and properties of an underlying `PangoAttrShape` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `AttrShape`.
 /// Alternatively, use `AttrShapeRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAttrShape` structure is used to represent attributes which
-/// impose shape restrictions.
 public protocol AttrShapeProtocol {
         /// Untyped pointer to the underlying `PangoAttrShape` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol AttrShapeProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoAttrShape` structure is used to represent attributes which
+/// impose shape restrictions.
+///
 /// The `AttrShapeRef` type acts as a lightweight Swift reference to an underlying `PangoAttrShape` instance.
 /// It exposes methods that can operate on this data type through `AttrShapeProtocol` conformance.
 /// Use `AttrShapeRef` only as an `unowned` reference to an existing `PangoAttrShape` instance.
 ///
-/// The `PangoAttrShape` structure is used to represent attributes which
-/// impose shape restrictions.
 public struct AttrShapeRef: AttrShapeProtocol {
         /// Untyped pointer to the underlying `PangoAttrShape` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +109,13 @@ public extension AttrShapeRef {
 
     }
 
+/// The `PangoAttrShape` structure is used to represent attributes which
+/// impose shape restrictions.
+///
 /// The `AttrShape` type acts as an owner of an underlying `PangoAttrShape` instance.
 /// It provides the methods that can operate on this data type through `AttrShapeProtocol` conformance.
 /// Use `AttrShape` as a strong reference or owner of a `PangoAttrShape` instance.
 ///
-/// The `PangoAttrShape` structure is used to represent attributes which
-/// impose shape restrictions.
 open class AttrShape: AttrShapeProtocol {
         /// Untyped pointer to the underlying `PangoAttrShape` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -307,14 +310,14 @@ public extension AttrShapeProtocol {
         }
     }
 
-    /// user data set (see [type_func`Pango.AttrShape.new_with_data`])
+    /// user data set (see [func`Pango.AttrShape.new_with_data`])
     @inlinable var data: gpointer! {
-        /// user data set (see [type_func`Pango.AttrShape.new_with_data`])
+        /// user data set (see [func`Pango.AttrShape.new_with_data`])
         get {
             let rv = _ptr.pointee.data
             return rv
         }
-        /// user data set (see [type_func`Pango.AttrShape.new_with_data`])
+        /// user data set (see [func`Pango.AttrShape.new_with_data`])
          set {
             _ptr.pointee.data = newValue
         }

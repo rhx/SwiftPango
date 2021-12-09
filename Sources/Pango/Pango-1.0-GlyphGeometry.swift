@@ -5,13 +5,27 @@ import GLibObject
 
 // MARK: - GlyphGeometry Record
 
+/// The `PangoGlyphGeometry` structure contains width and positioning
+/// information for a single glyph.
+/// 
+/// Note that `width` is not guaranteed to be the same as the glyph
+/// extents. Kerning and other positioning applied during shaping will
+/// affect both the `width` and the `x_offset` for the glyphs in the
+/// glyph string that results from shaping.
+/// 
+/// The information in this struct is intended for rendering the glyphs,
+/// as follows:
+/// 
+/// 1. Render the current glyph at (x + x_offset, y + y_offset),
+///    where (x, y) is the current point
+/// 2. Advance the current point to (x + xoffset, y)
+/// 3. Render the next glyph...
+///
 /// The `GlyphGeometryProtocol` protocol exposes the methods and properties of an underlying `PangoGlyphGeometry` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `GlyphGeometry`.
 /// Alternatively, use `GlyphGeometryRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoGlyphGeometry` structure contains width and positioning
-/// information for a single glyph.
 public protocol GlyphGeometryProtocol {
         /// Untyped pointer to the underlying `PangoGlyphGeometry` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +37,26 @@ public protocol GlyphGeometryProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoGlyphGeometry` structure contains width and positioning
+/// information for a single glyph.
+/// 
+/// Note that `width` is not guaranteed to be the same as the glyph
+/// extents. Kerning and other positioning applied during shaping will
+/// affect both the `width` and the `x_offset` for the glyphs in the
+/// glyph string that results from shaping.
+/// 
+/// The information in this struct is intended for rendering the glyphs,
+/// as follows:
+/// 
+/// 1. Render the current glyph at (x + x_offset, y + y_offset),
+///    where (x, y) is the current point
+/// 2. Advance the current point to (x + xoffset, y)
+/// 3. Render the next glyph...
+///
 /// The `GlyphGeometryRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphGeometry` instance.
 /// It exposes methods that can operate on this data type through `GlyphGeometryProtocol` conformance.
 /// Use `GlyphGeometryRef` only as an `unowned` reference to an existing `PangoGlyphGeometry` instance.
 ///
-/// The `PangoGlyphGeometry` structure contains width and positioning
-/// information for a single glyph.
 public struct GlyphGeometryRef: GlyphGeometryProtocol {
         /// Untyped pointer to the underlying `PangoGlyphGeometry` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +135,26 @@ public extension GlyphGeometryRef {
 
     }
 
+/// The `PangoGlyphGeometry` structure contains width and positioning
+/// information for a single glyph.
+/// 
+/// Note that `width` is not guaranteed to be the same as the glyph
+/// extents. Kerning and other positioning applied during shaping will
+/// affect both the `width` and the `x_offset` for the glyphs in the
+/// glyph string that results from shaping.
+/// 
+/// The information in this struct is intended for rendering the glyphs,
+/// as follows:
+/// 
+/// 1. Render the current glyph at (x + x_offset, y + y_offset),
+///    where (x, y) is the current point
+/// 2. Advance the current point to (x + xoffset, y)
+/// 3. Render the next glyph...
+///
 /// The `GlyphGeometry` type acts as an owner of an underlying `PangoGlyphGeometry` instance.
 /// It provides the methods that can operate on this data type through `GlyphGeometryProtocol` conformance.
 /// Use `GlyphGeometry` as a strong reference or owner of a `PangoGlyphGeometry` instance.
 ///
-/// The `PangoGlyphGeometry` structure contains width and positioning
-/// information for a single glyph.
 open class GlyphGeometry: GlyphGeometryProtocol {
         /// Untyped pointer to the underlying `PangoGlyphGeometry` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

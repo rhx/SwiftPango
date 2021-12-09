@@ -20,12 +20,13 @@ public extension FontFamilyClassRef {
 
 // MARK: - FontFamilyClass Record
 
+
+///
 /// The `FontFamilyClassProtocol` protocol exposes the methods and properties of an underlying `PangoFontFamilyClass` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `FontFamilyClass`.
 /// Alternatively, use `FontFamilyClassRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-
 public protocol FontFamilyClassProtocol {
         /// Untyped pointer to the underlying `PangoFontFamilyClass` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -37,11 +38,12 @@ public protocol FontFamilyClassProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+
+///
 /// The `FontFamilyClassRef` type acts as a lightweight Swift reference to an underlying `PangoFontFamilyClass` instance.
 /// It exposes methods that can operate on this data type through `FontFamilyClassProtocol` conformance.
 /// Use `FontFamilyClassRef` only as an `unowned` reference to an existing `PangoFontFamilyClass` instance.
 ///
-
 public struct FontFamilyClassRef: FontFamilyClassProtocol {
         /// Untyped pointer to the underlying `PangoFontFamilyClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

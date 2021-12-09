@@ -5,11 +5,6 @@ import GLibObject
 
 // MARK: - Layout Class
 
-/// The `LayoutProtocol` protocol exposes the methods and properties of an underlying `PangoLayout` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `Layout`.
-/// Alternatively, use `LayoutRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoLayout` structure represents an entire paragraph of text.
 /// 
 /// While complete access to the layout capabilities of Pango is provided
@@ -20,7 +15,7 @@ import GLibObject
 /// functionality such as line breaking, justification, alignment and
 /// ellipsization.
 /// 
-/// A `PangoLayout is initialized with a `PangoContext`, UTF-8 string
+/// A `PangoLayout` is initialized with a `PangoContext`, UTF-8 string
 /// and set of attributes for that string. Once that is done, the set of
 /// formatted lines can be extracted from the object, the layout can be
 /// rendered, and conversion between logical character positions within
@@ -31,10 +26,29 @@ import GLibObject
 /// `PangoLayout`. The following image shows adjustable parameters
 /// (on the left) and font metrics (on the right):
 /// 
-/// ![Pango Layout Parameters](layout.png)
+/// &lt;picture&gt;
+///   &lt;source srcset="layout-dark.png" media="(prefers-color-scheme: dark)"&gt;
+///   &lt;img alt="Pango Layout Parameters" src="layout-light.png"&gt;
+/// &lt;/picture&gt;
+/// 
+/// The following images demonstrate the effect of alignment and
+/// justification on the layout of text:
+/// 
+/// | | |
+/// | --- | --- |
+/// | ![align=left](align-left.png) | ![align=left, justify](align-left-justify.png) |
+/// | ![align=center](align-center.png) | ![align=center, justify](align-center-justify.png) |
+/// | ![align=right](align-right.png) | ![align=right, justify](align-right-justify.png) |
+/// 
 /// 
 /// It is possible, as well, to ignore the 2-D setup,
 /// and simply treat the results of a `PangoLayout` as a list of lines.
+///
+/// The `LayoutProtocol` protocol exposes the methods and properties of an underlying `PangoLayout` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `Layout`.
+/// Alternatively, use `LayoutRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol LayoutProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoLayout` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -46,10 +60,6 @@ public protocol LayoutProtocol: GLibObject.ObjectProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `LayoutRef` type acts as a lightweight Swift reference to an underlying `PangoLayout` instance.
-/// It exposes methods that can operate on this data type through `LayoutProtocol` conformance.
-/// Use `LayoutRef` only as an `unowned` reference to an existing `PangoLayout` instance.
-///
 /// A `PangoLayout` structure represents an entire paragraph of text.
 /// 
 /// While complete access to the layout capabilities of Pango is provided
@@ -60,7 +70,7 @@ public protocol LayoutProtocol: GLibObject.ObjectProtocol {
 /// functionality such as line breaking, justification, alignment and
 /// ellipsization.
 /// 
-/// A `PangoLayout is initialized with a `PangoContext`, UTF-8 string
+/// A `PangoLayout` is initialized with a `PangoContext`, UTF-8 string
 /// and set of attributes for that string. Once that is done, the set of
 /// formatted lines can be extracted from the object, the layout can be
 /// rendered, and conversion between logical character positions within
@@ -71,10 +81,28 @@ public protocol LayoutProtocol: GLibObject.ObjectProtocol {
 /// `PangoLayout`. The following image shows adjustable parameters
 /// (on the left) and font metrics (on the right):
 /// 
-/// ![Pango Layout Parameters](layout.png)
+/// &lt;picture&gt;
+///   &lt;source srcset="layout-dark.png" media="(prefers-color-scheme: dark)"&gt;
+///   &lt;img alt="Pango Layout Parameters" src="layout-light.png"&gt;
+/// &lt;/picture&gt;
+/// 
+/// The following images demonstrate the effect of alignment and
+/// justification on the layout of text:
+/// 
+/// | | |
+/// | --- | --- |
+/// | ![align=left](align-left.png) | ![align=left, justify](align-left-justify.png) |
+/// | ![align=center](align-center.png) | ![align=center, justify](align-center-justify.png) |
+/// | ![align=right](align-right.png) | ![align=right, justify](align-right-justify.png) |
+/// 
 /// 
 /// It is possible, as well, to ignore the 2-D setup,
 /// and simply treat the results of a `PangoLayout` as a list of lines.
+///
+/// The `LayoutRef` type acts as a lightweight Swift reference to an underlying `PangoLayout` instance.
+/// It exposes methods that can operate on this data type through `LayoutProtocol` conformance.
+/// Use `LayoutRef` only as an `unowned` reference to an existing `PangoLayout` instance.
+///
 public struct LayoutRef: LayoutProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoLayout` instance.
     /// For type-safe access, use the generated, typed pointer `layout_ptr` property instead.
@@ -160,12 +188,22 @@ public extension LayoutRef {
         let rv = pango_layout_new(context.context_ptr)
         ptr = UnsafeMutableRawPointer(rv)
     }
+    /// Loads data previously created via [method`Pango.Layout.serialize`].
+    /// 
+    /// For a discussion of the supported format, see that function.
+    /// 
+    /// Note: to verify that the returned layout is identical to
+    /// the one that was serialized, you can compare `bytes` to the
+    /// result of serializing the layout again.
+    @inlinable static func deserialize<BytesT: GLib.BytesProtocol, ContextT: ContextProtocol>(context: ContextT, bytes: BytesT, flags: LayoutDeserializeFlags) throws -> LayoutRef! {
+        var error: UnsafeMutablePointer<GError>?
+        let maybeRV = LayoutRef(gconstpointer: gconstpointer(pango_layout_deserialize(context.context_ptr, bytes.bytes_ptr, flags.value, &error)))
+        if let error = error { throw GLibError(error) }
+        guard let rv = maybeRV else { return nil }
+        return rv
+    }
 }
 
-/// The `Layout` type acts as a reference-counted owner of an underlying `PangoLayout` instance.
-/// It provides the methods that can operate on this data type through `LayoutProtocol` conformance.
-/// Use `Layout` as a strong reference or owner of a `PangoLayout` instance.
-///
 /// A `PangoLayout` structure represents an entire paragraph of text.
 /// 
 /// While complete access to the layout capabilities of Pango is provided
@@ -176,7 +214,7 @@ public extension LayoutRef {
 /// functionality such as line breaking, justification, alignment and
 /// ellipsization.
 /// 
-/// A `PangoLayout is initialized with a `PangoContext`, UTF-8 string
+/// A `PangoLayout` is initialized with a `PangoContext`, UTF-8 string
 /// and set of attributes for that string. Once that is done, the set of
 /// formatted lines can be extracted from the object, the layout can be
 /// rendered, and conversion between logical character positions within
@@ -187,10 +225,28 @@ public extension LayoutRef {
 /// `PangoLayout`. The following image shows adjustable parameters
 /// (on the left) and font metrics (on the right):
 /// 
-/// ![Pango Layout Parameters](layout.png)
+/// &lt;picture&gt;
+///   &lt;source srcset="layout-dark.png" media="(prefers-color-scheme: dark)"&gt;
+///   &lt;img alt="Pango Layout Parameters" src="layout-light.png"&gt;
+/// &lt;/picture&gt;
+/// 
+/// The following images demonstrate the effect of alignment and
+/// justification on the layout of text:
+/// 
+/// | | |
+/// | --- | --- |
+/// | ![align=left](align-left.png) | ![align=left, justify](align-left-justify.png) |
+/// | ![align=center](align-center.png) | ![align=center, justify](align-center-justify.png) |
+/// | ![align=right](align-right.png) | ![align=right, justify](align-right-justify.png) |
+/// 
 /// 
 /// It is possible, as well, to ignore the 2-D setup,
 /// and simply treat the results of a `PangoLayout` as a list of lines.
+///
+/// The `Layout` type acts as a reference-counted owner of an underlying `PangoLayout` instance.
+/// It provides the methods that can operate on this data type through `LayoutProtocol` conformance.
+/// Use `Layout` as a strong reference or owner of a `PangoLayout` instance.
+///
 open class Layout: GLibObject.Object, LayoutProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -324,6 +380,21 @@ open class Layout: GLibObject.Object, LayoutProtocol {
         if typeIsA(type: self.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = self.refSink() } 
     }
 
+    /// Loads data previously created via [method`Pango.Layout.serialize`].
+    /// 
+    /// For a discussion of the supported format, see that function.
+    /// 
+    /// Note: to verify that the returned layout is identical to
+    /// the one that was serialized, you can compare `bytes` to the
+    /// result of serializing the layout again.
+    @inlinable public static func deserialize<BytesT: GLib.BytesProtocol, ContextT: ContextProtocol>(context: ContextT, bytes: BytesT, flags: LayoutDeserializeFlags) throws -> Layout! {
+        var error: UnsafeMutablePointer<GError>?
+        let maybeRV = Layout(gconstpointer: gconstpointer(pango_layout_deserialize(context.context_ptr, bytes.bytes_ptr, flags.value, &error)))
+        if let error = error { throw GLibError(error) }
+        guard let rv = maybeRV else { return nil }
+        if typeIsA(type: rv.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = rv.refSink() } 
+        return rv
+    }
 
 }
 
@@ -345,12 +416,14 @@ public enum LayoutSignalName: String, SignalNameProtocol {
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
     /// `g_signal_connect()` call, like this:
+    /// 
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
+    /// 
     /// It is important to note that you must use
     /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
@@ -411,6 +484,37 @@ public extension LayoutProtocol {
         return rv
     }
 
+    /// Given an index within a layout, determines the positions that of the
+    /// strong and weak cursors if the insertion point is at that index.
+    /// 
+    /// This is a variant of [method`Pango.Layout.get_cursor_pos`] that applies
+    /// font metric information about caret slope and offset to the positions
+    /// it returns.
+    /// 
+    /// &lt;picture&gt;
+    ///   &lt;source srcset="caret-metrics-dark.png" media="(prefers-color-scheme: dark)"&gt;
+    ///   &lt;img alt="Caret metrics" src="caret-metrics-light.png"&gt;
+    /// &lt;/picture&gt;
+    @inlinable func getCaretPos(index: Int, strongPos: RectangleRef? = nil, weakPos: RectangleRef? = nil) {
+        pango_layout_get_caret_pos(layout_ptr, gint(index), strongPos?._ptr, weakPos?._ptr)
+    
+    }
+    /// Given an index within a layout, determines the positions that of the
+    /// strong and weak cursors if the insertion point is at that index.
+    /// 
+    /// This is a variant of [method`Pango.Layout.get_cursor_pos`] that applies
+    /// font metric information about caret slope and offset to the positions
+    /// it returns.
+    /// 
+    /// &lt;picture&gt;
+    ///   &lt;source srcset="caret-metrics-dark.png" media="(prefers-color-scheme: dark)"&gt;
+    ///   &lt;img alt="Caret metrics" src="caret-metrics-light.png"&gt;
+    /// &lt;/picture&gt;
+    @inlinable func getCaretPos<RectangleT: RectangleProtocol>(index: Int, strongPos: RectangleT?, weakPos: RectangleT?) {
+        pango_layout_get_caret_pos(layout_ptr, gint(index), strongPos?._ptr, weakPos?._ptr)
+    
+    }
+
     /// Returns the number of Unicode characters in the
     /// the text of `layout`.
     @inlinable func getCharacterCount() -> Int {
@@ -427,25 +531,63 @@ public extension LayoutProtocol {
     /// Given an index within a layout, determines the positions that of the
     /// strong and weak cursors if the insertion point is at that index.
     /// 
-    /// The position of each cursor is stored as a zero-width rectangle.
+    /// The position of each cursor is stored as a zero-width rectangle
+    /// with the height of the run extents.
+    /// 
+    /// &lt;picture&gt;
+    ///   &lt;source srcset="cursor-positions-dark.png" media="(prefers-color-scheme: dark)"&gt;
+    ///   &lt;img alt="Cursor positions" src="cursor-positions-light.png"&gt;
+    /// &lt;/picture&gt;
+    /// 
     /// The strong cursor location is the location where characters of the
     /// directionality equal to the base direction of the layout are inserted.
     /// The weak cursor location is the location where characters of the
     /// directionality opposite to the base direction of the layout are inserted.
-    @inlinable func getCursorPos(index_: Int, strongPos: RectangleRef? = nil, weakPos: RectangleRef? = nil) {
-        pango_layout_get_cursor_pos(layout_ptr, gint(index_), strongPos?._ptr, weakPos?._ptr)
+    /// 
+    /// The following example shows text with both a strong and a weak cursor.
+    /// 
+    /// &lt;picture&gt;
+    ///   &lt;source srcset="split-cursor-dark.png" media="(prefers-color-scheme: dark)"&gt;
+    ///   &lt;img alt="Strong and weak cursors" src="split-cursor-light.png"&gt;
+    /// &lt;/picture&gt;
+    /// 
+    /// The strong cursor has a little arrow pointing to the right, the weak
+    /// cursor to the left. Typing a 'c' in this situation will insert the
+    /// character after the 'b', and typing another Hebrew character, like 'ג',
+    /// will insert it at the end.
+    @inlinable func getCursorPos(index: Int, strongPos: RectangleRef? = nil, weakPos: RectangleRef? = nil) {
+        pango_layout_get_cursor_pos(layout_ptr, gint(index), strongPos?._ptr, weakPos?._ptr)
     
     }
     /// Given an index within a layout, determines the positions that of the
     /// strong and weak cursors if the insertion point is at that index.
     /// 
-    /// The position of each cursor is stored as a zero-width rectangle.
+    /// The position of each cursor is stored as a zero-width rectangle
+    /// with the height of the run extents.
+    /// 
+    /// &lt;picture&gt;
+    ///   &lt;source srcset="cursor-positions-dark.png" media="(prefers-color-scheme: dark)"&gt;
+    ///   &lt;img alt="Cursor positions" src="cursor-positions-light.png"&gt;
+    /// &lt;/picture&gt;
+    /// 
     /// The strong cursor location is the location where characters of the
     /// directionality equal to the base direction of the layout are inserted.
     /// The weak cursor location is the location where characters of the
     /// directionality opposite to the base direction of the layout are inserted.
-    @inlinable func getCursorPos<RectangleT: RectangleProtocol>(index_: Int, strongPos: RectangleT?, weakPos: RectangleT?) {
-        pango_layout_get_cursor_pos(layout_ptr, gint(index_), strongPos?._ptr, weakPos?._ptr)
+    /// 
+    /// The following example shows text with both a strong and a weak cursor.
+    /// 
+    /// &lt;picture&gt;
+    ///   &lt;source srcset="split-cursor-dark.png" media="(prefers-color-scheme: dark)"&gt;
+    ///   &lt;img alt="Strong and weak cursors" src="split-cursor-light.png"&gt;
+    /// &lt;/picture&gt;
+    /// 
+    /// The strong cursor has a little arrow pointing to the right, the weak
+    /// cursor to the left. Typing a 'c' in this situation will insert the
+    /// character after the 'b', and typing another Hebrew character, like 'ג',
+    /// will insert it at the end.
+    @inlinable func getCursorPos<RectangleT: RectangleProtocol>(index: Int, strongPos: RectangleT?, weakPos: RectangleT?) {
+        pango_layout_get_cursor_pos(layout_ptr, gint(index), strongPos?._ptr, weakPos?._ptr)
     
     }
 
@@ -530,6 +672,13 @@ public extension LayoutProtocol {
         return rv
     }
 
+    /// Gets whether the last line should be stretched
+    /// to fill the entire width of the layout.
+    @inlinable func getJustifyLastLine() -> Bool {
+        let rv = ((pango_layout_get_justify_last_line(layout_ptr)) != 0)
+        return rv
+    }
+
     /// Retrieves a particular line from a `PangoLayout`.
     /// 
     /// Use the faster [method`Pango.Layout.get_line_readonly`] if you do not
@@ -610,7 +759,7 @@ public extension LayoutProtocol {
     /// This function just calls [method`Pango.Layout.get_extents`] followed by
     /// two [func`extents_to_pixels`] calls, rounding `ink_rect` and `logical_rect`
     /// such that the rounded rectangles fully contain the unrounded one (that is,
-    /// passes them as first argument to ``pango_extents_to_pixels()``).
+    /// passes them as first argument to [func`Pango.extents_to_pixels`]).
     @inlinable func getPixelExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
         pango_layout_get_pixel_extents(layout_ptr, inkRect?._ptr, logicalRect?._ptr)
     
@@ -620,7 +769,7 @@ public extension LayoutProtocol {
     /// This function just calls [method`Pango.Layout.get_extents`] followed by
     /// two [func`extents_to_pixels`] calls, rounding `ink_rect` and `logical_rect`
     /// such that the rounded rectangles fully contain the unrounded one (that is,
-    /// passes them as first argument to ``pango_extents_to_pixels()``).
+    /// passes them as first argument to [func`Pango.extents_to_pixels`]).
     @inlinable func getPixelExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
         pango_layout_get_pixel_extents(layout_ptr, inkRect?._ptr, logicalRect?._ptr)
     
@@ -630,8 +779,8 @@ public extension LayoutProtocol {
     /// units.
     /// 
     /// [method`Pango.Layout.get_size`] returns the width and height
-    /// scaled by `PANGO_SCALE`. This is simply a convenience function around
-    /// [method`Pango.Layout.get_pixel_extents`].
+    /// scaled by `PANGO_SCALE`. This is simply a convenience function
+    /// around [method`Pango.Layout.get_pixel_extents`].
     @inlinable func getPixelSize(width: UnsafeMutablePointer<gint>! = nil, height: UnsafeMutablePointer<gint>! = nil) {
         pango_layout_get_pixel_size(layout_ptr, width, height)
     
@@ -688,8 +837,9 @@ public extension LayoutProtocol {
         return rv
     }
 
-    /// Gets the text in the layout. The returned text should not
-    /// be freed or modified.
+    /// Gets the text in the layout.
+    /// 
+    /// The returned text should not be freed or modified.
     @inlinable func getText() -> String! {
         let rv = pango_layout_get_text(layout_ptr).map({ String(cString: $0) })
         return rv
@@ -724,8 +874,8 @@ public extension LayoutProtocol {
     /// Converts from byte `index_` within the `layout` to line and X position.
     /// 
     /// The X position is measured from the left edge of the line.
-    @inlinable func indexToLineX(index_: Int, trailing: Bool, line: UnsafeMutablePointer<gint>! = nil, xPos: UnsafeMutablePointer<gint>! = nil) {
-        pango_layout_index_to_line_x(layout_ptr, gint(index_), gboolean((trailing) ? 1 : 0), line, xPos)
+    @inlinable func indexToLineX(index: Int, trailing: Bool, line: UnsafeMutablePointer<gint>! = nil, xPos: UnsafeMutablePointer<gint>! = nil) {
+        pango_layout_index_to_line_x(layout_ptr, gint(index), gboolean((trailing) ? 1 : 0), line, xPos)
     
     }
 
@@ -736,18 +886,17 @@ public extension LayoutProtocol {
     /// always the leading edge of the grapheme and `pos-&gt;x + pos-&gt;width` the
     /// trailing edge of the grapheme. If the directionality of the grapheme
     /// is right-to-left, then `pos-&gt;width` will be negative.
-    @inlinable func indexToPos<RectangleT: RectangleProtocol>(index_: Int, pos: RectangleT) {
-        pango_layout_index_to_pos(layout_ptr, gint(index_), pos._ptr)
+    @inlinable func indexToPos<RectangleT: RectangleProtocol>(index: Int, pos: RectangleT) {
+        pango_layout_index_to_pos(layout_ptr, gint(index), pos._ptr)
     
     }
 
-    /// Computes a new cursor position from an old position and a count of
-    /// positions to move visually.
+    /// Computes a new cursor position from an old position and a direction.
     /// 
-    /// If `direction` is positive, then the new strong cursor position will be
-    /// one position to the right of the old cursor position. If `direction` is
-    /// negative, then the new strong cursor position will be one position to
-    /// the left of the old cursor position.
+    /// If `direction` is positive, then the new position will cause the strong
+    /// or weak cursor to be displayed one position to right of where it was
+    /// with the old cursor position. If `direction` is negative, it will be
+    /// moved to the left.
     /// 
     /// In the presence of bidirectional text, the correspondence between
     /// logical and visual order will depend on the direction of the current
@@ -755,28 +904,44 @@ public extension LayoutProtocol {
     /// of a run.
     /// 
     /// Motion here is in cursor positions, not in characters, so a single
-    /// call to [method`Pango.Layout.move_cursor_visually`] may move the cursor over
-    /// multiple characters when multiple characters combine to form a single
-    /// grapheme.
+    /// call to this function may move the cursor over multiple characters
+    /// when multiple characters combine to form a single grapheme.
     @inlinable func moveCursorVisually(strong: Bool, oldIndex: Int, oldTrailing: Int, direction: Int, newIndex: UnsafeMutablePointer<gint>!, newTrailing: UnsafeMutablePointer<gint>!) {
         pango_layout_move_cursor_visually(layout_ptr, gboolean((strong) ? 1 : 0), gint(oldIndex), gint(oldTrailing), gint(direction), newIndex, newTrailing)
     
     }
 
+    /// Serializes the `layout` for later deserialization via [func`Pango.Layout.deserialize`].
+    /// 
+    /// There are no guarantees about the format of the output across different
+    /// versions of Pango and [func`Pango.Layout.deserialize`] will reject data
+    /// that it cannot parse.
+    /// 
+    /// The intended use of this function is testing, benchmarking and debugging.
+    /// The format is not meant as a permanent storage format.
+    @inlinable func serialize(flags: LayoutSerializeFlags) -> GLib.BytesRef! {
+        let rv = GLib.BytesRef(pango_layout_serialize(layout_ptr, flags.value))
+        return rv
+    }
+
     /// Sets the alignment for the layout: how partial lines are
     /// positioned within the horizontal space available.
+    /// 
+    /// The default alignment is `PANGO_ALIGN_LEFT`.
     @inlinable func set(alignment: PangoAlignment) {
         pango_layout_set_alignment(layout_ptr, alignment)
     
     }
 
     /// Sets the text attributes for a layout object.
+    /// 
     /// References `attrs`, so the caller can unref its reference.
     @inlinable func setAttributes(attrs: AttrListRef? = nil) {
         pango_layout_set_attributes(layout_ptr, attrs?.attr_list_ptr)
     
     }
     /// Sets the text attributes for a layout object.
+    /// 
     /// References `attrs`, so the caller can unref its reference.
     @inlinable func setAttributes<AttrListT: AttrListProtocol>(attrs: AttrListT?) {
         pango_layout_set_attributes(layout_ptr, attrs?.attr_list_ptr)
@@ -815,6 +980,9 @@ public extension LayoutProtocol {
     /// force it to be layed out in multiple paragraphs, then whether
     /// each paragraph is ellipsized separately or the entire layout
     /// is ellipsized as a whole depends on the set height of the layout.
+    /// 
+    /// The default value is `PANGO_ELLIPSIZE_NONE`.
+    /// 
     /// See [method`Pango.Layout.set_height`] for details.
     @inlinable func set(ellipsize: PangoEllipsizeMode) {
         pango_layout_set_ellipsize(layout_ptr, ellipsize)
@@ -823,16 +991,16 @@ public extension LayoutProtocol {
 
     /// Sets the default font description for the layout.
     /// 
-    /// If no font description is set on the layout, the font description from
-    /// the layout's context is used.
+    /// If no font description is set on the layout, the
+    /// font description from the layout's context is used.
     @inlinable func setFontDescription(desc: FontDescriptionRef? = nil) {
         pango_layout_set_font_description(layout_ptr, desc?.font_description_ptr)
     
     }
     /// Sets the default font description for the layout.
     /// 
-    /// If no font description is set on the layout, the font description from
-    /// the layout's context is used.
+    /// If no font description is set on the layout, the
+    /// font description from the layout's context is used.
     @inlinable func setFontDescription<FontDescriptionT: FontDescriptionProtocol>(desc: FontDescriptionT?) {
         pango_layout_set_font_description(layout_ptr, desc?.font_description_ptr)
     
@@ -852,7 +1020,7 @@ public extension LayoutProtocol {
     /// If `height` is negative, it will be the (negative of) maximum number of lines
     /// per paragraph. That is, the total number of lines shown may well be more than
     /// this value if the layout contains multiple paragraphs of text.
-    /// The default value of -1 means that first line of each paragraph is ellipsized.
+    /// The default value of -1 means that the first line of each paragraph is ellipsized.
     /// This behavior may be changed in the future to act per layout instead of per
     /// paragraph. File a bug against pango at
     /// [https://gitlab.gnome.org/gnome/pango](https://gitlab.gnome.org/gnome/pango)
@@ -876,6 +1044,8 @@ public extension LayoutProtocol {
     /// 
     /// The indent setting is ignored if layout alignment is set to
     /// `PANGO_ALIGN_CENTER`.
+    /// 
+    /// The default value is 0.
     @inlinable func set(indent: Int) {
         pango_layout_set_indent(layout_ptr, gint(indent))
     
@@ -890,8 +1060,28 @@ public extension LayoutProtocol {
     /// 
     /// Note that this setting is not implemented and so is ignored in
     /// Pango older than 1.18.
+    /// 
+    /// Note that tabs and justification conflict with each other:
+    /// Justification will move content away from its tab-aligned
+    /// positions.
+    /// 
+    /// The default value is `false`.
+    /// 
+    /// Also see [method`Pango.Layout.set_justify_last_line`].
     @inlinable func set(justify: Bool) {
         pango_layout_set_justify(layout_ptr, gboolean((justify) ? 1 : 0))
+    
+    }
+
+    /// Sets whether the last line should be stretched to fill the
+    /// entire width of the layout.
+    /// 
+    /// This only has an effect if [method`Pango.Layout.set_justify`] has
+    /// been called as well.
+    /// 
+    /// The default value is `false`.
+    @inlinable func setJustifyLastLine(justify: Bool) {
+        pango_layout_set_justify_last_line(layout_ptr, gboolean((justify) ? 1 : 0))
     
     }
 
@@ -907,7 +1097,10 @@ public extension LayoutProtocol {
     /// (as determined by the `font(s)`). In this case, the spacing
     /// set with [method`Pango.Layout.set_spacing`] is ignored.
     /// 
-    /// If `factor` is zero, spacing is applied as before.
+    /// If `factor` is zero (the default), spacing is applied as before.
+    /// 
+    /// Note: for semantics that are closer to the CSS line-height
+    /// property, see [func`Pango.attr_line_height_new`].
     @inlinable func setLineSpacing(factor: CFloat) {
         pango_layout_set_line_spacing(layout_ptr, factor)
     
@@ -916,9 +1109,10 @@ public extension LayoutProtocol {
     /// Sets the layout text and attribute list from marked-up text.
     /// 
     /// See [Pango Markup](pango_markup.html)).
+    /// 
     /// Replaces the current text and attribute list.
     /// 
-    /// This is the Same as [method`Pango.Layout.set_markup_with_accel`],
+    /// This is the same as [method`Pango.Layout.set_markup_with_accel`],
     /// but the markup text isn't scanned for accelerators.
     @inlinable func set(markup: UnsafePointer<CChar>!, length: Int) {
         pango_layout_set_markup(layout_ptr, markup, gint(length))
@@ -928,6 +1122,7 @@ public extension LayoutProtocol {
     /// Sets the layout text and attribute list from marked-up text.
     /// 
     /// See [Pango Markup](pango_markup.html)).
+    /// 
     /// Replaces the current text and attribute list.
     /// 
     /// If `accel_marker` is nonzero, the given character will mark the
@@ -948,23 +1143,29 @@ public extension LayoutProtocol {
     /// as paragraph separators; instead, keep all text in a single paragraph,
     /// and display a glyph for paragraph separator characters. Used when
     /// you want to allow editing of newlines on a single text line.
+    /// 
+    /// The default value is `false`.
     @inlinable func setSingleParagraphMode(setting: Bool) {
         pango_layout_set_single_paragraph_mode(layout_ptr, gboolean((setting) ? 1 : 0))
     
     }
 
-    /// Sets the amount of spacing in Pango unit between
+    /// Sets the amount of spacing in Pango units between
     /// the lines of the layout.
     /// 
     /// When placing lines with spacing, Pango arranges things so that
     /// 
-    /// line2.top = line1.bottom + spacing
+    ///     line2.top = line1.bottom + spacing
     /// 
-    /// Note: Since 1.44, Pango defaults to using the line height
-    /// (as determined by the font) for placing lines. The `spacing`
-    /// set with this function is only taken into account when the
-    /// line height factor is set to zero with
-    /// [method`Pango.Layout.set_line_spacing`].
+    /// The default value is 0.
+    /// 
+    /// Note: Since 1.44, Pango is using the line height (as determined
+    /// by the font) for placing lines when the line spacing factor is set
+    /// to a non-zero value with [method`Pango.Layout.set_line_spacing`].
+    /// In that case, the `spacing` set with this function is ignored.
+    /// 
+    /// Note: for semantics that are closer to the CSS line-height
+    /// property, see [func`Pango.attr_line_height_new`].
     @inlinable func set(spacing: Int) {
         pango_layout_set_spacing(layout_ptr, gint(spacing))
     
@@ -972,18 +1173,34 @@ public extension LayoutProtocol {
 
     /// Sets the tabs to use for `layout`, overriding the default tabs.
     /// 
+    /// `PangoLayout` will place content at the next tab position
+    /// whenever it meets a Tab character (U+0009).
+    /// 
     /// By default, tabs are every 8 spaces. If `tabs` is `nil`, the
     /// default tabs are reinstated. `tabs` is copied into the layout;
     /// you must free your copy of `tabs` yourself.
+    /// 
+    /// Note that tabs and justification conflict with each other:
+    /// Justification will move content away from its tab-aligned
+    /// positions. The same is true for alignments other than
+    /// `PANGO_ALIGN_LEFT`.
     @inlinable func set(tabs: TabArrayRef? = nil) {
         pango_layout_set_tabs(layout_ptr, tabs?.tab_array_ptr)
     
     }
     /// Sets the tabs to use for `layout`, overriding the default tabs.
     /// 
+    /// `PangoLayout` will place content at the next tab position
+    /// whenever it meets a Tab character (U+0009).
+    /// 
     /// By default, tabs are every 8 spaces. If `tabs` is `nil`, the
     /// default tabs are reinstated. `tabs` is copied into the layout;
     /// you must free your copy of `tabs` yourself.
+    /// 
+    /// Note that tabs and justification conflict with each other:
+    /// Justification will move content away from its tab-aligned
+    /// positions. The same is true for alignments other than
+    /// `PANGO_ALIGN_LEFT`.
     @inlinable func set<TabArrayT: TabArrayProtocol>(tabs: TabArrayT?) {
         pango_layout_set_tabs(layout_ptr, tabs?.tab_array_ptr)
     
@@ -1018,23 +1235,38 @@ public extension LayoutProtocol {
     /// The wrap mode only has effect if a width is set on the layout
     /// with [method`Pango.Layout.set_width`]. To turn off wrapping,
     /// set the width to -1.
+    /// 
+    /// The default value is `PANGO_WRAP_WORD`.
     @inlinable func set(wrap: PangoWrapMode) {
         pango_layout_set_wrap(layout_ptr, wrap)
     
     }
 
+    /// This function is equivalent to calling [method`Pango.Layout.serialize`]
+    /// followed by `g_file_set_contents()`.
+    /// 
+    /// See those two functions for details on the arguments.
+    /// 
+    /// It is mostly intended for use inside a debugger to quickly dump
+    /// a layout to a file for later inspection.
+    @inlinable func writeToFile(flags: LayoutSerializeFlags, filename: UnsafePointer<CChar>!) throws -> Bool {
+        var error: UnsafeMutablePointer<GError>?
+        let rv = ((pango_layout_write_to_file(layout_ptr, flags.value, filename, &error)) != 0)
+        if let error = error { throw GLibError(error) }
+        return rv
+    }
+
     /// Converts from X and Y position within a layout to the byte index to the
     /// character at that logical position.
     /// 
-    /// If the Y position is not inside the
-    /// layout, the closest position is chosen (the position will be clamped
-    /// inside the layout). If the X position is not within the layout, then
-    /// the start or the end of the line is chosen as described for
-    /// [method`Pango.LayoutLine.x_to_index`]. If either the X or Y positions
-    /// were not inside the layout, then the function returns `false`; on an
-    /// exact hit, it returns `true`.
-    @inlinable func xyToIndex(x: Int, y: Int, index_: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) -> Bool {
-        let rv = ((pango_layout_xy_to_index(layout_ptr, gint(x), gint(y), index_, trailing)) != 0)
+    /// If the Y position is not inside the layout, the closest position is
+    /// chosen (the position will be clamped inside the layout). If the X position
+    /// is not within the layout, then the start or the end of the line is
+    /// chosen as described for [method`Pango.LayoutLine.x_to_index`]. If either
+    /// the X or Y positions were not inside the layout, then the function returns
+    /// `false`; on an exact hit, it returns `true`.
+    @inlinable func xyToIndex(x: Int, y: Int, index: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) -> Bool {
+        let rv = ((pango_layout_xy_to_index(layout_ptr, gint(x), gint(y), index, trailing)) != 0)
         return rv
     }
     /// Gets the alignment for the layout: how partial lines are
@@ -1048,6 +1280,8 @@ public extension LayoutProtocol {
         }
         /// Sets the alignment for the layout: how partial lines are
         /// positioned within the horizontal space available.
+        /// 
+        /// The default alignment is `PANGO_ALIGN_LEFT`.
         nonmutating set {
             pango_layout_set_alignment(layout_ptr, newValue)
         }
@@ -1061,6 +1295,7 @@ public extension LayoutProtocol {
             return rv
         }
         /// Sets the text attributes for a layout object.
+        /// 
         /// References `attrs`, so the caller can unref its reference.
         nonmutating set {
             pango_layout_set_attributes(layout_ptr, UnsafeMutablePointer<PangoAttrList>(newValue?.attr_list_ptr))
@@ -1158,6 +1393,9 @@ public extension LayoutProtocol {
         /// force it to be layed out in multiple paragraphs, then whether
         /// each paragraph is ellipsized separately or the entire layout
         /// is ellipsized as a whole depends on the set height of the layout.
+        /// 
+        /// The default value is `PANGO_ELLIPSIZE_NONE`.
+        /// 
         /// See [method`Pango.Layout.set_height`] for details.
         nonmutating set {
             pango_layout_set_ellipsize(layout_ptr, newValue)
@@ -1173,8 +1411,8 @@ public extension LayoutProtocol {
         }
         /// Sets the default font description for the layout.
         /// 
-        /// If no font description is set on the layout, the font description from
-        /// the layout's context is used.
+        /// If no font description is set on the layout, the
+        /// font description from the layout's context is used.
         nonmutating set {
             pango_layout_set_font_description(layout_ptr, UnsafePointer<PangoFontDescription>(newValue?.font_description_ptr))
         }
@@ -1205,7 +1443,7 @@ public extension LayoutProtocol {
         /// If `height` is negative, it will be the (negative of) maximum number of lines
         /// per paragraph. That is, the total number of lines shown may well be more than
         /// this value if the layout contains multiple paragraphs of text.
-        /// The default value of -1 means that first line of each paragraph is ellipsized.
+        /// The default value of -1 means that the first line of each paragraph is ellipsized.
         /// This behavior may be changed in the future to act per layout instead of per
         /// paragraph. File a bug against pango at
         /// [https://gitlab.gnome.org/gnome/pango](https://gitlab.gnome.org/gnome/pango)
@@ -1240,6 +1478,8 @@ public extension LayoutProtocol {
         /// 
         /// The indent setting is ignored if layout alignment is set to
         /// `PANGO_ALIGN_CENTER`.
+        /// 
+        /// The default value is 0.
         nonmutating set {
             pango_layout_set_indent(layout_ptr, gint(newValue))
         }
@@ -1310,8 +1550,37 @@ public extension LayoutProtocol {
         /// 
         /// Note that this setting is not implemented and so is ignored in
         /// Pango older than 1.18.
+        /// 
+        /// Note that tabs and justification conflict with each other:
+        /// Justification will move content away from its tab-aligned
+        /// positions.
+        /// 
+        /// The default value is `false`.
+        /// 
+        /// Also see [method`Pango.Layout.set_justify_last_line`].
         nonmutating set {
             pango_layout_set_justify(layout_ptr, gboolean((newValue) ? 1 : 0))
+        }
+    }
+
+    /// Gets whether the last line should be stretched
+    /// to fill the entire width of the layout.
+    @inlinable var justifyLastLine: Bool {
+        /// Gets whether the last line should be stretched
+        /// to fill the entire width of the layout.
+        get {
+            let rv = ((pango_layout_get_justify_last_line(layout_ptr)) != 0)
+            return rv
+        }
+        /// Sets whether the last line should be stretched to fill the
+        /// entire width of the layout.
+        /// 
+        /// This only has an effect if [method`Pango.Layout.set_justify`] has
+        /// been called as well.
+        /// 
+        /// The default value is `false`.
+        nonmutating set {
+            pango_layout_set_justify_last_line(layout_ptr, gboolean((newValue) ? 1 : 0))
         }
     }
 
@@ -1347,7 +1616,10 @@ public extension LayoutProtocol {
         /// (as determined by the `font(s)`). In this case, the spacing
         /// set with [method`Pango.Layout.set_spacing`] is ignored.
         /// 
-        /// If `factor` is zero, spacing is applied as before.
+        /// If `factor` is zero (the default), spacing is applied as before.
+        /// 
+        /// Note: for semantics that are closer to the CSS line-height
+        /// property, see [func`Pango.attr_line_height_new`].
         nonmutating set {
             pango_layout_set_line_spacing(layout_ptr, newValue)
         }
@@ -1433,6 +1705,8 @@ public extension LayoutProtocol {
         /// as paragraph separators; instead, keep all text in a single paragraph,
         /// and display a glyph for paragraph separator characters. Used when
         /// you want to allow editing of newlines on a single text line.
+        /// 
+        /// The default value is `false`.
         nonmutating set {
             pango_layout_set_single_paragraph_mode(layout_ptr, gboolean((newValue) ? 1 : 0))
         }
@@ -1445,18 +1719,22 @@ public extension LayoutProtocol {
             let rv = Int(pango_layout_get_spacing(layout_ptr))
             return rv
         }
-        /// Sets the amount of spacing in Pango unit between
+        /// Sets the amount of spacing in Pango units between
         /// the lines of the layout.
         /// 
         /// When placing lines with spacing, Pango arranges things so that
         /// 
-        /// line2.top = line1.bottom + spacing
+        ///     line2.top = line1.bottom + spacing
         /// 
-        /// Note: Since 1.44, Pango defaults to using the line height
-        /// (as determined by the font) for placing lines. The `spacing`
-        /// set with this function is only taken into account when the
-        /// line height factor is set to zero with
-        /// [method`Pango.Layout.set_line_spacing`].
+        /// The default value is 0.
+        /// 
+        /// Note: Since 1.44, Pango is using the line height (as determined
+        /// by the font) for placing lines when the line spacing factor is set
+        /// to a non-zero value with [method`Pango.Layout.set_line_spacing`].
+        /// In that case, the `spacing` set with this function is ignored.
+        /// 
+        /// Note: for semantics that are closer to the CSS line-height
+        /// property, see [func`Pango.attr_line_height_new`].
         nonmutating set {
             pango_layout_set_spacing(layout_ptr, gint(newValue))
         }
@@ -1481,19 +1759,29 @@ public extension LayoutProtocol {
         }
         /// Sets the tabs to use for `layout`, overriding the default tabs.
         /// 
+        /// `PangoLayout` will place content at the next tab position
+        /// whenever it meets a Tab character (U+0009).
+        /// 
         /// By default, tabs are every 8 spaces. If `tabs` is `nil`, the
         /// default tabs are reinstated. `tabs` is copied into the layout;
         /// you must free your copy of `tabs` yourself.
+        /// 
+        /// Note that tabs and justification conflict with each other:
+        /// Justification will move content away from its tab-aligned
+        /// positions. The same is true for alignments other than
+        /// `PANGO_ALIGN_LEFT`.
         nonmutating set {
             pango_layout_set_tabs(layout_ptr, UnsafeMutablePointer<PangoTabArray>(newValue?.tab_array_ptr))
         }
     }
 
-    /// Gets the text in the layout. The returned text should not
-    /// be freed or modified.
+    /// Gets the text in the layout.
+    /// 
+    /// The returned text should not be freed or modified.
     @inlinable var text: String! {
-        /// Gets the text in the layout. The returned text should not
-        /// be freed or modified.
+        /// Gets the text in the layout.
+        /// 
+        /// The returned text should not be freed or modified.
         get {
             let rv = pango_layout_get_text(layout_ptr).map({ String(cString: $0) })
             return rv
@@ -1553,6 +1841,8 @@ public extension LayoutProtocol {
         /// The wrap mode only has effect if a width is set on the layout
         /// with [method`Pango.Layout.set_width`]. To turn off wrapping,
         /// set the width to -1.
+        /// 
+        /// The default value is `PANGO_WRAP_WORD`.
         nonmutating set {
             pango_layout_set_wrap(layout_ptr, newValue)
         }

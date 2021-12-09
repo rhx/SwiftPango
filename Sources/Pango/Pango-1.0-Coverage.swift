@@ -5,18 +5,20 @@ import GLibObject
 
 // MARK: - Coverage Class
 
+/// A `PangoCoverage` structure is a map from Unicode characters
+/// to [enum`Pango.CoverageLevel`] values.
+/// 
+/// It is often necessary in Pango to determine if a particular
+/// font can represent a particular character, and also how well
+/// it can represent that character. The `PangoCoverage` is a data
+/// structure that is used to represent that information. It is an
+/// opaque structure with no public fields.
+///
 /// The `CoverageProtocol` protocol exposes the methods and properties of an underlying `PangoCoverage` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `Coverage`.
 /// Alternatively, use `CoverageRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// A `PangoCoverage` structure is a map from Unicode characters
-/// to `PangoCoverageLevel` values.
-/// 
-/// It is often necessary in Pango to determine if a particular font can
-/// represent a particular character, and also how well it can represent
-/// that character. The `PangoCoverage` is a data structure that is used to
-/// represent that information. It is an opaque structure with no public fields.
 public protocol CoverageProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoCoverage` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -28,17 +30,19 @@ public protocol CoverageProtocol: GLibObject.ObjectProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// A `PangoCoverage` structure is a map from Unicode characters
+/// to [enum`Pango.CoverageLevel`] values.
+/// 
+/// It is often necessary in Pango to determine if a particular
+/// font can represent a particular character, and also how well
+/// it can represent that character. The `PangoCoverage` is a data
+/// structure that is used to represent that information. It is an
+/// opaque structure with no public fields.
+///
 /// The `CoverageRef` type acts as a lightweight Swift reference to an underlying `PangoCoverage` instance.
 /// It exposes methods that can operate on this data type through `CoverageProtocol` conformance.
 /// Use `CoverageRef` only as an `unowned` reference to an existing `PangoCoverage` instance.
 ///
-/// A `PangoCoverage` structure is a map from Unicode characters
-/// to `PangoCoverageLevel` values.
-/// 
-/// It is often necessary in Pango to determine if a particular font can
-/// represent a particular character, and also how well it can represent
-/// that character. The `PangoCoverage` is a data structure that is used to
-/// represent that information. It is an opaque structure with no public fields.
 public struct CoverageRef: CoverageProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoCoverage` instance.
     /// For type-safe access, use the generated, typed pointer `coverage_ptr` property instead.
@@ -123,8 +127,8 @@ public extension CoverageRef {
         let rv = pango_coverage_new()
         ptr = UnsafeMutableRawPointer(rv)
     }
-    /// Convert data generated from `pango_coverage_to_bytes()` back
-    /// to a `PangoCoverage`.
+    /// Convert data generated from `pango_coverage_to_bytes()`
+    /// back to a `PangoCoverage`.
     ///
     /// **from_bytes is deprecated:**
     /// This returns %NULL
@@ -134,17 +138,19 @@ public extension CoverageRef {
     }
 }
 
+/// A `PangoCoverage` structure is a map from Unicode characters
+/// to [enum`Pango.CoverageLevel`] values.
+/// 
+/// It is often necessary in Pango to determine if a particular
+/// font can represent a particular character, and also how well
+/// it can represent that character. The `PangoCoverage` is a data
+/// structure that is used to represent that information. It is an
+/// opaque structure with no public fields.
+///
 /// The `Coverage` type acts as a reference-counted owner of an underlying `PangoCoverage` instance.
 /// It provides the methods that can operate on this data type through `CoverageProtocol` conformance.
 /// Use `Coverage` as a strong reference or owner of a `PangoCoverage` instance.
 ///
-/// A `PangoCoverage` structure is a map from Unicode characters
-/// to `PangoCoverageLevel` values.
-/// 
-/// It is often necessary in Pango to determine if a particular font can
-/// represent a particular character, and also how well it can represent
-/// that character. The `PangoCoverage` is a data structure that is used to
-/// represent that information. It is an opaque structure with no public fields.
 open class Coverage: GLibObject.Object, CoverageProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -277,8 +283,8 @@ open class Coverage: GLibObject.Object, CoverageProtocol {
         if typeIsA(type: self.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = self.refSink() } 
     }
 
-    /// Convert data generated from `pango_coverage_to_bytes()` back
-    /// to a `PangoCoverage`.
+    /// Convert data generated from `pango_coverage_to_bytes()`
+    /// back to a `PangoCoverage`.
     ///
     /// **from_bytes is deprecated:**
     /// This returns %NULL
@@ -308,12 +314,14 @@ public enum CoverageSignalName: String, SignalNameProtocol {
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
     /// `g_signal_connect()` call, like this:
+    /// 
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
+    /// 
     /// It is important to note that you must use
     /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
@@ -334,8 +342,8 @@ public extension CoverageProtocol {
     }
 
     /// Determine whether a particular index is covered by `coverage`.
-    @inlinable func get(index_: Int) -> PangoCoverageLevel {
-        let rv = pango_coverage_get(coverage_ptr, gint(index_))
+    @inlinable func get(index: Int) -> PangoCoverageLevel {
+        let rv = pango_coverage_get(coverage_ptr, gint(index))
         return rv
     }
 
@@ -357,8 +365,8 @@ public extension CoverageProtocol {
     }
 
     /// Modify a particular index within `coverage`
-    @inlinable func set(index_: Int, level: PangoCoverageLevel) {
-        pango_coverage_set(coverage_ptr, gint(index_), level)
+    @inlinable func set(index: Int, level: PangoCoverageLevel) {
+        pango_coverage_set(coverage_ptr, gint(index), level)
     
     }
 

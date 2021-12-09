@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - Color Record
 
+/// The `PangoColor` structure is used to
+/// represent a color in an uncalibrated RGB color-space.
+///
 /// The `ColorProtocol` protocol exposes the methods and properties of an underlying `PangoColor` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `Color`.
 /// Alternatively, use `ColorRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoColor` structure is used to
-/// represent a color in an uncalibrated RGB color-space.
 public protocol ColorProtocol {
         /// Untyped pointer to the underlying `PangoColor` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol ColorProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoColor` structure is used to
+/// represent a color in an uncalibrated RGB color-space.
+///
 /// The `ColorRef` type acts as a lightweight Swift reference to an underlying `PangoColor` instance.
 /// It exposes methods that can operate on this data type through `ColorProtocol` conformance.
 /// Use `ColorRef` only as an `unowned` reference to an existing `PangoColor` instance.
 ///
-/// The `PangoColor` structure is used to
-/// represent a color in an uncalibrated RGB color-space.
 public struct ColorRef: ColorProtocol {
         /// Untyped pointer to the underlying `PangoColor` instance.
     /// For type-safe access, use the generated, typed pointer `color_ptr` property instead.
@@ -107,12 +109,13 @@ public extension ColorRef {
 
     }
 
+/// The `PangoColor` structure is used to
+/// represent a color in an uncalibrated RGB color-space.
+///
 /// The `Color` type acts as an owner of an underlying `PangoColor` instance.
 /// It provides the methods that can operate on this data type through `ColorProtocol` conformance.
 /// Use `Color` as a strong reference or owner of a `PangoColor` instance.
 ///
-/// The `PangoColor` structure is used to
-/// represent a color in an uncalibrated RGB color-space.
 open class Color: ColorProtocol {
         /// Untyped pointer to the underlying `PangoColor` instance.
     /// For type-safe access, use the generated, typed pointer `color_ptr` property instead.
@@ -269,15 +272,16 @@ public extension ColorProtocol {
 
     /// Creates a copy of `src`.
     /// 
-    /// The copy should be freed with `pango_color_free()`. Primarily
-    /// used by language bindings, not that useful otherwise (since
-    /// colors can just be copied by assignment in C).
+    /// The copy should be freed with [method`Pango.Color.free`].
+    /// Primarily used by language bindings, not that useful
+    /// otherwise (since colors can just be copied by assignment
+    /// in C).
     @inlinable func copy() -> ColorRef! {
         guard let rv = ColorRef(gconstpointer: gconstpointer(pango_color_copy(color_ptr))) else { return nil }
         return rv
     }
 
-    /// Frees a color allocated by `pango_color_copy()`.
+    /// Frees a color allocated by [method`Pango.Color.copy`].
     @inlinable func free() {
         pango_color_free(color_ptr)
     
@@ -285,13 +289,13 @@ public extension ColorProtocol {
 
     /// Fill in the fields of a color from a string specification.
     /// 
-    /// The string can either
-    /// one of a large set of standard names. (Taken from the CSS Color
-    /// [specification](https://www.w3.org/TR/css-color-4/`named-colors`), or it can be
-    /// a value in the form ``rgb``, ``rrggbb``, ``rrrgggbbb`` or ``rrrrggggbbbb``, where
-    /// `r`, `g` and `b` are hex digits of the red, green, and blue components of the
-    /// color, respectively. (White in the four forms is ``fff``, ``ffffff``, ``fffffffff``
-    /// and ``ffffffffffff``.)
+    /// The string can either one of a large set of standard names.
+    /// (Taken from the CSS Color [specification](https://www.w3.org/TR/css-color-4/`named-colors`),
+    /// or it can be a value in the form ``rgb``, ``rrggbb``,
+    /// ``rrrgggbbb`` or ``rrrrggggbbbb``, where `r`, `g` and `b`
+    /// are hex digits of the red, green, and blue components
+    /// of the color, respectively. (White in the four forms is
+    /// ``fff``, ``ffffff``, ``fffffffff`` and ``ffffffffffff``.)
     @inlinable func parse(spec: UnsafePointer<CChar>!) -> Bool {
         let rv = ((pango_color_parse(color_ptr, spec)) != 0)
         return rv
@@ -299,18 +303,19 @@ public extension ColorProtocol {
 
     /// Fill in the fields of a color from a string specification.
     /// 
-    /// The string can
-    /// either one of a large set of standard names. (Taken from the CSS Color
-    /// [specification](https://www.w3.org/TR/css-color-4/`named-colors`),
-    /// or it can be a hexadecimal value in the form ``rgb``, ``rrggbb``, ``rrrgggbbb``
-    /// or ``rrrrggggbbbb`` where `r`, `g` and `b` are hex digits of the red, green,
-    /// and blue components of the color, respectively. (White in the four
-    /// forms is ``fff``, ``ffffff``, ``fffffffff`` and ``ffffffffffff``.)
+    /// The string can either one of a large set of standard names.
+    /// (Taken from the CSS Color [specification](https://www.w3.org/TR/css-color-4/`named-colors`),
+    /// or it can be a hexadecimal value in the form ``rgb``,
+    /// ``rrggbb``, ``rrrgggbbb`` or ``rrrrggggbbbb`` where `r`, `g`
+    /// and `b` are hex digits of the red, green, and blue components
+    /// of the color, respectively. (White in the four forms is
+    /// ``fff``, ``ffffff``, ``fffffffff`` and ``ffffffffffff``.)
     /// 
     /// Additionally, parse strings of the form ``rgba``, ``rrggbbaa``,
-    /// ``rrrrggggbbbbaaaa``, if `alpha` is not `nil`, and set `alpha` to the value
-    /// specified by the hex digits for `a`. If no alpha component is found
-    /// in `spec`, `alpha` is set to 0xffff (for a solid color).
+    /// ``rrrrggggbbbbaaaa``, if `alpha` is not `nil`, and set `alpha`
+    /// to the value specified by the hex digits for `a`. If no alpha
+    /// component is found in `spec`, `alpha` is set to 0xffff (for a
+    /// solid color).
     @inlinable func parseWith(alpha: UnsafeMutablePointer<guint16>! = nil, spec: UnsafePointer<CChar>!) -> Bool {
         let rv = ((pango_color_parse_with_alpha(color_ptr, alpha, spec)) != 0)
         return rv
@@ -318,9 +323,9 @@ public extension ColorProtocol {
 
     /// Returns a textual specification of `color`.
     /// 
-    /// The string is in the hexadecimal form ``rrrrggggbbbb``, where
-    /// `r`, `g` and `b` are hex digits representing the red, green,
-    /// and blue components respectively.
+    /// The string is in the hexadecimal form ``rrrrggggbbbb``,
+    /// where `r`, `g` and `b` are hex digits representing the
+    /// red, green, and blue components respectively.
     @inlinable func toString() -> String! {
         let rv = pango_color_to_string(color_ptr).map({ String(cString: $0) })
         return rv

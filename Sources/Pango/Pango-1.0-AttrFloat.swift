@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - AttrFloat Record
 
+/// The `PangoAttrFloat` structure is used to represent attributes with
+/// a float or double value.
+///
 /// The `AttrFloatProtocol` protocol exposes the methods and properties of an underlying `PangoAttrFloat` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `AttrFloat`.
 /// Alternatively, use `AttrFloatRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAttrFloat` structure is used to represent attributes with
-/// a float or double value.
 public protocol AttrFloatProtocol {
         /// Untyped pointer to the underlying `PangoAttrFloat` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol AttrFloatProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoAttrFloat` structure is used to represent attributes with
+/// a float or double value.
+///
 /// The `AttrFloatRef` type acts as a lightweight Swift reference to an underlying `PangoAttrFloat` instance.
 /// It exposes methods that can operate on this data type through `AttrFloatProtocol` conformance.
 /// Use `AttrFloatRef` only as an `unowned` reference to an existing `PangoAttrFloat` instance.
 ///
-/// The `PangoAttrFloat` structure is used to represent attributes with
-/// a float or double value.
 public struct AttrFloatRef: AttrFloatProtocol {
         /// Untyped pointer to the underlying `PangoAttrFloat` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +109,13 @@ public extension AttrFloatRef {
 
     }
 
+/// The `PangoAttrFloat` structure is used to represent attributes with
+/// a float or double value.
+///
 /// The `AttrFloat` type acts as an owner of an underlying `PangoAttrFloat` instance.
 /// It provides the methods that can operate on this data type through `AttrFloatProtocol` conformance.
 /// Use `AttrFloat` as a strong reference or owner of a `PangoAttrFloat` instance.
 ///
-/// The `PangoAttrFloat` structure is used to represent attributes with
-/// a float or double value.
 open class AttrFloat: AttrFloatProtocol {
         /// Untyped pointer to the underlying `PangoAttrFloat` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

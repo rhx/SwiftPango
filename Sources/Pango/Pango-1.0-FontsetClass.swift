@@ -20,13 +20,14 @@ public extension FontsetClassRef {
 
 // MARK: - FontsetClass Record
 
+/// The `PangoFontsetClass` structure holds the virtual functions for
+/// a particular `PangoFontset` implementation.
+///
 /// The `FontsetClassProtocol` protocol exposes the methods and properties of an underlying `PangoFontsetClass` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `FontsetClass`.
 /// Alternatively, use `FontsetClassRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoFontsetClass` structure holds the virtual functions for
-/// a particular `PangoFontset` implementation.
 public protocol FontsetClassProtocol {
         /// Untyped pointer to the underlying `PangoFontsetClass` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -38,12 +39,13 @@ public protocol FontsetClassProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoFontsetClass` structure holds the virtual functions for
+/// a particular `PangoFontset` implementation.
+///
 /// The `FontsetClassRef` type acts as a lightweight Swift reference to an underlying `PangoFontsetClass` instance.
 /// It exposes methods that can operate on this data type through `FontsetClassProtocol` conformance.
 /// Use `FontsetClassRef` only as an `unowned` reference to an existing `PangoFontsetClass` instance.
 ///
-/// The `PangoFontsetClass` structure holds the virtual functions for
-/// a particular `PangoFontset` implementation.
 public struct FontsetClassRef: FontsetClassProtocol {
         /// Untyped pointer to the underlying `PangoFontsetClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -128,9 +130,9 @@ public extension FontsetClassProtocol {
     @inlinable var _ptr: UnsafeMutablePointer<PangoFontsetClass>! { return ptr?.assumingMemoryBound(to: PangoFontsetClass.self) }
 
 
-    /// parent `GObjectClass`.
+    /// parent `GObjectClass`
     @inlinable var parentClass: GObjectClass {
-        /// parent `GObjectClass`.
+        /// parent `GObjectClass`
         get {
             let rv = _ptr.pointee.parent_class
             return rv

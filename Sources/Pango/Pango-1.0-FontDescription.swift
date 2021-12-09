@@ -5,17 +5,18 @@ import GLibObject
 
 // MARK: - FontDescription Record
 
-/// The `FontDescriptionProtocol` protocol exposes the methods and properties of an underlying `PangoFontDescription` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `FontDescription`.
-/// Alternatively, use `FontDescriptionRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoFontDescription` describes a font in an implementation-independent
 /// manner.
 /// 
 /// `PangoFontDescription` structures are used both to list what fonts are
 /// available on the system and also for specifying the characteristics of
 /// a font to load.
+///
+/// The `FontDescriptionProtocol` protocol exposes the methods and properties of an underlying `PangoFontDescription` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `FontDescription`.
+/// Alternatively, use `FontDescriptionRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol FontDescriptionProtocol {
         /// Untyped pointer to the underlying `PangoFontDescription` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -27,16 +28,17 @@ public protocol FontDescriptionProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `FontDescriptionRef` type acts as a lightweight Swift reference to an underlying `PangoFontDescription` instance.
-/// It exposes methods that can operate on this data type through `FontDescriptionProtocol` conformance.
-/// Use `FontDescriptionRef` only as an `unowned` reference to an existing `PangoFontDescription` instance.
-///
 /// A `PangoFontDescription` describes a font in an implementation-independent
 /// manner.
 /// 
 /// `PangoFontDescription` structures are used both to list what fonts are
 /// available on the system and also for specifying the characteristics of
 /// a font to load.
+///
+/// The `FontDescriptionRef` type acts as a lightweight Swift reference to an underlying `PangoFontDescription` instance.
+/// It exposes methods that can operate on this data type through `FontDescriptionProtocol` conformance.
+/// Use `FontDescriptionRef` only as an `unowned` reference to an existing `PangoFontDescription` instance.
+///
 public struct FontDescriptionRef: FontDescriptionProtocol {
         /// Untyped pointer to the underlying `PangoFontDescription` instance.
     /// For type-safe access, use the generated, typed pointer `font_description_ptr` property instead.
@@ -136,7 +138,8 @@ public extension FontDescriptionRef {
     /// "Normal", "Roman", "Oblique", "Italic".
     /// 
     /// The following words are understood as variants:
-    /// "Small-Caps".
+    /// "Small-Caps", "All-Small-Caps", "Petite-Caps", "All-Petite-Caps",
+    /// "Unicase", "Title-Caps".
     /// 
     /// The following words are understood as weights:
     /// "Thin", "Ultra-Light", "Extra-Light", "Light", "Semi-Light",
@@ -167,16 +170,17 @@ public extension FontDescriptionRef {
     }
 }
 
-/// The `FontDescription` type acts as an owner of an underlying `PangoFontDescription` instance.
-/// It provides the methods that can operate on this data type through `FontDescriptionProtocol` conformance.
-/// Use `FontDescription` as a strong reference or owner of a `PangoFontDescription` instance.
-///
 /// A `PangoFontDescription` describes a font in an implementation-independent
 /// manner.
 /// 
 /// `PangoFontDescription` structures are used both to list what fonts are
 /// available on the system and also for specifying the characteristics of
 /// a font to load.
+///
+/// The `FontDescription` type acts as an owner of an underlying `PangoFontDescription` instance.
+/// It provides the methods that can operate on this data type through `FontDescriptionProtocol` conformance.
+/// Use `FontDescription` as a strong reference or owner of a `PangoFontDescription` instance.
+///
 open class FontDescription: FontDescriptionProtocol {
         /// Untyped pointer to the underlying `PangoFontDescription` instance.
     /// For type-safe access, use the generated, typed pointer `font_description_ptr` property instead.
@@ -341,7 +345,8 @@ open class FontDescription: FontDescriptionProtocol {
     /// "Normal", "Roman", "Oblique", "Italic".
     /// 
     /// The following words are understood as variants:
-    /// "Small-Caps".
+    /// "Small-Caps", "All-Small-Caps", "Petite-Caps", "All-Petite-Caps",
+    /// "Unicase", "Title-Caps".
     /// 
     /// The following words are understood as weights:
     /// "Thin", "Ultra-Light", "Extra-Light", "Light", "Semi-Light",
@@ -664,7 +669,7 @@ public extension FontDescriptionProtocol {
     /// 
     /// Pango does not currently have a way to find supported axes of
     /// a font. Both harfbuzz or freetype have API for this.
-    @inlinable func set(variations: UnsafePointer<CChar>!) {
+    @inlinable func set(variations: UnsafePointer<CChar>? = nil) {
         pango_font_description_set_variations(font_description_ptr, variations)
     
     }
@@ -706,7 +711,7 @@ public extension FontDescriptionProtocol {
 
     /// Creates a string representation of a font description.
     /// 
-    /// See [type_func`Pango.FontDescription.from_string`] for a description
+    /// See [func`Pango.FontDescription.from_string`] for a description
     /// of the format of the string representation. The family list in
     /// the string description will only have a terminating comma if
     /// the last word of the list is a valid style option.

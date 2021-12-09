@@ -5,16 +5,17 @@ import GLibObject
 
 // MARK: - GlyphVisAttr Record
 
+/// A `PangoGlyphVisAttr` structure communicates information between
+/// the shaping and rendering phases.
+/// 
+/// Currently, it contains cluster start and color information.
+/// More attributes may be added in the future.
+///
 /// The `GlyphVisAttrProtocol` protocol exposes the methods and properties of an underlying `PangoGlyphVisAttr` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `GlyphVisAttr`.
 /// Alternatively, use `GlyphVisAttrRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// A `PangoGlyphVisAttr` structure communicates information between
-/// the shaping and rendering phases.
-/// 
-/// Currently, it contains only cluster start information. yMore attributes
-/// may be added in the future.
 public protocol GlyphVisAttrProtocol {
         /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -26,15 +27,16 @@ public protocol GlyphVisAttrProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// A `PangoGlyphVisAttr` structure communicates information between
+/// the shaping and rendering phases.
+/// 
+/// Currently, it contains cluster start and color information.
+/// More attributes may be added in the future.
+///
 /// The `GlyphVisAttrRef` type acts as a lightweight Swift reference to an underlying `PangoGlyphVisAttr` instance.
 /// It exposes methods that can operate on this data type through `GlyphVisAttrProtocol` conformance.
 /// Use `GlyphVisAttrRef` only as an `unowned` reference to an existing `PangoGlyphVisAttr` instance.
 ///
-/// A `PangoGlyphVisAttr` structure communicates information between
-/// the shaping and rendering phases.
-/// 
-/// Currently, it contains only cluster start information. yMore attributes
-/// may be added in the future.
 public struct GlyphVisAttrRef: GlyphVisAttrProtocol {
         /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -113,15 +115,16 @@ public extension GlyphVisAttrRef {
 
     }
 
+/// A `PangoGlyphVisAttr` structure communicates information between
+/// the shaping and rendering phases.
+/// 
+/// Currently, it contains cluster start and color information.
+/// More attributes may be added in the future.
+///
 /// The `GlyphVisAttr` type acts as an owner of an underlying `PangoGlyphVisAttr` instance.
 /// It provides the methods that can operate on this data type through `GlyphVisAttrProtocol` conformance.
 /// Use `GlyphVisAttr` as a strong reference or owner of a `PangoGlyphVisAttr` instance.
 ///
-/// A `PangoGlyphVisAttr` structure communicates information between
-/// the shaping and rendering phases.
-/// 
-/// Currently, it contains only cluster start information. yMore attributes
-/// may be added in the future.
 open class GlyphVisAttr: GlyphVisAttrProtocol {
         /// Untyped pointer to the underlying `PangoGlyphVisAttr` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -299,6 +302,19 @@ public extension GlyphVisAttrProtocol {
         ///   base character.)
          set {
             _ptr.pointee.is_cluster_start = newValue
+        }
+    }
+
+    /// set if the the font will render this glyph with color. Since 1.50
+    @inlinable var isColor: guint {
+        /// set if the the font will render this glyph with color. Since 1.50
+        get {
+            let rv = _ptr.pointee.is_color
+            return rv
+        }
+        /// set if the the font will render this glyph with color. Since 1.50
+         set {
+            _ptr.pointee.is_color = newValue
         }
     }
 

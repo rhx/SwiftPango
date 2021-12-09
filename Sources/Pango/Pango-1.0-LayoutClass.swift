@@ -20,12 +20,13 @@ public extension LayoutClassRef {
 
 // MARK: - LayoutClass Record
 
+
+///
 /// The `LayoutClassProtocol` protocol exposes the methods and properties of an underlying `PangoLayoutClass` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `LayoutClass`.
 /// Alternatively, use `LayoutClassRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-
 public protocol LayoutClassProtocol {
         /// Untyped pointer to the underlying `PangoLayoutClass` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -37,11 +38,12 @@ public protocol LayoutClassProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+
+///
 /// The `LayoutClassRef` type acts as a lightweight Swift reference to an underlying `PangoLayoutClass` instance.
 /// It exposes methods that can operate on this data type through `LayoutClassProtocol` conformance.
 /// Use `LayoutClassRef` only as an `unowned` reference to an existing `PangoLayoutClass` instance.
 ///
-
 public struct LayoutClassRef: LayoutClassProtocol {
         /// Untyped pointer to the underlying `PangoLayoutClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.

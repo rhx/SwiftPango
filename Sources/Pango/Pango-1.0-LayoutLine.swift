@@ -5,17 +5,18 @@ import GLibObject
 
 // MARK: - LayoutLine Record
 
-/// The `LayoutLineProtocol` protocol exposes the methods and properties of an underlying `PangoLayoutLine` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `LayoutLine`.
-/// Alternatively, use `LayoutLineRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoLayoutLine` represents one of the lines resulting from laying
 /// out a paragraph via `PangoLayout`.
 /// 
 /// `PangoLayoutLine` structures are obtained by calling
 /// [method`Pango.Layout.get_line`] and are only valid until the text,
 /// attributes, or settings of the parent `PangoLayout` are modified.
+///
+/// The `LayoutLineProtocol` protocol exposes the methods and properties of an underlying `PangoLayoutLine` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `LayoutLine`.
+/// Alternatively, use `LayoutLineRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol LayoutLineProtocol {
         /// Untyped pointer to the underlying `PangoLayoutLine` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -27,16 +28,17 @@ public protocol LayoutLineProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `LayoutLineRef` type acts as a lightweight Swift reference to an underlying `PangoLayoutLine` instance.
-/// It exposes methods that can operate on this data type through `LayoutLineProtocol` conformance.
-/// Use `LayoutLineRef` only as an `unowned` reference to an existing `PangoLayoutLine` instance.
-///
 /// A `PangoLayoutLine` represents one of the lines resulting from laying
 /// out a paragraph via `PangoLayout`.
 /// 
 /// `PangoLayoutLine` structures are obtained by calling
 /// [method`Pango.Layout.get_line`] and are only valid until the text,
 /// attributes, or settings of the parent `PangoLayout` are modified.
+///
+/// The `LayoutLineRef` type acts as a lightweight Swift reference to an underlying `PangoLayoutLine` instance.
+/// It exposes methods that can operate on this data type through `LayoutLineProtocol` conformance.
+/// Use `LayoutLineRef` only as an `unowned` reference to an existing `PangoLayoutLine` instance.
+///
 public struct LayoutLineRef: LayoutLineProtocol {
         /// Untyped pointer to the underlying `PangoLayoutLine` instance.
     /// For type-safe access, use the generated, typed pointer `layout_line_ptr` property instead.
@@ -115,16 +117,17 @@ public extension LayoutLineRef {
 
     }
 
-/// The `LayoutLine` type acts as a reference-counted owner of an underlying `PangoLayoutLine` instance.
-/// It provides the methods that can operate on this data type through `LayoutLineProtocol` conformance.
-/// Use `LayoutLine` as a strong reference or owner of a `PangoLayoutLine` instance.
-///
 /// A `PangoLayoutLine` represents one of the lines resulting from laying
 /// out a paragraph via `PangoLayout`.
 /// 
 /// `PangoLayoutLine` structures are obtained by calling
 /// [method`Pango.Layout.get_line`] and are only valid until the text,
 /// attributes, or settings of the parent `PangoLayout` are modified.
+///
+/// The `LayoutLine` type acts as a reference-counted owner of an underlying `PangoLayoutLine` instance.
+/// It provides the methods that can operate on this data type through `LayoutLineProtocol` conformance.
+/// Use `LayoutLine` as a strong reference or owner of a `PangoLayoutLine` instance.
+///
 open class LayoutLine: LayoutLineProtocol {
         /// Untyped pointer to the underlying `PangoLayoutLine` instance.
     /// For type-safe access, use the generated, typed pointer `layout_line_ptr` property instead.
@@ -279,26 +282,39 @@ public extension LayoutLineProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoLayoutLine` instance.
     @inlinable var layout_line_ptr: UnsafeMutablePointer<PangoLayoutLine>! { return ptr?.assumingMemoryBound(to: PangoLayoutLine.self) }
 
-    /// Computes the logical and ink extents of a layout line. See
-    /// [method`Pango.Font.get_glyph_extents`] for details about the
-    /// interpretation of the rectangles.
+    /// Computes the logical and ink extents of a layout line.
+    /// 
+    /// See [method`Pango.Font.get_glyph_extents`] for details
+    /// about the interpretation of the rectangles.
     @inlinable func getExtents(inkRect: RectangleRef? = nil, logicalRect: RectangleRef? = nil) {
         pango_layout_line_get_extents(layout_line_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
-    /// Computes the logical and ink extents of a layout line. See
-    /// [method`Pango.Font.get_glyph_extents`] for details about the
-    /// interpretation of the rectangles.
+    /// Computes the logical and ink extents of a layout line.
+    /// 
+    /// See [method`Pango.Font.get_glyph_extents`] for details
+    /// about the interpretation of the rectangles.
     @inlinable func getExtents<RectangleT: RectangleProtocol>(inkRect: RectangleT?, logicalRect: RectangleT?) {
         pango_layout_line_get_extents(layout_line_ptr, inkRect?._ptr, logicalRect?._ptr)
     
     }
 
-    /// Computes the height of the line, i.e. the distance between
-    /// this and the previous lines baseline.
+    /// Computes the height of the line, as the maximum of the heights
+    /// of fonts used in this line.
+    /// 
+    /// Note that the actual baseline-to-baseline distance between lines
+    /// of text is influenced by other factors, such as
+    /// [method`Pango.Layout.set_spacing`] and
+    /// [method`Pango.Layout.set_line_spacing`].
     @inlinable func get(height: UnsafeMutablePointer<gint>! = nil) {
         pango_layout_line_get_height(layout_line_ptr, height)
     
+    }
+
+    /// Returns the length of the line, in bytes.
+    @inlinable func getLength() -> Int {
+        let rv = Int(pango_layout_line_get_length(layout_line_ptr))
+        return rv
     }
 
     /// Computes the logical and ink extents of `layout_line` in device units.
@@ -322,7 +338,21 @@ public extension LayoutLineProtocol {
     
     }
 
+    /// Returns the resolved direction of the line.
+    @inlinable func getResolvedDirection() -> PangoDirection {
+        let rv = pango_layout_line_get_resolved_direction(layout_line_ptr)
+        return rv
+    }
+
+    /// Returns the start index of the line, as byte index
+    /// into the text of the layout.
+    @inlinable func getStartIndex() -> Int {
+        let rv = Int(pango_layout_line_get_start_index(layout_line_ptr))
+        return rv
+    }
+
     /// Gets a list of visual ranges corresponding to a given logical range.
+    /// 
     /// This list is not necessarily minimal - there may be consecutive
     /// ranges which are adjacent. The ranges will be sorted from left to
     /// right. The ranges are with respect to the left edge of the entire
@@ -333,8 +363,8 @@ public extension LayoutLineProtocol {
     }
 
     /// Converts an index within a line to a X position.
-    @inlinable func indexToX(index_: Int, trailing: Bool, xPos: UnsafeMutablePointer<gint>!) {
-        pango_layout_line_index_to_x(layout_line_ptr, gint(index_), gboolean((trailing) ? 1 : 0), xPos)
+    @inlinable func indexToX(index: Int, trailing: Bool, xPos: UnsafeMutablePointer<gint>!) {
+        pango_layout_line_index_to_x(layout_line_ptr, gint(index), gboolean((trailing) ? 1 : 0), xPos)
     
     }
 
@@ -345,6 +375,7 @@ public extension LayoutLineProtocol {
     }
 
     /// Decrease the reference count of a `PangoLayoutLine` by one.
+    /// 
     /// If the result is zero, the line and all associated memory
     /// will be freed.
     @inlinable func unref() {
@@ -353,18 +384,56 @@ public extension LayoutLineProtocol {
     }
 
     /// Converts from x offset to the byte index of the corresponding character
-    /// within the text of the layout. If `x_pos` is outside the line, `index_` and
-    /// `trailing` will point to the very first or very last position in the line.
-    /// This determination is based on the resolved direction of the paragraph;
-    /// for example, if the resolved direction is right-to-left, then an X position
-    /// to the right of the line (after it) results in 0 being stored in `index_`
-    /// and `trailing`. An X position to the left of the line results in `index_`
-    /// pointing to the (logical) last grapheme in the line and `trailing` being
-    /// set to the number of characters in that grapheme. The reverse is true for
-    /// a left-to-right line.
-    @inlinable func xToIndex(xPos: Int, index_: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) -> Bool {
-        let rv = ((pango_layout_line_x_to_index(layout_line_ptr, gint(xPos), index_, trailing)) != 0)
+    /// within the text of the layout.
+    /// 
+    /// If `x_pos` is outside the line, `index_` and `trailing` will point to the very
+    /// first or very last position in the line. This determination is based on the
+    /// resolved direction of the paragraph; for example, if the resolved direction
+    /// is right-to-left, then an X position to the right of the line (after it)
+    /// results in 0 being stored in `index_` and `trailing`. An X position to the
+    /// left of the line results in `index_` pointing to the (logical) last grapheme
+    /// in the line and `trailing` being set to the number of characters in that
+    /// grapheme. The reverse is true for a left-to-right line.
+    @inlinable func xToIndex(xPos: Int, index: UnsafeMutablePointer<gint>!, trailing: UnsafeMutablePointer<gint>!) -> Bool {
+        let rv = ((pango_layout_line_x_to_index(layout_line_ptr, gint(xPos), index, trailing)) != 0)
         return rv
+    }
+    /// Returns whether this is the first line of the paragraph.
+    @inlinable var isParagraphStart: Bool {
+        /// Returns whether this is the first line of the paragraph.
+        get {
+            let rv = ((pango_layout_line_is_paragraph_start(layout_line_ptr)) != 0)
+            return rv
+        }
+    }
+
+    /// Returns the length of the line, in bytes.
+    @inlinable var length: Int {
+        /// Returns the length of the line, in bytes.
+        get {
+            let rv = Int(pango_layout_line_get_length(layout_line_ptr))
+            return rv
+        }
+    }
+
+    /// Returns the resolved direction of the line.
+    @inlinable var resolvedDirection: PangoDirection {
+        /// Returns the resolved direction of the line.
+        get {
+            let rv = pango_layout_line_get_resolved_direction(layout_line_ptr)
+            return rv
+        }
+    }
+
+    /// Returns the start index of the line, as byte index
+    /// into the text of the layout.
+    @inlinable var startIndex: Int {
+        /// Returns the start index of the line, as byte index
+        /// into the text of the layout.
+        get {
+            let rv = Int(pango_layout_line_get_start_index(layout_line_ptr))
+            return rv
+        }
     }
 
     /// the layout this line belongs to, might be `nil`
@@ -381,7 +450,7 @@ public extension LayoutLineProtocol {
     }
 
     /// start of line as byte index into layout-&gt;text
-    @inlinable var startIndex: gint {
+    @inlinable var _startIndex: gint {
         /// start of line as byte index into layout-&gt;text
         get {
             let rv = layout_line_ptr.pointee.start_index
@@ -394,7 +463,7 @@ public extension LayoutLineProtocol {
     }
 
     /// length of line in bytes
-    @inlinable var length: gint {
+    @inlinable var _length: gint {
         /// length of line in bytes
         get {
             let rv = layout_line_ptr.pointee.length
@@ -407,23 +476,23 @@ public extension LayoutLineProtocol {
     }
 
     /// list of runs in the
-    ///        line, from left to right
+    ///   line, from left to right
     @inlinable var runs: SListRef! {
         /// list of runs in the
-        ///        line, from left to right
+        ///   line, from left to right
         get {
             let rv = SListRef(gconstpointer: gconstpointer(layout_line_ptr.pointee.runs))
             return rv
         }
         /// list of runs in the
-        ///        line, from left to right
+        ///   line, from left to right
          set {
             layout_line_ptr.pointee.runs = UnsafeMutablePointer<GSList>(newValue._ptr)
         }
     }
 
     /// `TRUE` if this is the first line of the paragraph
-    @inlinable var isParagraphStart: guint {
+    @inlinable var _isParagraphStart: guint {
         /// `TRUE` if this is the first line of the paragraph
         get {
             let rv = layout_line_ptr.pointee.is_paragraph_start

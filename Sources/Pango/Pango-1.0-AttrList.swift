@@ -5,11 +5,6 @@ import GLibObject
 
 // MARK: - AttrList Record
 
-/// The `AttrListProtocol` protocol exposes the methods and properties of an underlying `PangoAttrList` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `AttrList`.
-/// Alternatively, use `AttrListRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoAttrList` represents a list of attributes that apply to a section
 /// of text.
 /// 
@@ -21,6 +16,12 @@ import GLibObject
 /// Since the `PangoAttrList` structure is stored as a linear list, it is not
 /// suitable for storing attributes for large amounts of text. In general, you
 /// should not use a single `PangoAttrList` for more than one paragraph of text.
+///
+/// The `AttrListProtocol` protocol exposes the methods and properties of an underlying `PangoAttrList` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `AttrList`.
+/// Alternatively, use `AttrListRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol AttrListProtocol {
         /// Untyped pointer to the underlying `PangoAttrList` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -32,10 +33,6 @@ public protocol AttrListProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `AttrListRef` type acts as a lightweight Swift reference to an underlying `PangoAttrList` instance.
-/// It exposes methods that can operate on this data type through `AttrListProtocol` conformance.
-/// Use `AttrListRef` only as an `unowned` reference to an existing `PangoAttrList` instance.
-///
 /// A `PangoAttrList` represents a list of attributes that apply to a section
 /// of text.
 /// 
@@ -47,6 +44,11 @@ public protocol AttrListProtocol {
 /// Since the `PangoAttrList` structure is stored as a linear list, it is not
 /// suitable for storing attributes for large amounts of text. In general, you
 /// should not use a single `PangoAttrList` for more than one paragraph of text.
+///
+/// The `AttrListRef` type acts as a lightweight Swift reference to an underlying `PangoAttrList` instance.
+/// It exposes methods that can operate on this data type through `AttrListProtocol` conformance.
+/// Use `AttrListRef` only as an `unowned` reference to an existing `PangoAttrList` instance.
+///
 public struct AttrListRef: AttrListProtocol {
         /// Untyped pointer to the underlying `PangoAttrList` instance.
     /// For type-safe access, use the generated, typed pointer `attr_list_ptr` property instead.
@@ -123,17 +125,22 @@ public extension AttrListRef {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
-        /// Create a new empty attribute list with a reference count of one.
+        /// Create a new empty attribute list with a reference
+    /// count of one.
     @inlinable init() {
         let rv = pango_attr_list_new()
         ptr = UnsafeMutableRawPointer(rv)
     }
+    /// Deserializes a `PangoAttrList` from a string.
+    /// 
+    /// This is the counterpart to [method`Pango.AttrList.to_string`].
+    /// See that functions for details about the format.
+    @inlinable static func from(string text: UnsafePointer<CChar>!) -> AttrListRef! {
+        guard let rv = AttrListRef(gconstpointer: gconstpointer(pango_attr_list_from_string(text))) else { return nil }
+        return rv
+    }
 }
 
-/// The `AttrList` type acts as a reference-counted owner of an underlying `PangoAttrList` instance.
-/// It provides the methods that can operate on this data type through `AttrListProtocol` conformance.
-/// Use `AttrList` as a strong reference or owner of a `PangoAttrList` instance.
-///
 /// A `PangoAttrList` represents a list of attributes that apply to a section
 /// of text.
 /// 
@@ -145,6 +152,11 @@ public extension AttrListRef {
 /// Since the `PangoAttrList` structure is stored as a linear list, it is not
 /// suitable for storing attributes for large amounts of text. In general, you
 /// should not use a single `PangoAttrList` for more than one paragraph of text.
+///
+/// The `AttrList` type acts as a reference-counted owner of an underlying `PangoAttrList` instance.
+/// It provides the methods that can operate on this data type through `AttrListProtocol` conformance.
+/// Use `AttrList` as a strong reference or owner of a `PangoAttrList` instance.
+///
 open class AttrList: AttrListProtocol {
         /// Untyped pointer to the underlying `PangoAttrList` instance.
     /// For type-safe access, use the generated, typed pointer `attr_list_ptr` property instead.
@@ -285,12 +297,21 @@ open class AttrList: AttrListProtocol {
         pango_attr_list_ref(ptr.assumingMemoryBound(to: PangoAttrList.self))
     }
 
-    /// Create a new empty attribute list with a reference count of one.
+    /// Create a new empty attribute list with a reference
+    /// count of one.
     @inlinable public init() {
         let rv = pango_attr_list_new()
         ptr = UnsafeMutableRawPointer(rv)
     }
 
+    /// Deserializes a `PangoAttrList` from a string.
+    /// 
+    /// This is the counterpart to [method`Pango.AttrList.to_string`].
+    /// See that functions for details about the format.
+    @inlinable public static func from(string text: UnsafePointer<CChar>!) -> AttrList! {
+        guard let rv = AttrList(gconstpointer: gconstpointer(pango_attr_list_from_string(text))) else { return nil }
+        return rv
+    }
 
 }
 
@@ -306,13 +327,15 @@ public extension AttrListProtocol {
 
     /// Insert the given attribute into the `PangoAttrList`.
     /// 
-    /// It will replace any attributes of the same type on that segment
-    /// and be merged with any adjoining attributes that are identical.
+    /// It will replace any attributes of the same type
+    /// on that segment and be merged with any adjoining
+    /// attributes that are identical.
     /// 
-    /// This function is slower than [method`Pango.AttrList.insert`] for
-    /// creating an attribute list in order (potentially much slower for
-    /// large lists). However, [method`Pango.AttrList.insert`] is not
-    /// suitable for continually changing a set of attributes since it
+    /// This function is slower than [method`Pango.AttrList.insert`]
+    /// for creating an attribute list in order (potentially
+    /// much slower for large lists). However,
+    /// [method`Pango.AttrList.insert`] is not suitable for
+    /// continually changing a set of attributes since it
     /// never removes or combines existing attributes.
     @inlinable func change<AttributeT: AttributeProtocol>(attr: AttributeT) {
         pango_attr_list_change(attr_list_ptr, attr.attribute_ptr)
@@ -325,16 +348,20 @@ public extension AttrListProtocol {
         return rv
     }
 
-    /// Checks whether `list` and `other_list` contain the same attributes and
-    /// whether those attributes apply to the same ranges. Beware that this
-    /// will return wrong values if any list contains duplicates.
+    /// Checks whether `list` and `other_list` contain the same
+    /// attributes and whether those attributes apply to the
+    /// same ranges.
+    /// 
+    /// Beware that this will return wrong values if any list
+    /// contains duplicates.
     @inlinable func equal<AttrListT: AttrListProtocol>(otherList: AttrListT) -> Bool {
         let rv = ((pango_attr_list_equal(attr_list_ptr, otherList.attr_list_ptr)) != 0)
         return rv
     }
 
-    /// Given a `PangoAttrList` and callback function, removes any elements
-    /// of `list` for which `func` returns `true` and inserts them into a new list.
+    /// Given a `PangoAttrList` and callback function, removes
+    /// any elements of `list` for which `func` returns `true` and
+    /// inserts them into a new list.
     @inlinable func filter(`func`: PangoAttrFilterFunc?, data: gpointer! = nil) -> AttrListRef! {
         guard let rv = AttrListRef(gconstpointer: gconstpointer(pango_attr_list_filter(attr_list_ptr, `func`, data))) else { return nil }
         return rv
@@ -347,6 +374,7 @@ public extension AttrListProtocol {
     }
 
     /// Create a iterator initialized to the beginning of the list.
+    /// 
     /// `list` must not be modified until this iterator is freed.
     @inlinable func getIterator() -> AttrIteratorRef! {
         let rv = AttrIteratorRef(gconstpointer: gconstpointer(pango_attr_list_get_iterator(attr_list_ptr)))
@@ -371,14 +399,16 @@ public extension AttrListProtocol {
     
     }
 
-    /// Increase the reference count of the given attribute list by one.
+    /// Increase the reference count of the given attribute
+    /// list by one.
     @discardableResult @inlinable func ref() -> AttrListRef! {
         guard let rv = AttrListRef(gconstpointer: gconstpointer(pango_attr_list_ref(attr_list_ptr))) else { return nil }
         return rv
     }
 
-    /// This function opens up a hole in `list`, fills it in with attributes
-    /// from the left, and then merges `other` on top of the hole.
+    /// This function opens up a hole in `list`, fills it
+    /// in with attributes from the left, and then merges
+    /// `other` on top of the hole.
     /// 
     /// This operation is equivalent to stretching every attribute
     /// that applies at position `pos` in `list` by an amount `len`,
@@ -393,9 +423,24 @@ public extension AttrListProtocol {
     
     }
 
-    /// Decrease the reference count of the given attribute list by one.
-    /// If the result is zero, free the attribute list and the attributes
-    /// it contains.
+    /// Serializes a `PangoAttrList` to a string.
+    /// 
+    /// No guarantees are made about the format of the string,
+    /// it may change between Pango versions.
+    /// 
+    /// The intended use of this function is testing and
+    /// debugging. The format is not meant as a permanent
+    /// storage format.
+    @inlinable func toString() -> String! {
+        let rv = pango_attr_list_to_string(attr_list_ptr).map({ String(cString: $0) })
+        return rv
+    }
+
+    /// Decrease the reference count of the given attribute
+    /// list by one.
+    /// 
+    /// If the result is zero, free the attribute list
+    /// and the attributes it contains.
     @inlinable func unref() {
         pango_attr_list_unref(attr_list_ptr)
     
@@ -417,6 +462,15 @@ public extension AttrListProtocol {
     /// behind `pos` + `remove`.
     @inlinable func update(pos: Int, remove: Int, add: Int) {
         pango_attr_list_update(attr_list_ptr, gint(pos), gint(remove), gint(add))
+    
+    }
+
+    /// Apply customization from attributes to the breaks in `attrs`.
+    /// 
+    /// The line breaks are assumed to have been produced
+    /// by [func`Pango.default_break`] and [func`Pango.tailor_break`].
+    @inlinable func attrBreak(text: UnsafePointer<CChar>!, length: Int, offset: Int, attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
+        pango_attr_break(text, gint(length), attr_list_ptr, gint(offset), attrs, gint(attrsLen))
     
     }
 
@@ -481,9 +535,11 @@ public extension AttrListProtocol {
     }
 
     /// Create a iterator initialized to the beginning of the list.
+    /// 
     /// `list` must not be modified until this iterator is freed.
     @inlinable var iterator: AttrIteratorRef! {
         /// Create a iterator initialized to the beginning of the list.
+        /// 
         /// `list` must not be modified until this iterator is freed.
         get {
             let rv = AttrIteratorRef(gconstpointer: gconstpointer(pango_attr_list_get_iterator(attr_list_ptr)))

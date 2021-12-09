@@ -5,16 +5,17 @@ import GLibObject
 
 // MARK: - FontMap Class
 
-/// The `FontMapProtocol` protocol exposes the methods and properties of an underlying `PangoFontMap` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `FontMap`.
-/// Alternatively, use `FontMapRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoFontMap` represents the set of fonts available for a
 /// particular rendering system.
 /// 
 /// This is a virtual object with implementations being specific to
 /// particular rendering systems.
+///
+/// The `FontMapProtocol` protocol exposes the methods and properties of an underlying `PangoFontMap` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `FontMap`.
+/// Alternatively, use `FontMapRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol FontMapProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontMap` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -26,15 +27,16 @@ public protocol FontMapProtocol: GLibObject.ObjectProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `FontMapRef` type acts as a lightweight Swift reference to an underlying `PangoFontMap` instance.
-/// It exposes methods that can operate on this data type through `FontMapProtocol` conformance.
-/// Use `FontMapRef` only as an `unowned` reference to an existing `PangoFontMap` instance.
-///
 /// A `PangoFontMap` represents the set of fonts available for a
 /// particular rendering system.
 /// 
 /// This is a virtual object with implementations being specific to
 /// particular rendering systems.
+///
+/// The `FontMapRef` type acts as a lightweight Swift reference to an underlying `PangoFontMap` instance.
+/// It exposes methods that can operate on this data type through `FontMapProtocol` conformance.
+/// Use `FontMapRef` only as an `unowned` reference to an existing `PangoFontMap` instance.
+///
 public struct FontMapRef: FontMapProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFontMap` instance.
     /// For type-safe access, use the generated, typed pointer `font_map_ptr` property instead.
@@ -116,15 +118,16 @@ public extension FontMapRef {
 
     }
 
-/// The `FontMap` type acts as a reference-counted owner of an underlying `PangoFontMap` instance.
-/// It provides the methods that can operate on this data type through `FontMapProtocol` conformance.
-/// Use `FontMap` as a strong reference or owner of a `PangoFontMap` instance.
-///
 /// A `PangoFontMap` represents the set of fonts available for a
 /// particular rendering system.
 /// 
 /// This is a virtual object with implementations being specific to
 /// particular rendering systems.
+///
+/// The `FontMap` type acts as a reference-counted owner of an underlying `PangoFontMap` instance.
+/// It provides the methods that can operate on this data type through `FontMapProtocol` conformance.
+/// Use `FontMap` as a strong reference or owner of a `PangoFontMap` instance.
+///
 open class FontMap: GLibObject.Object, FontMapProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -272,12 +275,14 @@ public enum FontMapSignalName: String, SignalNameProtocol {
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
     /// `g_signal_connect()` call, like this:
+    /// 
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
+    /// 
     /// It is important to note that you must use
     /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.

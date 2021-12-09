@@ -5,11 +5,6 @@ import GLibObject
 
 // MARK: - Matrix Record
 
-/// The `MatrixProtocol` protocol exposes the methods and properties of an underlying `PangoMatrix` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `Matrix`.
-/// Alternatively, use `MatrixRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// A `PangoMatrix` specifies a transformation between user-space
 /// and device coordinates.
 /// 
@@ -19,6 +14,12 @@ import GLibObject
 /// x_device = x_user * matrix-&gt;xx + y_user * matrix-&gt;xy + matrix-&gt;x0;
 /// y_device = x_user * matrix-&gt;yx + y_user * matrix-&gt;yy + matrix-&gt;y0;
 /// ```
+///
+/// The `MatrixProtocol` protocol exposes the methods and properties of an underlying `PangoMatrix` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `Matrix`.
+/// Alternatively, use `MatrixRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol MatrixProtocol {
         /// Untyped pointer to the underlying `PangoMatrix` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -30,10 +31,6 @@ public protocol MatrixProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `MatrixRef` type acts as a lightweight Swift reference to an underlying `PangoMatrix` instance.
-/// It exposes methods that can operate on this data type through `MatrixProtocol` conformance.
-/// Use `MatrixRef` only as an `unowned` reference to an existing `PangoMatrix` instance.
-///
 /// A `PangoMatrix` specifies a transformation between user-space
 /// and device coordinates.
 /// 
@@ -43,6 +40,11 @@ public protocol MatrixProtocol {
 /// x_device = x_user * matrix-&gt;xx + y_user * matrix-&gt;xy + matrix-&gt;x0;
 /// y_device = x_user * matrix-&gt;yx + y_user * matrix-&gt;yy + matrix-&gt;y0;
 /// ```
+///
+/// The `MatrixRef` type acts as a lightweight Swift reference to an underlying `PangoMatrix` instance.
+/// It exposes methods that can operate on this data type through `MatrixProtocol` conformance.
+/// Use `MatrixRef` only as an `unowned` reference to an existing `PangoMatrix` instance.
+///
 public struct MatrixRef: MatrixProtocol {
         /// Untyped pointer to the underlying `PangoMatrix` instance.
     /// For type-safe access, use the generated, typed pointer `matrix_ptr` property instead.
@@ -121,10 +123,6 @@ public extension MatrixRef {
 
     }
 
-/// The `Matrix` type acts as an owner of an underlying `PangoMatrix` instance.
-/// It provides the methods that can operate on this data type through `MatrixProtocol` conformance.
-/// Use `Matrix` as a strong reference or owner of a `PangoMatrix` instance.
-///
 /// A `PangoMatrix` specifies a transformation between user-space
 /// and device coordinates.
 /// 
@@ -134,6 +132,11 @@ public extension MatrixRef {
 /// x_device = x_user * matrix-&gt;xx + y_user * matrix-&gt;xy + matrix-&gt;x0;
 /// y_device = x_user * matrix-&gt;yx + y_user * matrix-&gt;yy + matrix-&gt;y0;
 /// ```
+///
+/// The `Matrix` type acts as an owner of an underlying `PangoMatrix` instance.
+/// It provides the methods that can operate on this data type through `MatrixProtocol` conformance.
+/// Use `Matrix` as a strong reference or owner of a `PangoMatrix` instance.
+///
 open class Matrix: MatrixProtocol {
         /// Untyped pointer to the underlying `PangoMatrix` instance.
     /// For type-safe access, use the generated, typed pointer `matrix_ptr` property instead.
@@ -377,22 +380,8 @@ public extension MatrixProtocol {
     /// For better accuracy, you should use [method`Pango.Matrix.transform_rectangle`]
     /// on original rectangle in Pango units and convert to pixels afterward
     /// using [func`extents_to_pixels`]'s first argument.
-    @inlinable func transformPixelRectangle(rect: RectangleRef? = nil) {
-        pango_matrix_transform_pixel_rectangle(matrix_ptr, rect?._ptr)
-    
-    }
-    /// First transforms the `rect` using `matrix`, then calculates the bounding box
-    /// of the transformed rectangle.
-    /// 
-    /// This function is useful for example when you want to draw a rotated
-    /// `PangoLayout` to an image buffer, and want to know how large the image
-    /// should be and how much you should shift the layout when rendering.
-    /// 
-    /// For better accuracy, you should use [method`Pango.Matrix.transform_rectangle`]
-    /// on original rectangle in Pango units and convert to pixels afterward
-    /// using [func`extents_to_pixels`]'s first argument.
-    @inlinable func transformPixelRectangle<RectangleT: RectangleProtocol>(rect: RectangleT?) {
-        pango_matrix_transform_pixel_rectangle(matrix_ptr, rect?._ptr)
+    @inlinable func transformPixelRectangle<RectangleT: RectangleProtocol>(rect: RectangleT) {
+        pango_matrix_transform_pixel_rectangle(matrix_ptr, rect._ptr)
     
     }
 
@@ -420,30 +409,8 @@ public extension MatrixProtocol {
     /// to pixels first and then transform, for example when the transformed
     /// coordinates may overflow in Pango units (large matrix translation for
     /// example).
-    @inlinable func transformRectangle(rect: RectangleRef? = nil) {
-        pango_matrix_transform_rectangle(matrix_ptr, rect?._ptr)
-    
-    }
-    /// First transforms `rect` using `matrix`, then calculates the bounding box
-    /// of the transformed rectangle.
-    /// 
-    /// This function is useful for example when you want to draw a rotated
-    /// `PangoLayout` to an image buffer, and want to know how large the image
-    /// should be and how much you should shift the layout when rendering.
-    /// 
-    /// If you have a rectangle in device units (pixels), use
-    /// [method`Pango.Matrix.transform_pixel_rectangle`].
-    /// 
-    /// If you have the rectangle in Pango units and want to convert to
-    /// transformed pixel bounding box, it is more accurate to transform it first
-    /// (using this function) and pass the result to `pango_extents_to_pixels()`,
-    /// first argument, for an inclusive rounded rectangle.
-    /// However, there are valid reasons that you may want to convert
-    /// to pixels first and then transform, for example when the transformed
-    /// coordinates may overflow in Pango units (large matrix translation for
-    /// example).
-    @inlinable func transformRectangle<RectangleT: RectangleProtocol>(rect: RectangleT?) {
-        pango_matrix_transform_rectangle(matrix_ptr, rect?._ptr)
+    @inlinable func transformRectangle<RectangleT: RectangleProtocol>(rect: RectangleT) {
+        pango_matrix_transform_rectangle(matrix_ptr, rect._ptr)
     
     }
 

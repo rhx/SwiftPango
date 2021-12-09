@@ -6,6 +6,7 @@ import GLibObject
 /// A `PangoGlyph` represents a single glyph in the output form of a string.
 public typealias Glyph = PangoGlyph
 
+
 /// The `PangoGlyphUnit` type is used to store dimensions within
 /// Pango.
 /// 
@@ -16,6 +17,7 @@ public typealias Glyph = PangoGlyph
 /// depend on its exact value. The `PANGO_PIXELS()` macro can be used
 /// to convert from glyph units into device units with correct rounding.
 public typealias GlyphUnit = PangoGlyphUnit
+
 
 /// A `PangoLayoutRun` represents a single run within a `PangoLayoutLine`.
 /// 

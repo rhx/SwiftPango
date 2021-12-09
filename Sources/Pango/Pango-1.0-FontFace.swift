@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - FontFace Class
 
+/// A `PangoFontFace` is used to represent a group of fonts with
+/// the same family, slant, weight, and width, but varying sizes.
+///
 /// The `FontFaceProtocol` protocol exposes the methods and properties of an underlying `PangoFontFace` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `FontFace`.
 /// Alternatively, use `FontFaceRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// A `PangoFontFace` is used to represent a group of fonts with
-/// the same family, slant, weight, and width, but varying sizes.
 public protocol FontFaceProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `PangoFontFace` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol FontFaceProtocol: GLibObject.ObjectProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// A `PangoFontFace` is used to represent a group of fonts with
+/// the same family, slant, weight, and width, but varying sizes.
+///
 /// The `FontFaceRef` type acts as a lightweight Swift reference to an underlying `PangoFontFace` instance.
 /// It exposes methods that can operate on this data type through `FontFaceProtocol` conformance.
 /// Use `FontFaceRef` only as an `unowned` reference to an existing `PangoFontFace` instance.
 ///
-/// A `PangoFontFace` is used to represent a group of fonts with
-/// the same family, slant, weight, and width, but varying sizes.
 public struct FontFaceRef: FontFaceProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFontFace` instance.
     /// For type-safe access, use the generated, typed pointer `font_face_ptr` property instead.
@@ -110,12 +112,13 @@ public extension FontFaceRef {
 
     }
 
+/// A `PangoFontFace` is used to represent a group of fonts with
+/// the same family, slant, weight, and width, but varying sizes.
+///
 /// The `FontFace` type acts as a reference-counted owner of an underlying `PangoFontFace` instance.
 /// It provides the methods that can operate on this data type through `FontFaceProtocol` conformance.
 /// Use `FontFace` as a strong reference or owner of a `PangoFontFace` instance.
 ///
-/// A `PangoFontFace` is used to represent a group of fonts with
-/// the same family, slant, weight, and width, but varying sizes.
 open class FontFace: GLibObject.Object, FontFaceProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -263,12 +266,14 @@ public enum FontFaceSignalName: String, SignalNameProtocol {
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
     /// `g_signal_connect()` call, like this:
+    /// 
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
+    /// 
     /// It is important to note that you must use
     /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.

@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - Analysis Record
 
+/// The `PangoAnalysis` structure stores information about
+/// the properties of a segment of text.
+///
 /// The `AnalysisProtocol` protocol exposes the methods and properties of an underlying `PangoAnalysis` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `Analysis`.
 /// Alternatively, use `AnalysisRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoAnalysis` structure stores information about
-/// the properties of a segment of text.
 public protocol AnalysisProtocol {
         /// Untyped pointer to the underlying `PangoAnalysis` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol AnalysisProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// The `PangoAnalysis` structure stores information about
+/// the properties of a segment of text.
+///
 /// The `AnalysisRef` type acts as a lightweight Swift reference to an underlying `PangoAnalysis` instance.
 /// It exposes methods that can operate on this data type through `AnalysisProtocol` conformance.
 /// Use `AnalysisRef` only as an `unowned` reference to an existing `PangoAnalysis` instance.
 ///
-/// The `PangoAnalysis` structure stores information about
-/// the properties of a segment of text.
 public struct AnalysisRef: AnalysisProtocol {
         /// Untyped pointer to the underlying `PangoAnalysis` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -107,12 +109,13 @@ public extension AnalysisRef {
 
     }
 
+/// The `PangoAnalysis` structure stores information about
+/// the properties of a segment of text.
+///
 /// The `Analysis` type acts as an owner of an underlying `PangoAnalysis` instance.
 /// It provides the methods that can operate on this data type through `AnalysisProtocol` conformance.
 /// Use `Analysis` as a strong reference or owner of a `PangoAnalysis` instance.
 ///
-/// The `PangoAnalysis` structure stores information about
-/// the properties of a segment of text.
 open class Analysis: AnalysisProtocol {
         /// Untyped pointer to the underlying `PangoAnalysis` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
@@ -267,25 +270,30 @@ public extension AnalysisProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoAnalysis` instance.
     @inlinable var _ptr: UnsafeMutablePointer<PangoAnalysis>! { return ptr?.assumingMemoryBound(to: PangoAnalysis.self) }
 
-    /// Determines possible line, word, and character breaks for a string of
-    /// Unicode text with a single analysis.
+    /// Determines possible line, word, and character breaks
+    /// for a string of Unicode text with a single analysis.
     /// 
-    /// For most purposes you may want to use `pango_get_log_attrs()`.
+    /// For most purposes you may want to use
+    /// [func`Pango.get_log_attrs`].
     ///
     /// **break is deprecated:**
-    /// Use pango_default_break() and pango_tailor_break()
-    @available(*, deprecated) @inlinable func break_(text: UnsafePointer<gchar>!, length: Int, attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
+    /// Use [func@Pango.default_break],
+    ///   [func@Pango.tailor_break] and func@Pango.attr_break].
+    @available(*, deprecated) @inlinable func break_(text: UnsafePointer<CChar>!, length: Int, attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
         pango_break(text, gint(length), _ptr, attrs, gint(attrsLen))
     
     }
 
     /// This is the default break algorithm.
     /// 
-    /// It applies Unicode rules without language-specific tailoring, therefore
-    /// the `analyis` argument is unused and can be `nil`.
+    /// It applies Unicode rules without language-specific
+    /// tailoring, therefore the `analyis` argument is unused
+    /// and can be `nil`.
     /// 
-    /// See `pango_tailor_break()` for language-specific breaks.
-    @inlinable func defaultBreak<LogAttrT: LogAttrProtocol>(text: UnsafePointer<gchar>!, length: Int, attrs: LogAttrT, attrsLen: Int) {
+    /// See [func`Pango.tailor_break`] for language-specific breaks.
+    /// 
+    /// See [func`Pango.attr_break`] for attribute-based customization.
+    @inlinable func defaultBreak<LogAttrT: LogAttrProtocol>(text: UnsafePointer<CChar>!, length: Int, attrs: LogAttrT, attrsLen: Int) {
         pango_default_break(text, gint(length), _ptr, attrs._ptr, gint(attrsLen))
     
     }
@@ -293,17 +301,17 @@ public extension AnalysisProtocol {
     /// Convert the characters in `text` into glyphs.
     /// 
     /// Given a segment of text and the corresponding `PangoAnalysis` structure
-    /// returned from [func`itemize`], convert the characters into glyphs. You
-    /// may also pass in only a substring of the item from [func`itemize`].
+    /// returned from [func`Pango.itemize`], convert the characters into glyphs. You
+    /// may also pass in only a substring of the item from [func`Pango.itemize`].
     /// 
-    /// It is recommended that you use [func`shape_full`] instead, since
+    /// It is recommended that you use [func`Pango.shape_full`] instead, since
     /// that API allows for shaping interaction happening across text item
     /// boundaries.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// [func`itemize`] have indices that are relative to the entire paragraph,
+    /// [func`Pango.itemize`] have indices that are relative to the entire paragraph,
     /// so you need to subtract the item offset from their indices before
-    /// calling [func`shape`].
+    /// calling [func`Pango.shape`].
     @inlinable func shape<GlyphStringT: GlyphStringProtocol>(text: UnsafePointer<CChar>!, length: Int, glyphs: GlyphStringT) {
         pango_shape(text, gint(length), _ptr, glyphs.glyph_string_ptr)
     
@@ -312,19 +320,20 @@ public extension AnalysisProtocol {
     /// Convert the characters in `text` into glyphs.
     /// 
     /// Given a segment of text and the corresponding `PangoAnalysis` structure
-    /// returned from [func`itemize`], convert the characters into glyphs. You may
-    /// also pass in only a substring of the item from [func`itemize`].
+    /// returned from [func`Pango.itemize`], convert the characters into glyphs.
+    /// You may also pass in only a substring of the item from [func`Pango.itemize`].
     /// 
-    /// This is similar to [func`shape`], except it also can optionally take
+    /// This is similar to [func`Pango.shape`], except it also can optionally take
     /// the full paragraph text as input, which will then be used to perform
     /// certain cross-item shaping interactions. If you have access to the broader
     /// text of which `item_text` is part of, provide the broader text as
     /// `paragraph_text`. If `paragraph_text` is `nil`, item text is used instead.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// [func`itemize`] have indices that are relative to the entire paragraph,
+    /// [func`Pango.itemize`] have indices that are relative to the entire paragraph,
     /// so you do not pass the full paragraph text as `paragraph_text`, you need
-    /// to subtract the item offset from their indices before calling [func`shape_full`].
+    /// to subtract the item offset from their indices before calling
+    /// [func`Pango.shape_full`].
     @inlinable func shapeFull<GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, glyphs: GlyphStringT) {
         pango_shape_full(itemText, gint(itemLength), paragraphText, gint(paragraphLength), _ptr, glyphs.glyph_string_ptr)
     
@@ -333,30 +342,35 @@ public extension AnalysisProtocol {
     /// Convert the characters in `text` into glyphs.
     /// 
     /// Given a segment of text and the corresponding `PangoAnalysis` structure
-    /// returned from [func`itemize`], convert the characters into glyphs. You may
-    /// also pass in only a substring of the item from [func`itemize`].
+    /// returned from [func`Pango.itemize`], convert the characters into glyphs.
+    /// You may also pass in only a substring of the item from [func`Pango.itemize`].
     /// 
-    /// This is similar to [func`shape_full`], except it also takes flags that can
-    /// influence the shaping process.
+    /// This is similar to [func`Pango.shape_full`], except it also takes flags
+    /// that can influence the shaping process.
     /// 
     /// Note that the extra attributes in the `analyis` that is returned from
-    /// [func`itemize`] have indices that are relative to the entire paragraph,
+    /// [func`Pango.itemize`] have indices that are relative to the entire paragraph,
     /// so you do not pass the full paragraph text as `paragraph_text`, you need
     /// to subtract the item offset from their indices before calling
-    /// [func`shape_with_flags`].
+    /// [func`Pango.shape_with_flags`].
     @inlinable func shapeWithFlags<GlyphStringT: GlyphStringProtocol>(itemText: UnsafePointer<CChar>!, itemLength: Int, paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, glyphs: GlyphStringT, flags: ShapeFlags) {
         pango_shape_with_flags(itemText, gint(itemLength), paragraphText, gint(paragraphLength), _ptr, glyphs.glyph_string_ptr, flags.value)
     
     }
 
-    /// Apply language-specific tailoring to the breaks in `log_attrs`.
+    /// Apply language-specific tailoring to the breaks in `attrs`.
     /// 
-    /// The line breaks are assumed to have been produced by [func`default_break`].
+    /// The line breaks are assumed to have been produced
+    /// by [func`Pango.default_break`].
     /// 
     /// If `offset` is not -1, it is used to apply attributes
     /// from `analysis` that are relevant to line breaking.
-    @inlinable func tailorBreak(text: UnsafePointer<CChar>!, length: Int, offset: Int, logAttrs: UnsafeMutablePointer<PangoLogAttr>!, logAttrsLen: Int) {
-        pango_tailor_break(text, gint(length), _ptr, gint(offset), logAttrs, gint(logAttrsLen))
+    /// 
+    /// Note that it is better to pass -1 for `offset` and
+    /// use [func`Pango.attr_break`] to apply attributes to
+    /// the whole paragraph.
+    @inlinable func tailorBreak(text: UnsafePointer<CChar>!, length: Int, offset: Int, attrs: UnsafeMutablePointer<PangoLogAttr>!, attrsLen: Int) {
+        pango_tailor_break(text, gint(length), _ptr, gint(offset), attrs, gint(attrsLen))
     
     }
 

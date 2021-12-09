@@ -3,6 +3,11 @@ import CPango
 import GLib
 import GLibObject
 
+import CGLib
+import CPango
+import GLib
+import GLibObject
+
 
 extension gboolean {
     private init(_ b: Bool) { self = b ? gboolean(1) : gboolean(0) }

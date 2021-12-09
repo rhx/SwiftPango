@@ -5,15 +5,16 @@ import GLibObject
 
 // MARK: - Item Record
 
+/// The `PangoItem` structure stores information about a segment of text.
+/// 
+/// You typically obtain `PangoItems` by itemizing a piece of text
+/// with [func`itemize`].
+///
 /// The `ItemProtocol` protocol exposes the methods and properties of an underlying `PangoItem` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `Item`.
 /// Alternatively, use `ItemRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// The `PangoItem` structure stores information about a segment of text.
-/// 
-/// You typically obtain `PangoItems` by itemizing a piece of text
-/// with [func`itemize`].
 public protocol ItemProtocol {
         /// Untyped pointer to the underlying `PangoItem` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -25,14 +26,15 @@ public protocol ItemProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `ItemRef` type acts as a lightweight Swift reference to an underlying `PangoItem` instance.
-/// It exposes methods that can operate on this data type through `ItemProtocol` conformance.
-/// Use `ItemRef` only as an `unowned` reference to an existing `PangoItem` instance.
-///
 /// The `PangoItem` structure stores information about a segment of text.
 /// 
 /// You typically obtain `PangoItems` by itemizing a piece of text
 /// with [func`itemize`].
+///
+/// The `ItemRef` type acts as a lightweight Swift reference to an underlying `PangoItem` instance.
+/// It exposes methods that can operate on this data type through `ItemProtocol` conformance.
+/// Use `ItemRef` only as an `unowned` reference to an existing `PangoItem` instance.
+///
 public struct ItemRef: ItemProtocol {
         /// Untyped pointer to the underlying `PangoItem` instance.
     /// For type-safe access, use the generated, typed pointer `item_ptr` property instead.
@@ -116,14 +118,15 @@ public extension ItemRef {
     }
 }
 
-/// The `Item` type acts as an owner of an underlying `PangoItem` instance.
-/// It provides the methods that can operate on this data type through `ItemProtocol` conformance.
-/// Use `Item` as a strong reference or owner of a `PangoItem` instance.
-///
 /// The `PangoItem` structure stores information about a segment of text.
 /// 
 /// You typically obtain `PangoItems` by itemizing a piece of text
 /// with [func`itemize`].
+///
+/// The `Item` type acts as an owner of an underlying `PangoItem` instance.
+/// It provides the methods that can operate on this data type through `ItemProtocol` conformance.
+/// Use `Item` as a strong reference or owner of a `PangoItem` instance.
+///
 open class Item: ItemProtocol {
         /// Untyped pointer to the underlying `PangoItem` instance.
     /// For type-safe access, use the generated, typed pointer `item_ptr` property instead.
@@ -326,6 +329,39 @@ public extension ItemProtocol {
     @inlinable func split(splitIndex: Int, splitOffset: Int) -> ItemRef! {
         guard let rv = ItemRef(gconstpointer: gconstpointer(pango_item_split(item_ptr, gint(splitIndex), gint(splitOffset)))) else { return nil }
         return rv
+    }
+
+    /// Convert the characters in `item` into glyphs.
+    /// 
+    /// This is similar to [func`Pango.shape_with_flags`], except it takes a
+    /// `PangoItem` instead of separate `item_text` and `analysis` arguments.
+    /// It also takes `log_attrs`, which may be used in implementing text
+    /// transforms.
+    /// 
+    /// Note that the extra attributes in the `analyis` that is returned from
+    /// [func`Pango.itemize`] have indices that are relative to the entire paragraph,
+    /// so you do not pass the full paragraph text as `paragraph_text`, you need
+    /// to subtract the item offset from their indices before calling
+    /// [func`Pango.shape_with_flags`].
+    @inlinable func shapeItem<GlyphStringT: GlyphStringProtocol>(paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, logAttrs: LogAttrRef? = nil, glyphs: GlyphStringT, flags: ShapeFlags) {
+        pango_shape_item(item_ptr, paragraphText, gint(paragraphLength), logAttrs?._ptr, glyphs.glyph_string_ptr, flags.value)
+    
+    }
+    /// Convert the characters in `item` into glyphs.
+    /// 
+    /// This is similar to [func`Pango.shape_with_flags`], except it takes a
+    /// `PangoItem` instead of separate `item_text` and `analysis` arguments.
+    /// It also takes `log_attrs`, which may be used in implementing text
+    /// transforms.
+    /// 
+    /// Note that the extra attributes in the `analyis` that is returned from
+    /// [func`Pango.itemize`] have indices that are relative to the entire paragraph,
+    /// so you do not pass the full paragraph text as `paragraph_text`, you need
+    /// to subtract the item offset from their indices before calling
+    /// [func`Pango.shape_with_flags`].
+    @inlinable func shapeItem<GlyphStringT: GlyphStringProtocol, LogAttrT: LogAttrProtocol>(paragraphText: UnsafePointer<CChar>? = nil, paragraphLength: Int, logAttrs: LogAttrT?, glyphs: GlyphStringT, flags: ShapeFlags) {
+        pango_shape_item(item_ptr, paragraphText, gint(paragraphLength), logAttrs?._ptr, glyphs.glyph_string_ptr, flags.value)
+    
     }
 
     /// byte offset of the start of this item in text.

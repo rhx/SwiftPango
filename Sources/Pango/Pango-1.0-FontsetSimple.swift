@@ -5,16 +5,17 @@ import GLibObject
 
 // MARK: - FontsetSimple Class
 
-/// The `FontsetSimpleProtocol` protocol exposes the methods and properties of an underlying `PangoFontsetSimple` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `FontsetSimple`.
-/// Alternatively, use `FontsetSimpleRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
 /// `PangoFontsetSimple` is a implementation of the abstract
 /// `PangoFontset` base class as an array of fonts.
 /// 
 /// When creating a `PangoFontsetSimple`, you have to provide
 /// the array of fonts that make up the fontset.
+///
+/// The `FontsetSimpleProtocol` protocol exposes the methods and properties of an underlying `PangoFontsetSimple` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `FontsetSimple`.
+/// Alternatively, use `FontsetSimpleRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
 public protocol FontsetSimpleProtocol: FontsetProtocol {
         /// Untyped pointer to the underlying `PangoFontsetSimple` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -26,15 +27,16 @@ public protocol FontsetSimpleProtocol: FontsetProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
-/// The `FontsetSimpleRef` type acts as a lightweight Swift reference to an underlying `PangoFontsetSimple` instance.
-/// It exposes methods that can operate on this data type through `FontsetSimpleProtocol` conformance.
-/// Use `FontsetSimpleRef` only as an `unowned` reference to an existing `PangoFontsetSimple` instance.
-///
 /// `PangoFontsetSimple` is a implementation of the abstract
 /// `PangoFontset` base class as an array of fonts.
 /// 
 /// When creating a `PangoFontsetSimple`, you have to provide
 /// the array of fonts that make up the fontset.
+///
+/// The `FontsetSimpleRef` type acts as a lightweight Swift reference to an underlying `PangoFontsetSimple` instance.
+/// It exposes methods that can operate on this data type through `FontsetSimpleProtocol` conformance.
+/// Use `FontsetSimpleRef` only as an `unowned` reference to an existing `PangoFontsetSimple` instance.
+///
 public struct FontsetSimpleRef: FontsetSimpleProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `PangoFontsetSimple` instance.
     /// For type-safe access, use the generated, typed pointer `fontset_simple_ptr` property instead.
@@ -121,15 +123,16 @@ public extension FontsetSimpleRef {
     }
 }
 
-/// The `FontsetSimple` type acts as a reference-counted owner of an underlying `PangoFontsetSimple` instance.
-/// It provides the methods that can operate on this data type through `FontsetSimpleProtocol` conformance.
-/// Use `FontsetSimple` as a strong reference or owner of a `PangoFontsetSimple` instance.
-///
 /// `PangoFontsetSimple` is a implementation of the abstract
 /// `PangoFontset` base class as an array of fonts.
 /// 
 /// When creating a `PangoFontsetSimple`, you have to provide
 /// the array of fonts that make up the fontset.
+///
+/// The `FontsetSimple` type acts as a reference-counted owner of an underlying `PangoFontsetSimple` instance.
+/// It provides the methods that can operate on this data type through `FontsetSimpleProtocol` conformance.
+/// Use `FontsetSimple` as a strong reference or owner of a `PangoFontsetSimple` instance.
+///
 open class FontsetSimple: Fontset, FontsetSimpleProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
@@ -283,12 +286,14 @@ public enum FontsetSimpleSignalName: String, SignalNameProtocol {
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
     /// `g_signal_connect()` call, like this:
+    /// 
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
+    /// 
     /// It is important to note that you must use
     /// [canonical parameter names](#canonical-parameter-names) as
     /// detail strings for the notify signal.
@@ -303,6 +308,8 @@ public extension FontsetSimpleProtocol {
     @inlinable var fontset_simple_ptr: UnsafeMutablePointer<PangoFontsetSimple>! { return ptr?.assumingMemoryBound(to: PangoFontsetSimple.self) }
 
     /// Adds a font to the fontset.
+    /// 
+    /// The fontset takes ownership of `font`.
     @inlinable func append<FontT: FontProtocol>(font: FontT) {
         pango_fontset_simple_append(fontset_simple_ptr, font.font_ptr)
     

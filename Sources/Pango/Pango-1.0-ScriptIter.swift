@@ -5,13 +5,14 @@ import GLibObject
 
 // MARK: - ScriptIter Record
 
+/// A `PangoScriptIter` is used to iterate through a string
+/// and identify ranges in different scripts.
+///
 /// The `ScriptIterProtocol` protocol exposes the methods and properties of an underlying `PangoScriptIter` instance.
 /// The default implementation of these can be found in the protocol extension below.
 /// For a concrete class that implements these methods and properties, see `ScriptIter`.
 /// Alternatively, use `ScriptIterRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
 ///
-/// A `PangoScriptIter` is used to iterate through a string
-/// and identify ranges in different scripts.
 public protocol ScriptIterProtocol {
         /// Untyped pointer to the underlying `PangoScriptIter` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -23,12 +24,13 @@ public protocol ScriptIterProtocol {
     init(raw: UnsafeMutableRawPointer)
 }
 
+/// A `PangoScriptIter` is used to iterate through a string
+/// and identify ranges in different scripts.
+///
 /// The `ScriptIterRef` type acts as a lightweight Swift reference to an underlying `PangoScriptIter` instance.
 /// It exposes methods that can operate on this data type through `ScriptIterProtocol` conformance.
 /// Use `ScriptIterRef` only as an `unowned` reference to an existing `PangoScriptIter` instance.
 ///
-/// A `PangoScriptIter` is used to iterate through a string
-/// and identify ranges in different scripts.
 public struct ScriptIterRef: ScriptIterProtocol {
         /// Untyped pointer to the underlying `PangoScriptIter` instance.
     /// For type-safe access, use the generated, typed pointer `script_iter_ptr` property instead.
@@ -106,21 +108,24 @@ public extension ScriptIterRef {
     }
 
         /// Create a new `PangoScriptIter`, used to break a string of
-    /// Unicode text into runs by Unicode script. No copy is made of
-    /// `text`, so the caller needs to make sure it remains valid until
-    /// the iterator is freed with `pango_script_iter_free()`.
+    /// Unicode text into runs by Unicode script.
+    /// 
+    /// No copy is made of `text`, so the caller needs to make
+    /// sure it remains valid until the iterator is freed with
+    /// [method`Pango.ScriptIter.free`].
     @inlinable init( text: UnsafePointer<CChar>!, length: Int) {
         let rv = pango_script_iter_new(text, gint(length))
         ptr = UnsafeMutableRawPointer(rv)
     }
 }
 
+/// A `PangoScriptIter` is used to iterate through a string
+/// and identify ranges in different scripts.
+///
 /// The `ScriptIter` type acts as an owner of an underlying `PangoScriptIter` instance.
 /// It provides the methods that can operate on this data type through `ScriptIterProtocol` conformance.
 /// Use `ScriptIter` as a strong reference or owner of a `PangoScriptIter` instance.
 ///
-/// A `PangoScriptIter` is used to iterate through a string
-/// and identify ranges in different scripts.
 open class ScriptIter: ScriptIterProtocol {
         /// Untyped pointer to the underlying `PangoScriptIter` instance.
     /// For type-safe access, use the generated, typed pointer `script_iter_ptr` property instead.
@@ -262,9 +267,11 @@ open class ScriptIter: ScriptIterProtocol {
     }
 
     /// Create a new `PangoScriptIter`, used to break a string of
-    /// Unicode text into runs by Unicode script. No copy is made of
-    /// `text`, so the caller needs to make sure it remains valid until
-    /// the iterator is freed with `pango_script_iter_free()`.
+    /// Unicode text into runs by Unicode script.
+    /// 
+    /// No copy is made of `text`, so the caller needs to make
+    /// sure it remains valid until the iterator is freed with
+    /// [method`Pango.ScriptIter.free`].
     @inlinable public init( text: UnsafePointer<CChar>!, length: Int) {
         let rv = pango_script_iter_new(text, gint(length))
         ptr = UnsafeMutableRawPointer(rv)
@@ -283,7 +290,7 @@ public extension ScriptIterProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `PangoScriptIter` instance.
     @inlinable var script_iter_ptr: UnsafeMutablePointer<PangoScriptIter>! { return ptr?.assumingMemoryBound(to: PangoScriptIter.self) }
 
-    /// Frees a `PangoScriptIter` created with `pango_script_iter_new()`.
+    /// Frees a `PangoScriptIter`.
     @inlinable func free() {
         pango_script_iter_free(script_iter_ptr)
     
@@ -294,7 +301,7 @@ public extension ScriptIterProtocol {
     /// (That is, it doesn't include the character stored at *end)
     /// 
     /// Note that while the type of the `script` argument is declared
-    /// as PangoScript, as of Pango 1.18, this function simply returns
+    /// as `PangoScript`, as of Pango 1.18, this function simply returns
     /// GUnicodeScript values. Callers must be prepared to handle unknown
     /// values.
     @inlinable func getRange(start: UnsafeMutablePointer<UnsafePointer<CChar>?>! = nil, end: UnsafeMutablePointer<UnsafePointer<CChar>?>! = nil, script: UnsafeMutablePointer<PangoScript>! = nil) {
@@ -302,9 +309,10 @@ public extension ScriptIterProtocol {
     
     }
 
-    /// Advances a `PangoScriptIter` to the next range. If `iter`
-    /// is already at the end, it is left unchanged and `false`
-    /// is returned.
+    /// Advances a `PangoScriptIter` to the next range.
+    /// 
+    /// If `iter` is already at the end, it is left unchanged
+    /// and `false` is returned.
     @inlinable func next() -> Bool {
         let rv = ((pango_script_iter_next(script_iter_ptr)) != 0)
         return rv
