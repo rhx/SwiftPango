@@ -1,0 +1,334 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-Context.swift",
+      "line": 302,
+      "symbol": "ContextSignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-ContextClass.swift",
+      "line": 14,
+      "symbol": "ContextClassRef.metatype",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-ContextClass.swift",
+      "line": 16,
+      "symbol": "ContextClassRef.wrapper",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-Coverage.swift",
+      "line": 301,
+      "symbol": "CoverageSignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-Font.swift",
+      "line": 282,
+      "symbol": "FontSignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-Font.swift",
+      "line": 553,
+      "symbol": "FontProtocol.parentInstance",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontClass.swift",
+      "line": 14,
+      "symbol": "FontClassRef.metatype",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontClass.swift",
+      "line": 16,
+      "symbol": "FontClassRef.wrapper",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontClass.swift",
+      "line": 131,
+      "symbol": "FontClassProtocol.parentClass",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontFace.swift",
+      "line": 253,
+      "symbol": "FontFaceSignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontFace.swift",
+      "line": 357,
+      "symbol": "FontFaceProtocol.parentInstance",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontFaceClass.swift",
+      "line": 14,
+      "symbol": "FontFaceClassRef.metatype",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontFaceClass.swift",
+      "line": 16,
+      "symbol": "FontFaceClassRef.wrapper",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontFaceClass.swift",
+      "line": 131,
+      "symbol": "FontFaceClassProtocol.parentClass",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontFamily.swift",
+      "line": 262,
+      "symbol": "FontFamilySignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontFamily.swift",
+      "line": 386,
+      "symbol": "FontFamilyProtocol.parentInstance",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontFamilyClass.swift",
+      "line": 14,
+      "symbol": "FontFamilyClassRef.metatype",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontFamilyClass.swift",
+      "line": 16,
+      "symbol": "FontFamilyClassRef.wrapper",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontFamilyClass.swift",
+      "line": 131,
+      "symbol": "FontFamilyClassProtocol.parentClass",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontMap.swift",
+      "line": 262,
+      "symbol": "FontMapSignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontMap.swift",
+      "line": 397,
+      "symbol": "FontMapProtocol.parentInstance",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontMapClass.swift",
+      "line": 14,
+      "symbol": "FontMapClassRef.metatype",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontMapClass.swift",
+      "line": 16,
+      "symbol": "FontMapClassRef.wrapper",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-Fontset.swift",
+      "line": 265,
+      "symbol": "FontsetSignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-Fontset.swift",
+      "line": 332,
+      "symbol": "FontsetProtocol.parentInstance",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontsetClass.swift",
+      "line": 14,
+      "symbol": "FontsetClassRef.metatype",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontsetClass.swift",
+      "line": 16,
+      "symbol": "FontsetClassRef.wrapper",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontsetSimple.swift",
+      "line": 273,
+      "symbol": "FontsetSimpleSignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontsetSimpleClass.swift",
+      "line": 14,
+      "symbol": "FontsetSimpleClassRef.metatype",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-FontsetSimpleClass.swift",
+      "line": 16,
+      "symbol": "FontsetSimpleClassRef.wrapper",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-GlyphItemIter.swift",
+      "line": 432,
+      "symbol": "GlyphItemIterProtocol.glyphItem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-GlyphItemIter.swift",
+      "line": 442,
+      "symbol": "GlyphItemIterProtocol.text",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-GlyphItemIter.swift",
+      "line": 452,
+      "symbol": "GlyphItemIterProtocol.startGlyph",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-GlyphItemIter.swift",
+      "line": 462,
+      "symbol": "GlyphItemIterProtocol.startIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-GlyphItemIter.swift",
+      "line": 472,
+      "symbol": "GlyphItemIterProtocol.startChar",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-GlyphItemIter.swift",
+      "line": 482,
+      "symbol": "GlyphItemIterProtocol.endGlyph",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-GlyphItemIter.swift",
+      "line": 492,
+      "symbol": "GlyphItemIterProtocol.endIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-GlyphItemIter.swift",
+      "line": 502,
+      "symbol": "GlyphItemIterProtocol.endChar",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-Layout.swift",
+      "line": 403,
+      "symbol": "LayoutSignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-LayoutClass.swift",
+      "line": 14,
+      "symbol": "LayoutClassRef.metatype",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-LayoutClass.swift",
+      "line": 16,
+      "symbol": "LayoutClassRef.wrapper",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-LogAttr.swift",
+      "line": 599,
+      "symbol": "LogAttrProtocol.reserved",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-Renderer.swift",
+      "line": 265,
+      "symbol": "RendererSignalName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-RendererClass.swift",
+      "line": 14,
+      "symbol": "RendererClassRef.metatype",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-RendererClass.swift",
+      "line": 16,
+      "symbol": "RendererClassRef.wrapper",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-enumerations.swift",
+      "line": 154,
+      "symbol": "AttrType.textTransform",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rh/Downloads/SwiftPango/Sources/Pango/Pango-1.0-functions.swift",
+      "line": 907,
+      "symbol": "layoutDeserializeErrorQuark()",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/rh/Downloads/SwiftPango"
+}
