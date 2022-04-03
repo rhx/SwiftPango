@@ -25,11 +25,3 @@ class PangoTests: XCTestCase {
     }
 
 }
-extension PangoTests {
-    static var allTests : [(String, (PangoTests) -> () throws -> Void)] {
-        return [
-            ("testPangoColor",      testPangoColor),
-            ("testPangoColorCopy",  testPangoColorCopy),
-        ]
-    }
-}

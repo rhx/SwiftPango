@@ -62,8 +62,6 @@ struct _PangoCairoFontMap {};
 #  ifdef __APPLE__
 #    include <pango/pangocoretext.h>
 #  endif
-#else
-struct hb_font_t {};
 #endif
 
 struct _PangoScriptForLang {
