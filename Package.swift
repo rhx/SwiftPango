@@ -22,6 +22,7 @@ let package = Package(
             name: "Pango", 
             dependencies: [
                 "CPango",
+                .product(name: "gir2swift", package: "gir2swift"),
                 .product(name: "GLibObject", package: "SwiftGObject"),
                 .product(name: "HarfBuzz", package: "SwiftHarfBuzz"),
             ],
