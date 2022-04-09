@@ -6,8 +6,9 @@ let package = Package(
     name: "Pango",
     products: [ .library(name: "Pango", targets: ["Pango"]) ],
     dependencies: [
-        .package(url: "https://github.com/rhx/gir2swift.git",    branch: "development"),
-        .package(url: "https://github.com/rhx/SwiftGObject.git", branch: "development")
+        .package(url: "https://github.com/rhx/gir2swift.git",     branch: "development"),
+        .package(url: "https://github.com/rhx/SwiftGObject.git",  branch: "development"),
+        .package(url: "https://github.com/rhx/SwiftHarfBuzz.git", branch: "development"),
     ],
     targets: [
         .systemLibrary(
@@ -17,24 +18,12 @@ let package = Package(
                 .brew(["pango", "glib", "glib-networking", "gobject-introspection"]),
                 .apt(["libpango1.0-dev", "libglib2.0-dev", "glib-networking", "gobject-introspection", "libgirepository1.0-dev"])
             ]),
-        .systemLibrary(
-            name: "CHarfBuzz",
-            pkgConfig: "harfbuzz-gobject",
-            providers: [
-                .brew(["harfbuzz", "glib", "glib-networking", "gobject-introspection"]),
-                .apt(["libharfbuzz-dev", "libglib2.0-dev", "glib-networking", "gobject-introspection", "libgirepository1.0-dev"])
-            ]),
-        .target(
-            name: "HarfBuzz",
-            dependencies: [
-                "CHarfBuzz",
-            ]),
         .target(
             name: "Pango", 
             dependencies: [
                 "CPango",
-                "HarfBuzz",
-                .product(name: "GLibObject", package: "SwiftGObject")
+                .product(name: "GLibObject", package: "SwiftGObject"),
+                .product(name: "HarfBuzz", package: "SwiftHarfBuzz"),
             ],
             swiftSettings: [.unsafeFlags(["-Xfrontend", "-serialize-debugging-options"], .when(configuration: .debug))],
             plugins: [
