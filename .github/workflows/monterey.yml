@@ -2,7 +2,7 @@ name: macOS 12
 
 # Dependencies of this package
 env:
-  MACOS_BREW: ${{ 'pango glib glib-networking gobject-introspection pkg-config jq' }}
+  MACOS_BREW: ${{ 'pango harfbuzz glib glib-networking gobject-introspection pkg-config jq' }}
 
 on:
   push:
