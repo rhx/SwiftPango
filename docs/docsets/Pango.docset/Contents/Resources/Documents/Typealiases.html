@@ -21,27 +21,27 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          Pango 1.50.0 Docs
+          Pango 1.50.6 Docs
         </a>
          (98% documented)
       </p>
     
-      <p class="header-col--secondary">
+      <div class="header-col--secondary">
         <form role="search" action="search.json">
           <input type="text" placeholder="Search documentation" data-typeahead>
         </form>
-      </p>
+      </div>
     
         <p class="header-col header-col--secondary">
           <a class="header-link" href="https://github.com/rhx/SwiftPango">
-            <img class="header-icon" src="img/gh.png"/>
+            <img class="header-icon" src="img/gh.png" alt="GitHub"/>
             View on GitHub
           </a>
         </p>
     
         <p class="header-col header-col--secondary">
           <a class="header-link" href="dash-feed://http%3A%2F%2Frhx.github.io%2FSwiftPango%2Fdocsets%2FPango.xml">
-            <img class="header-icon" src="img/dash.png"/>
+            <img class="header-icon" src="img/dash.png" alt="Dash"/>
             Install in Dash
           </a>
         </p>
@@ -49,7 +49,7 @@
 
     <p class="breadcrumbs">
       <a class="breadcrumb" href="index.html">Pango Reference</a>
-      <img class="carat" src="img/carat.png" />
+      <img class="carat" src="img/carat.png" alt=""/>
       Type Aliases  Reference
     </p>
 
@@ -530,12 +530,6 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF">languageFromString(language:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:5Pango18languageGetDefaultAA11LanguageRefVSgyF">languageGetDefault()</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango20languageGetPreferredSpySpySo01_A8LanguageVGSgGSgyF">languageGetPreferred()</a>
               </li>
               <li class="nav-group-task">
@@ -597,12 +591,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango5shape4item13paragraphText0D6Length8logAttrs6glyphs5flagsyq__SPys4Int8VGSgSiq0_SgxAA10ShapeFlagsVtAA19GlyphStringProtocolRzAA04ItemP0R_AA07LogAttrP0R0_r1_lF">shape(item:paragraphText:paragraphLength:logAttrs:glyphs:flags:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:5Pango5shape4text6length8analysis6glyphsySPys4Int8VGSg_Sixq_tAA16AnalysisProtocolRzAA011GlyphStringI0R_r0_lF">shape(text:length:analysis:glyphs:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:5Pango9shapeFull8itemText0D6Length09paragraphE00gF08analysis6glyphsySPys4Int8VGSg_SiALSixq_tAA16AnalysisProtocolRzAA011GlyphStringL0R_r0_lF">shapeFull(itemText:itemLength:paragraphText:paragraphLength:analysis:glyphs:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango14shapeWithFlags8itemText0E6Length09paragraphF00hG08analysis6glyphs5flagsySPys4Int8VGSg_SiAMSixq_AA05ShapeD0VtAA16AnalysisProtocolRzAA011GlyphStringO0R_r0_lF">shapeWithFlags(itemText:itemLength:paragraphText:paragraphLength:analysis:glyphs:flags:)</a>
@@ -1103,7 +1091,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-aliases.swift#L7">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-aliases.swift#L8">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1124,12 +1112,14 @@
                         <p>The <code>PangoGlyphUnit</code> type is used to store dimensions within
 Pango.</p>
 
-<p>Dimensions are stored in 1/<code>PANGO_SCALE</code> of a device unit.
+<p>Dimensions are stored in 1/PANGO_SCALE of a device unit.
 (A device unit might be a pixel for screen display, or
-a point on a printer.) <code>PANGO_SCALE</code> is currently 1024, and
+a point on a printer.) PANGO_SCALE is currently 1024, and
 may change in the future (unlikely though), but you should not
-depend on its exact value. The <code>PANGO_PIXELS()</code> macro can be used
-to convert from glyph units into device units with correct rounding.</p>
+depend on its exact value.</p>
+
+<p>The <code>PANGO_PIXELS()</code> macro can be used to convert from glyph units
+into device units with correct rounding.</p>
 
                       </div>
                       <div class="declaration">
@@ -1141,7 +1131,7 @@ to convert from glyph units into device units with correct rounding.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-aliases.swift#L19">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-aliases.swift#L22">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1174,7 +1164,7 @@ See the [struct<code>Pango.GlyphItem</code>] docs for details on the fields.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-aliases.swift#L26">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-aliases.swift#L29">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1204,7 +1194,7 @@ See the [struct<code>Pango.GlyphItem</code>] docs for details on the fields.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-callbacks.swift#L7">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-callbacks.swift#L8">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1234,7 +1224,7 @@ See the [struct<code>Pango.GlyphItem</code>] docs for details on the fields.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-callbacks.swift#L11">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-callbacks.swift#L12">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1252,8 +1242,9 @@ See the [struct<code>Pango.GlyphItem</code>] docs for details on the fields.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Callback used by <code>pango_fontset_foreach()</code> when enumerating
-fonts in a fontset.</p>
+                        <p>Callback used when enumerating fonts in a fontset.</p>
+
+<p>See [method<code>Pango.Fontset.foreach</code>].</p>
 
                       </div>
                       <div class="declaration">
@@ -1265,7 +1256,7 @@ fonts in a fontset.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-callbacks.swift#L16">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-callbacks.swift#L18">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1287,10 +1278,10 @@ fonts in a fontset.</p>
 within the available space.</p>
 
 <p>If the <code>PangoLayout</code> is set to justify using [method<code>Pango.Layout.set_justify</code>],
-this only has effect for partial lines.</p>
+this only affects partial lines.</p>
 
 <p>See [method<code>Pango.Layout.set_auto_dir</code>] for how text direction affects
-the interpretation of `PangoAlignment values.</p>
+the interpretation of <code>PangoAlignment</code> values.</p>
 
                       </div>
                       <div class="declaration">
@@ -1302,7 +1293,7 @@ the interpretation of `PangoAlignment values.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L14">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1337,7 +1328,7 @@ listed in parentheses after the description.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L44">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L45">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1367,7 +1358,7 @@ listed in parentheses after the description.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L173">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L174">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1404,7 +1395,7 @@ Use fribidi for this information</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L207">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L208">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1438,7 +1429,7 @@ will be returned.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L296">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L297">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1468,7 +1459,7 @@ doesn&rsquo;t make sense to pass to [func<code>itemize_with_base_dir</code>].</p
 
 <p>The <code>PANGO_DIRECTION_TTB_LTR</code>, <code>PANGO_DIRECTION_TTB_RTL</code> values come from
 an earlier interpretation of this enumeration as the writing direction
-of a block of text and are no longer used; See <code>PangoGravity</code> for how
+of a block of text and are no longer used. See <code>PangoGravity</code> for how
 vertical text is handled in Pango.</p>
 
 <p>If you are interested in text direction, you should really use fribidi
@@ -1485,7 +1476,7 @@ public apis.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L349">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L350">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1520,7 +1511,7 @@ with an ellipsis.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L393">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L394">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1551,7 +1542,7 @@ and subscript positioning and for (emulated) Small Caps.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L422">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L423">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1593,7 +1584,7 @@ glyph orientation is controlled using <code>PangoGravity</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L462">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L463">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1628,7 +1619,7 @@ vertical context.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L498">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L499">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1658,7 +1649,7 @@ vertical context.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L528">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L529">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1689,7 +1680,7 @@ should be overlined, and if so, the type of line.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L556">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L557">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1720,7 +1711,7 @@ purposes as setting colors.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L580">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L581">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1744,9 +1735,9 @@ systems.</p>
 <p>The values correspond to the names as defined in the Unicode standard. See
 <a href="http://www.unicode.org/reports/tr24/">Unicode Standard Annex 24: Script names</a></p>
 
-<p>Note that this enumeration is deprecated and will not be updated
-to include values in newer versions of the Unicode standard.
-Applications should use the <code>GUnicodeScript</code> enumeration instead,
+<p>Note that this enumeration is deprecated and will not be updated to include values
+in newer versions of the Unicode standard. Applications should use the
+[enum<code>GLib.UnicodeScript</code>] enumeration instead,
 whose values are interchangeable with <code>PangoScript</code>.</p>
 
                       </div>
@@ -1759,7 +1750,7 @@ whose values are interchangeable with <code>PangoScript</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L620">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L621">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1790,7 +1781,7 @@ within a family.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L992">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L993">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1820,7 +1811,7 @@ within a family.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L1035">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L1036">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1841,9 +1832,6 @@ within a family.</p>
                         <p><code>PangoTabAlign</code> specifies where the text appears relative to the tab stop
 position.</p>
 
-<p>Support for tab alignments other than <code>PANGO_TAB_LEFT</code> was added
-in Pango 1.50.</p>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -1854,7 +1842,7 @@ in Pango 1.50.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L1064">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L1062">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1884,7 +1872,7 @@ in Pango 1.50.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L1096">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L1094">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1915,7 +1903,7 @@ should be underlined, and if so, the type of underlining.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L1126">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L1124">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1945,7 +1933,7 @@ should be underlined, and if so, the type of underlining.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L1184">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L1182">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1965,8 +1953,8 @@ should be underlined, and if so, the type of underlining.</p>
                       <div class="abstract">
                         <p>An enumeration specifying the weight (boldness) of a font.</p>
 
-<p>This is a numerical value ranging from 100 to 1000, but there
-are some predefined values.</p>
+<p>Weight is specified as a numeric value ranging from 100 to 1000.
+This enumeration simply provides some common, predefined values.</p>
 
                       </div>
                       <div class="declaration">
@@ -1978,7 +1966,7 @@ are some predefined values.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L1237">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L1230">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2014,7 +2002,7 @@ segmentation algorithm.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-enumerations.swift#L1295">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-enumerations.swift#L1288">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2027,9 +2015,8 @@ segmentation algorithm.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-12-10)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2022 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external noopener">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2022-04-26)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
-</div>
 </html>

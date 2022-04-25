@@ -21,27 +21,27 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          Pango 1.50.0 Docs
+          Pango 1.50.6 Docs
         </a>
          (98% documented)
       </p>
     
-      <p class="header-col--secondary">
+      <div class="header-col--secondary">
         <form role="search" action="search.json">
           <input type="text" placeholder="Search documentation" data-typeahead>
         </form>
-      </p>
+      </div>
     
         <p class="header-col header-col--secondary">
           <a class="header-link" href="https://github.com/rhx/SwiftPango">
-            <img class="header-icon" src="img/gh.png"/>
+            <img class="header-icon" src="img/gh.png" alt="GitHub"/>
             View on GitHub
           </a>
         </p>
     
         <p class="header-col header-col--secondary">
           <a class="header-link" href="dash-feed://http%3A%2F%2Frhx.github.io%2FSwiftPango%2Fdocsets%2FPango.xml">
-            <img class="header-icon" src="img/dash.png"/>
+            <img class="header-icon" src="img/dash.png" alt="Dash"/>
             Install in Dash
           </a>
         </p>
@@ -49,7 +49,7 @@
 
     <p class="breadcrumbs">
       <a class="breadcrumb" href="index.html">Pango Reference</a>
-      <img class="carat" src="img/carat.png" />
+      <img class="carat" src="img/carat.png" alt=""/>
       Functions  Reference
     </p>
 
@@ -530,12 +530,6 @@
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango18itemizeWithBaseDir7context04baseE04text10startIndex6length5attrs10cachedIter4GLib7ListRefVSgq__So0A9DirectionaSPys4Int8VGSgS2ixAA012AttrIteratorQ0VSgtAA0tP8ProtocolRzAA07ContextV0R_r0_lF">itemizeWithBaseDir(context:baseDir:text:startIndex:length:attrs:cachedIter:)</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF">languageFromString(language:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:5Pango18languageGetDefaultAA11LanguageRefVSgyF">languageGetDefault()</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango20languageGetPreferredSpySpySo01_A8LanguageVGSgGSgyF">languageGetPreferred()</a>
               </li>
               <li class="nav-group-task">
@@ -597,12 +591,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango5shape4item13paragraphText0D6Length8logAttrs6glyphs5flagsyq__SPys4Int8VGSgSiq0_SgxAA10ShapeFlagsVtAA19GlyphStringProtocolRzAA04ItemP0R_AA07LogAttrP0R0_r1_lF">shape(item:paragraphText:paragraphLength:logAttrs:glyphs:flags:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:5Pango5shape4text6length8analysis6glyphsySPys4Int8VGSg_Sixq_tAA16AnalysisProtocolRzAA011GlyphStringI0R_r0_lF">shape(text:length:analysis:glyphs:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:5Pango9shapeFull8itemText0D6Length09paragraphE00gF08analysis6glyphsySPys4Int8VGSg_SiALSixq_tAA16AnalysisProtocolRzAA011GlyphStringL0R_r0_lF">shapeFull(itemText:itemLength:paragraphText:paragraphLength:analysis:glyphs:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:5Pango14shapeWithFlags8itemText0E6Length09paragraphF00hG08analysis6glyphs5flagsySPys4Int8VGSg_SiAMSixq_AA05ShapeD0VtAA16AnalysisProtocolRzAA011GlyphStringO0R_r0_lF">shapeWithFlags(itemText:itemLength:paragraphText:paragraphLength:analysis:glyphs:flags:)</a>
@@ -1102,12 +1090,12 @@ single run, as far as possible.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrAllowBreaksNew</span><span class="p">(</span><span class="nv">allowBreaks</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrAllowBreaksNew</span><span class="p">(</span><span class="nv">allowBreaks</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L10-L13">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L11-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1133,12 +1121,12 @@ single run, as far as possible.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrBackgroundAlphaNew</span><span class="p">(</span><span class="nv">alpha</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrBackgroundAlphaNew</span><span class="p">(</span><span class="nv">alpha</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L19-L22">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L21-L25">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1164,12 +1152,12 @@ single run, as far as possible.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrBackgroundNew</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrBackgroundNew</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L28-L31">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L31-L35">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1203,12 +1191,12 @@ relative to the run of preceding run.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrBaselineShiftNew</span><span class="p">(</span><span class="nv">shift</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrBaselineShiftNew</span><span class="p">(</span><span class="nv">shift</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L45-L48">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L49-L53">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1242,7 +1230,7 @@ by [func<code>Pango.default_break</code>] and [func<code>Pango.tailor_break</cod
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L57-L60">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L62-L66">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1273,12 +1261,12 @@ that might contain the characters in the text.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrFallbackNew</span><span class="p">(</span><span class="nv">enableFallback</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrFallbackNew</span><span class="p">(</span><span class="nv">enableFallback</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L71-L74">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L77-L81">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1304,12 +1292,12 @@ that might contain the characters in the text.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrFamilyNew</span><span class="p">(</span><span class="nv">family</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrFamilyNew</span><span class="p">(</span><span class="nv">family</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L80-L83">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L87-L91">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1338,12 +1326,12 @@ stretch, and size simultaneously.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrFontDescNew</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">desc</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrFontDescNew</span><span class="o">&lt;</span><span class="kt">FontDescriptionT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">desc</span><span class="p">:</span> <span class="kt">FontDescriptionT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">FontDescriptionT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/FontDescriptionProtocol.html">FontDescriptionProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L92-L95">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L100-L104">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1372,12 +1360,12 @@ alternative glyphs, ligatures, etc. for fonts that support them.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrFontFeaturesNew</span><span class="p">(</span><span class="nv">features</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrFontFeaturesNew</span><span class="p">(</span><span class="nv">features</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L104-L107">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L113-L117">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1406,12 +1394,12 @@ relative to the size of preceding run.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrFontScaleNew</span><span class="p">(</span><span class="nv">scale</span><span class="p">:</span> <span class="kt">PangoFontScale</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrFontScaleNew</span><span class="p">(</span><span class="nv">scale</span><span class="p">:</span> <span class="kt">PangoFontScale</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L116-L119">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L126-L130">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1437,12 +1425,12 @@ relative to the size of preceding run.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrForegroundAlphaNew</span><span class="p">(</span><span class="nv">alpha</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrForegroundAlphaNew</span><span class="p">(</span><span class="nv">alpha</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L125-L128">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L136-L140">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1468,12 +1456,12 @@ relative to the size of preceding run.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrForegroundNew</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrForegroundNew</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L134-L137">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L146-L150">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1499,12 +1487,12 @@ relative to the size of preceding run.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrGravityHintNew</span><span class="p">(</span><span class="nv">hint</span><span class="p">:</span> <span class="kt">PangoGravityHint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrGravityHintNew</span><span class="p">(</span><span class="nv">hint</span><span class="p">:</span> <span class="kt">PangoGravityHint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L143-L146">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L156-L160">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1530,12 +1518,12 @@ relative to the size of preceding run.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrGravityNew</span><span class="p">(</span><span class="nv">gravity</span><span class="p">:</span> <span class="kt">PangoGravity</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrGravityNew</span><span class="p">(</span><span class="nv">gravity</span><span class="p">:</span> <span class="kt">PangoGravity</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L152-L155">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L166-L170">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1565,12 +1553,12 @@ to suppress the hyphen.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrInsertHyphensNew</span><span class="p">(</span><span class="nv">insertHyphens</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrInsertHyphensNew</span><span class="p">(</span><span class="nv">insertHyphens</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L165-L168">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L180-L184">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1596,12 +1584,12 @@ to suppress the hyphen.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrLanguageNew</span><span class="o">&lt;</span><span class="kt">LanguageT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="kt">LanguageT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">LanguageT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/LanguageProtocol.html">LanguageProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrLanguageNew</span><span class="o">&lt;</span><span class="kt">LanguageT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="kt">LanguageT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">LanguageT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/LanguageProtocol.html">LanguageProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L174-L177">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L190-L194">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1627,12 +1615,12 @@ to suppress the hyphen.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrLetterSpacingNew</span><span class="p">(</span><span class="nv">letterSpacing</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrLetterSpacingNew</span><span class="p">(</span><span class="nv">letterSpacing</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L183-L186">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L200-L204">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1663,12 +1651,12 @@ to suppress the hyphen.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrLineHeightNew</span><span class="p">(</span><span class="nv">factor</span><span class="p">:</span> <span class="kt">CDouble</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrLineHeightNew</span><span class="p">(</span><span class="nv">factor</span><span class="p">:</span> <span class="kt">CDouble</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L197-L200">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L215-L219">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1699,12 +1687,12 @@ to suppress the hyphen.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrLineHeightNewAbsolute</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrLineHeightNewAbsolute</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L211-L214">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L230-L234">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1733,12 +1721,12 @@ See that functions for details about the format.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrListFromString</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttrListRef.html">AttrListRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrListFromString</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttrListRef.html">AttrListRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L223-L226">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L243-L247">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1767,12 +1755,12 @@ If not set, overlines will use the foreground color.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrOverlineColorNew</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrOverlineColorNew</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L235-L238">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L256-L260">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1798,12 +1786,12 @@ If not set, overlines will use the foreground color.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrOverlineNew</span><span class="p">(</span><span class="nv">overline</span><span class="p">:</span> <span class="kt">PangoOverline</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrOverlineNew</span><span class="p">(</span><span class="nv">overline</span><span class="p">:</span> <span class="kt">PangoOverline</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L244-L247">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L266-L270">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1829,12 +1817,12 @@ If not set, overlines will use the foreground color.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrRiseNew</span><span class="p">(</span><span class="nv">rise</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrRiseNew</span><span class="p">(</span><span class="nv">rise</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L253-L256">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L276-L280">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1863,12 +1851,12 @@ its size multiplied by <code>scale_factor</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrScaleNew</span><span class="p">(</span><span class="nv">scaleFactor</span><span class="p">:</span> <span class="kt">CDouble</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrScaleNew</span><span class="p">(</span><span class="nv">scaleFactor</span><span class="p">:</span> <span class="kt">CDouble</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L265-L268">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L289-L293">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1897,12 +1885,12 @@ sentence classification around the range.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrSentenceNew</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrSentenceNew</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L277-L280">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L302-L306">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1933,12 +1921,12 @@ or a widget inside a <code>PangoLayout</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrShapeNew</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrShapeNew</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L291-L294">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L317-L321">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1968,12 +1956,12 @@ rendering the glyph.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrShapeNewWithData</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="n">gpointer</span><span class="o">!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">copyFunc</span><span class="p">:</span> <span class="kt">PangoAttrDataCopyFunc</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">destroyFunc</span><span class="p">:</span> <span class="kt">GDestroyNotify</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">attrShapeNewWithData</span><span class="o">&lt;</span><span class="kt">RectangleT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">inkRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="nv">logicalRect</span><span class="p">:</span> <span class="kt">RectangleT</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="n">gpointer</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">copyFunc</span><span class="p">:</span> <span class="kt">PangoAttrDataCopyFunc</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">destroyFunc</span><span class="p">:</span> <span class="kt">GDestroyNotify</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span> <span class="k">where</span> <span class="kt">RectangleT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/RectangleProtocol.html">RectangleProtocol</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L304-L307">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L331-L335">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2000,12 +1988,12 @@ characters are rendered.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrShowNew</span><span class="p">(</span><span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="Structs/ShowFlags.html">ShowFlags</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrShowNew</span><span class="p">(</span><span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="Structs/ShowFlags.html">ShowFlags</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L314-L317">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L342-L346">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2031,12 +2019,12 @@ characters are rendered.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrSizeNew</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrSizeNew</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L323-L326">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L352-L356">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2062,12 +2050,12 @@ characters are rendered.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrSizeNewAbsolute</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrSizeNewAbsolute</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L332-L335">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L362-L366">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2093,12 +2081,12 @@ characters are rendered.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrStretchNew</span><span class="p">(</span><span class="nv">stretch</span><span class="p">:</span> <span class="kt">PangoStretch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrStretchNew</span><span class="p">(</span><span class="nv">stretch</span><span class="p">:</span> <span class="kt">PangoStretch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L341-L344">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L372-L376">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2127,12 +2115,12 @@ If not set, strikethrough lines will use the foreground color.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrStrikethroughColorNew</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrStrikethroughColorNew</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L353-L356">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L385-L389">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2158,12 +2146,12 @@ If not set, strikethrough lines will use the foreground color.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrStrikethroughNew</span><span class="p">(</span><span class="nv">strikethrough</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrStrikethroughNew</span><span class="p">(</span><span class="nv">strikethrough</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L362-L365">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L395-L399">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2189,12 +2177,12 @@ If not set, strikethrough lines will use the foreground color.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrStyleNew</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="kt">PangoStyle</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrStyleNew</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="kt">PangoStyle</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L371-L374">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L405-L409">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2221,12 +2209,12 @@ are transformed during shaping.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrTextTransformNew</span><span class="p">(</span><span class="nv">transform</span><span class="p">:</span> <span class="kt">PangoTextTransform</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrTextTransformNew</span><span class="p">(</span><span class="nv">transform</span><span class="p">:</span> <span class="kt">PangoTextTransform</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L381-L384">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L416-L420">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2265,7 +2253,7 @@ not be modified or freed.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L398-L401">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L434-L438">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2299,7 +2287,7 @@ by using [func<code>Pango.AttrType.get_name</code>].</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L410-L413">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L447-L451">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2328,12 +2316,12 @@ If not set, underlines will use the foreground color.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrUnderlineColorNew</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrUnderlineColorNew</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">guint16</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">guint16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L422-L425">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L460-L464">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2359,12 +2347,12 @@ If not set, underlines will use the foreground color.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrUnderlineNew</span><span class="p">(</span><span class="nv">underline</span><span class="p">:</span> <span class="kt">PangoUnderline</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrUnderlineNew</span><span class="p">(</span><span class="nv">underline</span><span class="p">:</span> <span class="kt">PangoUnderline</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L431-L434">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L470-L474">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2390,12 +2378,12 @@ If not set, underlines will use the foreground color.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrVariantNew</span><span class="p">(</span><span class="nv">variant</span><span class="p">:</span> <span class="kt">PangoVariant</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrVariantNew</span><span class="p">(</span><span class="nv">variant</span><span class="p">:</span> <span class="kt">PangoVariant</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L440-L443">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L480-L484">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2421,12 +2409,12 @@ If not set, underlines will use the foreground color.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrWeightNew</span><span class="p">(</span><span class="nv">weight</span><span class="p">:</span> <span class="kt">PangoWeight</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrWeightNew</span><span class="p">(</span><span class="nv">weight</span><span class="p">:</span> <span class="kt">PangoWeight</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L449-L452">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L490-L494">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2455,12 +2443,12 @@ sentence classification around the range.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrWordNew</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attrWordNew</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/AttributeRef.html">AttributeRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L461-L464">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L503-L507">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2496,7 +2484,7 @@ sentence classification around the range.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L474-L477">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L517-L521">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2517,12 +2505,11 @@ sentence classification around the range.</p>
                         <p>Determines possible line, word, and character breaks
 for a string of Unicode text with a single analysis.</p>
 
-<p>For most purposes you may want to use
-[func<code>Pango.get_log_attrs</code>].</p>
+<p>For most purposes you may want to use [func<code>Pango.get_log_attrs</code>].</p>
 
 <p><strong>break is deprecated:</strong>
 Use [<a href="mailto:func@Pango.default_break">func@Pango.default_break</a>],
-  [<a href="mailto:func@Pango.tailor_break">func@Pango.tailor_break</a>] and <a href="mailto:func@Pango.attr_break">func@Pango.attr_break</a>].</p>
+  [<a href="mailto:func@Pango.tailor_break">func@Pango.tailor_break</a>] and [<a href="mailto:func@Pango.attr_break">func@Pango.attr_break</a>].</p>
 
                       </div>
                       <div class="declaration">
@@ -2536,7 +2523,7 @@ Use [<a href="mailto:func@Pango.default_break">func@Pango.default_break</a>],
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L491-L494">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L534-L538">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2556,8 +2543,8 @@ Use [<a href="mailto:func@Pango.default_break">func@Pango.default_break</a>],
                       <div class="abstract">
                         <p>This is the default break algorithm.</p>
 
-<p>It applies Unicode rules without language-specific
-tailoring, therefore the <code>analyis</code> argument is unused
+<p>It applies rules from the <a href="http://www.unicode.org/unicode/reports/tr14/">Unicode Line Breaking Algorithm</a>
+without language-specific tailoring, therefore the <code>analyis</code> argument is unused
 and can be <code>nil</code>.</p>
 
 <p>See [func<code>Pango.tailor_break</code>] for language-specific breaks.</p>
@@ -2575,7 +2562,7 @@ and can be <code>nil</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L508-L511">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L552-L556">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2595,8 +2582,8 @@ and can be <code>nil</code>.</p>
                       <div class="abstract">
                         <p>This is the default break algorithm.</p>
 
-<p>It applies Unicode rules without language-specific
-tailoring, therefore the <code>analyis</code> argument is unused
+<p>It applies rules from the <a href="http://www.unicode.org/unicode/reports/tr14/">Unicode Line Breaking Algorithm</a>
+without language-specific tailoring, therefore the <code>analyis</code> argument is unused
 and can be <code>nil</code>.</p>
 
 <p>See [func<code>Pango.tailor_break</code>] for language-specific breaks.</p>
@@ -2614,7 +2601,7 @@ and can be <code>nil</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L521-L524">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L566-L570">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2661,7 +2648,7 @@ as <code>nearest</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L546-L549">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L592-L596">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2708,7 +2695,7 @@ as <code>nearest</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L567-L570">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L614-L618">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2741,7 +2728,7 @@ direction, according to the Unicode bidirectional algorithm.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L577-L580">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L625-L629">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2766,9 +2753,9 @@ a newline, carriage return, carriage return-newline pair,
 or Unicode paragraph separator character.</p>
 
 <p>The index of the run of delimiters is returned in
-<code>paragraph_delimiter_index</code>. The index of the start
-of the paragrap (index after all delimiters) is stored
-in <code>next_paragraph_start</code>.</p>
+<code>paragraph_delimiter_index</code>. The index of the start of the
+next paragraph (index after all delimiters) is stored n
+<code>next_paragraph_start</code>.</p>
 
 <p>If no delimiters are found, both <code>paragraph_delimiter_index</code>
 and <code>next_paragraph_start</code> are filled with the length of <code>text</code>
@@ -2785,7 +2772,7 @@ and <code>next_paragraph_start</code> are filled with the length of <code>text</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L599-L602">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L648-L652">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2854,12 +2841,12 @@ size in the resulting font description will be set to 0.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fontDescriptionFromString</span><span class="p">(</span><span class="nv">str</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/FontDescriptionRef.html">FontDescriptionRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fontDescriptionFromString</span><span class="p">(</span><span class="nv">str</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/FontDescriptionRef.html">FontDescriptionRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L651-L654">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L701-L705">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2898,7 +2885,7 @@ a word to know the word is a word).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L668-L671">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L719-L723">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2921,8 +2908,8 @@ a word to know the word is a word).</p>
 <p>Mirror characters are determined by the Unicode mirrored property.</p>
 
 <p><strong>get_mirror_char is deprecated:</strong>
-Use g_unichar_get_mirror_char() instead; the docs for that function
-provide full details.</p>
+Use [<a href="mailto:func@GLib.unichar_get_mirror_char">func@GLib.unichar_get_mirror_char</a>] instead;
+  the docs for that function provide full details.</p>
 
                       </div>
                       <div class="declaration">
@@ -2937,7 +2924,7 @@ provide full details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L683-L686">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L735-L739">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2969,7 +2956,7 @@ in a <code>PangoMatrix</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L693-L696">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L746-L750">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3001,7 +2988,7 @@ in a <code>PangoMatrix</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L699-L702">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L753-L757">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3038,7 +3025,7 @@ pass <code>PANGO_GRAVITY_AUTO</code> and <code>PANGO_GRAVITY_HINT_STRONG</code> 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L714-L717">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L769-L773">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3083,7 +3070,7 @@ preferred gravity of <code>script</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L737-L740">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L793-L797">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3118,7 +3105,7 @@ you should multiply it by (180. / G_PI).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L750-L753">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L807-L811">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3139,8 +3126,9 @@ you should multiply it by (180. / G_PI).</p>
                         <p>Checks if a character that should not be normally rendered.</p>
 
 <p>This includes all Unicode characters with &ldquo;ZERO WIDTH&rdquo; in their name,
-as well as <em>bidi</em> formatting characters, and a few other ones.  This is
-totally different from <code>g_unichar_iszerowidth()</code> and is at best misnamed.</p>
+as well as <em>bidi</em> formatting characters, and a few other ones.</p>
+
+<p>This is totally different from [func<code>GLib.unichar_iszerowidth</code>] and is at best misnamed.</p>
 
                       </div>
                       <div class="declaration">
@@ -3153,7 +3141,7 @@ totally different from <code>g_unichar_iszerowidth()</code> and is at best misna
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L763-L766">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L822-L826">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3195,7 +3183,7 @@ in the same <code>cached_iter</code>).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L783-L786">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L843-L847">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3237,7 +3225,7 @@ in the same <code>cached_iter</code>).</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L799-L802">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L860-L864">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3258,8 +3246,8 @@ in the same <code>cached_iter</code>).</p>
                         <p>Like <code>pango_itemize()</code>, but with an explicitly specified base direction.</p>
 
 <p>The base direction is used when computing bidirectional levels.
-(see [method<code>Pango.Context.set_base_dir</code>]). [func<code>itemize</code>] gets the
-base direction from the <code>PangoContext</code>.</p>
+[func<code>itemize</code>] gets the base direction from the <code>PangoContext</code>
+(see [method<code>Pango.Context.set_base_dir</code>]).</p>
 
                       </div>
                       <div class="declaration">
@@ -3272,7 +3260,7 @@ base direction from the <code>PangoContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L812-L815">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L874-L878">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3293,8 +3281,8 @@ base direction from the <code>PangoContext</code>.</p>
                         <p>Like <code>pango_itemize()</code>, but with an explicitly specified base direction.</p>
 
 <p>The base direction is used when computing bidirectional levels.
-(see [method<code>Pango.Context.set_base_dir</code>]). [func<code>itemize</code>] gets the
-base direction from the <code>PangoContext</code>.</p>
+[func<code>itemize</code>] gets the base direction from the <code>PangoContext</code>
+(see [method<code>Pango.Context.set_base_dir</code>]).</p>
 
                       </div>
                       <div class="declaration">
@@ -3307,110 +3295,7 @@ base direction from the <code>PangoContext</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L821-L824">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF"></a>
-                    <a name="//apple_ref/swift/Function/languageFromString(language:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango18languageFromString0B0AA11LanguageRefVSgSPys4Int8VGSg_tF">languageFromString(language:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Convert a language tag to a <code>PangoLanguage</code>.</p>
-
-<p>The language tag must be in a RFC-3066 format. <code>PangoLanguage</code> pointers
-can be efficiently copied (copy the pointer) and compared with other
-language tags (compare the pointer.)</p>
-
-<p>This function first canonicalizes the string by converting it to
-lowercase, mapping &lsquo;_&rsquo; to &lsquo;-&rsquo;, and stripping all characters other
-than letters and &lsquo;-&rsquo;.</p>
-
-<p>Use [func<code>Pango.Language.get_default</code>] if you want to get the
-<code>PangoLanguage</code> for the current locale of the process.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">languageFromString</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/LanguageRef.html">LanguageRef</a></span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L841-L844">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5Pango18languageGetDefaultAA11LanguageRefVSgyF"></a>
-                    <a name="//apple_ref/swift/Function/languageGetDefault()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango18languageGetDefaultAA11LanguageRefVSgyF">languageGetDefault()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns the <code>PangoLanguage</code> for the current locale of the process.</p>
-
-<p>On Unix systems, this is the return value is derived from
-<code>setlocale (LC_CTYPE, NULL)</code>, and the user can
-affect this through the environment variables LC_ALL, LC_CTYPE or
-LANG (checked in that order). The locale string typically is in
-the form lang_COUNTRY, where lang is an ISO-639 language code, and
-COUNTRY is an ISO-3166 country code. For instance, sv_FI for
-Swedish as written in Finland or pt_BR for Portuguese as written in
-Brazil.</p>
-
-<p>On Windows, the C library does not use any such environment
-variables, and setting them won&rsquo;t affect the behavior of functions
-like <code>ctime()</code>. The user sets the locale through the Regional Options
-in the Control Panel. The C library (in the <code>setlocale()</code> function)
-does not use country and language codes, but country and language
-names spelled out in English.
-However, this function does check the above environment
-variables, and does return a Unix-style locale string based on
-either said environment variables or the thread&rsquo;s current locale.</p>
-
-<p>Your application should call <code>setlocale(LC_ALL, &quot;&quot;)</code> for the user
-settings to take effect. GTK does this in its initialization
-functions automatically (by calling <code>gtk_set_locale()</code>).
-See the <code>setlocale()</code> manpage for more details.</p>
-
-<p>Note that the default language can change over the life of an application.</p>
-
-<p>Also note that this function will not do the right thing if you
-use per-thread locales with <code>uselocale()</code>. In that case, you should
-just call <code>pango_language_from_string()</code> yourself.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">languageGetDefault</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/LanguageRef.html">LanguageRef</a></span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L880-L883">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L884-L888">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3451,7 +3336,7 @@ languages returned by this function.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L899-L902">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L904-L908">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3482,7 +3367,7 @@ languages returned by this function.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L907-L910">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L913-L917">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3502,10 +3387,8 @@ languages returned by this function.</p>
                       <div class="abstract">
                         <p>Return the bidirectional embedding levels of the input paragraph.</p>
 
-<p>The bidirectional embedding levels are defined by the Unicode Bidirectional
-Algorithm available at:</p>
-
-<p><a href="http://www.unicode.org/reports/tr9/">http://www.unicode.org/reports/tr9/</a></p>
+<p>The bidirectional embedding levels are defined by the <a href="http://www.unicode.org/reports/tr9/">Unicode Bidirectional
+Algorithm</a>.</p>
 
 <p>If the input base direction is a weak direction, the direction of the
 characters in the text will determine the final resolved direction.</p>
@@ -3521,7 +3404,7 @@ characters in the text will determine the final resolved direction.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L924-L927">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L929-L933">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3541,9 +3424,9 @@ characters in the text will determine the final resolved direction.</p>
                       <div class="abstract">
                         <p>Finishes parsing markup.</p>
 
-<p>After feeding a Pango markup parser some data with <code>g_markup_parse_context_parse()</code>,
+<p>After feeding a Pango markup parser some data with [method<code>GLib.MarkupParseContext.parse</code>],
 use this function to get the list of attributes and text out of the
-markup. This function will not free <code>context</code>, use <code>g_markup_parse_context_free()</code>
+markup. This function will not free <code>context</code>, use [method<code>GLib.MarkupParseContext.free</code>]
 to do so.</p>
 
                       </div>
@@ -3552,12 +3435,12 @@ to do so.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">markupParserFinish</span><span class="o">&lt;</span><span class="kt">MarkupParseContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">MarkupParseContextT</span><span class="p">,</span> <span class="nv">attrList</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoAttrList</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">accelChar</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gunichar</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">where</span> <span class="kt">MarkupParseContextT</span> <span class="p">:</span> <span class="kt">MarkupParseContextProtocol</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">markupParserFinish</span><span class="o">&lt;</span><span class="kt">GLibMarkupParseContextT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">GLibMarkupParseContextT</span><span class="p">,</span> <span class="nv">attrList</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">PangoAttrList</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">accelChar</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gunichar</span><span class="o">&gt;!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">where</span> <span class="kt">GLibMarkupParseContextT</span> <span class="p">:</span> <span class="kt">MarkupParseContextProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L938-L943">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L944-L950">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3589,14 +3472,14 @@ and the first character so marked will be returned in <code>accel_char</code>,
 when calling [func<code>markup_parser_finish</code>]. Two <code>accel_marker</code> characters
 following each other produce a single literal <code>accel_marker</code> character.</p>
 
-<p>To feed markup to the parser, use <code>g_markup_parse_context_parse()</code>
-on the returned <code>GMarkupParseContext</code>. When done with feeding markup
+<p>To feed markup to the parser, use [method<code>GLib.MarkupParseContext.parse</code>]
+on the returned [struct<code>GLib.MarkupParseContext</code>]. When done with feeding markup
 to the parser, use [func<code>markup_parser_finish</code>] to get the data out
-of it, and then use <code>g_markup_parse_context_free()</code> to free it.</p>
+of it, and then use [method<code>GLib.MarkupParseContext.free</code>] to free it.</p>
 
 <p>This function is designed for applications that read Pango markup
 from streams. To simply parse a string containing Pango markup,
-the [func<code>parse_markup</code>] API is recommended instead.</p>
+the [func<code>Pango.parse_markup</code>] API is recommended instead.</p>
 
                       </div>
                       <div class="declaration">
@@ -3609,7 +3492,7 @@ the [func<code>parse_markup</code>] API is recommended instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L970-L973">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L977-L981">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3653,7 +3536,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L991-L994">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L999-L1003">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3700,7 +3583,7 @@ for <code>error</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1016-L1021">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1025-L1031">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3737,7 +3620,7 @@ ignored and the &lsquo;_&rsquo; characters may be omitted.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1033-L1036">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1043-L1047">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3772,7 +3655,7 @@ ignored.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1046-L1049">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1057-L1061">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3792,7 +3675,8 @@ ignored.</p>
                       <div class="abstract">
                         <p>Parses a font variant.</p>
 
-<p>The allowed values are &ldquo;normal&rdquo; and &ldquo;smallcaps&rdquo; or &ldquo;small_caps&rdquo;,
+<p>The allowed values are &ldquo;normal&rdquo;, &ldquo;small-caps&rdquo;, &ldquo;all-small-caps&rdquo;,
+&ldquo;petite-caps&rdquo;, &ldquo;all-petite-caps&rdquo;, &ldquo;unicase&rdquo; and &ldquo;title-caps&rdquo;,
 case variations being ignored.</p>
 
                       </div>
@@ -3806,7 +3690,7 @@ case variations being ignored.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1058-L1061">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1071-L1075">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3841,7 +3725,7 @@ and integers. Case variations are ignored.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1071-L1074">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1085-L1089">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3879,7 +3763,7 @@ of rounding.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1087-L1090">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1102-L1106">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3916,12 +3800,12 @@ This method is deprecated.</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">readLine</span><span class="o">&lt;</span><span class="kt">StringTypeT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">stream</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">FILE</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">StringTypeT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="k">where</span> <span class="kt">StringTypeT</span> <span class="p">:</span> <span class="kt">StringProtocol</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">readLine</span><span class="o">&lt;</span><span class="kt">GLibStringTypeT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">stream</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">FILE</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">GLibStringTypeT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="k">where</span> <span class="kt">GLibStringTypeT</span> <span class="p">:</span> <span class="kt">StringProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1106-L1109">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1122-L1126">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3954,12 +3838,12 @@ levels of the items. The original list is unmodified.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">reorder</span><span class="o">&lt;</span><span class="kt">ListT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="kt">ListT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">ListT</span> <span class="p">:</span> <span class="kt">ListProtocol</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">reorder</span><span class="o">&lt;</span><span class="kt">GLibListT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="kt">GLibListT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">ListRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">GLibListT</span> <span class="p">:</span> <span class="kt">ListProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1122-L1125">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1139-L1143">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3996,7 +3880,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1136-L1139">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1154-L1158">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4030,12 +3914,12 @@ This method is deprecated.</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">scanString</span><span class="o">&lt;</span><span class="kt">StringTypeT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">out</span><span class="p">:</span> <span class="kt">StringTypeT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">where</span> <span class="kt">StringTypeT</span> <span class="p">:</span> <span class="kt">StringProtocol</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">scanString</span><span class="o">&lt;</span><span class="kt">GLibStringTypeT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">out</span><span class="p">:</span> <span class="kt">GLibStringTypeT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">where</span> <span class="kt">GLibStringTypeT</span> <span class="p">:</span> <span class="kt">StringProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1152-L1155">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1171-L1175">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4068,12 +3952,12 @@ This method is deprecated.</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">scanWord</span><span class="o">&lt;</span><span class="kt">StringTypeT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">out</span><span class="p">:</span> <span class="kt">StringTypeT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">where</span> <span class="kt">StringTypeT</span> <span class="p">:</span> <span class="kt">StringProtocol</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">scanWord</span><span class="o">&lt;</span><span class="kt">GLibStringTypeT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">out</span><span class="p">:</span> <span class="kt">GLibStringTypeT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">where</span> <span class="kt">GLibStringTypeT</span> <span class="p">:</span> <span class="kt">StringProtocol</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1167-L1170">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1187-L1191">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4093,13 +3977,15 @@ This method is deprecated.</p>
                       <div class="abstract">
                         <p>Looks up the script for a particular character.</p>
 
-<p>The script of a character is defined by Unicode Standard Annex `24<code>.
-No check is made for</code>ch` being a valid Unicode character; if you pass
+<p>The script of a character is defined by
+<a href="http://www.unicode.org/reports/tr24/">Unicode Standard Annex 24: Script names</a>.</p>
+
+<p>No check is made for <code>ch</code> being a valid Unicode character; if you pass
 in invalid character, the result is undefined.</p>
 
 <p>Note that while the return type of this function is declared
 as <code>PangoScript</code>, as of Pango 1.18, this function simply returns
-the return value of <code>g_unichar_get_script()</code>. Callers must be
+the return value of [func<code>GLib.unichar_get_script</code>]. Callers must be
 prepared to handle unknown values.</p>
 
 <p><strong>script_for_unichar is deprecated:</strong>
@@ -4117,7 +4003,7 @@ Use g_unichar_get_script()</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1188-L1191">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1211-L1215">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4171,103 +4057,12 @@ context language is not feasible.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">scriptGetSampleLanguage</span><span class="p">(</span><span class="nv">script</span><span class="p">:</span> <span class="kt">PangoScript</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/LanguageRef.html">LanguageRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">scriptGetSampleLanguage</span><span class="p">(</span><span class="nv">script</span><span class="p">:</span> <span class="kt">PangoScript</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/LanguageRef.html">LanguageRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1225-L1228">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5Pango5shape4text6length8analysis6glyphsySPys4Int8VGSg_Sixq_tAA16AnalysisProtocolRzAA011GlyphStringI0R_r0_lF"></a>
-                    <a name="//apple_ref/swift/Function/shape(text:length:analysis:glyphs:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango5shape4text6length8analysis6glyphsySPys4Int8VGSg_Sixq_tAA16AnalysisProtocolRzAA011GlyphStringI0R_r0_lF">shape(text:<wbr>length:<wbr>analysis:<wbr>glyphs:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Convert the characters in <code>text</code> into glyphs.</p>
-
-<p>Given a segment of text and the corresponding <code>PangoAnalysis</code> structure
-returned from [func<code>Pango.itemize</code>], convert the characters into glyphs. You
-may also pass in only a substring of the item from [func<code>Pango.itemize</code>].</p>
-
-<p>It is recommended that you use [func<code>Pango.shape_full</code>] instead, since
-that API allows for shaping interaction happening across text item
-boundaries.</p>
-
-<p>Note that the extra attributes in the <code>analyis</code> that is returned from
-[func<code>Pango.itemize</code>] have indices that are relative to the entire paragraph,
-so you need to subtract the item offset from their indices before
-calling [func<code>Pango.shape</code>].</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">shape</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="p">,</span> <span class="kt">GlyphStringT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">glyphs</span><span class="p">:</span> <span class="kt">GlyphStringT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span><span class="p">,</span> <span class="kt">GlyphStringT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/GlyphStringProtocol.html">GlyphStringProtocol</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1247-L1250">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5Pango9shapeFull8itemText0D6Length09paragraphE00gF08analysis6glyphsySPys4Int8VGSg_SiALSixq_tAA16AnalysisProtocolRzAA011GlyphStringL0R_r0_lF"></a>
-                    <a name="//apple_ref/swift/Function/shapeFull(itemText:itemLength:paragraphText:paragraphLength:analysis:glyphs:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Pango9shapeFull8itemText0D6Length09paragraphE00gF08analysis6glyphsySPys4Int8VGSg_SiALSixq_tAA16AnalysisProtocolRzAA011GlyphStringL0R_r0_lF">shapeFull(itemText:<wbr>itemLength:<wbr>paragraphText:<wbr>paragraphLength:<wbr>analysis:<wbr>glyphs:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Convert the characters in <code>text</code> into glyphs.</p>
-
-<p>Given a segment of text and the corresponding <code>PangoAnalysis</code> structure
-returned from [func<code>Pango.itemize</code>], convert the characters into glyphs.
-You may also pass in only a substring of the item from [func<code>Pango.itemize</code>].</p>
-
-<p>This is similar to [func<code>Pango.shape</code>], except it also can optionally take
-the full paragraph text as input, which will then be used to perform
-certain cross-item shaping interactions. If you have access to the broader
-text of which <code>item_text</code> is part of, provide the broader text as
-<code>paragraph_text</code>. If <code>paragraph_text</code> is <code>nil</code>, item text is used instead.</p>
-
-<p>Note that the extra attributes in the <code>analyis</code> that is returned from
-[func<code>Pango.itemize</code>] have indices that are relative to the entire paragraph,
-so you do not pass the full paragraph text as <code>paragraph_text</code>, you need
-to subtract the item offset from their indices before calling
-[func<code>Pango.shape_full</code>].</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">shapeFull</span><span class="o">&lt;</span><span class="kt">AnalysisT</span><span class="p">,</span> <span class="kt">GlyphStringT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">itemText</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">itemLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">paragraphText</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">paragraphLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">analysis</span><span class="p">:</span> <span class="kt">AnalysisT</span><span class="p">,</span> <span class="nv">glyphs</span><span class="p">:</span> <span class="kt">GlyphStringT</span><span class="p">)</span> <span class="k">where</span> <span class="kt">AnalysisT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnalysisProtocol.html">AnalysisProtocol</a></span><span class="p">,</span> <span class="kt">GlyphStringT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/GlyphStringProtocol.html">GlyphStringProtocol</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1272-L1275">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1249-L1253">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4309,7 +4104,7 @@ to subtract the item offset from their indices before calling
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1292-L1295">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1270-L1274">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4351,7 +4146,7 @@ to subtract the item offset from their indices before calling
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1308-L1311">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1287-L1291">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4395,7 +4190,7 @@ to subtract the item offset from their indices before calling
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1330-L1333">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1310-L1314">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4430,7 +4225,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1342-L1345">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1323-L1327">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4466,7 +4261,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1355-L1358">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1337-L1341">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4495,12 +4290,12 @@ See that functions for details about the format.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">tabArrayFromString</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Structs/TabArrayRef.html">TabArrayRef</a></span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">tabArrayFromString</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Pango</span><span class="o">.</span><span class="kt"><a href="Structs/TabArrayRef.html">TabArrayRef</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1367-L1370">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1350-L1354">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4520,15 +4315,13 @@ See that functions for details about the format.</p>
                       <div class="abstract">
                         <p>Apply language-specific tailoring to the breaks in <code>attrs</code>.</p>
 
-<p>The line breaks are assumed to have been produced
-by [func<code>Pango.default_break</code>].</p>
+<p>The line breaks are assumed to have been produced by [func<code>Pango.default_break</code>].</p>
 
-<p>If <code>offset</code> is not -1, it is used to apply attributes
-from <code>analysis</code> that are relevant to line breaking.</p>
+<p>If <code>offset</code> is not -1, it is used to apply attributes from <code>analysis</code> that are
+relevant to line breaking.</p>
 
-<p>Note that it is better to pass -1 for <code>offset</code> and
-use [func<code>Pango.attr_break</code>] to apply attributes to
-the whole paragraph.</p>
+<p>Note that it is better to pass -1 for <code>offset</code> and use [func<code>Pango.attr_break</code>]
+to apply attributes to the whole paragraph.</p>
 
                       </div>
                       <div class="declaration">
@@ -4541,7 +4334,7 @@ the whole paragraph.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1386-L1389">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1368-L1372">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4576,7 +4369,7 @@ This method is deprecated.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1398-L1401">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1381-L1385">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4601,8 +4394,8 @@ or <code>PANGO_DIRECTION_NEUTRAL</code>.</p>
 
 <p>This function is useful to categorize characters into left-to-right
 letters, right-to-left letters, and everything else. If full Unicode
-bidirectional type of a character is needed,
-[func<code>Pango.BidiType.for_unichar</code>] can be used instead.</p>
+bidirectional type of a character is needed, [func<code>Pango.BidiType.for_unichar</code>]
+can be used instead.</p>
 
                       </div>
                       <div class="declaration">
@@ -4616,7 +4409,7 @@ bidirectional type of a character is needed,
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1415-L1418">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1399-L1403">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4650,7 +4443,7 @@ rounding the result to nearest integer.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1427-L1430">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1412-L1416">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4683,7 +4476,7 @@ rounding the result to nearest integer.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1438-L1441">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1424-L1428">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4718,7 +4511,7 @@ number can be encoded into an integer using <code>PANGO_VERSION_ENCODE()</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1451-L1454">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1438-L1442">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4765,7 +4558,7 @@ version <code>required_major.required_minor</code>.<code>required_micro</code>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1476-L1479">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1464-L1468">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4799,7 +4592,7 @@ macro returns the version available at compile-time.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftPango/tree/generated/Sources/Pango/Pango-1.0-functions.swift#L1488-L1491">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftPango/tree/generated/.build/plugins/outputs/swiftpango/Pango/gir2swift-plugin/gir2swift-generated/Pango/Pango-1.0-functions.swift#L1477-L1481">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4812,9 +4605,8 @@ macro returns the version available at compile-time.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-12-10)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2022 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external noopener">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2022-04-26)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
-</div>
 </html>
