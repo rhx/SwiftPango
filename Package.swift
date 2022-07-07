@@ -8,6 +8,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/rhx/gir2swift.git",     branch: "development"),
         .package(url: "https://github.com/rhx/SwiftGObject.git",  branch: "development"),
+        .package(url: "https://github.com/rhx/SwiftGIO.git",      branch: "development"),
         .package(url: "https://github.com/rhx/SwiftHarfBuzz.git", branch: "development"),
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ],
@@ -23,9 +24,10 @@ let package = Package(
             name: "Pango", 
             dependencies: [
                 "CPango",
-                .product(name: "gir2swift", package: "gir2swift"),
+                .product(name: "gir2swift",  package: "gir2swift"),
                 .product(name: "GLibObject", package: "SwiftGObject"),
-                .product(name: "HarfBuzz", package: "SwiftHarfBuzz"),
+                .product(name: "GIO",        package: "SwiftGIO"),
+                .product(name: "HarfBuzz",   package: "SwiftHarfBuzz"),
             ],
             swiftSettings: [
                 .unsafeFlags(["-suppress-warnings"], .when(configuration: .release)),
