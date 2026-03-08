@@ -2,10 +2,10 @@
 A Swift wrapper around pango-1.x that is largely auto-generated from gobject-introspection.
 For up to date (auto-generated) reference documentation, see https://rhx.github.io/SwiftPango/
 
-![macOS 11 build](https://github.com/rhx/SwiftPango/workflows/macOS%2011/badge.svg)
-![macOS 10.15 build](https://github.com/rhx/SwiftPango/workflows/macOS%2010.15/badge.svg)
-![Ubuntu 20.04 build](https://github.com/rhx/SwiftPango/workflows/Ubuntu%2020.04/badge.svg)
-![Ubuntu 18.04 build](https://github.com/rhx/SwiftPango/workflows/Ubuntu%2018.04/badge.svg)
+![macOS](https://github.com/rhx/SwiftPango/actions/workflows/macOS.yml/badge.svg?branch=development)
+![Linux](https://github.com/rhx/SwiftPango/actions/workflows/Linux.yml/badge.svg?branch=development)
+![macOS](https://github.com/rhx/SwiftPango/actions/workflows/macOS.yml/badge.svg?branch=main)
+![Linux](https://github.com/rhx/SwiftPango/actions/workflows/Linux.yml/badge.svg?branch=main)
 
 ## What is new?
 
